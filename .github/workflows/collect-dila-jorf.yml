@@ -1,0 +1,34 @@
+name: Collecte primaire DILA JORF
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 22:15 Europe/Paris en heure d'été : laisse le temps à la livraison DILA du soir.
+    - cron: "15 20 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dila-jorf-collector
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Tester le collecteur
+        run: python -m unittest discover -s tests -p 'test_*.py'
+      - name: Lire la dernière livraison officielle DILA
+        run: python scripts/collect_dila_jorf.py --targets config/jorf_targets.json --out evidence/latest
+      - name: Versionner seulement les preuves légères
+        run: |
+          git config user.name "lawradar-collector[bot]"
+          git config user.email "lawradar-collector[bot]@users.noreply.github.com"
+          git add evidence/latest
+          git diff --cached --quiet || git commit -m "Collecte DILA JORF $(date -u +%F)"
+          git push
