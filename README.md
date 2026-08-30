@@ -20,3 +20,7 @@ Schéma attendu : `lawradar-primary-handoff-v1`.
 ## Planification
 
 La collecte est lancée chaque jour à 17 h 20 Europe/Paris en heure d’été (`20 15 * * *` UTC), avant la veille Claude de 17 h 45.
+
+## Sobriété du cycle
+
+Après la collecte, le workflow publie `evidence/delta-latest.json`. Il compare mécaniquement la livraison du jour à la précédente, en ignorant les seuls horodatages techniques. La veille doit lire ce delta en premier : si `model_input_required` vaut `false`, aucun long corpus ne doit être relu. En cas de changement, les preuves brutes citées restent la seule source à interpréter.
