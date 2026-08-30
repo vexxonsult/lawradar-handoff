@@ -1,0 +1,48 @@
+{
+  "schema": "lawradar-daily-delta-v1",
+  "purpose": "Entrée courte pour la veille : changement mécanique des preuves, sans interprétation.",
+  "sources": [
+    {
+      "file": "primary-evidence-latest.json",
+      "status": "UNCHANGED",
+      "item_count": 1,
+      "sha256": "a6c5bac82a5f24088a04bf617c1b109f51440dcaaa57ce933e4fcf656855dec7",
+      "interpretation": null
+    },
+    {
+      "file": "jorf-summaries-latest.json",
+      "status": "CHANGED",
+      "item_count": 3390,
+      "sha256": "46f27ba7cf43fd84ff481f71e18a378a8ad22f2b757420b31daa34f0eabec984",
+      "interpretation": null
+    },
+    {
+      "file": "eurlex-oj-latest.json",
+      "status": "UNCHANGED",
+      "item_count": 54,
+      "sha256": "6629ae25c98c60b893861b4ed1ba85170acb525370f9570de87fef254499cdb7",
+      "interpretation": null
+    },
+    {
+      "file": "consultdd-latest.json",
+      "status": "CHANGED",
+      "item_count": 52,
+      "sha256": "56485e85ef4612d04cf9f5f8e618014157603d684788b631e2006c090f72e888",
+      "interpretation": null
+    },
+    {
+      "file": "status-latest.json",
+      "status": "CHANGED",
+      "item_count": 0,
+      "sha256": "31bcb0498d81f93f88bc941960eeb6ad6fb80549161fc6f7e4cd684cc1225c95",
+      "interpretation": null
+    }
+  ],
+  "changed_sources": [
+    "jorf-summaries-latest.json",
+    "consultdd-latest.json",
+    "status-latest.json"
+  ],
+  "model_input_required": true,
+  "interpretation": null
+}
