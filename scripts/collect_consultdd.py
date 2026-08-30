@@ -25,10 +25,13 @@ class Links(HTMLParser):
         self.current_href: str | None = None
         self.current_text: list[str] = []
         self.links: list[tuple[str, str]] = []
+        self.heading_depth = 0
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag in {"h2", "h3"}:
+            self.heading_depth += 1
         if tag == "a":
-            self.current_href = dict(attrs).get("href")
+            self.current_href = dict(attrs).get("href") if self.heading_depth else None
             self.current_text = []
 
     def handle_data(self, data: str) -> None:
@@ -40,6 +43,8 @@ class Links(HTMLParser):
             self.links.append((self.current_href, " ".join(" ".join(self.current_text).split())))
             self.current_href = None
             self.current_text = []
+        if tag in {"h2", "h3"}:
+            self.heading_depth = max(0, self.heading_depth - 1)
 
 
 def search_url(offset: int) -> str:
