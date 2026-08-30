@@ -16,35 +16,46 @@ from pathlib import Path
 from typing import Any
 
 BASE_URL = "https://www.consultations-publiques.developpement-durable.gouv.fr/"
-ARTICLE_RE = re.compile(r"(?:^|/)[^?#]*-a(\d+)\.html(?:[?#].*)?$")
-
-
-class Links(HTMLParser):
+class SearchCards(HTMLParser):
     def __init__(self) -> None:
         super().__init__()
+        self.card_depth = 0
+        self.current: dict[str, Any] | None = None
         self.current_href: str | None = None
         self.current_text: list[str] = []
-        self.links: list[tuple[str, str]] = []
-        self.heading_depth = 0
+        self.cards: list[dict[str, Any]] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
-        if tag in {"h2", "h3"}:
-            self.heading_depth += 1
-        if tag == "a":
-            self.current_href = dict(attrs).get("href") if self.heading_depth else None
+        attributes = dict(attrs)
+        if tag == "div" and "recherche-card" in (attributes.get("class") or ""):
+            self.card_depth = 1
+            self.current = {"href": None, "title": None, "dates": []}
+        elif tag == "div" and self.card_depth:
+            self.card_depth += 1
+        if tag == "a" and self.card_depth and self.current is not None and self.current.get("href") is None:
+            self.current_href = attributes.get("href")
             self.current_text = []
+        if tag == "time" and self.card_depth and self.current is not None:
+            value = attributes.get("datetime")
+            if value:
+                self.current["dates"].append(value)
 
     def handle_data(self, data: str) -> None:
         if self.current_href is not None:
             self.current_text.append(data)
 
     def handle_endtag(self, tag: str) -> None:
-        if tag == "a" and self.current_href is not None:
-            self.links.append((self.current_href, " ".join(" ".join(self.current_text).split())))
+        if tag == "a" and self.current_href is not None and self.current is not None:
+            self.current["href"] = self.current_href
+            self.current["title"] = " ".join(" ".join(self.current_text).split()) or None
             self.current_href = None
             self.current_text = []
-        if tag in {"h2", "h3"}:
-            self.heading_depth = max(0, self.heading_depth - 1)
+        if tag == "div" and self.card_depth:
+            self.card_depth -= 1
+            if self.card_depth == 0 and self.current is not None:
+                if self.current.get("href"):
+                    self.cards.append(self.current)
+                self.current = None
 
 
 def search_url(offset: int) -> str:
@@ -69,20 +80,24 @@ def fetch_text(url: str) -> str:
 
 
 def records_from_html(page_html: str, page_url: str) -> list[dict[str, Any]]:
-    parser = Links()
-    parser.feed(page_html)
     records: list[dict[str, Any]] = []
     seen: set[str] = set()
-    for href, title in parser.links:
-        url = urllib.parse.urljoin(page_url, html.unescape(href))
-        match = ARTICLE_RE.search(url)
-        if not match or url in seen:
+    # Les cartes de recherche ont une structure HTML régulière mais des div imbriquées
+    # variables ; les segments débutant par leur classe évitent les liens de navigation.
+    for card in re.split(r"<div\s+class=['\"][^'\"]*recherche-card", page_html, flags=re.IGNORECASE)[1:]:
+        link = re.search(r"<a\s+[^>]*href=['\"]([^'\"]+)['\"][^>]*>(.*?)</a>", card, flags=re.IGNORECASE | re.DOTALL)
+        if link is None:
+            continue
+        url = urllib.parse.urljoin(page_url, html.unescape(link.group(1)))
+        if url in seen:
             continue
         seen.add(url)
+        title = " ".join(re.sub(r"<[^>]+>", " ", link.group(2)).split())
+        dates = re.findall(r"<time\s+[^>]*datetime=['\"]([^'\"]+)['\"]", card, flags=re.IGNORECASE)
         records.append({
-            "consultation_id": f"a{match.group(1)}",
             "title": html.unescape(title) or None,
             "url": url,
+            "dates": dates,
             "interpretation": None,
         })
     return records
@@ -100,7 +115,7 @@ def main() -> int:
     queries = []
     seen: set[str] = set()
     for page in range(args.pages):
-        url = search_url(page * 10)
+        url = search_url(page)
         page_records = records_from_html(fetch_text(url), url)
         queries.append(url)
         for record in page_records:
