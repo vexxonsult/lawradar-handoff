@@ -24,13 +24,21 @@ jobs:
       - name: Tester le collecteur
         run: python -m unittest discover -s tests -p 'test_*.py'
       - name: Lire la dernière livraison officielle DILA
-        run: python scripts/collect_dila_jorf.py --targets config/jorf_targets.json --out evidence/latest
-      - name: Construire l'inbox de preuves brutes
-        run: python scripts/build_drive_handoff.py --evidence evidence/latest --out evidence/primary-evidence-latest.json
+        run: python scripts/collect_dila_jorf.py --targets config/jorf_targets.json --out evidence/candidate
+      - name: Construire le paquet candidat de preuves brutes
+        run: python scripts/build_drive_handoff.py --evidence evidence/candidate --out evidence/primary-evidence-candidate.json
+      - name: Conserver la dernière preuve utile si le candidat est vide
+        run: >-
+          python scripts/promote_public_handoff.py
+          --candidate evidence/primary-evidence-candidate.json
+          --candidate-evidence evidence/candidate
+          --current evidence/primary-evidence-latest.json
+          --current-evidence evidence/latest
+          --status evidence/status-latest.json
       - name: Versionner seulement les preuves légères
         run: |
           git config user.name "lawradar-collector[bot]"
           git config user.email "lawradar-collector[bot]@users.noreply.github.com"
-          git add evidence/latest evidence/primary-evidence-latest.json
+          git add evidence/latest evidence/primary-evidence-latest.json evidence/status-latest.json
           git diff --cached --quiet || git commit -m "Collecte DILA JORF $(date -u +%F)"
           git push
