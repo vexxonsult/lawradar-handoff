@@ -174,19 +174,123 @@ def evidence_from_archive(archive: Path, archive_url: str, targets: set[str], ou
     return manifest
 
 
+def summary_from_archive(archive: Path, archive_url: str) -> dict[str, Any]:
+    """Produit le sommaire primaire d'une édition, sans interpréter les textes."""
+    sha256 = hashlib.sha256(archive.read_bytes()).hexdigest()
+    with tarfile.open(archive, "r:gz") as handle:
+        members = [member for member in handle.getmembers() if member.isfile() and member.name.endswith(".xml")]
+        text_members: dict[str, tarfile.TarInfo] = {}
+        article_members: dict[str, tarfile.TarInfo] = {}
+        for member in members:
+            basename = Path(member.name).name
+            text_match = ID_RE.fullmatch(basename)
+            article_match = ARTICLE_RE.fullmatch(basename)
+            if text_match:
+                text_members[text_match.group(1)] = member
+            elif article_match:
+                article_members[article_match.group(1)] = member
+
+        documents: list[dict[str, Any]] = []
+        for identifier, member in sorted(text_members.items()):
+            root = xml_root(handle, member)
+            article_ids = [node.attrib["id"] for node in root.findall(".//LIEN_ART") if node.attrib.get("id") in article_members]
+            article_titles = []
+            for article_id in dict.fromkeys(article_ids):
+                article_title = value(xml_root(handle, article_members[article_id]), ".//CONTEXTE/TEXTE/TITRE_TXT")
+                if article_title:
+                    article_titles.append(article_title)
+            title = article_titles[0] if article_titles else value(root, ".//META_TEXTE_VERSION/TITREFULL") or value(root, ".//META_TEXTE_VERSION/TITRE")
+            documents.append({
+                "text_id": identifier,
+                "nature": value(root, ".//META_COMMUN/NATURE"),
+                "nor": value(root, ".//META_TEXTE_CHRONICLE/NOR"),
+                "publication_date": value(root, ".//META_TEXTE_CHRONICLE/DATE_PUBLI"),
+                "journal_number": value(root, ".//META_TEXTE_CHRONICLE/NUM_PARUTION"),
+                "title": title,
+                "article_ids": article_ids,
+                "article_titles": article_titles,
+                "interpretation": None,
+            })
+
+    return {
+        "schema": "lawradar-primary-jorf-edition-v1",
+        "status": "PRIMARY_ARCHIVE_READ",
+        "source_kind": "PRIMARY_OPEN_DATA",
+        "source_publisher": "Direction de l'information légale et administrative (DILA)",
+        "archive_url": archive_url,
+        "archive_filename": archive.name,
+        "archive_sha256": sha256,
+        "archive_size_bytes": archive.stat().st_size,
+        "documents": documents,
+        "interpretation": None,
+    }
+
+
+def write_summaries(
+    archives: list[tuple[str, str, str]],
+    index_url: str,
+    start_date: str,
+    end_date: str,
+    out: Path,
+) -> dict[str, Any]:
+    """Télécharge une fois chaque édition DILA dans une période et écrit ses sommaires bruts."""
+    start = start_date.replace("-", "")
+    end = end_date.replace("-", "")
+    selected = [item for item in archives if start <= item[0] <= end]
+    if not selected:
+        raise RuntimeError(f"Aucune archive DILA entre {start_date} et {end_date}.")
+
+    editions = []
+    with tempfile.TemporaryDirectory(prefix="lawradar-dila-summaries-") as temporary:
+        temporary_path = Path(temporary)
+        for _, _, filename in selected:
+            archive_url = index_url.rstrip("/") + "/" + filename
+            archive = temporary_path / filename
+            fetch(archive_url, archive)
+            if not tarfile.is_tarfile(archive):
+                raise RuntimeError(f"Archive DILA illisible : {filename}")
+            editions.append(summary_from_archive(archive, archive_url))
+
+    payload = {
+        "schema": "lawradar-primary-jorf-summaries-v1",
+        "status": "PRIMARY_ARCHIVE_READ",
+        "source_kind": "PRIMARY_OPEN_DATA",
+        "source_publisher": "Direction de l'information légale et administrative (DILA)",
+        "coverage_start": start_date,
+        "coverage_end": end_date,
+        "editions": editions,
+        "interpretation": None,
+    }
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return payload
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--targets", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--date", help="Date de publication AAAA-MM-JJ ; par défaut, dernière archive disponible.")
     parser.add_argument("--index-url", default=INDEX_URL)
+    parser.add_argument("--summary-out", type=Path, help="Fichier de sommaires primaires DILA à écrire.")
+    parser.add_argument("--summary-from", help="Début AAAA-MM-JJ du rattrapage des sommaires.")
+    parser.add_argument("--summary-to", help="Fin AAAA-MM-JJ du rattrapage des sommaires.")
+    parser.add_argument("--summary-days", type=int, help="Nombre de jours calendaires à couvrir jusqu'à la dernière édition DILA.")
     args = parser.parse_args()
     targets_data = json.loads(args.targets.read_text(encoding="utf-8"))
     targets = set(targets_data["targets"])
     if not all(re.fullmatch(r"JORFTEXT\d+", item) for item in targets):
         raise RuntimeError("La liste de cibles contient un identifiant JORFTEXT invalide.")
 
-    date, time, filename = choose_archive(available_archives(args.index_url), args.date)
+    if args.summary_days is not None and args.summary_days < 1:
+        raise RuntimeError("--summary-days doit être supérieur ou égal à 1.")
+    if args.summary_days is not None and any((args.summary_from, args.summary_to)):
+        raise RuntimeError("--summary-days ne peut pas être combiné avec --summary-from ou --summary-to.")
+    if args.summary_days is not None and args.summary_out is None:
+        raise RuntimeError("--summary-out est requis avec --summary-days.")
+
+    archives = available_archives(args.index_url)
+    date, time, filename = choose_archive(archives, args.date)
     archive_url = args.index_url.rstrip("/") + "/" + filename
     with tempfile.TemporaryDirectory(prefix="lawradar-dila-") as temporary:
         archive = Path(temporary) / filename
@@ -194,6 +298,14 @@ def main() -> int:
         if not tarfile.is_tarfile(archive):
             raise RuntimeError("L'archive DILA téléchargée n'est pas une archive TAR lisible.")
         manifest = evidence_from_archive(archive, archive_url, targets, args.out)
+    if args.summary_days is not None:
+        end = dt.datetime.strptime(date, "%Y%m%d").date()
+        start = end - dt.timedelta(days=args.summary_days - 1)
+        write_summaries(archives, args.index_url, start.isoformat(), end.isoformat(), args.summary_out)
+    elif any((args.summary_out, args.summary_from, args.summary_to)):
+        if not all((args.summary_out, args.summary_from, args.summary_to)):
+            raise RuntimeError("--summary-out, --summary-from et --summary-to doivent être fournis ensemble.")
+        write_summaries(archives, args.index_url, args.summary_from, args.summary_to, args.summary_out)
     print(json.dumps(manifest, ensure_ascii=False))
     return 0
 
