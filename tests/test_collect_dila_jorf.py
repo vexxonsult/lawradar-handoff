@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.collect_dila_jorf import choose_archive, evidence_from_archive, summary_from_archive
+from scripts.collect_dila_jorf import archive_url_for, choose_archive, evidence_from_archive, summary_from_archive, write_summaries
 
 
 def add_file(handle, name, payload):
@@ -16,6 +16,13 @@ def add_file(handle, name, payload):
 
 
 class CollectorTests(unittest.TestCase):
+    def test_builds_an_archive_url_without_listing_query(self):
+        url = archive_url_for(
+            "https://echanges.dila.gouv.fr/OPENDATA/JORF?C=M;O=D",
+            "JORF_20260830-214758.tar.gz",
+        )
+        self.assertEqual(url, "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260830-214758.tar.gz")
+
     def test_uses_latest_delivery_for_requested_day(self):
         archive = choose_archive([
             ("20260828", "002000", "JORF_20260828-002000.tar.gz"),
@@ -69,3 +76,29 @@ class CollectorTests(unittest.TestCase):
             self.assertEqual(summary["documents"][0]["text_id"], text_id)
             self.assertEqual(summary["documents"][0]["title"], "Décret de sommaire")
             self.assertIsNone(summary["documents"][0]["interpretation"])
+
+    def test_marks_a_missing_day_as_partial_coverage(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            tmp_path = Path(temporary)
+            archive = tmp_path / "JORF_20260817-214758.tar.gz"
+            with tarfile.open(archive, "w:gz"):
+                pass
+
+            def fake_fetch(url, destination=None):
+                destination.write_bytes(archive.read_bytes())
+                return None
+
+            from unittest.mock import patch
+
+            with patch("scripts.collect_dila_jorf.fetch", fake_fetch):
+                summary = write_summaries(
+                    [("20260817", "214758", archive.name)],
+                    "https://echanges.dila.gouv.fr/OPENDATA/JORF?C=M;O=D",
+                    "2026-08-17",
+                    "2026-08-18",
+                    tmp_path / "summary.json",
+                )
+
+            self.assertEqual(summary["status"], "PRIMARY_ARCHIVE_PARTIAL")
+            self.assertEqual(summary["covered_dates"], ["2026-08-17"])
+            self.assertEqual(summary["missing_dates"], ["2026-08-18"])

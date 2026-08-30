@@ -1,0 +1,100 @@
+# Plan directeur — mise à jour v1.1
+
+Ce document met à jour le **Plan directeur définitif — Radar d’opportunités** approuvé le 30 août 2026. Toutes ses phases, principes, critères de validation et la structure à deux projets restent inchangés, sauf les compléments ci-dessous qui deviennent la référence. 
+
+## Projet A — ordre des phases confirmé
+
+1. Fiabiliser le Radar officiel.
+2. Valider le moteur Money Flow.
+3. Stabiliser l’infrastructure et l’exploitation technique.
+4. Construire l’observabilité et le centre de contrôle.
+5. Créer le dossier universel de signal.
+6. Brancher les agents Presse, Demande et Marché.
+7. Construire le moteur de synthèse.
+8. Ajouter l’agent Entrepreneur.
+
+Le Radar est terminé à la validation de la phase 8. Le Projet B demeure l’exploitation de cet écosystème : expérimentations entrepreneuriales, production éditoriale, activités commerciales et amélioration continue.
+
+---
+
+## Phase 3 — Stabiliser l’infrastructure et l’exploitation technique
+
+### Objectif
+
+Rendre le Radar durable, reproductible, économe et facile à maintenir, sans abaisser le niveau de preuve, de traçabilité ou de reprise après incident.
+
+GitHub reste la base technique des collecteurs, configurations, schémas, tests, preuves structurées, journaux techniques et versions. Google Drive ne conserve que les livrables de consultation humaine : dashboard courant, rapports et exports partagés. Le fonctionnement du Radar ne doit pas dépendre du Drive.
+
+Chaque cycle doit produire un manifeste indiquant son identifiant, les versions utilisées, les fichiers d’entrée et de sortie, les empreintes, les durées, le coût estimé, les statuts, les erreurs et les reprises éventuelles. Le système doit reprendre après interruption, empêcher les doubles écritures, conserver la dernière version valide et distinguer échec, couverture partielle et absence légitime de signal.
+
+### Phase 3A — Audit de consommation et architecture des modèles
+
+Cette sous-phase est obligatoire. Son audit initial peut commencer dès maintenant en lecture seule ; les changements de modèles, de prompts ou d’horaires ne seront appliqués qu’après validation du fonctionnement réel du cycle en cours.
+
+#### Objectif
+
+Réduire le coût quotidien sans réduire la fiabilité, la couverture, l’explicabilité ni la capacité de reprise.
+
+#### Audit demandé
+
+Pour chaque tâche planifiée et chaque composant, documenter :
+
+- son objectif ;
+- sa fréquence ;
+- le modèle utilisé ;
+- la longueur de son prompt ;
+- les fichiers réellement lus et écrits ;
+- les outils utilisés ;
+- la durée observée ;
+- le niveau de coût estimé ;
+- les opérations répétées ou inutiles ;
+- les opérations pouvant être faites par du code ;
+- les opérations pouvant passer sur un modèle plus léger ;
+- les opérations qui justifient un modèle puissant ;
+- les dépendances empêchant une exécution sobre.
+
+L’audit produit ensuite un budget cible journalier et mensuel, des seuils d’alerte, ainsi que des règles d’arrêt ou de dégradation contrôlée en cas de dépassement.
+
+#### Architecture cible
+
+| Type de travail | Exécutant par défaut |
+| --- | --- |
+| Collecte officielle, téléchargement, empreintes, comparaison, tests, archivage, validation de schéma | Code / GitHub Actions, sans IA |
+| Tri simple, formatage, contrôles de structure, jour sans signal | Modèle léger |
+| Interprétation réglementaire ou Money Flow standard | Modèle moyen |
+| Signal ambigu, correction complexe, arbitrage à fort enjeu | Modèle puissant |
+| Décision commerciale, dépense ou action externe | Intervention humaine explicite |
+
+#### Règles de sobriété
+
+- Fonctionnement **delta-first** : ne transmettre et ne traiter que les nouveautés, les corrections et les dettes réellement ouvertes.
+- Réutilisation des résultats stables et cache des données déjà vérifiées.
+- Données structurées plutôt que relecture quotidienne de longs journaux en prose.
+- Prompts quotidiens courts ; invariants et contrôles transférés vers schémas, tests et configurations versionnés lorsque cela ne réduit pas la sûreté.
+- Sorties structurées et concises ; pas de narration longue lorsque le format de sortie suffit.
+- Arrêt immédiat des branches dont les conditions d’entrée ne sont pas remplies.
+- Modèle puissant réservé aux cas apportant une interprétation réellement nécessaire.
+- Mesure de la durée et de la consommation par composant à chaque cycle.
+
+#### Validation de la phase 3
+
+La phase 3 n’est validée que si :
+
+- le fonctionnement est indépendant du Drive ;
+- la restauration et la reprise sont testées ;
+- le classement et l’archivage sont automatiques ;
+- coûts et durées sont visibles ;
+- les fichiers ne sont pas dupliqués inutilement ;
+- une documentation permet de comprendre le système ;
+- chaque tâche est affectée au niveau d’exécution le moins coûteux compatible avec sa fiabilité ;
+- les journées sans nouveauté ont un coût faible ;
+- un coût élevé n’est engagé que pour un signal complexe ou important ;
+- le budget cible et les seuils d’alerte sont définis.
+
+---
+
+## Rappel de la frontière entre les deux projets
+
+**Projet A — Construction :** sources → preuves → Money Flow → enrichissements → synthèse → agent Entrepreneur → protocole de test. À cette étape, le Radar est terminé.
+
+**Projet B — Exploitation :** tests entrepreneuriaux, média, contenu, produits et services. Les résultats observés servent à améliorer le Radar, mais ne sont pas nécessaires pour déclarer sa construction achevée.

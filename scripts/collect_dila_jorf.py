@@ -17,8 +17,11 @@ import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlsplit, urlunsplit
 
-INDEX_URL = "http://echanges.dila.gouv.fr/OPENDATA/JORF/"
+# Le listing DILA est long. Le tri décroissant évite de ne voir qu'un fragment
+# historique de l'index et d'annoncer à tort une couverture récente.
+INDEX_URL = "https://echanges.dila.gouv.fr/OPENDATA/JORF?C=M;O=D"
 ARCHIVE_RE = re.compile(r"^JORF_(\d{8})-(\d{6})\.tar\.gz$")
 ID_RE = re.compile(r"^(JORFTEXT\d+)\.xml$")
 ARTICLE_RE = re.compile(r"^(JORFARTI\d+)\.xml$")
@@ -56,6 +59,12 @@ def available_archives(index_url: str) -> list[tuple[str, str, str]]:
         if match:
             archives.append((match.group(1), match.group(2), name))
     return sorted(set(archives))
+
+
+def archive_url_for(index_url: str, filename: str) -> str:
+    """Construit l'URL de téléchargement sans recopier les paramètres du listing."""
+    parts = urlsplit(index_url)
+    return urlunsplit((parts.scheme, parts.netloc, parts.path.rstrip("/") + "/" + filename, "", ""))
 
 
 def choose_archive(archives: list[tuple[str, str, str]], requested_date: str | None) -> tuple[str, str, str]:
@@ -244,20 +253,28 @@ def write_summaries(
     with tempfile.TemporaryDirectory(prefix="lawradar-dila-summaries-") as temporary:
         temporary_path = Path(temporary)
         for _, _, filename in selected:
-            archive_url = index_url.rstrip("/") + "/" + filename
+            archive_url = archive_url_for(index_url, filename)
             archive = temporary_path / filename
             fetch(archive_url, archive)
             if not tarfile.is_tarfile(archive):
                 raise RuntimeError(f"Archive DILA illisible : {filename}")
             editions.append(summary_from_archive(archive, archive_url))
 
+    expected_dates = {
+        (dt.date.fromisoformat(start_date) + dt.timedelta(days=offset)).strftime("%Y%m%d")
+        for offset in range((dt.date.fromisoformat(end_date) - dt.date.fromisoformat(start_date)).days + 1)
+    }
+    covered_dates = {date for date, _, _ in selected}
+    missing_dates = sorted(expected_dates - covered_dates)
     payload = {
         "schema": "lawradar-primary-jorf-summaries-v1",
-        "status": "PRIMARY_ARCHIVE_READ",
+        "status": "PRIMARY_ARCHIVE_READ" if not missing_dates else "PRIMARY_ARCHIVE_PARTIAL",
         "source_kind": "PRIMARY_OPEN_DATA",
         "source_publisher": "Direction de l'information légale et administrative (DILA)",
         "coverage_start": start_date,
         "coverage_end": end_date,
+        "covered_dates": [dt.datetime.strptime(date, "%Y%m%d").date().isoformat() for date in sorted(covered_dates)],
+        "missing_dates": [dt.datetime.strptime(date, "%Y%m%d").date().isoformat() for date in missing_dates],
         "editions": editions,
         "interpretation": None,
     }
@@ -291,7 +308,7 @@ def main() -> int:
 
     archives = available_archives(args.index_url)
     date, time, filename = choose_archive(archives, args.date)
-    archive_url = args.index_url.rstrip("/") + "/" + filename
+    archive_url = archive_url_for(args.index_url, filename)
     with tempfile.TemporaryDirectory(prefix="lawradar-dila-") as temporary:
         archive = Path(temporary) / filename
         fetch(archive_url, archive)
