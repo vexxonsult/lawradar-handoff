@@ -11,9 +11,9 @@ class ConsultDDCollectorTests(unittest.TestCase):
 
     def test_extracts_only_consultation_article_links_without_interpretation(self):
         page = '''<html><body>
-          <a href="projet-d-arrete-a3401.html?lang=fr">Projet d’arrêté CEE</a>
-          <a href="/spip.php?page=plan">Plan</a>
-          <a href="projet-d-arrete-a3401.html?lang=fr">Doublon</a>
+          <h2><a href="projet-d-arrete-a3401.html?lang=fr">Projet d’arrêté CEE</a></h2>
+          <a href="contacts-a75.html">Contact</a>
+          <h2><a href="projet-d-arrete-a3401.html?lang=fr">Doublon</a></h2>
         </body></html>'''
         records = records_from_html(page, "https://www.consultations-publiques.developpement-durable.gouv.fr/?page=recherche")
         self.assertEqual(len(records), 1)
