@@ -50,4 +50,5 @@ jobs:
           git config user.email "lawradar-collector[bot]@users.noreply.github.com"
           git add evidence/latest evidence/primary-evidence-latest.json evidence/jorf-summaries-latest.json evidence/eurlex-oj-latest.json evidence/consultdd-latest.json evidence/status-latest.json
           git diff --cached --quiet || git commit -m "Collecte DILA JORF $(date -u +%F)"
+          git pull --rebase origin main
           git push
