@@ -1,81 +1,79 @@
 #!/usr/bin/env python3
-"""Énumère les JO L depuis le graphe officiel Cellar, sans interprétation."""
+"""Énumère les actes JO L via la vue quotidienne officielle EUR-Lex, sans interprétation."""
 
 from __future__ import annotations
 
 import argparse
 import datetime as dt
+import html
 import json
 import sys
 import urllib.parse
 import urllib.request
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
 
-ENDPOINT = "https://publications.europa.eu/webapi/rdf/sparql"
+DAILY_VIEW_URL = "https://eur-lex.europa.eu/oj/daily-view/L-series/default.html"
 
 
-def build_query(start_date: str, end_date: str) -> str:
-    """Requête officielle Cellar : les métadonnées des éditions JO d'une période."""
-    return f'''prefix cdm: <http://publications.europa.eu/ontology/cdm#>
-prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+class Links(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.current_href: str | None = None
+        self.current_text: list[str] = []
+        self.links: list[tuple[str, str]] = []
 
-SELECT ?uri ?ojclass ?ojnumber ?ojcollection ?ojyear ?workdatedoc
-WHERE {{
-  ?uri cdm:official-journal_class ?ojclass .
-  ?uri cdm:official-journal_number ?ojnumber .
-  ?uri cdm:official-journal_part_of_collection_document ?ojcollection .
-  ?uri cdm:official-journal_year ?ojyear .
-  ?uri cdm:work_date_document ?workdatedoc .
-  ?uri rdf:type cdm:official-journal .
-  FILTER(?workdatedoc >= "{start_date}"^^xsd:date && ?workdatedoc <= "{end_date}"^^xsd:date)
-}}
-ORDER BY ?workdatedoc ?ojnumber'''
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag == "a":
+            self.current_href = dict(attrs).get("href")
+            self.current_text = []
+
+    def handle_data(self, data: str) -> None:
+        if self.current_href is not None:
+            self.current_text.append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag == "a" and self.current_href is not None:
+            self.links.append((self.current_href, " ".join(" ".join(self.current_text).split())))
+            self.current_href = None
+            self.current_text = []
 
 
-def fetch_json(endpoint: str, query: str) -> dict[str, Any]:
-    encoded = urllib.parse.urlencode({"query": query, "format": "application/sparql-results+json"}).encode("utf-8")
-    request = urllib.request.Request(
-        endpoint,
-        data=encoded,
-        headers={
-            "Accept": "application/sparql-results+json",
-            "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
-            "User-Agent": "LawRadar-EUR-Lex-Collector/1.0",
-        },
-    )
+def daily_view_url(date: dt.date) -> str:
+    query = urllib.parse.urlencode({"ojDate": date.strftime("%d%m%Y"), "locale": "en"})
+    return DAILY_VIEW_URL + "?" + query
+
+
+def fetch_text(url: str) -> str:
+    request = urllib.request.Request(url, headers={"User-Agent": "LawRadar-EUR-Lex-Collector/1.0"})
     with urllib.request.urlopen(request, timeout=90) as response:
-        return json.loads(response.read().decode("utf-8"))
+        return response.read().decode("utf-8", errors="replace")
 
 
-def binding_value(binding: dict[str, Any], name: str) -> str | None:
-    value = binding.get(name, {}).get("value")
-    return value if isinstance(value, str) else None
-
-
-def is_l_series(oj_class: str | None) -> bool:
-    if not oj_class:
-        return False
-    return oj_class.rstrip("/#").rsplit("/", 1)[-1] == "L"
-
-
-def records_from_response(response: dict[str, Any]) -> list[dict[str, Any]]:
-    records = []
-    for binding in response.get("results", {}).get("bindings", []):
-        oj_class = binding_value(binding, "ojclass")
-        if not is_l_series(oj_class):
+def records_from_html(page_html: str, page_url: str, publication_date: str) -> list[dict[str, Any]]:
+    parser = Links()
+    parser.feed(page_html)
+    records: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for href, title in parser.links:
+        url = urllib.parse.urljoin(page_url, html.unescape(href))
+        uri = urllib.parse.parse_qs(urllib.parse.urlparse(url).query).get("uri", [None])[0]
+        if not isinstance(uri, str) or not uri.startswith("OJ:L_") or url in seen:
             continue
+        seen.add(url)
         records.append({
-            "cellar_uri": binding_value(binding, "uri"),
-            "official_journal_class": oj_class,
-            "official_journal_number": binding_value(binding, "ojnumber"),
-            "official_journal_collection": binding_value(binding, "ojcollection"),
-            "official_journal_year": binding_value(binding, "ojyear"),
-            "publication_date": binding_value(binding, "workdatedoc"),
+            "official_journal_id": uri,
+            "publication_date": publication_date,
+            "title": html.unescape(title) or None,
+            "url": url,
             "interpretation": None,
         })
-    return sorted(records, key=lambda item: (item["publication_date"] or "", item["official_journal_number"] or "", item["cellar_uri"] or ""))
+    return records
+
+
+def date_range(start: dt.date, end: dt.date) -> list[dt.date]:
+    return [start + dt.timedelta(days=offset) for offset in range((end - start).days + 1)]
 
 
 def main() -> int:
@@ -84,37 +82,42 @@ def main() -> int:
     parser.add_argument("--from", dest="start_date")
     parser.add_argument("--to", dest="end_date")
     parser.add_argument("--days", type=int, default=14)
-    parser.add_argument("--endpoint", default=ENDPOINT)
     args = parser.parse_args()
     if args.days < 1:
         raise RuntimeError("--days doit être supérieur ou égal à 1.")
     if bool(args.start_date) != bool(args.end_date):
         raise RuntimeError("--from et --to doivent être fournis ensemble.")
     if args.start_date:
-        start_date, end_date = args.start_date, args.end_date
+        start, end = dt.date.fromisoformat(args.start_date), dt.date.fromisoformat(args.end_date)
     else:
         end = dt.datetime.now(dt.timezone.utc).date()
         start = end - dt.timedelta(days=args.days - 1)
-        start_date, end_date = start.isoformat(), end.isoformat()
+    if start > end:
+        raise RuntimeError("--from doit précéder --to.")
 
-    query = build_query(start_date, end_date)
-    response = fetch_json(args.endpoint, query)
+    documents: list[dict[str, Any]] = []
+    daily_views: list[str] = []
+    for date in date_range(start, end):
+        url = daily_view_url(date)
+        daily_views.append(url)
+        documents.extend(records_from_html(fetch_text(url), url, date.isoformat()))
+
     payload = {
-        "schema": "lawradar-primary-eurlex-oj-v1",
+        "schema": "lawradar-primary-eurlex-oj-v2",
         "status": "PRIMARY_INDEX_READ",
         "source_kind": "PRIMARY_OPEN_DATA",
-        "source_publisher": "Publications Office of the European Union (Cellar)",
-        "endpoint": args.endpoint,
-        "coverage_start": start_date,
-        "coverage_end": end_date,
-        "query": query,
-        "documents": records_from_response(response),
+        "source_publisher": "Publications Office of the European Union (EUR-Lex)",
+        "source_route": "Official Journal L series daily view",
+        "coverage_start": start.isoformat(),
+        "coverage_end": end.isoformat(),
+        "daily_views": daily_views,
+        "documents": documents,
         "collected_at_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
         "interpretation": None,
     }
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"documents": len(payload["documents"]), "coverage_start": start_date, "coverage_end": end_date}))
+    print(json.dumps({"documents": len(documents), "days_read": len(daily_views), "coverage_start": start.isoformat(), "coverage_end": end.isoformat()}))
     return 0
 
 
