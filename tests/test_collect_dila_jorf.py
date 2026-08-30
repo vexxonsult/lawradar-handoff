@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.collect_dila_jorf import choose_archive, evidence_from_archive
+from scripts.collect_dila_jorf import choose_archive, evidence_from_archive, summary_from_archive
 
 
 def add_file(handle, name, payload):
@@ -52,3 +52,20 @@ class CollectorTests(unittest.TestCase):
             document = json.loads((tmp_path / "out" / "documents" / f"{text_id}.json").read_text(encoding="utf-8"))
             self.assertEqual(document["title"], "Arrêté de test")
             self.assertEqual(document["articles"][0]["plain_text"], "Texte primaire versionné.")
+
+    def test_builds_an_uninterpreted_primary_edition_summary(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            tmp_path = Path(temporary)
+            archive = tmp_path / "fixture.tar.gz"
+            text_id = "JORFTEXT000000000003"
+            article_id = "JORFARTI000000000003"
+            with tarfile.open(archive, "w:gz") as handle:
+                add_file(handle, f"text/{text_id}.xml", f"""<TEXTELR><META><META_COMMUN><NATURE>DECRET</NATURE></META_COMMUN><META_SPEC><META_TEXTE_CHRONICLE><NOR>TEST0003D</NOR><DATE_PUBLI>2026-08-29</DATE_PUBLI><NUM_PARUTION>0201</NUM_PARUTION></META_TEXTE_CHRONICLE></META_SPEC></META><STRUCT><LIEN_ART id=\"{article_id}\" /></STRUCT></TEXTELR>""")
+                add_file(handle, f"article/{article_id}.xml", "<ARTICLE><CONTEXTE><TEXTE><TITRE_TXT>Décret de sommaire</TITRE_TXT></TEXTE></CONTEXTE></ARTICLE>")
+
+            summary = summary_from_archive(archive, "https://example.test/fixture.tar.gz")
+            self.assertEqual(summary["schema"], "lawradar-primary-jorf-edition-v1")
+            self.assertIsNone(summary["interpretation"])
+            self.assertEqual(summary["documents"][0]["text_id"], text_id)
+            self.assertEqual(summary["documents"][0]["title"], "Décret de sommaire")
+            self.assertIsNone(summary["documents"][0]["interpretation"])

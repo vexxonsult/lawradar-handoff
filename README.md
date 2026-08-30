@@ -1,33 +1,22 @@
-# LawRadar FR
+# LawRadar — canal public de preuves primaires
 
-Infrastructure de secours du Radar réglementaire.
+Ce dépôt est un canal de transfert mécanique vers la couche de surveillance du Radar.
 
-Le Radar conserve son raisonnement dans Claude. Ce dépôt ne produit **aucune
-interprétation réglementaire ou économique** : il récupère les archives
-officielles DILA, vérifie leur intégrité et fabrique des preuves brutes que la
-veille peut citer.
+Il contient uniquement :
 
-## Règle de conservation
+- un collecteur des archives officielles DILA JORF ;
+- la liste explicite des identifiants recherchés ;
+- les tests du collecteur ;
+- le dernier paquet de preuves primaires brutes.
 
-- les archives `.tar.gz` DILA sont temporaires et ne sont jamais ajoutées au
-  dépôt ;
-- le dépôt conserve un manifeste vérifiable (URL, date, taille, SHA-256) ;
-- seuls les textes explicitement suivis sont conservés en JSON, avec leur XML
-  source et une transcription mécanique ;
-- le dossier `evidence/latest/` est l'inbox destiné à la veille ;
-- aucune clé, aucun secret, aucune donnée personnelle, aucun dashboard ou
-  registre de production ne doit être commité ici.
+Aucune interprétation réglementaire ou économique n’est produite ici. Les champs `interpretation` restent à `null`. Les journaux complets, prompts, registres, dashboards et données privées ne sont pas publiés.
 
-## Utilisation locale
+## Fichier stable pour la surveillance
 
-```sh
-python3 scripts/collect_dila_jorf.py --targets config/jorf_targets.json --out evidence/latest
-```
+`https://raw.githubusercontent.com/vexxonsult/lawradar-handoff/main/evidence/primary-evidence-latest.json`
 
-La commande choisit la dernière archive JORF publiée par DILA, contrôle son
-format et écrit un manifeste. Elle échoue proprement si aucune archive valide
-ne peut être lue. Elle ne remplace jamais une preuve déjà publiée sans laisser
-le manifeste du passage courant.
+Schéma attendu : `lawradar-primary-handoff-v1`.
 
-Le workflow GitHub Actions l'exécute chaque soir : c'est un collecteur léger,
-pas un agent d'analyse.
+## Planification
+
+La collecte est lancée chaque jour à 17 h 20 Europe/Paris en heure d’été (`20 15 * * *` UTC), avant la veille Claude de 17 h 45.
