@@ -9,7 +9,7 @@ Il contient uniquement :
 - les tests du collecteur ;
 - le dernier paquet de preuves primaires brutes.
 
-Aucune interprétation réglementaire ou économique n’est produite ici. Les champs `interpretation` restent à `null`. Les journaux complets, prompts, registres, dashboards et données privées ne sont pas publiés.
+Aucune interprétation réglementaire ou économique n’est produite ici. Les champs `interpretation` restent à `null`. Les journaux complets, prompts, registres, dashboards et données privées ne sont pas publiés. Le paquet primaire est construit et publié par GitHub Actions : Google Drive ne fait pas partie de ce trajet de collecte.
 
 ## Fichier stable pour la surveillance
 

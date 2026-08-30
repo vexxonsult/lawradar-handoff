@@ -39,7 +39,7 @@ jobs:
       - name: Énumérer les consultations depuis la recherche officielle
         run: python scripts/collect_consultdd.py --out evidence/consultdd-latest.json --pages 5
       - name: Construire le paquet candidat de preuves brutes
-        run: python scripts/build_drive_handoff.py --evidence evidence/candidate --out evidence/primary-evidence-candidate.json
+        run: python scripts/build_primary_handoff.py --evidence evidence/candidate --out evidence/primary-evidence-candidate.json
       - name: Conserver la dernière preuve utile si le candidat est vide
         run: >-
           python scripts/promote_public_handoff.py
