@@ -1,0 +1,13 @@
+{
+  "schema": "lawradar-primary-eurlex-oj-v1",
+  "status": "PRIMARY_INDEX_READ",
+  "source_kind": "PRIMARY_OPEN_DATA",
+  "source_publisher": "Publications Office of the European Union (Cellar)",
+  "endpoint": "https://publications.europa.eu/webapi/rdf/sparql",
+  "coverage_start": "2026-08-17",
+  "coverage_end": "2026-08-30",
+  "query": "prefix cdm: <http://publications.europa.eu/ontology/cdm#>\nprefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nprefix xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT ?uri ?ojclass ?ojnumber ?ojcollection ?ojyear ?workdatedoc\nWHERE {\n  ?uri cdm:official-journal_class ?ojclass .\n  ?uri cdm:official-journal_number ?ojnumber .\n  ?uri cdm:official-journal_part_of_collection_document ?ojcollection .\n  ?uri cdm:official-journal_year ?ojyear .\n  ?uri cdm:work_date_document ?workdatedoc .\n  ?uri rdf:type cdm:official-journal .\n  FILTER(?workdatedoc >= \"2026-08-17\"^^xsd:date && ?workdatedoc <= \"2026-08-30\"^^xsd:date)\n}\nORDER BY ?workdatedoc ?ojnumber",
+  "documents": [],
+  "collected_at_utc": "2026-08-30T13:24:03.610834+00:00",
+  "interpretation": null
+}
