@@ -31,3 +31,14 @@ class DailyDeltaTests(unittest.TestCase):
             self.assertEqual(source["status"], "CHANGED")
             self.assertEqual(source["item_count"], 2)
             self.assertTrue(delta["model_input_required"])
+
+    def test_marks_a_coverage_date_change_without_new_documents_as_metadata_only(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary); previous = root / "previous"; current = root / "current"
+            previous.mkdir(); current.mkdir()
+            self.write(previous, "jorf-summaries-latest.json", {"coverage_end": "2026-08-29", "editions": [{"documents": [{"text_id": "JORFTEXT1"}]}]})
+            self.write(current, "jorf-summaries-latest.json", {"coverage_end": "2026-08-30", "editions": [{"documents": [{"text_id": "JORFTEXT1"}]}]})
+            delta = build_delta(previous, current)
+            source = next(item for item in delta["sources"] if item["file"] == "jorf-summaries-latest.json")
+            self.assertEqual(source["status"], "METADATA_CHANGED")
+            self.assertFalse(delta["model_input_required"])

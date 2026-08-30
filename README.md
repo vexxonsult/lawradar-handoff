@@ -23,4 +23,4 @@ La collecte est lancée chaque jour à 17 h 20 Europe/Paris en heure d’été (
 
 ## Sobriété du cycle
 
-Après la collecte, le workflow publie `evidence/delta-latest.json`. Il compare mécaniquement la livraison du jour à la précédente, en ignorant les seuls horodatages techniques. La veille doit lire ce delta en premier : si `model_input_required` vaut `false`, aucun long corpus ne doit être relu. En cas de changement, les preuves brutes citées restent la seule source à interpréter.
+Après la collecte, le workflow publie `evidence/delta-latest.json`. Il compare mécaniquement la livraison du jour à la précédente, en ignorant les seuls horodatages techniques. Une variation de couverture sans document nouveau est marquée `METADATA_CHANGED` : elle ne déclenche pas de relecture IA. La veille lit ce delta en premier ; si `model_input_required` vaut `false`, aucun long corpus ne doit être relu. En cas de changement documentaire, les preuves brutes citées restent la seule source à interpréter.

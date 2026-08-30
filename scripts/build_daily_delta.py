@@ -46,21 +46,37 @@ def count_items(payload: Any) -> int:
     return 0
 
 
+def semantic_documents(payload: Any) -> list[dict[str, Any]]:
+    """Retourne uniquement les éléments dont la nouveauté justifie une lecture IA."""
+    if not isinstance(payload, dict):
+        return []
+    if isinstance(payload.get("editions"), list):
+        return [document for edition in payload["editions"] if isinstance(edition, dict)
+                for document in edition.get("documents", []) if isinstance(document, dict)]
+    return [document for document in payload.get("documents", []) if isinstance(document, dict)]
+
+
 def build_delta(previous: Path, current: Path) -> dict[str, Any]:
     sources = []
     for name in FILES:
         before, after = read_json(previous, name), read_json(current, name)
-        if after is None:
+        if before is None and after is None:
+            status = "ABSENT"
+        elif after is None:
             status = "MISSING"
         elif before is None:
             status = "NEW"
         elif digest(before) == digest(after):
             status = "UNCHANGED"
+        elif digest(semantic_documents(before)) == digest(semantic_documents(after)):
+            status = "METADATA_CHANGED"
         else:
             status = "CHANGED"
         sources.append({"file": name, "status": status, "item_count": count_items(after),
-                        "sha256": digest(after) if after is not None else None, "interpretation": None})
-    changed = [source["file"] for source in sources if source["status"] in {"NEW", "CHANGED"}]
+                        "sha256": digest(after) if after is not None else None,
+                        "documents_sha256": digest(semantic_documents(after)) if after is not None else None,
+                        "interpretation": None})
+    changed = [source["file"] for source in sources if source["status"] in {"NEW", "CHANGED", "MISSING"}]
     return {"schema": "lawradar-daily-delta-v1",
             "purpose": "Entrée courte pour la veille : changement mécanique des preuves, sans interprétation.",
             "sources": sources, "changed_sources": changed,
