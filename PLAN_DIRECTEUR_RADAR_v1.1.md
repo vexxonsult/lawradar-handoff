@@ -99,6 +99,38 @@ Validation réalisée : les collectes et le moteur GitHub ont été exécutés e
 
 La prochaine étape du Projet A est la **phase 4 — observabilité et centre de contrôle**. Le raccordement de l'interprétation EUR-Lex et des agents Presse, Demande et Marché reste volontairement hors de la phase 3.
 
+## Phase 4 — Observabilité et centre de contrôle
+
+### Objectif
+
+Rendre chaque exécution lisible et vérifiable sans ajouter une nouvelle couche d'interprétation. Le centre de contrôle doit répondre à trois questions : quel run a eu lieu, quelles données ont été utilisées, et quel résultat a été produit ?
+
+### Livrable 4A — Manifeste commun d'exécution
+
+Le premier incrément de la phase 4 est en place : `scripts/build_run_manifest.py` produit un manifeste JSON versionné selon `lawradar-run-manifest-v1`.
+
+Chaque manifeste enregistre :
+
+- l'identifiant, la tentative, le workflow, le commit et l'URL du run ;
+- le type de run (`collector` ou `motor`) et son statut ;
+- les fichiers d'entrée et de sortie, leur présence, leur taille et leur empreinte SHA-256 ;
+- la durée mesurée lorsqu'elle est disponible ;
+- les reprises et erreurs déclarées ;
+- l'état de coût fourni par le prestataire, sans inventer un nombre de tokens ou un montant.
+
+Le collecteur publie `evidence/run-manifest-latest.json`. Le moteur joint `out/run-manifest.json` à son artefact, avec `motor-delivery.json` et le dashboard. Les manifestes ne contiennent pas le contenu des preuves : ils en assurent la traçabilité.
+
+### Critères d'acceptation de 4A
+
+- un test automatisé vérifie le schéma minimal, les empreintes et l'absence de contenu sensible ;
+- les deux workflows produisent leur manifeste au terme d'un run réussi ;
+- une exécution interrompue reste distinguable d'une absence légitime de signal ;
+- la mesure de coût indique explicitement quand le fournisseur ne transmet pas la consommation détaillée.
+
+### Suite de la phase 4
+
+Le prochain incrément sera un index de runs et un tableau de contrôle léger (statuts, durées, couverture, liens d'artefacts), alimenté par ces manifestes. Il ne modifiera ni les preuves primaires ni le contrat du moteur. Le dossier universel de signal et les agents Presse, Demande et Marché restent planifiés en phases 5 et 6.
+
 ---
 
 ## Rappel de la frontière entre les deux projets

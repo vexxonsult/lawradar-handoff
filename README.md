@@ -32,3 +32,7 @@ est requis, il produit une livraison structurée puis un dashboard déterministe
 Ces deux fichiers sont téléversés comme artefact du run GitHub Actions,
 distinct du code public : ils ne sont ni committés dans ce dépôt, ni écrits
 dans Google Drive. Leur accès reste régi par les paramètres GitHub du dépôt.
+
+## Observabilité — phase 4
+
+Chaque collecte publie aussi `evidence/run-manifest-latest.json`. Chaque exécution du moteur joint `out/run-manifest.json` à son artefact. Ces manifestes décrivent le run, ses fichiers d'entrée et de sortie, leurs empreintes et la durée mesurée, sans recopier les preuves ni inventer une consommation. Ils constituent la base du futur centre de contrôle.

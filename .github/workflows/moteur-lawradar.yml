@@ -47,6 +47,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Démarrer la mesure du run
+        run: echo "LAWRADAR_STARTED_AT=$(date +%s)" >> "$GITHUB_ENV"
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -74,6 +76,15 @@ jobs:
       - name: Valider et rendre le dashboard
         run: python scripts/render_motor_delivery.py --input out/motor-delivery.json --dashboard out/dashboard.html
       - name: Publier la livraison du run
+        env:
+          LAWRADAR_MODEL: claude-sonnet-5
+        run: >-
+          python scripts/build_run_manifest.py
+          --output out/run-manifest.json
+          --kind motor --status success
+          --inputs out/motor-input.json config/moteur-delivery-schema.json
+          --outputs out/motor-delivery.json out/dashboard.html
+      - name: Téléverser la livraison du run
         uses: actions/upload-artifact@v4
         with:
           name: lawradar-moteur-${{ github.run_id }}

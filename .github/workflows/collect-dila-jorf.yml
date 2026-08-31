@@ -18,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Démarrer la mesure du run
+        run: echo "LAWRADAR_STARTED_AT=$(date +%s)" >> "$GITHUB_ENV"
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -56,11 +58,18 @@ jobs:
           --previous /tmp/lawradar-previous
           --current evidence
           --out evidence/delta-latest.json
+      - name: Produire le manifeste du run
+        run: >-
+          python scripts/build_run_manifest.py
+          --output evidence/run-manifest-latest.json
+          --kind collector --status success
+          --inputs evidence/delta-latest.json evidence/jorf-summaries-latest.json evidence/eurlex-oj-latest.json evidence/consultdd-latest.json
+          --outputs evidence/primary-evidence-latest.json evidence/status-latest.json
       - name: Versionner seulement les preuves légères
         run: |
           git config user.name "lawradar-collector[bot]"
           git config user.email "lawradar-collector[bot]@users.noreply.github.com"
-          git add evidence/latest evidence/primary-evidence-latest.json evidence/jorf-summaries-latest.json evidence/eurlex-oj-latest.json evidence/consultdd-latest.json evidence/status-latest.json evidence/delta-latest.json
+          git add evidence/latest evidence/primary-evidence-latest.json evidence/jorf-summaries-latest.json evidence/eurlex-oj-latest.json evidence/consultdd-latest.json evidence/status-latest.json evidence/delta-latest.json evidence/run-manifest-latest.json
           git diff --cached --quiet || git commit -m "Collecte DILA JORF $(date -u +%F)"
           git pull --rebase origin main
           git push
