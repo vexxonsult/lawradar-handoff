@@ -1,8 +1,8 @@
-# État Phase 3 avant le prochain run officiel
+# État Phase 3 — moteur GitHub validé
 
 Date de contrôle : 31 août 2026.
 
-## Prêt pour demain
+## Chaîne GitHub validée
 
 - le collecteur officiel s’exécute depuis GitHub Actions et n’utilise plus
   Google Drive ;
@@ -19,10 +19,17 @@ Date de contrôle : 31 août 2026.
   `vexxonsult/lawradar-handoff` ;
 - le dashboard peut être rendu de façon déterministe à partir d'un résultat
   moteur court et validé : le modèle n'a plus à générer le HTML ;
-- le canal Claude Code ↔ GitHub a été validé depuis GitHub Actions avec le
-  jeton OAuth de l'abonnement Claude : lecture du delta réussie en 28 secondes,
-  sans écriture ;
-- 18 tests automatiques passent.
+- le canal Claude Code ↔ GitHub est validé avec le jeton OAuth de
+  l'abonnement Claude ;
+- le moteur prépare d'abord un diff compact des preuves : Claude ne lit ni le
+  corpus JORF complet ni Google Drive ;
+- le moteur produit `motor-delivery.json`, le valide, puis rend le dashboard
+  de façon déterministe ;
+- les trois fichiers du run (`motor-input.json`, `motor-delivery.json`,
+  `dashboard.html`) sont publiés comme artefact GitHub Actions, jamais comme
+  commit dans le dépôt public ;
+- le run de validation complet 33400296127 a réussi en 47 secondes ;
+- 22 tests automatiques passent.
 
 ## Résultats de la simulation isolée
 
@@ -31,21 +38,14 @@ confirmé qu’une mise à jour JORF de simple couverture est
 `METADATA_CHANGED`, que EUR-Lex était inchangé, et que les cartes ConsultDD
 étaient réellement modifiées : seule cette dernière source doit être relue.
 
-## Frontière restante, volontairement non masquée
+## Limites explicitement conservées
 
-Le moteur Money Flow publié dans la tâche Claude continue aujourd’hui à écrire
-son registre, ses flux et son dashboard sur Drive. Le collecteur et la veille
-ne dépendent plus de Drive pour leurs preuves ; le moteur, oui, pour ses
-livrables. Le canal d’authentification et de lecture GitHub est maintenant en
-place. Le passage complet à GitHub exige encore de migrer le contrat métier
-complet du moteur vers une sortie structurée, puis de décider du dépôt de
-publication des livrables : ce dépôt est public et ne doit pas recevoir de
-registre ni de données privées par défaut.
+Le nouveau trajet GitHub ne dépend plus de Drive. Le précédent moteur Claude
+qui écrit sur Drive doit néanmoins être désactivé ou mis en pause dans son
+espace Claude, afin d'éviter toute double exécution : ce dépôt ne peut pas
+arrêter une planification externe.
 
-Cette frontière ne doit pas être déclarée résolue avant une simulation distincte
-du moteur : journal non-production → sortie structurée → rendu HTML
-déterministe → empreintes et reprise. Le renderer, son contrat et le canal
-GitHub sont désormais présents et testés ; il manque le contrat métier complet
-et l'émetteur automatique du résultat structuré vers un espace de restitution
-approprié. Elle ne bloque pas la collecte ni la veille sobre de demain, mais
-empêche de déclarer la Phase 3 entièrement close.
+Le contrat GitHub est volontairement prudent : un candidat sans preuve locale
+suffisante devient `UNRESOLVED` et aucun flux n'est inventé. Le registre métier
+historique des dettes et la future lecture multi-agents relèvent de la phase 4,
+pas de cette migration 3C.
