@@ -27,7 +27,8 @@ class SearchCards(HTMLParser):
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         attributes = dict(attrs)
-        if tag == "div" and "recherche-card" in (attributes.get("class") or ""):
+        classes = set((attributes.get("class") or "").split())
+        if tag == "div" and "recherche-card" in classes:
             self.card_depth = 1
             self.current = {"href": None, "title": None, "dates": []}
         elif tag == "div" and self.card_depth:
@@ -80,22 +81,39 @@ def fetch_text(url: str) -> str:
 
 
 def records_from_html(page_html: str, page_url: str) -> list[dict[str, Any]]:
+    parser = SearchCards()
+    parser.feed(page_html)
     records: list[dict[str, Any]] = []
     seen: set[str] = set()
-    # Les cartes de recherche ont une structure HTML régulière mais des div imbriquées
-    # variables ; les segments débutant par leur classe évitent les liens de navigation.
-    for card in re.split(r"<div\s+class=['\"][^'\"]*recherche-card", page_html, flags=re.IGNORECASE)[1:]:
-        link = re.search(r"<a\s+[^>]*href=['\"]([^'\"]+)['\"][^>]*>(.*?)</a>", card, flags=re.IGNORECASE | re.DOTALL)
-        if link is None:
+    for card in parser.cards:
+        href = card.get("href")
+        if not isinstance(href, str):
             continue
-        url = urllib.parse.urljoin(page_url, html.unescape(link.group(1)))
+        url = urllib.parse.urljoin(page_url, html.unescape(href))
+        parsed = urllib.parse.urlparse(url)
+        query = urllib.parse.parse_qs(parsed.query)
+        title = card.get("title")
+        dates = card.get("dates")
+        # Les catégories, la pagination, l'abonnement et les documents bruts ne
+        # sont pas des consultations à analyser. Leur passage au moteur créait
+        # artificiellement des dettes UNRESOLVED.
+        if (
+            not isinstance(title, str)
+            or not title.strip()
+            or not isinstance(dates, list)
+            or not dates
+            or parsed.path in {"", "/", "/spip.php"}
+            or parsed.path.startswith("/IMG/")
+            or "debut_listearticles" in query
+            or query.get("page") == ["recherche"]
+            or title.strip().casefold() == "consultations publiques"
+        ):
+            continue
         if url in seen:
             continue
         seen.add(url)
-        title = " ".join(re.sub(r"<[^>]+>", " ", link.group(2)).split())
-        dates = re.findall(r"<time\s+[^>]*datetime=['\"]([^'\"]+)['\"]", card, flags=re.IGNORECASE)
         records.append({
-            "title": html.unescape(title) or None,
+            "title": title,
             "url": url,
             "dates": dates,
             "interpretation": None,
