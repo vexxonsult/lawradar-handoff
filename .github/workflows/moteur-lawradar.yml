@@ -46,6 +46,8 @@ jobs:
           python-version: "3.12"
       - name: Vérifier les règles de rendu
         run: python -m unittest discover -s tests -p 'test_*.py'
+      - name: Préparer la livraison du run
+        run: mkdir -p out
       - name: Produire la livraison structurée
         uses: anthropics/claude-code-action@v1
         with:
@@ -61,11 +63,11 @@ jobs:
             qu'il n'y a rien. Si aucun flux n'est étayé, écris money_flows: [].
           claude_args: >-
             --model claude-sonnet-5
-            --max-turns 5
+            --max-turns 6
             --allowedTools Read,Write
       - name: Valider et rendre le dashboard
         run: python scripts/render_motor_delivery.py --input out/motor-delivery.json --dashboard out/dashboard.html
-      - name: Publier la livraison privée du run
+      - name: Publier la livraison du run
         uses: actions/upload-artifact@v4
         with:
           name: lawradar-moteur-${{ github.run_id }}
