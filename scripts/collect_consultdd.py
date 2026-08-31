@@ -9,6 +9,7 @@ import html
 import json
 import re
 import sys
+from io import BytesIO
 import urllib.parse
 import urllib.request
 from html.parser import HTMLParser
@@ -80,6 +81,18 @@ def fetch_text(url: str) -> str:
         return response.read().decode("utf-8", errors="replace")
 
 
+def fetch_bytes(url: str, limit: int = 50_000_000) -> bytes:
+    request = urllib.request.Request(url, headers={"User-Agent": "LawRadar-ConsultDD-Collector/1.0"})
+    with urllib.request.urlopen(request, timeout=120) as response:
+        size = int(response.headers.get("Content-Length") or 0)
+        if size > limit:
+            raise ValueError("PIECE_TROP_VOLUMINEUSE")
+        payload = response.read(limit + 1)
+        if len(payload) > limit:
+            raise ValueError("PIECE_TROP_VOLUMINEUSE")
+        return payload
+
+
 def clean_html(fragment: str) -> str:
     return " ".join(html.unescape(re.sub(r"<[^>]+>", " ", fragment)).split())
 
@@ -94,6 +107,26 @@ def official_detail_from_html(page_html: str) -> dict[str, Any]:
         "official_period": clean_html(period.group(1)) if period else None,
         "official_text": (clean_html(content.group(1))[:12000] if content else None),
     }
+
+
+def attachment_links_from_html(page_html: str, page_url: str) -> list[dict[str, str]]:
+    links = []
+    for href, label in re.findall(r"<a\s+[^>]*href=['\"]([^'\"]+)['\"][^>]*>(.*?)</a>", page_html, re.I | re.S):
+        url = urllib.parse.urljoin(page_url, html.unescape(href))
+        if "camino.beta.gouv.fr/apiUrl/download/" in url:
+            links.append({"url": url, "label": clean_html(label)})
+    return links
+
+
+def financial_evidence_from_pdf(payload: bytes, url: str) -> list[dict[str, Any]]:
+    from pypdf import PdfReader
+    pattern = re.compile(r"redevance|garantie financi.re|cautionnement|montant.*(?:euro|EUR)|paiement", re.I)
+    evidence = []
+    for number, page in enumerate(PdfReader(BytesIO(payload)).pages, start=1):
+        for line in (page.extract_text() or "").splitlines():
+            if pattern.search(line):
+                evidence.append({"source_url": url, "page": number, "excerpt": " ".join(line.split())})
+    return evidence[:40]
 
 
 def records_from_html(page_html: str, page_url: str) -> list[dict[str, Any]]:
@@ -156,10 +189,23 @@ def main() -> int:
             if record["url"] not in seen:
                 seen.add(record["url"])
                 try:
-                    record["official_detail"] = official_detail_from_html(fetch_text(record["url"]))
+                    detail_html = fetch_text(record["url"])
+                    record["official_detail"] = official_detail_from_html(detail_html)
+                    attachments = attachment_links_from_html(detail_html, record["url"])
+                    record["official_attachments"] = attachments
+                    record["financial_evidence"] = []
+                    for attachment in attachments[:1]:
+                        try:
+                            record["financial_evidence"].extend(
+                                financial_evidence_from_pdf(fetch_bytes(attachment["url"]), attachment["url"])
+                            )
+                        except Exception as exc:
+                            record.setdefault("attachment_errors", []).append(type(exc).__name__)
                     record["detail_status"] = "PRIMARY_PAGE_READ"
                 except Exception as exc:
                     record["official_detail"] = None
+                    record["official_attachments"] = []
+                    record["financial_evidence"] = []
                     record["detail_status"] = "PRIMARY_PAGE_UNAVAILABLE"
                     record["detail_error"] = type(exc).__name__
                 documents.append(record)

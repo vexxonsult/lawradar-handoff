@@ -1,6 +1,6 @@
 import unittest
 
-from scripts.collect_consultdd import official_detail_from_html, records_from_html, search_url
+from scripts.collect_consultdd import attachment_links_from_html, official_detail_from_html, records_from_html, search_url
 
 
 class ConsultDDCollectorTests(unittest.TestCase):
@@ -31,3 +31,10 @@ class ConsultDDCollectorTests(unittest.TestCase):
         detail = official_detail_from_html(page)
         self.assertEqual(detail["official_title"], "Consultation officielle")
         self.assertIn("société X", detail["official_text"])
+
+    def test_keeps_only_camino_download_attachments(self):
+        page = '''<a href="https://camino.beta.gouv.fr/apiUrl/download/fichiers/a">Dossier</a>
+        <a href="https://example.test/other">Autre</a>'''
+        self.assertEqual(attachment_links_from_html(page, "https://example.test"), [{
+            "url": "https://camino.beta.gouv.fr/apiUrl/download/fichiers/a", "label": "Dossier"
+        }])
