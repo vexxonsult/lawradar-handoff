@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Livraison structurée du moteur LawRadar",
+  "type": "object",
+  "required": ["schema", "run", "opportunities", "money_flows"],
+  "properties": {
+    "schema": {"const": "lawradar-motor-delivery-v1"},
+    "run": {
+      "type": "object",
+      "required": ["report_date", "coverage", "summary"],
+      "properties": {
+        "report_date": {"type": "string"},
+        "coverage": {"type": "string"},
+        "summary": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "opportunities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "status", "reason"],
+        "properties": {
+          "source_id": {"type": "string"},
+          "status": {"enum": ["RETAINED", "DISCARDED", "UNRESOLVED"]},
+          "reason": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "money_flows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id", "label", "title", "money_sentence", "explanation", "payer",
+          "recipient", "amount", "effective_date", "certainty", "next_action"
+        ],
+        "properties": {
+          "id": {"type": "string"},
+          "label": {"type": "string"},
+          "title": {"type": "string"},
+          "money_sentence": {"type": "string"},
+          "explanation": {"type": "string"},
+          "payer": {"type": "string"},
+          "recipient": {"type": "string"},
+          "amount": {"type": "string"},
+          "effective_date": {"type": "string"},
+          "certainty": {"type": "string"},
+          "next_action": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
