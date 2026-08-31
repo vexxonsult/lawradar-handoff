@@ -21,17 +21,21 @@ jobs:
       should_run: ${{ steps.delta.outputs.should_run }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - id: delta
-        name: Lire le delta avant tout appel au modèle
+        name: Préparer le diff et éviter tout appel inutile au modèle
         run: |
+          mkdir -p out
+          python scripts/prepare_motor_input.py --output out/motor-input-gate.json
           python - <<'PY'
           import json
           import os
           from pathlib import Path
-          delta = json.loads(Path("evidence/delta-latest.json").read_text(encoding="utf-8"))
-          required = delta.get("model_input_required") is True
+          prepared = json.loads(Path("out/motor-input-gate.json").read_text(encoding="utf-8"))
+          required = bool(prepared.get("candidates"))
           Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8").write(f"should_run={'true' if required else 'false'}\n")
-          print(f"model_input_required={required}")
+          print(f"model_input_required={required}; candidates={len(prepared.get('candidates', []))}")
           PY
 
   moteur:

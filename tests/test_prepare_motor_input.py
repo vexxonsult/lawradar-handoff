@@ -1,6 +1,6 @@
 import unittest
 
-from scripts.prepare_motor_input import changed_records
+from scripts.prepare_motor_input import changed_records, requires_model
 
 
 class PrepareMotorInputTests(unittest.TestCase):
@@ -19,3 +19,7 @@ class PrepareMotorInputTests(unittest.TestCase):
         current = {"documents": [{"url": "u", "title": "new"}]}
         records = changed_records(current, previous, "CONSULTDD")
         self.assertEqual(records[0]["change"], "CHANGED")
+
+    def test_does_not_invoke_model_without_supported_candidates(self):
+        self.assertFalse(requires_model({"candidates": []}))
+        self.assertTrue(requires_model({"candidates": [{"source_id": "jorf:x"}]}))

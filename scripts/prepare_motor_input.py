@@ -60,6 +60,11 @@ def changed_records(
     return records
 
 
+def requires_model(prepared_input: dict[str, Any]) -> bool:
+    """The model is useful only when the supported sources produced candidates."""
+    return bool(prepared_input.get("candidates"))
+
+
 def prepare(evidence_dir: Path) -> dict[str, Any]:
     delta = json.loads((evidence_dir / "delta-latest.json").read_text(encoding="utf-8"))
     jorf_current = json.loads(
@@ -82,6 +87,7 @@ def prepare(evidence_dir: Path) -> dict[str, Any]:
         "schema": "lawradar-motor-input-v1",
         "report_date": jorf_current.get("coverage_end") or "indéterminée",
         "delta_changed_sources": delta.get("changed_sources", []),
+        "handled_source_files": ["jorf-summaries-latest.json", "consultdd-latest.json"],
         "candidates": candidates,
         "rules": "Preuves locales diffées uniquement ; aucun accès réseau ; inconnu = UNRESOLVED.",
     }
