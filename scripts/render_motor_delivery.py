@@ -8,7 +8,10 @@ import json
 from pathlib import Path
 from typing import Any
 
-from scripts.render_dashboard import render_dashboard
+try:
+    from scripts.render_dashboard import render_dashboard
+except ModuleNotFoundError:  # Exécution directe : python scripts/render_motor_delivery.py
+    from render_dashboard import render_dashboard
 
 
 FLOW_FIELDS = (
