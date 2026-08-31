@@ -80,6 +80,22 @@ def fetch_text(url: str) -> str:
         return response.read().decode("utf-8", errors="replace")
 
 
+def clean_html(fragment: str) -> str:
+    return " ".join(html.unescape(re.sub(r"<[^>]+>", " ", fragment)).split())
+
+
+def official_detail_from_html(page_html: str) -> dict[str, Any]:
+    """Extrait la preuve affichée dans une page officielle de consultation."""
+    title = re.search(r"<h1\b[^>]*>(.*?)</h1>", page_html, re.IGNORECASE | re.DOTALL)
+    period = re.search(r"<div\s+class=['\"][^'\"]*date-article[^'\"]*['\"][^>]*>.*?<p>(.*?)</p>", page_html, re.IGNORECASE | re.DOTALL)
+    content = re.search(r"<div\s+class=['\"][^'\"]*texte-article[^'\"]*['\"][^>]*>(.*?)</div>\s*<div\s+class=['\"]listedocuments", page_html, re.IGNORECASE | re.DOTALL)
+    return {
+        "official_title": clean_html(title.group(1)) if title else None,
+        "official_period": clean_html(period.group(1)) if period else None,
+        "official_text": (clean_html(content.group(1))[:12000] if content else None),
+    }
+
+
 def records_from_html(page_html: str, page_url: str) -> list[dict[str, Any]]:
     parser = SearchCards()
     parser.feed(page_html)
@@ -139,6 +155,13 @@ def main() -> int:
         for record in page_records:
             if record["url"] not in seen:
                 seen.add(record["url"])
+                try:
+                    record["official_detail"] = official_detail_from_html(fetch_text(record["url"]))
+                    record["detail_status"] = "PRIMARY_PAGE_READ"
+                except Exception as exc:
+                    record["official_detail"] = None
+                    record["detail_status"] = "PRIMARY_PAGE_UNAVAILABLE"
+                    record["detail_error"] = type(exc).__name__
                 documents.append(record)
         if not page_records:
             break

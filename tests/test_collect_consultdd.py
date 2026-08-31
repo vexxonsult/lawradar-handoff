@@ -1,6 +1,6 @@
 import unittest
 
-from scripts.collect_consultdd import records_from_html, search_url
+from scripts.collect_consultdd import official_detail_from_html, records_from_html, search_url
 
 
 class ConsultDDCollectorTests(unittest.TestCase):
@@ -22,3 +22,12 @@ class ConsultDDCollectorTests(unittest.TestCase):
         self.assertIn("consultation-sur-un-projet", records[0]["url"])
         self.assertEqual(records[0]["dates"], ["2026-08-28"])
         self.assertIsNone(records[0]["interpretation"])
+
+    def test_extracts_visible_official_detail(self):
+        page = '''<h1>Consultation officielle</h1>
+        <div class="date-article"><p>Consultation du 01/09/2026 au 15/09/2026</p></div>
+        <div class="texte-article"><p>La société X sollicite une autorisation.</p></div>
+        <div class="listedocuments">documents</div>'''
+        detail = official_detail_from_html(page)
+        self.assertEqual(detail["official_title"], "Consultation officielle")
+        self.assertIn("société X", detail["official_text"])
