@@ -41,29 +41,31 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Vérifier les règles de rendu
         run: python -m unittest discover -s tests -p 'test_*.py'
       - name: Préparer la livraison du run
-        run: mkdir -p out
+        run: |
+          mkdir -p out
+          python scripts/prepare_motor_input.py --output out/motor-input.json
       - name: Produire la livraison structurée
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           prompt: >-
-            Tu exécutes le moteur LawRadar. Lis d'abord config/moteur-contract.md,
-            config/moteur-delivery-schema.json et evidence/delta-latest.json, puis
-            seulement les fichiers de preuve explicitement signalés comme CHANGED
-            ou NEW dans le delta. N'utilise ni réseau ni recherche externe. Écris
-            exactement out/motor-delivery.json, conforme au schéma. N'écris aucun
-            autre fichier et ne modifie jamais les preuves. Une information non
-            démontrée reste UNRESOLVED ; une source inaccessible ne signifie jamais
-            qu'il n'y a rien. Si aucun flux n'est étayé, écris money_flows: [].
+            Tu exécutes le moteur LawRadar. Lis uniquement out/motor-input.json et
+            config/moteur-delivery-schema.json. N'utilise ni réseau, ni recherche,
+            ni autres fichiers. Écris exactement out/motor-delivery.json, conforme
+            au schéma. N'écris aucun autre fichier. Chaque candidate doit avoir une
+            opportunity avec son source_id ; toute information non démontrée est
+            UNRESOLVED. Si aucun flux n'est étayé, écris money_flows: [].
           claude_args: >-
             --model claude-sonnet-5
-            --max-turns 6
+            --max-turns 5
             --allowedTools Read,Write
       - name: Valider et rendre le dashboard
         run: python scripts/render_motor_delivery.py --input out/motor-delivery.json --dashboard out/dashboard.html
