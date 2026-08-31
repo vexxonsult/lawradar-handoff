@@ -27,7 +27,8 @@ Après la collecte, le workflow publie `evidence/delta-latest.json`. Il compare 
 
 ## Rendu de restitution
 
-Le dépôt contient aussi `scripts/render_dashboard.py`. Il prend un résultat
-moteur strictement structuré et construit le HTML sans interpréter, rechercher
-ou reformuler les preuves. Le dépôt public ne contient aucun résultat de
-production ni dashboard : seul le code de rendu y est publié.
+Le dépôt contient aussi un moteur GitHub Actions, filtré par le delta. Lorsqu'il
+est requis, il produit une livraison structurée puis un dashboard déterministe.
+Ces deux fichiers sont téléversés comme artefact du run GitHub Actions,
+distinct du code public : ils ne sont ni committés dans ce dépôt, ni écrits
+dans Google Drive. Leur accès reste régi par les paramètres GitHub du dépôt.
