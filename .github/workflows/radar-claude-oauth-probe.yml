@@ -1,0 +1,39 @@
+name: Radar — validation Claude Code
+
+# Cette première étape est volontairement manuelle et sans écriture : elle valide
+# le jeton OAuth de l'abonnement Claude avant toute automatisation quotidienne.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: radar-claude-oauth-probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    name: Lire le delta sans le modifier
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Vérifier que le delta est disponible
+        run: python -m json.tool evidence/delta-latest.json > /dev/null
+
+      - name: Vérifier Claude Code avec l'abonnement existant
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: >-
+            Test de connectivité LawRadar. Lis uniquement
+            evidence/delta-latest.json. Ne crée, ne modifie, ne supprime et ne
+            committe aucun fichier. Réponds par une phrase concise indiquant la
+            valeur de model_input_required et la liste changed_sources.
+          claude_args: >-
+            --model claude-sonnet-4-6
+            --max-turns 2
+            --allowedTools Read
