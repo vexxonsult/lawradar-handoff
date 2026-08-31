@@ -120,10 +120,22 @@ def attachment_links_from_html(page_html: str, page_url: str) -> list[dict[str, 
 
 def financial_evidence_from_pdf(payload: bytes, url: str) -> list[dict[str, Any]]:
     from pypdf import PdfReader
+
     pattern = re.compile(r"redevance|garantie financi.re|cautionnement|montant.*(?:euro|EUR)|paiement", re.I)
     evidence = []
     for number, page in enumerate(PdfReader(BytesIO(payload)).pages, start=1):
-        for line in (page.extract_text() or "").splitlines():
+        lines = (page.extract_text() or "").splitlines()
+        # A guarantee act identifies its parties near its heading, while its amount
+        # and trigger may appear later on the same page. Preserve that compact page
+        # context so the motor never has to infer a guarantor from an isolated line.
+        if re.search(r"cautionnement", "\n".join(lines), re.I):
+            context = " ".join(" ".join(line.split()) for line in lines)
+            evidence.append({
+                "source_url": url,
+                "page": number,
+                "excerpt": f"CONTEXTE ACTE DE CAUTIONNEMENT (page {number}) : {context[:6000]}",
+            })
+        for line in lines:
             if pattern.search(line):
                 evidence.append({"source_url": url, "page": number, "excerpt": " ".join(line.split())})
     return evidence[:40]
