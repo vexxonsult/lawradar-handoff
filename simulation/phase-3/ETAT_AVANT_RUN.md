@@ -1,6 +1,6 @@
 # État Phase 3 avant le prochain run officiel
 
-Date de contrôle : 30 août 2026.
+Date de contrôle : 31 août 2026.
 
 ## Prêt pour demain
 
@@ -17,7 +17,9 @@ Date de contrôle : 30 août 2026.
 - la veille est passée sur Sonnet 5 et lit le delta avant les corpus ;
 - le projet Claude de veille est rattaché au dépôt public
   `vexxonsult/lawradar-handoff` ;
-- 16 tests automatiques passent.
+- le dashboard peut être rendu de façon déterministe à partir d'un résultat
+  moteur court et validé : le modèle n'a plus à générer le HTML ;
+- 18 tests automatiques passent.
 
 ## Résultats de la simulation isolée
 
@@ -36,5 +38,7 @@ moteur vers GitHub ou un exécuteur de code qui applique ses sorties structurée
 
 Cette frontière ne doit pas être déclarée résolue avant une simulation distincte
 du moteur : journal non-production → sortie structurée → rendu HTML
-déterministe → empreintes et reprise. Elle ne bloque pas la collecte ni la
-veille sobre de demain, mais empêche de déclarer la Phase 3 entièrement close.
+déterministe → empreintes et reprise. Le renderer et son contrat sont désormais
+présents et testés ; il manque uniquement l'émetteur automatique du résultat
+structuré vers GitHub. Elle ne bloque pas la collecte ni la veille sobre de
+demain, mais empêche de déclarer la Phase 3 entièrement close.

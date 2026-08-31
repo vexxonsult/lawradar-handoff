@@ -14,11 +14,20 @@ registre de production, ni journal de production, ni dashboard.
    document nouveau produit `METADATA_CHANGED`, pas une lecture IA.
 4. **Changement documentaire.** Une variation des cartes ConsultDD produit
    `CHANGED` : la veille doit relire uniquement cette source.
+5. **Rendu du dashboard hors modèle.** `scripts/render_dashboard.py` valide
+   un résultat compact du moteur (`lawradar-dashboard-input-v1`) et produit le
+   HTML. L'IA ne doit donc plus générer ni transporter le HTML complet.
 
 ## Commande de contrôle
 
 ```sh
 python3 -m unittest discover -s tests -p 'test_*.py'
+```
+
+Pour essayer le rendu sans aucune donnée de production :
+
+```sh
+python3 scripts/render_dashboard.py --input simulation/phase-3/dashboard-input-example.json --out /tmp/lawradar-dashboard.html
 ```
 
 ## Critère de sécurité
