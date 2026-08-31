@@ -63,7 +63,7 @@ jobs:
           prompt: >-
             Tu exécutes le moteur LawRadar. Lis uniquement out/motor-input.json et
             config/moteur-delivery-schema.json. N'utilise ni réseau, ni recherche,
-            ni autres fichiers. Écris exactement out/motor-delivery.json, conforme
+            ni Google Drive, ni autres fichiers. Écris exactement out/motor-delivery.json, conforme
             au schéma. N'écris aucun autre fichier. Chaque candidate doit avoir une
             opportunity avec son source_id ; toute information non démontrée est
             UNRESOLVED. Si aucun flux n'est étayé, écris money_flows: [].

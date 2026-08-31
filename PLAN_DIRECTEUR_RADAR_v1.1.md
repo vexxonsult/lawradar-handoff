@@ -1,6 +1,6 @@
-# Plan directeur — mise à jour v1.1
+# Plan directeur — mise à jour v1.1, révisée le 31 août 2026
 
-Ce document met à jour le **Plan directeur définitif — Radar d’opportunités** approuvé le 30 août 2026. Toutes ses phases, principes, critères de validation et la structure à deux projets restent inchangés, sauf les compléments ci-dessous qui deviennent la référence. 
+Ce document met à jour le **Plan directeur définitif — Radar d’opportunités** approuvé le 30 août 2026. Les phases 1 à 3 sont achevées. Les principes, critères de validation et la structure à deux projets restent inchangés, avec les précisions ci-dessous comme référence opérationnelle.
 
 ## Projet A — ordre des phases confirmé
 
@@ -23,7 +23,11 @@ Le Radar est terminé à la validation de la phase 8. Le Projet B demeure l’ex
 
 Rendre le Radar durable, reproductible, économe et facile à maintenir, sans abaisser le niveau de preuve, de traçabilité ou de reprise après incident.
 
-GitHub reste la base technique des collecteurs, configurations, schémas, tests, preuves structurées, journaux techniques et versions. Google Drive ne conserve que les livrables de consultation humaine : dashboard courant, rapports et exports partagés. Le fonctionnement du Radar ne doit pas dépendre du Drive.
+GitHub est l'unique base opérationnelle : collecteurs, configurations, schémas, tests, preuves structurées, journaux techniques, versions et artefacts de dashboard. Google Drive ne fait partie d'aucun trajet actif ; il peut être supprimé ou conservé comme archive personnelle, sans incidence sur le Radar.
+
+Le collecteur GitHub Actions tourne à 17 h 20 (heure d'été française). Le moteur Claude, lancé à 17 h 35, ne lit que le diff local préparé depuis les preuves GitHub et ne s'exécute que si ce diff contient un candidat pris en charge. Il ne consulte ni n'écrit Google Drive. Les livrables (`motor-input.json`, `motor-delivery.json`, dashboard) restent des artefacts GitHub Actions, distincts du dépôt public.
+
+L'ancienne tâche Claude qui écrivait sur Drive n'est plus une composante du système. Elle doit rester en pause ou être supprimée dans l'espace Claude afin d'éviter tout doublon ; aucune nouvelle tâche Drive ne doit être créée pour le Radar.
 
 Chaque cycle doit produire un manifeste indiquant son identifiant, les versions utilisées, les fichiers d’entrée et de sortie, les empreintes, les durées, le coût estimé, les statuts, les erreurs et les reprises éventuelles. Le système doit reprendre après interruption, empêcher les doubles écritures, conserver la dernière version valide et distinguer échec, couverture partielle et absence légitime de signal.
 
@@ -76,7 +80,7 @@ L’audit produit ensuite un budget cible journalier et mensuel, des seuils d’
 - Modèle puissant réservé aux cas apportant une interprétation réellement nécessaire.
 - Mesure de la durée et de la consommation par composant à chaque cycle.
 
-#### Validation de la phase 3
+#### Validation de la phase 3 — acquise le 31 août 2026
 
 La phase 3 n’est validée que si :
 
@@ -90,6 +94,10 @@ La phase 3 n’est validée que si :
 - les journées sans nouveauté ont un coût faible ;
 - un coût élevé n’est engagé que pour un signal complexe ou important ;
 - le budget cible et les seuils d’alerte sont définis.
+
+Validation réalisée : les collectes et le moteur GitHub ont été exécutés et leurs artefacts contrôlés. Le moteur a retenu une garantie financière officielle de Larchant sans transformer une garantie conditionnelle en paiement effectif. Les changements sans candidat exploitable n'appellent plus Claude.
+
+La prochaine étape du Projet A est la **phase 4 — observabilité et centre de contrôle**. Le raccordement de l'interprétation EUR-Lex et des agents Presse, Demande et Marché reste volontairement hors de la phase 3.
 
 ---
 

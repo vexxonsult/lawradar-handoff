@@ -60,10 +60,9 @@ confirmé qu’une mise à jour JORF de simple couverture est
 
 ## Limites explicitement conservées
 
-Le nouveau trajet GitHub ne dépend plus de Drive. Le précédent moteur Claude
-qui écrit sur Drive doit néanmoins être désactivé ou mis en pause dans son
-espace Claude, afin d'éviter toute double exécution : ce dépôt ne peut pas
-arrêter une planification externe.
+Le nouveau trajet GitHub ne dépend plus de Drive. L'ancien moteur Claude qui
+écrivait sur Drive est hors système et doit rester en pause ou être supprimé
+dans son espace Claude ; il ne doit jamais être relancé pour le Radar.
 
 Le contrat GitHub est volontairement prudent : un candidat sans preuve locale
 suffisante devient `UNRESOLVED` et aucun flux n'est inventé. EUR-Lex est

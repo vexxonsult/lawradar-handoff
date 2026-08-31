@@ -3,7 +3,7 @@ name: Collecte primaire DILA JORF
 on:
   workflow_dispatch:
   schedule:
-    # 17:20 Europe/Paris en heure d'été : termine avant la veille Claude de 17:45.
+    # 17:20 Europe/Paris en heure d'été : termine avant le moteur Claude de 17:35.
     - cron: "20 15 * * *"
 
 permissions:

@@ -19,11 +19,11 @@ Schéma attendu : `lawradar-primary-handoff-v1`.
 
 ## Planification
 
-La collecte est lancée chaque jour à 17 h 20 Europe/Paris en heure d’été (`20 15 * * *` UTC), avant la veille Claude de 17 h 45.
+La collecte est lancée chaque jour à 17 h 20 Europe/Paris en heure d’été (`20 15 * * *` UTC). Le moteur Claude GitHub démarre à 17 h 35 ; il reste inactif lorsqu'aucun candidat pris en charge n'est présent dans le diff.
 
 ## Sobriété du cycle
 
-Après la collecte, le workflow publie `evidence/delta-latest.json`. Il compare mécaniquement la livraison du jour à la précédente, en ignorant les seuls horodatages techniques. Une variation de couverture sans document nouveau est marquée `METADATA_CHANGED` : elle ne déclenche pas de relecture IA. La veille lit ce delta en premier ; si `model_input_required` vaut `false`, aucun long corpus ne doit être relu. En cas de changement documentaire, les preuves brutes citées restent la seule source à interpréter.
+Après la collecte, le workflow publie `evidence/delta-latest.json`. Il compare mécaniquement la livraison du jour à la précédente, en ignorant les seuls horodatages techniques. Une variation de couverture sans document nouveau est marquée `METADATA_CHANGED` : elle ne déclenche pas de relecture IA. Le moteur prépare ensuite un diff compact de JORF et ConsultDD ; sans candidat, Claude n'est pas appelé. En cas de changement documentaire, les preuves brutes citées restent la seule source à interpréter.
 
 ## Rendu de restitution
 
