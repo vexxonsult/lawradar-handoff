@@ -1,23 +1,24 @@
 {
   "schema": "lawradar-public-handoff-status-v1",
-  "promoted": false,
-  "reason": "NO_TARGET_DOCUMENT_IN_LATEST_ARCHIVE",
+  "promoted": true,
+  "reason": "DOCUMENTS_FOUND",
   "candidate_manifest": {
     "schema": "lawradar-primary-manifest-v1",
     "status": "PRIMARY_ARCHIVE_READ",
     "source_publisher": "Direction de l'information légale et administrative (DILA)",
-    "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260830-205422.tar.gz",
-    "archive_filename": "JORF_20260830-205422.tar.gz",
-    "archive_sha256": "2d66b32622a98b22dfb7f1eb1688082df76462fc64defd4d740f0e253ab20326",
-    "archive_size_bytes": 3077790,
-    "collected_at_utc": "2026-08-31T15:31:36.072698+00:00",
+    "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260831-212841.tar.gz",
+    "archive_filename": "JORF_20260831-212841.tar.gz",
+    "archive_sha256": "d1cb54b2762e8fd75c94362eb8181c959ba391e4057c3c31b2ac43b354c88431",
+    "archive_size_bytes": 5275059,
+    "collected_at_utc": "2026-08-31T20:51:52.047893+00:00",
     "target_count": 5,
-    "documents_found": [],
+    "documents_found": [
+      "JORFTEXT000054734487",
+      "JORFTEXT000054734629"
+    ],
     "documents_missing_from_this_archive": [
       "JORFTEXT000054733591",
       "JORFTEXT000054733611",
-      "JORFTEXT000054734487",
-      "JORFTEXT000054734629",
       "JORFTEXT000054754545"
     ],
     "interpretation": null

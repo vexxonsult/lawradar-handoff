@@ -4,23 +4,23 @@
   "sources": [
     {
       "file": "primary-evidence-latest.json",
-      "status": "UNCHANGED",
-      "item_count": 1,
-      "sha256": "a6c5bac82a5f24088a04bf617c1b109f51440dcaaa57ce933e4fcf656855dec7",
-      "documents_sha256": "6d506da41061ac89e6eb9937382647b185e64a690244b5aff2ca90b9efa91332",
+      "status": "CHANGED",
+      "item_count": 2,
+      "sha256": "a63d190dad966005af31830770e9d08fc50e78c6c25ef5bba83ba8b1227c5a97",
+      "documents_sha256": "df0051a4281fff470349dead44787ae80a945d65313961fce2d843db2b3b48e6",
       "interpretation": null
     },
     {
       "file": "jorf-summaries-latest.json",
-      "status": "UNCHANGED",
-      "item_count": 3523,
-      "sha256": "b2178d9c96776d780171566540a31f9b0d1ba23d77e502ec9c3f1fda0aee1381",
-      "documents_sha256": "e5c18f4e5e156edd2ccbaab1a339d963e3962c59fefad35c9efd9f5eaf1a9b98",
+      "status": "CHANGED",
+      "item_count": 3622,
+      "sha256": "29bb8f8d979093eadc1f33085007303681cde02a8acfb334b554ae8c6a2e685c",
+      "documents_sha256": "5f36c35c21fef41967cee7bd1eee3d9d8d8a4fa96c6a23e6b5c520b4150cb943",
       "interpretation": null
     },
     {
       "file": "eurlex-oj-latest.json",
-      "status": "CHANGED",
+      "status": "UNCHANGED",
       "item_count": 52,
       "sha256": "70e2e7d95f63f676213f66ab0a1e27f6a5e4882b4459ddda926a15426381f1a1",
       "documents_sha256": "f4f456e96b01992a31a282a8678953fa9242c41d9d9c9820b0db3849064aa1a7",
@@ -30,21 +30,22 @@
       "file": "consultdd-latest.json",
       "status": "CHANGED",
       "item_count": 3,
-      "sha256": "16bcb075eb4d3c408059ea39178a74bbaa3bad90763871f0b289dd5ee534bbc4",
-      "documents_sha256": "e364cf7e167d38ca18bf468f4e1d02241a8f9521855ae727e73d19a28c567ade",
+      "sha256": "2d12c7701ef15a6f26c3c7b8a56c279b110789c6ae948b6bf5a371a6e52942d7",
+      "documents_sha256": "af556c3faccd3d02cdc7ca352429b22d986a3af9fc9e83a187b9da0560bd8e19",
       "interpretation": null
     },
     {
       "file": "status-latest.json",
-      "status": "UNCHANGED",
+      "status": "METADATA_CHANGED",
       "item_count": 0,
-      "sha256": "5cc76025910ff4da3bf68073343278302513788cbeb5805f3c9cf4d4cbe41d02",
+      "sha256": "81251033d1613761b37738a152e40627ef3080392cda87b561e93b081d99aaed",
       "documents_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "interpretation": null
     }
   ],
   "changed_sources": [
-    "eurlex-oj-latest.json",
+    "primary-evidence-latest.json",
+    "jorf-summaries-latest.json",
     "consultdd-latest.json"
   ],
   "model_input_required": true,
