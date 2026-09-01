@@ -129,7 +129,32 @@ Le collecteur publie `evidence/run-manifest-latest.json`. Le moteur joint `out/r
 
 ### Suite de la phase 4
 
-Le livrable 4B est un index de runs et un tableau de contrôle léger (statuts, durées, entrées/sorties, état de coût et liens d'artefacts), alimenté par ces manifestes. Il ne modifie ni les preuves primaires ni le contrat du moteur. Le dossier universel de signal et les agents Presse, Demande et Marché restent planifiés en phases 5 et 6.
+Le livrable 4B est un index de runs et un tableau de contrôle léger (statuts, durées, entrées/sorties, état de coût et liens d'artefacts), alimenté par ces manifestes. Il ne modifie ni les preuves primaires ni le contrat du moteur.
+
+## Phase 5 — Dossier universel de signal
+
+### Objectif
+
+Créer une fiche canonique et déterministe pour chaque sortie du Radar. Elle sépare strictement ce qui est prouvé, ce que le moteur a conclu, et ce que les futurs agents devront encore vérifier.
+
+### Contrat
+
+`lawradar-universal-signal-v1` contient :
+
+- le lien vers le run, le commit et le périmètre de couverture ;
+- un signal par candidat, avec sa preuve compacte, son changement et la décision du Radar ;
+- les flux financiers seulement lorsqu'ils existent dans la livraison validée du moteur ;
+- trois emplacements `PENDING` pour Presse, Demande et Marché ;
+- les limites de couverture et le nombre de signaux non résolus.
+
+Le dossier est construit par code après un moteur réussi, puis versionné sous `evidence/universal-signal-latest.json`. Les agents futurs n'auront pas le droit de modifier les preuves, le statut ou la raison du Radar : ils ne compléteront que leur propre emplacement avec des sources.
+
+### Validation de la phase 5
+
+- chaque opportunité du moteur est reliée à un candidat et à une seule preuve compacte ;
+- le dossier refuse une décision orpheline ou dupliquée ;
+- un dossier sans flux conserve explicitement `money_flows: []` ;
+- les emplacements des agents restent vides et ne déclenchent aucun appel IA tant que la phase 6 n'est pas commencée.
 
 ---
 

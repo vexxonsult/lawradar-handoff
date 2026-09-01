@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dossier universel de signal LawRadar",
+  "type": "object",
+  "required": ["schema", "run", "context", "signals", "money_flows", "quality"],
+  "properties": {
+    "schema": {"const": "lawradar-universal-signal-v1"},
+    "run": {"type": "object"},
+    "context": {"type": "object"},
+    "signals": {"type": "array"},
+    "money_flows": {"type": "array"},
+    "quality": {"type": "object"}
+  },
+  "additionalProperties": false
+}

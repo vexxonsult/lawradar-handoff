@@ -36,3 +36,7 @@ dans Google Drive. Leur accès reste régi par les paramètres GitHub du dépôt
 ## Observabilité — phase 4
 
 Chaque collecte publie aussi `evidence/run-manifest-latest.json`. Chaque exécution du moteur met à jour `evidence/run-manifest-motor-latest.json` puis joint son manifeste à l’artefact. `evidence/run-index-latest.json` rassemble les derniers statuts et le workflow de collecte joint un dashboard de contrôle HTML à son artefact. Ces données décrivent le run, ses fichiers d'entrée et de sortie, leurs empreintes et la durée mesurée, sans recopier les preuves ni inventer une consommation.
+
+## Dossier universel de signal — phase 5
+
+Lorsqu’un moteur aboutit, il publie `evidence/universal-signal-latest.json`. Ce dossier rassemble, sans nouvelle interprétation, les preuves compactes, la décision du Radar, les flux éventuellement démontrés et trois emplacements explicitement vides pour les futurs agents Presse, Demande et Marché. Ces agents ne pourront qu’ajouter une sortie sourcée dans leur emplacement ; ils ne modifieront ni la preuve ni la décision du Radar.
