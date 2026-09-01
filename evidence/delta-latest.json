@@ -4,7 +4,7 @@
   "sources": [
     {
       "file": "primary-evidence-latest.json",
-      "status": "CHANGED",
+      "status": "UNCHANGED",
       "item_count": 2,
       "sha256": "a63d190dad966005af31830770e9d08fc50e78c6c25ef5bba83ba8b1227c5a97",
       "documents_sha256": "df0051a4281fff470349dead44787ae80a945d65313961fce2d843db2b3b48e6",
@@ -13,39 +13,39 @@
     {
       "file": "jorf-summaries-latest.json",
       "status": "CHANGED",
-      "item_count": 3622,
-      "sha256": "29bb8f8d979093eadc1f33085007303681cde02a8acfb334b554ae8c6a2e685c",
-      "documents_sha256": "5f36c35c21fef41967cee7bd1eee3d9d8d8a4fa96c6a23e6b5c520b4150cb943",
+      "item_count": 3327,
+      "sha256": "740a4da5b18fe4cd6719850422b1be5de733d28ca4c208c4c7d1bce7705dc28e",
+      "documents_sha256": "b7ae990fdafde5f9b17346d10fbf4885681b15e31a117d3c39b3e1c2e03e4028",
       "interpretation": null
     },
     {
       "file": "eurlex-oj-latest.json",
-      "status": "UNCHANGED",
-      "item_count": 52,
-      "sha256": "70e2e7d95f63f676213f66ab0a1e27f6a5e4882b4459ddda926a15426381f1a1",
-      "documents_sha256": "f4f456e96b01992a31a282a8678953fa9242c41d9d9c9820b0db3849064aa1a7",
+      "status": "CHANGED",
+      "item_count": 0,
+      "sha256": "2afe9e4b8ad2eee6624373de69ec1d6d713b361ac3a129577a5e7d25f9d56da7",
+      "documents_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "interpretation": null
     },
     {
       "file": "consultdd-latest.json",
       "status": "CHANGED",
-      "item_count": 3,
-      "sha256": "2d12c7701ef15a6f26c3c7b8a56c279b110789c6ae948b6bf5a371a6e52942d7",
-      "documents_sha256": "af556c3faccd3d02cdc7ca352429b22d986a3af9fc9e83a187b9da0560bd8e19",
+      "item_count": 0,
+      "sha256": "a181b35a881d0b1368a17b1190eacb88946e05d1a7accce137f159326fdf13f3",
+      "documents_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "interpretation": null
     },
     {
       "file": "status-latest.json",
       "status": "METADATA_CHANGED",
       "item_count": 0,
-      "sha256": "81251033d1613761b37738a152e40627ef3080392cda87b561e93b081d99aaed",
+      "sha256": "4e56bd31368f5c2a9273142c88c8c22dff753809446f92d178cbf4efd8819be3",
       "documents_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "interpretation": null
     }
   ],
   "changed_sources": [
-    "primary-evidence-latest.json",
     "jorf-summaries-latest.json",
+    "eurlex-oj-latest.json",
     "consultdd-latest.json"
   ],
   "model_input_required": true,

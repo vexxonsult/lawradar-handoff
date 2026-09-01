@@ -1,0 +1,32 @@
+{
+  "schema": "lawradar-run-index-v1",
+  "generated_at_utc": "2026-09-01T13:40:45.641741+00:00",
+  "purpose": "Registre technique des derniers runs, sans interprétation des preuves.",
+  "runs": [
+    {
+      "kind": "collector",
+      "status": "success",
+      "run_id": "33514516755",
+      "run_url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33514516755",
+      "workflow": "Collecte primaire DILA JORF",
+      "commit": "dbbc4e26a1966c3f6fd0f868cb5094c1cf59f603",
+      "created_at_utc": "2026-09-01T13:40:45.586933+00:00",
+      "duration_seconds": 177,
+      "inputs": {
+        "count": 4,
+        "missing": 0
+      },
+      "outputs": {
+        "count": 2,
+        "missing": 0
+      },
+      "cost": {
+        "status": "not_reported_by_provider",
+        "model": null,
+        "note": "Le fournisseur ne publie pas le détail des tokens dans ce run ; la durée et le nombre d'appels restent mesurés."
+      },
+      "errors": [],
+      "retries": 0
+    }
+  ]
+}

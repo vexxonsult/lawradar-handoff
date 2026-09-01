@@ -1,0 +1,61 @@
+{
+  "schema": "lawradar-run-manifest-v1",
+  "run": {
+    "id": "33514516755",
+    "attempt": "1",
+    "kind": "collector",
+    "status": "success",
+    "workflow": "Collecte primaire DILA JORF",
+    "commit": "dbbc4e26a1966c3f6fd0f868cb5094c1cf59f603",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33514516755",
+    "created_at_utc": "2026-09-01T13:40:45.586933+00:00",
+    "duration_seconds": 177
+  },
+  "inputs": [
+    {
+      "path": "evidence/delta-latest.json",
+      "exists": true,
+      "bytes": 1911,
+      "sha256": "ebaf80808d74de064d91740f9f8b72e3695cca3c5754cf515e35d402c0ea7c12"
+    },
+    {
+      "path": "evidence/jorf-summaries-latest.json",
+      "exists": true,
+      "bytes": 1650544,
+      "sha256": "73191df46e8a0637b86190e52195807ecba1d049b5b0d2704965815ba8133f39"
+    },
+    {
+      "path": "evidence/eurlex-oj-latest.json",
+      "exists": true,
+      "bytes": 1777,
+      "sha256": "fa1cfb122b80746ba97728eeb21d117fd708466b9fc8cfb689afec4edf8c01d0"
+    },
+    {
+      "path": "evidence/consultdd-latest.json",
+      "exists": true,
+      "bytes": 690,
+      "sha256": "ec7dd7fb13dad3df8c4895d646cdb062d74bec2f7dfca475eac77c2894b9e9cb"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "evidence/primary-evidence-latest.json",
+      "exists": true,
+      "bytes": 24466,
+      "sha256": "0f6a3474789321aa3bdc33e4554a75579b531f0719a800b0274fda40bdaeef7e"
+    },
+    {
+      "path": "evidence/status-latest.json",
+      "exists": true,
+      "bytes": 963,
+      "sha256": "b41672152536d469549cb51584a40039abd89891c9114d78f93058f2108c4981"
+    }
+  ],
+  "cost_estimate": {
+    "status": "not_reported_by_provider",
+    "model": null,
+    "note": "Le fournisseur ne publie pas le détail des tokens dans ce run ; la durée et le nombre d'appels restent mesurés."
+  },
+  "errors": [],
+  "retries": 0
+}
