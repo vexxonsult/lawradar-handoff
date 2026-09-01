@@ -35,4 +35,4 @@ dans Google Drive. Leur accès reste régi par les paramètres GitHub du dépôt
 
 ## Observabilité — phase 4
 
-Chaque collecte publie aussi `evidence/run-manifest-latest.json`. Chaque exécution du moteur joint `out/run-manifest.json` à son artefact. Ces manifestes décrivent le run, ses fichiers d'entrée et de sortie, leurs empreintes et la durée mesurée, sans recopier les preuves ni inventer une consommation. Ils constituent la base du futur centre de contrôle.
+Chaque collecte publie aussi `evidence/run-manifest-latest.json`. Chaque exécution du moteur met à jour `evidence/run-manifest-motor-latest.json` puis joint son manifeste à l’artefact. `evidence/run-index-latest.json` rassemble les derniers statuts et le workflow de collecte joint un dashboard de contrôle HTML à son artefact. Ces données décrivent le run, ses fichiers d'entrée et de sortie, leurs empreintes et la durée mesurée, sans recopier les preuves ni inventer une consommation.

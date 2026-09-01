@@ -7,7 +7,7 @@ on:
     - cron: "35 15 * * *"
 
 permissions:
-  contents: read
+  contents: write
   id-token: write
 
 concurrency:
@@ -84,6 +84,19 @@ jobs:
           --kind motor --status success
           --inputs out/motor-input.json config/moteur-delivery-schema.json
           --outputs out/motor-delivery.json out/dashboard.html
+      - name: Actualiser le registre du centre de contrôle
+        run: |
+          cp out/run-manifest.json evidence/run-manifest-motor-latest.json
+          python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
+          python scripts/render_control_dashboard.py --input evidence/run-index-latest.json --out out/control-dashboard.html
+      - name: Versionner le statut du moteur
+        run: |
+          git config user.name "lawradar-motor[bot]"
+          git config user.email "lawradar-motor[bot]@users.noreply.github.com"
+          git add evidence/run-manifest-motor-latest.json evidence/run-index-latest.json
+          git diff --cached --quiet || git commit -m "Statut moteur LawRadar $(date -u +%F)"
+          git pull --rebase origin main
+          git push
       - name: Téléverser la livraison du run
         uses: actions/upload-artifact@v4
         with:

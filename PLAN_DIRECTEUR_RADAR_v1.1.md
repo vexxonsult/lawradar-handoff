@@ -129,7 +129,7 @@ Le collecteur publie `evidence/run-manifest-latest.json`. Le moteur joint `out/r
 
 ### Suite de la phase 4
 
-Le prochain incrément sera un index de runs et un tableau de contrôle léger (statuts, durées, couverture, liens d'artefacts), alimenté par ces manifestes. Il ne modifiera ni les preuves primaires ni le contrat du moteur. Le dossier universel de signal et les agents Presse, Demande et Marché restent planifiés en phases 5 et 6.
+Le livrable 4B est un index de runs et un tableau de contrôle léger (statuts, durées, entrées/sorties, état de coût et liens d'artefacts), alimenté par ces manifestes. Il ne modifie ni les preuves primaires ni le contrat du moteur. Le dossier universel de signal et les agents Presse, Demande et Marché restent planifiés en phases 5 et 6.
 
 ---
 
