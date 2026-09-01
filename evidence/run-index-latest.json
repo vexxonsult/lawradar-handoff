@@ -1,8 +1,33 @@
 {
   "schema": "lawradar-run-index-v1",
-  "generated_at_utc": "2026-09-01T13:40:45.641741+00:00",
+  "generated_at_utc": "2026-09-01T13:47:46.830646+00:00",
   "purpose": "Registre technique des derniers runs, sans interprétation des preuves.",
   "runs": [
+    {
+      "kind": "motor",
+      "status": "success",
+      "run_id": "33515375521",
+      "run_url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33515375521",
+      "workflow": "Moteur LawRadar — livraison structurée",
+      "commit": "820557d6d617bce11d8fbd4b5ee44590655b1637",
+      "created_at_utc": "2026-09-01T13:47:46.783937+00:00",
+      "duration_seconds": 85,
+      "inputs": {
+        "count": 2,
+        "missing": 0
+      },
+      "outputs": {
+        "count": 2,
+        "missing": 0
+      },
+      "cost": {
+        "status": "not_reported_by_provider",
+        "model": "claude-sonnet-5",
+        "note": "Le fournisseur ne publie pas le détail des tokens dans ce run ; la durée et le nombre d'appels restent mesurés."
+      },
+      "errors": [],
+      "retries": 0
+    },
     {
       "kind": "collector",
       "status": "success",

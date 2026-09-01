@@ -1,0 +1,49 @@
+{
+  "schema": "lawradar-run-manifest-v1",
+  "run": {
+    "id": "33515375521",
+    "attempt": "1",
+    "kind": "motor",
+    "status": "success",
+    "workflow": "Moteur LawRadar — livraison structurée",
+    "commit": "820557d6d617bce11d8fbd4b5ee44590655b1637",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33515375521",
+    "created_at_utc": "2026-09-01T13:47:46.783937+00:00",
+    "duration_seconds": 85
+  },
+  "inputs": [
+    {
+      "path": "out/motor-input.json",
+      "exists": true,
+      "bytes": 27803,
+      "sha256": "954273fac2cf164e9488871413e3b37fa0e98186068b45e61bcead6879dcb487"
+    },
+    {
+      "path": "config/moteur-delivery-schema.json",
+      "exists": true,
+      "bytes": 1815,
+      "sha256": "1a5250d9c6f8cce0ad439adaf3388309c188355a9826876c81765b316116f53c"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "out/motor-delivery.json",
+      "exists": true,
+      "bytes": 11897,
+      "sha256": "fc65916f71c4767580e07a3f0f196dfa287a959b125963df6e680693860a4505"
+    },
+    {
+      "path": "out/dashboard.html",
+      "exists": true,
+      "bytes": 1811,
+      "sha256": "ec7c692e5e488a4c6b2a294078607e359558b484d4ad96d48fd4321d9b5e9942"
+    }
+  ],
+  "cost_estimate": {
+    "status": "not_reported_by_provider",
+    "model": "claude-sonnet-5",
+    "note": "Le fournisseur ne publie pas le détail des tokens dans ce run ; la durée et le nombre d'appels restent mesurés."
+  },
+  "errors": [],
+  "retries": 0
+}
