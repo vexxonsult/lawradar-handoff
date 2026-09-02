@@ -57,6 +57,8 @@ def evidence_titles(signal: dict[str, Any]) -> list[str]:
         if not isinstance(item, str):
             continue
         cleaned = " ".join(item.split()).strip()
+        if cleaned.endswith("..."):
+            continue
         key = text_key(cleaned)
         if cleaned and key and key not in seen:
             seen.add(key)
@@ -65,7 +67,16 @@ def evidence_titles(signal: dict[str, Any]) -> list[str]:
 
 
 def build_queries(signal: dict[str, Any], limit: int) -> list[str]:
-    queries = [f'"{title}" sourcelang:french' for title in evidence_titles(signal)]
+    titles = evidence_titles(signal)
+    if not titles:
+        return []
+    exact = titles[0].replace('"', " ")
+    terms = [word for word in re.findall(r"[\wÀ-ÿ-]+", exact) if len(word) >= 4]
+    stopwords = {"arrete", "relatif", "publique", "demande", "prolongation", "pour", "dans", "avec", "seine", "marne"}
+    focused = [word for word in terms if text_key(word) not in stopwords][:7]
+    queries = [f'"{exact}" sourcelang:french']
+    if focused:
+        queries.append(" ".join(focused) + " sourcelang:french")
     return queries[:limit]
 
 
@@ -110,7 +121,10 @@ def deduplicate(articles: list[dict[str, Any]], maximum: int) -> list[dict[str, 
 def http_json(url: str, params: dict[str, Any]) -> dict[str, Any]:
     request = Request(f"{url}?{urlencode(params)}", headers={"User-Agent": "LawRadar-Press/0.1"})
     with urlopen(request, timeout=20) as response:  # nosec B310: endpoint is configuration-controlled
-        return json.loads(response.read().decode("utf-8"))
+        body = response.read().decode("utf-8").strip()
+    if not body:
+        raise ValueError("Réponse GDELT vide.")
+    return json.loads(body)
 
 
 def collect(
@@ -145,9 +159,19 @@ def collect(
             "startdatetime": (current - timedelta(days=before)).strftime("%Y%m%d%H%M%S"),
             "enddatetime": current.strftime("%Y%m%d%H%M%S"),
         }
-        try:
-            items = gdelt_articles(fetch(str(source["endpoint"]), params))
-        except Exception as error:  # Source failure must be explicit, never become NO_EVIDENCE.
+        attempts = max(1, int(source.get("attempts_per_query", 1)))
+        error: Exception | None = None
+        items: list[dict[str, Any]] = []
+        for attempt in range(attempts):
+            try:
+                items = gdelt_articles(fetch(str(source["endpoint"]), params))
+                error = None
+                break
+            except Exception as caught:  # Source failure must be explicit, never become NO_EVIDENCE.
+                error = caught
+                if attempt + 1 < attempts:
+                    sleep(float(source.get("retry_delay_seconds", 3)))
+        if error is not None:
             errors.append({"source": "gdelt-doc-2.0", "query": query, "error": str(error)})
             query_log.append({"source": "gdelt-doc-2.0", "query": query, "hits": None})
             continue

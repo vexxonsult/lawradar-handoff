@@ -23,7 +23,7 @@ def config():
     return {
         "schema": "lawradar-press-agent-config-v1",
         "window_days_before": 14,
-        "sources": {"gdelt_doc": {"enabled": True, "endpoint": "https://example.test/gdelt", "minimum_interval_seconds": 0, "max_records_per_query": 10}},
+        "sources": {"gdelt_doc": {"enabled": True, "endpoint": "https://example.test/gdelt", "minimum_interval_seconds": 0, "attempts_per_query": 1, "max_records_per_query": 10}},
         "limits": {"max_queries_per_signal": 2, "max_candidates_per_signal": 15},
     }
 
@@ -45,6 +45,13 @@ class CollectPressCandidatesTests(unittest.TestCase):
         self.assertEqual(result["candidates_total"], 4)
         self.assertEqual(result["candidates_after_dedup"], 1)
         self.assertEqual(result["candidates"][0]["excerpt"], None)
+
+    def test_search_queries_do_not_reuse_truncated_titles_or_nested_quotes(self):
+        input_data = dossier()
+        input_data["signals"][0]["source"]["evidence"]["official"]["title"] = 'Arrêté sur le permis "Larchant"'
+        result = collect(input_data, config(), "signal:current", fetch=lambda *_: {"articles": []}, sleep=lambda _: None)
+        self.assertEqual(len(result["queries"]), 2)
+        self.assertNotIn('"Larchant"', result["queries"][0]["query"])
 
     def test_refuses_a_signal_not_retained_by_the_radar(self):
         with self.assertRaises(ValueError):
