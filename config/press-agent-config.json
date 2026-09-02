@@ -13,8 +13,14 @@
       "max_records_per_query": 10
     },
     "google_news_rss": {
-      "enabled": false,
-      "reason": "Source d'appoint non contractuelle ; activation humaine requise."
+      "enabled": true,
+      "required": false,
+      "endpoint": "https://news.google.com/rss/search",
+      "language": "fr",
+      "country": "FR",
+      "edition": "FR:fr",
+      "minimum_matching_terms": 1,
+      "role": "Découverte large : liens et titres uniquement, jamais une preuve autonome."
     },
     "publisher_rss": [
       {

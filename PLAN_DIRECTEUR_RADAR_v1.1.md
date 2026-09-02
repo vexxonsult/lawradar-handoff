@@ -201,10 +201,11 @@ institutionnelle), Actu-Environnement (presse spécialisée) et The Conversation
 France (analyse académique sous Creative Commons). Il conserve titres, médias,
 dates et extraits RSS limités à 25 mots, puis déduplique les candidats. Il ne
 lit pas le corps des articles, ne consulte aucun signal historique et ne fait
-aucun appel IA. Une panne de l'une de ces sources est tracée mais ne masque pas
-une collecte réussie par une autre ; sans source réussie, le statut reste
-`UNRESOLVED`. Google News RSS reste désactivé tant qu'une décision humaine ne
-l'autorise pas.
+aucun appel IA. Google News RSS complète ces flux comme couche de découverte
+large, limitée aux titres et liens issus de requêtes construites depuis le
+signal courant ; il n'est jamais une preuve autonome. Une panne de l'une de ces
+sources est tracée mais ne masque pas une collecte réussie par une autre ; sans
+source réussie, le statut reste `UNRESOLVED`.
 
 ### Livrable 6C — qualification Presse contrôlée
 

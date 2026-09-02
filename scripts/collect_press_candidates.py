@@ -81,6 +81,19 @@ def build_queries(signal: dict[str, Any], limit: int) -> list[str]:
     return queries[:limit]
 
 
+def build_news_queries(signal: dict[str, Any], limit: int) -> list[str]:
+    """Queries for a news RSS endpoint; no provider-specific operators leak in."""
+    titles = evidence_titles(signal)
+    if not titles:
+        return []
+    exact = titles[0].replace('"', " ")
+    focused = sorted(distinctive_terms(signal))[:7]
+    queries = [f'"{exact}"']
+    if focused:
+        queries.append(" ".join(focused))
+    return queries[:limit]
+
+
 STOPWORDS = {
     "arrete", "relatif", "publique", "demande", "prolongation", "pour", "dans", "avec",
     "seine", "marne", "consultation", "public", "permis", "decret", "projet", "titre",
@@ -204,7 +217,7 @@ def rss_articles(feed: dict[str, Any], body: str, signal: dict[str, Any]) -> lis
         canonical = canonical_url(url)
         results.append({
             "url": canonical,
-            "outlet": feed["outlet"],
+            "outlet": xml_text(item, "source") or feed["outlet"],
             "published_at": xml_text(item, "pubDate") or xml_text(item, "published") or xml_text(item, "updated"),
             "title": " ".join(title.split()),
             "excerpt": excerpt,
@@ -227,8 +240,9 @@ def collect(
     limits = config.get("limits", {})
     sources = config.get("sources", {})
     source = sources.get("gdelt_doc", {})
+    news = sources.get("google_news_rss", {})
     feeds = [item for item in sources.get("publisher_rss", []) if isinstance(item, dict) and item.get("enabled")]
-    if not source.get("enabled") and not feeds:
+    if not source.get("enabled") and not news.get("enabled") and not feeds:
         raise ValueError("Aucune source Presse n'est activée dans la configuration.")
     current = now or datetime.now(UTC)
     before = int(config.get("window_days_before", 14))
@@ -278,6 +292,34 @@ def collect(
             gathered.extend(normalized)
             query_log.append({"source": "gdelt-doc-2.0", "query": query, "hits": len(normalized)})
         source_statuses.append({"source": "gdelt-doc-2.0", "required": source.get("required", True), "success": not gdelt_failed})
+    if news.get("enabled"):
+        news_failed = False
+        news_feed = {
+            "id": "google-news-fr",
+            "outlet": "Google News",
+            "source_kind": "news_aggregator",
+            "minimum_matching_terms": int(news.get("minimum_matching_terms", 1)),
+        }
+        for query in build_news_queries(signal, int(limits.get("max_queries_per_signal", 2))):
+            params = {
+                "q": query,
+                "hl": news.get("language", "fr"),
+                "gl": news.get("country", "FR"),
+                "ceid": news.get("edition", "FR:fr"),
+            }
+            try:
+                endpoint = f"{news['endpoint']}?{urlencode(params)}"
+                items = rss_articles(news_feed, fetch_text(endpoint), signal)
+                gathered.extend(items)
+                query_log.append({"source": "google-news-rss", "query": query, "hits": len(items)})
+            except Exception as caught:
+                entry = {"source": "google-news-rss", "query": query, "error": str(caught)}
+                errors.append(entry)
+                if news.get("required", False):
+                    required_errors.append(entry)
+                news_failed = True
+                query_log.append({"source": "google-news-rss", "query": query, "hits": None})
+        source_statuses.append({"source": "google-news-rss", "required": news.get("required", False), "success": not news_failed})
     for feed in feeds:
         feed_name = f"publisher-rss:{feed.get('id', 'unknown')}"
         try:

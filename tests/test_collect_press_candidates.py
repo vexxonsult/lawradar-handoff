@@ -100,6 +100,21 @@ class CollectPressCandidatesTests(unittest.TestCase):
         self.assertEqual(len(result["errors"]), 2)
         self.assertEqual(result["required_errors"], [])
 
+    def test_google_news_keeps_the_publisher_and_only_current_signal_terms(self):
+        input_config = config()
+        input_config["sources"]["gdelt_doc"] = {"enabled": False}
+        input_config["sources"]["google_news_rss"] = {
+            "enabled": True, "endpoint": "https://example.test/news", "language": "fr", "country": "FR", "edition": "FR:fr",
+        }
+        feed = """<?xml version='1.0'?><rss><channel>
+        <item><title>Ombrières photovoltaïques : le nouvel arrêté</title><link>https://journal.test/a</link><source url='https://journal.test'>Journal test</source><description>Le nouvel arrêté sur les ombrières photovoltaïques.</description></item>
+        </channel></rss>"""
+        result = collect(dossier(), input_config, "signal:current", fetch_text=lambda _: feed, sleep=lambda _: None)
+        self.assertTrue(result["collection_successful"])
+        self.assertEqual(result["candidates_after_dedup"], 1)
+        self.assertEqual(result["candidates"][0]["outlet"], "Journal test")
+        self.assertEqual(result["candidates"][0]["source"], "publisher-rss:google-news-fr")
+
 
 def json_dump(value):
     import json
