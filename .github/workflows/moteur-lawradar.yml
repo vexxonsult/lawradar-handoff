@@ -3,8 +3,8 @@ name: Moteur LawRadar — livraison structurée
 on:
   workflow_dispatch:
   schedule:
-    # 17:35 Europe/Paris en heure d'été, après la collecte de 17:20.
-    - cron: "35 15 * * *"
+    # Une file peut être rattrapée par lots après la collecte quotidienne.
+    - cron: "35 * * * *"
 
 permissions:
   contents: write
@@ -28,7 +28,7 @@ jobs:
         name: Préparer le diff et éviter tout appel inutile au modèle
         run: |
           mkdir -p out
-          python scripts/prepare_motor_input.py --output out/motor-input-gate.json
+          python scripts/manage_motor_queue.py stage --queue evidence/motor-queue-latest.json --queue-output out/motor-queue-proposed.json --batch-output out/motor-input-gate.json --batch-size 10
           python - <<'PY'
           import json
           import os
@@ -51,6 +51,18 @@ jobs:
           )
           print(f"model_input_required={required}; candidates={len(prepared.get('candidates', []))}")
           PY
+      - name: Conserver la file avant toute interprétation
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cp out/motor-queue-proposed.json evidence/motor-queue-latest.json
+          git config user.name "lawradar-motor[bot]"
+          git config user.email "lawradar-motor[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git add evidence/motor-queue-latest.json
+          git diff --cached --quiet || git commit -m "File moteur LawRadar $(date -u +%F)"
+          git pull --rebase origin main
+          git push
 
   record_skipped:
     needs: gate
@@ -111,7 +123,7 @@ jobs:
       - name: Préparer la livraison du run
         run: |
           mkdir -p out
-          python scripts/prepare_motor_input.py --output out/motor-input.json
+          python scripts/manage_motor_queue.py stage --queue evidence/motor-queue-latest.json --queue-output out/motor-queue-proposed.json --batch-output out/motor-input.json --batch-size 10
       - name: Produire la livraison structurée
         uses: anthropics/claude-code-action@v1
         with:
@@ -129,7 +141,7 @@ jobs:
             d'un candidat présent dans out/motor-input.json.
           claude_args: >-
             --model claude-sonnet-5
-            --max-turns 5
+            --max-turns 6
             --allowedTools Read,Write
       - name: Valider et rendre le dashboard
         run: python scripts/render_motor_delivery.py --input out/motor-delivery.json --dashboard out/dashboard.html
@@ -149,6 +161,7 @@ jobs:
           python scripts/build_run_manifest.py --output out/run-manifest.json --kind motor --status success --inputs out/motor-input.json config/moteur-delivery-schema.json --outputs out/motor-delivery.json out/dashboard.html out/universal-signal.json
       - name: Actualiser le registre du centre de contrôle
         run: |
+          python scripts/manage_motor_queue.py advance --queue evidence/motor-queue-latest.json --motor-input out/motor-input.json --output evidence/motor-queue-latest.json
           cp out/run-manifest.json evidence/run-manifest-motor-latest.json
           python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
           python scripts/render_control_dashboard.py --input evidence/run-index-latest.json --out out/control-dashboard.html
@@ -165,7 +178,7 @@ jobs:
           git config user.name "lawradar-motor[bot]"
           git config user.email "lawradar-motor[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git add evidence/run-manifest-motor-latest.json evidence/run-index-latest.json evidence/universal-signal-latest.json
+          git add evidence/motor-queue-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json evidence/universal-signal-latest.json
           git diff --cached --quiet || git commit -m "Statut moteur LawRadar $(date -u +%F)"
           git pull --rebase origin main
           git push

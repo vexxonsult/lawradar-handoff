@@ -317,6 +317,17 @@ ni action externe. Elle ne constitue ni une obligation juridique réelle, ni
 une mesure de demande, ni une opportunité prête à exploiter : un run réel reste
 nécessaire avant toute conclusion métier.
 
+### Livrable 6L — file de traitement moteur bornée
+
+Les candidats officiels ne sont plus envoyés en bloc au modèle. La file
+versionnée `evidence/motor-queue-latest.json` conserve chaque candidat et son
+empreinte, expose au maximum dix candidats par appel, puis retire uniquement
+un lot après une livraison validée. Un échec laisse le lot en tête de file ; il
+n'est donc ni perdu ni remplacé par les nouvelles collectes. Le workflow passe
+chaque heure tant que la file existe, mais le modèle n'est appelé que pour un
+lot non vide. La limite de tours passe de cinq à six pour terminer un lot
+normal sans ouvrir une exécution non bornée.
+
 ---
 
 ## Rappel de la frontière entre les deux projets
