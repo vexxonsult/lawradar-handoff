@@ -111,6 +111,7 @@ def build_dossier(
                 "press": {"status": "PENDING", "result": None},
                 "demand": {"status": "PENDING", "result": None},
                 "market": {"status": "PENDING", "result": None},
+                "entrepreneur": {"status": "PENDING", "result": None},
             },
         })
     run = run_manifest.get("run", {})

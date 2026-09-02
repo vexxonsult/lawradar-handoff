@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Any
 
 
-AGENTS = {"press", "demand", "market"}
+AGENTS = {"press", "demand", "market", "entrepreneur"}
 STATUSES = {"COMPLETED", "NO_EVIDENCE", "UNRESOLVED", "FAILED"}
 
 
@@ -47,7 +47,12 @@ def merge(dossier: dict[str, Any], enrichment: dict[str, Any]) -> dict[str, Any]
     matching = [item for item in result.get("signals", []) if item.get("id") == enrichment["signal_id"]]
     if len(matching) != 1:
         raise ValueError("Le signal cible est absent ou dupliqué.")
-    slot = matching[0].get("enrichments", {}).get(enrichment["agent"])
+    slots = matching[0].get("enrichments", {})
+    # Dossiers produits avant l'arrivée de l'Entrepreneur restent compatibles :
+    # only the empty slot is added, never a proof or a prior agent result.
+    if enrichment["agent"] == "entrepreneur" and enrichment["agent"] not in slots:
+        slots["entrepreneur"] = {"status": "PENDING", "result": None}
+    slot = slots.get(enrichment["agent"])
     if not isinstance(slot, dict):
         raise ValueError("Cet emplacement d'enrichissement n'est pas disponible.")
     previous_results = slot.get("previous_results", [])

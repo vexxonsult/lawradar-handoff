@@ -262,6 +262,16 @@ exhaustive à partir d’une simple offre observée. Les registres, marchés pub
 et sites d’acteurs restent désactivés : aucun compte, contact, clé API, achat
 ou appel IA n’est créé avant une décision de source et de périmètre.
 
+### Livrable 6H — agent Entrepreneur, décision sans exécution
+
+L’agent Entrepreneur reçoit exclusivement le signal courant, les flux déjà
+prouvés et les résultats des trois agents amont. Il n’effectue aucune recherche
+et ne peut produire qu’une décision documentée : `WATCH`, `INVESTIGATE`, `TEST`
+ou `DISCARD`. Un agent amont manquant impose `UNRESOLVED` et `INVESTIGATE`.
+Une décision `TEST` exige les trois apports terminés, une preuve Demande ou
+Marché positive, des sources citées et un protocole réversible limité à 30
+jours ; elle n’autorise ni dépense, ni publication, ni prise de contact.
+
 ---
 
 ## Rappel de la frontière entre les deux projets

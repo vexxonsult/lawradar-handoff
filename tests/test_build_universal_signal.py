@@ -43,6 +43,7 @@ class UniversalSignalTests(unittest.TestCase):
         self.assertEqual(dossier["quality"]["unresolved_count"], 1)
         self.assertEqual(dossier["signals"][0]["enrichments"]["press"]["status"], "PENDING")
         self.assertIsNone(dossier["signals"][0]["enrichments"]["market"]["result"])
+        self.assertEqual(dossier["signals"][0]["enrichments"]["entrepreneur"]["status"], "PENDING")
 
     def test_compacts_primary_evidence_without_its_full_text(self):
         input_data = motor_input()

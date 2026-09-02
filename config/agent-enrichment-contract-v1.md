@@ -1,6 +1,7 @@
 # Contrat commun des enrichissements — v1
 
-Ce contrat prépare les agents **Presse**, **Demande** et **Marché**. Il ne les
+Ce contrat prépare les agents **Presse**, **Demande**, **Marché** et
+**Entrepreneur**. Il ne les
 active pas et ne leur donne aucun droit de modifier le Radar.
 
 ## Entrée autorisée
@@ -18,7 +19,7 @@ Chaque résultat doit contenir :
 ```json
 {
   "schema": "lawradar-agent-enrichment-v1",
-  "agent": "press | demand | market",
+  "agent": "press | demand | market | entrepreneur",
   "signal_id": "signal:…",
   "status": "COMPLETED | NO_EVIDENCE | UNRESOLVED | FAILED",
   "observed_at_utc": "date ISO-8601",
@@ -58,6 +59,7 @@ troisième tentative nécessite une décision humaine. Une sortie `COMPLETED` ou
 | Presse | Une couverture éditoriale indépendante existe-t-elle et que rapporte-t-elle ? | Que cette couverture prouve la réalité réglementaire ou la demande. |
 | Demande | Quelles preuves mesurables d'intérêt ou de recherche existent-elles ? | Un volume, une tendance ou une intention d'achat sans source mesurable. |
 | Marché | Quelles offres, acteurs et contraintes de marché sont documentés ? | Une taille de marché, un chiffre d'affaires ou un avantage concurrentiel sans preuve. |
+| Entrepreneur | Quelle décision d'exploration est justifiée par les preuves réunies ? | Une dépense, une publication, un contact, une promesse de revenu ou une décision irréversible. |
 
 ## Garde-fous
 
@@ -65,8 +67,9 @@ troisième tentative nécessite une décision humaine. Une sortie `COMPLETED` ou
 - Toute affirmation importante renvoie vers une source précise et datée.
 - Aucune recherche, publication, contact commercial, achat ou dépense n'est
   autorisé par ce contrat.
-- L'agent Entrepreneur ne reçoit que les enrichissements terminés et sourcés ;
-  il est traité dans une phase ultérieure.
+- L'agent Entrepreneur ne lit que le signal, les flux déjà prouvés et les
+  enrichissements transmis pour ce signal ; il ne cherche pas de nouvelles
+  informations.
 
 ## Conditions d'activation
 
