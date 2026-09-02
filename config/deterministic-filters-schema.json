@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Résultat des filtres déterministes LawRadar",
+  "type": "object",
+  "required": ["schema", "signal_id", "evaluated_at_utc", "compliance", "feasibility", "final_constraint"],
+  "properties": {
+    "schema": {"const": "lawradar-deterministic-filters-v1"},
+    "signal_id": {"type": "string", "minLength": 1},
+    "evaluated_at_utc": {"type": "string", "minLength": 1},
+    "compliance": {"type": "object"},
+    "feasibility": {"type": "object"},
+    "final_constraint": {"enum": ["PASS", "WATCH", "INVESTIGATE", "DISCARD"]}
+  },
+  "additionalProperties": false
+}

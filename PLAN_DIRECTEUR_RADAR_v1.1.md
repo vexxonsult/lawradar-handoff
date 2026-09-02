@@ -272,6 +272,17 @@ Une décision `TEST` exige les trois apports terminés, une preuve Demande ou
 Marché positive, des sources citées et un protocole réversible limité à 30
 jours ; elle n’autorise ni dépense, ni publication, ni prise de contact.
 
+### Livrable 6I — filtres déterministes avant Entrepreneur
+
+Les scripts `run_deterministic_filters.py`, la politique de conformité et le
+profil opérateur transforment les règles en code sans IA ni réseau. Ils
+produisent `PASS`, `WATCH`, `INVESTIGATE` ou `DISCARD`. Une preuve absente ou
+une exigence inconnue conduit à `INVESTIGATE`; seuls un texte abrogé/expiré,
+un territoire exclu ou une incompatibilité démontrée avec les ressources
+actuelles conduit à `DISCARD`. Les plafonds initiaux sont 2 000 € de capital et
+8 semaines de mise sur le marché ; ils sont versionnés et modifiables sans
+changer le code.
+
 ---
 
 ## Rappel de la frontière entre les deux projets
