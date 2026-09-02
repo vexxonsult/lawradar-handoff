@@ -12,18 +12,18 @@
     },
     {
       "file": "jorf-summaries-latest.json",
-      "status": "UNCHANGED",
-      "item_count": 3327,
-      "sha256": "740a4da5b18fe4cd6719850422b1be5de733d28ca4c208c4c7d1bce7705dc28e",
-      "documents_sha256": "b7ae990fdafde5f9b17346d10fbf4885681b15e31a117d3c39b3e1c2e03e4028",
+      "status": "CHANGED",
+      "item_count": 3204,
+      "sha256": "3b86f523be7fb37e90b195f9954628929e079ced06883a9739cd80630c2af651",
+      "documents_sha256": "b9f2ad75ce7c6e2b0ee3d8d8431dc2e6d02e7262d97166462487d2a5ce2449eb",
       "interpretation": null
     },
     {
       "file": "eurlex-oj-latest.json",
       "status": "CHANGED",
-      "item_count": 56,
-      "sha256": "ab2877171bce9176ecf539ebc5b33388416bfaa215444acea2816fdf257f8a3e",
-      "documents_sha256": "1748a018123f30560e2072887b16cea9f042e3a21fce21f29b1be780ab3b53ee",
+      "item_count": 50,
+      "sha256": "b4eda176e95361334a09b698fb67ffcc598922387725d13abdff1022c221683f",
+      "documents_sha256": "fe451ba6d14508db2bcd86daa3fd4f07e9cdfdd0b1a613ca554edbb49698caf0",
       "interpretation": null
     },
     {
@@ -36,15 +36,21 @@
     },
     {
       "file": "status-latest.json",
-      "status": "UNCHANGED",
+      "status": "METADATA_CHANGED",
       "item_count": 0,
-      "sha256": "4e56bd31368f5c2a9273142c88c8c22dff753809446f92d178cbf4efd8819be3",
+      "sha256": "915e6bc15fd3724789c2310d1c804f2760550c449702ecbcc4b798a5808888cc",
       "documents_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "interpretation": null
     }
   ],
   "changed_sources": [
+    "jorf-summaries-latest.json",
     "eurlex-oj-latest.json"
+  ],
+  "evidence_change_detected": true,
+  "supported_model_change_detected": true,
+  "supported_changed_sources": [
+    "jorf-summaries-latest.json"
   ],
   "model_input_required": true,
   "interpretation": null

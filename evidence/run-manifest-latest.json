@@ -1,40 +1,40 @@
 {
   "schema": "lawradar-run-manifest-v1",
   "run": {
-    "id": "33544517220",
+    "id": "33669200454",
     "attempt": "1",
     "kind": "collector",
     "status": "success",
     "workflow": "Collecte primaire DILA JORF",
-    "commit": "de57c543ca0c1f2e52880befe702bda4f5d8fb21",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33544517220",
-    "created_at_utc": "2026-09-01T18:37:57.137118+00:00",
-    "duration_seconds": 149
+    "commit": "c9f2fdbb355f9b2ff9a75d8e7dbc9246b47289e7",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33669200454",
+    "created_at_utc": "2026-09-02T18:48:13.051200+00:00",
+    "duration_seconds": 142
   },
   "inputs": [
     {
       "path": "evidence/delta-latest.json",
       "exists": true,
-      "bytes": 1846,
-      "sha256": "158ad38aad15893eab202099a46439e21c92d3939e2a6a60bb3947870b07398d"
+      "bytes": 2035,
+      "sha256": "7ad3059cef9abb53b4c81f65aaac96837259125dd83870a9f07f259a3e971c05"
     },
     {
       "path": "evidence/jorf-summaries-latest.json",
       "exists": true,
-      "bytes": 1650544,
-      "sha256": "73191df46e8a0637b86190e52195807ecba1d049b5b0d2704965815ba8133f39"
+      "bytes": 1592876,
+      "sha256": "0d1e805576d5738a78da75430602400123b483463a884d0b6916f38409369996"
     },
     {
       "path": "evidence/eurlex-oj-latest.json",
       "exists": true,
-      "bytes": 27601,
-      "sha256": "f075eee160506239f2d270f24a43df1425a01fbf142c3499114cffd9c25d10fb"
+      "bytes": 24673,
+      "sha256": "fed2b8a5c62b16cceea405635b625beb7e97badcfebf4c948a7eec47e3720296"
     },
     {
       "path": "evidence/consultdd-latest.json",
       "exists": true,
       "bytes": 690,
-      "sha256": "f0186909c96643bfa9d34a3df3973abe4d6bde581195d6c2920dbda6ed61c702"
+      "sha256": "a0de79159d3586e533b6412ae072d2982012bc8bec1923f35190bfc71d500648"
     }
   ],
   "outputs": [
@@ -48,7 +48,7 @@
       "path": "evidence/status-latest.json",
       "exists": true,
       "bytes": 963,
-      "sha256": "f5e4e7e3b8447233edcbcef3a254108aeb735d9e3fc78a0746f76b82bc20776e"
+      "sha256": "a0d88a54a75f29e1a0835beae621f6a2f59c35249db8ae807e61551fb8b45a11"
     }
   ],
   "cost_estimate": {
