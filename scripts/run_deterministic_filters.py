@@ -14,6 +14,9 @@ PROOF = {"VERIFIED", "PARTIAL", "MISSING"}
 TEXT_STATUSES = {"PUBLISHED", "IN_FORCE", "CONSULTATION_OPEN", "DRAFT", "REPEALED", "EXPIRED", "UNKNOWN"}
 AUTH_STATUSES = {"REQUIRED", "NOT_REQUIRED", "UNKNOWN", "UNAVAILABLE"}
 DEPENDENCY_STATUSES = {"AVAILABLE", "UNKNOWN", "BLOCKING"}
+ACCESS_SECTORS = {"MEDICINES", "FINANCIAL_SERVICES", "LEGAL_SERVICES", "OTHER_REGULATED", "NOT_CLASSIFIED"}
+DIRECT_OFFER_STATUSES = {"ACCESSIBLE", "OUT_OF_PROFILE", "UNKNOWN", "NOT_APPLICABLE"}
+PERIPHERAL_ROLE_EVIDENCE = {"VERIFIED", "PARTIAL", "MISSING", "NOT_APPLICABLE"}
 
 
 def result(status: str, reasons: list[str]) -> dict[str, Any]:
@@ -57,6 +60,18 @@ def validate_facts(facts: dict[str, Any]) -> None:
         value = requirements.get(key)
         if value is not None and (not isinstance(value, (int, float)) or value < 0):
             raise ValueError(f"{key} invalide.")
+    access = facts.get("operator_access")
+    if access is not None:
+        if not isinstance(access, dict):
+            raise ValueError("Routage opérateur invalide.")
+        if access.get("sector") not in ACCESS_SECTORS:
+            raise ValueError("Secteur de routage opérateur invalide.")
+        if access.get("direct_offer_status") not in DIRECT_OFFER_STATUSES:
+            raise ValueError("Statut d'offre directe invalide.")
+        if access.get("peripheral_role_evidence") not in PERIPHERAL_ROLE_EVIDENCE:
+            raise ValueError("Preuve de rôle périphérique invalide.")
+        if access.get("evidence_status") not in PROOF:
+            raise ValueError("Preuve de routage opérateur invalide.")
 
 
 def compliance_filter(facts: dict[str, Any], policy: dict[str, Any], today: date) -> dict[str, Any]:
@@ -122,10 +137,56 @@ def feasibility_filter(facts: dict[str, Any], profile: dict[str, Any]) -> dict[s
     return result("PASS", ["Compatible avec le profil de ressources versionné."])
 
 
-def final_constraint(compliance: str, feasibility: str) -> str:
+def operator_access_filter(facts: dict[str, Any]) -> dict[str, Any]:
+    """Route a regulated direct offer before costly enrichment agents run.
+
+    This does not decide whether a regulated market is legal or attractive. It
+    only stops a small operator profile from treating a medicine, financial or
+    legal signal as an immediately actionable direct-sale opportunity without a
+    documented, lawful peripheral role.
+    """
+    access = facts.get("operator_access")
+    if access is None or access["sector"] == "NOT_CLASSIFIED":
+        return {
+            "status": "NOT_APPLICABLE",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": True,
+            "reasons": ["Aucun secteur fortement réglementé n'est déclaré dans les faits."],
+        }
+    peripheral = access["peripheral_role_evidence"]
+    direct = access["direct_offer_status"]
+    if direct == "OUT_OF_PROFILE" and peripheral != "VERIFIED":
+        return {
+            "status": "HOLD",
+            "route": "LEGAL_ROLE_CHECK_ONLY",
+            "allow_external_collection": False,
+            "reasons": [
+                "L'offre directe relève d'un secteur hors profil opérateur.",
+                "Aucun rôle périphérique légal et accessible n'est démontré.",
+            ],
+        }
+    if direct == "UNKNOWN" and peripheral != "VERIFIED":
+        return {
+            "status": "HOLD",
+            "route": "LEGAL_ROLE_CHECK_ONLY",
+            "allow_external_collection": False,
+            "reasons": [
+                "L'accessibilité d'une offre directe n'est pas établie.",
+                "Aucun rôle périphérique légal et accessible n'est démontré.",
+            ],
+        }
+    return {
+        "status": "PASS",
+        "route": "FULL_ENRICHMENT",
+        "allow_external_collection": True,
+        "reasons": ["Un rôle opérateur accessible est documenté pour ce signal."],
+    }
+
+
+def final_constraint(compliance: str, feasibility: str, operator_access: str) -> str:
     if "DISCARD" in {compliance, feasibility}:
         return "DISCARD"
-    if "INVESTIGATE" in {compliance, feasibility}:
+    if "INVESTIGATE" in {compliance, feasibility} or operator_access == "HOLD":
         return "INVESTIGATE"
     if "WATCH" in {compliance, feasibility}:
         return "WATCH"
@@ -139,13 +200,15 @@ def evaluate(facts: dict[str, Any], policy: dict[str, Any], profile: dict[str, A
     current = now or datetime.now(UTC)
     compliance = compliance_filter(facts, policy, current.date())
     feasibility = feasibility_filter(facts, profile)
+    access = operator_access_filter(facts)
     return {
         "schema": "lawradar-deterministic-filters-v1",
         "signal_id": facts["signal_id"],
         "evaluated_at_utc": current.isoformat(),
         "compliance": compliance,
         "feasibility": feasibility,
-        "final_constraint": final_constraint(compliance["status"], feasibility["status"]),
+        "operator_access": access,
+        "final_constraint": final_constraint(compliance["status"], feasibility["status"], access["status"]),
     }
 
 

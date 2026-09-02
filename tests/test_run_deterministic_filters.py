@@ -64,3 +64,29 @@ class DeterministicFilterTests(unittest.TestCase):
         data = copy.deepcopy(facts())
         data["requirements"]["required_capabilities"] = ["installation_certifiee"]
         self.assertEqual(self.evaluate(data)["feasibility"]["status"], "DISCARD")
+
+    def test_regulated_direct_offer_without_peripheral_role_is_held_before_enrichment(self):
+        data = facts()
+        data["operator_access"] = {
+            "sector": "MEDICINES",
+            "direct_offer_status": "OUT_OF_PROFILE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+        }
+        output = self.evaluate(data)
+        self.assertEqual(output["operator_access"]["status"], "HOLD")
+        self.assertEqual(output["operator_access"]["route"], "LEGAL_ROLE_CHECK_ONLY")
+        self.assertFalse(output["operator_access"]["allow_external_collection"])
+        self.assertEqual(output["final_constraint"], "INVESTIGATE")
+
+    def test_verified_peripheral_role_can_continue_to_full_enrichment(self):
+        data = facts()
+        data["operator_access"] = {
+            "sector": "MEDICINES",
+            "direct_offer_status": "OUT_OF_PROFILE",
+            "peripheral_role_evidence": "VERIFIED",
+            "evidence_status": "VERIFIED",
+        }
+        output = self.evaluate(data)
+        self.assertEqual(output["operator_access"]["status"], "PASS")
+        self.assertTrue(output["operator_access"]["allow_external_collection"])
