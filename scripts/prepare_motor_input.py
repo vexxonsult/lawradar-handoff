@@ -119,6 +119,35 @@ def exclude_routine_administration_records(
     return candidates, exclusions
 
 
+def load_jorf_excerpt_index(path: Path) -> dict[str, dict[str, Any]]:
+    """Loads compact official-text excerpts when the collector has them."""
+    if not path.exists():
+        return {}
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if payload.get("schema") != "lawradar-jorf-candidate-excerpts-v1":
+        raise ValueError("Index des extraits JORF invalide.")
+    return {
+        item["text_id"]: item
+        for item in payload.get("documents", [])
+        if isinstance(item, dict) and isinstance(item.get("text_id"), str)
+    }
+
+
+def attach_jorf_excerpt(
+    record: dict[str, Any], excerpts: dict[str, dict[str, Any]]
+) -> dict[str, Any]:
+    """Adds only the extracted official evidence associated with this text id."""
+    text_id = record.get("evidence", {}).get("text_id")
+    excerpt = excerpts.get(text_id)
+    if excerpt is None:
+        return record
+    enriched = {**record, "evidence": {**record["evidence"]}}
+    for key in ("official_text_excerpt", "official_text_sha256", "excerpt_truncated", "content_status"):
+        if key in excerpt:
+            enriched["evidence"][key] = excerpt[key]
+    return enriched
+
+
 def requires_model(prepared_input: dict[str, Any]) -> bool:
     """The model is useful only when the supported sources produced candidates."""
     return bool(prepared_input.get("candidates"))
@@ -132,6 +161,9 @@ def prepare(evidence_dir: Path) -> dict[str, Any]:
     candidates: list[dict[str, Any]] = []
     excluded_historical_candidates: list[dict[str, Any]] = []
     excluded_routine_candidates: list[dict[str, Any]] = []
+    jorf_excerpts = load_jorf_excerpt_index(
+        evidence_dir / "jorf-candidate-excerpts-latest.json"
+    )
     source_specs = (
         ("jorf-summaries-latest.json", "JORF"),
         ("consultdd-latest.json", "CONSULTDD"),
@@ -149,7 +181,7 @@ def prepare(evidence_dir: Path) -> dict[str, Any]:
                 records, set(current.get("covered_dates", []))
             )
             accepted, routine_exclusions = exclude_routine_administration_records(accepted)
-            candidates.extend(accepted)
+            candidates.extend(attach_jorf_excerpt(record, jorf_excerpts) for record in accepted)
             excluded_historical_candidates.extend(exclusions)
             excluded_routine_candidates.extend(routine_exclusions)
         else:

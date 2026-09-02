@@ -32,3 +32,20 @@ class ManageMotorQueueTests(unittest.TestCase):
         same_queue, retry_batch = stage_prepared({"schema": "lawradar-motor-input-v1", "candidates": []}, queue, 2)
         self.assertEqual(same_queue, queue)
         self.assertEqual(retry_batch["candidates"], first_batch["candidates"])
+
+    def test_replaces_pending_title_only_candidate_when_evidence_improves(self):
+        queue, _ = stage_prepared({"candidates": [candidate(1)]}, empty_queue(), 10)
+        enriched = candidate(1)
+        enriched["evidence"]["official_text_excerpt"] = "Texte officiel."
+        queue, batch = stage_prepared({"candidates": [enriched]}, queue, 10)
+        self.assertEqual(len(queue["pending"]), 1)
+        self.assertEqual(batch["candidates"][0]["evidence"]["official_text_excerpt"], "Texte officiel.")
+
+    def test_marks_empty_primary_jorf_text_unresolved_without_model_input(self):
+        incomplete = candidate(1)
+        incomplete["evidence"]["content_status"] = "UNAVAILABLE"
+        queue, batch = stage_prepared({"candidates": [incomplete]}, empty_queue(), 10)
+        self.assertEqual(queue["pending"], [])
+        self.assertEqual(batch["candidates"], [])
+        self.assertEqual(batch["deterministically_unresolved_candidates"][0]["reason"], "PRIMARY_TEXT_EMPTY")
+        self.assertEqual(queue["processed"][0]["deterministic_status"], "UNRESOLVED")

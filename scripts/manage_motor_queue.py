@@ -40,6 +40,15 @@ def validate_queue(queue: dict[str, Any]) -> None:
             raise ValueError("Candidat en attente invalide.")
 
 
+def primary_text_unavailable(item: dict[str, Any]) -> bool:
+    candidate = item["candidate"]
+    evidence = candidate.get("evidence", {})
+    return (
+        candidate.get("source_kind") == "JORF"
+        and evidence.get("content_status") == "UNAVAILABLE"
+    )
+
+
 def stage_prepared(prepared: dict[str, Any], queue: dict[str, Any], batch_size: int) -> tuple[dict[str, Any], dict[str, Any]]:
     """Adds unseen candidates and exposes only the first bounded batch to the model."""
     validate_queue(queue)
@@ -52,11 +61,44 @@ def stage_prepared(prepared: dict[str, Any], queue: dict[str, Any], batch_size: 
             continue
         key = fingerprint(candidate)
         if key not in known:
-            pending.append({"fingerprint": key, "candidate": candidate})
+            source_id = candidate.get("source_id")
+            # A pending title-only record is replaced in place when the same
+            # official text gains a deterministic excerpt. A processed older
+            # version remains auditable, while the better-evidenced version is
+            # intentionally eligible for one new interpretation.
+            replacement = next((
+                index for index, item in enumerate(pending)
+                if item["candidate"].get("source_id") == source_id
+            ), None)
+            if replacement is None:
+                pending.append({"fingerprint": key, "candidate": candidate})
+            else:
+                known.discard(pending[replacement]["fingerprint"])
+                pending[replacement] = {"fingerprint": key, "candidate": candidate}
             known.add(key)
-    staged = {"schema": SCHEMA, "pending": pending, "processed": list(queue["processed"])}
+    # A DILA document with no primary text cannot be interpreted from its title.
+    # Mark it explicitly UNRESOLVED without an LLM call. If the source later
+    # yields a text excerpt, its changed fingerprint is eligible again.
+    unavailable = [item for item in pending if primary_text_unavailable(item)]
+    pending = [item for item in pending if not primary_text_unavailable(item)]
+    timestamp = datetime.now(UTC).isoformat()
+    processed = [*queue["processed"], *[
+        {
+            "fingerprint": item["fingerprint"],
+            "source_id": item["candidate"].get("source_id"),
+            "processed_at_utc": timestamp,
+            "deterministic_status": "UNRESOLVED",
+            "reason": "PRIMARY_TEXT_EMPTY",
+        }
+        for item in unavailable
+    ]]
+    staged = {"schema": SCHEMA, "pending": pending, "processed": processed[-HISTORY_LIMIT:]}
     motor_input = {key: value for key, value in prepared.items() if key != "candidates"}
     motor_input["candidates"] = [item["candidate"] for item in pending[:batch_size]]
+    motor_input["deterministically_unresolved_candidates"] = [
+        {"source_id": item["candidate"].get("source_id"), "reason": "PRIMARY_TEXT_EMPTY"}
+        for item in unavailable
+    ]
     return staged, motor_input
 
 

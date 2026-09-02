@@ -2,6 +2,7 @@ import unittest
 
 from scripts.prepare_motor_input import (
     changed_records,
+    attach_jorf_excerpt,
     exclude_historical_jorf_records,
     exclude_routine_administration_records,
     requires_model,
@@ -51,3 +52,11 @@ class PrepareMotorInputTests(unittest.TestCase):
         self.assertEqual(accepted, [relevant])
         self.assertEqual(excluded[0]["source_id"], "jorf:routine")
         self.assertEqual(excluded[0]["reason"], "ROUTINE_PUBLIC_ADMINISTRATION_TITLE")
+
+    def test_attaches_only_the_matching_official_excerpt(self):
+        record = {"source_id": "jorf:1", "evidence": {"text_id": "1", "title": "Texte"}}
+        result = attach_jorf_excerpt(record, {
+            "1": {"text_id": "1", "content_status": "AVAILABLE", "official_text_excerpt": "Preuve officielle."}
+        })
+        self.assertEqual(result["evidence"]["official_text_excerpt"], "Preuve officielle.")
+        self.assertNotIn("official_text_excerpt", record["evidence"])

@@ -44,6 +44,8 @@ jobs:
               reason = f"{len(prepared['excluded_historical_candidates'])} réapparition(s) historique(s) hors fenêtre quotidienne, non envoyée(s) au moteur."
           elif prepared.get("excluded_routine_candidates"):
               reason = f"{len(prepared['excluded_routine_candidates'])} publication(s) de routine administrative, classée(s) sans appel au moteur."
+          elif prepared.get("deterministically_unresolved_candidates"):
+              reason = f"{len(prepared['deterministically_unresolved_candidates'])} texte(s) officiel(s) sans contenu exploitable, classé(s) UNRESOLVED sans appel au moteur."
           elif unsupported == ["eurlex-oj-latest.json"]:
               reason = "Variation EUR-Lex détectée ; hors périmètre du moteur actuel (JORF et ConsultDD)."
           elif unsupported:

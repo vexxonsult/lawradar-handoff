@@ -342,6 +342,17 @@ Elles sont donc **traitées par règle** mais ne déclenchent pas une interprét
 payante. Tous les autres textes datés de la collecte restent dans la file et
 seront examinés, au maximum dix par exécution, jusqu'à épuisement de celle-ci.
 
+Avant l'interprétation, le collecteur télécharge une seconde fois, au plus une
+archive DILA par édition concernée, pour extraire un passage officiel borné des
+seuls candidats en file. Ce passage est haché, lié à l'archive officielle et
+ne contient aucune analyse. Le moteur reçoit ainsi la preuve primaire utile,
+plutôt qu'un titre seul ; aucun appel IA n'est fait pour cette récupération.
+Si l'archive officielle ne contient elle-même aucun passage textuel, le
+candidat est conservé avec la décision déterministe
+`UNRESOLVED / PRIMARY_TEXT_EMPTY`. Il ne monopolise pas une exécution IA et
+peut redevenir éligible si une version ultérieure de la source apporte le
+texte primaire.
+
 ---
 
 ## Rappel de la frontière entre les deux projets
