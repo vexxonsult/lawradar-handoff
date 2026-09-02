@@ -128,6 +128,8 @@ def collect(
     current = now or datetime.now(UTC)
     before = int(config.get("window_days_before", 14))
     queries = build_queries(signal, int(limits.get("max_queries_per_signal", 2)))
+    if not queries:
+        raise ValueError("Le signal ne contient aucun intitulé exploitable pour la recherche Presse.")
     maximum = int(limits.get("max_candidates_per_signal", 15))
     gathered: list[dict[str, Any]] = []
     query_log: list[dict[str, Any]] = []

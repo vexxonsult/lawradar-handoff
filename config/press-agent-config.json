@@ -1,6 +1,6 @@
 {
   "schema": "lawradar-press-agent-config-v1",
-  "enabled": false,
+  "activation": "manual_only",
   "window_days_before": 14,
   "sources": {
     "gdelt_doc": {
@@ -19,6 +19,6 @@
     "max_queries_per_signal": 2,
     "max_candidates_per_signal": 15,
     "max_http_requests_per_run": 30,
-    "max_llm_calls_per_run": 0
+    "max_llm_calls_per_run": 1
   }
 }

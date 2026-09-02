@@ -211,6 +211,16 @@ ses sources et une sortie non liée au signal courant. Aucun modèle n'est encor
 appelé : le prochain incrément sera son branchement contrôlé derrière ce
 contrôleur.
 
+### Livrable 6D — pilote Presse manuel
+
+Le workflow `agent-presse-lawradar.yml` ne possède aucune planification : il
+ne peut être lancé qu'à la demande, pour un identifiant de signal `RETAINED`.
+Il appelle GDELT pour ce seul signal, puis n'appelle Sonnet qu'en présence de
+candidats et sans erreur de collecte ; le plafond est d'un appel par run. Sans
+candidat, il écrit `NO_EVIDENCE` sans IA ; en cas de panne, il écrit
+`UNRESOLVED`. Toute sortie est validée avant d'être fusionnée dans le seul
+emplacement Presse du dossier universel.
+
 ---
 
 ## Rappel de la frontière entre les deux projets

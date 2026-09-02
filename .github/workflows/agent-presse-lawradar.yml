@@ -1,0 +1,104 @@
+name: Agent Presse LawRadar — pilote manuel
+
+on:
+  workflow_dispatch:
+    inputs:
+      signal_id:
+        description: "Identifiant exact d'un signal RETAINED à enrichir"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: agent-presse-lawradar
+  cancel-in-progress: false
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Vérifier les garde-fous
+        run: python -m unittest discover -s tests -p 'test_*.py'
+      - name: Collecter les candidats Presse du signal demandé
+        run: |
+          mkdir -p out
+          python scripts/collect_press_candidates.py \
+            --dossier evidence/universal-signal-latest.json \
+            --config config/press-agent-config.json \
+            --signal-id "${{ inputs.signal_id }}" \
+            --output out/press-candidates.json
+      - id: route
+        name: Éviter tout appel IA sans candidat
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          candidates = json.loads(Path("out/press-candidates.json").read_text(encoding="utf-8"))
+          ready = bool(candidates.get("candidates")) and not candidates.get("errors")
+          Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8").write(
+              f"should_qualify={'true' if ready else 'false'}\n"
+          )
+          PY
+      - name: Enregistrer une absence ou une incertitude sans IA
+        if: steps.route.outputs.should_qualify != 'true'
+        run: >-
+          python scripts/build_press_terminal_enrichment.py
+          --candidates out/press-candidates.json
+          --output out/press-enrichment.json
+      - name: Préparer la qualification sourcée
+        if: steps.route.outputs.should_qualify == 'true'
+        run: >-
+          python scripts/prepare_press_qualification_input.py
+          --dossier evidence/universal-signal-latest.json
+          --candidates out/press-candidates.json
+          --output out/press-qualification-input.json
+      - name: Qualifier les candidats Presse
+        if: steps.route.outputs.should_qualify == 'true'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: >-
+            Tu exécutes l'agent Presse LawRadar. Lis uniquement
+            out/press-qualification-input.json, config/agent-enrichment-schema.json et
+            config/press-qualification-contract.md. N'utilise ni réseau, ni recherche,
+            ni Google Drive, ni autre fichier, ni ancien signal universel. Écris exactement
+            out/press-enrichment.json, conforme au contrat. Une URL de sortie doit venir
+            des candidats reçus. En cas d'ambiguïté, écris UNRESOLVED ; n'invente ni source,
+            ni chiffre, ni couverture médiatique.
+          claude_args: >-
+            --model claude-sonnet-5
+            --max-turns 3
+            --allowedTools Read,Write
+      - name: Valider et intégrer l'enrichissement
+        run: |
+          python scripts/validate_press_enrichment.py --candidates out/press-candidates.json --enrichment out/press-enrichment.json
+          python scripts/merge_agent_enrichment.py --dossier evidence/universal-signal-latest.json --enrichment out/press-enrichment.json --output out/universal-signal-enriched.json
+          cp out/universal-signal-enriched.json evidence/universal-signal-latest.json
+      - name: Conserver les artefacts du pilote
+        uses: actions/upload-artifact@v4
+        with:
+          name: lawradar-press-${{ github.run_id }}
+          path: out/
+          retention-days: 90
+      - name: Versionner l'enrichissement validé
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "lawradar-press[bot]"
+          git config user.email "lawradar-press[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git add evidence/universal-signal-latest.json
+          git diff --cached --quiet || git commit -m "Enrichissement Presse LawRadar $(date -u +%F)"
+          git pull --rebase origin main
+          git push
