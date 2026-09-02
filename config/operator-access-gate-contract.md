@@ -12,7 +12,18 @@ Un fait d'opportunité peut porter l'objet optionnel suivant :
     "sector": "MEDICINES | FINANCIAL_SERVICES | LEGAL_SERVICES | OTHER_REGULATED | NOT_CLASSIFIED",
     "direct_offer_status": "ACCESSIBLE | OUT_OF_PROFILE | UNKNOWN | NOT_APPLICABLE",
     "peripheral_role_evidence": "VERIFIED | PARTIAL | MISSING | NOT_APPLICABLE",
-    "evidence_status": "VERIFIED | PARTIAL | MISSING"
+    "evidence_status": "VERIFIED | PARTIAL | MISSING",
+    "peripheral_service_evidence": [
+      {
+        "service_type": "PRESTATIONS_DE_SERVICES | LOGICIELS | CONSEIL | MISE_EN_RELATION | LOGISTIQUE",
+        "source_kind": "OFFICIAL_TEXT | BOAMP",
+        "source_url": "https://...",
+        "excerpt": "extrait qui nomme explicitement le service B2B",
+        "scope_excludes_regulated_acts": true,
+        "scope_exclusion_excerpt": "extrait excluant explicitement vente, dispensation et distribution du médicament",
+        "evidence_status": "VERIFIED"
+      }
+    ]
   }
 }
 ```
@@ -20,9 +31,12 @@ Un fait d'opportunité peut porter l'objet optionnel suivant :
 - `OUT_OF_PROFILE` ne signifie pas que le secteur est interdit : il signifie
   que l'offre directe n'est pas compatible avec les compétences et
   autorisations actuelles du profil versionné.
-- `peripheral_role_evidence` ne peut être `VERIFIED` que si une source établit
-  un rôle légalement distinct de la vente, de la dispensation, du conseil
-  réglementé ou de la prescription.
+- Un mot-clé isolé (`logiciel`, `conseil`, `logistique`, etc.) ne prouve pas un
+  rôle légal. Il produit au mieux la route `SERVICE_SCOPE_CHECK_ONLY`.
+- `peripheral_role_evidence` ne peut ouvrir `FULL_ENRICHMENT` que si une source
+  officielle ou BOAMP traçable décrit un des services B2B autorisés **et**
+  exclut explicitement vente, dispensation et distribution du médicament.
+  L'autorisation d'un partenaire ne se transfère jamais au profil opérateur.
 - `HOLD` route seulement vers `LEGAL_ROLE_CHECK_ONLY` : aucune recherche
   Presse, BOAMP, Demande, Marché ou décision Entrepreneur n'est lancée.
 - Le filtre ne déclare jamais un rôle légal possible sur la seule base d'un

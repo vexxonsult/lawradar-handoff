@@ -1,9 +1,23 @@
 {
   "schema": "lawradar-operator-profile-v1",
-  "available_capabilities": ["analyse_ia", "contenu_digital", "prospection_legere"],
+  "available_capabilities": [
+    "analyse_ia",
+    "contenu_digital",
+    "prospection_legere",
+    "apport_affaires_b2b",
+    "sourcing_partenaires_techniques",
+    "coordination_partenaires_reglementaires"
+  ],
   "available_authorizations": [],
-  "max_startup_capital_eur": 2000,
+  "max_startup_capital_eur": 100000,
   "max_time_to_market_weeks": 8,
   "accepted_geographies": ["FR"],
-  "allowed_dependency_risk": "LOW"
+  "allowed_dependency_risk": "LOW",
+  "partnership_policy": {
+    "technical_partners_allowed": true,
+    "regulated_sector_partners_allowed": true,
+    "requires_written_scope_and_due_diligence": true,
+    "partner_authorizations_must_be_verified_per_signal": true,
+    "does_not_confer_operator_authorization": true
+  }
 }

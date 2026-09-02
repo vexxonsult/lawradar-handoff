@@ -34,7 +34,34 @@
       },
       "additionalProperties": false
     },
-    "operator_access": {"type": "object"}
+    "operator_access": {
+      "type": "object",
+      "required": ["sector", "direct_offer_status", "peripheral_role_evidence", "evidence_status"],
+      "properties": {
+        "sector": {"enum": ["MEDICINES", "FINANCIAL_SERVICES", "LEGAL_SERVICES", "OTHER_REGULATED", "NOT_CLASSIFIED"]},
+        "direct_offer_status": {"enum": ["ACCESSIBLE", "OUT_OF_PROFILE", "UNKNOWN", "NOT_APPLICABLE"]},
+        "peripheral_role_evidence": {"enum": ["VERIFIED", "PARTIAL", "MISSING", "NOT_APPLICABLE"]},
+        "evidence_status": {"enum": ["VERIFIED", "PARTIAL", "MISSING"]},
+        "peripheral_service_evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["service_type", "source_kind", "source_url", "excerpt", "scope_excludes_regulated_acts", "scope_exclusion_excerpt", "evidence_status"],
+            "properties": {
+              "service_type": {"enum": ["PRESTATIONS_DE_SERVICES", "LOGICIELS", "CONSEIL", "MISE_EN_RELATION", "LOGISTIQUE"]},
+              "source_kind": {"enum": ["OFFICIAL_TEXT", "BOAMP"]},
+              "source_url": {"type": "string", "format": "uri"},
+              "excerpt": {"type": "string", "minLength": 1},
+              "scope_excludes_regulated_acts": {"type": "boolean"},
+              "scope_exclusion_excerpt": {"type": ["string", "null"]},
+              "evidence_status": {"enum": ["VERIFIED", "PARTIAL", "MISSING"]}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
   },
   "additionalProperties": true
 }

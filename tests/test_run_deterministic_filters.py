@@ -87,7 +87,50 @@ class DeterministicFilterTests(unittest.TestCase):
             "direct_offer_status": "OUT_OF_PROFILE",
             "peripheral_role_evidence": "VERIFIED",
             "evidence_status": "VERIFIED",
+            "peripheral_service_evidence": [{
+                "service_type": "LOGICIELS",
+                "source_kind": "BOAMP",
+                "source_url": "https://example.test/avis/1",
+                "excerpt": "Prestation de logiciel de suivi des commandes hospitalières.",
+                "scope_excludes_regulated_acts": True,
+                "scope_exclusion_excerpt": "Le marché exclut la vente, la dispensation et la distribution de médicament.",
+                "evidence_status": "VERIFIED",
+            }],
         }
         output = self.evaluate(data)
         self.assertEqual(output["operator_access"]["status"], "PASS")
         self.assertTrue(output["operator_access"]["allow_external_collection"])
+
+    def test_service_keyword_without_explicit_exclusion_remains_held(self):
+        data = facts()
+        data["operator_access"] = {
+            "sector": "MEDICINES",
+            "direct_offer_status": "OUT_OF_PROFILE",
+            "peripheral_role_evidence": "PARTIAL",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": [{
+                "service_type": "LOGISTIQUE",
+                "source_kind": "BOAMP",
+                "source_url": "https://example.test/avis/2",
+                "excerpt": "Prestations de logistique pour un établissement de santé.",
+                "scope_excludes_regulated_acts": False,
+                "scope_exclusion_excerpt": None,
+                "evidence_status": "PARTIAL",
+            }],
+        }
+        output = self.evaluate(data)
+        self.assertEqual(output["operator_access"]["status"], "HOLD")
+        self.assertEqual(output["operator_access"]["route"], "SERVICE_SCOPE_CHECK_ONLY")
+        self.assertFalse(output["operator_access"]["allow_external_collection"])
+
+    def test_unstructured_verified_role_does_not_open_a_regulated_market(self):
+        data = facts()
+        data["operator_access"] = {
+            "sector": "MEDICINES",
+            "direct_offer_status": "OUT_OF_PROFILE",
+            "peripheral_role_evidence": "VERIFIED",
+            "evidence_status": "VERIFIED",
+        }
+        output = self.evaluate(data)
+        self.assertEqual(output["operator_access"]["status"], "HOLD")
+        self.assertEqual(output["operator_access"]["route"], "LEGAL_ROLE_CHECK_ONLY")
