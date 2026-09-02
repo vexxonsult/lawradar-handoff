@@ -10,7 +10,14 @@ web librement, ne lit aucun ancien signal ni l’historique d’un acteur, et ne
 modifie jamais le Radar, ses preuves, les flux financiers ou les résultats des
 autres agents.
 
-## Sources prévues, mais désactivées en V0
+## Sources prévues, avec un pilote BOAMP manuel
+
+BOAMP est autorisé seulement dans le workflow manuel dédié et après la porte
+d'accès opérateur. Le collecteur ne consulte que le champ structuré `objet`,
+sur deux requêtes et deux pages au plus. Il ne lit pas le texte intégral, ne
+cherche pas sur le web et ne transforme pas un avis en taille de marché.
+
+Les autres sources restent désactivées en V0 :
 
 - registres publics d’entreprises, après choix du territoire et de la licence ;
 - marchés publics, après définition du vocabulaire sectoriel et de la fenêtre ;

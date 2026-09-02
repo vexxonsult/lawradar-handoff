@@ -414,6 +414,26 @@ Le contrat, le validateur de livraison et les tests sont en place. La
 validation en conditions réelles aura lieu au prochain moteur appelé : il doit
 produire une fiche valide par décision sans modifier les preuves primaires.
 
+### Livrable 6O — pilote Marché BOAMP manuel
+
+Le workflow manuel `agent-marche-boamp-lawradar.yml` reçoit un seul identifiant
+de signal `RETAINED`. Il extrait les faits liés à ce signal, exécute les filtres
+déterministes et s'arrête avec un artefact de contrôle lorsque la porte d'accès
+retourne `HOLD`. Il ne lance alors aucun appel BOAMP ni appel IA.
+
+Pour un signal accessible, il interroge BOAMP dans les limites versionnées :
+deux requêtes, deux pages, vingt-cinq avis au plus et deux secondes entre les
+appels. Un avis sans URL ou objet traçable rend la collecte `UNRESOLVED` ; il
+ne devient pas une preuve de marché. Une collecte vide devient `NO_EVIDENCE`
+sans appel IA. Seule une collecte complète ayant produit au moins un avis
+traçable autorise un appel Sonnet de qualification, limité à un par pilote.
+
+Le résultat est un enrichissement `market` sourcé, fusionné uniquement dans
+l'emplacement Marché du signal courant. BOAMP est une observation de marchés
+publics : il ne mesure ni la demande générale, ni la taille du marché, ni la
+concurrence exhaustive. L'agent Demande reste désactivé tant qu'une source de
+mesure d'intérêt conforme n'est pas choisie.
+
 ### État et sortie de phase 6
 
 La phase 6 est **en cours**, et non achevée. Les contrats, contrôleurs,

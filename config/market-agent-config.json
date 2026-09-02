@@ -7,8 +7,10 @@
       "reason": "La liste des registres, leurs conditions et le périmètre géographique doivent être choisis avant collecte."
     },
     "public_procurement": {
-      "enabled": false,
-      "reason": "Une règle de recherche par secteur et par territoire doit être validée avant activation."
+      "enabled": true,
+      "source": "BOAMP",
+      "scope": "Pilote manuel uniquement, à partir des mots-clés d'un seul signal lié et après la porte d'accès opérateur.",
+      "reason": "Les avis BOAMP publics sont structurés ; la collecte reste bornée, sans navigation libre ni analyse du texte intégral."
     },
     "provider_websites": {
       "enabled": false,
@@ -16,7 +18,7 @@
     }
   },
   "limits": {
-    "max_external_calls_per_run": 0,
-    "max_llm_calls_per_run": 0
+    "max_external_calls_per_run": 4,
+    "max_llm_calls_per_run": 1
   }
 }

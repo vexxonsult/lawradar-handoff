@@ -1,0 +1,134 @@
+name: Agent Marché BOAMP LawRadar — pilote manuel
+
+on:
+  workflow_dispatch:
+    inputs:
+      signal_id:
+        description: "Identifiant exact d'un signal RETAINED à enrichir"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: agent-marche-boamp-lawradar
+  cancel-in-progress: false
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Vérifier les garde-fous
+        run: python -m unittest discover -s tests -p 'test_*.py'
+      - name: Extraire les faits du signal courant
+        run: |
+          mkdir -p out
+          python scripts/prepare_opportunity_facts.py \
+            --dossier evidence/universal-signal-latest.json \
+            --signal-id "${{ inputs.signal_id }}" \
+            --output out/opportunity-facts.json
+          python scripts/run_deterministic_filters.py \
+            --facts out/opportunity-facts.json \
+            --policy config/compliance-policy-v1.json \
+            --profile config/operator-profile-v1.json \
+            --output out/deterministic-filters.json
+      - id: route
+        name: Bloquer les secteurs réglementés hors profil
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          route = json.loads(Path("out/deterministic-filters.json").read_text(encoding="utf-8"))["operator_access"]
+          Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8").write(
+              f"should_collect={'true' if route['allow_external_collection'] else 'false'}\n"
+          )
+          print(f"route={route['route']}; external_collection={route['allow_external_collection']}")
+          PY
+      - name: Collecter BOAMP de façon bornée
+        if: steps.route.outputs.should_collect == 'true'
+        run: >-
+          python scripts/fetch_boamp_data.py
+          --facts out/opportunity-facts.json
+          --config config/boamp-collector-config-v1.json
+          --output out/market-demand-boamp.json
+      - name: Construire les observations Marché
+        if: steps.route.outputs.should_collect == 'true'
+        run: >-
+          python scripts/build_boamp_market_observations.py
+          --facts out/opportunity-facts.json
+          --boamp out/market-demand-boamp.json
+          --output out/market-observations.json
+      - id: qualify
+        name: N'appeler le modèle que pour des avis traçables
+        if: steps.route.outputs.should_collect == 'true'
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          observations = json.loads(Path("out/market-observations.json").read_text(encoding="utf-8"))
+          ready = observations["collection_status"] == "COMPLETED" and bool(observations["observations"])
+          Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8").write(f"should_qualify={'true' if ready else 'false'}\n")
+          PY
+      - name: Enregistrer une absence ou une incertitude sans IA
+        if: steps.route.outputs.should_collect == 'true' && steps.qualify.outputs.should_qualify != 'true'
+        run: >-
+          python scripts/build_market_terminal_enrichment.py
+          --observations out/market-observations.json
+          --output out/market-enrichment.json
+      - name: Préparer la qualification Marché
+        if: steps.qualify.outputs.should_qualify == 'true'
+        run: >-
+          python scripts/prepare_market_qualification_input.py
+          --facts out/opportunity-facts.json
+          --observations out/market-observations.json
+          --output out/market-qualification-input.json
+      - name: Qualifier les avis Marché
+        if: steps.qualify.outputs.should_qualify == 'true'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: >-
+            Tu exécutes l'agent Marché LawRadar. Lis uniquement
+            out/market-qualification-input.json, config/agent-enrichment-schema.json et
+            config/market-agent-contract.md. N'utilise ni réseau, ni recherche, ni
+            Google Drive, ni autre fichier. Écris exactement out/market-enrichment.json.
+            Chaque URL de sortie doit provenir des observations BOAMP fournies. Ne conclus
+            jamais à une taille de marché, un chiffre d'affaires ou une concurrence exhaustive.
+            En cas d'ambiguïté, écris UNRESOLVED.
+          claude_args: >-
+            --model claude-sonnet-5
+            --max-turns 3
+            --allowedTools Read,Write
+      - name: Valider et intégrer l'enrichissement
+        if: steps.route.outputs.should_collect == 'true'
+        run: |
+          python scripts/validate_market_enrichment.py --observations out/market-observations.json --enrichment out/market-enrichment.json
+          python scripts/merge_agent_enrichment.py --dossier evidence/universal-signal-latest.json --enrichment out/market-enrichment.json --output out/universal-signal-enriched.json
+          cp out/universal-signal-enriched.json evidence/universal-signal-latest.json
+      - name: Conserver les artefacts du pilote
+        uses: actions/upload-artifact@v4
+        with:
+          name: lawradar-market-boamp-${{ github.run_id }}
+          path: out/
+          retention-days: 90
+      - name: Versionner l'enrichissement validé
+        if: steps.route.outputs.should_collect == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "lawradar-market[bot]"
+          git config user.email "lawradar-market[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git add evidence/universal-signal-latest.json
+          git diff --cached --quiet || git commit -m "Enrichissement Marché BOAMP LawRadar $(date -u +%F)"
+          git pull --rebase origin main
+          git push
