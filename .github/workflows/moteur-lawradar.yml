@@ -160,7 +160,7 @@ jobs:
             d'un candidat présent dans out/motor-input.json.
           claude_args: >-
             --model claude-sonnet-5
-            --max-turns 7
+            --max-turns 8
             --allowedTools Read,Write
       - name: Valider et rendre le dashboard
         run: python scripts/render_motor_delivery.py --input out/motor-delivery.json --dashboard out/dashboard.html
