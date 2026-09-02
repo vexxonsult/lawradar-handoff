@@ -283,6 +283,24 @@ actuelles conduit à `DISCARD`. Les plafonds initiaux sont 2 000 € de capital 
 8 semaines de mise sur le marché ; ils sont versionnés et modifiables sans
 changer le code.
 
+### Livrable 6J — collecte BOAMP Marché/Demande déterministe
+
+Le script `scripts/fetch_boamp_data.py` interroge manuellement le jeu public
+BOAMP à partir des seuls mots-clés ou du périmètre affecté du fait
+d'opportunité courant. Il est limité à deux requêtes, deux pages par requête,
+25 observations compactes et un intervalle de deux secondes entre les appels.
+Il ne fait aucun appel IA, ne lit pas le texte intégral des avis, ne consulte
+aucun signal historique et n'écrit que `out/market-demand-boamp.json`.
+
+Chaque observation conserve uniquement l'identifiant BOAMP, l'objet,
+l'acheteur, les dates, la nature de l'avis et son URL. Le jeu structuré ne
+publie pas de montant fiable parmi ces champs : le résultat l'indique donc par
+`null`, plutôt que d'inférer un montant depuis un texte. Une réponse vide est
+`NO_EVIDENCE`; une indisponibilité de BOAMP est `UNRESOLVED`, jamais une preuve
+négative. Cette sortie reste une observation amont : elle n'est pas fusionnée
+automatiquement à l'agent Marché et ne peut pas déclencher l'agent
+Entrepreneur.
+
 ---
 
 ## Rappel de la frontière entre les deux projets

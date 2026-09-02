@@ -1,0 +1,16 @@
+{
+  "schema": "lawradar-boamp-collector-config-v1",
+  "activation": "manual_only",
+  "endpoint": "https://boamp-datadila.opendatasoft.com/api/explore/v2.1/catalog/datasets/boamp/records",
+  "dataset": "boamp",
+  "search_field": "objet",
+  "limits": {
+    "max_queries_per_signal": 2,
+    "page_size": 20,
+    "max_pages_per_query": 2,
+    "max_records_in_output": 25,
+    "minimum_interval_seconds": 2,
+    "attempts_per_request": 2,
+    "timeout_seconds": 20
+  }
+}
