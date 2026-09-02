@@ -1,18 +1,18 @@
 {
   "schema": "lawradar-run-index-v1",
-  "generated_at_utc": "2026-09-02T01:07:42.297685+00:00",
+  "generated_at_utc": "2026-09-02T01:11:49.779946+00:00",
   "purpose": "Registre technique des derniers runs, sans interprétation des preuves.",
   "runs": [
     {
       "kind": "motor",
       "status": "skipped",
-      "reason": "UNSUPPORTED_SOURCE_CHANGE:eurlex-oj-latest.json",
-      "run_id": "33578115443",
-      "run_url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33578115443",
+      "reason": "Variation EUR-Lex détectée ; hors périmètre du moteur actuel (JORF et ConsultDD).",
+      "run_id": "33578390799",
+      "run_url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33578390799",
       "workflow": "Moteur LawRadar — livraison structurée",
-      "commit": "2c4c3c54065f189dc2a7bd93badcb47af2f5913f",
-      "created_at_utc": "2026-09-02T01:07:42.251427+00:00",
-      "duration_seconds": 1,
+      "commit": "10456a1960e4082358fb1b7493a42930b376f1f2",
+      "created_at_utc": "2026-09-02T01:11:49.736497+00:00",
+      "duration_seconds": 0,
       "inputs": {
         "count": 3,
         "missing": 0
