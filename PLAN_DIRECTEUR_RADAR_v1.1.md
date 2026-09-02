@@ -324,8 +324,10 @@ versionnée `evidence/motor-queue-latest.json` conserve chaque candidat et son
 empreinte, expose au maximum dix candidats par appel, puis retire uniquement
 un lot après une livraison validée. Un échec laisse le lot en tête de file ; il
 n'est donc ni perdu ni remplacé par les nouvelles collectes. Le workflow passe
-chaque heure tant que la file existe, mais le modèle n'est appelé que pour un
-lot non vide. La limite de tours passe de cinq à sept pour terminer un lot
+trois fois seulement après la collecte quotidienne, mais le modèle n'est appelé
+que pour un lot non vide. Il peut ainsi absorber jusqu'à trente candidats par
+jour sans réveiller de runner toute la nuit. La limite de tours passe de cinq à
+sept pour terminer un lot
 normal sans ouvrir une exécution non bornée. Le plafond est fixé à sept tours,
 après mesure d'un lot de six textes officiels dont la production valide
 nécessitait précisément ce septième tour.

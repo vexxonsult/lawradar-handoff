@@ -3,8 +3,9 @@ name: Moteur LawRadar — livraison structurée
 on:
   workflow_dispatch:
   schedule:
-    # Une file peut être rattrapée par lots après la collecte quotidienne.
-    - cron: "35 * * * *"
+    # Trois lots au plus, juste après la collecte quotidienne de 15:20 UTC.
+    # Cela absorbe 30 candidats sans réveiller de runner toute la nuit.
+    - cron: "35 15,16,17 * * *"
 
 permissions:
   contents: write
