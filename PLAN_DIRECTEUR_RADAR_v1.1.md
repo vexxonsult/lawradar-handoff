@@ -242,6 +242,16 @@ artefacts. Le type de source est conservé afin de ne jamais présenter une
 couverture institutionnelle ou académique comme une couverture de presse
 indépendante.
 
+### Livrable 6F — contrat Demande sans dépense
+
+L’agent Demande est préparé sans collecte automatique : son contrat exige des
+observations mesurées, datées et géolocalisées, et interdit de convertir un
+indice d’intérêt en volume de recherche ou en intention d’achat. Google Trends,
+Keyword Planner et Search Console restent explicitement désactivés, donc aucun
+compte, crédit, clé API ou appel IA n’est créé. Un contrôleur valide que chaque
+conclusion et chaque source viennent strictement des observations du signal
+courant avant toute fusion dans son emplacement `demand`.
+
 ---
 
 ## Rappel de la frontière entre les deux projets

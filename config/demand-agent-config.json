@@ -1,0 +1,22 @@
+{
+  "schema": "lawradar-demand-agent-config-v1",
+  "activation": "manual_only",
+  "sources": {
+    "google_trends": {
+      "enabled": false,
+      "reason": "Aucune API officielle ni règle d'usage validée pour une automatisation V0."
+    },
+    "google_ads_keyword_planner": {
+      "enabled": false,
+      "reason": "Nécessite un compte, des autorisations et un budget explicitement choisis."
+    },
+    "search_console": {
+      "enabled": false,
+      "reason": "Sera pertinent uniquement après la création d'un site propre au projet."
+    }
+  },
+  "limits": {
+    "max_external_calls_per_run": 0,
+    "max_llm_calls_per_run": 0
+  }
+}
