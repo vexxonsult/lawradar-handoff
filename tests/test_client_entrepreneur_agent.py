@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.clients.entrepreneur_agent import build_delivery, read_snapshot, source_hash
+from scripts.clients.entrepreneur_agent import build_delivery, read_snapshot, run_claude_assessment, source_hash
 
 
 def dossier(with_gate=False):
@@ -22,6 +22,7 @@ def dossier(with_gate=False):
             "final_constraint": "PASS",
             "operator_access": {"status": "PASS", "allow_external_collection": True},
         }
+        signal["opportunity_facts"] = {"estimated_market_amount_eur": 12000}
     return {"schema": "lawradar-universal-signal-v2", "signals": [signal], "money_flows": []}
 
 
@@ -58,3 +59,67 @@ class ClientEntrepreneurTests(unittest.TestCase):
     def test_rejects_an_unknown_signal(self):
         with self.assertRaises(ValueError):
             build_delivery(dossier(), "hash", "signal:unknown")
+
+    def test_closed_gate_is_skipped_without_creating_an_api_call(self):
+        class ClientThatMustNotRun:
+            class Messages:
+                def create(self, **kwargs):
+                    raise AssertionError("Claude ne doit pas être appelé")
+
+            messages = Messages()
+
+        snapshot = dossier(with_gate=True)
+        snapshot["signals"][0]["deterministic_filters"]["final_constraint"] = "HOLD"
+        result = run_claude_assessment(snapshot, "hash", "signal:1", client=ClientThatMustNotRun())
+        self.assertEqual(result["status"], "SKIPPED")
+        self.assertEqual(result["execution"]["external_calls"], 0)
+
+    def test_ready_signal_uses_one_claude_call_and_validates_the_delivery(self):
+        assessment = {
+            "decision": "TEST",
+            "axis_strategic": "Pige B2B sur un besoin public identifié.",
+            "offer": {
+                "service": "Qualification et mise en relation B2B",
+                "target_actor": "Acheteur public",
+                "provider_actor": "Prestataire spécialisé",
+                "evidence_summary": "Le signal contient une assiette explicitement chiffrée.",
+            },
+            "commission_recommendation": {
+                "rate_percent": 5,
+                "base_amount_eur": 12000,
+                "estimated_success_fee_eur": 600,
+                "conditions": "Sous réserve d'un contrat d'apporteur d'affaires conforme.",
+            },
+            "first_step_protocol": {
+                "hypothesis": "Un prestataire est prêt à répondre à ce besoin.",
+                "draft_action": "Préparer une liste courte de prestataires, sans contact.",
+                "success_signal": "Trois prestataires qualifiables sont identifiés.",
+                "stop_condition": "Aucun prestataire vérifiable n'est trouvé.",
+                "max_duration_days": 3,
+            },
+            "source_urls": ["https://official.test/a"],
+        }
+
+        class FakeMessages:
+            def __init__(self):
+                self.calls = []
+
+            def create(self, **kwargs):
+                self.calls.append(kwargs)
+                return {
+                    "id": "msg_test",
+                    "usage": {"input_tokens": 101, "output_tokens": 202},
+                    "content": [{"type": "text", "text": json.dumps(assessment)}],
+                }
+
+        class FakeClient:
+            def __init__(self):
+                self.messages = FakeMessages()
+
+        client = FakeClient()
+        result = run_claude_assessment(dossier(with_gate=True), "hash", "signal:1", client=client)
+        self.assertEqual(result["status"], "COMPLETED")
+        self.assertEqual(result["business_assessment"]["decision"], "TEST")
+        self.assertEqual(result["execution"]["external_calls"], 1)
+        self.assertFalse(result["execution"]["writes_to_core"])
+        self.assertEqual(client.messages.calls[0]["output_config"]["format"]["type"], "json_schema")

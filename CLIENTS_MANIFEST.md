@@ -21,11 +21,20 @@ Chaque client :
 
 ## Client initial
 
-`scripts/clients/entrepreneur_agent.py` prépare uniquement une livraison
+`scripts/clients/entrepreneur_agent.py` prépare une livraison
 `lawradar-client-entrepreneur-delivery-v1`. Il vérifie la présence des filtres
-et de la porte opérateur dans le snapshot V2 ; il ne produit aucune décision
-business tant que ces préconditions ne sont pas démontrées. Son entrée ne peut
-jamais être sa propre sortie.
+et de la porte opérateur dans le snapshot V2 ; il écrit `SKIPPED`, avec zéro
+appel externe, dès que le signal n'est pas à `PASS` ou que la porte opérateur
+n'autorise pas la collecte externe. Son entrée ne peut jamais être sa propre
+sortie.
+
+L'évaluation Claude est opt-in : `--run-claude` requiert `ANTHROPIC_API_KEY`
+dans l'environnement d'exécution et le SDK Python officiel `anthropic`. Elle
+est réalisée avec un unique appel borné au modèle configuré (Sonnet 4.6 par
+défaut), sans outil, sans recherche web et sans écriture dans le noyau. La
+sortie est contrôlée : URLs déjà présentes dans le signal, commission de 5 à
+10 % seulement sur une assiette chiffrée source, et premier pas réversible de
+sept jours maximum.
 
 ## Extensions prévues
 
