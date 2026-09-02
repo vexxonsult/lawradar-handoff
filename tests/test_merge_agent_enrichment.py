@@ -81,3 +81,11 @@ class MergeAgentEnrichmentTests(unittest.TestCase):
         unresolved["signals"][0]["enrichments"]["press"] = {"status": "UNRESOLVED", "result": press(), "attempts": 2, "previous_results": []}
         with self.assertRaises(ValueError):
             merge(unresolved, press())
+
+    def test_migrates_an_older_unresolved_slot_without_attempt_metadata(self):
+        unresolved = dossier()
+        first = press()
+        first["status"] = "UNRESOLVED"
+        unresolved["signals"][0]["enrichments"]["press"] = {"status": "UNRESOLVED", "result": first}
+        merged = merge(unresolved, press())
+        self.assertEqual(merged["signals"][0]["enrichments"]["press"]["attempts"], 2)

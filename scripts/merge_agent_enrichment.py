@@ -51,11 +51,12 @@ def merge(dossier: dict[str, Any], enrichment: dict[str, Any]) -> dict[str, Any]
     if not isinstance(slot, dict):
         raise ValueError("Cet emplacement d'enrichissement n'est pas disponible.")
     previous_results = slot.get("previous_results", [])
-    attempts = int(slot.get("attempts", 0))
+    legacy_unresolved = slot.get("status") == "UNRESOLVED" and isinstance(slot.get("result"), dict)
+    attempts = int(slot.get("attempts", 1 if legacy_unresolved else 0))
     if slot.get("status") == "PENDING" and slot.get("result") is None:
         previous_results = []
         attempts = 0
-    elif slot.get("status") == "UNRESOLVED" and isinstance(slot.get("result"), dict) and attempts == 1:
+    elif legacy_unresolved and attempts == 1:
         previous_results = [*previous_results, slot["result"]]
     else:
         raise ValueError("Cet emplacement d'enrichissement n'est pas disponible.")
