@@ -19,11 +19,20 @@ Schéma attendu : `lawradar-primary-handoff-v1`.
 
 ## Planification
 
-La collecte est lancée chaque jour à 17 h 20 Europe/Paris en heure d’été (`20 15 * * *` UTC). Le moteur Claude GitHub démarre à 17 h 35 ; il reste inactif lorsqu'aucun candidat pris en charge n'est présent dans le diff.
+La collecte est lancée chaque jour à 17 h 20 Europe/Paris en heure d’été (`20 15 * * *` UTC). Le moteur Anthropic démarre à 17 h 35 ; il reste inactif lorsqu'aucun candidat pris en charge n'est présent dans le diff.
 
 ## Sobriété du cycle
 
 Après la collecte, le workflow publie `evidence/delta-latest.json`. Il compare mécaniquement la livraison du jour à la précédente, en ignorant les seuls horodatages techniques. `evidence_change_detected` indique toute variation collectée ; `model_input_required` indique uniquement une variation relevant du moteur actuel (JORF ou ConsultDD). Une variation EUR-Lex est donc visible sans déclencher Claude. Sans candidat pris en charge, le centre de contrôle enregistre explicitement un moteur `skipped` avec sa raison. En cas de changement documentaire pris en charge, les preuves brutes citées restent la seule source à interpréter.
+
+Lorsqu'un appel modèle est requis, le moteur utilise l'API Message Batches :
+un maximum strict de dix candidats, dix contextes isolés, une sortie JSON par
+candidat et une facturation Batch à 50 % du tarif Messages standard. Le fichier
+`evidence/motor-batch-latest.json` permet de reprendre un lot encore en cours
+sans le soumettre une seconde fois. Le secret GitHub `ANTHROPIC_API_KEY` est
+obligatoire ; le jeton `CLAUDE_CODE_OAUTH_TOKEN` ne donne pas accès à cette API.
+Sans clé API, le centre de contrôle enregistre un run ignoré et aucun coût n'est
+engagé.
 
 ## Rendu de restitution
 

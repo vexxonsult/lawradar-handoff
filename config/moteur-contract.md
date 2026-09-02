@@ -9,10 +9,27 @@ interprétation n'est pas encore dans le périmètre du moteur de Phase 3. Il se
 branché sur son agent réglementaire dédié, plutôt que de provoquer aujourd'hui
 des appels modèle sans candidat exploitable.
 
-Quand il est invoqué, il ne fait aucune recherche web, aucun appel HTTP et ne
-conclut jamais qu'une information est absente parce qu'une source est
-inaccessible ou incomplète. Il distingue explicitement `UNRESOLVED` de
-`DISCARDED`.
+Quand il est invoqué, le moteur soumet au maximum dix requêtes indépendantes à
+l'API Message Batches d'Anthropic. Chaque requête ne reçoit qu'un candidat et
+n'a accès à aucun outil, aucune recherche web, aucun autre fichier et aucune
+mémoire historique. La seule sortie du modèle est un objet JSON contraint par
+schéma. Le code assemble ensuite les objets, rattache chaque réponse à son
+`source_id` et valide la livraison complète. Il distingue explicitement
+`UNRESOLVED` de `DISCARDED`.
+
+L'intégration utilise l'interface stable du SDK officiel
+`client.messages.batches`, et non l'ancienne interface bêta. Elle requiert le
+secret GitHub `ANTHROPIC_API_KEY`, distinct du jeton d'abonnement Claude Code.
+En son absence, le run est enregistré comme ignoré, sans appel fournisseur et
+sans faire avancer la file.
+
+Un batch asynchrone peut survivre à un run GitHub. Son identifiant, l'empreinte
+du lot, le modèle et les compteurs techniques sont conservés dans
+`evidence/motor-batch-latest.json`, sans recopier les candidats ni les réponses.
+Le run suivant reprend cet identifiant : il ne resoumet jamais le même lot tant
+que le batch existe. La file n'avance que lorsque les dix réponses au plus sont
+terminées, présentes, correctement rattachées et validées. Une réponse absente,
+expirée, annulée ou en erreur bloque donc tout le lot sans perte de candidat.
 
 Le dossier `evidence/universal-signal-latest.json` est une **sortie historique**
 V2 destinée aux agents du noyau et aux clients externes ; il n'est jamais une
@@ -21,7 +38,7 @@ doit ni le lire, ni le prendre comme exemple, ni réutiliser ses acteurs,
 montants, liens ou raisonnements. À chaque run, toute conclusion doit provenir
 exclusivement des candidats présents dans `out/motor-input.json`.
 
-Il écrit exactement un fichier `out/motor-delivery.json`, conforme à
+Le code d'assemblage écrit exactement un fichier `out/motor-delivery.json`, conforme à
 `config/moteur-delivery-schema.json`. Chaque décision contient une fiche
 `lawradar-opportunity-facts-v1` associée exactement à son `source_id`. Cette
 fiche n'est pas une idée commerciale : elle porte les termes de recherche et
@@ -35,6 +52,11 @@ direction sont étayés par les preuves lues ; sinon le signal reste
 
 Les résultats sont téléversés comme artefact GitHub Actions. Ils ne sont ni
 committés dans ce dépôt public, ni écrits dans Google Drive.
+
+Le tarif Batch annoncé par Anthropic réduit de 50 % le coût des tokens par
+rapport aux appels Messages synchrones. Cette réduction ne dispense pas de la
+limite de dix candidats, du filtre delta-first ni de la mesure des tokens
+réellement retournés par chaque réponse.
 
 Les consommateurs métier (Entrepreneur, journaliste, vidéo, alertes B2B) sont
 hors du moteur. Ils vivent dans `scripts/clients/`, lisent uniquement

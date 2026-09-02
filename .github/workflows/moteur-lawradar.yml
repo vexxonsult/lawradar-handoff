@@ -136,35 +136,99 @@ jobs:
           python-version: "3.12"
       - name: Vérifier les règles de rendu
         run: python -m unittest discover -s tests -p 'test_*.py'
+      - id: batch_auth
+        name: Vérifier la clé API Batch sans l'exposer
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -n "$ANTHROPIC_API_KEY" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "ANTHROPIC_API_KEY absente : aucun appel Anthropic ne sera lancé."
+          fi
+      - name: Installer le SDK officiel Anthropic
+        if: steps.batch_auth.outputs.configured == 'true'
+        run: python -m pip install --disable-pip-version-check "anthropic>=1.0,<2"
       - name: Préparer la livraison du run
         run: |
           mkdir -p out
           python scripts/manage_motor_queue.py stage --queue evidence/motor-queue-latest.json --queue-output out/motor-queue-proposed.json --batch-output out/motor-input.json --batch-size 10
-      - name: Produire la livraison structurée
-        uses: anthropics/claude-code-action@v1
+      - id: batch
+        name: Soumettre ou reprendre le Message Batch Anthropic
+        if: steps.batch_auth.outputs.configured == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: >-
+          python scripts/run_anthropic_motor_batch.py
+          --input out/motor-input.json
+          --state evidence/motor-batch-latest.json
+          --output out/motor-delivery.json
+          --model claude-sonnet-5
+          --wait-seconds 180
+          --poll-seconds 10
+      - name: Enregistrer la migration en attente de clé API
+        if: steps.batch_auth.outputs.configured != 'true'
+        run: |
+          python scripts/build_run_manifest.py --output evidence/run-manifest-motor-latest.json --kind motor --status skipped --reason "ANTHROPIC_API_KEY absente ; migration Batch prête mais aucun appel fournisseur lancé." --inputs out/motor-input.json
+          python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
+          python scripts/render_control_dashboard.py --input evidence/run-index-latest.json --backlog evidence/motor-backlog-latest.json --out out/control-dashboard.html
+      - name: Téléverser le contrôle sans appel fournisseur
+        if: steps.batch_auth.outputs.configured != 'true'
+        uses: actions/upload-artifact@v4
         with:
-          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          prompt: >-
-            Tu exécutes le moteur LawRadar. Lis uniquement out/motor-input.json et
-            config/moteur-delivery-schema.json et config/opportunity-facts-schema-v1.json. N'utilise ni réseau, ni recherche,
-            ni Google Drive, ni autres fichiers. Écris exactement out/motor-delivery.json, conforme
-            au schéma. N'écris aucun autre fichier. Chaque candidate doit avoir une
-            opportunity avec son source_id ; toute information non démontrée est
-            UNRESOLVED. Si aucun flux n'est étayé, écris money_flows: [].
-            Chaque décision doit inclure facts, conforme au schéma des faits : facts.signal_id
-            est exactement le source_id du candidat ; les mots-clés sont des termes distinctifs
-            présents dans la preuve ; toute date, exigence, autorisation, capital ou délai non
-            démontré est null, MISSING ou PARTIAL selon le schéma. evidence/universal-signal-latest.json est une sortie historique : ne le lis pas,
-            ne l'utilise ni comme exemple, ni comme source, ni comme solution de repli.
-            Chaque fait, acteur, montant et flux de cette livraison doit venir uniquement
-            d'un candidat présent dans out/motor-input.json.
-          claude_args: >-
-            --model claude-sonnet-5
-            --max-turns 8
-            --allowedTools Read,Write
+          name: lawradar-motor-${{ github.run_id }}
+          path: |
+            evidence/run-manifest-motor-latest.json
+            evidence/run-index-latest.json
+            out/control-dashboard.html
+          retention-days: 90
+      - name: Versionner le blocage de configuration sans erreur de run
+        if: steps.batch_auth.outputs.configured != 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "lawradar-motor[bot]"
+          git config user.email "lawradar-motor[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git add evidence/run-manifest-motor-latest.json evidence/run-index-latest.json
+          git diff --cached --quiet || git commit -m "Moteur LawRadar sans clé Batch $(date -u +%F)"
+          git pull --rebase origin main
+          git push
+      - name: Enregistrer le batch asynchrone en cours
+        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true'
+        run: |
+          python scripts/build_run_manifest.py --output evidence/run-manifest-motor-latest.json --kind motor --status pending --reason "Message Batch Anthropic en cours ; reprise sans nouvelle soumission au prochain run." --inputs out/motor-input.json --outputs evidence/motor-batch-latest.json
+          python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
+          python scripts/render_control_dashboard.py --input evidence/run-index-latest.json --backlog evidence/motor-backlog-latest.json --out out/control-dashboard.html
+      - name: Téléverser l'état du batch encore en cours
+        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: lawradar-motor-batch-${{ github.run_id }}
+          path: |
+            evidence/motor-batch-latest.json
+            evidence/run-manifest-motor-latest.json
+            evidence/run-index-latest.json
+            out/control-dashboard.html
+          retention-days: 90
+      - name: Mémoriser le batch encore en cours sans le soumettre à nouveau
+        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "lawradar-motor[bot]"
+          git config user.email "lawradar-motor[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git add evidence/motor-batch-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json
+          git diff --cached --quiet || git commit -m "Batch moteur LawRadar en cours $(date -u +%F)"
+          git pull --rebase origin main
+          git push
       - name: Valider et rendre le dashboard
+        if: steps.batch.outputs.ready == 'true'
         run: python scripts/render_motor_delivery.py --input out/motor-delivery.json --dashboard out/dashboard.html
       - name: Publier la livraison du run
+        if: steps.batch.outputs.ready == 'true'
         env:
           LAWRADAR_MODEL: claude-sonnet-5
         run: >-
@@ -174,6 +238,7 @@ jobs:
           --inputs out/motor-input.json config/moteur-delivery-schema.json
           --outputs out/motor-delivery.json out/dashboard.html
       - name: Construire le dossier universel de signal
+        if: steps.batch.outputs.ready == 'true'
         run: |
           python scripts/build_universal_signal.py --motor-input out/motor-input.json --delivery out/motor-delivery.json --run-manifest out/run-manifest.json --output out/universal-signal.json
           cp out/universal-signal.json evidence/universal-signal-latest.json
@@ -194,25 +259,28 @@ jobs:
             --ready-output out/recycle-ready.json
           python scripts/build_run_manifest.py --output out/run-manifest.json --kind motor --status success --inputs out/motor-input.json config/moteur-delivery-schema.json --outputs out/motor-delivery.json out/dashboard.html out/universal-signal.json out/agent-pilot-readiness.json
       - name: Actualiser le registre du centre de contrôle
+        if: steps.batch.outputs.ready == 'true'
         run: |
           python scripts/manage_motor_queue.py advance --queue evidence/motor-queue-latest.json --motor-input out/motor-input.json --output evidence/motor-queue-latest.json
           cp out/run-manifest.json evidence/run-manifest-motor-latest.json
           python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
           python scripts/render_control_dashboard.py --input evidence/run-index-latest.json --backlog evidence/motor-backlog-latest.json --out out/control-dashboard.html
       - name: Téléverser la livraison du run
+        if: steps.batch.outputs.ready == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: lawradar-moteur-${{ github.run_id }}
           path: out/
           retention-days: 90
       - name: Versionner le statut du moteur
+        if: steps.batch.outputs.ready == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "lawradar-motor[bot]"
           git config user.email "lawradar-motor[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git add evidence/motor-queue-latest.json evidence/recycle-backlog-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json evidence/universal-signal-latest.json evidence/agent-pilot-readiness-latest.json
+          git add evidence/motor-batch-latest.json evidence/motor-queue-latest.json evidence/recycle-backlog-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json evidence/universal-signal-latest.json evidence/agent-pilot-readiness-latest.json
           git diff --cached --quiet || git commit -m "Statut moteur LawRadar $(date -u +%F)"
           git pull --rebase origin main
           git push

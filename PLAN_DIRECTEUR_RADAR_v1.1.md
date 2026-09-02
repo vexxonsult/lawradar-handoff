@@ -25,7 +25,15 @@ Rendre le Radar durable, reproductible, économe et facile à maintenir, sans ab
 
 GitHub est l'unique base opérationnelle : collecteurs, configurations, schémas, tests, preuves structurées, journaux techniques, versions et artefacts de dashboard. Google Drive ne fait partie d'aucun trajet actif ; il peut être supprimé ou conservé comme archive personnelle, sans incidence sur le Radar.
 
-Le collecteur GitHub Actions tourne à 17 h 20 (heure d'été française). Le moteur Claude, lancé à 17 h 35, ne lit que le diff local préparé depuis les preuves GitHub et ne s'exécute que si ce diff contient un candidat pris en charge. Il ne consulte ni n'écrit Google Drive. Les livrables (`motor-input.json`, `motor-delivery.json`, dashboard) restent des artefacts GitHub Actions, distincts du dépôt public.
+Le collecteur GitHub Actions tourne à 17 h 20 (heure d'été française). Le moteur Anthropic, lancé à 17 h 35, ne lit que le diff local préparé depuis les preuves GitHub et ne s'exécute que si ce diff contient un candidat pris en charge. Il ne consulte ni n'écrit Google Drive. Les livrables (`motor-input.json`, `motor-delivery.json`, dashboard) restent des artefacts GitHub Actions, distincts du dépôt public.
+
+Le moteur traite le lot par l'API Message Batches officielle : dix candidats au
+maximum, une requête isolée par candidat, sortie JSON contrainte et assemblage
+déterministe. Le prix des tokens bénéficie du tarif Batch réduit de 50 %. Un
+état minimal versionné permet de reprendre le même batch asynchrone sans double
+soumission si Anthropic ne l'a pas terminé pendant le run courant. Cette voie
+requiert `ANTHROPIC_API_KEY` ; en son absence, le système n'utilise pas le jeton
+Claude Code comme substitut et n'engage aucun appel.
 
 L'ancienne tâche Claude qui écrivait sur Drive n'est plus une composante du système. Elle doit rester en pause ou être supprimée dans l'espace Claude afin d'éviter tout doublon ; aucune nouvelle tâche Drive ne doit être créée pour le Radar.
 
