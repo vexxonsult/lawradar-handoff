@@ -53,6 +53,13 @@ jobs:
           )
           print(f"route={route['route']}; external_collection={route['allow_external_collection']}")
           PY
+      - name: Enregistrer le blocage Demande sans collecte externe
+        if: steps.route.outputs.should_collect != 'true'
+        run: >-
+          python scripts/build_boamp_demand_observations.py
+          --facts out/opportunity-facts.json
+          --operator-gate out/deterministic-filters.json
+          --output out/demand-observations.json
       - name: Collecter BOAMP de façon bornée
         if: steps.route.outputs.should_collect == 'true'
         run: >-
@@ -67,6 +74,24 @@ jobs:
           --facts out/opportunity-facts.json
           --boamp out/market-demand-boamp.json
           --output out/market-observations.json
+      - name: Construire la demande publique à partir des mêmes avis BOAMP
+        if: steps.route.outputs.should_collect == 'true'
+        run: |
+          python scripts/build_boamp_demand_observations.py \
+            --facts out/opportunity-facts.json \
+            --boamp out/market-demand-boamp.json \
+            --output out/demand-observations.json
+          python scripts/build_boamp_demand_enrichment.py \
+            --observations out/demand-observations.json \
+            --output out/demand-enrichment.json
+          python scripts/validate_demand_enrichment.py \
+            --observations out/demand-observations.json \
+            --enrichment out/demand-enrichment.json
+          python scripts/merge_agent_enrichment.py \
+            --dossier evidence/universal-signal-latest.json \
+            --enrichment out/demand-enrichment.json \
+            --output out/universal-signal-with-demand.json
+          cp out/universal-signal-with-demand.json evidence/universal-signal-latest.json
       - id: qualify
         name: N'appeler le modèle que pour des avis traçables
         if: steps.route.outputs.should_collect == 'true'

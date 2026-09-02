@@ -118,6 +118,9 @@ def parse_deadline(value: Any) -> datetime | None:
 
 def notice_kind(record: dict[str, Any]) -> str:
     nature = " ".join(str(record.get(key) or "") for key in ("nature", "nature_libelle")).upper()
+    normalized = text_key(nature)
+    if "pre information" in normalized or "preinformation" in normalized:
+        return "PRE_INFORMATION"
     if "ATTRIBUT" in nature or "RESULTAT" in nature:
         return "AWARD"
     if "APPEL" in nature or "MARCH" in nature or "CONCESS" in nature:

@@ -1,7 +1,12 @@
 {
   "schema": "lawradar-demand-agent-config-v1",
   "activation": "manual_only",
+  "experimental_manual_only": true,
   "sources": {
+    "boamp_public_procurement": {
+      "enabled": true,
+      "reason": "Réutilise les avis BOAMP déjà collectés par le pilote Marché, sans appel supplémentaire. Ne mesure que la demande publique formalisée."
+    },
     "google_trends": {
       "enabled": false,
       "reason": "Aucune API officielle ni règle d'usage validée pour une automatisation V0."

@@ -152,8 +152,13 @@ def press_pair(current_hash: str) -> tuple[dict[str, Any], dict[str, Any]]:
 
 def demand_pair(current_hash: str) -> tuple[dict[str, Any], dict[str, Any]]:
     observations = {
-        "schema": "lawradar-demand-observations-v1", "signal_id": SCENARIO_ID,
+        "schema": "lawradar-demand-observations-v2", "signal_id": SCENARIO_ID,
         "signal_hash": current_hash, "collected_at_utc": NOW.isoformat(), "collection_status": "COMPLETED",
+        "indicators": {
+            "trends": {"status": "DISABLED", "experimental_manual_only": True, "ratio_7d_vs_prior_83d": None, "surge_detected": None},
+            "autocomplete": {"status": "DISABLED", "experimental_manual_only": True, "intent_terms_found": [], "commercial_intent": None},
+            "institutional": {"status": "INSTITUTIONAL_DEMAND_OBSERVED", "open_tender_count": 1, "pre_information_count": 0, "distinct_buyer_count": 1},
+        },
         "observations": [{
             "url": DEMAND_URL, "title": "SCÉNARIO — indice de recherche", "provider": "simulateur",
             "metric": "interest_index", "value": 42, "unit": "index", "period": "2026-09", "geography": "FR",
@@ -169,6 +174,7 @@ def demand_pair(current_hash: str) -> tuple[dict[str, Any], dict[str, Any]]:
         "details": {
             "signal_hash": current_hash, "collection_status": "COMPLETED", "observations_total": 1,
             "conclusions": [{"url": DEMAND_URL, "interpretation": "SEARCH_INTEREST", "why": "Indice positif du scénario, sans extrapolation."}],
+            "indicators": observations["indicators"],
         }, "score": None,
     }
     return observations, enrichment

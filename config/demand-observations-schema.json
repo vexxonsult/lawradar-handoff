@@ -3,14 +3,54 @@
   "title": "Observations mesurées de demande LawRadar",
   "type": "object",
   "required": [
-    "schema", "signal_id", "signal_hash", "collected_at_utc", "collection_status", "observations", "errors"
+    "schema", "signal_id", "signal_hash", "collected_at_utc", "collection_status", "indicators", "observations", "errors"
   ],
   "properties": {
-    "schema": {"const": "lawradar-demand-observations-v1"},
+    "schema": {"const": "lawradar-demand-observations-v2"},
     "signal_id": {"type": "string", "minLength": 1},
     "signal_hash": {"type": "string", "minLength": 1},
     "collected_at_utc": {"type": "string", "minLength": 1},
-    "collection_status": {"enum": ["COMPLETED", "NO_EVIDENCE", "UNRESOLVED"]},
+    "collection_status": {"enum": ["COMPLETED", "UNRESOLVED", "SKIPPED_BY_OPERATOR_GATE"]},
+    "indicators": {
+      "type": "object",
+      "required": ["trends", "autocomplete", "institutional"],
+      "properties": {
+        "trends": {
+          "type": "object",
+          "required": ["status", "experimental_manual_only", "ratio_7d_vs_prior_83d", "surge_detected"],
+          "properties": {
+            "status": {"enum": ["DISABLED", "COMPLETED", "INSUFFICIENT_DATA", "UNRESOLVED"]},
+            "experimental_manual_only": {"type": "boolean"},
+            "ratio_7d_vs_prior_83d": {"type": ["number", "null"]},
+            "surge_detected": {"type": ["boolean", "null"]}
+          },
+          "additionalProperties": false
+        },
+        "autocomplete": {
+          "type": "object",
+          "required": ["status", "experimental_manual_only", "intent_terms_found", "commercial_intent"],
+          "properties": {
+            "status": {"enum": ["DISABLED", "EXPERIMENTAL_HINT", "UNRESOLVED"]},
+            "experimental_manual_only": {"type": "boolean"},
+            "intent_terms_found": {"type": "array", "items": {"type": "string"}},
+            "commercial_intent": {"type": ["boolean", "null"]}
+          },
+          "additionalProperties": false
+        },
+        "institutional": {
+          "type": "object",
+          "required": ["status", "open_tender_count", "pre_information_count", "distinct_buyer_count"],
+          "properties": {
+            "status": {"enum": ["NONE", "INSTITUTIONAL_DEMAND_OBSERVED", "HIGH_INSTITUTIONAL_DEMAND", "UNRESOLVED", "SKIPPED_BY_OPERATOR_GATE"]},
+            "open_tender_count": {"type": "integer", "minimum": 0},
+            "pre_information_count": {"type": "integer", "minimum": 0},
+            "distinct_buyer_count": {"type": "integer", "minimum": 0}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
     "observations": {"type": "array"},
     "errors": {"type": "array"}
   },

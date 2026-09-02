@@ -6,11 +6,16 @@ from scripts.validate_demand_enrichment import validate
 
 def observations(items=None, status="COMPLETED", errors=None):
     return {
-        "schema": "lawradar-demand-observations-v1",
+        "schema": "lawradar-demand-observations-v2",
         "signal_id": "signal:1",
         "signal_hash": "hash",
         "collected_at_utc": "2026-09-02T12:00:00Z",
         "collection_status": status,
+        "indicators": {
+            "trends": {"status": "DISABLED", "experimental_manual_only": True, "ratio_7d_vs_prior_83d": None, "surge_detected": None},
+            "autocomplete": {"status": "DISABLED", "experimental_manual_only": True, "intent_terms_found": [], "commercial_intent": None},
+            "institutional": {"status": "NONE", "open_tender_count": 0, "pre_information_count": 0, "distinct_buyer_count": 0},
+        },
         "observations": items if items is not None else [{"url": "https://trend.test/query", "title": "Indice de recherche", "provider": "Exemple", "metric": "interest", "value": 42, "unit": "index", "period": "2026-08", "geography": "FR", "retrieved_at_utc": "2026-09-02T12:00:00Z"}],
         "errors": errors or [],
     }
@@ -31,6 +36,7 @@ def enrichment(status="COMPLETED"):
             "collection_status": "COMPLETED",
             "observations_total": 1,
             "conclusions": [{"url": "https://trend.test/query", "interpretation": "SEARCH_INTEREST", "why": "La métrique mesure un intérêt relatif."}],
+            "indicators": observations()["indicators"],
         },
         "score": None,
     }

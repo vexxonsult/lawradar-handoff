@@ -17,12 +17,27 @@ except ModuleNotFoundError:  # pragma: no cover - exercised by the workflow CLI.
 
 COLLECTION_STATUSES = {"COMPLETED", "NO_EVIDENCE", "UNRESOLVED"}
 INTERPRETATIONS = {"ATTENTION", "SEARCH_INTEREST", "COMMERCIAL_INTENT", "NOT_RELEVANT", "AMBIGUOUS"}
-DETAIL_KEYS = {"signal_hash", "collection_status", "observations_total", "conclusions"}
+DETAIL_KEYS = {"signal_hash", "collection_status", "observations_total", "conclusions", "indicators"}
 OBSERVATION_KEYS = {"url", "title", "provider", "metric", "value", "unit", "period", "geography", "retrieved_at_utc"}
 
 
+def validate_indicators(value: Any) -> None:
+    if not isinstance(value, dict) or set(value) != {"trends", "autocomplete", "institutional"}:
+        raise ValueError("Indicateurs Demande invalides.")
+    trends = value["trends"]
+    autocomplete = value["autocomplete"]
+    institutional = value["institutional"]
+    if not isinstance(trends, dict) or set(trends) != {"status", "experimental_manual_only", "ratio_7d_vs_prior_83d", "surge_detected"} or trends["status"] not in {"DISABLED", "COMPLETED", "INSUFFICIENT_DATA", "UNRESOLVED"}:
+        raise ValueError("Indicateur Trends invalide.")
+    if not isinstance(autocomplete, dict) or set(autocomplete) != {"status", "experimental_manual_only", "intent_terms_found", "commercial_intent"} or autocomplete["status"] not in {"DISABLED", "EXPERIMENTAL_HINT", "UNRESOLVED"}:
+        raise ValueError("Indicateur d'autocomplétion invalide.")
+    if not isinstance(institutional, dict) or set(institutional) != {"status", "open_tender_count", "pre_information_count", "distinct_buyer_count"} or institutional["status"] not in {"NONE", "INSTITUTIONAL_DEMAND_OBSERVED", "HIGH_INSTITUTIONAL_DEMAND", "UNRESOLVED", "SKIPPED_BY_OPERATOR_GATE"}:
+        raise ValueError("Indicateur institutionnel invalide.")
+    if not all(isinstance(institutional[key], int) and institutional[key] >= 0 for key in ("open_tender_count", "pre_information_count", "distinct_buyer_count")):
+        raise ValueError("Compteurs institutionnels invalides.")
+
 def validate(observations: dict[str, Any], enrichment: dict[str, Any]) -> None:
-    if observations.get("schema") != "lawradar-demand-observations-v1":
+    if observations.get("schema") != "lawradar-demand-observations-v2":
         raise ValueError("Observations Demande non prises en charge.")
     validate_enrichment(enrichment)
     if enrichment.get("agent") != "demand":
@@ -32,8 +47,11 @@ def validate(observations: dict[str, Any], enrichment: dict[str, Any]) -> None:
         raise ValueError("Détails Demande invalides.")
     if enrichment["signal_id"] != observations.get("signal_id") or details["signal_hash"] != observations.get("signal_hash"):
         raise ValueError("La sortie Demande ne correspond pas au signal mesuré.")
-    if details["collection_status"] not in COLLECTION_STATUSES or not isinstance(details["observations_total"], int) or not isinstance(details["conclusions"], list):
+    if details["collection_status"] not in COLLECTION_STATUSES or not isinstance(details["observations_total"], int) or not isinstance(details["conclusions"], list) or not isinstance(details["indicators"], dict):
         raise ValueError("Statut ou conclusions Demande invalides.")
+    validate_indicators(details["indicators"])
+    if details["indicators"] != observations.get("indicators"):
+        raise ValueError("Les indicateurs Demande doivent venir des observations mesurées.")
     items = observations.get("observations", [])
     for item in items:
         if not isinstance(item, dict) or not OBSERVATION_KEYS <= set(item):

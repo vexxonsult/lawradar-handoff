@@ -244,13 +244,19 @@ indépendante.
 
 ### Livrable 6F — contrat Demande sans dépense
 
-L’agent Demande est préparé sans collecte automatique : son contrat exige des
-observations mesurées, datées et géolocalisées, et interdit de convertir un
-indice d’intérêt en volume de recherche ou en intention d’achat. Google Trends,
-Keyword Planner et Search Console restent explicitement désactivés, donc aucun
-compte, crédit, clé API ou appel IA n’est créé. Un contrôleur valide que chaque
-conclusion et chaque source viennent strictement des observations du signal
-courant avant toute fusion dans son emplacement `demand`.
+L’agent Demande exige des observations mesurées, datées et géolocalisées, et
+interdit de convertir un indice d’intérêt en volume de recherche ou en intention
+d’achat. Google Trends, Keyword Planner et Search Console restent explicitement
+désactivés, donc aucun compte, crédit, clé API ou appel IA n’est créé. Une
+première source V0 est néanmoins active : les appels d'offres BOAMP déjà
+collectés pour Marché. Seuls les appels d'offres encore actifs deviennent des
+observations de **demande publique formalisée**, sans appel externe additionnel ;
+ils ne sont jamais présentés comme une mesure de demande générale. La sortie
+`lawradar-demand-observations-v2` expose aussi les blocs Trends et
+autocomplétion avec le statut `DISABLED` et l'interrupteur
+`experimental_manual_only`. Un contrôleur valide que chaque conclusion et
+chaque source viennent strictement des observations du signal courant avant toute
+fusion dans son emplacement `demand`.
 
 ### Livrable 6G — contrat Marché sans prospection
 
@@ -431,8 +437,12 @@ traçable autorise un appel Sonnet de qualification, limité à un par pilote.
 Le résultat est un enrichissement `market` sourcé, fusionné uniquement dans
 l'emplacement Marché du signal courant. BOAMP est une observation de marchés
 publics : il ne mesure ni la demande générale, ni la taille du marché, ni la
-concurrence exhaustive. L'agent Demande reste désactivé tant qu'une source de
-mesure d'intérêt conforme n'est pas choisie.
+concurrence exhaustive. Le même jeu d'avis alimente Demande V2 sans appel
+supplémentaire : un appel d'offres actif vaut `INSTITUTIONAL_DEMAND_OBSERVED` ;
+au moins deux acheteurs distincts ou trois avis actifs valent
+`HIGH_INSTITUTIONAL_DEMAND`. Les blocs Google Trends et autocomplétion sont
+présents mais `DISABLED` derrière `experimental_manual_only` ; aucune donnée
+Google non officielle n'influence la production.
 
 ### Livrable 6P — état de préparation des pilotes
 
