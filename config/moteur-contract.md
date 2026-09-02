@@ -14,6 +14,12 @@ conclut jamais qu'une information est absente parce qu'une source est
 inaccessible ou incomplète. Il distingue explicitement `UNRESOLVED` de
 `DISCARDED`.
 
+Le dossier `evidence/universal-signal-latest.json` est une **sortie historique**
+destinée aux futurs agents ; il n'est jamais une entrée du moteur. Le moteur ne
+doit ni le lire, ni le prendre comme exemple, ni réutiliser ses acteurs,
+montants, liens ou raisonnements. À chaque run, toute conclusion doit provenir
+exclusivement des candidats présents dans `out/motor-input.json`.
+
 Il écrit exactement un fichier `out/motor-delivery.json`, conforme à
 `config/moteur-delivery-schema.json`. Une valeur inconnue est écrite comme une
 phrase explicite (par exemple « Non chiffré dans la preuve lue »), jamais

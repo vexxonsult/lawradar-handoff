@@ -123,6 +123,10 @@ jobs:
             au schéma. N'écris aucun autre fichier. Chaque candidate doit avoir une
             opportunity avec son source_id ; toute information non démontrée est
             UNRESOLVED. Si aucun flux n'est étayé, écris money_flows: [].
+            evidence/universal-signal-latest.json est une sortie historique : ne le lis pas,
+            ne l'utilise ni comme exemple, ni comme source, ni comme solution de repli.
+            Chaque fait, acteur, montant et flux de cette livraison doit venir uniquement
+            d'un candidat présent dans out/motor-input.json.
           claude_args: >-
             --model claude-sonnet-5
             --max-turns 5
