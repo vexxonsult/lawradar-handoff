@@ -1,47 +1,41 @@
 {
   "schema": "lawradar-run-manifest-v1",
   "run": {
-    "id": "33515375521",
+    "id": "33578115443",
     "attempt": "1",
     "kind": "motor",
-    "status": "success",
+    "status": "skipped",
     "workflow": "Moteur LawRadar — livraison structurée",
-    "commit": "820557d6d617bce11d8fbd4b5ee44590655b1637",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33515375521",
-    "created_at_utc": "2026-09-01T13:47:46.783937+00:00",
-    "duration_seconds": 85
+    "commit": "2c4c3c54065f189dc2a7bd93badcb47af2f5913f",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33578115443",
+    "created_at_utc": "2026-09-02T01:07:42.251427+00:00",
+    "duration_seconds": 1,
+    "reason": "UNSUPPORTED_SOURCE_CHANGE:eurlex-oj-latest.json"
   },
   "inputs": [
     {
-      "path": "out/motor-input.json",
+      "path": "evidence/delta-latest.json",
       "exists": true,
-      "bytes": 27803,
-      "sha256": "954273fac2cf164e9488871413e3b37fa0e98186068b45e61bcead6879dcb487"
+      "bytes": 1846,
+      "sha256": "158ad38aad15893eab202099a46439e21c92d3939e2a6a60bb3947870b07398d"
     },
     {
-      "path": "config/moteur-delivery-schema.json",
+      "path": "evidence/jorf-summaries-latest.json",
       "exists": true,
-      "bytes": 1815,
-      "sha256": "1a5250d9c6f8cce0ad439adaf3388309c188355a9826876c81765b316116f53c"
-    }
-  ],
-  "outputs": [
-    {
-      "path": "out/motor-delivery.json",
-      "exists": true,
-      "bytes": 11897,
-      "sha256": "fc65916f71c4767580e07a3f0f196dfa287a959b125963df6e680693860a4505"
+      "bytes": 1650544,
+      "sha256": "73191df46e8a0637b86190e52195807ecba1d049b5b0d2704965815ba8133f39"
     },
     {
-      "path": "out/dashboard.html",
+      "path": "evidence/consultdd-latest.json",
       "exists": true,
-      "bytes": 1811,
-      "sha256": "ec7c692e5e488a4c6b2a294078607e359558b484d4ad96d48fd4321d9b5e9942"
+      "bytes": 690,
+      "sha256": "f0186909c96643bfa9d34a3df3973abe4d6bde581195d6c2920dbda6ed61c702"
     }
   ],
+  "outputs": [],
   "cost_estimate": {
-    "status": "not_reported_by_provider",
-    "model": "claude-sonnet-5",
+    "status": "not_called",
+    "model": null,
     "note": "Le fournisseur ne publie pas le détail des tokens dans ce run ; la durée et le nombre d'appels restent mesurés."
   },
   "errors": [],
