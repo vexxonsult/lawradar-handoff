@@ -4,7 +4,7 @@
   "type": "object",
   "required": [
     "schema", "agent", "signal_id", "status", "observed_at_utc",
-    "summary", "sources", "limitations", "score"
+    "summary", "sources", "limitations", "details", "score"
   ],
   "properties": {
     "schema": {"const": "lawradar-agent-enrichment-v1"},
@@ -15,6 +15,7 @@
     "summary": {"type": "string", "minLength": 1},
     "sources": {"type": "array"},
     "limitations": {"type": "array", "items": {"type": "string"}},
+    "details": {"type": "object"},
     "score": {"type": "null"}
   },
   "additionalProperties": false

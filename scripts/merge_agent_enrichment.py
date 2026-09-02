@@ -17,7 +17,7 @@ STATUSES = {"COMPLETED", "NO_EVIDENCE", "UNRESOLVED", "FAILED"}
 def validate_enrichment(enrichment: dict[str, Any]) -> None:
     required = {
         "schema", "agent", "signal_id", "status", "observed_at_utc",
-        "summary", "sources", "limitations", "score",
+        "summary", "sources", "limitations", "details", "score",
     }
     if set(enrichment) != required:
         raise ValueError("Structure d'enrichissement invalide.")
@@ -33,8 +33,8 @@ def validate_enrichment(enrichment: dict[str, Any]) -> None:
         raise ValueError("Date d'observation invalide.")
     if not isinstance(enrichment["summary"], str) or not enrichment["summary"]:
         raise ValueError("Résumé d'enrichissement invalide.")
-    if not isinstance(enrichment["sources"], list) or not isinstance(enrichment["limitations"], list):
-        raise ValueError("Sources ou limites invalides.")
+    if not isinstance(enrichment["sources"], list) or not isinstance(enrichment["limitations"], list) or not isinstance(enrichment["details"], dict):
+        raise ValueError("Sources, limites ou détails invalides.")
     if enrichment["score"] is not None:
         raise ValueError("Aucun score n'est autorisé avant une méthode versionnée.")
 

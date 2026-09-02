@@ -31,6 +31,7 @@ def press(signal_id="signal:1"):
         "summary": "Aucune couverture vérifiée dans les sources autorisées.",
         "sources": [],
         "limitations": ["Périmètre de recherche défini par la future configuration."],
+        "details": {},
         "score": None,
     }
 

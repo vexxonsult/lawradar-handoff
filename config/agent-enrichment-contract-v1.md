@@ -33,6 +33,7 @@ Chaque résultat doit contenir :
     }
   ],
   "limitations": ["ce qui manque ou ce qui reste incertain"],
+  "details": {},
   "score": null
 }
 ```
@@ -40,6 +41,10 @@ Chaque résultat doit contenir :
 `score` reste `null` tant qu'une méthode versionnée définit son échelle, ses
 critères et sa provenance. L'absence de résultat est un résultat valable :
 elle s'écrit `NO_EVIDENCE`, jamais comme une estimation.
+
+`details` contient les éléments propres à chaque agent (par exemple les
+requêtes et les décisions de qualification de l'agent Presse). Il ne contient
+jamais de copie de la preuve primaire ni de décision Radar.
 
 ## Rôle de chaque agent
 

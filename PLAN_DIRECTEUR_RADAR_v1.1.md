@@ -201,6 +201,16 @@ lit pas le corps des articles, ne consulte aucun signal historique et ne fait
 aucun appel IA. Google News RSS et les flux d'éditeurs sont prévus mais restent
 désactivés tant qu'une décision humaine ne les autorise pas.
 
+### Livrable 6C — qualification Presse contrôlée
+
+Le contrat `config/press-qualification-contract.md` et le contrôleur
+`scripts/validate_press_enrichment.py` imposent que toute synthèse Presse ne
+citer que des candidats réellement collectés. Ils refusent une URL inventée,
+un `NO_EVIDENCE` après une erreur de collecte, une synthèse sans renvoi vers
+ses sources et une sortie non liée au signal courant. Aucun modèle n'est encore
+appelé : le prochain incrément sera son branchement contrôlé derrière ce
+contrôleur.
+
 ---
 
 ## Rappel de la frontière entre les deux projets
