@@ -434,6 +434,16 @@ publics : il ne mesure ni la demande générale, ni la taille du marché, ni la
 concurrence exhaustive. L'agent Demande reste désactivé tant qu'une source de
 mesure d'intérêt conforme n'est pas choisie.
 
+### Livrable 6P — état de préparation des pilotes
+
+À chaque nouvelle livraison du Moteur, le script
+`scripts/build_agent_pilot_readiness.py` produit
+`evidence/agent-pilot-readiness-latest.json`, sans réseau ni IA. Il indique
+pour chaque signal si celui-ci est `READY_FOR_PILOTS`, en attente de faits,
+bloqué par la porte opérateur ou écarté par les filtres déterministes. Le
+fichier ne déclenche rien : il évite seulement de chercher manuellement quel
+signal peut servir de pilote réel de la phase 6.
+
 ### État et sortie de phase 6
 
 La phase 6 est **en cours**, et non achevée. Les contrats, contrôleurs,

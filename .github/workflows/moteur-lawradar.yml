@@ -170,7 +170,9 @@ jobs:
         run: |
           python scripts/build_universal_signal.py --motor-input out/motor-input.json --delivery out/motor-delivery.json --run-manifest out/run-manifest.json --output out/universal-signal.json
           cp out/universal-signal.json evidence/universal-signal-latest.json
-          python scripts/build_run_manifest.py --output out/run-manifest.json --kind motor --status success --inputs out/motor-input.json config/moteur-delivery-schema.json --outputs out/motor-delivery.json out/dashboard.html out/universal-signal.json
+          python scripts/build_agent_pilot_readiness.py --dossier out/universal-signal.json --policy config/compliance-policy-v1.json --profile config/operator-profile-v1.json --output out/agent-pilot-readiness.json
+          cp out/agent-pilot-readiness.json evidence/agent-pilot-readiness-latest.json
+          python scripts/build_run_manifest.py --output out/run-manifest.json --kind motor --status success --inputs out/motor-input.json config/moteur-delivery-schema.json --outputs out/motor-delivery.json out/dashboard.html out/universal-signal.json out/agent-pilot-readiness.json
       - name: Actualiser le registre du centre de contrôle
         run: |
           python scripts/manage_motor_queue.py advance --queue evidence/motor-queue-latest.json --motor-input out/motor-input.json --output evidence/motor-queue-latest.json
@@ -190,7 +192,7 @@ jobs:
           git config user.name "lawradar-motor[bot]"
           git config user.email "lawradar-motor[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git add evidence/motor-queue-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json evidence/universal-signal-latest.json
+          git add evidence/motor-queue-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json evidence/universal-signal-latest.json evidence/agent-pilot-readiness-latest.json
           git diff --cached --quiet || git commit -m "Statut moteur LawRadar $(date -u +%F)"
           git pull --rebase origin main
           git push
