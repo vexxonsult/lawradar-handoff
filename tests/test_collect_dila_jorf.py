@@ -3,9 +3,10 @@ import json
 import tarfile
 import tempfile
 import unittest
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
-from scripts.collect_dila_jorf import archive_url_for, choose_archive, evidence_from_archive, summary_from_archive, write_summaries
+from scripts.collect_dila_jorf import archive_url_for, choose_archive, evidence_from_archive, summary_from_archive, text_payload, write_summaries
 
 
 def add_file(handle, name, payload):
@@ -16,6 +17,13 @@ def add_file(handle, name, payload):
 
 
 class CollectorTests(unittest.TestCase):
+    def test_keeps_every_text_block_in_an_official_article(self):
+        root = ET.fromstring(
+            "<ARTICLE><BLOC_TEXTUEL><CONTENU><p>Visa.</p></CONTENU></BLOC_TEXTUEL>"
+            "<BLOC_TEXTUEL><CONTENU><p>Article 1 : 500 euros.</p></CONTENU></BLOC_TEXTUEL></ARTICLE>"
+        )
+        self.assertEqual(text_payload(root), "Visa.\nArticle 1 : 500 euros.")
+
     def test_builds_an_archive_url_without_listing_query(self):
         url = archive_url_for(
             "https://echanges.dila.gouv.fr/OPENDATA/JORF?C=M;O=D",

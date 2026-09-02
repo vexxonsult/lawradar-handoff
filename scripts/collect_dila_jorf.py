@@ -96,10 +96,16 @@ def value(root: ET.Element, path: str) -> str | None:
 
 
 def text_payload(root: ET.Element) -> str:
-    content = root.find(".//BLOC_TEXTUEL/CONTENU")
-    if content is None:
-        return ""
-    return "\n".join(part.strip() for part in content.itertext() if part.strip())
+    # An act is commonly split between visas, articles and final provisions.
+    # Reading only the first block loses the operative clauses (and often the
+    # amounts) while still looking superficially complete.
+    contents = root.findall(".//BLOC_TEXTUEL/CONTENU")
+    return "\n".join(
+        part.strip()
+        for content in contents
+        for part in content.itertext()
+        if part.strip()
+    )
 
 
 def version_payload(root: ET.Element) -> str:

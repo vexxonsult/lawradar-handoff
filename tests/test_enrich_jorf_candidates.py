@@ -19,3 +19,4 @@ class EnrichJorfCandidatesTests(unittest.TestCase):
         self.assertEqual(len(result["official_text_excerpt"]), MAX_EXCERPT_CHARS)
         self.assertTrue(result["excerpt_truncated"])
         self.assertTrue(result["official_text_sha256"])
+        self.assertIn("passage central", result["official_text_excerpt"])

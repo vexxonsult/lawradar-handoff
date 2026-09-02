@@ -59,7 +59,16 @@ def excerpt_entry(document: dict[str, Any]) -> dict[str, Any]:
         for article in document.get("articles", [])
         if isinstance(article, dict) and isinstance(article.get("plain_text"), str)
     ).strip()
-    excerpt = plain_text[:MAX_EXCERPT_CHARS]
+    if len(plain_text) <= MAX_EXCERPT_CHARS:
+        excerpt = plain_text
+    else:
+        # Keep the beginning (scope/definitions) and the end (operative
+        # provisions) instead of silently losing the amounts often placed last.
+        marker = "\n[… passage central non reproduit …]\n"
+        available = MAX_EXCERPT_CHARS - len(marker)
+        head = available // 3
+        tail = available - head
+        excerpt = f"{plain_text[:head]}{marker}{plain_text[-tail:]}"
     return {
         "text_id": document["text_id"],
         "archive_url": document["archive_url"],
@@ -67,7 +76,7 @@ def excerpt_entry(document: dict[str, Any]) -> dict[str, Any]:
         "content_status": "AVAILABLE" if excerpt else "UNAVAILABLE",
         "official_text_excerpt": excerpt or None,
         "official_text_sha256": hashlib.sha256(plain_text.encode("utf-8")).hexdigest() if plain_text else None,
-        "excerpt_truncated": len(plain_text) > len(excerpt),
+        "excerpt_truncated": len(plain_text) > MAX_EXCERPT_CHARS,
     }
 
 
