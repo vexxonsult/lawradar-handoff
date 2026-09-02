@@ -325,8 +325,10 @@ empreinte, expose au maximum dix candidats par appel, puis retire uniquement
 un lot après une livraison validée. Un échec laisse le lot en tête de file ; il
 n'est donc ni perdu ni remplacé par les nouvelles collectes. Le workflow passe
 chaque heure tant que la file existe, mais le modèle n'est appelé que pour un
-lot non vide. La limite de tours passe de cinq à six pour terminer un lot
-normal sans ouvrir une exécution non bornée.
+lot non vide. La limite de tours passe de cinq à sept pour terminer un lot
+normal sans ouvrir une exécution non bornée. Le plafond est fixé à sept tours,
+après mesure d'un lot de six textes officiels dont la production valide
+nécessitait précisément ce septième tour.
 
 Avant la file, tout texte JORF dont la date de publication est hors de la
 fenêtre officiellement couverte par la collecte courante est conservé comme
