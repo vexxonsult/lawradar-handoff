@@ -162,9 +162,9 @@ Le dossier est construit par code après un moteur réussi, puis versionné sous
 - un dossier sans flux conserve explicitement `money_flows: []` ;
 - les emplacements des agents restent vides et ne déclenchent aucun appel IA tant que la phase 6 n'est pas commencée.
 
-### État de la phase 5
+### Validation de la phase 5 — acquise le 2 septembre 2026
 
-Le contrat, le générateur, les tests et le raccordement au workflow moteur sont publiés. Il reste une seule vérification naturelle : lors du prochain moteur réellement appelé sur un candidat JORF ou ConsultDD, le dépôt devra publier un premier `universal-signal-latest.json` cohérent avec sa livraison moteur. Aucun faux signal ne sera créé pour forcer cette validation.
+Le contrat, le générateur, les tests et le raccordement au workflow moteur sont publiés. Un premier `universal-signal-latest.json` a été construit à partir de l'artefact immuable d'un moteur réellement réussi (run `33409291402`, Larchant/Sibelco), sans nouvel appel IA ni faux signal. Il relie un signal retenu à sa décision Radar, à sa preuve compacte et à son flux conditionnel démontré ; les trois emplacements d'enrichissement restent `PENDING`. Les prochains moteurs réellement appelés produiront le même dossier automatiquement.
 
 ## Phase 6 — Contrats des agents Presse, Demande et Marché
 

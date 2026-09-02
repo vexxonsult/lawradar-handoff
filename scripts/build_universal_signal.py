@@ -15,6 +15,52 @@ def signal_id(report_date: str, source_id: str) -> str:
     return f"signal:{digest}"
 
 
+def compact_evidence(evidence: Any) -> dict[str, Any] | None:
+    """Conserve des références vérifiables sans recopier la preuve primaire."""
+    if not isinstance(evidence, dict):
+        return None
+    detail = evidence.get("official_detail")
+    detail = detail if isinstance(detail, dict) else {}
+    attachments = evidence.get("official_attachments")
+    attachments = attachments if isinstance(attachments, list) else []
+    excerpts = evidence.get("financial_evidence")
+    excerpts = excerpts if isinstance(excerpts, list) else []
+
+    one_excerpt_per_page: list[dict[str, Any]] = []
+    seen_pages: set[tuple[Any, Any]] = set()
+    for item in excerpts:
+        if not isinstance(item, dict):
+            continue
+        key = (item.get("source_url"), item.get("page"))
+        if key in seen_pages:
+            continue
+        seen_pages.add(key)
+        excerpt = item.get("excerpt")
+        one_excerpt_per_page.append({
+            "source_url": item.get("source_url"),
+            "page": item.get("page"),
+            "excerpt": excerpt[:500] if isinstance(excerpt, str) else excerpt,
+        })
+        if len(one_excerpt_per_page) == 8:
+            break
+
+    return {
+        "title": evidence.get("title"),
+        "url": evidence.get("url"),
+        "dates": evidence.get("dates", []),
+        "detail_status": evidence.get("detail_status"),
+        "official": {
+            "title": detail.get("official_title"),
+            "period": detail.get("official_period"),
+        },
+        "attachments": [
+            {"url": item.get("url"), "label": item.get("label")}
+            for item in attachments if isinstance(item, dict)
+        ],
+        "evidence_excerpts": one_excerpt_per_page,
+    }
+
+
 def build_dossier(
     motor_input: dict[str, Any], delivery: dict[str, Any], run_manifest: dict[str, Any]
 ) -> dict[str, Any]:
@@ -55,7 +101,7 @@ def build_dossier(
                 "source_id": source_id,
                 "source_kind": candidate.get("source_kind"),
                 "change": candidate.get("change"),
-                "evidence": candidate.get("evidence"),
+                "evidence": compact_evidence(candidate.get("evidence")),
             },
             "radar": {
                 "status": decision.get("status"),
