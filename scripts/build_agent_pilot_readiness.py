@@ -43,7 +43,7 @@ def readiness_for_signal(signal: dict[str, Any], policy: dict[str, Any], profile
 
 
 def build(dossier: dict[str, Any], policy: dict[str, Any], profile: dict[str, Any], now: datetime | None = None) -> dict[str, Any]:
-    if dossier.get("schema") != "lawradar-universal-signal-v1":
+    if dossier.get("schema") not in {"lawradar-universal-signal-v1", "lawradar-universal-signal-v2"}:
         raise ValueError("Dossier universel non pris en charge.")
     signals = dossier.get("signals")
     if not isinstance(signals, list):

@@ -6,7 +6,7 @@ from scripts.merge_agent_enrichment import merge
 
 def dossier():
     return {
-        "schema": "lawradar-universal-signal-v1",
+        "schema": "lawradar-universal-signal-v2",
         "signals": [{
             "id": "signal:1",
             "source": {"title": "Preuve primaire"},
@@ -15,7 +15,6 @@ def dossier():
                 "press": {"status": "PENDING", "result": None},
                 "demand": {"status": "PENDING", "result": None},
                 "market": {"status": "PENDING", "result": None},
-                "entrepreneur": {"status": "PENDING", "result": None},
             },
         }],
         "money_flows": [{"id": "flow:1", "amount": "conditionnel"}],
@@ -35,12 +34,6 @@ def press(signal_id="signal:1"):
         "details": {},
         "score": None,
     }
-
-
-def entrepreneur(signal_id="signal:1"):
-    value = press(signal_id)
-    value["agent"] = "entrepreneur"
-    return value
 
 
 class MergeAgentEnrichmentTests(unittest.TestCase):
@@ -97,8 +90,8 @@ class MergeAgentEnrichmentTests(unittest.TestCase):
         merged = merge(unresolved, press())
         self.assertEqual(merged["signals"][0]["enrichments"]["press"]["attempts"], 2)
 
-    def test_adds_the_empty_entrepreneur_slot_for_a_legacy_dossier(self):
-        legacy = dossier()
-        del legacy["signals"][0]["enrichments"]["entrepreneur"]
-        merged = merge(legacy, entrepreneur())
-        self.assertEqual(merged["signals"][0]["enrichments"]["entrepreneur"]["status"], "NO_EVIDENCE")
+    def test_rejects_a_client_enrichment_in_the_core(self):
+        candidate = press()
+        candidate["agent"] = "entrepreneur"
+        with self.assertRaises(ValueError):
+            merge(dossier(), candidate)

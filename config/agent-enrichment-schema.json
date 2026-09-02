@@ -8,7 +8,7 @@
   ],
   "properties": {
     "schema": {"const": "lawradar-agent-enrichment-v1"},
-    "agent": {"enum": ["press", "demand", "market", "entrepreneur"]},
+    "agent": {"enum": ["press", "demand", "market"]},
     "signal_id": {"type": "string", "minLength": 1},
     "status": {"enum": ["COMPLETED", "NO_EVIDENCE", "UNRESOLVED", "FAILED"]},
     "observed_at_utc": {"type": "string", "minLength": 1},

@@ -4,7 +4,7 @@
   "type": "object",
   "required": ["schema", "run", "context", "signals", "money_flows", "quality"],
   "properties": {
-    "schema": {"const": "lawradar-universal-signal-v1"},
+    "schema": {"const": "lawradar-universal-signal-v2"},
     "run": {"type": "object"},
     "context": {"type": "object"},
     "signals": {"type": "array"},

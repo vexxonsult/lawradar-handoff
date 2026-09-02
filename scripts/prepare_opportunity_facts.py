@@ -15,7 +15,7 @@ except ModuleNotFoundError:  # pragma: no cover - exercised by workflow CLI.
 
 
 def extract(dossier: dict[str, Any], signal_id: str) -> dict[str, Any]:
-    if dossier.get("schema") != "lawradar-universal-signal-v1":
+    if dossier.get("schema") not in {"lawradar-universal-signal-v1", "lawradar-universal-signal-v2"}:
         raise ValueError("Dossier universel non pris en charge.")
     matches = [item for item in dossier.get("signals", []) if item.get("id") == signal_id]
     if len(matches) != 1 or matches[0].get("radar", {}).get("status") != "RETAINED":

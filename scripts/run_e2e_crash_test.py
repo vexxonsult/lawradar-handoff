@@ -9,6 +9,7 @@ fonctions et contrats du dépôt avant d'écrire les artefacts du scénario.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from datetime import UTC, datetime
 from pathlib import Path
@@ -17,19 +18,19 @@ from typing import Any
 try:
     from scripts.fetch_boamp_data import collect as collect_boamp
     from scripts.merge_agent_enrichment import merge
-    from scripts.prepare_entrepreneur_input import build, signal_hash
+    from scripts.clients.entrepreneur_agent import build_delivery as build_client_delivery
+    from scripts.clients.entrepreneur_agent import read_snapshot as read_client_snapshot
     from scripts.run_deterministic_filters import evaluate
     from scripts.validate_demand_enrichment import validate as validate_demand
-    from scripts.validate_entrepreneur_assessment import validate as validate_entrepreneur
     from scripts.validate_market_enrichment import validate as validate_market
     from scripts.validate_press_enrichment import validate as validate_press
 except ModuleNotFoundError:  # pragma: no cover - supports direct workflow invocation.
     from fetch_boamp_data import collect as collect_boamp
     from merge_agent_enrichment import merge
-    from prepare_entrepreneur_input import build, signal_hash
+    from clients.entrepreneur_agent import build_delivery as build_client_delivery
+    from clients.entrepreneur_agent import read_snapshot as read_client_snapshot
     from run_deterministic_filters import evaluate
     from validate_demand_enrichment import validate as validate_demand
-    from validate_entrepreneur_assessment import validate as validate_entrepreneur
     from validate_market_enrichment import validate as validate_market
     from validate_press_enrichment import validate as validate_press
 
@@ -40,6 +41,11 @@ OFFICIAL_URL = "https://example.invalid/official/simulated-water-filter-decree"
 PRESS_URL = "https://example.invalid/press/simulated-water-filter"
 DEMAND_URL = "https://example.invalid/demand/simulated-water-filter"
 BOAMP_URL = "https://example.invalid/boamp/simulated-water-filter"
+
+
+def signal_hash(signal: dict[str, Any]) -> str:
+    raw = json.dumps(signal, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
 
 def opportunity_facts() -> dict[str, Any]:
@@ -103,7 +109,7 @@ def simulated_boamp_fetch(_: str, __: dict[str, Any], ___: int) -> dict[str, Any
 
 def universal_dossier() -> dict[str, Any]:
     return {
-        "schema": "lawradar-universal-signal-v1",
+        "schema": "lawradar-universal-signal-v2",
         "scenario_only": True,
         "signals": [{
             "id": SCENARIO_ID,
@@ -204,27 +210,6 @@ def market_pair(current_hash: str) -> tuple[dict[str, Any], dict[str, Any]]:
     return observations, enrichment
 
 
-def entrepreneur_assessment(input_data: dict[str, Any]) -> dict[str, Any]:
-    statuses = {agent: input_data["support"][agent]["status"] for agent in ("press", "demand", "market")}
-    return {
-        "schema": "lawradar-agent-enrichment-v1", "agent": "entrepreneur", "signal_id": SCENARIO_ID,
-        "status": "COMPLETED", "observed_at_utc": NOW.isoformat(),
-        "summary": "Les trois apports de scénario sont terminés ; un test descriptif et réversible est admissible. [1]",
-        "sources": [{"url": BOAMP_URL, "title": "SCÉNARIO — prestation de suivi de filtres à eau"}],
-        "limitations": ["Décision de scénario, sans donnée réelle ni autorisation d'exécution."],
-        "details": {
-            "signal_hash": input_data["signal_hash"], "support_statuses": statuses, "decision": "TEST", "gaps": [],
-            "test_protocol": {
-                "hypothesis": "Une proposition numérique de suivi suscite un intérêt explicite.",
-                "method": "Préparer une page de test non publiée et vérifier sa clarté en interne.",
-                "success_signal": "Un protocole de mesure validé sans collecte de contacts.",
-                "stop_condition": "Une exigence juridique ou opérationnelle inconnue apparaît.",
-                "max_duration_days": 14,
-            },
-        }, "score": None,
-    }
-
-
 def write_json(path: Path, value: dict[str, Any]) -> None:
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -247,9 +232,11 @@ def run(output_dir: Path) -> dict[str, Any]:
     validate_market(market_observations, market)
     for enrichment in (press, demand, market):
         dossier = merge(dossier, enrichment)
-    entrepreneur_input = build(dossier, SCENARIO_ID)
-    entrepreneur = entrepreneur_assessment(entrepreneur_input)
-    validate_entrepreneur(entrepreneur_input, entrepreneur)
+    dossier["signals"][0]["deterministic_filters"] = filters
+    core_output = output_dir / "universal-signal.json"
+    write_json(core_output, dossier)
+    client_snapshot, client_hash = read_client_snapshot(core_output)
+    client_delivery = build_client_delivery(client_snapshot, client_hash, SCENARIO_ID, now=NOW)
 
     report = {
         "schema": "lawradar-e2e-crash-test-report-v1", "scenario_only": True,
@@ -262,12 +249,12 @@ def run(output_dir: Path) -> dict[str, Any]:
         "motor_output": facts,
         "boamp_output": boamp,
         "deterministic_filters": filters,
-        "entrepreneur_assessment": entrepreneur,
+        "client_entrepreneur_delivery": client_delivery,
         "checks": [
             "BOAMP borné : 1 requête simulée, 1 avis compact.",
             "Conformité et faisabilité : PASS avec le profil versionné.",
             "Presse, Demande et Marché : contrats validés sur données de scénario.",
-            "Entrepreneur : TEST accepté car les trois apports sont terminés et le protocole est réversible.",
+            "Client Entrepreneur externe : lecture seule du signal V2, prêt pour une évaluation IA séparée.",
         ],
         "limitations": [
             "Aucune source, obligation légale, demande ou marché réels ne sont affirmés.",
@@ -278,8 +265,7 @@ def run(output_dir: Path) -> dict[str, Any]:
         "opportunity-facts.json": facts,
         "market-demand-boamp.json": boamp,
         "deterministic-filters.json": filters,
-        "entrepreneur-input.json": entrepreneur_input,
-        "entrepreneur-assessment.json": entrepreneur,
+        "client-entrepreneur-delivery.json": client_delivery,
         "crash-test-report.json": report,
     }.items():
         write_json(output_dir / name, value)

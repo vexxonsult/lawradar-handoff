@@ -10,8 +10,9 @@ from pathlib import Path
 from typing import Any
 
 
-AGENTS = {"press", "demand", "market", "entrepreneur"}
+AGENTS = {"press", "demand", "market"}
 STATUSES = {"COMPLETED", "NO_EVIDENCE", "UNRESOLVED", "FAILED"}
+CORE_SCHEMAS = {"lawradar-universal-signal-v1", "lawradar-universal-signal-v2"}
 
 
 def validate_enrichment(enrichment: dict[str, Any]) -> None:
@@ -40,7 +41,7 @@ def validate_enrichment(enrichment: dict[str, Any]) -> None:
 
 
 def merge(dossier: dict[str, Any], enrichment: dict[str, Any]) -> dict[str, Any]:
-    if dossier.get("schema") != "lawradar-universal-signal-v1":
+    if dossier.get("schema") not in CORE_SCHEMAS:
         raise ValueError("Dossier universel non pris en charge.")
     validate_enrichment(enrichment)
     result = copy.deepcopy(dossier)
@@ -48,10 +49,6 @@ def merge(dossier: dict[str, Any], enrichment: dict[str, Any]) -> dict[str, Any]
     if len(matching) != 1:
         raise ValueError("Le signal cible est absent ou dupliqué.")
     slots = matching[0].get("enrichments", {})
-    # Dossiers produits avant l'arrivée de l'Entrepreneur restent compatibles :
-    # only the empty slot is added, never a proof or a prior agent result.
-    if enrichment["agent"] == "entrepreneur" and enrichment["agent"] not in slots:
-        slots["entrepreneur"] = {"status": "PENDING", "result": None}
     slot = slots.get(enrichment["agent"])
     if not isinstance(slot, dict):
         raise ValueError("Cet emplacement d'enrichissement n'est pas disponible.")

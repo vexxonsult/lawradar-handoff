@@ -6,7 +6,7 @@ active pas et ne leur donne aucun droit de modifier le Radar.
 
 ## Entrée autorisée
 
-Un agent ne reçoit qu'un signal de `lawradar-universal-signal-v1`, son
+Un agent du noyau ne reçoit qu'un signal de `lawradar-universal-signal-v2`, son
 identifiant stable et les liens de preuve déjà associés. Il ne consulte pas les
 anciens signaux comme exemples ni comme sources de repli. La preuve primaire,
 le changement détecté, le statut (`RETAINED`, `DISCARDED` ou `UNRESOLVED`) et
@@ -19,7 +19,7 @@ Chaque résultat doit contenir :
 ```json
 {
   "schema": "lawradar-agent-enrichment-v1",
-  "agent": "press | demand | market | entrepreneur",
+  "agent": "press | demand | market",
   "signal_id": "signal:…",
   "status": "COMPLETED | NO_EVIDENCE | UNRESOLVED | FAILED",
   "observed_at_utc": "date ISO-8601",

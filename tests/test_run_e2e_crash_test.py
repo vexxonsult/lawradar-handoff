@@ -16,5 +16,7 @@ class EndToEndCrashTest(unittest.TestCase):
             self.assertEqual(report["boamp_output"]["collection_status"], "COMPLETED")
             self.assertEqual(len(report["boamp_output"]["observations"]), 1)
             self.assertEqual(report["deterministic_filters"]["final_constraint"], "PASS")
-            self.assertEqual(report["entrepreneur_assessment"]["details"]["decision"], "TEST")
+            self.assertEqual(report["client_entrepreneur_delivery"]["status"], "READY_FOR_AI_ASSESSMENT")
+            self.assertTrue((output / "universal-signal.json").exists())
+            self.assertTrue((output / "client-entrepreneur-delivery.json").exists())
             self.assertEqual(json.loads((output / "crash-test-report.json").read_text(encoding="utf-8"))["verdict"], "PASS")

@@ -15,7 +15,8 @@ inaccessible ou incomplète. Il distingue explicitement `UNRESOLVED` de
 `DISCARDED`.
 
 Le dossier `evidence/universal-signal-latest.json` est une **sortie historique**
-destinée aux futurs agents ; il n'est jamais une entrée du moteur. Le moteur ne
+V2 destinée aux agents du noyau et aux clients externes ; il n'est jamais une
+entrée du moteur. Le moteur ne
 doit ni le lire, ni le prendre comme exemple, ni réutiliser ses acteurs,
 montants, liens ou raisonnements. À chaque run, toute conclusion doit provenir
 exclusivement des candidats présents dans `out/motor-input.json`.
@@ -34,3 +35,8 @@ direction sont étayés par les preuves lues ; sinon le signal reste
 
 Les résultats sont téléversés comme artefact GitHub Actions. Ils ne sont ni
 committés dans ce dépôt public, ni écrits dans Google Drive.
+
+Les consommateurs métier (Entrepreneur, journaliste, vidéo, alertes B2B) sont
+hors du moteur. Ils vivent dans `scripts/clients/`, lisent uniquement
+`out/universal-signal.json` et écrivent une livraison indépendante ; le
+manifeste `CLIENTS_MANIFEST.md` fixe cette frontière.

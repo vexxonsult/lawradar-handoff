@@ -123,13 +123,12 @@ def build_dossier(
                 "press": {"status": "PENDING", "result": None},
                 "demand": {"status": "PENDING", "result": None},
                 "market": {"status": "PENDING", "result": None},
-                "entrepreneur": {"status": "PENDING", "result": None},
             },
         })
     run = run_manifest.get("run", {})
     unresolved = sum(item["radar"]["status"] == "UNRESOLVED" for item in signals)
     return {
-        "schema": "lawradar-universal-signal-v1",
+        "schema": "lawradar-universal-signal-v2",
         "run": {
             "id": run.get("id"),
             "url": run.get("url"),

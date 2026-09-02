@@ -23,7 +23,7 @@ def signal_hash(signal: dict[str, Any]) -> str:
 
 
 def select_retained_signal(dossier: dict[str, Any], requested_id: str) -> dict[str, Any]:
-    if dossier.get("schema") != "lawradar-universal-signal-v1":
+    if dossier.get("schema") not in {"lawradar-universal-signal-v1", "lawradar-universal-signal-v2"}:
         raise ValueError("Dossier universel non pris en charge.")
     matches = [item for item in dossier.get("signals", []) if item.get("id") == requested_id]
     if len(matches) != 1:

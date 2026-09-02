@@ -145,15 +145,16 @@ Créer une fiche canonique et déterministe pour chaque sortie du Radar. Elle s�
 
 ### Contrat
 
-`lawradar-universal-signal-v1` contient :
+`lawradar-universal-signal-v2` contient :
 
 - le lien vers le run, le commit et le périmètre de couverture ;
 - un signal par candidat, avec sa preuve compacte, son changement et la décision du Radar ;
 - les flux financiers seulement lorsqu'ils existent dans la livraison validée du moteur ;
-- trois emplacements `PENDING` pour Presse, Demande et Marché ;
+- trois emplacements `PENDING` pour Presse, Demande et Marché, à l'exclusion
+  de tout client métier ;
 - les limites de couverture et le nombre de signaux non résolus.
 
-Le dossier est construit par code après un moteur réussi, puis versionné sous `evidence/universal-signal-latest.json`. Les agents futurs n'auront pas le droit de modifier les preuves, le statut ou la raison du Radar : ils ne compléteront que leur propre emplacement avec des sources.
+Le dossier est construit par code après un moteur réussi, puis versionné sous `evidence/universal-signal-latest.json`. Les agents du noyau n'auront pas le droit de modifier les preuves, le statut ou la raison du Radar : ils ne compléteront que leur propre emplacement avec des sources. Les clients métier externes sont séparés dans `scripts/clients/` et lisent seulement l'artefact `out/universal-signal.json` ; voir `CLIENTS_MANIFEST.md`.
 
 ### Validation de la phase 5
 

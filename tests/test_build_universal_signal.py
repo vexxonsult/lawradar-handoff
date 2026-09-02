@@ -46,13 +46,13 @@ def run_manifest():
 
 
 class UniversalSignalTests(unittest.TestCase):
-    def test_builds_one_signal_with_empty_future_agent_slots(self):
+    def test_builds_a_neutral_v2_signal_without_client_slots(self):
         dossier = build_dossier(motor_input(), delivery(), run_manifest())
-        self.assertEqual(dossier["schema"], "lawradar-universal-signal-v1")
+        self.assertEqual(dossier["schema"], "lawradar-universal-signal-v2")
         self.assertEqual(dossier["quality"]["unresolved_count"], 1)
         self.assertEqual(dossier["signals"][0]["enrichments"]["press"]["status"], "PENDING")
         self.assertIsNone(dossier["signals"][0]["enrichments"]["market"]["result"])
-        self.assertEqual(dossier["signals"][0]["enrichments"]["entrepreneur"]["status"], "PENDING")
+        self.assertNotIn("entrepreneur", dossier["signals"][0]["enrichments"])
         self.assertEqual(dossier["signals"][0]["opportunity_facts"]["signal_id"], dossier["signals"][0]["id"])
 
     def test_compacts_primary_evidence_without_its_full_text(self):
