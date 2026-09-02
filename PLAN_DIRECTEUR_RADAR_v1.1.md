@@ -1,6 +1,6 @@
-# Plan directeur — mise à jour v1.1, révisée le 31 août 2026
+# Plan directeur — mise à jour v1.1, révisée le 2 septembre 2026
 
-Ce document met à jour le **Plan directeur définitif — Radar d’opportunités** approuvé le 30 août 2026. Les phases 1 à 3 sont achevées. Les principes, critères de validation et la structure à deux projets restent inchangés, avec les précisions ci-dessous comme référence opérationnelle.
+Ce document met à jour le **Plan directeur définitif — Radar d’opportunités** approuvé le 30 août 2026. Les phases 1 à 4 sont achevées. La base technique de la phase 5 est en place ; sa validation en conditions réelles attend le prochain moteur réellement appelé. Les principes, critères de validation et la structure à deux projets restent inchangés, avec les précisions ci-dessous comme référence opérationnelle.
 
 ## Projet A — ordre des phases confirmé
 
@@ -97,7 +97,7 @@ La phase 3 n’est validée que si :
 
 Validation réalisée : les collectes et le moteur GitHub ont été exécutés et leurs artefacts contrôlés. Le moteur a retenu une garantie financière officielle de Larchant sans transformer une garantie conditionnelle en paiement effectif. Les changements sans candidat exploitable n'appellent plus Claude.
 
-La prochaine étape du Projet A est la **phase 4 — observabilité et centre de contrôle**. Le raccordement de l'interprétation EUR-Lex et des agents Presse, Demande et Marché reste volontairement hors de la phase 3.
+Le raccordement de l'interprétation EUR-Lex et des agents Presse, Demande et Marché reste volontairement hors de la phase 3.
 
 ## Phase 4 — Observabilité et centre de contrôle
 
@@ -133,6 +133,10 @@ Le livrable 4B est un index de runs et un tableau de contrôle léger (statuts, 
 
 Un moteur non appelé est lui aussi un résultat : le centre de contrôle doit le versionner avec le statut `skipped`, sa raison et un coût `not_called`. La collecte générale distingue désormais une variation constatée d'une variation traitable par le moteur courant, afin qu'un changement EUR-Lex hors périmètre ne ressemble pas à un appel IA manqué.
 
+### Validation de la phase 4 — acquise le 2 septembre 2026
+
+Le centre de contrôle enregistre désormais les exécutions du collecteur comme du moteur, y compris un moteur volontairement non appelé. Une variation EUR-Lex apparaît comme une variation de preuve, avec la raison lisible « hors périmètre du moteur actuel », et non comme un appel IA manqué. Le statut, les entrées, sorties, empreintes et l'absence d'appel au modèle sont vérifiables dans les manifestes et l'index de runs.
+
 ## Phase 5 — Dossier universel de signal
 
 ### Objectif
@@ -157,6 +161,27 @@ Le dossier est construit par code après un moteur réussi, puis versionné sous
 - le dossier refuse une décision orpheline ou dupliquée ;
 - un dossier sans flux conserve explicitement `money_flows: []` ;
 - les emplacements des agents restent vides et ne déclenchent aucun appel IA tant que la phase 6 n'est pas commencée.
+
+### État de la phase 5
+
+Le contrat, le générateur, les tests et le raccordement au workflow moteur sont publiés. Il reste une seule vérification naturelle : lors du prochain moteur réellement appelé sur un candidat JORF ou ConsultDD, le dépôt devra publier un premier `universal-signal-latest.json` cohérent avec sa livraison moteur. Aucun faux signal ne sera créé pour forcer cette validation.
+
+## Phase 6 — Contrats des agents Presse, Demande et Marché
+
+### Objectif
+
+Préparer trois enrichissements indépendants du Radar, chacun limité à son rôle et incapable de modifier une preuve officielle ou une décision du moteur. Cette préparation ne déclenche ni recherche externe ni appel IA.
+
+### Règles de branchement
+
+- un agent reçoit un signal universel identifié et les liens de preuve déjà associés ;
+- il produit une sortie sourcée, datée, concise et séparée de la décision Radar ;
+- il peut conclure `NO_EVIDENCE` ou `UNRESOLVED`, sans inventer de score ni de volume ;
+- il n'écrit que son emplacement (`press`, `demand` ou `market`) ;
+- une décision commerciale, une dépense ou une publication reste interdite à ce stade ;
+- les agents ne seront activés qu'après la première validation réelle de la phase 5 et après choix explicite des sources, du budget et de la fréquence.
+
+Le contrat de sortie commun est versionné dans `config/agent-enrichment-contract-v1.md`. Il constitue le prochain livrable préparatoire ; l'activation des agents est une étape distincte et contrôlée.
 
 ---
 
