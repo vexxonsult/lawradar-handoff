@@ -29,9 +29,33 @@ jobs:
           python-version: "3.12"
       - name: Vérifier les garde-fous
         run: python -m unittest discover -s tests -p 'test_*.py'
-      - name: Collecter les candidats Presse du signal demandé
+      - name: Extraire les faits du signal courant et appliquer la porte opérateur
         run: |
           mkdir -p out
+          python scripts/prepare_opportunity_facts.py \
+            --dossier evidence/universal-signal-latest.json \
+            --signal-id "${{ inputs.signal_id }}" \
+            --output out/opportunity-facts.json
+          python scripts/run_deterministic_filters.py \
+            --facts out/opportunity-facts.json \
+            --policy config/compliance-policy-v1.json \
+            --profile config/operator-profile-v1.json \
+            --output out/deterministic-filters.json
+      - id: access
+        name: Bloquer les secteurs réglementés hors profil
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          route = json.loads(Path("out/deterministic-filters.json").read_text(encoding="utf-8"))["operator_access"]
+          Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8").write(
+              f"should_collect={'true' if route['allow_external_collection'] else 'false'}\n"
+          )
+          print(f"route={route['route']}; external_collection={route['allow_external_collection']}")
+          PY
+      - name: Collecter les candidats Presse du signal demandé
+        if: steps.access.outputs.should_collect == 'true'
+        run: |
           python scripts/collect_press_candidates.py \
             --dossier evidence/universal-signal-latest.json \
             --config config/press-agent-config.json \
@@ -39,6 +63,7 @@ jobs:
             --output out/press-candidates.json
       - id: route
         name: Éviter tout appel IA sans candidat
+        if: steps.access.outputs.should_collect == 'true'
         run: |
           python - <<'PY'
           import json
@@ -51,20 +76,20 @@ jobs:
           )
           PY
       - name: Enregistrer une absence ou une incertitude sans IA
-        if: steps.route.outputs.should_qualify != 'true'
+        if: steps.access.outputs.should_collect == 'true' && steps.route.outputs.should_qualify != 'true'
         run: >-
           python scripts/build_press_terminal_enrichment.py
           --candidates out/press-candidates.json
           --output out/press-enrichment.json
       - name: Préparer la qualification sourcée
-        if: steps.route.outputs.should_qualify == 'true'
+        if: steps.access.outputs.should_collect == 'true' && steps.route.outputs.should_qualify == 'true'
         run: >-
           python scripts/prepare_press_qualification_input.py
           --dossier evidence/universal-signal-latest.json
           --candidates out/press-candidates.json
           --output out/press-qualification-input.json
       - name: Qualifier les candidats Presse
-        if: steps.route.outputs.should_qualify == 'true'
+        if: steps.access.outputs.should_collect == 'true' && steps.route.outputs.should_qualify == 'true'
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
@@ -81,6 +106,7 @@ jobs:
             --max-turns 3
             --allowedTools Read,Write
       - name: Valider et intégrer l'enrichissement
+        if: steps.access.outputs.should_collect == 'true'
         run: |
           python scripts/validate_press_enrichment.py --candidates out/press-candidates.json --enrichment out/press-enrichment.json
           python scripts/merge_agent_enrichment.py --dossier evidence/universal-signal-latest.json --enrichment out/press-enrichment.json --output out/universal-signal-enriched.json
@@ -92,6 +118,7 @@ jobs:
           path: out/
           retention-days: 90
       - name: Versionner l'enrichissement validé
+        if: steps.access.outputs.should_collect == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
