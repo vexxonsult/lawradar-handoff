@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Candidats de couverture presse LawRadar",
+  "type": "object",
+  "required": [
+    "schema", "signal_id", "signal_hash", "observed_at_utc", "window",
+    "queries", "candidates_total", "candidates_after_dedup", "candidates", "errors"
+  ],
+  "properties": {
+    "schema": {"const": "lawradar-press-candidates-v1"},
+    "signal_id": {"type": "string"},
+    "signal_hash": {"type": "string"},
+    "observed_at_utc": {"type": "string"},
+    "window": {"type": "object"},
+    "queries": {"type": "array"},
+    "candidates_total": {"type": "integer", "minimum": 0},
+    "candidates_after_dedup": {"type": "integer", "minimum": 0},
+    "candidates": {"type": "array"},
+    "errors": {"type": "array"}
+  },
+  "additionalProperties": false
+}

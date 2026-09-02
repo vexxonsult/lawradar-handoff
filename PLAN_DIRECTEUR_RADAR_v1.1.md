@@ -192,6 +192,15 @@ sortie existante et tout score tant qu'une méthode n'a pas été définie. Des
 tests vérifient que la preuve primaire, la décision Radar et les flux restent
 strictement inchangés.
 
+### Livrable 6B — collecte Presse déterministe
+
+Le collecteur `scripts/collect_press_candidates.py` prépare des requêtes à
+partir du seul signal `RETAINED` courant. En V0, il interroge uniquement GDELT,
+conserve titres, médias, dates et liens, puis déduplique les candidats. Il ne
+lit pas le corps des articles, ne consulte aucun signal historique et ne fait
+aucun appel IA. Google News RSS et les flux d'éditeurs sont prévus mais restent
+désactivés tant qu'une décision humaine ne les autorise pas.
+
 ---
 
 ## Rappel de la frontière entre les deux projets
