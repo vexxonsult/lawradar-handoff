@@ -62,3 +62,22 @@ class MergeAgentEnrichmentTests(unittest.TestCase):
         completed["signals"][0]["enrichments"]["press"] = {"status": "COMPLETED", "result": {"existing": True}}
         with self.assertRaises(ValueError):
             merge(completed, press())
+
+    def test_allows_one_retry_after_unresolved_and_keeps_history(self):
+        unresolved = dossier()
+        first = press()
+        first["status"] = "UNRESOLVED"
+        unresolved["signals"][0]["enrichments"]["press"] = {"status": "UNRESOLVED", "result": first, "attempts": 1, "previous_results": []}
+        second = press()
+        second["status"] = "NO_EVIDENCE"
+        merged = merge(unresolved, second)
+        slot = merged["signals"][0]["enrichments"]["press"]
+        self.assertEqual(slot["status"], "NO_EVIDENCE")
+        self.assertEqual(slot["attempts"], 2)
+        self.assertEqual(slot["previous_results"], [first])
+
+    def test_rejects_a_second_retry_after_unresolved(self):
+        unresolved = dossier()
+        unresolved["signals"][0]["enrichments"]["press"] = {"status": "UNRESOLVED", "result": press(), "attempts": 2, "previous_results": []}
+        with self.assertRaises(ValueError):
+            merge(unresolved, press())

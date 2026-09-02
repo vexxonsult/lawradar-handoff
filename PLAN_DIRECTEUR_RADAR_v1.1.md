@@ -218,8 +218,9 @@ ne peut être lancé qu'à la demande, pour un identifiant de signal `RETAINED`.
 Il appelle GDELT pour ce seul signal, puis n'appelle Sonnet qu'en présence de
 candidats et sans erreur de collecte ; le plafond est d'un appel par run. Sans
 candidat, il écrit `NO_EVIDENCE` sans IA ; en cas de panne, il écrit
-`UNRESOLVED`. Toute sortie est validée avant d'être fusionnée dans le seul
-emplacement Presse du dossier universel.
+`UNRESOLVED`. Une seule reprise est possible après `UNRESOLVED`, avec
+conservation de la première tentative ; toute sortie finale est validée avant
+d'être fusionnée dans le seul emplacement Presse du dossier universel.
 
 ---
 

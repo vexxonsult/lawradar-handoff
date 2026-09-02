@@ -48,11 +48,22 @@ def merge(dossier: dict[str, Any], enrichment: dict[str, Any]) -> dict[str, Any]
     if len(matching) != 1:
         raise ValueError("Le signal cible est absent ou dupliqué.")
     slot = matching[0].get("enrichments", {}).get(enrichment["agent"])
-    if not isinstance(slot, dict) or slot.get("status") != "PENDING" or slot.get("result") is not None:
+    if not isinstance(slot, dict):
+        raise ValueError("Cet emplacement d'enrichissement n'est pas disponible.")
+    previous_results = slot.get("previous_results", [])
+    attempts = int(slot.get("attempts", 0))
+    if slot.get("status") == "PENDING" and slot.get("result") is None:
+        previous_results = []
+        attempts = 0
+    elif slot.get("status") == "UNRESOLVED" and isinstance(slot.get("result"), dict) and attempts == 1:
+        previous_results = [*previous_results, slot["result"]]
+    else:
         raise ValueError("Cet emplacement d'enrichissement n'est pas disponible.")
     matching[0]["enrichments"][enrichment["agent"]] = {
         "status": enrichment["status"],
         "result": enrichment,
+        "attempts": attempts + 1,
+        "previous_results": previous_results,
     }
     return result
 

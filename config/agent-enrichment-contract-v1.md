@@ -46,6 +46,11 @@ elle s'écrit `NO_EVIDENCE`, jamais comme une estimation.
 requêtes et les décisions de qualification de l'agent Presse). Il ne contient
 jamais de copie de la preuve primaire ni de décision Radar.
 
+Une sortie `UNRESOLVED` peut être rejouée une seule fois. Le système conserve
+alors la première sortie dans `previous_results` et incrémente `attempts` ; une
+troisième tentative nécessite une décision humaine. Une sortie `COMPLETED` ou
+`NO_EVIDENCE` ne peut jamais être remplacée.
+
 ## Rôle de chaque agent
 
 | Agent | Question à laquelle il répond | Ce qu'il ne peut pas conclure |
