@@ -1,0 +1,132 @@
+{
+  "schema": "lawradar-entrepreneur-input-v1",
+  "signal_id": "crash-test:water-filter:2026-09-02",
+  "signal_hash": "9abd18fd954a166cc1cc42a373ef867a7c7f52103bf3a595d0897271955a3742",
+  "signal": {
+    "source": {
+      "evidence": {
+        "url": "https://example.invalid/official/simulated-water-filter-decree",
+        "title": "SCÉNARIO — décret fictif de suivi des filtres à eau",
+        "published_at": "2026-09-02"
+      }
+    },
+    "radar": {
+      "status": "RETAINED",
+      "reason": "Scénario de test : preuve officielle fictive, jamais une donnée de production."
+    }
+  },
+  "money_flows": [],
+  "support": {
+    "press": {
+      "status": "COMPLETED",
+      "result": {
+        "schema": "lawradar-agent-enrichment-v1",
+        "agent": "press",
+        "signal_id": "crash-test:water-filter:2026-09-02",
+        "status": "COMPLETED",
+        "observed_at_utc": "2026-09-02T09:00:00+00:00",
+        "summary": "Le candidat Presse simulé mentionne le texte de scénario. [1]",
+        "sources": [
+          {
+            "url": "https://example.invalid/press/simulated-water-filter",
+            "title": "SCÉNARIO — publication relative aux filtres à eau"
+          }
+        ],
+        "limitations": [
+          "Source entièrement simulée : aucune couverture média réelle n'est affirmée."
+        ],
+        "details": {
+          "signal_hash": "9b0d43464ed7904467ee5c70b9c109d7efb32f6faa8bb633f3b610550144cb7e",
+          "window": {
+            "from": "2026-08-19",
+            "to": "2026-09-02"
+          },
+          "queries": [],
+          "candidates_total": 1,
+          "candidates_after_dedup": 1,
+          "coverage_level": "LOW",
+          "decisions": [
+            {
+              "url": "https://example.invalid/press/simulated-water-filter",
+              "relevance": "DIRECT",
+              "why_linked": "Le titre contient le périmètre du scénario."
+            }
+          ]
+        },
+        "score": null
+      }
+    },
+    "demand": {
+      "status": "COMPLETED",
+      "result": {
+        "schema": "lawradar-agent-enrichment-v1",
+        "agent": "demand",
+        "signal_id": "crash-test:water-filter:2026-09-02",
+        "status": "COMPLETED",
+        "observed_at_utc": "2026-09-02T09:00:00+00:00",
+        "summary": "Le jeu de test comporte un indice d'intérêt relatif, sans volume de recherche. [1]",
+        "sources": [
+          {
+            "url": "https://example.invalid/demand/simulated-water-filter",
+            "title": "SCÉNARIO — indice de recherche"
+          }
+        ],
+        "limitations": [
+          "Mesure simulée et relative : elle ne prouve ni intention d'achat ni volume."
+        ],
+        "details": {
+          "signal_hash": "9b0d43464ed7904467ee5c70b9c109d7efb32f6faa8bb633f3b610550144cb7e",
+          "collection_status": "COMPLETED",
+          "observations_total": 1,
+          "conclusions": [
+            {
+              "url": "https://example.invalid/demand/simulated-water-filter",
+              "interpretation": "SEARCH_INTEREST",
+              "why": "Indice positif du scénario, sans extrapolation."
+            }
+          ]
+        },
+        "score": null
+      }
+    },
+    "market": {
+      "status": "COMPLETED",
+      "result": {
+        "schema": "lawradar-agent-enrichment-v1",
+        "agent": "market",
+        "signal_id": "crash-test:water-filter:2026-09-02",
+        "status": "COMPLETED",
+        "observed_at_utc": "2026-09-02T09:00:00+00:00",
+        "summary": "Un avis BOAMP simulé illustre une demande publique dans le périmètre. [1]",
+        "sources": [
+          {
+            "url": "https://example.invalid/boamp/simulated-water-filter",
+            "title": "SCÉNARIO — prestation de suivi de filtres à eau"
+          }
+        ],
+        "limitations": [
+          "Un avis ne mesure ni taille de marché ni concurrence exhaustive."
+        ],
+        "details": {
+          "signal_hash": "9b0d43464ed7904467ee5c70b9c109d7efb32f6faa8bb633f3b610550144cb7e",
+          "collection_status": "COMPLETED",
+          "observations_total": 1,
+          "conclusions": [
+            {
+              "url": "https://example.invalid/boamp/simulated-water-filter",
+              "interpretation": "OFFER",
+              "why": "L'avis simulé décrit une prestation dans le périmètre."
+            }
+          ]
+        },
+        "score": null
+      }
+    }
+  },
+  "allowed_source_urls": [
+    "https://example.invalid/boamp/simulated-water-filter",
+    "https://example.invalid/demand/simulated-water-filter",
+    "https://example.invalid/official/simulated-water-filter-decree",
+    "https://example.invalid/press/simulated-water-filter"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "lawradar-market-demand-boamp-v1",
+  "signal_id": "crash-test:water-filter:2026-09-02",
+  "signal_hash": "694abfd1c2d53eb399d130995d133b81860a6c9a7441794ed4b3a51fcff26e51",
+  "collected_at_utc": "2026-09-02T09:00:00+00:00",
+  "collection_status": "COMPLETED",
+  "source": {
+    "name": "BOAMP",
+    "dataset": "boamp",
+    "endpoint": "https://example.invalid/boamp-api"
+  },
+  "queries": [
+    {
+      "query": "filtres eau",
+      "pages_succeeded": 1,
+      "records_received": 1,
+      "total_reported": 1,
+      "status": "COMPLETED"
+    }
+  ],
+  "request_count": 1,
+  "summary": {
+    "notices_observed": 1,
+    "tender_notices_observed": 1,
+    "open_tenders_observed": 1,
+    "tender_notices_without_deadline": 0,
+    "award_notices_observed": 0,
+    "amounts": {
+      "known_total_eur": null,
+      "reason": "Le jeu BOAMP structuré interrogé ne publie pas de montant d'avis exploitable sans analyser le texte intégral, ce que ce collecteur ne fait pas."
+    },
+    "principal_buyers": [
+      {
+        "name": "Acheteur public simulé",
+        "notices": 1
+      }
+    ]
+  },
+  "observations": [
+    {
+      "id": "SIM-2026-001",
+      "title": "SCÉNARIO — prestation de suivi de filtres à eau en entreprise",
+      "buyer": "Acheteur public simulé",
+      "published_at": "2026-09-02",
+      "response_deadline": "2026-09-30T12:00:00+00:00",
+      "notice_kind": "TENDER",
+      "notice_state": "INITIAL",
+      "url": "https://example.invalid/boamp/simulated-water-filter",
+      "amount_eur": null
+    }
+  ],
+  "errors": []
+}

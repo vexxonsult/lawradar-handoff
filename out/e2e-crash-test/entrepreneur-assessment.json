@@ -1,0 +1,35 @@
+{
+  "schema": "lawradar-agent-enrichment-v1",
+  "agent": "entrepreneur",
+  "signal_id": "crash-test:water-filter:2026-09-02",
+  "status": "COMPLETED",
+  "observed_at_utc": "2026-09-02T09:00:00+00:00",
+  "summary": "Les trois apports de scénario sont terminés ; un test descriptif et réversible est admissible. [1]",
+  "sources": [
+    {
+      "url": "https://example.invalid/boamp/simulated-water-filter",
+      "title": "SCÉNARIO — prestation de suivi de filtres à eau"
+    }
+  ],
+  "limitations": [
+    "Décision de scénario, sans donnée réelle ni autorisation d'exécution."
+  ],
+  "details": {
+    "signal_hash": "9abd18fd954a166cc1cc42a373ef867a7c7f52103bf3a595d0897271955a3742",
+    "support_statuses": {
+      "press": "COMPLETED",
+      "demand": "COMPLETED",
+      "market": "COMPLETED"
+    },
+    "decision": "TEST",
+    "gaps": [],
+    "test_protocol": {
+      "hypothesis": "Une proposition numérique de suivi suscite un intérêt explicite.",
+      "method": "Préparer une page de test non publiée et vérifier sa clarté en interne.",
+      "success_signal": "Un protocole de mesure validé sans collecte de contacts.",
+      "stop_condition": "Une exigence juridique ou opérationnelle inconnue apparaît.",
+      "max_duration_days": 14
+    }
+  },
+  "score": null
+}
