@@ -196,13 +196,15 @@ strictement inchangés.
 
 Le collecteur `scripts/collect_press_candidates.py` prépare des requêtes à
 partir du seul signal `RETAINED` courant. Il interroge GDELT (source d'appoint)
-et le flux éditorial Localtis / Banque des Territoires (source obligatoire de
-la V0), conserve titres, médias, dates et extraits RSS limités à 25 mots, puis
-déduplique les candidats. Il ne lit pas le corps des articles, ne consulte
-aucun signal historique et ne fait aucun appel IA. Une panne de GDELT est
-tracée mais ne masque pas une collecte RSS réussie ; une panne de la source
-obligatoire produit `UNRESOLVED`. Google News RSS reste désactivé tant qu'une
-décision humaine ne l'autorise pas.
+et trois flux RSS complémentaires : Localtis / Banque des Territoires (édition
+institutionnelle), Actu-Environnement (presse spécialisée) et The Conversation
+France (analyse académique sous Creative Commons). Il conserve titres, médias,
+dates et extraits RSS limités à 25 mots, puis déduplique les candidats. Il ne
+lit pas le corps des articles, ne consulte aucun signal historique et ne fait
+aucun appel IA. Une panne de l'une de ces sources est tracée mais ne masque pas
+une collecte réussie par une autre ; sans source réussie, le statut reste
+`UNRESOLVED`. Google News RSS reste désactivé tant qu'une décision humaine ne
+l'autorise pas.
 
 ### Livrable 6C — qualification Presse contrôlée
 
@@ -227,15 +229,15 @@ d'être fusionnée dans le seul emplacement Presse du dossier universel.
 
 ### Livrable 6E — redondance de collecte Presse
 
-La V0 ajoute le flux RSS quotidien Localtis / Banque des Territoires comme
-source éditoriale-institutionnelle obligatoire, en complément de GDELT qui
-devient une source d'appoint. Les deux collectes restent déterministes : aucun
-corps d'article n'est téléchargé, et un item RSS n'est proposé que s'il
-partage au moins deux termes distinctifs avec le signal courant. Le résultat
-reste `NO_EVIDENCE` lorsque la source obligatoire répond mais ne fournit aucun
-candidat lié, même si GDELT connaît une panne ; chaque panne reste visible dans
-les artefacts. Le type de source est conservé afin de ne jamais présenter cette
-couverture éditoriale comme une couverture de presse indépendante.
+La V0 ajoute les flux RSS de Localtis / Banque des Territoires,
+Actu-Environnement et The Conversation France en complément de GDELT. Les
+collectes restent déterministes : aucun corps d'article n'est téléchargé, et un
+item RSS n'est proposé que s'il partage au moins deux termes distinctifs avec
+le signal courant. Le résultat reste `NO_EVIDENCE` dès qu'au moins une source
+répond mais ne fournit aucun candidat lié ; chaque panne reste visible dans les
+artefacts. Le type de source est conservé afin de ne jamais présenter une
+couverture institutionnelle ou académique comme une couverture de presse
+indépendante.
 
 ---
 

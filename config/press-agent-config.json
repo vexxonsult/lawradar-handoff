@@ -20,10 +20,28 @@
       {
         "id": "localtis-actualite",
         "enabled": true,
-        "required": true,
+        "required": false,
         "outlet": "Localtis / Banque des Territoires",
         "source_kind": "editorial_institutional",
         "url": "https://www.banquedesterritoires.fr/flux/localtis.xml",
+        "minimum_matching_terms": 2
+      },
+      {
+        "id": "actu-environnement",
+        "enabled": true,
+        "required": false,
+        "outlet": "Actu-Environnement",
+        "source_kind": "press_specialist",
+        "url": "https://www.actu-environnement.com/ae/news/archives/rss.php4",
+        "minimum_matching_terms": 2
+      },
+      {
+        "id": "the-conversation-fr",
+        "enabled": true,
+        "required": false,
+        "outlet": "The Conversation France",
+        "source_kind": "academic_analysis",
+        "url": "https://theconversation.com/fr/articles.atom",
         "minimum_matching_terms": 2
       }
     ]
