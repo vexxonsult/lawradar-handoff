@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       should_run: ${{ steps.delta.outputs.should_run }}
+      skip_reason: ${{ steps.delta.outputs.skip_reason }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -34,9 +35,60 @@ jobs:
           from pathlib import Path
           prepared = json.loads(Path("out/motor-input-gate.json").read_text(encoding="utf-8"))
           required = bool(prepared.get("candidates"))
-          Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8").write(f"should_run={'true' if required else 'false'}\n")
+          changed = set(prepared.get("delta_changed_sources", []))
+          handled = set(prepared.get("handled_source_files", []))
+          unsupported = sorted(changed - handled)
+          if required:
+              reason = "CANDIDATES_READY"
+          elif unsupported:
+              reason = "UNSUPPORTED_SOURCE_CHANGE:" + ",".join(unsupported)
+          else:
+              reason = "NO_SUPPORTED_CANDIDATE"
+          Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8").write(
+              f"should_run={'true' if required else 'false'}\nskip_reason={reason}\n"
+          )
           print(f"model_input_required={required}; candidates={len(prepared.get('candidates', []))}")
           PY
+
+  record_skipped:
+    needs: gate
+    if: needs.gate.outputs.should_run != 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Démarrer la mesure du run
+        run: echo "LAWRADAR_STARTED_AT=$(date +%s)" >> "$GITHUB_ENV"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Enregistrer l'absence d'appel au modèle
+        run: |
+          mkdir -p out
+          python scripts/build_run_manifest.py --output evidence/run-manifest-motor-latest.json --kind motor --status skipped --reason "${{ needs.gate.outputs.skip_reason }}" --inputs evidence/delta-latest.json evidence/jorf-summaries-latest.json evidence/consultdd-latest.json
+          python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
+          python scripts/render_control_dashboard.py --input evidence/run-index-latest.json --out out/control-dashboard.html
+      - name: Téléverser le contrôle du run ignoré
+        uses: actions/upload-artifact@v4
+        with:
+          name: lawradar-motor-${{ github.run_id }}
+          path: |
+            evidence/run-manifest-motor-latest.json
+            evidence/run-index-latest.json
+            out/control-dashboard.html
+          retention-days: 90
+      - name: Versionner le statut ignoré du moteur
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "lawradar-motor[bot]"
+          git config user.email "lawradar-motor[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git add evidence/run-manifest-motor-latest.json evidence/run-index-latest.json
+          git diff --cached --quiet || git commit -m "Moteur LawRadar ignoré $(date -u +%F)"
+          git pull --rebase origin main
+          git push
 
   moteur:
     needs: gate

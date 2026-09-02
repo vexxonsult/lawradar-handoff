@@ -22,28 +22,31 @@ def file_record(path: Path) -> dict[str, Any]:
     return record
 
 
-def build_manifest(kind: str, status: str, inputs: list[Path], outputs: list[Path]) -> dict[str, Any]:
+def build_manifest(kind: str, status: str, inputs: list[Path], outputs: list[Path], reason: str | None = None) -> dict[str, Any]:
     now = int(time.time())
     started = os.environ.get("LAWRADAR_STARTED_AT")
     duration = max(0, now - int(started)) if started and started.isdigit() else None
     run_id = os.environ.get("GITHUB_RUN_ID")
+    run = {
+        "id": run_id,
+        "attempt": os.environ.get("GITHUB_RUN_ATTEMPT"),
+        "kind": kind,
+        "status": status,
+        "workflow": os.environ.get("GITHUB_WORKFLOW"),
+        "commit": os.environ.get("GITHUB_SHA"),
+        "url": os.environ.get("GITHUB_SERVER_URL", "https://github.com") + "/" + os.environ.get("GITHUB_REPOSITORY", "") + "/actions/runs/" + (run_id or ""),
+        "created_at_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
+        "duration_seconds": duration,
+    }
+    if reason:
+        run["reason"] = reason
     return {
         "schema": "lawradar-run-manifest-v1",
-        "run": {
-            "id": run_id,
-            "attempt": os.environ.get("GITHUB_RUN_ATTEMPT"),
-            "kind": kind,
-            "status": status,
-            "workflow": os.environ.get("GITHUB_WORKFLOW"),
-            "commit": os.environ.get("GITHUB_SHA"),
-            "url": os.environ.get("GITHUB_SERVER_URL", "https://github.com") + "/" + os.environ.get("GITHUB_REPOSITORY", "") + "/actions/runs/" + (run_id or ""),
-            "created_at_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
-            "duration_seconds": duration,
-        },
+        "run": run,
         "inputs": [file_record(path) for path in inputs],
         "outputs": [file_record(path) for path in outputs],
         "cost_estimate": {
-            "status": "not_reported_by_provider",
+            "status": "not_called" if status == "skipped" else "not_reported_by_provider",
             "model": os.environ.get("LAWRADAR_MODEL"),
             "note": "Le fournisseur ne publie pas le détail des tokens dans ce run ; la durée et le nombre d'appels restent mesurés.",
         },
@@ -59,10 +62,11 @@ def main() -> int:
     parser.add_argument("--status", required=True)
     parser.add_argument("--inputs", type=Path, nargs="*", default=[])
     parser.add_argument("--outputs", type=Path, nargs="*", default=[])
+    parser.add_argument("--reason")
     args = parser.parse_args()
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(
-        json.dumps(build_manifest(args.kind, args.status, args.inputs, args.outputs), ensure_ascii=False, indent=2) + "\n",
+        json.dumps(build_manifest(args.kind, args.status, args.inputs, args.outputs, args.reason), ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
     return 0

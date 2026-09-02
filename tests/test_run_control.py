@@ -30,6 +30,12 @@ class RunControlTests(unittest.TestCase):
         self.assertIn("1 min 05 s", html)
         self.assertIn("ouvrir le run", html)
 
+    def test_renders_skip_reason(self):
+        item = summarize_manifest(manifest("motor"))
+        item["reason"] = "EUR-Lex hors périmètre"
+        html = render_dashboard({"schema": "lawradar-run-index-v1", "generated_at_utc": "2026-09-01T10:01:00+00:00", "runs": [item]})
+        self.assertIn("EUR-Lex hors périmètre", html)
+
     def test_rejects_unknown_manifest(self):
         with self.assertRaises(ValueError):
             summarize_manifest({"schema": "other"})

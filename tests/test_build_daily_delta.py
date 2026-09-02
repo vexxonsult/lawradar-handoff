@@ -20,7 +20,7 @@ class DailyDeltaTests(unittest.TestCase):
             self.assertEqual(delta["sources"][0]["status"], "UNCHANGED")
             self.assertFalse(delta["model_input_required"])
 
-    def test_requires_model_input_only_for_substantive_change(self):
+    def test_marks_unsupported_eurlex_change_without_requesting_the_current_motor(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary); previous = root / "previous"; current = root / "current"
             previous.mkdir(); current.mkdir()
@@ -30,7 +30,20 @@ class DailyDeltaTests(unittest.TestCase):
             source = next(item for item in delta["sources"] if item["file"] == "eurlex-oj-latest.json")
             self.assertEqual(source["status"], "CHANGED")
             self.assertEqual(source["item_count"], 2)
+            self.assertTrue(delta["evidence_change_detected"])
+            self.assertFalse(delta["model_input_required"])
+            self.assertFalse(delta["supported_model_change_detected"])
+
+    def test_requires_model_input_for_a_supported_jorf_change(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary); previous = root / "previous"; current = root / "current"
+            previous.mkdir(); current.mkdir()
+            self.write(previous, "jorf-summaries-latest.json", {"editions": [{"documents": [{"text_id": "A"}]}]})
+            self.write(current, "jorf-summaries-latest.json", {"editions": [{"documents": [{"text_id": "A"}, {"text_id": "B"}]}]})
+            delta = build_delta(previous, current)
+            self.assertTrue(delta["evidence_change_detected"])
             self.assertTrue(delta["model_input_required"])
+            self.assertEqual(delta["supported_changed_sources"], ["jorf-summaries-latest.json"])
 
     def test_marks_a_coverage_date_change_without_new_documents_as_metadata_only(self):
         with tempfile.TemporaryDirectory() as temporary:

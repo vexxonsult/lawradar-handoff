@@ -34,3 +34,8 @@ class RunManifestTests(unittest.TestCase):
         self.assertEqual(manifest["run"]["id"], "42")
         self.assertGreaterEqual(manifest["run"]["duration_seconds"], 0)
         self.assertIn("/vexxonsult/lawradar-handoff/actions/runs/42", manifest["run"]["url"])
+
+    def test_marks_a_skipped_run_as_not_called_with_a_reason(self):
+        manifest = build_manifest("motor", "skipped", [], [], "EUR-Lex modifié ; hors périmètre du moteur actuel.")
+        self.assertEqual(manifest["run"]["reason"], "EUR-Lex modifié ; hors périmètre du moteur actuel.")
+        self.assertEqual(manifest["cost_estimate"]["status"], "not_called")

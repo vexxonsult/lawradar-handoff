@@ -23,7 +23,7 @@ La collecte est lancée chaque jour à 17 h 20 Europe/Paris en heure d’été (
 
 ## Sobriété du cycle
 
-Après la collecte, le workflow publie `evidence/delta-latest.json`. Il compare mécaniquement la livraison du jour à la précédente, en ignorant les seuls horodatages techniques. Une variation de couverture sans document nouveau est marquée `METADATA_CHANGED` : elle ne déclenche pas de relecture IA. Le moteur prépare ensuite un diff compact de JORF et ConsultDD ; sans candidat, Claude n'est pas appelé. En cas de changement documentaire, les preuves brutes citées restent la seule source à interpréter.
+Après la collecte, le workflow publie `evidence/delta-latest.json`. Il compare mécaniquement la livraison du jour à la précédente, en ignorant les seuls horodatages techniques. `evidence_change_detected` indique toute variation collectée ; `model_input_required` indique uniquement une variation relevant du moteur actuel (JORF ou ConsultDD). Une variation EUR-Lex est donc visible sans déclencher Claude. Sans candidat pris en charge, le centre de contrôle enregistre explicitement un moteur `skipped` avec sa raison. En cas de changement documentaire pris en charge, les preuves brutes citées restent la seule source à interpréter.
 
 ## Rendu de restitution
 

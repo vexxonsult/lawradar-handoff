@@ -131,6 +131,8 @@ Le collecteur publie `evidence/run-manifest-latest.json`. Le moteur joint `out/r
 
 Le livrable 4B est un index de runs et un tableau de contrôle léger (statuts, durées, entrées/sorties, état de coût et liens d'artefacts), alimenté par ces manifestes. Il ne modifie ni les preuves primaires ni le contrat du moteur.
 
+Un moteur non appelé est lui aussi un résultat : le centre de contrôle doit le versionner avec le statut `skipped`, sa raison et un coût `not_called`. La collecte générale distingue désormais une variation constatée d'une variation traitable par le moteur courant, afin qu'un changement EUR-Lex hors périmètre ne ressemble pas à un appel IA manqué.
+
 ## Phase 5 — Dossier universel de signal
 
 ### Objectif

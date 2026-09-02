@@ -13,6 +13,7 @@ FILES = (
     "primary-evidence-latest.json", "jorf-summaries-latest.json",
     "eurlex-oj-latest.json", "consultdd-latest.json", "status-latest.json",
 )
+MOTOR_SUPPORTED_FILES = {"jorf-summaries-latest.json", "consultdd-latest.json"}
 VOLATILE_KEYS = {"collected_at_utc", "created_at_utc", "generated_at_utc"}
 
 
@@ -77,10 +78,14 @@ def build_delta(previous: Path, current: Path) -> dict[str, Any]:
                         "documents_sha256": digest(semantic_documents(after)) if after is not None else None,
                         "interpretation": None})
     changed = [source["file"] for source in sources if source["status"] in {"NEW", "CHANGED", "MISSING"}]
+    supported_changed = [name for name in changed if name in MOTOR_SUPPORTED_FILES]
     return {"schema": "lawradar-daily-delta-v1",
             "purpose": "Entrée courte pour la veille : changement mécanique des preuves, sans interprétation.",
             "sources": sources, "changed_sources": changed,
-            "model_input_required": bool(changed), "interpretation": None}
+            "evidence_change_detected": bool(changed),
+            "supported_model_change_detected": bool(supported_changed),
+            "supported_changed_sources": supported_changed,
+            "model_input_required": bool(supported_changed), "interpretation": None}
 
 
 def main() -> int:

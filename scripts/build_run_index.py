@@ -26,6 +26,7 @@ def summarize_manifest(manifest: dict[str, Any]) -> dict[str, Any]:
     return {
         "kind": kind,
         "status": run.get("status"),
+        "reason": run.get("reason"),
         "run_id": run.get("id"),
         "run_url": run.get("url"),
         "workflow": run.get("workflow"),
