@@ -1,13 +1,13 @@
 {
   "schema": "lawradar-universal-signal-v1",
   "run": {
-    "id": "33674215198",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33674215198",
-    "commit": "78cc983528335fecde49b4d7806fb3b3097eb281",
+    "id": "33674947580",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33674947580",
+    "commit": "e2b8be61492f9487fcc5282b3cd71c47caa857e5",
     "report_date": "2026-09-02"
   },
   "context": {
-    "coverage": "Sources traitées : jorf-summaries-latest.json, consultdd-latest.json. Sources modifiées (delta) : jorf-summaries-latest.json, eurlex-oj-latest.json. 10 candidats NEW examinés (JORF, journal 0204 du 2026-09-02) ; 96 candidats historiques exclus (HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE) et 40 candidats routine exclus (ROUTINE_PUBLIC_ADMINISTRATION_TITLE), tous déjà tracés dans out/motor-input.json.",
+    "coverage": "10 candidats JORF du 2026-09-02 (jorf-summaries-latest.json) examinés ; consultdd-latest.json marqué comme traité mais ne contient aucun candidat dans out/motor-input.json ; eurlex-oj-latest.json signalé comme source modifiée (delta) mais aucun candidat correspondant n'est fourni dans out/motor-input.json, donc non traité ici.",
     "delta_changed_sources": [
       "jorf-summaries-latest.json",
       "eurlex-oj-latest.json"
@@ -39,8 +39,8 @@
         }
       },
       "radar": {
-        "status": "UNRESOLVED",
-        "reason": "Arrêté modificatif (diplôme d'arme, sous-officiers de gendarmerie) ; evidence.interpretation=null et article_ids/article_titles vides, donc aucun fait ni acteur exploitable n'est démontré."
+        "status": "DISCARDED",
+        "reason": "Arrêté modifiant les conditions de délivrance du diplôme d'arme aux sous-officiers de gendarmerie. Texte de formation/administration interne, aucun flux financier dans l'extrait."
       },
       "enrichments": {
         "press": {
@@ -82,7 +82,7 @@
       },
       "radar": {
         "status": "UNRESOLVED",
-        "reason": "Le titre mentionne des montants d'aides financières (entreprises adaptées) mais evidence.interpretation=null et article_ids/article_titles vides : aucun montant, payeur ni bénéficiaire n'est démontré dans l'evidence."
+        "reason": "Arrêté fixant les montants des aides financières aux entreprises adaptées et entreprises adaptées de travail temporaire. Le titre annonce des montants chiffrés, mais l'extrait fourni s'arrête aux visas et ne contient aucune valeur ni bénéficiaire nommé : flux non démontré."
       },
       "enrichments": {
         "press": {
@@ -124,7 +124,7 @@
       },
       "radar": {
         "status": "UNRESOLVED",
-        "reason": "Le titre mentionne des montants d'aides financières (insertion par l'activité économique) mais evidence.interpretation=null et article_ids/article_titles vides : aucun montant, payeur ni bénéficiaire n'est démontré dans l'evidence."
+        "reason": "Arrêté fixant les montants des aides financières aux structures de l'insertion par l'activité économique. Même situation que JORFTEXT000054788095 : montants annoncés par le titre mais absents de l'extrait officiel fourni."
       },
       "enrichments": {
         "press": {
@@ -165,8 +165,8 @@
         }
       },
       "radar": {
-        "status": "UNRESOLVED",
-        "reason": "Arrêté modificatif (caractéristiques des cercueils) ; evidence.interpretation=null et article_ids/article_titles vides, donc aucun fait ni acteur exploitable n'est démontré."
+        "status": "DISCARDED",
+        "reason": "Arrêté modifiant les caractéristiques applicables aux cercueils et les modalités de vérification de ces caractéristiques. Norme technique, aucun flux financier apparent dans l'extrait."
       },
       "enrichments": {
         "press": {
@@ -188,9 +188,9 @@
       }
     },
     {
-      "id": "signal:5b68c214b683ba8c",
+      "id": "signal:162b1507121b9130",
       "source": {
-        "source_id": "jorf:JORFTEXT000054788204",
+        "source_id": "jorf:JORFTEXT000054788290",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
@@ -208,7 +208,7 @@
       },
       "radar": {
         "status": "UNRESOLVED",
-        "reason": "Modification de la liste des spécialités pharmaceutiques remboursables ; evidence.interpretation=null et article_ids/article_titles vides, donc aucun montant ni acteur n'est démontré."
+        "reason": "Arrêté modifiant la liste des spécialités pharmaceutiques remboursables (inscription d'APIXABAN TEVA en générique d'ELIQUIS). Un mécanisme de remboursement par l'assurance maladie est en jeu, mais l'extrait officiel fourni ne contient ni montant, ni base de remboursement chiffrée : flux non démontré."
       },
       "enrichments": {
         "press": {
@@ -230,9 +230,9 @@
       }
     },
     {
-      "id": "signal:9350b0597e50c8e1",
+      "id": "signal:6e111adc334dde3f",
       "source": {
-        "source_id": "jorf:JORFTEXT000054788221",
+        "source_id": "jorf:JORFTEXT000054788307",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
@@ -250,7 +250,7 @@
       },
       "radar": {
         "status": "UNRESOLVED",
-        "reason": "Modification de la liste des spécialités pharmaceutiques agréées (collectivités) ; evidence.interpretation=null et article_ids/article_titles vides, donc aucun montant ni acteur n'est démontré."
+        "reason": "Arrêté modifiant la liste des spécialités agréées aux collectivités (même inscription d'APIXABAN TEVA). Signal financier potentiel (achat public de médicaments) mais aucun montant ni volume n'est présent dans l'extrait fourni."
       },
       "enrichments": {
         "press": {
@@ -272,13 +272,13 @@
       }
     },
     {
-      "id": "signal:0dcfdf86a5447b26",
+      "id": "signal:416b4f729a096c28",
       "source": {
-        "source_id": "jorf:JORFTEXT000054788237",
+        "source_id": "jorf:JORFTEXT000054788324",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
+          "title": "Arrêté du 31 août 2026 pris pour l'application de l'article 3 du décret n° 86-616 du 12 mars 1986 modifié instituant une aide aux publications nationales d'information politique et générale à faibles ressources publicitaires",
           "url": null,
           "dates": [],
           "detail_status": null,
@@ -292,7 +292,7 @@
       },
       "radar": {
         "status": "UNRESOLVED",
-        "reason": "Modification de la liste des spécialités pharmaceutiques remboursables ; evidence.interpretation=null et article_ids/article_titles vides, donc aucun montant ni acteur n'est démontré."
+        "reason": "Arrêté pris pour l'application de l'article 3 du décret n° 86-616 instituant une aide aux publications nationales d'information politique et générale à faibles ressources publicitaires. Dispositif de subvention explicite, mais l'extrait ne nomme ni bénéficiaire ni montant."
       },
       "enrichments": {
         "press": {
@@ -314,13 +314,13 @@
       }
     },
     {
-      "id": "signal:c5df3700a203a156",
+      "id": "signal:daa0a7f78594379c",
       "source": {
-        "source_id": "jorf:JORFTEXT000054788248",
+        "source_id": "jorf:JORFTEXT000054788390",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+          "title": "Décret n° 2026-835 du 28 août 2026 relatif aux modalités de calcul du sur-classement démographique des communes érigées en « stations classées de tourisme »",
           "url": null,
           "dates": [],
           "detail_status": null,
@@ -333,8 +333,8 @@
         }
       },
       "radar": {
-        "status": "UNRESOLVED",
-        "reason": "Modification de la liste des spécialités pharmaceutiques agréées (collectivités) ; evidence.interpretation=null et article_ids/article_titles vides, donc aucun montant ni acteur n'est démontré."
+        "status": "DISCARDED",
+        "reason": "Décret relatif aux modalités de calcul du sur-classement démographique des communes classées « stations classées de tourisme ». Texte méthodologique/administratif, aucun flux financier apparent dans l'extrait."
       },
       "enrichments": {
         "press": {
@@ -356,13 +356,13 @@
       }
     },
     {
-      "id": "signal:1379ae5d8d1317d4",
+      "id": "signal:034f05447224acf3",
       "source": {
-        "source_id": "jorf:JORFTEXT000054788261",
+        "source_id": "jorf:JORFTEXT000054788410",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
+          "title": "Arrêté du 31 août 2026 portant octroi d'une licence d'entreprise ferroviaire",
           "url": null,
           "dates": [],
           "detail_status": null,
@@ -375,8 +375,8 @@
         }
       },
       "radar": {
-        "status": "UNRESOLVED",
-        "reason": "Modification de la liste des spécialités pharmaceutiques remboursables ; evidence.interpretation=null et article_ids/article_titles vides, donc aucun montant ni acteur n'est démontré."
+        "status": "DISCARDED",
+        "reason": "Arrêté portant octroi d'une licence d'entreprise ferroviaire à la société Velvet. Autorisation réglementaire d'exercer, sans montant ni flux financier dans l'extrait fourni."
       },
       "enrichments": {
         "press": {
@@ -398,13 +398,13 @@
       }
     },
     {
-      "id": "signal:04c0bb8647ea5b3c",
+      "id": "signal:16ce240ff3fffbd1",
       "source": {
-        "source_id": "jorf:JORFTEXT000054788278",
+        "source_id": "jorf:JORFTEXT000054788509",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+          "title": "Arrêté du 26 août 2026 portant suppression d'un office de commissaire de justice (officiers publics ou ministériels)",
           "url": null,
           "dates": [],
           "detail_status": null,
@@ -417,8 +417,8 @@
         }
       },
       "radar": {
-        "status": "UNRESOLVED",
-        "reason": "Modification de la liste des spécialités pharmaceutiques agréées (collectivités) ; evidence.interpretation=null et article_ids/article_titles vides, donc aucun montant ni acteur n'est démontré."
+        "status": "DISCARDED",
+        "reason": "Arrêté portant suppression d'un office de commissaire de justice. Acte administratif individuel sans flux financier apparent dans l'extrait."
       },
       "enrichments": {
         "press": {
@@ -443,7 +443,7 @@
   "money_flows": [],
   "quality": {
     "opportunity_count": 10,
-    "unresolved_count": 10,
+    "unresolved_count": 5,
     "money_flow_count": 0,
     "limitation": "Les enrichissements sont vides tant qu'aucun agent dédié n'a produit une sortie sourcée."
   }
