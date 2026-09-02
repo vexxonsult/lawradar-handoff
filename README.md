@@ -40,3 +40,19 @@ Chaque collecte publie aussi `evidence/run-manifest-latest.json`. Chaque exécut
 ## Dossier universel de signal — phase 5
 
 Lorsqu’un moteur aboutit, il publie `evidence/universal-signal-latest.json`. Ce dossier rassemble, sans nouvelle interprétation, les preuves compactes, la décision du Radar, les flux éventuellement démontrés et trois emplacements explicitement vides pour les futurs agents Presse, Demande et Marché. Ces agents ne pourront qu’ajouter une sortie sourcée dans leur emplacement ; ils ne modifieront ni la preuve ni la décision du Radar.
+
+## Recyclage déterministe des opportunités bloquées
+
+`scripts/utils/recycle_backlog.py` conserve séparément les signaux retenus dont
+les faits versionnés donnent un filtre `HOLD`, `WATCH`, `INVESTIGATE` ou
+`DISCARD`. Son registre durable, `evidence/recycle-backlog-latest.json`, garde
+les faits source, les raisons de blocage et les empreintes de la politique et
+du profil opérateur utilisés.
+
+Lorsqu'une règle ou le profil change, le script rejoue les mêmes faits sans IA
+ni réseau. Il produit un manifeste de réouverture uniquement si les filtres
+retournent réellement `PASS` et si la porte opérateur autorise la collecte.
+Une réouverture doit ensuite repasser par les enrichissements Presse, Demande
+et Marché avant tout appel du client Entrepreneur. La file moteur, elle, ne
+contenant que des empreintes, ne peut jamais à elle seule créer une fausse
+opportunité à partir d'un texte sans contenu primaire.

@@ -89,6 +89,12 @@ jobs:
       - name: Enregistrer l'absence d'appel au modèle
         run: |
           mkdir -p out
+          python scripts/utils/recycle_backlog.py recycle \
+            --backlog evidence/recycle-backlog-latest.json \
+            --policy config/compliance-policy-v1.json \
+            --profile config/operator-profile-v1.json \
+            --output evidence/recycle-backlog-latest.json \
+            --ready-output out/recycle-ready.json
           python scripts/build_run_manifest.py --output evidence/run-manifest-motor-latest.json --kind motor --status skipped --reason "${{ needs.gate.outputs.skip_reason }}" --inputs evidence/delta-latest.json evidence/jorf-summaries-latest.json evidence/consultdd-latest.json
           python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
           python scripts/render_control_dashboard.py --input evidence/run-index-latest.json --backlog evidence/motor-backlog-latest.json --out out/control-dashboard.html
@@ -100,6 +106,7 @@ jobs:
             evidence/run-manifest-motor-latest.json
             evidence/run-index-latest.json
             out/control-dashboard.html
+            out/recycle-ready.json
           retention-days: 90
       - name: Versionner le statut ignoré du moteur
         env:
@@ -108,7 +115,7 @@ jobs:
           git config user.name "lawradar-motor[bot]"
           git config user.email "lawradar-motor[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git add evidence/run-manifest-motor-latest.json evidence/run-index-latest.json
+          git add evidence/recycle-backlog-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json
           git diff --cached --quiet || git commit -m "Moteur LawRadar ignoré $(date -u +%F)"
           git pull --rebase origin main
           git push
@@ -172,6 +179,19 @@ jobs:
           cp out/universal-signal.json evidence/universal-signal-latest.json
           python scripts/build_agent_pilot_readiness.py --dossier out/universal-signal.json --policy config/compliance-policy-v1.json --profile config/operator-profile-v1.json --output out/agent-pilot-readiness.json
           cp out/agent-pilot-readiness.json evidence/agent-pilot-readiness-latest.json
+          python scripts/utils/recycle_backlog.py capture \
+            --dossier out/universal-signal.json \
+            --queue evidence/motor-queue-latest.json \
+            --policy config/compliance-policy-v1.json \
+            --profile config/operator-profile-v1.json \
+            --backlog evidence/recycle-backlog-latest.json \
+            --output evidence/recycle-backlog-latest.json
+          python scripts/utils/recycle_backlog.py recycle \
+            --backlog evidence/recycle-backlog-latest.json \
+            --policy config/compliance-policy-v1.json \
+            --profile config/operator-profile-v1.json \
+            --output evidence/recycle-backlog-latest.json \
+            --ready-output out/recycle-ready.json
           python scripts/build_run_manifest.py --output out/run-manifest.json --kind motor --status success --inputs out/motor-input.json config/moteur-delivery-schema.json --outputs out/motor-delivery.json out/dashboard.html out/universal-signal.json out/agent-pilot-readiness.json
       - name: Actualiser le registre du centre de contrôle
         run: |
@@ -192,7 +212,7 @@ jobs:
           git config user.name "lawradar-motor[bot]"
           git config user.email "lawradar-motor[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git add evidence/motor-queue-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json evidence/universal-signal-latest.json evidence/agent-pilot-readiness-latest.json
+          git add evidence/motor-queue-latest.json evidence/recycle-backlog-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json evidence/universal-signal-latest.json evidence/agent-pilot-readiness-latest.json
           git diff --cached --quiet || git commit -m "Statut moteur LawRadar $(date -u +%F)"
           git pull --rebase origin main
           git push
