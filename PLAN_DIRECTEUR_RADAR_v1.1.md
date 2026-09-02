@@ -328,6 +328,20 @@ chaque heure tant que la file existe, mais le modèle n'est appelé que pour un
 lot non vide. La limite de tours passe de cinq à six pour terminer un lot
 normal sans ouvrir une exécution non bornée.
 
+Avant la file, tout texte JORF dont la date de publication est hors de la
+fenêtre officiellement couverte par la collecte courante est conservé comme
+`HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE`, puis exclu de l'entrée du
+moteur. Une réapparition d'archive ne devient donc jamais une fausse nouveauté
+ni une dépense IA ; sa quantité et sa raison sont visibles dans l'entrée et le
+statut de run.
+
+Les publications de routine administrative — délégations de signature,
+nominations, concours, vacances de postes et rubriques de sommaire — reçoivent
+de la même façon la décision traçable `ROUTINE_PUBLIC_ADMINISTRATION_TITLE`.
+Elles sont donc **traitées par règle** mais ne déclenchent pas une interprétation
+payante. Tous les autres textes datés de la collecte restent dans la file et
+seront examinés, au maximum dix par exécution, jusqu'à épuisement de celle-ci.
+
 ---
 
 ## Rappel de la frontière entre les deux projets

@@ -1,6 +1,11 @@
 import unittest
 
-from scripts.prepare_motor_input import changed_records, requires_model
+from scripts.prepare_motor_input import (
+    changed_records,
+    exclude_historical_jorf_records,
+    exclude_routine_administration_records,
+    requires_model,
+)
 
 
 class PrepareMotorInputTests(unittest.TestCase):
@@ -23,3 +28,26 @@ class PrepareMotorInputTests(unittest.TestCase):
     def test_does_not_invoke_model_without_supported_candidates(self):
         self.assertFalse(requires_model({"candidates": []}))
         self.assertTrue(requires_model({"candidates": [{"source_id": "jorf:x"}]}))
+
+    def test_excludes_a_historical_reappearance_outside_the_current_window(self):
+        records = [
+            {"source_id": "jorf:old", "evidence": {"publication_date": "1997-11-07"}},
+            {"source_id": "jorf:current", "evidence": {"publication_date": "2026-09-02"}},
+        ]
+        accepted, excluded = exclude_historical_jorf_records(records, {"2026-09-02"})
+        self.assertEqual([item["source_id"] for item in accepted], ["jorf:current"])
+        self.assertEqual(excluded[0]["reason"], "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE")
+
+    def test_excludes_routine_administration_with_a_trace(self):
+        routine = {
+            "source_id": "jorf:routine",
+            "evidence": {"title": "Décision portant délégation de signature"},
+        }
+        relevant = {
+            "source_id": "jorf:economy",
+            "evidence": {"title": "Arrêté fixant les montants des aides aux entreprises"},
+        }
+        accepted, excluded = exclude_routine_administration_records([routine, relevant])
+        self.assertEqual(accepted, [relevant])
+        self.assertEqual(excluded[0]["source_id"], "jorf:routine")
+        self.assertEqual(excluded[0]["reason"], "ROUTINE_PUBLIC_ADMINISTRATION_TITLE")

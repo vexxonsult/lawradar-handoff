@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import subprocess
 from pathlib import Path
 from typing import Any
@@ -60,6 +61,64 @@ def changed_records(
     return records
 
 
+def exclude_historical_jorf_records(
+    records: list[dict[str, Any]], covered_dates: set[str]
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Never send a reintroduced archive text to the daily interpretation queue."""
+    candidates: list[dict[str, Any]] = []
+    exclusions: list[dict[str, Any]] = []
+    for record in records:
+        date = record.get("evidence", {}).get("publication_date")
+        if isinstance(date, str) and date in covered_dates:
+            candidates.append(record)
+        else:
+            exclusions.append({
+                "source_id": record["source_id"],
+                "publication_date": date,
+                "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE",
+            })
+    return candidates, exclusions
+
+
+# These patterns deliberately cover only documents whose subject is internal
+# public-administration staffing or a JORF section heading. They are not a
+# judgement on a topic's importance: they make the deterministic decision that
+# it cannot create a general business opportunity from the metadata collected.
+ROUTINE_ADMINISTRATION_PATTERNS = (
+    r"\bdélégation de signature\b",
+    r"\b(ouverture d.un examen professionnel|examen professionnel|concours)\b",
+    r"\b(nombre de postes offerts|avis de vacance d.un emploi|avis de vacance d.emplois)\b",
+    r"\b(admission à la retraite|nomination|titularisation|cessation de fonctions|réintégration|affectation|détachement|intégration)\b",
+    r"\b(composition du cabinet|composition de la commission|nomination au (comité|conseil d.administration|conseil national))\b",
+    r"\b(changement[s]? de nom[s]?|demandes de changement de nom[s]?)\b",
+    r"^(commissions et organes de contrôle|documents déposés|documents publiés)$",
+)
+ROUTINE_ADMINISTRATION_RE = re.compile("|".join(ROUTINE_ADMINISTRATION_PATTERNS), re.IGNORECASE)
+
+
+def exclude_routine_administration_records(
+    records: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Route obvious staffing/section documents without spending model tokens.
+
+    Each decision remains in the prepared input so that the audit can distinguish
+    a deterministic non-opportunity from an unprocessed document.
+    """
+    candidates: list[dict[str, Any]] = []
+    exclusions: list[dict[str, Any]] = []
+    for record in records:
+        title = record.get("evidence", {}).get("title")
+        if isinstance(title, str) and ROUTINE_ADMINISTRATION_RE.search(title):
+            exclusions.append({
+                "source_id": record["source_id"],
+                "title": title,
+                "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE",
+            })
+        else:
+            candidates.append(record)
+    return candidates, exclusions
+
+
 def requires_model(prepared_input: dict[str, Any]) -> bool:
     """The model is useful only when the supported sources produced candidates."""
     return bool(prepared_input.get("candidates"))
@@ -71,6 +130,8 @@ def prepare(evidence_dir: Path) -> dict[str, Any]:
         (evidence_dir / "jorf-summaries-latest.json").read_text(encoding="utf-8")
     )
     candidates: list[dict[str, Any]] = []
+    excluded_historical_candidates: list[dict[str, Any]] = []
+    excluded_routine_candidates: list[dict[str, Any]] = []
     source_specs = (
         ("jorf-summaries-latest.json", "JORF"),
         ("consultdd-latest.json", "CONSULTDD"),
@@ -82,14 +143,26 @@ def prepare(evidence_dir: Path) -> dict[str, Any]:
         revisions = last_two_revisions(path)
         current = json.loads(path.read_text(encoding="utf-8"))
         previous = git_version(path, revisions[1]) if len(revisions) > 1 else None
-        candidates.extend(changed_records(current, previous, kind))
+        records = changed_records(current, previous, kind)
+        if kind == "JORF":
+            accepted, exclusions = exclude_historical_jorf_records(
+                records, set(current.get("covered_dates", []))
+            )
+            accepted, routine_exclusions = exclude_routine_administration_records(accepted)
+            candidates.extend(accepted)
+            excluded_historical_candidates.extend(exclusions)
+            excluded_routine_candidates.extend(routine_exclusions)
+        else:
+            candidates.extend(records)
     return {
         "schema": "lawradar-motor-input-v1",
         "report_date": jorf_current.get("coverage_end") or "indéterminée",
         "delta_changed_sources": delta.get("changed_sources", []),
         "handled_source_files": ["jorf-summaries-latest.json", "consultdd-latest.json"],
         "candidates": candidates,
-        "rules": "Preuves locales diffées uniquement ; aucun accès réseau ; inconnu = UNRESOLVED.",
+        "excluded_historical_candidates": excluded_historical_candidates,
+        "excluded_routine_candidates": excluded_routine_candidates,
+        "rules": "Preuves locales diffées uniquement ; réapparition historique et routine administrative explicite = filtrées avec trace ; inconnu = UNRESOLVED.",
     }
 
 
