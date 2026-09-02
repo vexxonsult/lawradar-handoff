@@ -21,7 +21,7 @@ def duration(value: Any) -> str:
     return f"{minutes} min {seconds:02d} s" if minutes else f"{seconds} s"
 
 
-def render_dashboard(index: dict[str, Any]) -> str:
+def render_dashboard(index: dict[str, Any], backlog: dict[str, Any] | None = None) -> str:
     if index.get("schema") != "lawradar-run-index-v1" or not isinstance(index.get("runs"), list):
         raise ValueError("Index de runs non pris en charge.")
     rows = []
@@ -41,12 +41,23 @@ def render_dashboard(index: dict[str, Any]) -> str:
             f"<td>{tag(cost_status)}</td><td>{link}</td></tr>"
         )
     body = "".join(rows) or '<tr><td colspan="8">Aucun manifeste disponible.</td></tr>'
+    backlog_html = ""
+    if backlog is not None:
+        if backlog.get("schema") != "lawradar-motor-backlog-v1":
+            raise ValueError("État de file moteur invalide.")
+        backlog_html = (
+            "<section><h2>Capacité moteur</h2>"
+            f"<p><strong>{tag(backlog.get('status'))}</strong> — "
+            f"{tag(backlog.get('pending_count'))} candidat(s) en attente, "
+            f"capacité quotidienne : {tag(backlog.get('daily_capacity'))}.</p>"
+            f"<p class=\"note\">Action : {tag(backlog.get('next_action'))}.</p></section>"
+        )
     return f'''<!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>LawRadar — centre de contrôle</title>
 <style>body{{font-family:system-ui,sans-serif;background:#f7f7f5;color:#1f2937;margin:0}}main{{max-width:1100px;margin:auto;padding:32px 20px}}header,section{{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:22px;margin-bottom:18px}}table{{width:100%;border-collapse:collapse}}th,td{{padding:12px 8px;border-bottom:1px solid #e5e7eb;text-align:left;vertical-align:top}}th{{font-size:.85rem;color:#4b5563}}a{{color:#0b63ce}}.note{{color:#4b5563}}</style>
 </head><body><main><header><p class="note">Phase 4 — observabilité</p><h1>Centre de contrôle LawRadar</h1><p>Généré le {tag(index.get('generated_at_utc'))}. Ce tableau décrit les exécutions ; il n’interprète pas les preuves.</p></header>
-<section><h2>Derniers runs</h2><table><thead><tr><th>Type</th><th>Statut</th><th>Raison</th><th>Horodatage UTC</th><th>Durée</th><th>Entrées / sorties</th><th>Coût</th><th>Détail</th></tr></thead><tbody>{body}</tbody></table></section>
+{backlog_html}<section><h2>Derniers runs</h2><table><thead><tr><th>Type</th><th>Statut</th><th>Raison</th><th>Horodatage UTC</th><th>Durée</th><th>Entrées / sorties</th><th>Coût</th><th>Détail</th></tr></thead><tbody>{body}</tbody></table></section>
 </main></body></html>'''
 
 
@@ -54,10 +65,12 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--backlog", type=Path)
     args = parser.parse_args()
     index = json.loads(args.input.read_text(encoding="utf-8"))
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    args.out.write_text(render_dashboard(index), encoding="utf-8")
+    backlog = json.loads(args.backlog.read_text(encoding="utf-8")) if args.backlog and args.backlog.exists() else None
+    args.out.write_text(render_dashboard(index, backlog), encoding="utf-8")
     return 0
 
 

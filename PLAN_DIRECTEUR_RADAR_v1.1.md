@@ -332,6 +332,11 @@ normal sans ouvrir une exécution non bornée. Le plafond est fixé à sept tour
 après mesure d'un lot de six textes officiels dont la production valide
 nécessitait précisément ce septième tour.
 
+Après la troisième fenêtre, `evidence/motor-backlog-latest.json` publie
+`CLEAR` ou `BACKLOG`, le nombre de candidats restant et l'action de reprise.
+Un `BACKLOG` ne déclenche jamais des runs nocturnes : les candidats conservés
+restent prioritaires à la première fenêtre de collecte du lendemain.
+
 Avant la file, tout texte JORF dont la date de publication est hors de la
 fenêtre officiellement couverte par la collecte courante est conservé comme
 `HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE`, puis exclu de l'entrée du
