@@ -203,9 +203,11 @@ dates et extraits RSS limités à 25 mots, puis déduplique les candidats. Il ne
 lit pas le corps des articles, ne consulte aucun signal historique et ne fait
 aucun appel IA. Google News RSS complète ces flux comme couche de découverte
 large, limitée aux titres et liens issus de requêtes construites depuis le
-signal courant ; il n'est jamais une preuve autonome. Une panne de l'une de ces
-sources est tracée mais ne masque pas une collecte réussie par une autre ; sans
-source réussie, le statut reste `UNRESOLVED`.
+signal courant ; il n'est jamais une preuve autonome. Pour éviter qu'un mot
+générique n'entraîne un appel IA, deux termes distinctifs sont exigés, sauf si
+le signal n'en contient qu'un seul. Une panne de l'une de ces sources est
+tracée mais ne masque pas une collecte réussie par une autre ; sans source
+réussie, le statut reste `UNRESOLVED`.
 
 ### Livrable 6C — qualification Presse contrôlée
 

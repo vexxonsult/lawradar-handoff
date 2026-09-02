@@ -201,7 +201,9 @@ def rss_articles(feed: dict[str, Any], body: str, signal: dict[str, Any]) -> lis
     """Parse titles and excerpts only; article bodies are never requested."""
     root = ElementTree.fromstring(body)
     terms = distinctive_terms(signal)
-    minimum = max(1, int(feed.get("minimum_matching_terms", 2)))
+    # A one-word official label must remain searchable, but broader signals need
+    # two independent anchors before an RSS item can spend a qualification call.
+    minimum = min(max(1, int(feed.get("minimum_matching_terms", 2))), max(1, len(terms)))
     items = [node for node in root.iter() if node.tag.rsplit("}", 1)[-1] in {"item", "entry"}]
     results: list[dict[str, Any]] = []
     for item in items:
@@ -298,7 +300,7 @@ def collect(
             "id": "google-news-fr",
             "outlet": "Google News",
             "source_kind": "news_aggregator",
-            "minimum_matching_terms": int(news.get("minimum_matching_terms", 1)),
+            "minimum_matching_terms": int(news.get("minimum_matching_terms", 2)),
         }
         for query in build_news_queries(signal, int(limits.get("max_queries_per_signal", 2))):
             params = {

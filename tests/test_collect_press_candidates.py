@@ -108,6 +108,7 @@ class CollectPressCandidatesTests(unittest.TestCase):
         }
         feed = """<?xml version='1.0'?><rss><channel>
         <item><title>Ombrières photovoltaïques : le nouvel arrêté</title><link>https://journal.test/a</link><source url='https://journal.test'>Journal test</source><description>Le nouvel arrêté sur les ombrières photovoltaïques.</description></item>
+        <item><title>Photovoltaïque : une aide locale</title><link>https://journal.test/b</link><source url='https://journal.test'>Journal test</source><description>Une aide locale sans lien avec le nouvel arrêté.</description></item>
         </channel></rss>"""
         result = collect(dossier(), input_config, "signal:current", fetch_text=lambda _: feed, sleep=lambda _: None)
         self.assertTrue(result["collection_successful"])
