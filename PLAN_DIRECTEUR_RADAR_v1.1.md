@@ -1,6 +1,6 @@
 # Plan directeur — mise à jour v1.1, révisée le 2 septembre 2026
 
-Ce document met à jour le **Plan directeur définitif — Radar d’opportunités** approuvé le 30 août 2026. Les phases 1 à 4 sont achevées. La base technique de la phase 5 est en place ; sa validation en conditions réelles attend le prochain moteur réellement appelé. Les principes, critères de validation et la structure à deux projets restent inchangés, avec les précisions ci-dessous comme référence opérationnelle.
+Ce document met à jour le **Plan directeur définitif — Radar d’opportunités** approuvé le 30 août 2026. Les phases 1 à 5 sont achevées. La phase 6 est préparée mais n'est pas encore validée par une chaîne réelle complète sur un signal accessible au profil opérateur. Les phases 7 et 8 ne sont pas commencées opérationnellement. Les principes, critères de validation et la structure à deux projets restent inchangés, avec les précisions ci-dessous comme référence opérationnelle.
 
 ## Projet A — ordre des phases confirmé
 
@@ -361,6 +361,59 @@ candidat est conservé avec la décision déterministe
 `UNRESOLVED / PRIMARY_TEXT_EMPTY`. Il ne monopolise pas une exécution IA et
 peut redevenir éligible si une version ultérieure de la source apporte le
 texte primaire.
+
+### Livrable 6M — porte d'accès opérateur pour secteurs réglementés
+
+Avant toute collecte Presse, Demande, Marché ou tout appel de l'agent
+Entrepreneur, le filtre déterministe peut router un signal à risque vers une
+vérification minimale. Cette porte ne décide ni de la légalité générale d'un
+marché, ni de son attractivité ; elle vérifie seulement qu'une offre directe
+est compatible avec le profil opérateur, ou qu'un rôle périphérique légal et
+accessible est déjà démontré.
+
+Les secteurs classés `MEDICINES`, `FINANCIAL_SERVICES`, `LEGAL_SERVICES` ou
+`OTHER_REGULATED` portent les champs `operator_access` suivants : secteur,
+statut de l'offre directe, preuve d'un rôle périphérique et niveau de preuve.
+Quand l'offre directe est `OUT_OF_PROFILE` ou `UNKNOWN` et qu'aucun rôle
+périphérique n'est `VERIFIED`, la sortie est :
+
+```text
+status: HOLD
+route: LEGAL_ROLE_CHECK_ONLY
+allow_external_collection: false
+```
+
+Le signal n'est pas rejeté comme inexistant ; il n'appelle simplement pas les
+agents de recherche ni une décision Entrepreneur. Cette porte protège le
+budget et interdit de fabriquer une activité d'intermédiaire à partir d'une
+simple intuition de flux financier.
+
+Le premier cas réel est `JORFTEXT000054788261`, relatif à NINTEDANIB TEVA
+SANTE. Le texte établit un médicament d'exception, une prescription réservée
+à des spécialistes et l'absence de montant chiffré. Il est donc classé
+`HOLD` : aucune recherche Presse, BOAMP, Demande, Marché ou Entrepreneur n'est
+justifiée tant qu'un rôle périphérique légal distinct n'est pas prouvé.
+
+### État et sortie de phase 6
+
+La phase 6 est **en cours**, et non achevée. Les contrats, contrôleurs,
+collectes déterministes limitées et le pilote Presse manuel sont disponibles ;
+ils ne constituent pas encore une chaîne quotidienne validée.
+
+Pour clore cette phase, le prochain signal `RETAINED` qui passe la porte
+d'accès opérateur doit traverser une fois, en conditions réelles et sans
+source inventée :
+
+1. Presse ;
+2. Demande et/ou BOAMP lorsque le périmètre s'y prête ;
+3. Marché ;
+4. fusion contrôlée de ces résultats dans le dossier universel.
+
+Un signal en `HOLD`, comme NINTEDANIB, ne peut pas servir de pilote complet.
+Il est une validation de sécurité, pas une opportunité à forcer. À l'issue
+d'un pilote réel concluant, le plan passe à la phase 7 (moteur de synthèse),
+puis à la phase 8 (activation contrôlée de l'agent Entrepreneur). Aucun
+dossier Entrepreneur quotidien n'est programmé avant ces deux étapes.
 
 ---
 
