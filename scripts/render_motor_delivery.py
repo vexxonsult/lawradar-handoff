@@ -10,8 +10,10 @@ from typing import Any
 
 try:
     from scripts.render_dashboard import render_dashboard
+    from scripts.run_deterministic_filters import validate_facts
 except ModuleNotFoundError:  # Exécution directe : python scripts/render_motor_delivery.py
     from render_dashboard import render_dashboard
+    from run_deterministic_filters import validate_facts
 
 
 FLOW_FIELDS = (
@@ -44,6 +46,15 @@ def validate_delivery(delivery: dict[str, Any]) -> None:
         if item.get("status") not in {"RETAINED", "DISCARDED", "UNRESOLVED"}:
             raise ValueError(f"Statut d'opportunité invalide : {index}.")
         require_text(item.get("reason"), f"opportunities[{index}].reason")
+        facts = item.get("facts")
+        if not isinstance(facts, dict):
+            raise ValueError(f"Faits d'opportunité absents : {index}.")
+        try:
+            validate_facts(facts)
+        except ValueError as caught:
+            raise ValueError(f"Faits d'opportunité invalides : {index}.") from caught
+        if facts["signal_id"] != item["source_id"]:
+            raise ValueError(f"Faits rattachés au mauvais signal : {index}.")
     flows = delivery.get("money_flows")
     if not isinstance(flows, list):
         raise ValueError("Bloc money_flows invalide.")

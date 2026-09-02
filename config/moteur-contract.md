@@ -21,7 +21,12 @@ montants, liens ou raisonnements. À chaque run, toute conclusion doit provenir
 exclusivement des candidats présents dans `out/motor-input.json`.
 
 Il écrit exactement un fichier `out/motor-delivery.json`, conforme à
-`config/moteur-delivery-schema.json`. Une valeur inconnue est écrite comme une
+`config/moteur-delivery-schema.json`. Chaque décision contient une fiche
+`lawradar-opportunity-facts-v1` associée exactement à son `source_id`. Cette
+fiche n'est pas une idée commerciale : elle porte les termes de recherche et
+les faits juridiques ou opérationnels directement établis ; capital, délai,
+autorisation et rôle opérateur non prouvés restent respectivement `null`,
+`UNKNOWN` ou `MISSING`. Une valeur inconnue est écrite comme une
 phrase explicite (par exemple « Non chiffré dans la preuve lue »), jamais
 inventée. Un flux ne peut être créé que si le payeur, le bénéficiaire ou la
 direction sont étayés par les preuves lues ; sinon le signal reste

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import hashlib
 import json
 from pathlib import Path
@@ -95,8 +96,18 @@ def build_dossier(
     for source_id in sorted(candidate_by_source):
         candidate = candidate_by_source[source_id]
         decision = opportunity_by_source[source_id]
+        facts = decision.get("facts")
+        if not isinstance(facts, dict) or facts.get("schema") != "lawradar-opportunity-facts-v1":
+            raise ValueError("Faits d'opportunité absents de la livraison moteur.")
+        if facts.get("signal_id") != source_id:
+            raise ValueError("Faits d'opportunité rattachés au mauvais candidat.")
+        current_signal_id = signal_id(report_date, source_id)
+        bound_facts = copy.deepcopy(facts)
+        # The model identifies only the immutable source candidate. This binder
+        # assigns the deterministic universal-signal id used by later agents.
+        bound_facts["signal_id"] = current_signal_id
         signals.append({
-            "id": signal_id(report_date, source_id),
+            "id": current_signal_id,
             "source": {
                 "source_id": source_id,
                 "source_kind": candidate.get("source_kind"),
@@ -107,6 +118,7 @@ def build_dossier(
                 "status": decision.get("status"),
                 "reason": decision.get("reason"),
             },
+            "opportunity_facts": bound_facts,
             "enrichments": {
                 "press": {"status": "PENDING", "result": None},
                 "demand": {"status": "PENDING", "result": None},

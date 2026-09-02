@@ -39,12 +39,22 @@ def validate_facts(facts: dict[str, Any]) -> None:
         raise ValueError("Faits d'opportunité non pris en charge.")
     if not isinstance(facts.get("signal_id"), str) or not facts["signal_id"]:
         raise ValueError("Signal des faits invalide.")
+    if not isinstance(facts.get("title"), str) or not facts["title"].strip():
+        raise ValueError("Titre des faits invalide.")
+    for key in ("keywords", "affected_scope"):
+        value = facts.get(key)
+        if not isinstance(value, list) or (key == "keywords" and not value) or not all(isinstance(item, str) and item.strip() for item in value):
+            raise ValueError(f"{key} doit être une liste de textes exploitable.")
     legal = facts.get("legal")
     requirements = facts.get("requirements")
     if not isinstance(legal, dict) or not isinstance(requirements, dict):
         raise ValueError("Faits juridiques ou opérationnels absents.")
     if legal.get("proof_status") not in PROOF or legal.get("text_status") not in TEXT_STATUSES:
         raise ValueError("Preuve ou statut juridique invalide.")
+    if not isinstance(legal.get("jurisdiction"), str) or not legal["jurisdiction"]:
+        raise ValueError("Territoire juridique invalide.")
+    if not isinstance(legal.get("affected_scope"), list) or not all(isinstance(item, str) and item.strip() for item in legal["affected_scope"]):
+        raise ValueError("Périmètre juridique invalide.")
     if requirements.get("evidence_status") not in PROOF:
         raise ValueError("Statut de preuve opérationnelle invalide.")
     for key in ("required_capabilities", "required_authorizations", "dependencies"):

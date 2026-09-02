@@ -139,12 +139,15 @@ jobs:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           prompt: >-
             Tu exécutes le moteur LawRadar. Lis uniquement out/motor-input.json et
-            config/moteur-delivery-schema.json. N'utilise ni réseau, ni recherche,
+            config/moteur-delivery-schema.json et config/opportunity-facts-schema-v1.json. N'utilise ni réseau, ni recherche,
             ni Google Drive, ni autres fichiers. Écris exactement out/motor-delivery.json, conforme
             au schéma. N'écris aucun autre fichier. Chaque candidate doit avoir une
             opportunity avec son source_id ; toute information non démontrée est
             UNRESOLVED. Si aucun flux n'est étayé, écris money_flows: [].
-            evidence/universal-signal-latest.json est une sortie historique : ne le lis pas,
+            Chaque décision doit inclure facts, conforme au schéma des faits : facts.signal_id
+            est exactement le source_id du candidat ; les mots-clés sont des termes distinctifs
+            présents dans la preuve ; toute date, exigence, autorisation, capital ou délai non
+            démontré est null, MISSING ou PARTIAL selon le schéma. evidence/universal-signal-latest.json est une sortie historique : ne le lis pas,
             ne l'utilise ni comme exemple, ni comme source, ni comme solution de repli.
             Chaque fait, acteur, montant et flux de cette livraison doit venir uniquement
             d'un candidat présent dans out/motor-input.json.

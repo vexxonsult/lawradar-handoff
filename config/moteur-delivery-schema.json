@@ -19,11 +19,12 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["source_id", "status", "reason"],
+        "required": ["source_id", "status", "reason", "facts"],
         "properties": {
           "source_id": {"type": "string"},
           "status": {"enum": ["RETAINED", "DISCARDED", "UNRESOLVED"]},
-          "reason": {"type": "string"}
+          "reason": {"type": "string"},
+          "facts": {"$ref": "opportunity-facts-schema-v1.json"}
         },
         "additionalProperties": false
       }

@@ -394,6 +394,26 @@ SANTE. Le texte établit un médicament d'exception, une prescription réservée
 `HOLD` : aucune recherche Presse, BOAMP, Demande, Marché ou Entrepreneur n'est
 justifiée tant qu'un rôle périphérique légal distinct n'est pas prouvé.
 
+### Livrable 6N — faits d'opportunité liés au signal
+
+Le Moteur doit désormais livrer, pour chaque candidat traité, une fiche
+`lawradar-opportunity-facts-v1` en plus de sa décision Radar. Elle comprend un
+titre, des mots-clés distinctifs, un périmètre, les faits juridiques connus et
+les exigences opérationnelles connues. Les valeurs non établies restent
+explicitement `null`, `MISSING` ou `PARTIAL` ; la fiche ne contient ni idée
+commerciale, ni donnée issue d'un ancien signal.
+
+La fiche porte d'abord le `source_id` immuable du candidat. Lors de la
+construction du dossier universel, le code remplace seulement cet identifiant
+par l'identifiant déterministe du signal universel, puis vérifie que la liaison
+est exacte. Le script `prepare_opportunity_facts.py` peut ensuite extraire
+cette fiche pour un collecteur borné tel que BOAMP. Aucun mot-clé n'est alors
+saisi ou inventé manuellement entre le Moteur et les agents.
+
+Le contrat, le validateur de livraison et les tests sont en place. La
+validation en conditions réelles aura lieu au prochain moteur appelé : il doit
+produire une fiche valide par décision sans modifier les preuves primaires.
+
 ### État et sortie de phase 6
 
 La phase 6 est **en cours**, et non achevée. Les contrats, contrôleurs,

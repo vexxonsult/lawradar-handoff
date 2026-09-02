@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Faits d'opportunité LawRadar",
+  "type": "object",
+  "required": ["schema", "signal_id", "title", "keywords", "affected_scope", "legal", "requirements"],
+  "properties": {
+    "schema": {"const": "lawradar-opportunity-facts-v1"},
+    "signal_id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "keywords": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "affected_scope": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "legal": {
+      "type": "object",
+      "required": ["jurisdiction", "text_status", "proof_status", "effective_date", "affected_scope"],
+      "properties": {
+        "jurisdiction": {"type": "string", "minLength": 1},
+        "text_status": {"enum": ["PUBLISHED", "IN_FORCE", "CONSULTATION_OPEN", "DRAFT", "REPEALED", "EXPIRED", "UNKNOWN"]},
+        "proof_status": {"enum": ["VERIFIED", "PARTIAL", "MISSING"]},
+        "effective_date": {"type": ["string", "null"]},
+        "affected_scope": {"type": "array", "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "requirements": {
+      "type": "object",
+      "required": ["required_capabilities", "required_authorizations", "dependencies", "minimum_startup_capital_eur", "estimated_time_to_market_weeks", "evidence_status"],
+      "properties": {
+        "required_capabilities": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "required_authorizations": {"type": "array"},
+        "dependencies": {"type": "array"},
+        "minimum_startup_capital_eur": {"type": ["number", "null"], "minimum": 0},
+        "estimated_time_to_market_weeks": {"type": ["number", "null"], "minimum": 0},
+        "evidence_status": {"enum": ["VERIFIED", "PARTIAL", "MISSING"]}
+      },
+      "additionalProperties": false
+    },
+    "operator_access": {"type": "object"}
+  },
+  "additionalProperties": true
+}

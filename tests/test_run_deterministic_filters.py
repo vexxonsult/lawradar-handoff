@@ -8,7 +8,8 @@ from scripts.run_deterministic_filters import evaluate
 def facts():
     return {
         "schema": "lawradar-opportunity-facts-v1", "signal_id": "signal:1",
-        "legal": {"jurisdiction": "FR", "text_status": "IN_FORCE", "proof_status": "VERIFIED", "effective_date": "2026-09-10"},
+        "title": "Obligation test", "keywords": ["obligation test"], "affected_scope": ["entreprises françaises"],
+        "legal": {"jurisdiction": "FR", "text_status": "IN_FORCE", "proof_status": "VERIFIED", "effective_date": "2026-09-10", "affected_scope": ["entreprises françaises"]},
         "requirements": {"required_capabilities": ["analyse_ia"], "required_authorizations": [], "dependencies": [], "minimum_startup_capital_eur": 500, "estimated_time_to_market_weeks": 4, "evidence_status": "VERIFIED"},
     }
 
