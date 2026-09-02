@@ -183,6 +183,15 @@ Préparer trois enrichissements indépendants du Radar, chacun limité à son r�
 
 Le contrat de sortie commun est versionné dans `config/agent-enrichment-contract-v1.md`. Il constitue le prochain livrable préparatoire ; l'activation des agents est une étape distincte et contrôlée.
 
+### Livrable 6A — porte d'entrée protégée
+
+Le schéma `config/agent-enrichment-schema.json` et le script
+`scripts/merge_agent_enrichment.py` permettent d'ajouter une sortie d'agent à
+un seul emplacement vide. Ils refusent un signal inconnu, l'écrasement d'une
+sortie existante et tout score tant qu'une méthode n'a pas été définie. Des
+tests vérifient que la preuve primaire, la décision Radar et les flux restent
+strictement inchangés.
+
 ---
 
 ## Rappel de la frontière entre les deux projets
