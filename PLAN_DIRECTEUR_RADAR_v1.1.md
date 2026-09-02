@@ -252,6 +252,16 @@ compte, crédit, clé API ou appel IA n’est créé. Un contrôleur valide que 
 conclusion et chaque source viennent strictement des observations du signal
 courant avant toute fusion dans son emplacement `demand`.
 
+### Livrable 6G — contrat Marché sans prospection
+
+L’agent Marché est préparé sans exploration web ni collecte automatique. Son
+contrat exige que toute observation documente l’acteur, le type d’offre ou de
+contrainte, la zone, la provenance et un extrait limité à 25 mots. Il interdit
+de déduire une taille de marché, un chiffre d’affaires ou une concurrence
+exhaustive à partir d’une simple offre observée. Les registres, marchés publics
+et sites d’acteurs restent désactivés : aucun compte, contact, clé API, achat
+ou appel IA n’est créé avant une décision de source et de périmètre.
+
 ---
 
 ## Rappel de la frontière entre les deux projets

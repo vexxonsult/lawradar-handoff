@@ -1,0 +1,22 @@
+{
+  "schema": "lawradar-market-agent-config-v1",
+  "activation": "manual_only",
+  "sources": {
+    "official_company_registers": {
+      "enabled": false,
+      "reason": "La liste des registres, leurs conditions et le périmètre géographique doivent être choisis avant collecte."
+    },
+    "public_procurement": {
+      "enabled": false,
+      "reason": "Une règle de recherche par secteur et par territoire doit être validée avant activation."
+    },
+    "provider_websites": {
+      "enabled": false,
+      "reason": "Aucune navigation libre ou collecte de contenus de sites n'est autorisée en V0."
+    }
+  },
+  "limits": {
+    "max_external_calls_per_run": 0,
+    "max_llm_calls_per_run": 0
+  }
+}
