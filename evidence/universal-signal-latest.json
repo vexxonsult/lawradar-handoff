@@ -102,8 +102,43 @@
       },
       "enrichments": {
         "press": {
-          "status": "PENDING",
-          "result": null
+          "status": "UNRESOLVED",
+          "result": {
+            "schema": "lawradar-agent-enrichment-v1",
+            "agent": "press",
+            "signal_id": "signal:030b89705339c9e1",
+            "status": "UNRESOLVED",
+            "observed_at_utc": "2026-09-02T02:11:04.916231+00:00",
+            "summary": "La collecte Presse n'a pas pu être menée à terme ; une nouvelle tentative est nécessaire.",
+            "sources": [],
+            "limitations": [
+              "Au moins une source de collecte a échoué."
+            ],
+            "details": {
+              "signal_hash": "645a2ebc81d6b4f9969d972c816c10903d4cd1498a1662c9538bafcee8727300",
+              "window": {
+                "from": "2026-08-19",
+                "to": "2026-09-02"
+              },
+              "queries": [
+                {
+                  "source": "gdelt-doc-2.0",
+                  "query": "\"Consultation du public sur la demande de prolongation du permis exclusif de carrières dit \"Permis de Larchant\" (Seine-et-Marne)\" sourcelang:french",
+                  "hits": null
+                },
+                {
+                  "source": "gdelt-doc-2.0",
+                  "query": "\"Consultation du public sur la demande de prolongation du permis exclusif de carrières d...\" sourcelang:french",
+                  "hits": null
+                }
+              ],
+              "candidates_total": 0,
+              "candidates_after_dedup": 0,
+              "coverage_level": "NONE",
+              "decisions": []
+            },
+            "score": null
+          }
         },
         "demand": {
           "status": "PENDING",
