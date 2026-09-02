@@ -1,22 +1,22 @@
 {
   "schema": "lawradar-run-manifest-v1",
   "run": {
-    "id": "33674947580",
+    "id": "33676086245",
     "attempt": "1",
     "kind": "motor",
     "status": "success",
     "workflow": "Moteur LawRadar — livraison structurée",
-    "commit": "e2b8be61492f9487fcc5282b3cd71c47caa857e5",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33674947580",
-    "created_at_utc": "2026-09-02T19:44:25.310377+00:00",
-    "duration_seconds": 80
+    "commit": "74f4f012d1bfb09baa0273560a0399c8e528f932",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33676086245",
+    "created_at_utc": "2026-09-02T19:56:06.175412+00:00",
+    "duration_seconds": 92
   },
   "inputs": [
     {
       "path": "out/motor-input.json",
       "exists": true,
-      "bytes": 51482,
-      "sha256": "03ff3ef9931a01d852a3f47cc244319df1fd08f21e7998602dedd5fbe7d65175"
+      "bytes": 47737,
+      "sha256": "b8de69fb5b209f0abd8c9582c9dffd530226b62d920773a9e494cc91709c7a5b"
     },
     {
       "path": "config/moteur-delivery-schema.json",
@@ -29,20 +29,20 @@
     {
       "path": "out/motor-delivery.json",
       "exists": true,
-      "bytes": 4612,
-      "sha256": "62b55281182e1fe4b015b41cfcbc4a4733e7f181f3e5634561ded4e8fde775e2"
+      "bytes": 4759,
+      "sha256": "57bf87fe4288e851e18bbb3a59441352c24486d9000ffc1a4c2a9cf7b5da5258"
     },
     {
       "path": "out/dashboard.html",
       "exists": true,
-      "bytes": 1973,
-      "sha256": "eeba60bfda8054b1ca8f4f15c0bd38359ff620de7ba3561e60f1376ce56c4bda"
+      "bytes": 1994,
+      "sha256": "51725f0edab89cdff9582f0b21340e95688de5286d95ac35c5348e5a1013016d"
     },
     {
       "path": "out/universal-signal.json",
       "exists": true,
-      "bytes": 14562,
-      "sha256": "497cd77a56d3ecd79d20f2ad522d01a30114b5782da299fc7db41598311ccede"
+      "bytes": 10485,
+      "sha256": "edb70fadb392e48edc82f4438e3953d05f5a07184f60379984ab7102d0fe424c"
     }
   ],
   "cost_estimate": {

@@ -1,13 +1,13 @@
 {
   "schema": "lawradar-universal-signal-v1",
   "run": {
-    "id": "33674947580",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33674947580",
-    "commit": "e2b8be61492f9487fcc5282b3cd71c47caa857e5",
+    "id": "33676086245",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33676086245",
+    "commit": "74f4f012d1bfb09baa0273560a0399c8e528f932",
     "report_date": "2026-09-02"
   },
   "context": {
-    "coverage": "10 candidats JORF du 2026-09-02 (jorf-summaries-latest.json) examinés ; consultdd-latest.json marqué comme traité mais ne contient aucun candidat dans out/motor-input.json ; eurlex-oj-latest.json signalé comme source modifiée (delta) mais aucun candidat correspondant n'est fourni dans out/motor-input.json, donc non traité ici.",
+    "coverage": "Delta traité (delta_changed_sources) : jorf-summaries-latest.json, eurlex-oj-latest.json. Fichiers sources effectivement traités (handled_source_files) : jorf-summaries-latest.json, consultdd-latest.json. eurlex-oj-latest.json est signalé en delta mais absent de handled_source_files : non traité dans cette livraison, faute de candidats correspondants dans out/motor-input.json.",
     "delta_changed_sources": [
       "jorf-summaries-latest.json",
       "eurlex-oj-latest.json"
@@ -20,177 +20,9 @@
   },
   "signals": [
     {
-      "id": "signal:f32088cd1fdf8a4e",
+      "id": "signal:5b68c214b683ba8c",
       "source": {
-        "source_id": "jorf:JORFTEXT000054788070",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "title": "Arrêté du 28 août 2026 modifiant l'arrêté du 21 janvier 2026 fixant les conditions de délivrance du diplôme d'arme aux sous-officiers de gendarmerie",
-          "url": null,
-          "dates": [],
-          "detail_status": null,
-          "official": {
-            "title": null,
-            "period": null
-          },
-          "attachments": [],
-          "evidence_excerpts": []
-        }
-      },
-      "radar": {
-        "status": "DISCARDED",
-        "reason": "Arrêté modifiant les conditions de délivrance du diplôme d'arme aux sous-officiers de gendarmerie. Texte de formation/administration interne, aucun flux financier dans l'extrait."
-      },
-      "enrichments": {
-        "press": {
-          "status": "PENDING",
-          "result": null
-        },
-        "demand": {
-          "status": "PENDING",
-          "result": null
-        },
-        "market": {
-          "status": "PENDING",
-          "result": null
-        },
-        "entrepreneur": {
-          "status": "PENDING",
-          "result": null
-        }
-      }
-    },
-    {
-      "id": "signal:9d4c781be5b86def",
-      "source": {
-        "source_id": "jorf:JORFTEXT000054788095",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "title": "Arrêté du 31 juillet 2026 fixant les montants des aides financières susceptibles d'être attribuées aux entreprises adaptées et aux entreprises adaptées de travail temporaire",
-          "url": null,
-          "dates": [],
-          "detail_status": null,
-          "official": {
-            "title": null,
-            "period": null
-          },
-          "attachments": [],
-          "evidence_excerpts": []
-        }
-      },
-      "radar": {
-        "status": "UNRESOLVED",
-        "reason": "Arrêté fixant les montants des aides financières aux entreprises adaptées et entreprises adaptées de travail temporaire. Le titre annonce des montants chiffrés, mais l'extrait fourni s'arrête aux visas et ne contient aucune valeur ni bénéficiaire nommé : flux non démontré."
-      },
-      "enrichments": {
-        "press": {
-          "status": "PENDING",
-          "result": null
-        },
-        "demand": {
-          "status": "PENDING",
-          "result": null
-        },
-        "market": {
-          "status": "PENDING",
-          "result": null
-        },
-        "entrepreneur": {
-          "status": "PENDING",
-          "result": null
-        }
-      }
-    },
-    {
-      "id": "signal:3f2a7a32ad530e6a",
-      "source": {
-        "source_id": "jorf:JORFTEXT000054788113",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "title": "Arrêté du 31 juillet 2026 fixant les montants des aides financières aux structures de l'insertion par l'activité économique, aux dispositifs d'insertion implantés en milieu pénitentiaire et à Mayotte",
-          "url": null,
-          "dates": [],
-          "detail_status": null,
-          "official": {
-            "title": null,
-            "period": null
-          },
-          "attachments": [],
-          "evidence_excerpts": []
-        }
-      },
-      "radar": {
-        "status": "UNRESOLVED",
-        "reason": "Arrêté fixant les montants des aides financières aux structures de l'insertion par l'activité économique. Même situation que JORFTEXT000054788095 : montants annoncés par le titre mais absents de l'extrait officiel fourni."
-      },
-      "enrichments": {
-        "press": {
-          "status": "PENDING",
-          "result": null
-        },
-        "demand": {
-          "status": "PENDING",
-          "result": null
-        },
-        "market": {
-          "status": "PENDING",
-          "result": null
-        },
-        "entrepreneur": {
-          "status": "PENDING",
-          "result": null
-        }
-      }
-    },
-    {
-      "id": "signal:61131cb78efa9ba6",
-      "source": {
-        "source_id": "jorf:JORFTEXT000054788195",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "title": "Arrêté du 25 août 2026 modifiant l'arrêté du 20 décembre 2018 pris en application des articles R. 2213-25 et R. 2213-25-1 du code général des collectivités territoriales, définissant les caractéristiques applicables aux cercueils et fixant les modalités de vérification de ces caractéristiques",
-          "url": null,
-          "dates": [],
-          "detail_status": null,
-          "official": {
-            "title": null,
-            "period": null
-          },
-          "attachments": [],
-          "evidence_excerpts": []
-        }
-      },
-      "radar": {
-        "status": "DISCARDED",
-        "reason": "Arrêté modifiant les caractéristiques applicables aux cercueils et les modalités de vérification de ces caractéristiques. Norme technique, aucun flux financier apparent dans l'extrait."
-      },
-      "enrichments": {
-        "press": {
-          "status": "PENDING",
-          "result": null
-        },
-        "demand": {
-          "status": "PENDING",
-          "result": null
-        },
-        "market": {
-          "status": "PENDING",
-          "result": null
-        },
-        "entrepreneur": {
-          "status": "PENDING",
-          "result": null
-        }
-      }
-    },
-    {
-      "id": "signal:162b1507121b9130",
-      "source": {
-        "source_id": "jorf:JORFTEXT000054788290",
+        "source_id": "jorf:JORFTEXT000054788204",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
@@ -207,8 +39,8 @@
         }
       },
       "radar": {
-        "status": "UNRESOLVED",
-        "reason": "Arrêté modifiant la liste des spécialités pharmaceutiques remboursables (inscription d'APIXABAN TEVA en générique d'ELIQUIS). Un mécanisme de remboursement par l'assurance maladie est en jeu, mais l'extrait officiel fourni ne contient ni montant, ni base de remboursement chiffrée : flux non démontré."
+        "status": "RETAINED",
+        "reason": "Arrêté du 31 août 2026 (NOR SFHS2621455A, JORFTEXT000054788204) modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux : inscription de RIVAROXABAN TEVA SANTE (générique de XARELTO), assortie de conditions de prescription liées au risque de mésusage/hémorragique et au suivi des enfants et adolescents, sur avis de la commission de la transparence des 24 janvier 2018 et 2 juin 2021. Aucun montant, payeur ou bénéficiaire chiffré n'apparaît dans le texte officiel ; flux financier non démontré, donc non repris dans money_flows."
       },
       "enrichments": {
         "press": {
@@ -230,9 +62,9 @@
       }
     },
     {
-      "id": "signal:6e111adc334dde3f",
+      "id": "signal:9350b0597e50c8e1",
       "source": {
-        "source_id": "jorf:JORFTEXT000054788307",
+        "source_id": "jorf:JORFTEXT000054788221",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
@@ -249,8 +81,8 @@
         }
       },
       "radar": {
-        "status": "UNRESOLVED",
-        "reason": "Arrêté modifiant la liste des spécialités agréées aux collectivités (même inscription d'APIXABAN TEVA). Signal financier potentiel (achat public de médicaments) mais aucun montant ni volume n'est présent dans l'extrait fourni."
+        "status": "RETAINED",
+        "reason": "Arrêté du 31 août 2026 (NOR SFHS2621456A, JORFTEXT000054788221) modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics : inscription de RIVAROXABAN TEVA SANTE (générique de XARELTO), mêmes conditions de prescription que l'arrêté JORFTEXT000054788204, sur les mêmes avis de la commission de la transparence. Aucun montant, payeur ou bénéficiaire chiffré dans le texte officiel ; flux financier non démontré."
       },
       "enrichments": {
         "press": {
@@ -272,13 +104,13 @@
       }
     },
     {
-      "id": "signal:416b4f729a096c28",
+      "id": "signal:0dcfdf86a5447b26",
       "source": {
-        "source_id": "jorf:JORFTEXT000054788324",
+        "source_id": "jorf:JORFTEXT000054788237",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "title": "Arrêté du 31 août 2026 pris pour l'application de l'article 3 du décret n° 86-616 du 12 mars 1986 modifié instituant une aide aux publications nationales d'information politique et générale à faibles ressources publicitaires",
+          "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
           "url": null,
           "dates": [],
           "detail_status": null,
@@ -291,8 +123,8 @@
         }
       },
       "radar": {
-        "status": "UNRESOLVED",
-        "reason": "Arrêté pris pour l'application de l'article 3 du décret n° 86-616 instituant une aide aux publications nationales d'information politique et générale à faibles ressources publicitaires. Dispositif de subvention explicite, mais l'extrait ne nomme ni bénéficiaire ni montant."
+        "status": "RETAINED",
+        "reason": "Arrêté du 31 août 2026 (NOR SFHS2621573A, JORFTEXT000054788237) modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux, relatif à la spécialité WAINZUA, sur avis de la commission de la transparence du 16 juillet 2025. Le texte officiel fourni ne mentionne aucun montant ni acteur financier précis au-delà du visa réglementaire ; flux financier non démontré."
       },
       "enrichments": {
         "press": {
@@ -314,13 +146,13 @@
       }
     },
     {
-      "id": "signal:daa0a7f78594379c",
+      "id": "signal:c5df3700a203a156",
       "source": {
-        "source_id": "jorf:JORFTEXT000054788390",
+        "source_id": "jorf:JORFTEXT000054788248",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "title": "Décret n° 2026-835 du 28 août 2026 relatif aux modalités de calcul du sur-classement démographique des communes érigées en « stations classées de tourisme »",
+          "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
           "url": null,
           "dates": [],
           "detail_status": null,
@@ -333,8 +165,8 @@
         }
       },
       "radar": {
-        "status": "DISCARDED",
-        "reason": "Décret relatif aux modalités de calcul du sur-classement démographique des communes classées « stations classées de tourisme ». Texte méthodologique/administratif, aucun flux financier apparent dans l'extrait."
+        "status": "RETAINED",
+        "reason": "Arrêté du 31 août 2026 (NOR SFHS2621574A, JORFTEXT000054788248) modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics, relatif à la spécialité WAINZUA, sur le même avis de la commission de la transparence du 16 juillet 2025 que JORFTEXT000054788237. Aucun montant ni flux financier chiffré dans le texte officiel."
       },
       "enrichments": {
         "press": {
@@ -356,13 +188,13 @@
       }
     },
     {
-      "id": "signal:034f05447224acf3",
+      "id": "signal:1379ae5d8d1317d4",
       "source": {
-        "source_id": "jorf:JORFTEXT000054788410",
+        "source_id": "jorf:JORFTEXT000054788261",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "title": "Arrêté du 31 août 2026 portant octroi d'une licence d'entreprise ferroviaire",
+          "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
           "url": null,
           "dates": [],
           "detail_status": null,
@@ -375,8 +207,8 @@
         }
       },
       "radar": {
-        "status": "DISCARDED",
-        "reason": "Arrêté portant octroi d'une licence d'entreprise ferroviaire à la société Velvet. Autorisation réglementaire d'exercer, sans montant ni flux financier dans l'extrait fourni."
+        "status": "RETAINED",
+        "reason": "Arrêté du 31 août 2026 (NOR SFHS2621579A, JORFTEXT000054788261) modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux : inscription de NINTEDANIB TEVA SANTE (générique d'OFEV) sous le régime du « médicament d'exception » (art. R. 163-2 CSS), prescription réservée aux spécialistes en pneumologie, médecine interne ou rhumatologie, en raison du caractère particulièrement coûteux du médicament selon le texte. Aucun montant chiffré ni payeur/bénéficiaire précis n'est fourni ; flux financier non démontré."
       },
       "enrichments": {
         "press": {
@@ -398,13 +230,13 @@
       }
     },
     {
-      "id": "signal:16ce240ff3fffbd1",
+      "id": "signal:04c0bb8647ea5b3c",
       "source": {
-        "source_id": "jorf:JORFTEXT000054788509",
+        "source_id": "jorf:JORFTEXT000054788278",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "title": "Arrêté du 26 août 2026 portant suppression d'un office de commissaire de justice (officiers publics ou ministériels)",
+          "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
           "url": null,
           "dates": [],
           "detail_status": null,
@@ -417,8 +249,8 @@
         }
       },
       "radar": {
-        "status": "DISCARDED",
-        "reason": "Arrêté portant suppression d'un office de commissaire de justice. Acte administratif individuel sans flux financier apparent dans l'extrait."
+        "status": "RETAINED",
+        "reason": "Arrêté du 31 août 2026 (NOR SFHS2621580A, JORFTEXT000054788278) modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics, relatif à NINTEDANIB TEVA SANTE (générique d'OFEV), sur les mêmes avis de la commission de la transparence que JORFTEXT000054788261. Aucun montant ni flux financier chiffré dans le texte officiel fourni."
       },
       "enrichments": {
         "press": {
@@ -442,8 +274,8 @@
   ],
   "money_flows": [],
   "quality": {
-    "opportunity_count": 10,
-    "unresolved_count": 5,
+    "opportunity_count": 6,
+    "unresolved_count": 0,
     "money_flow_count": 0,
     "limitation": "Les enrichissements sont vides tant qu'aucun agent dédié n'a produit une sortie sourcée."
   }
