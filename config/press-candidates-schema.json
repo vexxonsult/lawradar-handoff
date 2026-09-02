@@ -4,7 +4,8 @@
   "type": "object",
   "required": [
     "schema", "signal_id", "signal_hash", "observed_at_utc", "window",
-    "queries", "candidates_total", "candidates_after_dedup", "candidates", "errors"
+    "queries", "candidates_total", "candidates_after_dedup", "candidates", "errors",
+    "required_errors", "source_statuses", "collection_successful"
   ],
   "properties": {
     "schema": {"const": "lawradar-press-candidates-v1"},
@@ -16,7 +17,10 @@
     "candidates_total": {"type": "integer", "minimum": 0},
     "candidates_after_dedup": {"type": "integer", "minimum": 0},
     "candidates": {"type": "array"},
-    "errors": {"type": "array"}
+    "errors": {"type": "array"},
+    "required_errors": {"type": "array"},
+    "source_statuses": {"type": "array"},
+    "collection_successful": {"type": "boolean"}
   },
   "additionalProperties": false
 }

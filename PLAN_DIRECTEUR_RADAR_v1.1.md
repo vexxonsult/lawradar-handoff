@@ -195,11 +195,14 @@ strictement inchangés.
 ### Livrable 6B — collecte Presse déterministe
 
 Le collecteur `scripts/collect_press_candidates.py` prépare des requêtes à
-partir du seul signal `RETAINED` courant. En V0, il interroge uniquement GDELT,
-conserve titres, médias, dates et liens, puis déduplique les candidats. Il ne
-lit pas le corps des articles, ne consulte aucun signal historique et ne fait
-aucun appel IA. Google News RSS et les flux d'éditeurs sont prévus mais restent
-désactivés tant qu'une décision humaine ne les autorise pas.
+partir du seul signal `RETAINED` courant. Il interroge GDELT (source d'appoint)
+et le flux éditorial Localtis / Banque des Territoires (source obligatoire de
+la V0), conserve titres, médias, dates et extraits RSS limités à 25 mots, puis
+déduplique les candidats. Il ne lit pas le corps des articles, ne consulte
+aucun signal historique et ne fait aucun appel IA. Une panne de GDELT est
+tracée mais ne masque pas une collecte RSS réussie ; une panne de la source
+obligatoire produit `UNRESOLVED`. Google News RSS reste désactivé tant qu'une
+décision humaine ne l'autorise pas.
 
 ### Livrable 6C — qualification Presse contrôlée
 
@@ -221,6 +224,18 @@ candidat, il écrit `NO_EVIDENCE` sans IA ; en cas de panne, il écrit
 `UNRESOLVED`. Une seule reprise est possible après `UNRESOLVED`, avec
 conservation de la première tentative ; toute sortie finale est validée avant
 d'être fusionnée dans le seul emplacement Presse du dossier universel.
+
+### Livrable 6E — redondance de collecte Presse
+
+La V0 ajoute le flux RSS quotidien Localtis / Banque des Territoires comme
+source éditoriale-institutionnelle obligatoire, en complément de GDELT qui
+devient une source d'appoint. Les deux collectes restent déterministes : aucun
+corps d'article n'est téléchargé, et un item RSS n'est proposé que s'il
+partage au moins deux termes distinctifs avec le signal courant. Le résultat
+reste `NO_EVIDENCE` lorsque la source obligatoire répond mais ne fournit aucun
+candidat lié, même si GDELT connaît une panne ; chaque panne reste visible dans
+les artefacts. Le type de source est conservé afin de ne jamais présenter cette
+couverture éditoriale comme une couverture de presse indépendante.
 
 ---
 

@@ -5,6 +5,7 @@
   "sources": {
     "gdelt_doc": {
       "enabled": true,
+      "required": false,
       "endpoint": "https://api.gdeltproject.org/api/v2/doc/doc",
       "minimum_interval_seconds": 5,
       "attempts_per_query": 2,
@@ -15,7 +16,17 @@
       "enabled": false,
       "reason": "Source d'appoint non contractuelle ; activation humaine requise."
     },
-    "publisher_rss": []
+    "publisher_rss": [
+      {
+        "id": "localtis-actualite",
+        "enabled": true,
+        "required": true,
+        "outlet": "Localtis / Banque des Territoires",
+        "source_kind": "editorial_institutional",
+        "url": "https://www.banquedesterritoires.fr/flux/localtis.xml",
+        "minimum_matching_terms": 2
+      }
+    ]
   },
   "limits": {
     "max_queries_per_signal": 2,

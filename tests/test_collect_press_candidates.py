@@ -23,7 +23,7 @@ def config():
     return {
         "schema": "lawradar-press-agent-config-v1",
         "window_days_before": 14,
-        "sources": {"gdelt_doc": {"enabled": True, "endpoint": "https://example.test/gdelt", "minimum_interval_seconds": 0, "attempts_per_query": 1, "max_records_per_query": 10}},
+        "sources": {"gdelt_doc": {"enabled": True, "required": True, "endpoint": "https://example.test/gdelt", "minimum_interval_seconds": 0, "attempts_per_query": 1, "max_records_per_query": 10}, "publisher_rss": []},
         "limits": {"max_queries_per_signal": 2, "max_candidates_per_signal": 15},
     }
 
@@ -45,6 +45,7 @@ class CollectPressCandidatesTests(unittest.TestCase):
         self.assertEqual(result["candidates_total"], 4)
         self.assertEqual(result["candidates_after_dedup"], 1)
         self.assertEqual(result["candidates"][0]["excerpt"], None)
+        self.assertTrue(result["collection_successful"])
 
     def test_search_queries_do_not_reuse_truncated_titles_or_nested_quotes(self):
         input_data = dossier()
@@ -65,3 +66,41 @@ class CollectPressCandidatesTests(unittest.TestCase):
         self.assertEqual(result["candidates"], [])
         self.assertEqual(len(result["errors"]), 2)
         self.assertEqual(result["queries"][0]["hits"], None)
+        self.assertFalse(result["collection_successful"])
+
+    def test_rss_is_matched_only_against_terms_from_the_current_signal(self):
+        input_config = config()
+        input_config["sources"]["gdelt_doc"] = {"enabled": False}
+        input_config["sources"]["publisher_rss"] = [{
+            "id": "localtis", "enabled": True, "required": True,
+            "outlet": "Localtis", "source_kind": "editorial_institutional",
+            "url": "https://example.test/localtis.xml", "minimum_matching_terms": 2,
+        }]
+        feed = """<?xml version='1.0'?><rss><channel>
+        <item><title>Ombrières photovoltaïques : un arrêté publié</title><link>https://local.test/ombre?utm_source=rss</link><description>Les ombrières photovoltaïques sont concernées.</description><pubDate>Tue, 02 Sep 2026 09:00:00 GMT</pubDate></item>
+        <item><title>Une carrière obtient une autorisation</title><link>https://local.test/other</link><description>Sans rapport avec le texte recherché.</description></item>
+        </channel></rss>"""
+        result = collect(dossier(), input_config, "signal:current", fetch_text=lambda _: feed, sleep=lambda _: None)
+        self.assertTrue(result["collection_successful"])
+        self.assertEqual(result["candidates_after_dedup"], 1)
+        self.assertEqual(result["candidates"][0]["source"], "publisher-rss:localtis")
+        self.assertEqual(result["candidates"][0]["url"], "https://local.test/ombre")
+        self.assertNotIn("Sibelco", json_dump(result))
+
+    def test_optional_gdelt_failure_does_not_invalidate_a_successful_required_rss(self):
+        input_config = config()
+        input_config["sources"]["gdelt_doc"]["required"] = False
+        input_config["sources"]["publisher_rss"] = [{
+            "id": "localtis", "enabled": True, "required": True,
+            "outlet": "Localtis", "url": "https://example.test/localtis.xml", "minimum_matching_terms": 2,
+        }]
+        empty_feed = "<?xml version='1.0'?><rss><channel></channel></rss>"
+        result = collect(dossier(), input_config, "signal:current", fetch=lambda *_: (_ for _ in ()).throw(TimeoutError("gdelt")), fetch_text=lambda _: empty_feed, sleep=lambda _: None)
+        self.assertTrue(result["collection_successful"])
+        self.assertEqual(len(result["errors"]), 2)
+        self.assertEqual(result["required_errors"], [])
+
+
+def json_dump(value):
+    import json
+    return json.dumps(value, ensure_ascii=False)

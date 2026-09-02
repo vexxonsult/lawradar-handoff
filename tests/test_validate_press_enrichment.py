@@ -60,6 +60,15 @@ class ValidatePressEnrichmentTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate(candidates(errors=[{"source": "gdelt", "error": "timeout"}]), no_evidence)
 
+    def test_allows_no_evidence_when_only_an_optional_source_failed(self):
+        no_evidence = enrichment("NO_EVIDENCE")
+        no_evidence["sources"] = []
+        no_evidence["details"]["decisions"] = [{"url": "https://journal.test/article", "relevance": "NOT_LINKED", "why_linked": "Autre texte."}]
+        no_evidence["details"]["coverage_level"] = "NONE"
+        value = candidates(errors=[{"source": "gdelt", "error": "timeout"}])
+        value["collection_successful"] = True
+        validate(value, no_evidence)
+
     def test_rejects_completed_without_a_citation(self):
         invalid = copy.deepcopy(enrichment())
         invalid["summary"] = "L'article cite le décret concerné."

@@ -45,7 +45,7 @@ jobs:
           import os
           from pathlib import Path
           candidates = json.loads(Path("out/press-candidates.json").read_text(encoding="utf-8"))
-          ready = bool(candidates.get("candidates")) and not candidates.get("errors")
+          ready = bool(candidates.get("candidates")) and candidates.get("collection_successful", not candidates.get("errors"))
           Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8").write(
               f"should_qualify={'true' if ready else 'false'}\n"
           )

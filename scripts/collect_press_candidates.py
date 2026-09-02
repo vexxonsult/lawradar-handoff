@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any, Callable
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 from urllib.request import Request, urlopen
+from xml.etree import ElementTree
 
 
 def signal_hash(signal: dict[str, Any]) -> str:
@@ -80,6 +81,23 @@ def build_queries(signal: dict[str, Any], limit: int) -> list[str]:
     return queries[:limit]
 
 
+STOPWORDS = {
+    "arrete", "relatif", "publique", "demande", "prolongation", "pour", "dans", "avec",
+    "seine", "marne", "consultation", "public", "permis", "decret", "projet", "titre",
+    "partir", "objet", "concernant", "nouveau", "nouvelle",
+}
+
+
+def distinctive_terms(signal: dict[str, Any]) -> set[str]:
+    """Terms derived from the current signal only, never from previous runs."""
+    terms: set[str] = set()
+    for title in evidence_titles(signal):
+        for word in re.findall(r"[\wÀ-ÿ-]+", text_key(title)):
+            if len(word) >= 4 and word not in STOPWORDS:
+                terms.add(word)
+    return terms
+
+
 def gdelt_articles(payload: dict[str, Any]) -> list[dict[str, Any]]:
     articles = payload.get("articles", [])
     return articles if isinstance(articles, list) else []
@@ -127,18 +145,91 @@ def http_json(url: str, params: dict[str, Any]) -> dict[str, Any]:
     return json.loads(body)
 
 
+def http_text(url: str) -> str:
+    request = Request(url, headers={"User-Agent": "LawRadar-Press/0.1"})
+    with urlopen(request, timeout=20) as response:  # nosec B310: endpoint is configuration-controlled
+        body = response.read().decode("utf-8").strip()
+    if not body:
+        raise ValueError("Flux RSS vide.")
+    return body
+
+
+def xml_text(node: ElementTree.Element, name: str) -> str | None:
+    for child in node.iter():
+        if child.tag.rsplit("}", 1)[-1] == name and child.text:
+            value = " ".join(child.text.split())
+            if value:
+                return value
+    return None
+
+
+def rss_link(node: ElementTree.Element) -> str | None:
+    direct = xml_text(node, "link")
+    if direct and direct.startswith(("http://", "https://")):
+        return direct
+    for child in node.iter():
+        if child.tag.rsplit("}", 1)[-1] != "link":
+            continue
+        href = child.attrib.get("href")
+        if href and href.startswith(("http://", "https://")):
+            return href
+    return None
+
+
+def strip_excerpt(value: str | None) -> str | None:
+    if not value:
+        return None
+    text = re.sub(r"<[^>]+>", " ", value)
+    words = " ".join(text.split()).split()
+    return " ".join(words[:25]) or None
+
+
+def rss_articles(feed: dict[str, Any], body: str, signal: dict[str, Any]) -> list[dict[str, Any]]:
+    """Parse titles and excerpts only; article bodies are never requested."""
+    root = ElementTree.fromstring(body)
+    terms = distinctive_terms(signal)
+    minimum = max(1, int(feed.get("minimum_matching_terms", 2)))
+    items = [node for node in root.iter() if node.tag.rsplit("}", 1)[-1] in {"item", "entry"}]
+    results: list[dict[str, Any]] = []
+    for item in items:
+        title = xml_text(item, "title")
+        url = rss_link(item)
+        if not title or not url:
+            continue
+        excerpt = strip_excerpt(xml_text(item, "description") or xml_text(item, "summary") or xml_text(item, "content"))
+        searchable = text_key(f"{title} {excerpt or ''}")
+        matched = sorted(term for term in terms if term in searchable.split())
+        if len(matched) < minimum:
+            continue
+        canonical = canonical_url(url)
+        results.append({
+            "url": canonical,
+            "outlet": feed["outlet"],
+            "published_at": xml_text(item, "pubDate") or xml_text(item, "published") or xml_text(item, "updated"),
+            "title": " ".join(title.split()),
+            "excerpt": excerpt,
+            "source": f"publisher-rss:{feed['id']}",
+            "source_kind": feed.get("source_kind", "editorial"),
+            "matched_terms": matched,
+        })
+    return results
+
+
 def collect(
     dossier: dict[str, Any], config: dict[str, Any], signal_id: str,
     now: datetime | None = None, fetch: Callable[[str, dict[str, Any]], dict[str, Any]] = http_json,
+    fetch_text: Callable[[str], str] = http_text,
     sleep: Callable[[float], None] = time.sleep,
 ) -> dict[str, Any]:
     if config.get("schema") != "lawradar-press-agent-config-v1":
         raise ValueError("Configuration Presse non prise en charge.")
     signal = select_retained_signal(dossier, signal_id)
     limits = config.get("limits", {})
-    source = config.get("sources", {}).get("gdelt_doc", {})
-    if not source.get("enabled"):
-        raise ValueError("La source GDELT n'est pas activée dans la configuration.")
+    sources = config.get("sources", {})
+    source = sources.get("gdelt_doc", {})
+    feeds = [item for item in sources.get("publisher_rss", []) if isinstance(item, dict) and item.get("enabled")]
+    if not source.get("enabled") and not feeds:
+        raise ValueError("Aucune source Presse n'est activée dans la configuration.")
     current = now or datetime.now(UTC)
     before = int(config.get("window_days_before", 14))
     queries = build_queries(signal, int(limits.get("max_queries_per_signal", 2)))
@@ -148,37 +239,61 @@ def collect(
     gathered: list[dict[str, Any]] = []
     query_log: list[dict[str, Any]] = []
     errors: list[dict[str, str]] = []
-    for index, query in enumerate(queries):
-        if index:
-            sleep(float(source.get("minimum_interval_seconds", 5)))
-        params = {
-            "query": query,
-            "mode": "artlist",
-            "format": "json",
-            "maxrecords": int(source.get("max_records_per_query", 10)),
-            "startdatetime": (current - timedelta(days=before)).strftime("%Y%m%d%H%M%S"),
-            "enddatetime": current.strftime("%Y%m%d%H%M%S"),
-        }
-        attempts = max(1, int(source.get("attempts_per_query", 1)))
-        error: Exception | None = None
-        items: list[dict[str, Any]] = []
-        for attempt in range(attempts):
-            try:
-                items = gdelt_articles(fetch(str(source["endpoint"]), params))
-                error = None
-                break
-            except Exception as caught:  # Source failure must be explicit, never become NO_EVIDENCE.
-                error = caught
-                if attempt + 1 < attempts:
-                    sleep(float(source.get("retry_delay_seconds", 3)))
-        if error is not None:
-            errors.append({"source": "gdelt-doc-2.0", "query": query, "error": str(error)})
-            query_log.append({"source": "gdelt-doc-2.0", "query": query, "hits": None})
-            continue
-        normalized = [item for article in items if (item := normalize_article(article)) is not None]
-        gathered.extend(normalized)
-        query_log.append({"source": "gdelt-doc-2.0", "query": query, "hits": len(normalized)})
+    required_errors: list[dict[str, str]] = []
+    source_statuses: list[dict[str, Any]] = []
+    if source.get("enabled"):
+        gdelt_failed = False
+        for index, query in enumerate(queries):
+            if index:
+                sleep(float(source.get("minimum_interval_seconds", 5)))
+            params = {
+                "query": query,
+                "mode": "artlist",
+                "format": "json",
+                "maxrecords": int(source.get("max_records_per_query", 10)),
+                "startdatetime": (current - timedelta(days=before)).strftime("%Y%m%d%H%M%S"),
+                "enddatetime": current.strftime("%Y%m%d%H%M%S"),
+            }
+            attempts = max(1, int(source.get("attempts_per_query", 1)))
+            error: Exception | None = None
+            items: list[dict[str, Any]] = []
+            for attempt in range(attempts):
+                try:
+                    items = gdelt_articles(fetch(str(source["endpoint"]), params))
+                    error = None
+                    break
+                except Exception as caught:  # Source failure must be explicit, never become NO_EVIDENCE.
+                    error = caught
+                    if attempt + 1 < attempts:
+                        sleep(float(source.get("retry_delay_seconds", 3)))
+            if error is not None:
+                entry = {"source": "gdelt-doc-2.0", "query": query, "error": str(error)}
+                errors.append(entry)
+                if source.get("required", True):
+                    required_errors.append(entry)
+                gdelt_failed = True
+                query_log.append({"source": "gdelt-doc-2.0", "query": query, "hits": None})
+                continue
+            normalized = [item for article in items if (item := normalize_article(article)) is not None]
+            gathered.extend(normalized)
+            query_log.append({"source": "gdelt-doc-2.0", "query": query, "hits": len(normalized)})
+        source_statuses.append({"source": "gdelt-doc-2.0", "required": source.get("required", True), "success": not gdelt_failed})
+    for feed in feeds:
+        feed_name = f"publisher-rss:{feed.get('id', 'unknown')}"
+        try:
+            items = rss_articles(feed, fetch_text(str(feed["url"])), signal)
+            gathered.extend(items)
+            query_log.append({"source": feed_name, "query": "signal-term-match", "hits": len(items)})
+            source_statuses.append({"source": feed_name, "required": feed.get("required", True), "success": True})
+        except Exception as caught:
+            entry = {"source": feed_name, "query": "rss", "error": str(caught)}
+            errors.append(entry)
+            if feed.get("required", True):
+                required_errors.append(entry)
+            query_log.append({"source": feed_name, "query": "rss", "hits": None})
+            source_statuses.append({"source": feed_name, "required": feed.get("required", True), "success": False})
     candidates = deduplicate(gathered, maximum)
+    successful_sources = [item for item in source_statuses if item["success"]]
     return {
         "schema": "lawradar-press-candidates-v1",
         "signal_id": signal_id,
@@ -193,6 +308,9 @@ def collect(
         "candidates_after_dedup": len(candidates),
         "candidates": candidates,
         "errors": errors,
+        "required_errors": required_errors,
+        "source_statuses": source_statuses,
+        "collection_successful": bool(successful_sources) and not required_errors,
     }
 
 

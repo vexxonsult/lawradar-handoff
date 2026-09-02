@@ -14,15 +14,20 @@ def build(candidates: dict[str, Any], observed_at: str | None = None) -> dict[st
     if candidates.get("schema") != "lawradar-press-candidates-v1":
         raise ValueError("Candidats Presse non pris en charge.")
     errors = candidates.get("errors", [])
+    collection_successful = candidates.get("collection_successful", not errors)
     items = candidates.get("candidates", [])
     if items:
         raise ValueError("Une qualification est requise lorsque des candidats existent.")
-    status = "UNRESOLVED" if errors else "NO_EVIDENCE"
+    status = "NO_EVIDENCE" if collection_successful else "UNRESOLVED"
     summary = (
         "La collecte Presse n'a pas pu être menée à terme ; une nouvelle tentative est nécessaire."
-        if errors else "Aucune couverture liée n'a été trouvée dans les sources exécutées."
+        if not collection_successful else "Aucune couverture liée n'a été trouvée dans les sources exécutées."
     )
-    limitations = ["Au moins une source de collecte a échoué."] if errors else ["Résultat limité aux sources exécutées et à leur fenêtre temporelle."]
+    limitations = (
+        ["Une source obligatoire de collecte a échoué."]
+        if not collection_successful
+        else (["Une source d'appoint a échoué ; le résultat repose sur les sources obligatoires réussies."] if errors else ["Résultat limité aux sources exécutées et à leur fenêtre temporelle."])
+    )
     return {
         "schema": "lawradar-agent-enrichment-v1",
         "agent": "press",

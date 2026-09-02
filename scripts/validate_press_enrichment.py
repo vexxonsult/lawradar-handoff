@@ -56,9 +56,9 @@ def validate(candidates: dict[str, Any], enrichment: dict[str, Any]) -> None:
         if not citations or max(citations) > len(enrichment["sources"]):
             raise ValueError("La synthèse Presse doit renvoyer vers ses sources.")
     if status == "NO_EVIDENCE":
-        if source_urls or candidates.get("errors"):
-            raise ValueError("NO_EVIDENCE exige une collecte sans erreur et aucune source retenue.")
-    if status == "UNRESOLVED" and not (candidates.get("errors") or any(item.get("relevance") == "AMBIGUOUS" for item in details["decisions"])):
+        if source_urls or not candidates.get("collection_successful", not candidates.get("errors")):
+            raise ValueError("NO_EVIDENCE exige une collecte obligatoire réussie et aucune source retenue.")
+    if status == "UNRESOLVED" and not (not candidates.get("collection_successful", not candidates.get("errors")) or any(item.get("relevance") == "AMBIGUOUS" for item in details["decisions"])):
         raise ValueError("UNRESOLVED doit conserver une cause d'incertitude.")
 
 
