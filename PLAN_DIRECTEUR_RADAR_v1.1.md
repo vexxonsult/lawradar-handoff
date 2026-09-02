@@ -301,6 +301,22 @@ négative. Cette sortie reste une observation amont : elle n'est pas fusionnée
 automatiquement à l'agent Marché et ne peut pas déclencher l'agent
 Entrepreneur.
 
+### Livrable 6K — crash-test intégral isolé
+
+`scripts/run_e2e_crash_test.py` exécute une chaîne complète sur un scénario
+fictif et explicitement marqué comme tel : signal Radar, faits du Moteur,
+collecte BOAMP simulée, validations Presse/Demande/Marché, filtres
+déterministes, puis décision Entrepreneur. Les vrais contrôleurs de contrat
+sont exécutés ; seules les réponses externes sont simulées afin de rendre le
+test rejouable et sans coût.
+
+Le scénario produit un avis BOAMP compact, des filtres `PASS` et une décision
+Entrepreneur `TEST` accompagnée d'un protocole descriptif de 14 jours. Cette
+validation démontre que les interfaces se raccordent sans fuite vers le Radar
+ni action externe. Elle ne constitue ni une obligation juridique réelle, ni
+une mesure de demande, ni une opportunité prête à exploiter : un run réel reste
+nécessaire avant toute conclusion métier.
+
 ---
 
 ## Rappel de la frontière entre les deux projets
