@@ -4,16 +4,20 @@
   "model": "claude-sonnet-5",
   "request_version": "2026-09-03-anthropic-schema-subset-v2",
   "batch_id": "msgbatch_0196tadwt7L3G91rm34cxofY",
-  "processing_status": "in_progress",
+  "processing_status": "ended",
   "request_count": 2,
   "request_counts": {
-    "processing": 2,
-    "succeeded": 0,
+    "processing": 0,
+    "succeeded": 2,
     "errored": 0,
     "canceled": 0,
     "expired": 0
   },
-  "ready": false,
+  "ready": true,
   "created_at_utc": "2026-09-03 01:14:33.816631+00:00",
-  "updated_at_utc": "2026-09-03T01:21:42.554748+00:00"
+  "updated_at_utc": "2026-09-03T07:58:45.491494+00:00",
+  "usage": {
+    "input_tokens": 10028,
+    "output_tokens": 1683
+  }
 }

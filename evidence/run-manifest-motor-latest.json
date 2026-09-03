@@ -1,16 +1,15 @@
 {
   "schema": "lawradar-run-manifest-v1",
   "run": {
-    "id": "33703095518",
+    "id": "33730858990",
     "attempt": "1",
     "kind": "motor",
-    "status": "pending",
+    "status": "success",
     "workflow": "Moteur LawRadar — livraison structurée",
-    "commit": "25f895beb0af77f04f71f5241570aaf947c3edfa",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33703095518",
-    "created_at_utc": "2026-09-03T01:21:42.686526+00:00",
-    "duration_seconds": 189,
-    "reason": "Message Batch Anthropic en cours ; reprise sans nouvelle soumission au prochain run."
+    "commit": "00c237cd9039fc839c2e204a40d430ff1711a70d",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33730858990",
+    "created_at_utc": "2026-09-03T07:58:45.958049+00:00",
+    "duration_seconds": 6
   },
   "inputs": [
     {
@@ -18,14 +17,38 @@
       "exists": true,
       "bytes": 20663,
       "sha256": "fd8450044b93438218fb19c307c5bae2db5a23d36a4abb286511bc5f18536c12"
+    },
+    {
+      "path": "config/moteur-delivery-schema.json",
+      "exists": true,
+      "bytes": 1889,
+      "sha256": "0ffd6a0e920b6ae5060b9558ce3af63254d8f598a4542ba7cf7ede2ec7312f75"
     }
   ],
   "outputs": [
     {
-      "path": "evidence/motor-batch-latest.json",
+      "path": "out/motor-delivery.json",
       "exists": true,
-      "bytes": 593,
-      "sha256": "938efe6766939e86d60f7af30750c47c3860292db12cf8de5ebf3f499cb07039"
+      "bytes": 4160,
+      "sha256": "12555251199709c9a2fdecadace8ac9caea5d7644c303eee43f59c95d4affb11"
+    },
+    {
+      "path": "out/dashboard.html",
+      "exists": true,
+      "bytes": 962,
+      "sha256": "27e1b4bb6ac641cbe173b8dcac009adddc7cd87252f48da6f8ac807ff47b6618"
+    },
+    {
+      "path": "out/universal-signal.json",
+      "exists": true,
+      "bytes": 6516,
+      "sha256": "c7b5668c052bb6610ebf5ee758639ecf5125df77c34795fa2b14bb9bd9202db6"
+    },
+    {
+      "path": "out/agent-pilot-readiness.json",
+      "exists": true,
+      "bytes": 1177,
+      "sha256": "0f2fe9a9109e09c584838c02caf9bf3d8c7f861d3a2f17a6820fc8ffcc2c13a3"
     }
   ],
   "cost_estimate": {

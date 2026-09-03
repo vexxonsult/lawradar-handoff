@@ -1,13 +1,13 @@
 {
   "schema": "lawradar-universal-signal-v2",
   "run": {
-    "id": "33702727228",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33702727228",
-    "commit": "5f89fc4ca1a7cc018557164f229a8ce7b61b0689",
+    "id": "33730858990",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33730858990",
+    "commit": "00c237cd9039fc839c2e204a40d430ff1711a70d",
     "report_date": "2026-09-03"
   },
   "context": {
-    "coverage": "10/10 candidats traités indépendamment par Message Batch",
+    "coverage": "2/2 candidats traités indépendamment par Message Batch",
     "delta_changed_sources": [
       "jorf-summaries-latest.json"
     ],
@@ -19,13 +19,13 @@
   },
   "signals": [
     {
-      "id": "signal:2047797436c8dfd5",
+      "id": "signal:551a202984a04135",
       "source": {
-        "source_id": "jorf:JORFTEXT000054791163",
+        "source_id": "jorf:JORFTEXT000054791445",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "title": "Décret n° 2026-837 du 1er septembre 2026 portant publication de la décision relative à l'adhésion du Royaume d'Espagne à l'accord de Bonn du 13 septembre 1983 concernant la coopération en matière de lutte contre la pollution de la mer du Nord par les hydrocarbures et autres substances dangereuses (ensemble une annexe), adoptée le 1er décembre 2019 (1)",
+          "title": "Décision n° 2026-431 du 22 juillet 2026 mettant en demeure la société des Éditions Mengès",
           "url": null,
           "dates": [],
           "detail_status": null,
@@ -39,339 +39,30 @@
       },
       "radar": {
         "status": "DISCARDED",
-        "reason": "Le texte publie l'adhésion de l'Espagne à l'accord de Bonn de 1983 relatif à la coopération internationale contre la pollution marine par hydrocarbures. Il s'agit d'un acte diplomatique de publication d'un accord international entre États, sans lien avec un marché régulé (médicaments, services financiers, services juridiques ou autre secteur régulé), sans création d'autorisation, de capacité requise, de capital minimum ou de flux financier identifiable pour un opérateur privé. Aucune preuve d'opportunité commerciale ou d'accès périphérique n'est démontrée dans le texte."
+        "reason": "Ce texte est une décision individuelle de mise en demeure de l'Arcom à l'encontre d'une société d'édition (Éditions Mengès) pour non-respect d'une obligation légale préexistante (dépôt de fichiers numériques auprès de la BnF, art. L.122-5-1 CPI, en vigueur depuis le 1er janvier 2022). Il ne s'agit ni d'une nouvelle réglementation créant un marché ou une obligation générale, ni d'une opportunité économique pour un opérateur tiers : c'est une sanction administrative visant une entreprise nommément désignée pour l'application d'une règle déjà en vigueur. Aucun flux financier n'est mentionné ni déductible du texte (pas d'amende, pas de tarif, pas de mécanisme de compensation). Aucune capacité, autorisation ou marché de service n'est ouvert par cette décision."
       },
       "opportunity_facts": {
         "schema": "lawradar-opportunity-facts-v1",
-        "signal_id": "signal:2047797436c8dfd5",
-        "title": "Décret n° 2026-837 du 1er septembre 2026 portant publication de la décision relative à l'adhésion du Royaume d'Espagne à l'accord de Bonn du 13 septembre 1983",
-        "keywords": [
-          "accord de Bonn",
-          "pollution marine",
-          "hydrocarbures",
-          "coopération internationale",
-          "Espagne",
-          "mer du Nord"
-        ],
-        "affected_scope": [],
-        "legal": {
-          "jurisdiction": "FR",
-          "text_status": "PUBLISHED",
-          "proof_status": "VERIFIED",
-          "effective_date": "2026-09-03",
-          "affected_scope": []
-        },
-        "requirements": {
-          "required_capabilities": [],
-          "required_authorizations": [],
-          "dependencies": [],
-          "minimum_startup_capital_eur": null,
-          "estimated_time_to_market_weeks": null,
-          "evidence_status": "MISSING"
-        },
-        "operator_access": {
-          "sector": "NOT_CLASSIFIED",
-          "direct_offer_status": "NOT_APPLICABLE",
-          "peripheral_role_evidence": "NOT_APPLICABLE",
-          "evidence_status": "MISSING",
-          "peripheral_service_evidence": []
-        }
-      },
-      "enrichments": {
-        "press": {
-          "status": "PENDING",
-          "result": null
-        },
-        "demand": {
-          "status": "PENDING",
-          "result": null
-        },
-        "market": {
-          "status": "PENDING",
-          "result": null
-        }
-      }
-    },
-    {
-      "id": "signal:764a8cb4ca9de120",
-      "source": {
-        "source_id": "jorf:JORFTEXT000054791173",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "title": "Décret n° 2026-838 du 2 septembre 2026 relatif aux modalités d'accessibilité de l'accueil dans les services publics pour les personnes sourdes ou malentendantes",
-          "url": null,
-          "dates": [],
-          "detail_status": null,
-          "official": {
-            "title": null,
-            "period": null
-          },
-          "attachments": [],
-          "evidence_excerpts": []
-        }
-      },
-      "radar": {
-        "status": "DISCARDED",
-        "reason": "Le décret porte sur l'accessibilité de l'accueil physique et par visioconférence des services publics pour les personnes sourdes ou malentendantes (application de l'article 78 de la loi n° 2005-102). L'extrait officiel ne fournit aucune information exploitable sur un secteur régulé suivi (médicaments, services financiers, services juridiques), aucune exigence concrète (capacités, autorisations, capital, délai), aucun accès opérateur démontré, et aucun flux financier explicite (payeur/bénéficiaire/montant). Sans preuve d'un flux monétaire ou d'un accès marché pertinent, le signal ne peut être retenu comme opportunité."
-      },
-      "opportunity_facts": {
-        "schema": "lawradar-opportunity-facts-v1",
-        "signal_id": "signal:764a8cb4ca9de120",
-        "title": "Décret n° 2026-838 du 2 septembre 2026 relatif aux modalités d'accessibilité de l'accueil dans les services publics pour les personnes sourdes ou malentendantes",
+        "signal_id": "signal:551a202984a04135",
+        "title": "Décision n° 2026-431 du 22 juillet 2026 mettant en demeure la société des Éditions Mengès",
         "keywords": [
           "accessibilité",
-          "personnes sourdes",
-          "personnes malentendantes",
-          "service public",
-          "visioconférence",
-          "accueil physique"
+          "handicap",
+          "dépôt fichiers numériques",
+          "Arcom",
+          "édition",
+          "CPI L.122-5-1"
         ],
         "affected_scope": [
-          "organismes publics et privés chargés d'une mission de service public"
+          "Société des Éditions Mengès"
         ],
         "legal": {
           "jurisdiction": "FR",
           "text_status": "PUBLISHED",
           "proof_status": "VERIFIED",
-          "effective_date": null,
+          "effective_date": "2026-07-22",
           "affected_scope": [
-            "organismes publics et privés chargés d'une mission de service public"
-          ]
-        },
-        "requirements": {
-          "required_capabilities": [],
-          "required_authorizations": [],
-          "dependencies": [],
-          "minimum_startup_capital_eur": null,
-          "estimated_time_to_market_weeks": null,
-          "evidence_status": "MISSING"
-        },
-        "operator_access": {
-          "sector": "NOT_CLASSIFIED",
-          "direct_offer_status": "UNKNOWN",
-          "peripheral_role_evidence": "MISSING",
-          "evidence_status": "MISSING",
-          "peripheral_service_evidence": []
-        }
-      },
-      "enrichments": {
-        "press": {
-          "status": "PENDING",
-          "result": null
-        },
-        "demand": {
-          "status": "PENDING",
-          "result": null
-        },
-        "market": {
-          "status": "PENDING",
-          "result": null
-        }
-      }
-    },
-    {
-      "id": "signal:c31da813d943c8ce",
-      "source": {
-        "source_id": "jorf:JORFTEXT000054791183",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "title": "Arrêté du 1er septembre 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
-          "url": null,
-          "dates": [],
-          "detail_status": null,
-          "official": {
-            "title": null,
-            "period": null
-          },
-          "attachments": [],
-          "evidence_excerpts": []
-        }
-      },
-      "radar": {
-        "status": "DISCARDED",
-        "reason": "L'arrêté ne fait qu'inscrire au remboursement des spécialités pharmaceutiques de référence (VIRLIX, LEPONEX, VYNDAQEL) sur avis favorable de la HAS. Aucun flux financier explicite n'est décrit, aucune exigence opérationnelle nouvelle pour un acteur non pharmaceutique n'est démontrée, et l'accès direct au dispositif est réservé aux titulaires d'AMM/laboratoires pharmaceutiques. Absence de preuve d'un rôle périphérique exploitable ou d'un flux monétaire identifiable."
-      },
-      "opportunity_facts": {
-        "schema": "lawradar-opportunity-facts-v1",
-        "signal_id": "signal:c31da813d943c8ce",
-        "title": "Arrêté du 1er septembre 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
-        "keywords": [
-          "remboursement",
-          "spécialités pharmaceutiques",
-          "VIRLIX",
-          "LEPONEX",
-          "VYNDAQEL",
-          "sécurité sociale"
-        ],
-        "affected_scope": [
-          "FR"
-        ],
-        "legal": {
-          "jurisdiction": "FR",
-          "text_status": "PUBLISHED",
-          "proof_status": "VERIFIED",
-          "effective_date": null,
-          "affected_scope": [
-            "spécialités pharmaceutiques remboursables"
-          ]
-        },
-        "requirements": {
-          "required_capabilities": [],
-          "required_authorizations": [],
-          "dependencies": [],
-          "minimum_startup_capital_eur": null,
-          "estimated_time_to_market_weeks": null,
-          "evidence_status": "MISSING"
-        },
-        "operator_access": {
-          "sector": "MEDICINES",
-          "direct_offer_status": "OUT_OF_PROFILE",
-          "peripheral_role_evidence": "MISSING",
-          "evidence_status": "MISSING",
-          "peripheral_service_evidence": []
-        }
-      },
-      "enrichments": {
-        "press": {
-          "status": "PENDING",
-          "result": null
-        },
-        "demand": {
-          "status": "PENDING",
-          "result": null
-        },
-        "market": {
-          "status": "PENDING",
-          "result": null
-        }
-      }
-    },
-    {
-      "id": "signal:ef004fc1e1f9b4dd",
-      "source": {
-        "source_id": "jorf:JORFTEXT000054791193",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "title": "Arrêté du 1er septembre 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
-          "url": null,
-          "dates": [],
-          "detail_status": null,
-          "official": {
-            "title": null,
-            "period": null
-          },
-          "attachments": [],
-          "evidence_excerpts": []
-        }
-      },
-      "radar": {
-        "status": "DISCARDED",
-        "reason": "Le texte est un arrêté ministériel modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités (VIRLIX, LEPONEX, VYNDAQEL). L'extrait officiel ne contient aucune information sur un montant, un flux financier, une autorisation requise pour un opérateur non pharmaceutique, ni sur une offre périphérique accessible. Il s'agit d'une mise à jour réglementaire strictement liée au remboursement de spécialités de référence, sans preuve d'opportunité économique exploitable ni de flux monétaire explicite entre acteurs identifiés."
-      },
-      "opportunity_facts": {
-        "schema": "lawradar-opportunity-facts-v1",
-        "signal_id": "signal:ef004fc1e1f9b4dd",
-        "title": "Arrêté du 1er septembre 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
-        "keywords": [
-          "spécialités pharmaceutiques agréées",
-          "collectivités",
-          "VIRLIX",
-          "LEPONEX",
-          "VYNDAQEL",
-          "commission de la transparence",
-          "remboursement"
-        ],
-        "affected_scope": [
-          "FR"
-        ],
-        "legal": {
-          "jurisdiction": "FR",
-          "text_status": "PUBLISHED",
-          "proof_status": "VERIFIED",
-          "effective_date": null,
-          "affected_scope": [
-            "FR"
-          ]
-        },
-        "requirements": {
-          "required_capabilities": [],
-          "required_authorizations": [],
-          "dependencies": [],
-          "minimum_startup_capital_eur": null,
-          "estimated_time_to_market_weeks": null,
-          "evidence_status": "MISSING"
-        },
-        "operator_access": {
-          "sector": "MEDICINES",
-          "direct_offer_status": "OUT_OF_PROFILE",
-          "peripheral_role_evidence": "MISSING",
-          "evidence_status": "MISSING",
-          "peripheral_service_evidence": []
-        }
-      },
-      "enrichments": {
-        "press": {
-          "status": "PENDING",
-          "result": null
-        },
-        "demand": {
-          "status": "PENDING",
-          "result": null
-        },
-        "market": {
-          "status": "PENDING",
-          "result": null
-        }
-      }
-    },
-    {
-      "id": "signal:b6983709068e7610",
-      "source": {
-        "source_id": "jorf:JORFTEXT000054791206",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "title": "Arrêté du 3 août 2026 modifiant l'arrêté du 19 décembre 2023 fixant les critères du classement des établissements d'enseignement public de la musique, de la danse et de l'art dramatique",
-          "url": null,
-          "dates": [],
-          "detail_status": null,
-          "official": {
-            "title": null,
-            "period": null
-          },
-          "attachments": [],
-          "evidence_excerpts": []
-        }
-      },
-      "radar": {
-        "status": "DISCARDED",
-        "reason": "Le texte concerne le classement des établissements d'enseignement public de la musique, de la danse et de l'art dramatique (secteur culture/éducation). Aucun lien démontré avec les secteurs suivis par LawRadar (médicaments, services financiers, services juridiques) ni avec un flux financier identifiable dans l'extrait officiel fourni."
-      },
-      "opportunity_facts": {
-        "schema": "lawradar-opportunity-facts-v1",
-        "signal_id": "signal:b6983709068e7610",
-        "title": "Arrêté du 3 août 2026 modifiant l'arrêté du 19 décembre 2023 fixant les critères du classement des établissements d'enseignement public de la musique, de la danse et de l'art dramatique",
-        "keywords": [
-          "classement",
-          "établissements d'enseignement public",
-          "musique",
-          "danse",
-          "art dramatique",
-          "arrêté modificatif"
-        ],
-        "affected_scope": [
-          "FR"
-        ],
-        "legal": {
-          "jurisdiction": "FR",
-          "text_status": "PUBLISHED",
-          "proof_status": "VERIFIED",
-          "effective_date": null,
-          "affected_scope": [
-            "FR"
+            "Société des Éditions Mengès"
           ]
         },
         "requirements": {
@@ -406,13 +97,13 @@
       }
     },
     {
-      "id": "signal:6cd7fb54abd41fe6",
+      "id": "signal:406cadd61a8798bd",
       "source": {
-        "source_id": "jorf:JORFTEXT000054791216",
+        "source_id": "jorf:JORFTEXT000054791467",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "title": "Arrêté du 6 août 2026 modifiant l'arrêté du 28 juin 2011 fixant la liste et la localisation des emplois de chef de mission du ministère de la culture et de la communication",
+          "title": "Décision du 31 août 2026 portant nominations au Contrôleur général des lieux de privation de liberté",
           "url": null,
           "dates": [],
           "detail_status": null,
@@ -426,245 +117,16 @@
       },
       "radar": {
         "status": "DISCARDED",
-        "reason": "Arrêté purement organisationnel fixant la liste et la localisation d'emplois de chef de mission au ministère de la culture. Aucune création d'obligation, d'autorisation, de marché ou de flux financier identifiable ; aucun lien avec un secteur régulé pertinent (médicaments, services financiers, services juridiques) ni avec une opportunité d'accès direct ou périphérique pour un opérateur."
+        "reason": "Le texte est une décision de nomination administrative interne (nominations au Contrôleur général des lieux de privation de liberté). Il ne crée ni obligation nouvelle, ni marché, ni exigence réglementaire ouvrant une opportunité économique, et ne comporte aucun flux financier identifiable ni acteur privé concerné."
       },
       "opportunity_facts": {
         "schema": "lawradar-opportunity-facts-v1",
-        "signal_id": "signal:6cd7fb54abd41fe6",
-        "title": "Arrêté du 6 août 2026 modifiant l'arrêté du 28 juin 2011 fixant la liste et la localisation des emplois de chef de mission du ministère de la culture et de la communication",
+        "signal_id": "signal:406cadd61a8798bd",
+        "title": "Décision du 31 août 2026 portant nominations au Contrôleur général des lieux de privation de liberté",
         "keywords": [
-          "chef de mission",
-          "ministère de la culture",
-          "emplois",
-          "organisation administrative"
-        ],
-        "affected_scope": [
-          "Ministère de la culture"
-        ],
-        "legal": {
-          "jurisdiction": "FR",
-          "text_status": "PUBLISHED",
-          "proof_status": "VERIFIED",
-          "effective_date": "2026-09-03",
-          "affected_scope": [
-            "Ministère de la culture"
-          ]
-        },
-        "requirements": {
-          "required_capabilities": [],
-          "required_authorizations": [],
-          "dependencies": [],
-          "minimum_startup_capital_eur": null,
-          "estimated_time_to_market_weeks": null,
-          "evidence_status": "MISSING"
-        },
-        "operator_access": {
-          "sector": "NOT_CLASSIFIED",
-          "direct_offer_status": "NOT_APPLICABLE",
-          "peripheral_role_evidence": "NOT_APPLICABLE",
-          "evidence_status": "MISSING",
-          "peripheral_service_evidence": []
-        }
-      },
-      "enrichments": {
-        "press": {
-          "status": "PENDING",
-          "result": null
-        },
-        "demand": {
-          "status": "PENDING",
-          "result": null
-        },
-        "market": {
-          "status": "PENDING",
-          "result": null
-        }
-      }
-    },
-    {
-      "id": "signal:567c036401c0cc94",
-      "source": {
-        "source_id": "jorf:JORFTEXT000054791247",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "title": "Décision du 1er septembre 2026 portant mandat (budget annexe « contrôle et exploitation aériens »)",
-          "url": null,
-          "dates": [],
-          "detail_status": null,
-          "official": {
-            "title": null,
-            "period": null
-          },
-          "attachments": [],
-          "evidence_excerpts": []
-        }
-      },
-      "radar": {
-        "status": "DISCARDED",
-        "reason": "Le texte est une décision administrative interne portant mandat/délégation de signature au bénéfice du comptable principal du budget annexe « contrôle et exploitation aériens ». Il ne crée ni obligation réglementaire nouvelle, ni marché, ni flux financier identifiable pour un opérateur externe. Aucune preuve d'un flux d'argent, d'une autorisation requise ou d'un accès opérateur n'est présente dans l'extrait officiel."
-      },
-      "opportunity_facts": {
-        "schema": "lawradar-opportunity-facts-v1",
-        "signal_id": "signal:567c036401c0cc94",
-        "title": "Décision du 1er septembre 2026 portant mandat (budget annexe « contrôle et exploitation aériens »)",
-        "keywords": [
-          "mandat",
-          "comptable principal",
-          "budget annexe",
-          "contrôle et exploitation aériens",
-          "délégation de signature"
-        ],
-        "affected_scope": [],
-        "legal": {
-          "jurisdiction": "FR",
-          "text_status": "PUBLISHED",
-          "proof_status": "VERIFIED",
-          "effective_date": null,
-          "affected_scope": []
-        },
-        "requirements": {
-          "required_capabilities": [],
-          "required_authorizations": [],
-          "dependencies": [],
-          "minimum_startup_capital_eur": null,
-          "estimated_time_to_market_weeks": null,
-          "evidence_status": "MISSING"
-        },
-        "operator_access": {
-          "sector": "NOT_CLASSIFIED",
-          "direct_offer_status": "NOT_APPLICABLE",
-          "peripheral_role_evidence": "NOT_APPLICABLE",
-          "evidence_status": "MISSING",
-          "peripheral_service_evidence": []
-        }
-      },
-      "enrichments": {
-        "press": {
-          "status": "PENDING",
-          "result": null
-        },
-        "demand": {
-          "status": "PENDING",
-          "result": null
-        },
-        "market": {
-          "status": "PENDING",
-          "result": null
-        }
-      }
-    },
-    {
-      "id": "signal:d70cf3f2c2312654",
-      "source": {
-        "source_id": "jorf:JORFTEXT000054791319",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "title": "Arrêté du 27 août 2026 relatif à une société d'exercice libéral par actions simplifiée (officiers publics ou ministériels)",
-          "url": null,
-          "dates": [],
-          "detail_status": null,
-          "official": {
-            "title": null,
-            "period": null
-          },
-          "attachments": [],
-          "evidence_excerpts": []
-        }
-      },
-      "radar": {
-        "status": "DISCARDED",
-        "reason": "L'arrêté est un acte administratif individuel relatif à une société d'exercice libéral par actions simplifiée d'officiers publics ou ministériels (avocats au Conseil d'Etat et à la Cour de cassation). Il ne contient aucune exigence généralisable, aucun capital minimum, aucun délai, aucune autorisation nouvelle pour un opérateur tiers, ni aucun flux financier explicite. Aucune opportunité de marché exploitable n'est démontrée dans l'extrait fourni."
-      },
-      "opportunity_facts": {
-        "schema": "lawradar-opportunity-facts-v1",
-        "signal_id": "signal:d70cf3f2c2312654",
-        "title": "Arrêté du 27 août 2026 relatif à une société d'exercice libéral par actions simplifiée (officiers publics ou ministériels)",
-        "keywords": [
-          "société d'exercice libéral",
-          "officiers publics ou ministériels",
-          "avocats au Conseil d'Etat et à la Cour de cassation",
-          "arrêté individuel"
-        ],
-        "affected_scope": [
-          "officiers publics ou ministériels",
-          "avocats au Conseil d'Etat et à la Cour de cassation"
-        ],
-        "legal": {
-          "jurisdiction": "FR",
-          "text_status": "PUBLISHED",
-          "proof_status": "VERIFIED",
-          "effective_date": null,
-          "affected_scope": [
-            "officiers publics ou ministériels",
-            "avocats au Conseil d'Etat et à la Cour de cassation"
-          ]
-        },
-        "requirements": {
-          "required_capabilities": [],
-          "required_authorizations": [],
-          "dependencies": [],
-          "minimum_startup_capital_eur": null,
-          "estimated_time_to_market_weeks": null,
-          "evidence_status": "MISSING"
-        },
-        "operator_access": {
-          "sector": "LEGAL_SERVICES",
-          "direct_offer_status": "OUT_OF_PROFILE",
-          "peripheral_role_evidence": "MISSING",
-          "evidence_status": "MISSING",
-          "peripheral_service_evidence": []
-        }
-      },
-      "enrichments": {
-        "press": {
-          "status": "PENDING",
-          "result": null
-        },
-        "demand": {
-          "status": "PENDING",
-          "result": null
-        },
-        "market": {
-          "status": "PENDING",
-          "result": null
-        }
-      }
-    },
-    {
-      "id": "signal:84d8eb586022a0d0",
-      "source": {
-        "source_id": "jorf:JORFTEXT000054791377",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "title": "Arrêté du 1er septembre 2026 portant autorisation d'exercer en France la profession de médecin en application des dispositions de l'article L. 4111-3-1 du code de la santé publique",
-          "url": null,
-          "dates": [],
-          "detail_status": null,
-          "official": {
-            "title": null,
-            "period": null
-          },
-          "attachments": [],
-          "evidence_excerpts": []
-        }
-      },
-      "radar": {
-        "status": "DISCARDED",
-        "reason": "L'arrêté autorise nominativement des médecins individuels à exercer en France en application de l'article L. 4111-3-1 du code de la santé publique. Il s'agit d'une décision administrative individuelle sans portée normative générale créant une opportunité de marché, sans capacités, autorisations ou dépendances exploitables par un opérateur tiers, et sans aucun flux financier explicite dans le texte fourni."
-      },
-      "opportunity_facts": {
-        "schema": "lawradar-opportunity-facts-v1",
-        "signal_id": "signal:84d8eb586022a0d0",
-        "title": "Arrêté du 1er septembre 2026 portant autorisation d'exercer en France la profession de médecin en application des dispositions de l'article L. 4111-3-1 du code de la santé publique",
-        "keywords": [
-          "médecin",
-          "autorisation d'exercice",
-          "article L. 4111-3-1",
-          "code de la santé publique",
-          "décision individuelle"
+          "nomination",
+          "Contrôleur général des lieux de privation de liberté",
+          "administration"
         ],
         "affected_scope": [],
         "legal": {
@@ -673,89 +135,6 @@
           "proof_status": "VERIFIED",
           "effective_date": "2026-09-03",
           "affected_scope": []
-        },
-        "requirements": {
-          "required_capabilities": [],
-          "required_authorizations": [
-            {
-              "id": "AUTORISATION_EXERCICE_MEDECIN_L4111-3-1_CSP",
-              "status": "REQUIRED"
-            }
-          ],
-          "dependencies": [],
-          "minimum_startup_capital_eur": null,
-          "estimated_time_to_market_weeks": null,
-          "evidence_status": "MISSING"
-        },
-        "operator_access": {
-          "sector": "MEDICINES",
-          "direct_offer_status": "OUT_OF_PROFILE",
-          "peripheral_role_evidence": "NOT_APPLICABLE",
-          "evidence_status": "MISSING",
-          "peripheral_service_evidence": []
-        }
-      },
-      "enrichments": {
-        "press": {
-          "status": "PENDING",
-          "result": null
-        },
-        "demand": {
-          "status": "PENDING",
-          "result": null
-        },
-        "market": {
-          "status": "PENDING",
-          "result": null
-        }
-      }
-    },
-    {
-      "id": "signal:1a88ad375a78c120",
-      "source": {
-        "source_id": "jorf:JORFTEXT000054791427",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "title": "Décision n° 2026-430 du 22 juillet 2026 mettant en demeure la société 3L",
-          "url": null,
-          "dates": [],
-          "detail_status": null,
-          "official": {
-            "title": null,
-            "period": null
-          },
-          "attachments": [],
-          "evidence_excerpts": []
-        }
-      },
-      "radar": {
-        "status": "DISCARDED",
-        "reason": "La décision est une mise en demeure individuelle de l'ARCOM à l'encontre de la société « 3L » concernant le respect de l'exception handicap (article L.122-5 7° CPI) et des formats accessibles, en lien avec des échanges avec la BnF. Il s'agit d'un acte de contrôle/sanction ciblé sur un acteur nommé, sans création d'obligation nouvelle générale ni ouverture de marché pour des opérateurs tiers, et sans aucune indication de flux financier explicite dans le texte fourni."
-      },
-      "opportunity_facts": {
-        "schema": "lawradar-opportunity-facts-v1",
-        "signal_id": "signal:1a88ad375a78c120",
-        "title": "Décision n° 2026-430 du 22 juillet 2026 mettant en demeure la société 3L",
-        "keywords": [
-          "mise en demeure",
-          "exception handicap",
-          "formats accessibles",
-          "propriété intellectuelle",
-          "ARCOM",
-          "BnF"
-        ],
-        "affected_scope": [
-          "FR"
-        ],
-        "legal": {
-          "jurisdiction": "FR",
-          "text_status": "PUBLISHED",
-          "proof_status": "VERIFIED",
-          "effective_date": null,
-          "affected_scope": [
-            "FR"
-          ]
         },
         "requirements": {
           "required_capabilities": [],
@@ -791,7 +170,7 @@
   ],
   "money_flows": [],
   "quality": {
-    "opportunity_count": 10,
+    "opportunity_count": 2,
     "unresolved_count": 0,
     "money_flow_count": 0,
     "limitation": "Les enrichissements sont vides tant qu'aucun agent dédié n'a produit une sortie sourcée."
