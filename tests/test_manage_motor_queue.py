@@ -16,11 +16,15 @@ class ManageMotorQueueTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             state_path = Path(directory) / "batch.json"
             state_path.write_text(json.dumps({
-                "processing_status": "in_progress", "request_count": 10,
+                "processing_status": "in_progress", "request_count": 10, "ready": False,
             }))
             self.assertEqual(effective_batch_size(250, state_path), 10)
             state_path.write_text(json.dumps({
-                "processing_status": "ended", "request_count": 10,
+                "processing_status": "ended", "request_count": 10, "ready": False,
+            }))
+            self.assertEqual(effective_batch_size(250, state_path), 10)
+            state_path.write_text(json.dumps({
+                "processing_status": "ended", "request_count": 10, "ready": True,
             }))
             self.assertEqual(effective_batch_size(250, state_path), 250)
 

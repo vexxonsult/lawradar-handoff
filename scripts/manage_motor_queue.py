@@ -131,11 +131,13 @@ def write(path: Path, value: dict[str, Any]) -> None:
 
 
 def effective_batch_size(configured_size: int, active_state_path: Path | None) -> int:
-    """Conserve la taille d'un batch actif pendant une migration de plafond."""
+    """Conserve la taille d'un batch non livré pendant une migration de plafond."""
     if active_state_path is None or not active_state_path.exists():
         return configured_size
     state = json.loads(active_state_path.read_text(encoding="utf-8"))
-    if state.get("processing_status") == "ended":
+    # Un batch achevé mais refusé par une validation locale doit pouvoir être
+    # relu après correction, sans modifier son entrée ni le resoumettre.
+    if state.get("processing_status") == "ended" and state.get("ready") is True:
         return configured_size
     request_count = state.get("request_count")
     if not isinstance(request_count, int) or request_count < 1:
