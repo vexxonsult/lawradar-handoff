@@ -228,10 +228,11 @@ ses sources et une sortie non liée au signal courant. Aucun modèle n'est encor
 appelé : le prochain incrément sera son branchement contrôlé derrière ce
 contrôleur.
 
-### Livrable 6D — pilote Presse manuel
+### Livrable 6D — composant Presse réutilisable
 
-Le workflow `agent-presse-lawradar.yml` ne possède aucune planification : il
-ne peut être lancé qu'à la demande, pour un identifiant de signal `RETAINED`.
+Le workflow `agent-presse-lawradar.yml` reste lançable manuellement et devient
+aussi un composant `workflow_call` du moteur temporel. Il reçoit toujours un
+seul identifiant de signal `RETAINED`.
 Il appelle GDELT pour ce seul signal, puis n'appelle Sonnet qu'en présence de
 candidats et sans erreur de collecte ; le plafond est d'un appel par run. Sans
 candidat, il écrit `NO_EVIDENCE` sans IA ; en cas de panne, il écrit
@@ -429,11 +430,11 @@ Le contrat, le validateur de livraison et les tests sont en place. La
 validation en conditions réelles aura lieu au prochain moteur appelé : il doit
 produire une fiche valide par décision sans modifier les preuves primaires.
 
-### Livrable 6O — pilote Marché BOAMP manuel
+### Livrable 6O — composant Demande/Marché BOAMP réutilisable
 
-Le workflow manuel `agent-marche-boamp-lawradar.yml` reçoit un seul identifiant
-de signal `RETAINED`. Il extrait les faits liés à ce signal, exécute les filtres
-déterministes et s'arrête avec un artefact de contrôle lorsque la porte d'accès
+Le workflow `agent-marche-boamp-lawradar.yml`, manuel ou appelé par le moteur,
+reçoit un seul identifiant de signal `RETAINED`. Il extrait les faits liés à ce
+signal, exécute les filtres déterministes et s'arrête avec un artefact de contrôle lorsque la porte d'accès
 retourne `HOLD`. Il ne lance alors aucun appel BOAMP ni appel IA.
 
 Pour un signal accessible, il interroge BOAMP dans les limites versionnées :
@@ -460,18 +461,20 @@ Google non officielle n'influence la production.
 `evidence/agent-pilot-readiness-latest.json`, sans réseau ni IA. Il indique
 pour chaque signal si celui-ci est `READY_FOR_PILOTS`, en attente de faits,
 bloqué par la porte opérateur ou écarté par les filtres déterministes. Le
-fichier ne déclenche rien : il évite seulement de chercher manuellement quel
-signal peut servir de pilote réel de la phase 6.
+moteur temporel utilise ce fichier pour construire sa matrice de clients ;
+aucun signal bloqué ne rejoint les collectes externes.
 
 ### État et sortie de phase 6
 
-La phase 6 est **en cours**, et non achevée. Les contrats, contrôleurs,
-collectes déterministes limitées et le pilote Presse manuel sont disponibles ;
-ils ne constituent pas encore une chaîne quotidienne validée.
+L'orchestration est raccordée : collecte JORF matinale en fuseau
+`Europe/Paris`, réveil événementiel du moteur, reprise des Message Batches,
+branches Presse et BOAMP parallèles, convergence déterministe et remise au
+client Entrepreneur seulement derrière une porte `PASS`. Les sorties clients
+restent des artefacts séparés et ne réécrivent pas le signal universel du
+noyau.
 
-Pour clore cette phase, le prochain signal `RETAINED` qui passe la porte
-d'accès opérateur doit traverser une fois, en conditions réelles et sans
-source inventée :
+Le prochain signal `RETAINED` qui passe la porte d'accès opérateur doit servir
+de test d'acceptation en conditions réelles, sans source inventée :
 
 1. Presse ;
 2. Demande et/ou BOAMP lorsque le périmètre s'y prête ;
@@ -479,10 +482,9 @@ source inventée :
 4. fusion contrôlée de ces résultats dans le dossier universel.
 
 Un signal en `HOLD`, comme NINTEDANIB, ne peut pas servir de pilote complet.
-Il est une validation de sécurité, pas une opportunité à forcer. À l'issue
-d'un pilote réel concluant, le plan passe à la phase 7 (moteur de synthèse),
-puis à la phase 8 (activation contrôlée de l'agent Entrepreneur). Aucun
-dossier Entrepreneur quotidien n'est programmé avant ces deux étapes.
+Il est une validation de sécurité, pas une opportunité à forcer. Le
+raccordement logiciel est terminé ; cette première traversée réelle demeure
+le test d'acceptation opérationnel, pas une condition cachée dans le code.
 
 ---
 

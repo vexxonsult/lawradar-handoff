@@ -3,8 +3,13 @@ name: Collecte primaire DILA JORF
 on:
   workflow_dispatch:
   schedule:
-    # 17:20 Europe/Paris en heure d'été : termine avant le moteur Claude de 17:35.
-    - cron: "20 15 * * *"
+    # Pige matinale en heure française. `timezone` absorbe automatiquement les
+    # changements CET/CEST ; le verrou quotidien coupe les essais suivants dès
+    # que l'édition JORF du jour a été observée.
+    - cron: "17,47 5-7 * * *"
+      timezone: "Europe/Paris"
+    - cron: "17 8 * * *"
+      timezone: "Europe/Paris"
 
 permissions:
   contents: write
@@ -18,20 +23,51 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Synchroniser le verrou quotidien avant toute requête DILA
+        run: git pull --ff-only origin main
       - name: Démarrer la mesure du run
         run: echo "LAWRADAR_STARTED_AT=$(date +%s)" >> "$GITHUB_ENV"
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - id: fresh_edition
+        name: Arrêter la pige si l'édition JORF du jour est déjà acquise
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from datetime import datetime
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          path = Path("evidence/jorf-summaries-latest.json")
+          today = datetime.now(ZoneInfo("Europe/Paris")).date().isoformat()
+          coverage_end = None
+          if path.exists():
+              try:
+                  coverage_end = json.loads(path.read_text(encoding="utf-8")).get("coverage_end")
+              except (OSError, ValueError, TypeError):
+                  pass
+          should_collect = coverage_end != today or os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
+          with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as output:
+              output.write(f"should_collect={'true' if should_collect else 'false'}\n")
+          print(f"today={today}; coverage_end={coverage_end}; should_collect={should_collect}")
+          PY
       - name: Installer l'extracteur PDF de preuves
+        if: steps.fresh_edition.outputs.should_collect == 'true'
         run: python -m pip install --disable-pip-version-check "pypdf==6.0.0"
       - name: Tester le collecteur
+        if: steps.fresh_edition.outputs.should_collect == 'true'
         run: python -m unittest discover -s tests -p 'test_*.py'
       - name: Conserver l'état précédent pour le calcul de delta
+        if: steps.fresh_edition.outputs.should_collect == 'true'
         run: |
           mkdir -p /tmp/lawradar-previous
           find evidence -maxdepth 1 -name '*-latest.json' -exec cp {} /tmp/lawradar-previous/ \;
       - name: Lire la dernière livraison et les sommaires officiels DILA
+        if: steps.fresh_edition.outputs.should_collect == 'true'
         run: >-
           python scripts/collect_dila_jorf.py
           --targets config/jorf_targets.json
@@ -39,12 +75,16 @@ jobs:
           --summary-out evidence/jorf-summaries-latest.json
           --summary-days 14
       - name: Énumérer les éditions JO L depuis l’index officiel Cellar
+        if: steps.fresh_edition.outputs.should_collect == 'true'
         run: python scripts/collect_eurlex_oj.py --out evidence/eurlex-oj-latest.json --days 14
       - name: Énumérer les consultations depuis la recherche officielle
+        if: steps.fresh_edition.outputs.should_collect == 'true'
         run: python scripts/collect_consultdd.py --out evidence/consultdd-latest.json --pages 5
       - name: Construire le paquet candidat de preuves brutes
+        if: steps.fresh_edition.outputs.should_collect == 'true'
         run: python scripts/build_primary_handoff.py --evidence evidence/candidate --out evidence/primary-evidence-candidate.json
       - name: Conserver la dernière preuve utile si le candidat est vide
+        if: steps.fresh_edition.outputs.should_collect == 'true'
         run: >-
           python scripts/promote_public_handoff.py
           --candidate evidence/primary-evidence-candidate.json
@@ -53,17 +93,20 @@ jobs:
           --current-evidence evidence/latest
           --status evidence/status-latest.json
       - name: Produire le delta mécanique pour la veille
+        if: steps.fresh_edition.outputs.should_collect == 'true'
         run: >-
           python scripts/build_daily_delta.py
           --previous /tmp/lawradar-previous
           --current evidence
           --out evidence/delta-latest.json
       - name: Extraire les preuves textuelles des seuls candidats moteur
+        if: steps.fresh_edition.outputs.should_collect == 'true'
         run: >-
           python scripts/enrich_jorf_candidates.py
           --evidence evidence
           --output evidence/jorf-candidate-excerpts-latest.json
       - name: Produire le manifeste du run
+        if: steps.fresh_edition.outputs.should_collect == 'true'
         run: >-
           python scripts/build_run_manifest.py
           --output evidence/run-manifest-latest.json
@@ -71,11 +114,13 @@ jobs:
           --inputs evidence/delta-latest.json evidence/jorf-summaries-latest.json evidence/jorf-candidate-excerpts-latest.json evidence/eurlex-oj-latest.json evidence/consultdd-latest.json
           --outputs evidence/primary-evidence-latest.json evidence/status-latest.json
       - name: Actualiser le registre et le tableau de contrôle
+        if: steps.fresh_edition.outputs.should_collect == 'true'
         run: |
           python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
           mkdir -p out
           python scripts/render_control_dashboard.py --input evidence/run-index-latest.json --out out/control-dashboard.html
       - name: Publier le tableau de contrôle
+        if: steps.fresh_edition.outputs.should_collect == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: lawradar-control-${{ github.run_id }}
@@ -84,6 +129,7 @@ jobs:
             out/control-dashboard.html
           retention-days: 90
       - name: Versionner seulement les preuves légères
+        if: steps.fresh_edition.outputs.should_collect == 'true'
         run: |
           git config user.name "lawradar-collector[bot]"
           git config user.email "lawradar-collector[bot]@users.noreply.github.com"

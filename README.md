@@ -19,7 +19,18 @@ Schéma attendu : `lawradar-primary-handoff-v1`.
 
 ## Planification
 
-La collecte est lancée chaque jour à 17 h 20 Europe/Paris en heure d’été (`20 15 * * *` UTC). Le moteur Anthropic démarre à 17 h 35 ; il reste inactif lorsqu'aucun candidat pris en charge n'est présent dans le diff.
+La collecte JORF effectue une pige matinale à 05:17, puis toutes les trente
+minutes jusqu'à 08:17. Les horaires GitHub portent explicitement le fuseau
+`Europe/Paris` : ils restent donc identiques lors des passages CET/CEST. Dès
+que l'édition datée du jour est acquise, un verrou déterministe désactive les
+tentatives suivantes et le succès du collecteur réveille immédiatement le
+moteur.
+
+Un Message Batch en cours est repris toutes les vingt minutes entre 05:09 et
+16:49, sans nouvelle soumission. Les fenêtres de 17:17, 18:17 et 19:17 servent
+à la consolidation BOAMP et au rattrapage. La fenêtre de 19:17 publie aussi
+l'état du backlog. Chaque réveil passe d'abord par la file locale : zéro
+candidat signifie zéro requête Anthropic.
 
 ## Sobriété du cycle
 
@@ -49,6 +60,13 @@ Chaque collecte publie aussi `evidence/run-manifest-latest.json`. Chaque exécut
 ## Dossier universel de signal — phase 5
 
 Lorsqu’un moteur aboutit, il publie `evidence/universal-signal-latest.json`. Ce dossier rassemble, sans nouvelle interprétation, les preuves compactes, la décision du Radar, les flux éventuellement démontrés et trois emplacements explicitement vides pour les futurs agents Presse, Demande et Marché. Ces agents ne pourront qu’ajouter une sortie sourcée dans leur emplacement ; ils ne modifieront ni la preuve ni la décision du Radar.
+
+Après une moisson Batch réussie, les branches Presse et BOAMP sont déclenchées
+automatiquement pour chaque signal autorisé. La branche BOAMP produit les
+sorties Demande et Marché à partir d'une collecte commune. Les artefacts des
+branches convergent dans `out/client-context.json` ; le noyau versionné reste
+inchangé. Le client Entrepreneur ne reçoit ce contexte qu'après convergence et
+n'appelle Claude que si les filtres déterministes sont à `PASS`.
 
 ## Recyclage déterministe des opportunités bloquées
 

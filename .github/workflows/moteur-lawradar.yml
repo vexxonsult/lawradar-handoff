@@ -2,12 +2,21 @@ name: Moteur LawRadar — livraison structurée
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Collecte primaire DILA JORF"]
+    types: [completed]
   schedule:
-    # Trois lots au plus, juste après la collecte quotidienne de 15:20 UTC.
-    # Cela absorbe 30 candidats sans réveiller de runner toute la nuit.
-    - cron: "35 15 * * *"
-    - cron: "35 16 * * *"
-    - cron: "35 17 * * *"
+    # Pige Batch toutes les vingt minutes. La porte locale interdit toute
+    # requête Anthropic en l'absence de candidats ou de batch actif.
+    - cron: "9,29,49 5-16 * * *"
+      timezone: "Europe/Paris"
+    # Consolidation BOAMP et rattrapage du soir, stables en CET comme en CEST.
+    - cron: "17 17 * * *"
+      timezone: "Europe/Paris"
+    - cron: "17 18 * * *"
+      timezone: "Europe/Paris"
+    - cron: "17 19 * * *"
+      timezone: "Europe/Paris"
 
 permissions:
   contents: write
@@ -19,16 +28,21 @@ concurrency:
 
 jobs:
   gate:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     outputs:
       should_run: ${{ steps.delta.outputs.should_run }}
       skip_reason: ${{ steps.delta.outputs.skip_reason }}
+      quiet_idle: ${{ steps.delta.outputs.quiet_idle }}
+      queue_changed: ${{ steps.delta.outputs.queue_changed }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - id: delta
         name: Préparer le diff et éviter tout appel inutile au modèle
+        env:
+          TRIGGER_SCHEDULE: ${{ github.event.schedule }}
         run: |
           mkdir -p out
           python scripts/manage_motor_queue.py stage --queue evidence/motor-queue-latest.json --queue-output out/motor-queue-proposed.json --batch-output out/motor-input-gate.json --batch-size 10
@@ -55,12 +69,20 @@ jobs:
               reason = "Variation détectée sur une source hors périmètre du moteur actuel."
           else:
               reason = "Aucun candidat JORF ou ConsultDD à interpréter."
+          queue_path = Path("evidence/motor-queue-latest.json")
+          proposed_path = Path("out/motor-queue-proposed.json")
+          queue_changed = not queue_path.exists() or queue_path.read_bytes() != proposed_path.read_bytes()
+          quiet_idle = not required and os.environ.get("TRIGGER_SCHEDULE") == "9,29,49 5-16 * * *"
           Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8").write(
-              f"should_run={'true' if required else 'false'}\nskip_reason={reason}\n"
+              f"should_run={'true' if required else 'false'}\n"
+              f"skip_reason={reason}\n"
+              f"quiet_idle={'true' if quiet_idle else 'false'}\n"
+              f"queue_changed={'true' if queue_changed else 'false'}\n"
           )
-          print(f"model_input_required={required}; candidates={len(prepared.get('candidates', []))}")
+          print(f"model_input_required={required}; candidates={len(prepared.get('candidates', []))}; quiet_idle={quiet_idle}")
           PY
       - name: Conserver la file avant toute interprétation
+        if: steps.delta.outputs.queue_changed == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -75,7 +97,7 @@ jobs:
 
   record_skipped:
     needs: gate
-    if: needs.gate.outputs.should_run != 'true'
+    if: needs.gate.outputs.should_run != 'true' && needs.gate.outputs.quiet_idle != 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -125,6 +147,8 @@ jobs:
     if: needs.gate.outputs.should_run == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    outputs:
+      batch_ready: ${{ steps.batch.outputs.ready }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -287,7 +311,7 @@ jobs:
 
   record_daily_backlog:
     needs: [moteur, record_skipped]
-    if: ${{ always() && !cancelled() && github.event.schedule == '35 17 * * *' }}
+    if: ${{ always() && !cancelled() && github.event.schedule == '17 19 * * *' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -311,3 +335,157 @@ jobs:
           git diff --cached --quiet || git commit -m "Capacité moteur LawRadar $(date -u +%F)"
           git pull --rebase origin main
           git push
+
+  client_plan:
+    needs: [moteur, record_skipped]
+    if: ${{ always() && !cancelled() && (needs.moteur.outputs.batch_ready == 'true' || github.event.schedule == '17 17 * * *' || github.event.schedule == '17 18 * * *' || github.event.schedule == '17 19 * * *') }}
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Charger le dernier signal universel publié
+        run: git pull --ff-only origin main
+      - id: plan
+        name: Sélectionner uniquement les signaux autorisés par les filtres
+        run: |
+          mkdir -p out
+          python scripts/build_agent_pilot_readiness.py \
+            --dossier evidence/universal-signal-latest.json \
+            --policy config/compliance-policy-v1.json \
+            --profile config/operator-profile-v1.json \
+            --output out/agent-pilot-readiness.json
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          readiness = json.loads(Path("out/agent-pilot-readiness.json").read_text(encoding="utf-8"))
+          matrix = []
+          for item in readiness.get("signals", []):
+              if item.get("ready_for_pilots") is not True:
+                  continue
+              signal_id = item["signal_id"]
+              key = hashlib.sha256(signal_id.encode("utf-8")).hexdigest()[:16]
+              matrix.append({"id": signal_id, "key": key})
+          compact = json.dumps(matrix, ensure_ascii=False, separators=(",", ":"))
+          with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as output:
+              output.write(f"matrix={compact}\n")
+          print(f"clients_ready={len(matrix)}")
+          PY
+      - name: Conserver le noyau immuable pour la convergence des branches
+        uses: actions/upload-artifact@v4
+        with:
+          name: lawradar-client-core-${{ github.run_id }}
+          path: |
+            evidence/universal-signal-latest.json
+            out/agent-pilot-readiness.json
+          retention-days: 90
+
+  press:
+    needs: client_plan
+    if: needs.client_plan.outputs.matrix != '[]'
+    strategy:
+      fail-fast: false
+      matrix:
+        signal: ${{ fromJSON(needs.client_plan.outputs.matrix) }}
+    uses: ./.github/workflows/agent-presse-lawradar.yml
+    with:
+      signal_id: ${{ matrix.signal.id }}
+      artifact_key: ${{ matrix.signal.key }}
+      persist_core: false
+    secrets: inherit
+
+  demand_market:
+    needs: client_plan
+    if: needs.client_plan.outputs.matrix != '[]'
+    strategy:
+      fail-fast: false
+      matrix:
+        signal: ${{ fromJSON(needs.client_plan.outputs.matrix) }}
+    uses: ./.github/workflows/agent-marche-boamp-lawradar.yml
+    with:
+      signal_id: ${{ matrix.signal.id }}
+      artifact_key: ${{ matrix.signal.key }}
+      persist_core: false
+    secrets: inherit
+
+  consolidate_clients:
+    needs: [client_plan, press, demand_market]
+    if: ${{ always() && !cancelled() && needs.client_plan.outputs.matrix != '[]' && needs.press.result == 'success' && needs.demand_market.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Télécharger le noyau figé
+        uses: actions/download-artifact@v4
+        with:
+          name: lawradar-client-core-${{ github.run_id }}
+          path: out/client-core
+      - name: Télécharger les branches Presse, Demande et Marché
+        uses: actions/download-artifact@v4
+        with:
+          pattern: lawradar-press-*
+          path: out/client-artifacts
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: lawradar-demand-market-boamp-*
+          path: out/client-artifacts
+      - name: Assembler un contexte client sans réécrire le noyau
+        run: >-
+          python scripts/consolidate_client_artifacts.py
+          --core out/client-core/evidence/universal-signal-latest.json
+          --readiness out/client-core/out/agent-pilot-readiness.json
+          --artifacts out/client-artifacts
+          --output out/client-context.json
+      - name: Publier le contexte convergé
+        uses: actions/upload-artifact@v4
+        with:
+          name: lawradar-client-context-${{ github.run_id }}
+          path: out/client-context.json
+          retention-days: 90
+
+  entrepreneur:
+    needs: [client_plan, consolidate_clients]
+    if: needs.consolidate_clients.result == 'success'
+    strategy:
+      fail-fast: false
+      matrix:
+        signal: ${{ fromJSON(needs.client_plan.outputs.matrix) }}
+    runs-on: ubuntu-latest
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Télécharger le contexte client convergé
+        uses: actions/download-artifact@v4
+        with:
+          name: lawradar-client-context-${{ github.run_id }}
+          path: out
+      - name: Installer le SDK Anthropic
+        if: env.ANTHROPIC_API_KEY != ''
+        run: python -m pip install --disable-pip-version-check "anthropic>=1.0,<2"
+      - name: Produire la note Entrepreneur, avec coût nul si la porte n'est pas PASS
+        run: >-
+          python scripts/clients/entrepreneur_agent.py
+          --input out/client-context.json
+          --signal-id "${{ matrix.signal.id }}"
+          --output "out/client-entrepreneur-delivery-${{ matrix.signal.key }}.json"
+          --run-claude
+      - name: Publier la livraison Entrepreneur indépendante
+        uses: actions/upload-artifact@v4
+        with:
+          name: lawradar-entrepreneur-${{ matrix.signal.key }}
+          path: out/client-entrepreneur-delivery-${{ matrix.signal.key }}.json
+          retention-days: 90

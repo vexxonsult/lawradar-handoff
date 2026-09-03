@@ -131,6 +131,21 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertNotIn("anthropics/claude-code-action", workflow)
         self.assertNotIn("--max-turns", workflow)
 
+    def test_workflow_uses_paris_time_and_automatic_client_fanout(self):
+        motor = Path(".github/workflows/moteur-lawradar.yml").read_text(encoding="utf-8")
+        collector = Path(".github/workflows/collect-dila-jorf.yml").read_text(encoding="utf-8")
+        self.assertIn('timezone: "Europe/Paris"', motor)
+        self.assertIn('cron: "9,29,49 5-16 * * *"', motor)
+        self.assertIn("quiet_idle", motor)
+        self.assertIn('cron: "17 17 * * *"', motor)
+        self.assertIn('workflows: ["Collecte primaire DILA JORF"]', motor)
+        self.assertIn("uses: ./.github/workflows/agent-presse-lawradar.yml", motor)
+        self.assertIn("uses: ./.github/workflows/agent-marche-boamp-lawradar.yml", motor)
+        self.assertIn("scripts/clients/entrepreneur_agent.py", motor)
+        self.assertIn('cron: "17,47 5-7 * * *"', collector)
+        self.assertIn('cron: "17 8 * * *"', collector)
+        self.assertIn('timezone: "Europe/Paris"', collector)
+
     def test_refuses_more_than_ten_candidates(self):
         items = [candidate(f"jorf:{index}", f"Texte {index}") for index in range(MAX_CANDIDATES + 1)]
         with self.assertRaisesRegex(ValueError, "limite stricte"):

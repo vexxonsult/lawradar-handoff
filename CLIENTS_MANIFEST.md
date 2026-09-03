@@ -3,8 +3,8 @@
 Le noyau (« Mine d'Or ») produit un unique export neutre :
 `out/universal-signal.json`, conforme à `lawradar-universal-signal-v2`.
 Il contient les preuves compactes, décisions Radar, faits d'opportunité et
-enrichissements sourcés Presse, Demande et Marché. Il ne contient aucune
-conclusion commerciale d'un client.
+emplacements d'enrichissement. Il ne contient aucune conclusion commerciale
+d'un client.
 
 ## Règle Hub & Spoke
 
@@ -18,6 +18,13 @@ Chaque client :
 4. possède son propre prompt, ses propres limites et ses propres tests ;
 5. ne déclenche aucune publication, prise de contact, dépense ou action
    irréversible sans une autorisation distincte.
+
+Dans l'orchestration automatique, Presse et la branche BOAMP
+(Demande/Marché) écrivent des artefacts isolés. Le script
+`scripts/consolidate_client_artifacts.py` les assemble dans
+`out/client-context.json`, copie de travail extérieure au noyau. Cette copie
+porte les filtres déterministes nécessaires au client Entrepreneur ; le fichier
+`evidence/universal-signal-latest.json` reste immuable pendant le fan-out.
 
 ## Client initial
 

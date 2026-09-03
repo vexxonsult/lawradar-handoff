@@ -1,4 +1,4 @@
-name: Agent Presse LawRadar — pilote manuel
+name: Agent Presse LawRadar
 
 on:
   workflow_dispatch:
@@ -7,13 +7,31 @@ on:
         description: "Identifiant exact d'un signal RETAINED à enrichir"
         required: true
         type: string
+  workflow_call:
+    inputs:
+      signal_id:
+        description: "Identifiant exact d'un signal RETAINED à enrichir"
+        required: true
+        type: string
+      artifact_key:
+        description: "Clé sûre utilisée pour isoler l'artefact du signal"
+        required: true
+        type: string
+      persist_core:
+        description: "Autorise uniquement le pilote manuel à actualiser le snapshot historique"
+        required: false
+        default: false
+        type: boolean
+    secrets:
+      CLAUDE_CODE_OAUTH_TOKEN:
+        required: false
 
 permissions:
   contents: write
   id-token: write
 
 concurrency:
-  group: agent-presse-lawradar
+  group: agent-presse-lawradar-${{ inputs.artifact_key || github.run_id }}
   cancel-in-progress: false
 
 jobs:
@@ -110,15 +128,17 @@ jobs:
         run: |
           python scripts/validate_press_enrichment.py --candidates out/press-candidates.json --enrichment out/press-enrichment.json
           python scripts/merge_agent_enrichment.py --dossier evidence/universal-signal-latest.json --enrichment out/press-enrichment.json --output out/universal-signal-enriched.json
-          cp out/universal-signal-enriched.json evidence/universal-signal-latest.json
+      - name: Actualiser le snapshot historique pour un lancement manuel explicite
+        if: steps.access.outputs.should_collect == 'true' && (github.event_name == 'workflow_dispatch' || inputs.persist_core)
+        run: cp out/universal-signal-enriched.json evidence/universal-signal-latest.json
       - name: Conserver les artefacts du pilote
         uses: actions/upload-artifact@v4
         with:
-          name: lawradar-press-${{ github.run_id }}
+          name: lawradar-press-${{ inputs.artifact_key || github.run_id }}
           path: out/
           retention-days: 90
       - name: Versionner l'enrichissement validé
-        if: steps.access.outputs.should_collect == 'true'
+        if: steps.access.outputs.should_collect == 'true' && (github.event_name == 'workflow_dispatch' || inputs.persist_core)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
