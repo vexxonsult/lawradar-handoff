@@ -342,6 +342,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.plan.outputs.matrix }}
+      mode: ${{ steps.plan.outputs.mode }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -353,6 +354,8 @@ jobs:
         run: git pull --ff-only origin main
       - id: plan
         name: Sélectionner uniquement les signaux autorisés par les filtres
+        env:
+          TRIGGER_SCHEDULE: ${{ github.event.schedule }}
         run: |
           mkdir -p out
           python scripts/build_agent_pilot_readiness.py \
@@ -364,11 +367,28 @@ jobs:
           import hashlib
           import json
           import os
+          from datetime import datetime
           from pathlib import Path
+          from zoneinfo import ZoneInfo
 
           readiness = json.loads(Path("out/agent-pilot-readiness.json").read_text(encoding="utf-8"))
+          core = json.loads(Path("evidence/universal-signal-latest.json").read_text(encoding="utf-8"))
+          evening_schedules = {"17 17 * * *", "17 18 * * *", "17 19 * * *"}
+          mode = "consolidated" if os.environ.get("TRIGGER_SCHEDULE") in evening_schedules else "flash"
+          already_consolidated = False
+          previous_path = Path("evidence/client-orchestration-latest.json")
+          if mode == "consolidated" and previous_path.exists():
+              try:
+                  previous = json.loads(previous_path.read_text(encoding="utf-8"))
+                  assembled = datetime.fromisoformat(previous.get("assembled_at_utc", ""))
+                  same_day = assembled.astimezone(ZoneInfo("Europe/Paris")).date() == datetime.now(ZoneInfo("Europe/Paris")).date()
+                  core_run_id = core.get("run", {}).get("id")
+                  same_core = bool(core_run_id) and previous.get("core_run_id") == core_run_id
+                  already_consolidated = previous.get("mode") == "consolidated" and same_day and same_core
+              except (OSError, ValueError, TypeError):
+                  already_consolidated = False
           matrix = []
-          for item in readiness.get("signals", []):
+          for item in [] if already_consolidated else readiness.get("signals", []):
               if item.get("ready_for_pilots") is not True:
                   continue
               signal_id = item["signal_id"]
@@ -377,7 +397,8 @@ jobs:
           compact = json.dumps(matrix, ensure_ascii=False, separators=(",", ":"))
           with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as output:
               output.write(f"matrix={compact}\n")
-          print(f"clients_ready={len(matrix)}")
+              output.write(f"mode={mode}\n")
+          print(f"clients_ready={len(matrix)}; mode={mode}; already_consolidated={already_consolidated}")
           PY
       - name: Conserver le noyau immuable pour la convergence des branches
         uses: actions/upload-artifact@v4
@@ -446,6 +467,33 @@ jobs:
           --readiness out/client-core/out/agent-pilot-readiness.json
           --artifacts out/client-artifacts
           --output out/client-context.json
+          --mode "${{ needs.client_plan.outputs.mode }}"
+      - name: Versionner un marqueur compact séparé du noyau
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          context = json.loads(Path("out/client-context.json").read_text(encoding="utf-8"))
+          marker = {
+              "schema": "lawradar-client-orchestration-v1",
+              "core_run_id": context.get("run", {}).get("id"),
+              "mode": context["client_context"]["mode"],
+              "assembled_at_utc": context["client_context"]["assembled_at_utc"],
+              "status": "SUPPORT_CLIENTS_CONSOLIDATED",
+          }
+          Path("evidence/client-orchestration-latest.json").write_text(
+              json.dumps(marker, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+          )
+          PY
+          git config user.name "lawradar-clients[bot]"
+          git config user.email "lawradar-clients[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git add evidence/client-orchestration-latest.json
+          git diff --cached --quiet || git commit -m "Contexte clients LawRadar $(date -u +%F)"
+          git pull --rebase origin main
+          git push
       - name: Publier le contexte convergé
         uses: actions/upload-artifact@v4
         with:

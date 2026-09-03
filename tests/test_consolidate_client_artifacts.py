@@ -1,5 +1,6 @@
 import tempfile
 import unittest
+from datetime import UTC, datetime
 from pathlib import Path
 
 from scripts.consolidate_client_artifacts import consolidate, discover
@@ -48,11 +49,19 @@ def readiness() -> dict:
 
 class ConsolidateClientArtifactsTests(unittest.TestCase):
     def test_attaches_filters_and_three_independent_enrichments(self):
-        result = consolidate(core(), [enrichment(agent) for agent in ("press", "demand", "market")], readiness())
+        result = consolidate(
+            core(),
+            [enrichment(agent) for agent in ("press", "demand", "market")],
+            readiness(),
+            mode="consolidated",
+            now=datetime(2026, 9, 3, 17, 17, tzinfo=UTC),
+        )
         signal = result["signals"][0]
         self.assertEqual(signal["deterministic_filters"]["final_constraint"], "PASS")
         self.assertEqual(signal["enrichments"]["demand"]["status"], "COMPLETED")
         self.assertTrue(result["client_context"]["core_immutable"])
+        self.assertEqual(result["client_context"]["mode"], "consolidated")
+        self.assertEqual(result["client_context"]["assembled_at_utc"], "2026-09-03T17:17:00+00:00")
 
     def test_rejects_an_incomplete_parallel_fanout(self):
         with self.assertRaisesRegex(ValueError, "market"):

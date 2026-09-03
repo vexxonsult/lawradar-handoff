@@ -25,6 +25,9 @@ Dans l'orchestration automatique, Presse et la branche BOAMP
 `out/client-context.json`, copie de travail extérieure au noyau. Cette copie
 porte les filtres déterministes nécessaires au client Entrepreneur ; le fichier
 `evidence/universal-signal-latest.json` reste immuable pendant le fan-out.
+Seul un marqueur technique sans conclusion métier,
+`evidence/client-orchestration-latest.json`, est versionné pour rendre les
+reprises de 18:17 et 19:17 idempotentes.
 
 ## Client initial
 

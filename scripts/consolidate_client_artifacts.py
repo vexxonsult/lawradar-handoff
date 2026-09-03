@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import copy
 import json
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -45,6 +46,9 @@ def consolidate(
     core: dict[str, Any],
     enrichments: list[dict[str, Any]],
     readiness: dict[str, Any],
+    *,
+    mode: str = "flash",
+    now: datetime | None = None,
 ) -> dict[str, Any]:
     if core.get("schema") != "lawradar-universal-signal-v2":
         raise ValueError("Le contexte client attend un signal universel V2.")
@@ -85,6 +89,8 @@ def consolidate(
     result["client_context"] = {
         "schema": "lawradar-client-context-v1",
         "core_immutable": True,
+        "mode": mode,
+        "assembled_at_utc": (now or datetime.now(UTC)).isoformat(),
         "assembled_agents": sorted({item["agent"] for item in enrichments}),
     }
     return result
@@ -96,8 +102,11 @@ def main() -> int:
     parser.add_argument("--readiness", type=Path, required=True)
     parser.add_argument("--artifacts", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--mode", choices=("flash", "consolidated"), default="flash")
     args = parser.parse_args()
-    result = consolidate(_read(args.core), discover(args.artifacts), _read(args.readiness))
+    result = consolidate(
+        _read(args.core), discover(args.artifacts), _read(args.readiness), mode=args.mode
+    )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return 0

@@ -142,6 +142,7 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertIn("uses: ./.github/workflows/agent-presse-lawradar.yml", motor)
         self.assertIn("uses: ./.github/workflows/agent-marche-boamp-lawradar.yml", motor)
         self.assertIn("scripts/clients/entrepreneur_agent.py", motor)
+        self.assertIn("evidence/client-orchestration-latest.json", motor)
         self.assertIn('cron: "17,47 5-7 * * *"', collector)
         self.assertIn('cron: "17 8 * * *"', collector)
         self.assertIn('timezone: "Europe/Paris"', collector)

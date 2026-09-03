@@ -67,6 +67,9 @@ sorties Demande et Marché à partir d'une collecte commune. Les artefacts des
 branches convergent dans `out/client-context.json` ; le noyau versionné reste
 inchangé. Le client Entrepreneur ne reçoit ce contexte qu'après convergence et
 n'appelle Claude que si les filtres déterministes sont à `PASS`.
+Un marqueur compact `evidence/client-orchestration-latest.json` empêche les
+créneaux 18:17 et 19:17 de répéter une consolidation déjà réussie ; ils restent
+disponibles comme reprises si le créneau précédent a échoué.
 
 ## Recyclage déterministe des opportunités bloquées
 
