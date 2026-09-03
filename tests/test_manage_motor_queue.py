@@ -1,7 +1,10 @@
+import json
+import tempfile
 import unittest
 from datetime import UTC, datetime
+from pathlib import Path
 
-from scripts.manage_motor_queue import advance, empty_queue, stage_prepared
+from scripts.manage_motor_queue import advance, effective_batch_size, empty_queue, stage_prepared
 
 
 def candidate(number):
@@ -9,6 +12,18 @@ def candidate(number):
 
 
 class ManageMotorQueueTests(unittest.TestCase):
+    def test_active_batch_keeps_its_original_size_during_cap_migration(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state_path = Path(directory) / "batch.json"
+            state_path.write_text(json.dumps({
+                "processing_status": "in_progress", "request_count": 10,
+            }))
+            self.assertEqual(effective_batch_size(250, state_path), 10)
+            state_path.write_text(json.dumps({
+                "processing_status": "ended", "request_count": 10,
+            }))
+            self.assertEqual(effective_batch_size(250, state_path), 250)
+
     def test_stages_only_a_bounded_batch_without_losing_the_remainder(self):
         prepared = {"schema": "lawradar-motor-input-v1", "candidates": [candidate(number) for number in range(178)]}
         queue, batch = stage_prepared(prepared, empty_queue(), 10)

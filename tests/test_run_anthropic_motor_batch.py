@@ -128,6 +128,7 @@ class AnthropicMotorBatchTests(unittest.TestCase):
     def test_workflow_keeps_the_bounded_candidate_gate_and_removes_agent_turns(self):
         workflow = Path(".github/workflows/moteur-lawradar.yml").read_text(encoding="utf-8")
         self.assertEqual(workflow.count(f"--batch-size {MAX_CANDIDATES}"), 2)
+        self.assertEqual(workflow.count("--active-batch-state evidence/motor-batch-latest.json"), 2)
         self.assertIn("scripts/run_anthropic_motor_batch.py", workflow)
         self.assertNotIn("anthropics/claude-code-action", workflow)
         self.assertNotIn("--max-turns", workflow)

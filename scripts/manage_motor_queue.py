@@ -18,6 +18,7 @@ except ModuleNotFoundError:  # pragma: no cover - direct workflow invocation.
 
 SCHEMA = "lawradar-motor-queue-v1"
 HISTORY_LIMIT = 5000
+DEFAULT_BATCH_SIZE = 250
 
 
 def fingerprint(candidate: dict[str, Any]) -> str:
@@ -129,6 +130,19 @@ def write(path: Path, value: dict[str, Any]) -> None:
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def effective_batch_size(configured_size: int, active_state_path: Path | None) -> int:
+    """Conserve la taille d'un batch actif pendant une migration de plafond."""
+    if active_state_path is None or not active_state_path.exists():
+        return configured_size
+    state = json.loads(active_state_path.read_text(encoding="utf-8"))
+    if state.get("processing_status") == "ended":
+        return configured_size
+    request_count = state.get("request_count")
+    if not isinstance(request_count, int) or request_count < 1:
+        raise ValueError("État de batch actif sans request_count valide.")
+    return request_count
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
@@ -137,14 +151,16 @@ def main() -> int:
     stage.add_argument("--queue", type=Path, required=True)
     stage.add_argument("--queue-output", type=Path, required=True)
     stage.add_argument("--batch-output", type=Path, required=True)
-    stage.add_argument("--batch-size", type=int, default=10)
+    stage.add_argument("--batch-size", type=int, default=DEFAULT_BATCH_SIZE)
+    stage.add_argument("--active-batch-state", type=Path)
     complete = commands.add_parser("advance")
     complete.add_argument("--queue", type=Path, required=True)
     complete.add_argument("--motor-input", type=Path, required=True)
     complete.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     if args.command == "stage":
-        queue, motor_input = stage_prepared(prepare(args.evidence), load(args.queue), args.batch_size)
+        batch_size = effective_batch_size(args.batch_size, args.active_batch_state)
+        queue, motor_input = stage_prepared(prepare(args.evidence), load(args.queue), batch_size)
         write(args.queue_output, queue)
         write(args.batch_output, motor_input)
     else:
