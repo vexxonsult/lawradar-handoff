@@ -4,16 +4,17 @@
   "model": "claude-sonnet-5",
   "request_version": "2026-09-03-anthropic-schema-subset-v2",
   "batch_id": "msgbatch_01BB5NyKx3ym1LXLtNoj4aBT",
-  "processing_status": "in_progress",
+  "processing_status": "ended",
   "request_count": 10,
   "request_counts": {
-    "processing": 10,
-    "succeeded": 0,
+    "processing": 0,
+    "succeeded": 10,
     "errored": 0,
     "canceled": 0,
     "expired": 0
   },
   "ready": false,
   "created_at_utc": "2026-09-03 01:01:36.585437+00:00",
-  "updated_at_utc": "2026-09-03T01:04:40.715206+00:00"
+  "updated_at_utc": "2026-09-03T01:09:14.797371+00:00",
+  "error": "ValueError: Batch incomplet ; la file n'est pas avancée : jorf:JORFTEXT000054791427:signal_id_mismatch, jorf:JORFTEXT000054791173:signal_id_mismatch, jorf:JORFTEXT000054791193:signal_id_mismatch, jorf:JORFTEXT000054791183:signal_id_mismatch, jorf:JORFTEXT000054791173:missing, jorf:JORFTEXT000054791183:missing, jorf:JORFTEXT000054791193:missing, jorf:JORFTEXT000054791427:missing."
 }
