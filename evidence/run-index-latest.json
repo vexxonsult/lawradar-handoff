@@ -1,24 +1,24 @@
 {
   "schema": "lawradar-run-index-v1",
-  "generated_at_utc": "2026-09-03T00:59:35.709753+00:00",
+  "generated_at_utc": "2026-09-03T01:04:40.892590+00:00",
   "purpose": "Registre technique des derniers runs, sans interprétation des preuves.",
   "runs": [
     {
       "kind": "motor",
-      "status": "success",
-      "reason": null,
-      "run_id": "33701779407",
-      "run_url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33701779407",
+      "status": "pending",
+      "reason": "Message Batch Anthropic en cours ; reprise sans nouvelle soumission au prochain run.",
+      "run_id": "33701930610",
+      "run_url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33701930610",
       "workflow": "Moteur LawRadar — livraison structurée",
-      "commit": "ef166b41679618125963d4dd48f75b8869a2e3f2",
-      "created_at_utc": "2026-09-03T00:59:35.607885+00:00",
-      "duration_seconds": 7,
+      "commit": "aff48fd8f648fd0f01d5afb1a25922d30d88bcb2",
+      "created_at_utc": "2026-09-03T01:04:40.852394+00:00",
+      "duration_seconds": 191,
       "inputs": {
-        "count": 2,
+        "count": 1,
         "missing": 0
       },
       "outputs": {
-        "count": 4,
+        "count": 1,
         "missing": 0
       },
       "cost": {
