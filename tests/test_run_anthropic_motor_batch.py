@@ -158,6 +158,7 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertEqual(len(requests), 2)
         self.assertEqual(len(set(mapping)), 2)
         self.assertIn("jorf:A", requests[0]["params"]["messages"][0]["content"])
+        self.assertNotIn("temperature", requests[0]["params"])
         self.assertNotIn("jorf:B", requests[0]["params"]["messages"][0]["content"])
         self.assertEqual(requests[0]["params"]["output_config"]["format"]["type"], "json_schema")
 

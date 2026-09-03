@@ -209,7 +209,6 @@ def build_requests(motor_input: dict[str, Any], model: str) -> tuple[list[dict[s
             "params": {
                 "model": model,
                 "max_tokens": 1800,
-                "temperature": 0,
                 "system": SYSTEM_PROMPT,
                 "messages": [{
                     "role": "user",
@@ -237,6 +236,15 @@ def _message_text(message: Any) -> str:
         if _field(block, "type") == "text" and isinstance(_field(block, "text"), str):
             return _field(block, "text")
     raise ValueError("Réponse batch sans bloc texte JSON.")
+
+
+def _batch_error_detail(result: Any) -> str:
+    """Rend l'erreur fournisseur lisible sans la confondre avec une livraison."""
+    error = _field(result, "error", {})
+    error_type = str(_field(error, "type", "unknown_error"))
+    message = str(_field(error, "message", "sans détail fournisseur"))
+    message = " ".join(message.split())[:240]
+    return f"{error_type}: {message}"
 
 
 def _single_delivery(candidate_result: dict[str, Any], report_date: str) -> dict[str, Any]:
@@ -267,7 +275,9 @@ def assemble_delivery(
             failures.append(f"résultat inattendu {custom_id}")
             continue
         if result_type != "succeeded":
-            failures.append(f"{expected_source}:{result_type or 'unknown'}")
+            failures.append(
+                f"{expected_source}:{result_type or 'unknown'} ({_batch_error_detail(result)})"
+            )
             continue
         message = _field(result, "message", {})
         value = json.loads(_message_text(message))
