@@ -125,9 +125,9 @@ def response(custom_id, source_id):
 
 
 class AnthropicMotorBatchTests(unittest.TestCase):
-    def test_workflow_keeps_the_ten_candidate_gate_and_removes_agent_turns(self):
+    def test_workflow_keeps_the_bounded_candidate_gate_and_removes_agent_turns(self):
         workflow = Path(".github/workflows/moteur-lawradar.yml").read_text(encoding="utf-8")
-        self.assertEqual(workflow.count("--batch-size 10"), 2)
+        self.assertEqual(workflow.count(f"--batch-size {MAX_CANDIDATES}"), 2)
         self.assertIn("scripts/run_anthropic_motor_batch.py", workflow)
         self.assertNotIn("anthropics/claude-code-action", workflow)
         self.assertNotIn("--max-turns", workflow)
@@ -148,7 +148,7 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertIn('cron: "17 8 * * *"', collector)
         self.assertIn('timezone: "Europe/Paris"', collector)
 
-    def test_refuses_more_than_ten_candidates(self):
+    def test_refuses_more_than_the_operational_cap(self):
         items = [candidate(f"jorf:{index}", f"Texte {index}") for index in range(MAX_CANDIDATES + 1)]
         with self.assertRaisesRegex(ValueError, "limite stricte"):
             validate_motor_input(motor_input(*items))

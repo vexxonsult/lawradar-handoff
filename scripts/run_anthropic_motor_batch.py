@@ -27,7 +27,10 @@ except ModuleNotFoundError:  # Exécution directe depuis scripts/.
 STATE_SCHEMA = "lawradar-anthropic-motor-batch-v1"
 DELIVERY_SCHEMA = "lawradar-motor-delivery-v1"
 DEFAULT_MODEL = "claude-sonnet-5"
-MAX_CANDIDATES = 10
+# Plafond de sûreté opérationnel, volontairement très inférieur à la limite
+# fournisseur (100 000 requêtes / 256 Mo). Il permet néanmoins d'absorber en
+# un seul lot les journées denses déjà observées par LawRadar.
+MAX_CANDIDATES = 250
 # Toute modification de la requête fournisseur doit produire un nouveau batch
 # une fois le batch précédent achevé, sans jamais doubler un batch en cours.
 BATCH_REQUEST_VERSION = "2026-09-03-anthropic-schema-subset-v2"

@@ -45,7 +45,7 @@ jobs:
           TRIGGER_SCHEDULE: ${{ github.event.schedule }}
         run: |
           mkdir -p out
-          python scripts/manage_motor_queue.py stage --queue evidence/motor-queue-latest.json --queue-output out/motor-queue-proposed.json --batch-output out/motor-input-gate.json --batch-size 10
+          python scripts/manage_motor_queue.py stage --queue evidence/motor-queue-latest.json --queue-output out/motor-queue-proposed.json --batch-output out/motor-input-gate.json --batch-size 250
           python - <<'PY'
           import json
           import os
@@ -177,7 +177,7 @@ jobs:
       - name: Préparer la livraison du run
         run: |
           mkdir -p out
-          python scripts/manage_motor_queue.py stage --queue evidence/motor-queue-latest.json --queue-output out/motor-queue-proposed.json --batch-output out/motor-input.json --batch-size 10
+          python scripts/manage_motor_queue.py stage --queue evidence/motor-queue-latest.json --queue-output out/motor-queue-proposed.json --batch-output out/motor-input.json --batch-size 250
       - id: batch
         name: Soumettre ou reprendre le Message Batch Anthropic
         if: steps.batch_auth.outputs.configured == 'true'
