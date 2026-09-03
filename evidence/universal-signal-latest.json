@@ -1,16 +1,15 @@
 {
-  "schema": "lawradar-universal-signal-v1",
+  "schema": "lawradar-universal-signal-v2",
   "run": {
-    "id": "33676086245",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33676086245",
-    "commit": "74f4f012d1bfb09baa0273560a0399c8e528f932",
-    "report_date": "2026-09-02"
+    "id": "33701779407",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33701779407",
+    "commit": "ef166b41679618125963d4dd48f75b8869a2e3f2",
+    "report_date": "2026-09-03"
   },
   "context": {
-    "coverage": "Delta traité (delta_changed_sources) : jorf-summaries-latest.json, eurlex-oj-latest.json. Fichiers sources effectivement traités (handled_source_files) : jorf-summaries-latest.json, consultdd-latest.json. eurlex-oj-latest.json est signalé en delta mais absent de handled_source_files : non traité dans cette livraison, faute de candidats correspondants dans out/motor-input.json.",
+    "coverage": "10/10 candidats traités indépendamment par Message Batch",
     "delta_changed_sources": [
-      "jorf-summaries-latest.json",
-      "eurlex-oj-latest.json"
+      "jorf-summaries-latest.json"
     ],
     "handled_source_files": [
       "jorf-summaries-latest.json",
@@ -20,13 +19,13 @@
   },
   "signals": [
     {
-      "id": "signal:5b68c214b683ba8c",
+      "id": "signal:80cdf6f8e8de9b57",
       "source": {
-        "source_id": "jorf:JORFTEXT000054788204",
+        "source_id": "jorf:JORFTEXT000054790743",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
+          "title": "Arrêté du 26 août 2026 modifiant l'arrêté du 21 décembre 2022 portant classement des emplois de sous-préfet relevant des groupes I, II, III, IV et V",
           "url": null,
           "dates": [],
           "detail_status": null,
@@ -39,8 +38,46 @@
         }
       },
       "radar": {
-        "status": "RETAINED",
-        "reason": "Arrêté du 31 août 2026 (NOR SFHS2621455A, JORFTEXT000054788204) modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux : inscription de RIVAROXABAN TEVA SANTE (générique de XARELTO), assortie de conditions de prescription liées au risque de mésusage/hémorragique et au suivi des enfants et adolescents, sur avis de la commission de la transparence des 24 janvier 2018 et 2 juin 2021. Aucun montant, payeur ou bénéficiaire chiffré n'apparaît dans le texte officiel ; flux financier non démontré, donc non repris dans money_flows."
+        "status": "DISCARDED",
+        "reason": "Le texte est un arrêté administratif de classement des emplois de sous-préfet, sans rapport avec un secteur régulé pertinent (médicaments, services financiers, services juridiques) ni avec une opportunité économique exploitable par un opérateur. Aucun flux financier, aucune exigence d'autorisation commerciale, aucun impact sur un marché n'est identifiable dans l'extrait fourni."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:80cdf6f8e8de9b57",
+        "title": "Arrêté du 26 août 2026 modifiant l'arrêté du 21 décembre 2022 portant classement des emplois de sous-préfet relevant des groupes I, II, III, IV et V",
+        "keywords": [
+          "sous-préfet",
+          "classement des emplois",
+          "fonction publique",
+          "ministère de l'intérieur"
+        ],
+        "affected_scope": [
+          "administration publique"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-03",
+          "affected_scope": [
+            "administration publique"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
       },
       "enrichments": {
         "press": {
@@ -52,23 +89,19 @@
           "result": null
         },
         "market": {
-          "status": "PENDING",
-          "result": null
-        },
-        "entrepreneur": {
           "status": "PENDING",
           "result": null
         }
       }
     },
     {
-      "id": "signal:9350b0597e50c8e1",
+      "id": "signal:3414ce33f14378b4",
       "source": {
-        "source_id": "jorf:JORFTEXT000054788221",
+        "source_id": "jorf:JORFTEXT000054790749",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+          "title": "Arrêté du 1er septembre 2026 portant interdiction de déplacement des supporters du club de football du Montpellier Hérault Sport Club lors de la rencontre du samedi 5 septembre 2026 à 20 heures avec l'Association sportive de Saint-Étienne",
           "url": null,
           "dates": [],
           "detail_status": null,
@@ -81,8 +114,49 @@
         }
       },
       "radar": {
-        "status": "RETAINED",
-        "reason": "Arrêté du 31 août 2026 (NOR SFHS2621456A, JORFTEXT000054788221) modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics : inscription de RIVAROXABAN TEVA SANTE (générique de XARELTO), mêmes conditions de prescription que l'arrêté JORFTEXT000054788204, sur les mêmes avis de la commission de la transparence. Aucun montant, payeur ou bénéficiaire chiffré dans le texte officiel ; flux financier non démontré."
+        "status": "DISCARDED",
+        "reason": "L'arrêté est une mesure de police administrative (interdiction de déplacement de supporters, art. L.332-16-1 du code du sport) sans lien avec une activité économique régulée, un accès de marché, une autorisation professionnelle ou un flux financier. Aucun signal d'opportunité pour un opérateur (santé, finance, droit ou autre secteur régulé) n'est identifiable dans le texte fourni."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:3414ce33f14378b4",
+        "title": "Arrêté du 1er septembre 2026 portant interdiction de déplacement des supporters du Montpellier Hérault Sport Club lors de la rencontre du 5 septembre 2026 avec l'AS Saint-Étienne",
+        "keywords": [
+          "police administrative",
+          "supporters",
+          "ordre public",
+          "interdiction de déplacement",
+          "code du sport"
+        ],
+        "affected_scope": [
+          "Loire",
+          "Saint-Étienne"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-03",
+          "affected_scope": [
+            "Loire",
+            "Saint-Étienne"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
       },
       "enrichments": {
         "press": {
@@ -94,23 +168,19 @@
           "result": null
         },
         "market": {
-          "status": "PENDING",
-          "result": null
-        },
-        "entrepreneur": {
           "status": "PENDING",
           "result": null
         }
       }
     },
     {
-      "id": "signal:0dcfdf86a5447b26",
+      "id": "signal:e0efbff79746314a",
       "source": {
-        "source_id": "jorf:JORFTEXT000054788237",
+        "source_id": "jorf:JORFTEXT000054790821",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
+          "title": "Décision du 27 août 2026 portant autorisation de signer la convention constitutive du groupement hospitalier de territoire « Hôpitaux de Provence »",
           "url": null,
           "dates": [],
           "detail_status": null,
@@ -123,8 +193,45 @@
         }
       },
       "radar": {
-        "status": "RETAINED",
-        "reason": "Arrêté du 31 août 2026 (NOR SFHS2621573A, JORFTEXT000054788237) modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux, relatif à la spécialité WAINZUA, sur avis de la commission de la transparence du 16 juillet 2025. Le texte officiel fourni ne mentionne aucun montant ni acteur financier précis au-delà du visa réglementaire ; flux financier non démontré."
+        "status": "DISCARDED",
+        "reason": "Le texte est une décision administrative ministérielle autorisant la signature d'une convention constitutive d'un groupement hospitalier de territoire militaire. Il ne comporte aucune disposition créant une obligation, une autorisation, un flux financier ou une opportunité d'accès pour un opérateur privé dans les secteurs surveillés (médicaments, services financiers, services juridiques). Aucun élément vérifiable ne permet d'établir un impact réglementaire ou économique exploitable."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:e0efbff79746314a",
+        "title": "Décision du 27 août 2026 portant autorisation de signer la convention constitutive du groupement hospitalier de territoire « Hôpitaux de Provence »",
+        "keywords": [
+          "groupement hospitalier de territoire",
+          "service de santé des armées",
+          "convention constitutive"
+        ],
+        "affected_scope": [
+          "FR"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-03",
+          "affected_scope": [
+            "FR"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
       },
       "enrichments": {
         "press": {
@@ -136,23 +243,19 @@
           "result": null
         },
         "market": {
-          "status": "PENDING",
-          "result": null
-        },
-        "entrepreneur": {
           "status": "PENDING",
           "result": null
         }
       }
     },
     {
-      "id": "signal:c5df3700a203a156",
+      "id": "signal:b339c486982e9381",
       "source": {
-        "source_id": "jorf:JORFTEXT000054788248",
+        "source_id": "jorf:JORFTEXT000054790853",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+          "title": "Arrêté du 30 juillet 2026 fixant les modalités d'organisation des élections et de remplacement des représentants du personnel au sein du conseil d'administration du Centre d'études et d'expertise sur les risques, l'environnement, la mobilité et l'aménagement",
           "url": null,
           "dates": [],
           "detail_status": null,
@@ -165,8 +268,46 @@
         }
       },
       "radar": {
-        "status": "RETAINED",
-        "reason": "Arrêté du 31 août 2026 (NOR SFHS2621574A, JORFTEXT000054788248) modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics, relatif à la spécialité WAINZUA, sur le même avis de la commission de la transparence du 16 juillet 2025 que JORFTEXT000054788237. Aucun montant ni flux financier chiffré dans le texte officiel."
+        "status": "DISCARDED",
+        "reason": "Cet arrêté organise uniquement les élections et le remplacement des représentants du personnel au conseil d'administration du CEREMA (établissement public). Il s'agit d'une mesure d'organisation interne de la fonction publique, sans création d'obligation, de marché, d'autorisation ou de flux financier exploitable par un opérateur économique. Aucune preuve de capital, de délai de mise sur le marché, d'autorisation requise ou de flux d'argent n'est présente dans le texte."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:b339c486982e9381",
+        "title": "Arrêté du 30 juillet 2026 fixant les modalités d'organisation des élections et de remplacement des représentants du personnel au sein du conseil d'administration du Centre d'études et d'expertise sur les risques, l'environnement, la mobilité et l'aménagement",
+        "keywords": [
+          "élections professionnelles",
+          "CEREMA",
+          "représentants du personnel",
+          "conseil d'administration"
+        ],
+        "affected_scope": [
+          "CEREMA"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": null,
+          "affected_scope": [
+            "CEREMA"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
       },
       "enrichments": {
         "press": {
@@ -178,23 +319,19 @@
           "result": null
         },
         "market": {
-          "status": "PENDING",
-          "result": null
-        },
-        "entrepreneur": {
           "status": "PENDING",
           "result": null
         }
       }
     },
     {
-      "id": "signal:1379ae5d8d1317d4",
+      "id": "signal:d9e93c61aef7c6d1",
       "source": {
-        "source_id": "jorf:JORFTEXT000054788261",
+        "source_id": "jorf:JORFTEXT000054790918",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
+          "title": "Arrêté du 25 août 2026 modifiant l'arrêté du 18 décembre 2014 fixant les conditions et limites dans lesquelles des dérogations à l'interdiction de capture de spécimens d'espèces animales protégées peuvent être accordées par les préfets pour certaines opérations pour lesquelles la capture est suivie d'un relâcher immédiat sur place",
           "url": null,
           "dates": [],
           "detail_status": null,
@@ -207,8 +344,50 @@
         }
       },
       "radar": {
-        "status": "RETAINED",
-        "reason": "Arrêté du 31 août 2026 (NOR SFHS2621579A, JORFTEXT000054788261) modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux : inscription de NINTEDANIB TEVA SANTE (générique d'OFEV) sous le régime du « médicament d'exception » (art. R. 163-2 CSS), prescription réservée aux spécialistes en pneumologie, médecine interne ou rhumatologie, en raison du caractère particulièrement coûteux du médicament selon le texte. Aucun montant chiffré ni payeur/bénéficiaire précis n'est fourni ; flux financier non démontré."
+        "status": "DISCARDED",
+        "reason": "Le texte modifie les conditions de dérogation à l'interdiction de capture d'espèces animales protégées (relâcher immédiat sur place). Il relève du droit de l'environnement et ne concerne ni les médicaments, ni les services financiers, ni les services juridiques, ni un autre secteur régulé pertinent pour un opérateur. Aucune preuve d'un flux financier explicite (payeur/bénéficiaire) ni d'une opportunité d'accès de marché n'est présente dans l'extrait fourni."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:d9e93c61aef7c6d1",
+        "title": "Arrêté du 25 août 2026 modifiant l'arrêté du 18 décembre 2014 relatif aux dérogations de capture d'espèces animales protégées avec relâcher immédiat",
+        "keywords": [
+          "espèces protégées",
+          "capture",
+          "relâcher immédiat",
+          "dérogation",
+          "préfets",
+          "code de l'environnement"
+        ],
+        "affected_scope": [
+          "Faune sauvage protégée",
+          "Préfectures"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": null,
+          "affected_scope": [
+            "Espèces animales protégées",
+            "Opérations de capture-relâcher"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
       },
       "enrichments": {
         "press": {
@@ -220,23 +399,19 @@
           "result": null
         },
         "market": {
-          "status": "PENDING",
-          "result": null
-        },
-        "entrepreneur": {
           "status": "PENDING",
           "result": null
         }
       }
     },
     {
-      "id": "signal:04c0bb8647ea5b3c",
+      "id": "signal:6f99686772ad8a89",
       "source": {
-        "source_id": "jorf:JORFTEXT000054788278",
+        "source_id": "jorf:JORFTEXT000054790934",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+          "title": "Arrêté du 27 août 2026 soumettant le plan national « Agir pour restaurer la nature » élaboré en application du Règlement européen pour la restauration de la nature à évaluation environnementale",
           "url": null,
           "dates": [],
           "detail_status": null,
@@ -249,8 +424,47 @@
         }
       },
       "radar": {
-        "status": "RETAINED",
-        "reason": "Arrêté du 31 août 2026 (NOR SFHS2621580A, JORFTEXT000054788278) modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics, relatif à NINTEDANIB TEVA SANTE (générique d'OFEV), sur les mêmes avis de la commission de la transparence que JORFTEXT000054788261. Aucun montant ni flux financier chiffré dans le texte officiel fourni."
+        "status": "DISCARDED",
+        "reason": "Le texte est un arrêté administratif soumettant un plan national de restauration de la nature à évaluation environnementale, en application du règlement UE 2024/1991 et du code de l'environnement. Il ne concerne aucun secteur régulé suivi par LawRadar (médicaments, services financiers, services juridiques), ne crée aucune autorisation, obligation économique ou flux financier explicite, et ne constitue pas une opportunité d'accès marché pour un opérateur. Aucun montant, délai ou acteur financier n'est mentionné dans le texte."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:6f99686772ad8a89",
+        "title": "Arrêté du 27 août 2026 soumettant le plan national « Agir pour restaurer la nature » à évaluation environnementale",
+        "keywords": [
+          "évaluation environnementale",
+          "restauration de la nature",
+          "règlement UE 2024/1991",
+          "code de l'environnement",
+          "plan national"
+        ],
+        "affected_scope": [
+          "France"
+        ],
+        "legal": {
+          "jurisdiction": "France",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": null,
+          "affected_scope": [
+            "France"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
       },
       "enrichments": {
         "press": {
@@ -264,8 +478,321 @@
         "market": {
           "status": "PENDING",
           "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:f696911d572a41d1",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054790994",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 17 août 2026 fixant la liste des données statistiques du registre numérique des saisies des rémunérations transmises au ministère de la justice en application de l'article 16 de l'ordonnance n° 2016-728 du 2 juin 2016 relative au statut de commissaire de justice",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Le texte est un arrêté purement administratif fixant la liste des données statistiques transmises par les commissaires de justice au ministère de la justice via le registre numérique des saisies des rémunérations. Aucun flux financier, aucune autorisation nouvelle, aucune ouverture de marché ou d'accès opérateur n'est démontrée dans l'extrait fourni. Il s'agit d'une obligation de reporting interne à une profession réglementée, sans opportunité économique identifiable ni preuve de flux monétaire."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:f696911d572a41d1",
+        "title": "Arrêté du 17 août 2026 fixant la liste des données statistiques du registre numérique des saisies des rémunérations transmises au ministère de la justice",
+        "keywords": [
+          "registre numérique des saisies des rémunérations",
+          "commissaire de justice",
+          "statistiques",
+          "ministère de la justice",
+          "ordonnance n° 2016-728"
+        ],
+        "affected_scope": [
+          "commissaires de justice"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": null,
+          "affected_scope": [
+            "commissaires de justice"
+          ]
         },
-        "entrepreneur": {
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:6a7b116feea7b617",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054791025",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 12 août 2026 portant homologation des règlements ANC n° 2026-01 du 9 janvier 2026, n° 2026-02 du 9 janvier 2026, n° 2026-03 du 6 mars 2026 et n° 2026-04 du 4 mai 2026 de l'Autorité des normes comptables",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Le texte homologue quatre règlements comptables de l'ANC. Il ne crée ni marché, ni prestation de service accessible à un opérateur, ni obligation financière chiffrée. Aucune preuve d'un flux monétaire, d'une autorisation requise ou d'un accès direct/périphérique à un service régulé n'est présente dans l'extrait fourni. Signal non exploitable comme opportunité économique au sens LawRadar."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:6a7b116feea7b617",
+        "title": "Arrêté du 12 août 2026 portant homologation des règlements ANC n° 2026-01, 2026-02, 2026-03 et 2026-04",
+        "keywords": [
+          "ANC",
+          "normes comptables",
+          "homologation",
+          "règlements comptables",
+          "établissements de crédit",
+          "entreprises d'investissement"
+        ],
+        "affected_scope": [
+          "entreprises industrielles et commerciales",
+          "établissements de crédit",
+          "entreprises d'investissement",
+          "organisations syndicales",
+          "organismes de gestion collective des droits d'auteur et droits voisins",
+          "coopératives agricoles et leurs unions",
+          "personnes morales de droit privé à but non lucratif"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-04",
+          "affected_scope": [
+            "entreprises industrielles et commerciales",
+            "établissements de crédit",
+            "entreprises d'investissement",
+            "organisations syndicales",
+            "organismes de gestion collective des droits d'auteur et droits voisins",
+            "coopératives agricoles et leurs unions",
+            "personnes morales de droit privé à but non lucratif"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:6ec3a084add52d77",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054791095",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Décret n° 2026-836 du 2 septembre 2026 relatif à certaines indemnités et primes versées aux agents du ministère chargé de l'agriculture",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Ce décret concerne exclusivement le régime indemnitaire interne des agents publics du ministère de l'agriculture (maintien de primes en congé de maladie), sans impact budgétaire déclaré et sans ouverture de marché, d'activité régulée ou d'accès à un service pour des opérateurs économiques. Aucune opportunité commerciale, aucune autorisation requise, aucun flux financier externe identifiable."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:6ec3a084add52d77",
+        "title": "Décret n° 2026-836 du 2 septembre 2026 relatif à certaines indemnités et primes versées aux agents du ministère chargé de l'agriculture",
+        "keywords": [
+          "indemnité",
+          "prime",
+          "fonction publique",
+          "agriculture",
+          "congé de maladie",
+          "personnels enseignants"
+        ],
+        "affected_scope": [
+          "agents du ministère chargé de l'agriculture"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-04",
+          "affected_scope": [
+            "agents du ministère chargé de l'agriculture"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:4be5caa005673036",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054791143",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 28 août 2026 fixant la liste des écoles de production prévue à l'article L. 443-6 du code de l'éducation",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Arrêté administratif fixant la liste des écoles de production au titre de l'article L. 443-6 du code de l'éducation. L'extrait officiel disponible ne contient que la formule introductive (visas et 'Arrêtent :'), sans disposition substantielle. Aucun lien avec les secteurs régulés suivis (médicaments, services financiers, services juridiques, autres secteurs régulés), aucune exigence, aucun flux financier explicite, aucun accès opérateur identifiable. Signal hors périmètre LawRadar."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:4be5caa005673036",
+        "title": "Arrêté du 28 août 2026 fixant la liste des écoles de production prévue à l'article L. 443-6 du code de l'éducation",
+        "keywords": [
+          "écoles de production",
+          "code de l'éducation",
+          "liste",
+          "enseignement"
+        ],
+        "affected_scope": [],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "PARTIAL",
+          "effective_date": "2026-09-03",
+          "affected_scope": []
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
           "status": "PENDING",
           "result": null
         }
@@ -274,7 +801,7 @@
   ],
   "money_flows": [],
   "quality": {
-    "opportunity_count": 6,
+    "opportunity_count": 10,
     "unresolved_count": 0,
     "money_flow_count": 0,
     "limitation": "Les enrichissements sont vides tant qu'aucun agent dédié n'a produit une sortie sourcée."
