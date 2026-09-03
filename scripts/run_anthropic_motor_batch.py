@@ -341,10 +341,15 @@ def assemble_delivery(
         if not isinstance(value, dict) or value.get("source_id") != expected_source:
             failures.append(f"{expected_source}:source_id_mismatch")
             continue
-        if value.get("facts", {}).get("signal_id") != expected_source:
-            failures.append(f"{expected_source}:signal_id_mismatch")
+        facts = value.get("facts")
+        if not isinstance(facts, dict):
+            failures.append(f"{expected_source}:facts_missing")
             continue
-        if not isinstance(value.get("facts", {}).get("operator_access"), dict):
+        # signal_id est une clé de jointure, pas une conclusion du modèle.
+        # Le custom_id du batch garantit déjà l'association à la source : on
+        # recopie donc systématiquement l'identifiant officiel vérifié.
+        facts["signal_id"] = expected_source
+        if not isinstance(facts.get("operator_access"), dict):
             failures.append(f"{expected_source}:operator_access_missing")
             continue
         validate_delivery(_single_delivery(value, report_date))

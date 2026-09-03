@@ -194,6 +194,18 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertEqual([item["source_id"] for item in delivery["opportunities"]], ["jorf:A", "jorf:B"])
         self.assertEqual(usage, {"input_tokens": 200, "output_tokens": 100})
 
+    def test_normalizes_model_signal_id_from_verified_batch_mapping(self):
+        value = motor_input(candidate("jorf:A"))
+        requests, mapping = build_requests(value, "claude-sonnet-5")
+        item = response(requests[0]["custom_id"], "jorf:A")
+        payload = json.loads(item["result"]["message"]["content"][0]["text"])
+        payload["facts"]["signal_id"] = "signal:model-invented-id"
+        item["result"]["message"]["content"][0]["text"] = json.dumps(payload)
+        delivery, _ = assemble_delivery(value, [item], mapping)
+        self.assertEqual(
+            delivery["opportunities"][0]["facts"]["signal_id"], "jorf:A"
+        )
+
     def test_completed_batch_writes_delivery_and_state(self):
         value = motor_input(candidate("jorf:A"))
         requests, _ = build_requests(value, "claude-sonnet-5")
