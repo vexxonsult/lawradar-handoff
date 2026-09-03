@@ -30,7 +30,7 @@ DEFAULT_MODEL = "claude-sonnet-5"
 MAX_CANDIDATES = 10
 # Toute modification de la requête fournisseur doit produire un nouveau batch
 # une fois le batch précédent achevé, sans jamais doubler un batch en cours.
-BATCH_REQUEST_VERSION = "2026-09-03-anthropic-schema-subset-v1"
+BATCH_REQUEST_VERSION = "2026-09-03-anthropic-schema-subset-v2"
 _UNSUPPORTED_ANTHROPIC_SCHEMA_KEYWORDS = {
     "maxItems", "maxLength", "minLength", "minimum", "maximum",
     "exclusiveMinimum", "exclusiveMaximum", "multipleOf", "pattern", "uniqueItems",
@@ -236,7 +236,12 @@ def build_requests(motor_input: dict[str, Any], model: str) -> tuple[list[dict[s
             "custom_id": custom_id,
             "params": {
                 "model": model,
-                "max_tokens": 1800,
+                # Le schéma comporte des objets imbriqués obligatoires. 1 800
+                # tokens a tronqué une réponse valide avant sa dernière accolade
+                # lors du premier batch réel. Le plafond n'est pas une longueur
+                # cible : la sortie reste factuelle et la facturation porte sur
+                # les tokens effectivement produits.
+                "max_tokens": 4096,
                 "system": SYSTEM_PROMPT,
                 "messages": [{
                     "role": "user",
@@ -315,7 +320,21 @@ def assemble_delivery(
             )
             continue
         message = _field(result, "message", {})
-        value = json.loads(_message_text(message))
+        raw_text = _message_text(message)
+        try:
+            value = json.loads(raw_text)
+        except json.JSONDecodeError as error:
+            # Le texte fournisseur n'est volontairement pas conservé : il
+            # peut contenir du contenu officiel long. Ces métadonnées suffisent
+            # pour distinguer une troncature d'une réponse mal formée.
+            message_usage = _field(message, "usage", {})
+            stop_reason = str(_field(message, "stop_reason", "unknown"))
+            output_tokens = int(_field(message_usage, "output_tokens", 0) or 0)
+            failures.append(
+                f"{expected_source}:invalid_json"
+                f"(stop={stop_reason},output_tokens={output_tokens},chars={len(raw_text)},at={error.pos})"
+            )
+            continue
         if not isinstance(value, dict) or value.get("source_id") != expected_source:
             failures.append(f"{expected_source}:source_id_mismatch")
             continue

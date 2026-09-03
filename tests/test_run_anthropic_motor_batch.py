@@ -160,6 +160,7 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertEqual(len(set(mapping)), 2)
         self.assertIn("jorf:A", requests[0]["params"]["messages"][0]["content"])
         self.assertNotIn("temperature", requests[0]["params"])
+        self.assertEqual(requests[0]["params"]["max_tokens"], 4096)
         self.assertNotIn("jorf:B", requests[0]["params"]["messages"][0]["content"])
         self.assertEqual(requests[0]["params"]["output_config"]["format"]["type"], "json_schema")
 
@@ -234,6 +235,16 @@ class AnthropicMotorBatchTests(unittest.TestCase):
                 }}],
                 {"candidate": "jorf:A"},
             )
+
+    def test_truncated_json_never_advances_and_reports_safe_diagnostics(self):
+        value = motor_input(candidate("jorf:A"))
+        requests, mapping = build_requests(value, "claude-sonnet-5")
+        truncated = response(requests[0]["custom_id"], "jorf:A")
+        truncated["result"]["message"]["content"][0]["text"] = '{"source_id":"jorf:A"'
+        truncated["result"]["message"]["stop_reason"] = "max_tokens"
+        truncated["result"]["message"]["usage"]["output_tokens"] = 1800
+        with self.assertRaisesRegex(ValueError, "stop=max_tokens,output_tokens=1800"):
+            assemble_delivery(value, [truncated], mapping)
 
 
 if __name__ == "__main__":
