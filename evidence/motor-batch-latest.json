@@ -1,0 +1,19 @@
+{
+  "schema": "lawradar-anthropic-motor-batch-v1",
+  "input_sha256": "5045310f53380e3c500d3f57f8c2bb83190ea90524d3287229977e19277c065f",
+  "model": "claude-sonnet-5",
+  "batch_id": "msgbatch_01ECpQWaKVMLKC81HbtzCkrH",
+  "processing_status": "ended",
+  "request_count": 10,
+  "request_counts": {
+    "processing": 0,
+    "succeeded": 0,
+    "errored": 10,
+    "canceled": 0,
+    "expired": 0
+  },
+  "ready": false,
+  "created_at_utc": "2026-09-03 00:43:59.661025+00:00",
+  "updated_at_utc": "2026-09-03T00:45:11.685920+00:00",
+  "error": "ValueError: Batch incomplet ; la file n'est pas avancée : jorf:JORFTEXT000054790934:errored (invalid_request_error: output_config.format.schema: For 'array' type, property 'maxItems' is not supported), jorf:JORFTEXT000054791025:errored (invalid_request_error: output_config.format.schema: For 'array' type, property 'maxItems' is not supported), jorf:JORFTEXT000054790743:errored (invalid_request_error: output_config.format.schema: For 'array' type, property 'maxItems' is not supported), jorf:JORFTEXT000054791143:errored (invalid_request_error: output_config.format.schema: For 'array' type, property 'maxItems' is not supported), jorf:JORFTEXT000054790853:errored (invalid_request_error: output_config.format.schema: For 'array' type, property 'maxItems' is not supported), jorf:JORFTEXT000054790821:errored (invalid_request_error: output_config.format.schema: For 'array' type, property 'maxItems' is not supported), jorf:JORFTEXT000054790994:errored (invalid_request_error: output_config.format.schema: For 'array' type, property 'maxItems' is not supported), jorf:JORFTEXT000054791095:errored (invalid_request_error: output_config.format.schema: For 'array' type, property 'maxItems' is not supported), jorf:JORFTEXT000054790918:errored (invalid_request_error: output_config.format.schema: For 'array' type, property 'maxItems' is not supported), jorf:JORFTEXT000054790749:errored (invalid_request_error: output_config.format.schema: For 'array' type, property 'maxItems' is not supported), jorf:JORFTEXT000054790743:missing, jorf:JORFTEXT000054790749:missing, jorf:JORFTEXT000054790821:missing, jorf:JORFTEXT000054790853:missing, jorf:JORFTEXT000054790918:missing, jorf:JORFTEXT000054790934:missing, jorf:JORFTEXT000054790994:missing, jorf:JORFTEXT000054791025:missing, jorf:JORFTEXT000054791095:missing, jorf:JORFTEXT000054791143:missing."
+}
