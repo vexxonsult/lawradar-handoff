@@ -6,6 +6,7 @@ from pathlib import Path
 from scripts.run_anthropic_motor_batch import (
     MAX_CANDIDATES,
     assemble_delivery,
+    anthropic_output_schema,
     build_requests,
     run_batch,
     validate_motor_input,
@@ -162,6 +163,24 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertNotIn("jorf:B", requests[0]["params"]["messages"][0]["content"])
         self.assertEqual(requests[0]["params"]["output_config"]["format"]["type"], "json_schema")
 
+    def test_provider_schema_keeps_structure_but_removes_unsupported_constraints(self):
+        requests, _ = build_requests(motor_input(candidate("jorf:A")), "claude-sonnet-5")
+        provider_schema = requests[0]["params"]["output_config"]["format"]["schema"]
+        def schema_keys(value):
+            if isinstance(value, dict):
+                return set(value) | set().union(*(schema_keys(item) for item in value.values()))
+            if isinstance(value, list):
+                return set().union(*(schema_keys(item) for item in value)) if value else set()
+            return set()
+
+        keys = schema_keys(provider_schema)
+        self.assertNotIn("maxItems", keys)
+        self.assertNotIn("minLength", keys)
+        self.assertNotIn("minimum", keys)
+        self.assertIn("required", provider_schema)
+        self.assertFalse(provider_schema["additionalProperties"])
+        self.assertEqual(anthropic_output_schema({"type": "array", "minItems": 1}), {"type": "array", "minItems": 1})
+
     def test_assembles_results_in_input_order_and_totals_usage(self):
         value = motor_input(candidate("jorf:A"), candidate("jorf:B"))
         requests, mapping = build_requests(value, "claude-sonnet-5")
@@ -184,7 +203,9 @@ class AnthropicMotorBatchTests(unittest.TestCase):
             self.assertTrue(state["ready"])
             self.assertTrue(output_path.exists())
             self.assertEqual(len(client.messages.batches.created), 1)
-            self.assertEqual(json.loads(state_path.read_text())["batch_id"], "msgbatch_test")
+            saved_state = json.loads(state_path.read_text())
+            self.assertEqual(saved_state["batch_id"], "msgbatch_test")
+            self.assertIn("request_version", saved_state)
 
     def test_pending_batch_is_resumed_without_duplicate_submission(self):
         value = motor_input(candidate("jorf:A"))

@@ -9,6 +9,7 @@ sans soumettre ni facturer une seconde fois le lot.
 from __future__ import annotations
 
 import argparse
+import copy
 import hashlib
 import json
 import os
@@ -27,6 +28,13 @@ STATE_SCHEMA = "lawradar-anthropic-motor-batch-v1"
 DELIVERY_SCHEMA = "lawradar-motor-delivery-v1"
 DEFAULT_MODEL = "claude-sonnet-5"
 MAX_CANDIDATES = 10
+# Toute modification de la requête fournisseur doit produire un nouveau batch
+# une fois le batch précédent achevé, sans jamais doubler un batch en cours.
+BATCH_REQUEST_VERSION = "2026-09-03-anthropic-schema-subset-v1"
+_UNSUPPORTED_ANTHROPIC_SCHEMA_KEYWORDS = {
+    "maxItems", "maxLength", "minLength", "minimum", "maximum",
+    "exclusiveMinimum", "exclusiveMaximum", "multipleOf", "pattern", "uniqueItems",
+}
 
 SYSTEM_PROMPT = """Tu es le moteur factuel LawRadar. Analyse uniquement le
 candidat JSON fourni. Aucune recherche, aucun outil, aucune connaissance
@@ -197,6 +205,26 @@ def _custom_id(index: int, candidate: dict[str, Any]) -> str:
     return f"candidate-{index:02d}-{_canonical_hash(candidate)[:12]}"
 
 
+def anthropic_output_schema(schema: dict[str, Any]) -> dict[str, Any]:
+    """Retire seulement les contraintes non prises en charge par Anthropic.
+
+    La validation locale conserve le schéma complet après réponse : le fournisseur
+    contraint la structure, LawRadar contrôle les bornes et longueurs ensuite.
+    """
+    def sanitize(value: Any) -> Any:
+        if isinstance(value, dict):
+            return {
+                key: sanitize(item)
+                for key, item in value.items()
+                if key not in _UNSUPPORTED_ANTHROPIC_SCHEMA_KEYWORDS
+            }
+        if isinstance(value, list):
+            return [sanitize(item) for item in value]
+        return value
+
+    return sanitize(copy.deepcopy(schema))
+
+
 def build_requests(motor_input: dict[str, Any], model: str) -> tuple[list[dict[str, Any]], dict[str, str]]:
     candidates = validate_motor_input(motor_input)
     requests: list[dict[str, Any]] = []
@@ -214,7 +242,9 @@ def build_requests(motor_input: dict[str, Any], model: str) -> tuple[list[dict[s
                     "role": "user",
                     "content": json.dumps(candidate, ensure_ascii=False, separators=(",", ":")),
                 }],
-                "output_config": {"format": {"type": "json_schema", "schema": CANDIDATE_RESULT_SCHEMA}},
+                "output_config": {
+                    "format": {"type": "json_schema", "schema": anthropic_output_schema(CANDIDATE_RESULT_SCHEMA)}
+                },
             },
         })
     return requests, source_by_custom_id
@@ -334,6 +364,7 @@ def _state_from_batch(batch: Any, input_hash: str, model: str, request_count: in
         "schema": STATE_SCHEMA,
         "input_sha256": input_hash,
         "model": model,
+        "request_version": BATCH_REQUEST_VERSION,
         "batch_id": _field(batch, "id"),
         "processing_status": _field(batch, "processing_status"),
         "request_count": request_count,
@@ -350,7 +381,12 @@ def _load_reusable_state(path: Path, input_hash: str, model: str) -> dict[str, A
     state = _read_json(path)
     if state.get("schema") != STATE_SCHEMA:
         raise ValueError("État de batch Anthropic invalide.")
-    if state.get("input_sha256") == input_hash and state.get("model") == model and state.get("batch_id"):
+    if (
+        state.get("input_sha256") == input_hash
+        and state.get("model") == model
+        and state.get("request_version") == BATCH_REQUEST_VERSION
+        and state.get("batch_id")
+    ):
         return state
     if state.get("processing_status") != "ended":
         raise ValueError("Un autre batch Anthropic est encore en cours ; refus de mélanger deux lots.")
