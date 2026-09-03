@@ -202,10 +202,15 @@ class AnthropicMotorBatchTests(unittest.TestCase):
 
     def test_incomplete_result_never_advances_as_a_delivery(self):
         value = motor_input(candidate("jorf:A"))
-        with self.assertRaisesRegex(ValueError, "Batch incomplet"):
+        with self.assertRaisesRegex(ValueError, "invalid_request_error"):
             assemble_delivery(
                 value,
-                [{"custom_id": "candidate", "result": {"type": "errored"}}],
+                [{"custom_id": "candidate", "result": {
+                    "type": "errored",
+                    "error": {"type": "error", "error": {
+                        "type": "invalid_request_error", "message": "Paramètre non accepté",
+                    }},
+                }}],
                 {"candidate": "jorf:A"},
             )
 

@@ -220,13 +220,13 @@ jobs:
           git pull --rebase origin main
           git push
       - name: Enregistrer le batch asynchrone en cours
-        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true'
+        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status != 'ended'
         run: |
           python scripts/build_run_manifest.py --output evidence/run-manifest-motor-latest.json --kind motor --status pending --reason "Message Batch Anthropic en cours ; reprise sans nouvelle soumission au prochain run." --inputs out/motor-input.json --outputs evidence/motor-batch-latest.json
           python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
           python scripts/render_control_dashboard.py --input evidence/run-index-latest.json --backlog evidence/motor-backlog-latest.json --out out/control-dashboard.html
       - name: Téléverser l'état du batch encore en cours
-        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true'
+        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status != 'ended'
         uses: actions/upload-artifact@v4
         with:
           name: lawradar-motor-batch-${{ github.run_id }}
@@ -237,7 +237,7 @@ jobs:
             out/control-dashboard.html
           retention-days: 90
       - name: Mémoriser le batch encore en cours sans le soumettre à nouveau
-        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true'
+        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status != 'ended'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -246,6 +246,23 @@ jobs:
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git add evidence/motor-batch-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json
           git diff --cached --quiet || git commit -m "Batch moteur LawRadar en cours $(date -u +%F)"
+          git pull --rebase origin main
+          git push
+      - name: Enregistrer un batch Anthropic refusé sans le rejouer
+        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status == 'ended'
+        run: |
+          python scripts/build_run_manifest.py --output evidence/run-manifest-motor-latest.json --kind motor --status failed --reason "Message Batch Anthropic achevé sans livraison valide ; consulter evidence/motor-batch-latest.json avant tout rejeu." --inputs out/motor-input.json --outputs evidence/motor-batch-latest.json
+          python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
+      - name: Mémoriser le diagnostic du batch refusé
+        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status == 'ended'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "lawradar-motor[bot]"
+          git config user.email "lawradar-motor[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git add evidence/motor-batch-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json
+          git diff --cached --quiet || git commit -m "Diagnostic batch moteur LawRadar $(date -u +%F)"
           git pull --rebase origin main
           git push
       - name: Valider et rendre le dashboard

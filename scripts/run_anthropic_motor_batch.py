@@ -241,6 +241,11 @@ def _message_text(message: Any) -> str:
 def _batch_error_detail(result: Any) -> str:
     """Rend l'erreur fournisseur lisible sans la confondre avec une livraison."""
     error = _field(result, "error", {})
+    # Le SDK enveloppe parfois l'erreur API dans un objet de type ``error``.
+    # Descendre d'un niveau évite de perdre le type et le message utiles.
+    nested = _field(error, "error", None)
+    if nested is not None:
+        error = nested
     error_type = str(_field(error, "type", "unknown_error"))
     message = str(_field(error, "message", "sans détail fournisseur"))
     message = " ".join(message.split())[:240]
@@ -380,7 +385,9 @@ def run_batch(
     except Exception as error:
         state.update({"ready": False, "error": f"{type(error).__name__}: {error}", "updated_at_utc": datetime.now(UTC).isoformat()})
         _write_json(state_path, state)
-        raise
+        # Un batch achevé mais invalide doit rester traçable : le workflow
+        # versionne son état et ne le soumet pas une seconde fois par défaut.
+        return state
     _write_json(output_path, delivery)
     state.update({"ready": True, "usage": usage, "updated_at_utc": datetime.now(UTC).isoformat()})
     _write_json(state_path, state)
