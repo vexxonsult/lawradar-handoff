@@ -1,319 +1,56 @@
 {
   "schema": "lawradar-agent-pilot-readiness-v1",
-  "generated_at_utc": "2026-09-04T12:02:25.362056+00:00",
+  "generated_at_utc": "2026-09-04T12:57:43.686383+00:00",
   "source_run": {
-    "id": "33870744468",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33870744468",
-    "commit": "33109bf563d1ace11ed8d5651f57515dcbdcea96",
+    "id": "33875420570",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33875420570",
+    "commit": "2940bd5998c059e19e826105d04f168fd67bb668",
     "report_date": "2026-09-04"
   },
   "signals": [
     {
-      "signal_id": "signal:c4164faa44eae9b3",
-      "source_id": "jorf:JORFTEXT000054794130",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
       "signal_id": "signal:de0b3e6e115952f1",
       "source_id": "jorf:JORFTEXT000054794183",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
+      "radar_status": "RETAINED",
+      "status": "READY_FOR_PILOTS",
+      "ready_for_pilots": true,
+      "recommended_next_step": "RUN_PRESS_THEN_MARKET_IF_SCOPE_FITS",
       "reasons": [
-        "Le Radar n'a pas retenu ce signal."
+        "Le signal retenu porte des faits valides et passe la porte opérateur."
       ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:82b94351c5f10d9c",
-      "source_id": "jorf:JORFTEXT000054794234",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:de0b3e6e115952f1",
+        "evaluated_at_utc": "2026-09-04T12:57:43.686383+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
     },
     {
       "signal_id": "signal:cb41284df04e6601",
       "source_id": "jorf:JORFTEXT000054794248",
-      "radar_status": "RETAINED",
-      "status": "DISCARDED_BY_FILTERS",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_EXTERNAL_COLLECTION",
-      "reasons": [
-        "Date d'effet inconnue.",
-        "Compétence indispensable absente : Centre de référence ou de compétence de la maladie pour la prescription de TAKHZYRO®."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:cb41284df04e6601",
-        "evaluated_at_utc": "2026-09-04T12:02:25.362056+00:00",
-        "compliance": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Date d'effet inconnue."
-          ]
-        },
-        "feasibility": {
-          "status": "DISCARD",
-          "reasons": [
-            "Compétence indispensable absente : Centre de référence ou de compétence de la maladie pour la prescription de TAKHZYRO®."
-          ]
-        },
-        "operator_access": {
-          "status": "HOLD",
-          "route": "LEGAL_ROLE_CHECK_ONLY",
-          "allow_external_collection": false,
-          "reasons": [
-            "L'offre directe relève d'un secteur hors profil opérateur.",
-            "Aucun rôle périphérique légal et accessible n'est démontré."
-          ]
-        },
-        "final_constraint": "DISCARD"
-      }
-    },
-    {
-      "signal_id": "signal:ffaf4303dc8bbf1e",
-      "source_id": "jorf:JORFTEXT000054794267",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:93c36b8e94634024",
-      "source_id": "jorf:JORFTEXT000054794273",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:1c5e18f126b12185",
-      "source_id": "jorf:JORFTEXT000054794406",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:b577e5c22d05ef6e",
-      "source_id": "jorf:JORFTEXT000054794412",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:07ffe54a931a7b0d",
-      "source_id": "jorf:JORFTEXT000054794418",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:031d709adff5d9fb",
-      "source_id": "jorf:JORFTEXT000054794445",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:565670b536ede72e",
-      "source_id": "jorf:JORFTEXT000054794455",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:e0bacd29eeb7aa14",
-      "source_id": "jorf:JORFTEXT000054794465",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:a525a185fca0de25",
-      "source_id": "jorf:JORFTEXT000054794475",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:0198648ac347261c",
-      "source_id": "jorf:JORFTEXT000054794485",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:ceede5b27e3da910",
-      "source_id": "jorf:JORFTEXT000054794495",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:86bf9baad81eee03",
-      "source_id": "jorf:JORFTEXT000054794505",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:09e8ca963a31f583",
-      "source_id": "jorf:JORFTEXT000054794515",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:0586570c9648a67f",
-      "source_id": "jorf:JORFTEXT000054794525",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:1f11c65f6c4565a5",
-      "source_id": "jorf:JORFTEXT000054794539",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:643a63dcb3859a72",
-      "source_id": "jorf:JORFTEXT000054794549",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:52ccea2e950eb0c5",
-      "source_id": "jorf:JORFTEXT000054794559",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:069a5961922a080e",
-      "source_id": "jorf:JORFTEXT000054794573",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:ed8b452af9ae7f35",
-      "source_id": "jorf:JORFTEXT000054794583",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:9fb45aae86faf2d7",
-      "source_id": "jorf:JORFTEXT000054794594",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -325,11 +62,11 @@
     }
   ],
   "summary": {
-    "signal_count": 24,
-    "ready_for_pilots_count": 0,
+    "signal_count": 2,
+    "ready_for_pilots_count": 1,
     "counts_by_status": {
-      "NOT_RETAINED": 23,
-      "DISCARDED_BY_FILTERS": 1
+      "READY_FOR_PILOTS": 1,
+      "NOT_RETAINED": 1
     }
   }
 }

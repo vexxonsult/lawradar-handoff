@@ -225,10 +225,239 @@
           "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
         }
       ]
+    },
+    {
+      "signal_id": "signal:de0b3e6e115952f1",
+      "source_id": "jorf:JORFTEXT000054794183",
+      "captured_at_utc": "2026-09-04T12:57:43.728169+00:00",
+      "facts_sha256": "92a2f89241002c71e5cdfca1e8b910250946a0147d5349b6c710f17651a6e11d",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:de0b3e6e115952f1",
+        "evaluated_at_utc": "2026-09-04T12:57:43.728169+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:de0b3e6e115952f1",
+        "evaluated_at_utc": "2026-09-04T12:57:43.728169+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:de0b3e6e115952f1",
+        "source": {
+          "source_id": "jorf:JORFTEXT000054794183",
+          "source_kind": "JORF",
+          "change": "NEW",
+          "evidence": {
+            "title": "Arrêté du 1er septembre 2026 portant création de la fiche d'opération standardisée IND-UT-141, du référentiel de contrôle et de la bonification associés",
+            "url": null,
+            "dates": [],
+            "detail_status": null,
+            "official": {
+              "title": null,
+              "period": null
+            },
+            "attachments": [],
+            "evidence_excerpts": []
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Le texte officiel crée la fiche d'opération standardisée CEE IND-UT-141 « Chaudière industrielle électrique », modifie le référentiel de contrôle CEE et introduit une bonification associée, avec un périmètre industriel identifiable (bénéficiaires et demandeurs CEE dans le secteur industriel). Conformément à la règle de routage Énergie/CEE, le texte n'est pas écarté au seul motif qu'il relève de l'énergie ; il est classé en secteur ENERGY_EFFICIENCY avec un service B2B non réglementé possible (veille, qualification de besoin, mise en relation) jugé accessible, sans toutefois qu'aucune preuve n'établisse un rôle périphérique concret, une autorisation, un capital minimal, un délai de mise sur le marché ou un flux financier chiffré."
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:de0b3e6e115952f1",
+          "title": "Arrêté du 1er septembre 2026 portant création de la fiche d'opération standardisée IND-UT-141, du référentiel de contrôle et de la bonification associés",
+          "keywords": [
+            "certificats d'économies d'énergie",
+            "CEE",
+            "fiche d'opération standardisée",
+            "IND-UT-141",
+            "chaudière industrielle électrique",
+            "bonification",
+            "référentiel de contrôle"
+          ],
+          "affected_scope": [
+            "bénéficiaires et demandeurs CEE",
+            "secteur industriel (chaudières industrielles électriques)"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "PUBLISHED",
+            "proof_status": "VERIFIED",
+            "effective_date": "2026-09-05",
+            "affected_scope": [
+              "bénéficiaires et demandeurs CEE",
+              "secteur industriel (chaudières industrielles électriques)"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [],
+            "dependencies": [],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "MISSING"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "MISSING",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:de0b3e6e115952f1",
+          "evaluated_at_utc": "2026-09-04T12:57:43.728169+00:00",
+          "compliance": {
+            "status": "PASS",
+            "reasons": [
+              "Texte vérifié, dans le périmètre et actionnable."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:de0b3e6e115952f1",
+        "title": "Arrêté du 1er septembre 2026 portant création de la fiche d'opération standardisée IND-UT-141, du référentiel de contrôle et de la bonification associés",
+        "keywords": [
+          "certificats d'économies d'énergie",
+          "CEE",
+          "fiche d'opération standardisée",
+          "IND-UT-141",
+          "chaudière industrielle électrique",
+          "bonification",
+          "référentiel de contrôle"
+        ],
+        "affected_scope": [
+          "bénéficiaires et demandeurs CEE",
+          "secteur industriel (chaudières industrielles électriques)"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-05",
+          "affected_scope": [
+            "bénéficiaires et demandeurs CEE",
+            "secteur industriel (chaudières industrielles électriques)"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-09-04T12:57:43.728169+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
     }
   ],
   "queue_audit": {
-    "processed_count": 79,
+    "processed_count": 116,
     "unrecoverable_queue_entries": [
       {
         "fingerprint": "490853c49376a298cfdbefd3d9015889f24dfb149e616097ae78c39d2661a25b",
@@ -382,6 +611,71 @@
       },
       {
         "fingerprint": "dcfe813bdab98bc2e9efdea9f4d94aa930b4727b949839d70d64719ef3d69c37",
+        "source_id": "jorf:JORFTEXT000054794831",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "53d767010d4658b1748e3211fa204ad8bfb9e1ccf43509de03fc45dd4ddcc28a",
+        "source_id": "jorf:JORFTEXT000054794361",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "3d3b979883dce448b80bdda296df2e8d9837506348440ef5e228e5c6857c90c3",
+        "source_id": "jorf:JORFTEXT000054794605",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "93ce044a9cd6fe61398776688a1fbe01a31c30d3158e91d73c8664b6be0e80ac",
+        "source_id": "jorf:JORFTEXT000054794611",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "29e9b75f58198557d8b1e8b7154add5abc6a791645880f5938c9db344389870e",
+        "source_id": "jorf:JORFTEXT000054794615",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "0c8f3d2906b7d6bf81a9d9873f29e6eb084608fc62ca444e75671514aff04d2e",
+        "source_id": "jorf:JORFTEXT000054794619",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "6b789e5ad5e0c83f22f0f3fb42dbb6074b782a08006150b8fa1e9b6a82cdff14",
+        "source_id": "jorf:JORFTEXT000054794628",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "e805ac3d3919940aed0da62defe8eec377b745798f9d207f0f359bd73d6f11f8",
+        "source_id": "jorf:JORFTEXT000054794809",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "f860b1bd92e45727bf8728dcc4f60061a200f21069022b37447d8bcdf4e23cd7",
+        "source_id": "jorf:JORFTEXT000054794816",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "021e7e0e5602bfa9eed9ce43d02707055980b8670ef0761d5818145215bf6cd1",
+        "source_id": "jorf:JORFTEXT000054794818",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "7cd2f99418d3849a6516c94323c1e821b4e17f336dab6cdb9e5b4a36c47cf9bc",
+        "source_id": "jorf:JORFTEXT000054794820",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "19ab1586fcc5c85fbecbfbdd88e9db890aea2b63edbfff658f91e168b20cbee9",
+        "source_id": "jorf:JORFTEXT000054794822",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "3efed6ce6d6afec83dc99e65ca3bb4c3931ab7168a21d4714035c0fc43db1581",
+        "source_id": "jorf:JORFTEXT000054794826",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "dd3a17bc036e0288a0a4eead970a980851f212d9a815697f3bb7aba4c89bfdfa",
         "source_id": "jorf:JORFTEXT000054794831",
         "reason": "PRIMARY_TEXT_EMPTY"
       }
