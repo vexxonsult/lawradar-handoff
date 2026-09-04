@@ -34,7 +34,7 @@ DEFAULT_MODEL = "claude-sonnet-5"
 MAX_CANDIDATES = 250
 # Toute modification de la requête fournisseur doit produire un nouveau batch
 # une fois le batch précédent achevé, sans jamais doubler un batch en cours.
-BATCH_REQUEST_VERSION = "2026-09-04-readable-primary-review-v6"
+BATCH_REQUEST_VERSION = "2026-09-04-readable-primary-review-v7"
 _UNSUPPORTED_ANTHROPIC_SCHEMA_KEYWORDS = {
     "maxItems", "maxLength", "minLength", "minimum", "maximum",
     "exclusiveMinimum", "exclusiveMaximum", "multipleOf", "pattern", "uniqueItems",
@@ -298,11 +298,14 @@ def build_requests(motor_input: dict[str, Any], model: str) -> tuple[list[dict[s
                 "thinking": {"type": "adaptive"},
                 "output_config": {
                     # Factual reading is deliberately cheaper than the
-                    # downstream Entrepreneur assessment.  Sonnet 5's
-                    # adaptive thinking is enabled explicitly; it must not
-                    # receive temperature/top_p/top_k overrides.
+                    # downstream Entrepreneur assessment.  The detailed
+                    # local contract is deliberately *not* sent as an
+                    # Anthropic strict JSON grammar: its nested shape is too
+                    # large for the provider to compile in a Message Batch.
+                    # The prompt still requires JSON and validate_delivery()
+                    # remains the authoritative local gate before a queue
+                    # item can advance.
                     "effort": "low",
-                    "format": {"type": "json_schema", "schema": anthropic_output_schema(CANDIDATE_RESULT_SCHEMA)}
                 },
             },
         })

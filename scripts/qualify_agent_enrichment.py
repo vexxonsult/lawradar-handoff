@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -45,6 +46,93 @@ def _text(message: Any) -> str:
     raise ValueError("La réponse Claude ne contient aucun JSON texte.")
 
 
+def unresolved_enrichment(payload: dict[str, Any], agent: str, cause: str) -> dict[str, Any]:
+    """Préserve un résultat exploitable si la réponse IA est vide ou invalide.
+
+    Une indisponibilité du modèle n'est ni une absence de preuve, ni une panne
+    de collecte. Elle doit donc rester une incertitude traçable qui n'interrompt
+    pas les autres branches du workflow.
+    """
+    observed_at = datetime.now(UTC).isoformat()
+    cause = " ".join(cause.split())[:240]
+    if agent == "press":
+        candidates = payload.get("candidates")
+        if not isinstance(candidates, dict):
+            raise ValueError("Entrée Presse invalide pour la sortie UNRESOLVED.")
+        decisions = [
+            {
+                "url": item["url"],
+                "relevance": "AMBIGUOUS",
+                "why_linked": "La qualification IA n'a pas produit de réponse exploitable ; le lien n'est pas tranché.",
+            }
+            for item in candidates.get("candidates", [])
+            if isinstance(item, dict) and isinstance(item.get("url"), str) and item["url"]
+        ]
+        if not decisions:
+            raise ValueError("Aucun candidat Presse traçable pour la sortie UNRESOLVED.")
+        return {
+            "schema": "lawradar-agent-enrichment-v1",
+            "agent": "press",
+            "signal_id": candidates.get("signal_id"),
+            "status": "UNRESOLVED",
+            "observed_at_utc": observed_at,
+            "summary": "La qualification Presse n'a pas produit de réponse exploitable ; aucun lien média n'est conclu.",
+            "sources": [],
+            "limitations": [f"Réponse Claude non exploitable : {cause}"],
+            "details": {
+                "signal_hash": candidates.get("signal_hash"),
+                "window": candidates.get("window", {}),
+                "queries": candidates.get("queries", []),
+                "candidates_total": candidates.get("candidates_total", 0),
+                "candidates_after_dedup": candidates.get("candidates_after_dedup", 0),
+                "coverage_level": "NONE",
+                "decisions": decisions,
+            },
+            "score": None,
+        }
+    if agent == "market":
+        observations = payload.get("observations")
+        if not isinstance(observations, dict):
+            raise ValueError("Entrée Marché invalide pour la sortie UNRESOLVED.")
+        conclusions = [
+            {
+                "url": item["url"],
+                "interpretation": "AMBIGUOUS",
+                "why": "La qualification IA n'a pas produit de réponse exploitable ; cette observation n'est pas interprétée.",
+            }
+            for item in observations.get("observations", [])
+            if isinstance(item, dict) and isinstance(item.get("url"), str) and item["url"]
+        ]
+        if not conclusions:
+            raise ValueError("Aucune observation Marché traçable pour la sortie UNRESOLVED.")
+        return {
+            "schema": "lawradar-agent-enrichment-v1",
+            "agent": "market",
+            "signal_id": observations.get("signal_id"),
+            "status": "UNRESOLVED",
+            "observed_at_utc": observed_at,
+            "summary": "La qualification Marché n'a pas produit de réponse exploitable ; aucune conclusion de marché n'est tirée.",
+            "sources": [],
+            "limitations": [f"Réponse Claude non exploitable : {cause}"],
+            "details": {
+                "signal_hash": observations.get("signal_hash"),
+                "collection_status": observations.get("collection_status"),
+                "observations_total": len(observations.get("observations", [])),
+                "conclusions": conclusions,
+            },
+            "score": None,
+        }
+    raise ValueError("Agent de qualification inconnu.")
+
+
+def _looks_like_enrichment(value: Any, agent: str) -> bool:
+    required = {
+        "schema", "agent", "signal_id", "status", "observed_at_utc",
+        "summary", "sources", "limitations", "details", "score",
+    }
+    return isinstance(value, dict) and value.get("agent") == agent and set(value) == required
+
+
 def qualify(payload: dict[str, Any], agent: str, *, client: Any, model: str) -> dict[str, Any]:
     if agent not in PROMPTS:
         raise ValueError("Agent de qualification inconnu.")
@@ -59,9 +147,12 @@ def qualify(payload: dict[str, Any], agent: str, *, client: Any, model: str) -> 
         thinking={"type": "adaptive"},
         output_config={"effort": "low"},
     )
-    result = json.loads(_text(message))
-    if not isinstance(result, dict):
-        raise ValueError("L'enrichissement Claude doit être un objet JSON.")
+    try:
+        result = json.loads(_text(message))
+    except (ValueError, json.JSONDecodeError) as error:
+        return unresolved_enrichment(payload, agent, str(error))
+    if not _looks_like_enrichment(result, agent):
+        return unresolved_enrichment(payload, agent, "Le JSON Claude ne respecte pas le contrat d'enrichissement.")
     return result
 
 

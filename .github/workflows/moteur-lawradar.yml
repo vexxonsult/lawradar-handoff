@@ -433,17 +433,12 @@ jobs:
           git push
 
   client_plan:
-    needs: [moteur, record_skipped]
+    needs: moteur
     if: >-
       ${{
         always() && !cancelled() && (
           github.event.inputs.clients_only == 'true' ||
-          (needs.moteur.result == 'success' && needs.moteur.outputs.batch_ready == 'true') ||
-          (
-            (github.event.schedule == '17 17 * * *' || github.event.schedule == '17 18 * * *' || github.event.schedule == '17 19 * * *') &&
-            (needs.moteur.result == 'success' || needs.record_skipped.result == 'success') &&
-            needs.moteur.result != 'failure' && needs.record_skipped.result != 'failure'
-          )
+          (needs.moteur.result == 'success' && needs.moteur.outputs.batch_ready == 'true')
         )
       }}
     runs-on: ubuntu-latest

@@ -167,10 +167,12 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertIn("steps.archive_skipped.outputs.archive_path", motor)
         self.assertIn("steps.archive.outputs.durable_manifest_path", motor)
         self.assertIn("needs.moteur.result == 'success'", motor)
-        self.assertIn("needs.record_skipped.result == 'success'", motor)
-        self.assertIn("needs.record_skipped.result != 'failure'", motor)
         self.assertIn("clients_only", motor)
         self.assertIn("github.event.inputs.clients_only == 'true'", motor)
+        self.assertIn("needs.moteur.outputs.batch_ready == 'true'", motor)
+        client_condition = motor.split("  client_plan:\n", 1)[1].split("    runs-on:", 1)[0]
+        self.assertNotIn("github.event.schedule", client_condition)
+        self.assertNotIn("record_skipped", client_condition)
         self.assertIn("client_matrix", motor)
         self.assertIn("has_ready", motor)
         self.assertIn("l'unique chemin client", motor)
@@ -199,15 +201,11 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertEqual(requests[0]["params"]["output_config"]["effort"], "low")
         self.assertEqual(requests[0]["params"]["max_tokens"], 4096)
         self.assertNotIn("jorf:B", requests[0]["params"]["messages"][0]["content"])
-        self.assertEqual(requests[0]["params"]["output_config"]["format"]["type"], "json_schema")
-        self.assertIn(
-            "ENERGY_EFFICIENCY",
-            requests[0]["params"]["output_config"]["format"]["schema"]["properties"]["facts"]["properties"]["operator_access"]["properties"]["sector"]["enum"],
-        )
+        self.assertEqual(requests[0]["params"]["output_config"], {"effort": "low"})
 
-    def test_provider_schema_keeps_structure_but_removes_unsupported_constraints(self):
-        requests, _ = build_requests(motor_input(candidate("jorf:A")), "claude-sonnet-5")
-        provider_schema = requests[0]["params"]["output_config"]["format"]["schema"]
+    def test_provider_schema_helper_keeps_structure_but_removes_unsupported_constraints(self):
+        from scripts.run_anthropic_motor_batch import CANDIDATE_RESULT_SCHEMA
+        provider_schema = anthropic_output_schema(CANDIDATE_RESULT_SCHEMA)
         def schema_keys(value):
             if isinstance(value, dict):
                 return set(value) | set().union(*(schema_keys(item) for item in value.values()))
