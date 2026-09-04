@@ -1,40 +1,35 @@
 {
   "schema": "lawradar-run-manifest-v1",
   "run": {
-    "id": "33798763874",
+    "id": "33851214169",
     "attempt": "1",
     "kind": "motor",
-    "status": "skipped",
+    "status": "pending",
     "workflow": "Moteur LawRadar — livraison structurée",
-    "commit": "942b1fa5374ea49c8a5a483bc244271ba51226f4",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33798763874",
-    "created_at_utc": "2026-09-03T19:50:39.957397+00:00",
-    "duration_seconds": 0,
-    "reason": "41 publication(s) de routine administrative, classée(s) sans appel au moteur."
+    "commit": "faca59ca87bb9bdcf37b5d362533e6797682f6d0",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33851214169",
+    "created_at_utc": "2026-09-04T08:02:19.842676+00:00",
+    "duration_seconds": 191,
+    "reason": "Message Batch Anthropic en cours ; reprise sans nouvelle soumission au prochain run."
   },
   "inputs": [
     {
-      "path": "evidence/delta-latest.json",
+      "path": "out/motor-input.json",
       "exists": true,
-      "bytes": 2008,
-      "sha256": "1b76745240a463edf9625c52f630cd8d84c8dab997013a5bf67992ed33cb3b6e"
-    },
-    {
-      "path": "evidence/jorf-summaries-latest.json",
-      "exists": true,
-      "bytes": 1535007,
-      "sha256": "1f954f32a793aac0a5d311a4920cf5588105b2fe9d17e889c528a65ac4b70e6d"
-    },
-    {
-      "path": "evidence/consultdd-latest.json",
-      "exists": true,
-      "bytes": 690,
-      "sha256": "cb52753cbb1131318a850acd71f75e1cfd4c00287f092889e8fe820bf05a6139"
+      "bytes": 74148,
+      "sha256": "f19b2d8b045116a6e5ffa6156ec60b2a7f8bbef2a070790dc4123ea55218a25e"
     }
   ],
-  "outputs": [],
+  "outputs": [
+    {
+      "path": "evidence/motor-batch-latest.json",
+      "exists": true,
+      "bytes": 595,
+      "sha256": "8df85bb7f5a7b35743d228edec1823c531b1440eff295ec116154a8173f2895b"
+    }
+  ],
   "cost_estimate": {
-    "status": "not_called",
+    "status": "not_reported_by_provider",
     "model": null,
     "note": "Le fournisseur ne publie pas le détail des tokens dans ce run ; la durée et le nombre d'appels restent mesurés."
   },
