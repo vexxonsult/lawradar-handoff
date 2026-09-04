@@ -429,7 +429,6 @@ jobs:
     # Les jobs étaient auparavant des workflows réutilisables. GitHub pouvait
     # les ignorer avant d'évaluer leur matrice dynamique. Ils sont exécutés
     # directement ici : même contrat, mais orchestration lisible et fiable.
-    if: needs.client_plan.outputs.has_ready == 'true'
     runs-on: ubuntu-latest
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -493,7 +492,6 @@ jobs:
 
   demand_market:
     needs: client_plan
-    if: needs.client_plan.outputs.has_ready == 'true'
     runs-on: ubuntu-latest
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -561,7 +559,7 @@ jobs:
 
   consolidate_clients:
     needs: [client_plan, press, demand_market]
-    if: ${{ always() && !cancelled() && needs.client_plan.outputs.has_ready == 'true' && needs.press.result == 'success' && needs.demand_market.result == 'success' }}
+    if: ${{ always() && !cancelled() && needs.press.result == 'success' && needs.demand_market.result == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
