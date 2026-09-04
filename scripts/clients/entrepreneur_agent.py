@@ -25,6 +25,12 @@ TERMINAL_STATUSES = {"COMPLETED", "NO_EVIDENCE"}
 # Le workflow moteur et ses clients partagent le même modèle actif. Le choix
 # reste surchargeable avec --model pour rejouer une livraison historique.
 DEFAULT_MODEL = "claude-sonnet-5"
+COMMISSION_BASE_KEYS = {
+    "contract_amount_eur", "estimated_contract_amount_eur",
+    "estimated_market_amount_eur", "tender_amount_eur",
+    "estimated_tender_amount_eur", "public_contract_amount_eur",
+    "montant_marche_eur", "montant_contrat_eur",
+}
 
 SYSTEM_PROMPT = """Tu es l'agent Entrepreneur, client externe de LawRadar.
 Analyse exclusivement le JSON transmis : aucune recherche, aucun outil, aucun
@@ -140,23 +146,39 @@ def _collect_euro_amounts(value: Any, key_hint: str = "") -> list[float]:
         for child in value:
             amounts.extend(_collect_euro_amounts(child, key_hint))
     elif isinstance(value, (int, float)) and not isinstance(value, bool):
-        if "eur" in key_hint or "euro" in key_hint or "montant" in key_hint or "amount" in key_hint:
+        # Capital, costs, fines and budgets are not commission bases. Only a
+        # field whose contract-value semantics are explicit can open the
+        # calculation guard below.
+        if key_hint in COMMISSION_BASE_KEYS:
             amounts.append(float(value))
     return list(dict.fromkeys(amounts))
 
 
-def _compact_client_input(signal: dict[str, Any]) -> dict[str, Any]:
-    """Expose only the selected signal and its proven support, keeping prompt cost bounded."""
-    allowed_urls = _collect_urls(signal)
+def _compact_client_input(
+    signal: dict[str, Any], money_flows: list[dict[str, Any]] | None = None
+) -> dict[str, Any]:
+    """Expose one signal and only the verified financial flows linked to it."""
+    linked_flows = [
+        flow for flow in (money_flows or [])
+        if isinstance(flow, dict)
+        and flow.get("signal_id") == signal.get("id")
+        and flow.get("link_status") == "VERIFIED"
+    ]
+    support = {"signal": signal, "money_flows": linked_flows}
+    allowed_urls = _collect_urls(support)
     return {
         "signal_id": signal.get("id"),
         "source": signal.get("source"),
         "radar": signal.get("radar"),
+        "discovery": signal.get("discovery"),
+        "reading": signal.get("reading"),
+        "reading_provenance": signal.get("reading_provenance"),
         "facts": signal.get("facts") or signal.get("opportunity_facts"),
         "deterministic_filters": signal.get("deterministic_filters"),
         "enrichments": signal.get("enrichments"),
+        "money_flows": linked_flows,
         "allowed_source_urls": allowed_urls,
-        "available_amounts_eur": _collect_euro_amounts(signal),
+        "available_amounts_eur": _collect_euro_amounts(support),
     }
 
 
@@ -185,9 +207,17 @@ def build_delivery(snapshot: dict[str, Any], snapshot_sha256: str, signal_id: st
     incomplete = [agent for agent, status in statuses.items() if status not in TERMINAL_STATUSES]
     if incomplete:
         gaps.append("Enrichissements amont non terminés : " + ", ".join(sorted(incomplete)) + ".")
-    positive = [agent for agent in ("demand", "market") if statuses[agent] == "COMPLETED"]
+    # Demand currently derives from the same lexical BOAMP hits as Market.
+    # It becomes business evidence only after Market has qualified at least
+    # one of those notices as relevant. A raw keyword match must never pay for
+    # an Entrepreneur call when Market concluded NO_EVIDENCE.
+    positive: list[str] = []
+    if statuses["market"] == "COMPLETED":
+        positive.append("market")
+        if statuses["demand"] == "COMPLETED":
+            positive.insert(0, "demand")
     if not positive:
-        gaps.append("Aucune observation Demande ou Marché positive et terminale.")
+        gaps.append("Aucun avis Marché qualifié comme pertinent pour confirmer la demande.")
     ready = not gaps
     status = "READY_FOR_AI_ASSESSMENT" if ready else ("SKIPPED" if skipped else "UNRESOLVED")
     return {
@@ -277,7 +307,10 @@ def run_claude_assessment(
         return delivery
 
     signal = select_signal(snapshot, signal_id)
-    client_input = _compact_client_input(signal)
+    root_flows = snapshot.get("money_flows")
+    client_input = _compact_client_input(
+        signal, root_flows if isinstance(root_flows, list) else []
+    )
     if client is None:
         key = api_key or os.environ.get("ANTHROPIC_API_KEY")
         if not key:

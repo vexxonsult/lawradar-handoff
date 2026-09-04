@@ -335,18 +335,15 @@ nécessaire avant toute conclusion métier.
 
 ### Livrable 6L — file de traitement moteur bornée
 
-Les candidats officiels ne sont plus envoyés en bloc au modèle. La file
-versionnée `evidence/motor-queue-latest.json` conserve chaque candidat et son
-empreinte, expose au maximum dix candidats par appel, puis retire uniquement
-un lot après une livraison validée. Un échec laisse le lot en tête de file ; il
-n'est donc ni perdu ni remplacé par les nouvelles collectes. Le workflow passe
-trois fois seulement après la collecte quotidienne, mais le modèle n'est appelé
-que pour un lot non vide. Il peut ainsi absorber jusqu'à trente candidats par
-jour sans réveiller de runner toute la nuit. La limite de tours passe de cinq à
-sept pour terminer un lot
-normal sans ouvrir une exécution non bornée. Le plafond est fixé à sept tours,
-après mesure d'un lot de six textes officiels dont la production valide
-nécessitait précisément ce septième tour.
+La file versionnée `evidence/motor-queue-latest.json` conserve chaque candidat
+et son empreinte. Elle soumet un Message Batch Anthropic borné à 250 candidats,
+avec une requête isolée par texte, puis retire uniquement le lot après une
+livraison complète et validée. Un échec laisse le lot en tête de file ; il
+n'est donc ni perdu ni remplacé par les nouvelles collectes. Les piges de
+statut toutes les vingt minutes ne créent aucun nouvel appel modèle : elles
+reprennent le `batch_id` existant, et un réveil sans file s'arrête avant toute
+requête Anthropic. L'ancien mécanisme Claude Code à nombre de tours n'est plus
+utilisé.
 
 Après la troisième fenêtre, `evidence/motor-backlog-latest.json` publie
 `CLEAR` ou `BACKLOG`, le nombre de candidats restant et l'action de reprise.
@@ -365,7 +362,8 @@ nominations, concours, vacances de postes et rubriques de sommaire — reçoiven
 de la même façon la décision traçable `ROUTINE_PUBLIC_ADMINISTRATION_TITLE`.
 Elles sont donc **traitées par règle** mais ne déclenchent pas une interprétation
 payante. Tous les autres textes datés de la collecte restent dans la file et
-seront examinés, au maximum dix par exécution, jusqu'à épuisement de celle-ci.
+seront examinés dans le prochain lot borné disponible, jusqu'à épuisement de
+celle-ci.
 
 Avant l'interprétation, le collecteur télécharge une seconde fois, au plus une
 archive DILA par édition concernée, pour extraire un passage officiel borné des

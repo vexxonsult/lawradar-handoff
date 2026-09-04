@@ -21,6 +21,7 @@ FLOW_FIELDS = (
     "recipient", "amount", "effective_date", "certainty", "next_action",
 )
 FLOW_FIELD_SET = set(FLOW_FIELDS)
+FLOW_LINK_FIELDS = {"source_id"}
 READING_FIELDS = (
     "consequence", "affected_actors", "beneficiaries", "constrained_parties",
     "potential_service_partners", "unknowns",
@@ -78,10 +79,18 @@ def validate_delivery(delivery: dict[str, Any]) -> None:
         raise ValueError("Bloc money_flows invalide.")
     seen_ids: set[str] = set()
     for index, flow in enumerate(flows):
-        if not isinstance(flow, dict) or set(flow) != FLOW_FIELD_SET:
+        if not isinstance(flow, dict):
+            raise ValueError(f"Flux {index} non conforme au contrat.")
+        keys = frozenset(flow)
+        if keys not in {
+            frozenset(FLOW_FIELD_SET),
+            frozenset(FLOW_FIELD_SET | FLOW_LINK_FIELDS),
+        }:
             raise ValueError(f"Flux {index} non conforme au contrat.")
         for name in FLOW_FIELDS:
             require_text(flow[name], f"money_flows[{index}].{name}")
+        if "source_id" in flow:
+            require_text(flow["source_id"], f"money_flows[{index}].source_id")
         if flow["id"] in seen_ids:
             raise ValueError(f"Identifiant de flux dupliqué : {flow['id']}.")
         seen_ids.add(flow["id"])
@@ -95,7 +104,10 @@ def dashboard_input(delivery: dict[str, Any]) -> dict[str, Any]:
         "headline": delivery["run"]["summary"],
         "coverage": delivery["run"]["coverage"],
         "flows": [
-            {name: flow[name] for name in FLOW_FIELDS if name != "id"}
+            {
+                **{name: flow[name] for name in FLOW_FIELDS if name != "id"},
+                "source_id": flow.get("source_id"),
+            }
             for flow in delivery["money_flows"]
         ],
         "readings": [

@@ -83,6 +83,20 @@ class RecycleBacklogTests(unittest.TestCase):
         self.assertEqual(backlog["records"][0]["latest_status"], "DISCARD")
         self.assertEqual(backlog["queue_audit"]["unrecoverable_queue_entries"][0]["source_id"], "jorf:empty")
 
+    def test_preserves_intelligence_fields_in_the_long_term_backlog(self):
+        value = dossier()
+        value["signals"][0].update({
+            "identity": {"stable_source_id": "source:one", "evidence_version": "sha256:one"},
+            "discovery": {"status": "WATCH_CANDIDATE", "score": 4},
+            "reading": {"consequence": "Une obligation change."},
+            "reading_provenance": {"status": "AVAILABLE"},
+        })
+        backlog = capture(value, empty_backlog(), policy(), profile(100), now=NOW)
+        stored = backlog["records"][0]["signal"]
+        self.assertEqual(stored["identity"]["stable_source_id"], "source:one")
+        self.assertEqual(stored["discovery"]["score"], 4)
+        self.assertEqual(stored["reading"]["consequence"], "Une obligation change.")
+
     def test_updated_profile_reopens_only_after_true_filter_pass(self):
         backlog = capture(dossier(), empty_backlog(), policy(), profile(100), now=NOW)
         next_backlog, ready = recycle(backlog, policy(), profile(1000), now=NOW)
@@ -98,4 +112,3 @@ class RecycleBacklogTests(unittest.TestCase):
         next_backlog, ready = recycle(backlog, policy(), profile(100), now=NOW)
         self.assertEqual(next_backlog, before)
         self.assertEqual(ready["reopened_count"], 0)
-

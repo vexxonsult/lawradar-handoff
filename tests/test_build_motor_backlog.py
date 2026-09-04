@@ -12,5 +12,7 @@ class MotorBacklogTests(unittest.TestCase):
     def test_marks_remaining_candidates_as_backlog(self):
         result = build({"pending": [{"fingerprint": "a"}], "processed": [{"fingerprint": "b"}]}, 30)
         self.assertEqual(result["status"], "BACKLOG")
+        self.assertEqual(result["batch_capacity"], 30)
+        self.assertEqual(result["capacity_window"], "PER_BATCH")
         self.assertEqual(result["pending_count"], 1)
-        self.assertEqual(result["next_action"], "PRIORITIZE_PENDING_NEXT_DAILY_WINDOW")
+        self.assertEqual(result["next_action"], "RESUME_NEXT_BATCH_WINDOW")

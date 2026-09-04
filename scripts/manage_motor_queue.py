@@ -106,14 +106,39 @@ def stage_prepared(prepared: dict[str, Any], queue: dict[str, Any], batch_size: 
 def advance(queue: dict[str, Any], motor_input: dict[str, Any], now: datetime | None = None) -> dict[str, Any]:
     """Removes a successfully delivered batch and retains a compact audit history."""
     validate_queue(queue)
-    selected = {fingerprint(item) for item in motor_input.get("candidates", []) if isinstance(item, dict)}
+    selected = {
+        fingerprint(item): item
+        for item in motor_input.get("candidates", [])
+        if isinstance(item, dict)
+    }
     if not selected:
         raise ValueError("Aucun candidat traité à retirer de la file.")
     timestamp = (now or datetime.now(UTC)).isoformat()
-    completed = [item for item in queue["pending"] if item["fingerprint"] in selected]
-    if len(completed) != len(selected):
-        raise ValueError("Le lot livré ne correspond pas à la file moteur.")
-    pending = [item for item in queue["pending"] if item["fingerprint"] not in selected]
+    pending_by_fingerprint = {item["fingerprint"]: item for item in queue["pending"]}
+    completed: list[dict[str, Any]] = []
+    exact_fingerprints: set[str] = set()
+    for key, candidate in selected.items():
+        exact = pending_by_fingerprint.get(key)
+        if exact is not None:
+            completed.append(exact)
+            exact_fingerprints.add(key)
+            continue
+        source_id = candidate.get("source_id")
+        # A source may gain a richer official proof while its older immutable
+        # version is already being processed by Anthropic. Keep that newer
+        # version pending, but record the frozen version as completed. This
+        # prevents both a proof/analysis mismatch and loss of the improvement.
+        superseded = any(
+            item["candidate"].get("source_id") == source_id
+            for item in queue["pending"]
+        )
+        if not isinstance(source_id, str) or not source_id or not superseded:
+            raise ValueError("Le lot livré ne correspond pas à la file moteur.")
+        completed.append({"fingerprint": key, "candidate": candidate})
+    pending = [
+        item for item in queue["pending"]
+        if item["fingerprint"] not in exact_fingerprints
+    ]
     processed = [*queue["processed"], *[
         {"fingerprint": item["fingerprint"], "source_id": item["candidate"].get("source_id"), "processed_at_utc": timestamp}
         for item in completed

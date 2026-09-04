@@ -29,7 +29,10 @@ permissions:
   id-token: write
 
 concurrency:
-  group: moteur-lawradar
+  # All workflows that can publish a mutable ``evidence/*-latest.json`` share
+  # this repository-wide writer lock. Read-only client branches remain local
+  # jobs of this workflow and do not open a competing Git transaction.
+  group: lawradar-evidence-writer
   cancel-in-progress: false
 
 jobs:
@@ -104,7 +107,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Enregistrer l'absence d'appel au modèle
+      - id: archive_skipped
+        name: Enregistrer l'absence d'appel au modèle et la calibration
+        env:
+          SKIP_REASON: ${{ needs.gate.outputs.skip_reason }}
         run: |
           mkdir -p out
           python scripts/manage_motor_queue.py stage --queue evidence/motor-queue-latest.json --queue-output out/motor-queue-proposed.json --batch-output out/motor-input-skipped.json --batch-size 250 --active-batch-state evidence/motor-batch-latest.json
@@ -114,7 +120,47 @@ jobs:
             --profile config/operator-profile-v1.json \
             --output evidence/recycle-backlog-latest.json \
             --ready-output out/recycle-ready.json
-          python scripts/build_run_manifest.py --output evidence/run-manifest-motor-latest.json --kind motor --status skipped --reason "${{ needs.gate.outputs.skip_reason }}" --inputs evidence/delta-latest.json evidence/jorf-summaries-latest.json evidence/consultdd-latest.json
+          python scripts/build_run_manifest.py --output evidence/run-manifest-motor-latest.json --kind motor --status skipped --reason "$SKIP_REASON" --inputs evidence/delta-latest.json evidence/jorf-summaries-latest.json evidence/consultdd-latest.json out/motor-input-skipped.json
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          motor_input = json.loads(Path("out/motor-input-skipped.json").read_text(encoding="utf-8"))
+          delivery = {
+              "schema": "lawradar-motor-delivery-v1",
+              "run": {
+                  "report_date": motor_input["report_date"],
+                  "coverage": "0 candidat envoyé au modèle",
+                  "summary": os.environ["SKIP_REASON"],
+              },
+              "opportunities": [],
+              "money_flows": [],
+          }
+          Path("out/motor-delivery-skipped.json").write_text(
+              json.dumps(delivery, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          PY
+          python scripts/build_universal_signal.py \
+            --motor-input out/motor-input-skipped.json \
+            --delivery out/motor-delivery-skipped.json \
+            --run-manifest evidence/run-manifest-motor-latest.json \
+            --output out/universal-signal-skipped.json
+          python scripts/archive_universal_signal.py \
+            --dossier out/universal-signal-skipped.json \
+            --archive-root evidence/universal-signals \
+            --archive-only \
+            --manifest out/universal-signal-archive-skipped.json
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          manifest = json.loads(Path("out/universal-signal-archive-skipped.json").read_text(encoding="utf-8"))
+          with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as output:
+              output.write(f"archive_path={manifest['archive_path']}\n")
+              output.write(f"durable_manifest_path={manifest['durable_manifest_path']}\n")
+          PY
+          python scripts/build_run_manifest.py --output evidence/run-manifest-motor-latest.json --kind motor --status skipped --reason "$SKIP_REASON" --inputs evidence/delta-latest.json evidence/jorf-summaries-latest.json evidence/consultdd-latest.json out/motor-input-skipped.json --outputs out/universal-signal-skipped.json out/universal-signal-archive-skipped.json
           python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
           python scripts/render_control_dashboard.py --input evidence/run-index-latest.json --backlog evidence/motor-backlog-latest.json --out out/control-dashboard.html
       - name: Téléverser le contrôle du run ignoré
@@ -125,6 +171,9 @@ jobs:
             evidence/run-manifest-motor-latest.json
             evidence/run-index-latest.json
             out/control-dashboard.html
+            out/motor-input-skipped.json
+            out/universal-signal-skipped.json
+            out/universal-signal-archive-skipped.json
             out/recycle-ready.json
           retention-days: 90
       - name: Versionner le statut ignoré du moteur
@@ -137,7 +186,7 @@ jobs:
           # La file proposée inclut les textes marqués PRIMARY_TEXT_EMPTY.
           # Les persister ici évite de les oublier pendant un run sans IA.
           cp out/motor-queue-proposed.json evidence/motor-queue-latest.json
-          git add evidence/motor-queue-latest.json evidence/recycle-backlog-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json
+          git add -- evidence/motor-queue-latest.json evidence/recycle-backlog-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json "${{ steps.archive_skipped.outputs.archive_path }}" "${{ steps.archive_skipped.outputs.durable_manifest_path }}"
           git diff --cached --quiet || git commit -m "Moteur LawRadar ignoré $(date -u +%F)"
           git pull --rebase origin main
           git push
@@ -183,17 +232,18 @@ jobs:
         if: steps.batch_auth.outputs.configured == 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: >-
-          python scripts/run_anthropic_motor_batch.py
-          --input out/motor-input.json
-          --state evidence/motor-batch-latest.json
-          --output out/motor-delivery.json
-          --model claude-sonnet-5
-          # Le batch est asynchrone : écrire/commiter son identifiant tout de
-          # suite réduit la fenêtre où un arrêt de runner pourrait perdre la
-          # référence fournisseur. Les piges suivantes font la moisson.
-          --wait-seconds 0
-          --poll-seconds 10
+        # Le batch est asynchrone : écrire/commiter son identifiant tout de
+        # suite réduit la fenêtre où un arrêt de runner pourrait perdre la
+        # référence fournisseur. Les piges suivantes font la moisson.
+        run: |
+          python scripts/run_anthropic_motor_batch.py \
+            --input out/motor-input.json \
+            --state evidence/motor-batch-latest.json \
+            --output out/motor-delivery.json \
+            --resolved-input-output out/motor-input-resolved.json \
+            --model claude-sonnet-5 \
+            --wait-seconds 0 \
+            --poll-seconds 10
       - name: Enregistrer la migration en attente de clé API
         if: steps.batch_auth.outputs.configured != 'true'
         run: |
@@ -230,7 +280,7 @@ jobs:
           # le prochain réveil reprend exactement le même lot, même si de
           # nouveaux textes arrivent entre-temps.
           cp out/motor-queue-proposed.json evidence/motor-queue-latest.json
-          python scripts/build_run_manifest.py --output evidence/run-manifest-motor-latest.json --kind motor --status pending --reason "Message Batch Anthropic en cours ; reprise sans nouvelle soumission au prochain run." --inputs out/motor-input.json --outputs evidence/motor-batch-latest.json
+          python scripts/build_run_manifest.py --output evidence/run-manifest-motor-latest.json --kind motor --status pending --reason "Message Batch Anthropic en cours ; reprise sans nouvelle soumission au prochain run." --inputs out/motor-input-resolved.json --outputs evidence/motor-batch-latest.json
           python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
           python scripts/render_control_dashboard.py --input evidence/run-index-latest.json --backlog evidence/motor-backlog-latest.json --out out/control-dashboard.html
       - name: Téléverser l'état du batch encore en cours
@@ -243,6 +293,7 @@ jobs:
             evidence/run-manifest-motor-latest.json
             evidence/run-index-latest.json
             out/control-dashboard.html
+            out/motor-input-resolved.json
           retention-days: 90
       - name: Mémoriser le batch encore en cours sans le soumettre à nouveau
         if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status != 'ended'
@@ -260,7 +311,7 @@ jobs:
         if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status == 'ended'
         run: |
           cp out/motor-queue-proposed.json evidence/motor-queue-latest.json
-          python scripts/build_run_manifest.py --output evidence/run-manifest-motor-latest.json --kind motor --status failed --reason "Message Batch Anthropic achevé sans livraison valide ; consulter evidence/motor-batch-latest.json avant tout rejeu." --inputs out/motor-input.json --outputs evidence/motor-batch-latest.json
+          python scripts/build_run_manifest.py --output evidence/run-manifest-motor-latest.json --kind motor --status failed --reason "Message Batch Anthropic achevé sans livraison valide ; consulter evidence/motor-batch-latest.json avant tout rejeu." --inputs out/motor-input-resolved.json --outputs evidence/motor-batch-latest.json
           python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
       - name: Mémoriser le diagnostic du batch refusé
         if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status == 'ended'
@@ -285,13 +336,29 @@ jobs:
           python scripts/build_run_manifest.py
           --output out/run-manifest.json
           --kind motor --status success
-          --inputs out/motor-input.json config/moteur-delivery-schema.json
+          --inputs out/motor-input-resolved.json config/moteur-delivery-schema.json
           --outputs out/motor-delivery.json out/dashboard.html
-      - name: Construire le dossier universel de signal
+      - id: archive
+        name: Construire et archiver le dossier universel de signal
         if: steps.batch.outputs.ready == 'true'
         run: |
-          python scripts/build_universal_signal.py --motor-input out/motor-input.json --delivery out/motor-delivery.json --run-manifest out/run-manifest.json --output out/universal-signal.json
-          cp out/universal-signal.json evidence/universal-signal-latest.json
+          python scripts/build_universal_signal.py --motor-input out/motor-input-resolved.json --delivery out/motor-delivery.json --run-manifest out/run-manifest.json --output out/universal-signal.json
+          # L'archive immuable est créée avant le pointeur latest. Si elle
+          # échoue, la file ne bouge pas et aucun client ne reçoit l'ancien lot.
+          python scripts/archive_universal_signal.py \
+            --dossier out/universal-signal.json \
+            --archive-root evidence/universal-signals \
+            --latest evidence/universal-signal-latest.json \
+            --manifest out/universal-signal-archive.json
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          manifest = json.loads(Path("out/universal-signal-archive.json").read_text(encoding="utf-8"))
+          with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as output:
+              output.write(f"archive_path={manifest['archive_path']}\n")
+              output.write(f"durable_manifest_path={manifest['durable_manifest_path']}\n")
+          PY
           python scripts/build_agent_pilot_readiness.py --dossier out/universal-signal.json --policy config/compliance-policy-v1.json --profile config/operator-profile-v1.json --output out/agent-pilot-readiness.json
           cp out/agent-pilot-readiness.json evidence/agent-pilot-readiness-latest.json
           python scripts/utils/recycle_backlog.py capture \
@@ -307,14 +374,14 @@ jobs:
             --profile config/operator-profile-v1.json \
             --output evidence/recycle-backlog-latest.json \
             --ready-output out/recycle-ready.json
-          python scripts/build_run_manifest.py --output out/run-manifest.json --kind motor --status success --inputs out/motor-input.json config/moteur-delivery-schema.json --outputs out/motor-delivery.json out/dashboard.html out/universal-signal.json out/agent-pilot-readiness.json
+          python scripts/build_run_manifest.py --output out/run-manifest.json --kind motor --status success --inputs out/motor-input-resolved.json config/moteur-delivery-schema.json --outputs out/motor-delivery.json out/dashboard.html out/universal-signal.json out/universal-signal-archive.json out/agent-pilot-readiness.json
       - name: Actualiser le registre du centre de contrôle
         if: steps.batch.outputs.ready == 'true'
         run: |
           # On avance la file exactement telle qu'elle était au moment de la
           # soumission, plus les nouveaux candidats déjà vus par ce run.
           # Partir de l'ancienne file ferait disparaître son reliquat.
-          python scripts/manage_motor_queue.py advance --queue out/motor-queue-proposed.json --motor-input out/motor-input.json --output evidence/motor-queue-latest.json
+          python scripts/manage_motor_queue.py advance --queue out/motor-queue-proposed.json --motor-input out/motor-input-resolved.json --output evidence/motor-queue-latest.json
           cp out/run-manifest.json evidence/run-manifest-motor-latest.json
           python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
           python scripts/render_control_dashboard.py --input evidence/run-index-latest.json --backlog evidence/motor-backlog-latest.json --out out/control-dashboard.html
@@ -333,7 +400,7 @@ jobs:
           git config user.name "lawradar-motor[bot]"
           git config user.email "lawradar-motor[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git add evidence/motor-batch-latest.json evidence/motor-queue-latest.json evidence/recycle-backlog-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json evidence/universal-signal-latest.json evidence/agent-pilot-readiness-latest.json
+          git add -- evidence/motor-batch-latest.json evidence/motor-queue-latest.json evidence/recycle-backlog-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json evidence/universal-signal-latest.json evidence/agent-pilot-readiness-latest.json "${{ steps.archive.outputs.archive_path }}" "${{ steps.archive.outputs.durable_manifest_path }}"
           git diff --cached --quiet || git commit -m "Statut moteur LawRadar $(date -u +%F)"
           git pull --rebase origin main
           git push
@@ -349,7 +416,7 @@ jobs:
       - name: Publier l'état de capacité après la dernière fenêtre quotidienne
         run: |
           git pull --ff-only origin main
-          python scripts/build_motor_backlog.py --queue evidence/motor-queue-latest.json --output evidence/motor-backlog-latest.json --daily-capacity 30
+          python scripts/build_motor_backlog.py --queue evidence/motor-queue-latest.json --output evidence/motor-backlog-latest.json --batch-capacity 250
           python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
           mkdir -p out
           python scripts/render_control_dashboard.py --input evidence/run-index-latest.json --backlog evidence/motor-backlog-latest.json --out out/control-dashboard.html
@@ -367,7 +434,18 @@ jobs:
 
   client_plan:
     needs: [moteur, record_skipped]
-    if: ${{ always() && !cancelled() && (github.event.inputs.clients_only == 'true' || needs.moteur.outputs.batch_ready == 'true' || github.event.schedule == '17 17 * * *' || github.event.schedule == '17 18 * * *' || github.event.schedule == '17 19 * * *') }}
+    if: >-
+      ${{
+        always() && !cancelled() && (
+          github.event.inputs.clients_only == 'true' ||
+          (needs.moteur.result == 'success' && needs.moteur.outputs.batch_ready == 'true') ||
+          (
+            (github.event.schedule == '17 17 * * *' || github.event.schedule == '17 18 * * *' || github.event.schedule == '17 19 * * *') &&
+            (needs.moteur.result == 'success' || needs.record_skipped.result == 'success') &&
+            needs.moteur.result != 'failure' && needs.record_skipped.result != 'failure'
+          )
+        )
+      }}
     runs-on: ubuntu-latest
     outputs:
       client_matrix: ${{ steps.plan.outputs.client_matrix }}

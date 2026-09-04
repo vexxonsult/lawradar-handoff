@@ -82,8 +82,12 @@ def compact_signal(signal: dict[str, Any], filters: dict[str, Any]) -> dict[str,
     """Keep source/facts/support state sufficient for a later, traceable reopen."""
     return {
         "id": signal.get("id"),
+        "identity": copy.deepcopy(signal.get("identity")),
         "source": copy.deepcopy(signal.get("source")),
         "radar": copy.deepcopy(signal.get("radar")),
+        "discovery": copy.deepcopy(signal.get("discovery")),
+        "reading": copy.deepcopy(signal.get("reading")),
+        "reading_provenance": copy.deepcopy(signal.get("reading_provenance")),
         "opportunity_facts": copy.deepcopy(signal.get("opportunity_facts")),
         "enrichments": copy.deepcopy(signal.get("enrichments")),
         "deterministic_filters": copy.deepcopy(filters),

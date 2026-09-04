@@ -139,6 +139,11 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertIn("scripts/run_anthropic_motor_batch.py", workflow)
         self.assertNotIn("anthropics/claude-code-action", workflow)
         self.assertNotIn("--max-turns", workflow)
+        batch_command = workflow.split("name: Soumettre ou reprendre le Message Batch Anthropic", 1)[1].split("- name: Enregistrer la migration", 1)[0]
+        self.assertIn("run: |", batch_command)
+        self.assertIn("--wait-seconds 0", batch_command)
+        self.assertIn("--poll-seconds 10", batch_command)
+        self.assertNotIn("run: >-", batch_command)
 
     def test_workflow_uses_paris_time_and_automatic_client_fanout(self):
         motor = Path(".github/workflows/moteur-lawradar.yml").read_text(encoding="utf-8")
@@ -152,6 +157,18 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertIn("scripts/run_client_branch.py --branch demand-market", motor)
         self.assertIn("scripts/clients/entrepreneur_agent.py", motor)
         self.assertIn("evidence/client-orchestration-latest.json", motor)
+        self.assertIn("scripts/archive_universal_signal.py", motor)
+        self.assertIn("--resolved-input-output out/motor-input-resolved.json", motor)
+        self.assertIn("--motor-input out/motor-input-resolved.json", motor)
+        self.assertIn("--motor-input out/motor-input-resolved.json --output", motor)
+        self.assertIn("--archive-only", motor)
+        self.assertIn("out/universal-signal-skipped.json", motor)
+        self.assertIn("steps.archive.outputs.archive_path", motor)
+        self.assertIn("steps.archive_skipped.outputs.archive_path", motor)
+        self.assertIn("steps.archive.outputs.durable_manifest_path", motor)
+        self.assertIn("needs.moteur.result == 'success'", motor)
+        self.assertIn("needs.record_skipped.result == 'success'", motor)
+        self.assertIn("needs.record_skipped.result != 'failure'", motor)
         self.assertIn("clients_only", motor)
         self.assertIn("github.event.inputs.clients_only == 'true'", motor)
         self.assertIn("client_matrix", motor)
@@ -163,6 +180,8 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertIn('cron: "17,47 5-7 * * *"', collector)
         self.assertIn('cron: "17 8 * * *"', collector)
         self.assertIn('timezone: "Europe/Paris"', collector)
+        self.assertEqual(motor.count("group: lawradar-evidence-writer"), 1)
+        self.assertEqual(collector.count("group: lawradar-evidence-writer"), 1)
 
     def test_refuses_more_than_the_operational_cap(self):
         items = [candidate(f"jorf:{index}", f"Texte {index}") for index in range(MAX_CANDIDATES + 1)]
@@ -214,6 +233,25 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         delivery, usage = assemble_delivery(value, responses, mapping)
         self.assertEqual([item["source_id"] for item in delivery["opportunities"]], ["jorf:A", "jorf:B"])
         self.assertEqual(usage, {"input_tokens": 200, "output_tokens": 100})
+
+    def test_links_each_money_flow_to_the_candidate_source(self):
+        value = motor_input(candidate("jorf:A"), candidate("jorf:B"))
+        requests, mapping = build_requests(value, "claude-sonnet-5")
+        responses = [
+            response(requests[0]["custom_id"], "jorf:A"),
+            response(requests[1]["custom_id"], "jorf:B"),
+        ]
+        payload = json.loads(responses[1]["result"]["message"]["content"][0]["text"])
+        payload["money_flows"] = [{
+            "label": "Flux documenté", "title": "Paiement explicite",
+            "money_sentence": "B paie C.", "explanation": "Le texte le dit.",
+            "payer": "B", "recipient": "C", "amount": "100 EUR",
+            "effective_date": "2026-09-03", "certainty": "VERIFIED",
+            "next_action": "Vérifier la date.",
+        }]
+        responses[1]["result"]["message"]["content"][0]["text"] = json.dumps(payload)
+        delivery, _ = assemble_delivery(value, responses, mapping)
+        self.assertEqual(delivery["money_flows"][0]["source_id"], "jorf:B")
 
     def test_normalizes_model_signal_id_from_verified_batch_mapping(self):
         value = motor_input(candidate("jorf:A"))
@@ -315,6 +353,49 @@ class AnthropicMotorBatchTests(unittest.TestCase):
             self.assertTrue(state["ready"])
             delivery = json.loads(output_path.read_text(encoding="utf-8"))
             self.assertEqual(delivery["opportunities"][0]["source_id"], "jorf:A")
+
+    def test_resumed_batch_exports_frozen_input_instead_of_restaged_candidate(self):
+        first = motor_input(candidate("jorf:A"))
+        first["candidates"][0]["evidence"]["official_text_excerpt"] = "Preuve A réellement soumise."
+        requests, _ = build_requests(first, "claude-sonnet-5")
+        client = FakeClient(
+            [response(requests[0]["custom_id"], "jorf:A")], starts_ended=False
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            state_path = Path(directory) / "state.json"
+            output_path = Path(directory) / "delivery.json"
+            resolved_input_path = Path(directory) / "resolved-input.json"
+            run_batch(
+                first,
+                client=client,
+                state_path=state_path,
+                output_path=output_path,
+                resolved_input_output=resolved_input_path,
+                wait_seconds=0,
+            )
+
+            restaged = motor_input(candidate("jorf:A"))
+            restaged["candidates"][0]["evidence"]["official_text_excerpt"] = (
+                "Preuve B arrivée après la soumission."
+            )
+            client.messages.batches.starts_ended = True
+            state = run_batch(
+                restaged,
+                client=client,
+                state_path=state_path,
+                output_path=output_path,
+                resolved_input_output=resolved_input_path,
+                wait_seconds=0,
+            )
+
+            self.assertTrue(state["ready"])
+            resolved = json.loads(resolved_input_path.read_text(encoding="utf-8"))
+            self.assertEqual(
+                resolved["candidates"][0]["evidence"]["official_text_excerpt"],
+                "Preuve A réellement soumise.",
+            )
+            self.assertNotEqual(resolved, restaged)
+            self.assertFalse(list(Path(directory).glob(".resolved-input.json.*.tmp")))
 
     def test_old_batch_result_receives_a_safe_reading_fallback(self):
         value = motor_input(candidate("jorf:A"))

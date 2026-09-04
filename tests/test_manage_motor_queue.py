@@ -4,7 +4,13 @@ import unittest
 from datetime import UTC, datetime
 from pathlib import Path
 
-from scripts.manage_motor_queue import advance, effective_batch_size, empty_queue, stage_prepared
+from scripts.manage_motor_queue import (
+    advance,
+    effective_batch_size,
+    empty_queue,
+    fingerprint,
+    stage_prepared,
+)
 
 
 def candidate(number):
@@ -59,6 +65,29 @@ class ManageMotorQueueTests(unittest.TestCase):
         queue, batch = stage_prepared({"candidates": [enriched]}, queue, 10)
         self.assertEqual(len(queue["pending"]), 1)
         self.assertEqual(batch["candidates"][0]["evidence"]["official_text_excerpt"], "Texte officiel.")
+
+    def test_advance_keeps_a_newer_version_after_frozen_batch_is_delivered(self):
+        old = candidate(1)
+        original_queue, frozen_batch = stage_prepared(
+            {"candidates": [old]}, empty_queue(), 10
+        )
+        enriched = candidate(1)
+        enriched["evidence"]["official_text_excerpt"] = "Preuve enrichie."
+        refreshed_queue, _ = stage_prepared(
+            {"candidates": [enriched]}, original_queue, 10
+        )
+
+        advanced = advance(
+            refreshed_queue, frozen_batch, now=datetime(2026, 9, 2, tzinfo=UTC)
+        )
+
+        self.assertEqual(len(advanced["processed"]), 1)
+        self.assertEqual(advanced["processed"][0]["fingerprint"], fingerprint(old))
+        self.assertEqual(len(advanced["pending"]), 1)
+        self.assertEqual(
+            advanced["pending"][0]["candidate"]["evidence"]["official_text_excerpt"],
+            "Preuve enrichie.",
+        )
 
     def test_marks_empty_primary_jorf_text_unresolved_without_model_input(self):
         incomplete = candidate(1)

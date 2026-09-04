@@ -141,13 +141,27 @@ def load_jorf_excerpt_index(path: Path) -> dict[str, dict[str, Any]]:
 def attach_jorf_excerpt(
     record: dict[str, Any], excerpts: dict[str, dict[str, Any]]
 ) -> dict[str, Any]:
-    """Adds only the extracted official evidence associated with this text id."""
+    """Adds only the extracted official evidence associated with this text id.
+
+    The human-readable Legifrance URL and the DILA archive provenance belong
+    to the same primary proof as the excerpt.  Keeping them on the candidate
+    prevents later compactors from retaining text without a verifiable source.
+    """
     text_id = record.get("evidence", {}).get("text_id")
-    excerpt = excerpts.get(text_id)
-    if excerpt is None:
+    if not isinstance(text_id, str) or not text_id:
         return record
     enriched = {**record, "evidence": {**record["evidence"]}}
-    for key in ("official_text_excerpt", "official_text_sha256", "excerpt_truncated", "content_status"):
+    if text_id.startswith("JORFTEXT"):
+        enriched["evidence"]["official_url"] = (
+            f"https://www.legifrance.gouv.fr/jorf/id/{text_id}"
+        )
+    excerpt = excerpts.get(text_id)
+    if excerpt is None:
+        return enriched
+    for key in (
+        "archive_url", "archive_sha256", "official_text_excerpt",
+        "official_text_sha256", "excerpt_truncated", "content_status",
+    ):
         if key in excerpt:
             enriched["evidence"][key] = excerpt[key]
     return enriched

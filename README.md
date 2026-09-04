@@ -58,9 +58,29 @@ dans Google Drive. Leur accès reste régi par les paramètres GitHub du dépôt
 
 Chaque collecte publie aussi `evidence/run-manifest-latest.json`. Chaque exécution du moteur met à jour `evidence/run-manifest-motor-latest.json` puis joint son manifeste à l’artefact. `evidence/run-index-latest.json` rassemble les derniers statuts et le workflow de collecte joint un dashboard de contrôle HTML à son artefact. Ces données décrivent le run, ses fichiers d'entrée et de sortie, leurs empreintes et la durée mesurée, sans recopier les preuves ni inventer une consommation.
 
-## Dossier universel de signal — phase 5
+## Dossier universel de signal — phase 5 et mémoire durable
 
-Lorsqu’un moteur aboutit, il publie `evidence/universal-signal-latest.json`. Ce dossier rassemble, sans nouvelle interprétation, les preuves compactes, la décision du Radar, les flux éventuellement démontrés et trois emplacements explicitement vides pour les futurs agents Presse, Demande et Marché. Ces agents ne pourront qu’ajouter une sortie sourcée dans leur emplacement ; ils ne modifieront ni la preuve ni la décision du Radar.
+Lorsqu’un moteur aboutit, il publie `evidence/universal-signal-latest.json`. Ce dossier rassemble, sans nouvelle interprétation, les références et empreintes des preuves officielles, un aperçu primaire borné, la décision du Radar, la lecture structurée déjà validée par le Moteur (conséquence, acteurs, bénéficiaires, contraints, partenaires documentés et inconnues), les flux éventuellement démontrés et trois emplacements explicitement vides pour Presse, Demande et Marché. Chaque flux porte le `source_id` et le `signal_id` dont il provient. Les faits, la preuve officielle et la lecture structurée restent trois blocs distincts, avec une provenance explicite ; `MOTOR_STRUCTURED_READING` désigne le producteur contractuel vérifiable et ne prétend pas identifier à lui seul le fournisseur ou le modèle. Une ancienne livraison sans vraie lecture reste `MISSING_LEGACY`, jamais remplacée par une synthèse artificielle ; le crash-test isolé est marqué `SIMULATOR` et ne peut pas être archivé comme production.
+
+Avant de déplacer le pointeur `latest`, le moteur conserve le lot complet dans
+`evidence/universal-signals/v2/AAAA/MM/run-<id>-attempt-<n>.json` (ou
+`run-<id>.json` hors GitHub). Un manifeste immuable adjacent conserve son
+empreinte et ses références. Cette archive est
+append-only : un second passage identique est sans effet et une tentative de
+modifier le contenu d'un même run est refusée. Les textes écartés et non
+résolus, ainsi que les sorties compactes des préfiltres déterministes, sont
+archivés eux aussi afin de pouvoir mesurer les faux négatifs et recalibrer le
+Radar. Un run sans candidat archive cet audit sans déplacer
+`universal-signal-latest.json`, qui reste le dernier noyau exploitable par les
+clients. Le gros texte primaire n'est jamais dupliqué : l'archive
+conserve un aperçu de 2 000 caractères au maximum, l'URL officielle et les
+empreintes DILA permettant de revenir à la source.
+
+Pour préserver la lecture des anciens snapshots V2, les champs de liaison
+`source_id`, `signal_id` et `link_status` d'un flux restent optionnels dans le
+schéma générique. Ils sont en revanche obligatoires dans le profil d'archive
+durable appliqué aux nouveaux lots : aucun nouveau flux non rattaché ne peut
+être scellé silencieusement.
 
 Après une moisson Batch réussie, les jobs directs Presse et BOAMP sont
 déclenchés automatiquement pour chaque signal autorisé. Ils lisent l'artefact

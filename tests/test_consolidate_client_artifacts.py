@@ -27,6 +27,7 @@ def core() -> dict:
         "signals": [{
             "id": "signal:1",
             "radar": {"status": "RETAINED"},
+            "reading": {"consequence": "Une règle change.", "unknowns": ["Montant"]},
             "enrichments": {
                 "press": {"status": "PENDING", "result": None},
                 "demand": {"status": "PENDING", "result": None},
@@ -59,6 +60,7 @@ class ConsolidateClientArtifactsTests(unittest.TestCase):
         signal = result["signals"][0]
         self.assertEqual(signal["deterministic_filters"]["final_constraint"], "PASS")
         self.assertEqual(signal["enrichments"]["demand"]["status"], "COMPLETED")
+        self.assertEqual(signal["reading"], core()["signals"][0]["reading"])
         self.assertTrue(result["client_context"]["core_immutable"])
         self.assertEqual(result["client_context"]["mode"], "consolidated")
         self.assertEqual(result["client_context"]["assembled_at_utc"], "2026-09-03T17:17:00+00:00")

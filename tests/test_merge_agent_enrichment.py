@@ -11,6 +11,7 @@ def dossier():
             "id": "signal:1",
             "source": {"title": "Preuve primaire"},
             "radar": {"status": "RETAINED", "reason": "Décision étayée"},
+            "reading": {"consequence": "Une règle change.", "unknowns": ["Montant"]},
             "enrichments": {
                 "press": {"status": "PENDING", "result": None},
                 "demand": {"status": "PENDING", "result": None},
@@ -43,6 +44,7 @@ class MergeAgentEnrichmentTests(unittest.TestCase):
         self.assertEqual(original, dossier())
         self.assertEqual(merged["signals"][0]["source"], original["signals"][0]["source"])
         self.assertEqual(merged["signals"][0]["radar"], original["signals"][0]["radar"])
+        self.assertEqual(merged["signals"][0]["reading"], original["signals"][0]["reading"])
         self.assertEqual(merged["money_flows"], original["money_flows"])
         self.assertEqual(merged["signals"][0]["enrichments"]["press"]["status"], "NO_EVIDENCE")
         self.assertEqual(merged["signals"][0]["enrichments"]["demand"], original["signals"][0]["enrichments"]["demand"])

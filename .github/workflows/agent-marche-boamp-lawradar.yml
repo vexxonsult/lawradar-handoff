@@ -17,21 +17,16 @@ on:
         description: "Clé sûre utilisée pour isoler l'artefact du signal"
         required: true
         type: string
-      persist_core:
-        description: "Autorise uniquement le pilote manuel à actualiser le snapshot historique"
-        required: false
-        default: false
-        type: boolean
     secrets:
       CLAUDE_CODE_OAUTH_TOKEN:
         required: false
 
 permissions:
-  contents: write
+  contents: read
   id-token: write
 
 concurrency:
-  group: agent-marche-boamp-lawradar-${{ inputs.artifact_key || github.run_id }}
+  group: agent-marche-boamp-lawradar-${{ inputs.signal_id }}
   cancel-in-progress: false
 
 jobs:
@@ -105,10 +100,6 @@ jobs:
           python scripts/validate_demand_enrichment.py \
             --observations out/demand-observations.json \
             --enrichment out/demand-enrichment.json
-          python scripts/merge_agent_enrichment.py \
-            --dossier evidence/universal-signal-latest.json \
-            --enrichment out/demand-enrichment.json \
-            --output out/universal-signal-with-demand.json
       - id: qualify
         name: N'appeler le modèle que pour des avis traçables
         if: steps.route.outputs.should_collect == 'true'
@@ -150,29 +141,12 @@ jobs:
             --model claude-sonnet-5
             --max-turns 3
             --allowedTools Read,Write
-      - name: Valider et intégrer l'enrichissement
+      - name: Valider l'enrichissement séparé
         if: steps.route.outputs.should_collect == 'true'
-        run: |
-          python scripts/validate_market_enrichment.py --observations out/market-observations.json --enrichment out/market-enrichment.json
-          python scripts/merge_agent_enrichment.py --dossier out/universal-signal-with-demand.json --enrichment out/market-enrichment.json --output out/universal-signal-enriched.json
-      - name: Actualiser le snapshot historique pour un lancement manuel explicite
-        if: steps.route.outputs.should_collect == 'true' && (github.event_name == 'workflow_dispatch' || inputs.persist_core)
-        run: cp out/universal-signal-enriched.json evidence/universal-signal-latest.json
+        run: python scripts/validate_market_enrichment.py --observations out/market-observations.json --enrichment out/market-enrichment.json
       - name: Conserver les artefacts du pilote
         uses: actions/upload-artifact@v4
         with:
           name: lawradar-demand-market-boamp-${{ inputs.artifact_key || github.run_id }}
           path: out/
           retention-days: 90
-      - name: Versionner l'enrichissement validé
-        if: steps.route.outputs.should_collect == 'true' && (github.event_name == 'workflow_dispatch' || inputs.persist_core)
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config user.name "lawradar-market[bot]"
-          git config user.email "lawradar-market[bot]@users.noreply.github.com"
-          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git add evidence/universal-signal-latest.json
-          git diff --cached --quiet || git commit -m "Enrichissement Marché BOAMP LawRadar $(date -u +%F)"
-          git pull --rebase origin main
-          git push

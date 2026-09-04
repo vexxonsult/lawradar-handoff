@@ -108,20 +108,63 @@ def simulated_boamp_fetch(_: str, __: dict[str, Any], ___: int) -> dict[str, Any
 
 
 def universal_dossier() -> dict[str, Any]:
+    evidence = {
+        "text_id": "SIMULATED-WATER-FILTER",
+        "nature": "SCENARIO",
+        "nor": None,
+        "title": "SCÉNARIO — décret fictif de suivi des filtres à eau",
+        "publisher": "Simulateur LawRadar",
+        "url": OFFICIAL_URL,
+        "publication_date": "2026-09-02",
+        "journal_number": None,
+        "article_ids": [], "article_titles": [], "dates": [],
+        "detail_status": "SIMULATED", "official": {}, "attachments": [],
+        "evidence_excerpts": [],
+        "primary_evidence": {
+            "content_status": "SIMULATED", "text_sha256": None,
+            "excerpt": None, "excerpt_truncated": False,
+            "archive_url": None, "archive_sha256": None,
+        },
+    }
     return {
         "schema": "lawradar-universal-signal-v2",
-        "scenario_only": True,
+        "run": {
+            "id": "scenario-2026-09-02", "attempt": None,
+            "url": None, "commit": None, "report_date": "2026-09-02",
+        },
+        "context": {"scenario_only": True, "prefilter_audit": {
+            "excluded_historical_candidates": [],
+            "excluded_routine_candidates": [],
+            "excluded_no_economic_friction_candidates": [],
+            "deterministically_unresolved_candidates": [],
+        }},
         "signals": [{
             "id": SCENARIO_ID,
-            "source": {"evidence": {
-                "url": OFFICIAL_URL,
-                "title": "SCÉNARIO — décret fictif de suivi des filtres à eau",
-                "published_at": "2026-09-02",
-            }},
+            "identity": {
+                "stable_source_id": "source:scenario-water-filter",
+                "evidence_version": "sha256:" + signal_hash(evidence),
+            },
+            "source": {
+                "source_id": "scenario:water-filter", "source_kind": "SIMULATION",
+                "change": "NEW", "evidence": evidence,
+            },
             "radar": {
                 "status": "RETAINED",
                 "reason": "Scénario de test : preuve officielle fictive, jamais une donnée de production.",
             },
+            "discovery": {"status": "WATCH_CANDIDATE", "score": 3},
+            "reading": {
+                "consequence": "Le scénario impose un suivi de filtres à eau.",
+                "affected_actors": ["Entreprises françaises simulées"],
+                "beneficiaries": [], "constrained_parties": [],
+                "potential_service_partners": [],
+                "unknowns": ["Le scénario ne constitue aucune preuve réelle."],
+            },
+            "reading_provenance": {
+                "status": "AVAILABLE", "basis": "CANDIDATE_EVIDENCE_ONLY",
+                "producer": "SIMULATOR", "source_id": "scenario:water-filter",
+            },
+            "opportunity_facts": opportunity_facts(),
             "enrichments": {
                 "press": {"status": "PENDING", "result": None},
                 "demand": {"status": "PENDING", "result": None},
@@ -129,6 +172,12 @@ def universal_dossier() -> dict[str, Any]:
             },
         }],
         "money_flows": [],
+        "quality": {
+            "opportunity_count": 1, "unresolved_count": 0,
+            "readings_available_count": 1, "evidence_reference_count": 1,
+            "money_flow_count": 0, "money_flow_unlinked_count": 0,
+            "limitation": "Scénario isolé sans preuve de production.",
+        },
     }
 
 

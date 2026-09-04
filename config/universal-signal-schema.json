@@ -5,11 +5,185 @@
   "required": ["schema", "run", "context", "signals", "money_flows", "quality"],
   "properties": {
     "schema": {"const": "lawradar-universal-signal-v2"},
-    "run": {"type": "object"},
+    "run": {
+      "type": "object",
+      "required": ["id", "url", "commit", "report_date"],
+      "properties": {
+        "id": {"type": ["string", "null"]},
+        "attempt": {"type": ["string", "null"]},
+        "url": {"type": ["string", "null"]},
+        "commit": {"type": ["string", "null"]},
+        "report_date": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
     "context": {"type": "object"},
-    "signals": {"type": "array"},
-    "money_flows": {"type": "array"},
-    "quality": {"type": "object"}
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "source", "radar", "opportunity_facts", "enrichments"],
+        "properties": {
+          "id": {"type": "string"},
+          "identity": {
+            "type": "object",
+            "required": ["stable_source_id", "evidence_version"],
+            "properties": {
+              "stable_source_id": {"type": "string"},
+              "evidence_version": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+            },
+            "additionalProperties": false
+          },
+          "source": {
+            "type": "object",
+            "required": ["source_id", "source_kind", "change", "evidence"],
+            "properties": {
+              "source_id": {"type": "string"},
+              "source_kind": {"type": ["string", "null"]},
+              "change": {"type": ["string", "null"]},
+              "evidence": {"$ref": "#/$defs/evidence"}
+            },
+            "additionalProperties": false
+          },
+          "radar": {
+            "type": "object",
+            "required": ["status", "reason"],
+            "properties": {
+              "status": {"enum": ["RETAINED", "DISCARDED", "UNRESOLVED"]},
+              "reason": {"type": ["string", "null"]}
+            },
+            "additionalProperties": false
+          },
+          "discovery": {"type": ["object", "null"]},
+          "reading": {
+            "oneOf": [
+              {"$ref": "#/$defs/reading"},
+              {"type": "null"}
+            ]
+          },
+          "reading_provenance": {
+            "type": "object",
+            "required": ["status", "basis", "producer", "source_id"],
+            "properties": {
+              "status": {"enum": ["AVAILABLE", "MISSING_LEGACY"]},
+              "basis": {"enum": ["CANDIDATE_EVIDENCE_ONLY", null]},
+              "producer": {
+                "enum": [
+                  "MOTOR_STRUCTURED_READING",
+                  "LEGACY_COMPATIBILITY",
+                  "SIMULATOR"
+                ]
+              },
+              "source_id": {"type": "string"}
+            },
+            "additionalProperties": false
+          },
+          "opportunity_facts": {"$ref": "opportunity-facts-schema-v1.json"},
+          "enrichments": {"type": "object"},
+          "deterministic_filters": {"type": "object"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "money_flows": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/moneyFlow"}
+    },
+    "quality": {
+      "type": "object",
+      "required": ["opportunity_count", "unresolved_count", "money_flow_count", "limitation"],
+      "properties": {
+        "opportunity_count": {"type": "integer", "minimum": 0},
+        "unresolved_count": {"type": "integer", "minimum": 0},
+        "readings_available_count": {"type": "integer", "minimum": 0},
+        "evidence_reference_count": {"type": "integer", "minimum": 0},
+        "money_flow_count": {"type": "integer", "minimum": 0},
+        "money_flow_unlinked_count": {"type": "integer", "minimum": 0},
+        "limitation": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "client_context": {"type": "object"}
+  },
+  "$defs": {
+    "reading": {
+      "type": "object",
+      "required": [
+        "consequence", "affected_actors", "beneficiaries",
+        "constrained_parties", "potential_service_partners", "unknowns"
+      ],
+      "properties": {
+        "consequence": {"type": "string", "minLength": 1},
+        "affected_actors": {"type": "array", "items": {"type": "string"}},
+        "beneficiaries": {"type": "array", "items": {"type": "string"}},
+        "constrained_parties": {"type": "array", "items": {"type": "string"}},
+        "potential_service_partners": {"type": "array", "items": {"type": "string"}},
+        "unknowns": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "moneyFlow": {
+      "type": "object",
+      "required": [
+        "id", "label", "title",
+        "money_sentence", "explanation", "payer", "recipient", "amount",
+        "effective_date", "certainty", "next_action"
+      ],
+      "properties": {
+        "id": {"type": "string"},
+        "source_id": {"type": ["string", "null"]},
+        "signal_id": {"type": ["string", "null"]},
+        "link_status": {"enum": ["VERIFIED", "UNRESOLVED_LEGACY"]},
+        "label": {"type": "string"},
+        "title": {"type": "string"},
+        "money_sentence": {"type": "string"},
+        "explanation": {"type": "string"},
+        "payer": {"type": "string"},
+        "recipient": {"type": "string"},
+        "amount": {"type": "string"},
+        "effective_date": {"type": "string"},
+        "certainty": {"type": "string"},
+        "next_action": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": ["object", "null"],
+      "properties": {
+        "text_id": {"type": ["string", "null"]},
+        "nature": {"type": ["string", "null"]},
+        "nor": {"type": ["string", "null"]},
+        "title": {"type": ["string", "null"]},
+        "publisher": {"type": ["string", "null"]},
+        "url": {"type": ["string", "null"]},
+        "publication_date": {"type": ["string", "null"]},
+        "journal_number": {"type": ["string", "null"]},
+        "article_ids": {"type": "array"},
+        "article_titles": {"type": "array"},
+        "dates": {"type": "array"},
+        "detail_status": {"type": ["string", "null"]},
+        "official": {"type": "object"},
+        "attachments": {"type": "array"},
+        "evidence_excerpts": {"type": "array"},
+        "primary_evidence": {
+          "type": "object",
+          "required": [
+            "content_status", "text_sha256", "excerpt", "excerpt_truncated",
+            "archive_url", "archive_sha256"
+          ],
+          "properties": {
+            "content_status": {"type": ["string", "null"]},
+            "text_sha256": {"type": ["string", "null"]},
+            "excerpt": {"type": ["string", "null"], "maxLength": 2000},
+            "excerpt_truncated": {"type": "boolean"},
+            "archive_url": {"type": ["string", "null"]},
+            "archive_sha256": {"type": ["string", "null"]}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
   },
   "additionalProperties": false
 }

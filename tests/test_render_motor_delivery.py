@@ -28,6 +28,7 @@ class MotorDeliveryTests(unittest.TestCase):
         result = dashboard_input(self.delivery())
         self.assertEqual(result["headline"], "Un flux testé")
         self.assertEqual(result["flows"][0]["payer"], "P")
+        self.assertIn("source_id", result["flows"][0])
 
     def test_rejects_duplicate_flow_id(self):
         payload = self.delivery()

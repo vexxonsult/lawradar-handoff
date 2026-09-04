@@ -55,11 +55,23 @@ class PrepareMotorInputTests(unittest.TestCase):
         self.assertEqual(excluded[0]["reason"], "ROUTINE_PUBLIC_ADMINISTRATION_TITLE")
 
     def test_attaches_only_the_matching_official_excerpt(self):
-        record = {"source_id": "jorf:1", "evidence": {"text_id": "1", "title": "Texte"}}
+        record = {"source_id": "jorf:JORFTEXT1", "evidence": {"text_id": "JORFTEXT1", "title": "Texte"}}
         result = attach_jorf_excerpt(record, {
-            "1": {"text_id": "1", "content_status": "AVAILABLE", "official_text_excerpt": "Preuve officielle."}
+            "JORFTEXT1": {
+                "text_id": "JORFTEXT1",
+                "archive_url": "https://dila.test/archive.tar.gz",
+                "archive_sha256": "archive-sha",
+                "content_status": "AVAILABLE",
+                "official_text_excerpt": "Preuve officielle.",
+            }
         })
         self.assertEqual(result["evidence"]["official_text_excerpt"], "Preuve officielle.")
+        self.assertEqual(result["evidence"]["archive_url"], "https://dila.test/archive.tar.gz")
+        self.assertEqual(result["evidence"]["archive_sha256"], "archive-sha")
+        self.assertEqual(
+            result["evidence"]["official_url"],
+            "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT1",
+        )
         self.assertNotIn("official_text_excerpt", record["evidence"])
 
     def test_routes_a_cross_sector_obligation_to_watch_without_claiming_an_opportunity(self):

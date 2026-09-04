@@ -49,7 +49,7 @@ def render_dashboard(index: dict[str, Any], backlog: dict[str, Any] | None = Non
             "<section><h2>Capacité moteur</h2>"
             f"<p><strong>{tag(backlog.get('status'))}</strong> — "
             f"{tag(backlog.get('pending_count'))} candidat(s) en attente, "
-            f"capacité quotidienne : {tag(backlog.get('daily_capacity'))}.</p>"
+            f"capacité par batch : {tag(backlog.get('batch_capacity'))}.</p>"
             f"<p class=\"note\">Action : {tag(backlog.get('next_action'))}.</p></section>"
         )
     return f'''<!doctype html>

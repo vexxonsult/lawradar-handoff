@@ -24,7 +24,23 @@
           "source_id": {"type": "string"},
           "status": {"enum": ["RETAINED", "DISCARDED", "UNRESOLVED"]},
           "reason": {"type": "string"},
-          "facts": {"$ref": "opportunity-facts-schema-v1.json"}
+          "facts": {"$ref": "opportunity-facts-schema-v1.json"},
+          "reading": {
+            "type": "object",
+            "required": [
+              "consequence", "affected_actors", "beneficiaries",
+              "constrained_parties", "potential_service_partners", "unknowns"
+            ],
+            "properties": {
+              "consequence": {"type": "string", "minLength": 1},
+              "affected_actors": {"type": "array", "items": {"type": "string"}},
+              "beneficiaries": {"type": "array", "items": {"type": "string"}},
+              "constrained_parties": {"type": "array", "items": {"type": "string"}},
+              "potential_service_partners": {"type": "array", "items": {"type": "string"}},
+              "unknowns": {"type": "array", "items": {"type": "string"}}
+            },
+            "additionalProperties": false
+          }
         },
         "additionalProperties": false
       }
@@ -39,6 +55,7 @@
         ],
         "properties": {
           "id": {"type": "string"},
+          "source_id": {"type": "string", "minLength": 1},
           "label": {"type": "string"},
           "title": {"type": "string"},
           "money_sentence": {"type": "string"},

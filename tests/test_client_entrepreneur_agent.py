@@ -3,7 +3,13 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.clients.entrepreneur_agent import build_delivery, read_snapshot, run_claude_assessment, source_hash
+from scripts.clients.entrepreneur_agent import (
+    _compact_client_input,
+    build_delivery,
+    read_snapshot,
+    run_claude_assessment,
+    source_hash,
+)
 
 
 def dossier(with_gate=False):
@@ -11,10 +17,25 @@ def dossier(with_gate=False):
         "id": "signal:1",
         "source": {"evidence": {"url": "https://official.test/a"}},
         "radar": {"status": "RETAINED", "reason": "Preuve officielle"},
+        "discovery": {"status": "WATCH_CANDIDATE", "score": 4},
+        "reading": {
+            "consequence": "Une obligation crée un besoin documenté.",
+            "affected_actors": ["Acheteurs"],
+            "beneficiaries": ["Prestataires"],
+            "constrained_parties": ["Exploitants"],
+            "potential_service_partners": ["Conseils"],
+            "unknowns": ["Volume exact"],
+        },
+        "reading_provenance": {
+            "status": "AVAILABLE",
+            "basis": "CANDIDATE_EVIDENCE_ONLY",
+            "producer": "MOTOR_STRUCTURED_READING",
+            "source_id": "jorf:1",
+        },
         "enrichments": {
             "press": {"status": "COMPLETED", "result": {}},
             "demand": {"status": "COMPLETED", "result": {}},
-            "market": {"status": "NO_EVIDENCE", "result": None},
+            "market": {"status": "COMPLETED", "result": {}},
         },
     }
     if with_gate:
@@ -38,6 +59,45 @@ class ClientEntrepreneurTests(unittest.TestCase):
         self.assertEqual(value["status"], "READY_FOR_AI_ASSESSMENT")
         self.assertIsNone(value["business_assessment"])
         self.assertFalse(value["execution"]["writes_to_core"])
+
+    def test_raw_boamp_demand_cannot_override_market_no_evidence(self):
+        snapshot = dossier(with_gate=True)
+        snapshot["signals"][0]["enrichments"]["market"] = {
+            "status": "NO_EVIDENCE", "result": None
+        }
+        value = build_delivery(snapshot, "hash", "signal:1")
+        self.assertEqual(value["status"], "UNRESOLVED")
+        self.assertEqual(value["input_summary"]["eligible_support"], [])
+        self.assertTrue(any("Marché qualifié" in item for item in value["gaps"]))
+
+    def test_startup_capital_is_never_treated_as_a_commission_base(self):
+        signal = dossier(with_gate=True)["signals"][0]
+        signal["opportunity_facts"] = {
+            "requirements": {"minimum_startup_capital_eur": 100000}
+        }
+        self.assertEqual(_compact_client_input(signal)["available_amounts_eur"], [])
+
+    def test_client_receives_only_verified_money_flows_for_selected_signal(self):
+        signal = dossier(with_gate=True)["signals"][0]
+        flows = [
+            {
+                "signal_id": signal["id"], "link_status": "VERIFIED",
+                "estimated_contract_amount_eur": 50000,
+                "url": "https://example.test/linked-flow",
+            },
+            {
+                "signal_id": "signal:other", "link_status": "VERIFIED",
+                "estimated_contract_amount_eur": 90000,
+            },
+            {
+                "signal_id": signal["id"], "link_status": "UNRESOLVED_LEGACY",
+                "estimated_contract_amount_eur": 120000,
+            },
+        ]
+        compact = _compact_client_input(signal, flows)
+        self.assertEqual(compact["money_flows"], [flows[0]])
+        self.assertEqual(compact["available_amounts_eur"], [12000.0, 50000.0])
+        self.assertIn("https://example.test/linked-flow", compact["allowed_source_urls"])
 
     def test_reading_the_core_snapshot_does_not_change_its_bytes(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -125,3 +185,7 @@ class ClientEntrepreneurTests(unittest.TestCase):
         self.assertEqual(client.messages.calls[0]["output_config"]["format"]["type"], "json_schema")
         self.assertEqual(client.messages.calls[0]["output_config"]["effort"], "medium")
         self.assertEqual(client.messages.calls[0]["thinking"], {"type": "adaptive"})
+        prompt = json.loads(client.messages.calls[0]["messages"][0]["content"])
+        self.assertEqual(prompt["reading"], dossier(with_gate=True)["signals"][0]["reading"])
+        self.assertEqual(prompt["reading_provenance"]["status"], "AVAILABLE")
+        self.assertEqual(prompt["discovery"]["score"], 4)

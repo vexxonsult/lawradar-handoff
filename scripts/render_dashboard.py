@@ -48,10 +48,16 @@ def render_dashboard(result: dict) -> str:
     validate_result(result)
     cards = []
     for flow in result["flows"]:
+        source_line = (
+            f"<p class=\"source\">Source liée : {tag(flow['source_id'])}</p>"
+            if isinstance(flow.get("source_id"), str) and flow["source_id"]
+            else "<p class=\"source\">Source liée : non disponible (livraison historique)</p>"
+        )
         cards.append(
             "<article class=\"flow\">"
             f"<p class=\"badge\">{tag(flow['label'])}</p>"
             f"<h2>{tag(flow['title'])}</h2>"
+            f"{source_line}"
             f"<p class=\"money\">{tag(flow['money_sentence'])}</p>"
             f"<p>{tag(flow['explanation'])}</p><dl>"
             f"<dt>Qui paie ?</dt><dd>{tag(flow['payer'])}</dd>"
@@ -85,7 +91,7 @@ def render_dashboard(result: dict) -> str:
     return f"""<!doctype html>
 <html lang=\"fr\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
 <title>Money Flow Radar — {tag(result['report_date'])}</title>
-<style>body{{font-family:system-ui,sans-serif;background:#f7f7f5;color:#1f2937;margin:0}}main{{max-width:1300px;margin:auto;padding:32px 20px}}header{{border-bottom:1px solid #ddd;padding-bottom:20px}}.coverage,.badge{{display:inline-block;background:#fff3cd;border-radius:999px;padding:4px 10px;font-weight:600}}.flow{{background:white;border:1px solid #e5e7eb;border-radius:14px;padding:20px;margin:18px 0}}.money{{font-size:1.1rem;font-weight:650}}dt{{font-weight:650;margin-top:10px}}dd{{margin:2px 0}}.table-wrap{{overflow:auto}}table{{width:100%;border-collapse:collapse;background:#fff;font-size:.9rem}}th,td{{padding:10px;border:1px solid #e5e7eb;text-align:left;vertical-align:top}}th{{background:#eef2ff;white-space:nowrap}}</style>
+<style>body{{font-family:system-ui,sans-serif;background:#f7f7f5;color:#1f2937;margin:0}}main{{max-width:1300px;margin:auto;padding:32px 20px}}header{{border-bottom:1px solid #ddd;padding-bottom:20px}}.coverage,.badge{{display:inline-block;background:#fff3cd;border-radius:999px;padding:4px 10px;font-weight:600}}.flow{{background:white;border:1px solid #e5e7eb;border-radius:14px;padding:20px;margin:18px 0}}.source{{color:#4b5563;font-family:ui-monospace,monospace;font-size:.85rem}}.money{{font-size:1.1rem;font-weight:650}}dt{{font-weight:650;margin-top:10px}}dd{{margin:2px 0}}.table-wrap{{overflow:auto}}table{{width:100%;border-collapse:collapse;background:#fff;font-size:.9rem}}th,td{{padding:10px;border:1px solid #e5e7eb;text-align:left;vertical-align:top}}th{{background:#eef2ff;white-space:nowrap}}</style>
 </head><body><main><header><p class=\"coverage\">{tag(result['coverage'])}</p><h1>{tag(result['headline'])}</h1><p>{tag(result['report_date'])}</p></header><section><h2>Lecture de tous les textes</h2><div class=\"table-wrap\"><table><thead><tr><th>Texte</th><th>Décision</th><th>Ce qui change</th><th>Concernés</th><th>Bénéficiaires</th><th>Contraints</th><th>Partenaires possibles</th><th>À confirmer</th></tr></thead><tbody>{reading_table}</tbody></table></div></section><section><h2>Flux du jour</h2>{content}</section></main></body></html>
 """
 

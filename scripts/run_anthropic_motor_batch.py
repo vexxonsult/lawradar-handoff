@@ -13,6 +13,7 @@ import copy
 import hashlib
 import json
 import os
+import tempfile
 import time
 from datetime import UTC, datetime
 from pathlib import Path
@@ -319,6 +320,26 @@ def _write_json(path: Path, value: dict[str, Any]) -> None:
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def _write_json_atomic(path: Path, value: dict[str, Any]) -> None:
+    """Publie un JSON complet sans exposer de fichier partiellement écrit."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    descriptor, temporary_name = tempfile.mkstemp(
+        prefix=f".{path.name}.", suffix=".tmp", dir=path.parent
+    )
+    try:
+        with os.fdopen(descriptor, "w", encoding="utf-8") as handle:
+            handle.write(json.dumps(value, ensure_ascii=False, indent=2) + "\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary_name, path)
+    except BaseException:
+        try:
+            os.unlink(temporary_name)
+        except FileNotFoundError:
+            pass
+        raise
+
+
 def _message_text(message: Any) -> str:
     for block in _field(message, "content", []) or []:
         if _field(block, "type") == "text" and isinstance(_field(block, "text"), str):
@@ -430,7 +451,11 @@ def assemble_delivery(
         item = by_source[source_id]
         opportunities.append({key: item[key] for key in ("source_id", "status", "reason", "facts", "reading")})
         for flow_index, flow in enumerate(item.get("money_flows", []), start=1):
-            money_flows.append({"id": f"MF-{candidate_index:02d}-{flow_index:02d}", **flow})
+            money_flows.append({
+                "id": f"MF-{candidate_index:02d}-{flow_index:02d}",
+                "source_id": source_id,
+                **flow,
+            })
     counts = {status: sum(item["status"] == status for item in opportunities) for status in ("RETAINED", "DISCARDED", "UNRESOLVED")}
     total = len(opportunities)
     delivery = {
@@ -521,6 +546,7 @@ def _load_reusable_state(
 
 def run_batch(
     motor_input: dict[str, Any], *, client: Any, state_path: Path, output_path: Path,
+    resolved_input_output: Path | None = None,
     model: str = DEFAULT_MODEL, wait_seconds: int = 180, poll_seconds: int = 10,
 ) -> dict[str, Any]:
     requests, source_by_custom_id = build_requests(motor_input, model)
@@ -549,6 +575,11 @@ def run_batch(
         batch = client.messages.batches.retrieve(previous["batch_id"])
     else:
         batch = client.messages.batches.create(requests=requests)
+    # Ce fichier est le contrat d'entrée de la livraison et des étapes aval.
+    # Il reflète le snapshot effectivement soumis au fournisseur, même si la
+    # file a été restagée pendant que le batch distant était encore actif.
+    if resolved_input_output is not None:
+        _write_json_atomic(resolved_input_output, motor_input)
     state = _state_from_batch(batch, request_hash, model, len(requests), motor_input)
     if resumed_after_request_change:
         state["resumed_after_request_change"] = True
@@ -600,6 +631,11 @@ def main() -> int:
     parser.add_argument("--input", type=Path, required=True)
     parser.add_argument("--state", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--resolved-input-output",
+        type=Path,
+        help="Écrit atomiquement l'entrée figée réellement associée au batch.",
+    )
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--wait-seconds", type=int, default=0)
     parser.add_argument("--poll-seconds", type=int, default=10)
@@ -609,7 +645,8 @@ def main() -> int:
         raise RuntimeError("ANTHROPIC_API_KEY absent : aucun batch n'a été soumis.")
     state = run_batch(
         _read_json(args.input), client=_make_client(key), state_path=args.state,
-        output_path=args.output, model=args.model, wait_seconds=args.wait_seconds,
+        output_path=args.output, resolved_input_output=args.resolved_input_output,
+        model=args.model, wait_seconds=args.wait_seconds,
         poll_seconds=args.poll_seconds,
     )
     _write_github_output(state)

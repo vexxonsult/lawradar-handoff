@@ -38,7 +38,7 @@ class RunControlTests(unittest.TestCase):
 
     def test_renders_visible_backlog_state(self):
         index = {"schema": "lawradar-run-index-v1", "generated_at_utc": "2026-09-01T10:01:00+00:00", "runs": []}
-        backlog = {"schema": "lawradar-motor-backlog-v1", "status": "BACKLOG", "pending_count": 4, "daily_capacity": 30, "next_action": "PRIORITIZE_PENDING_NEXT_DAILY_WINDOW"}
+        backlog = {"schema": "lawradar-motor-backlog-v1", "status": "BACKLOG", "pending_count": 4, "batch_capacity": 250, "capacity_window": "PER_BATCH", "next_action": "RESUME_NEXT_BATCH_WINDOW"}
         html = render_dashboard(index, backlog)
         self.assertIn("BACKLOG", html)
         self.assertIn("4 candidat(s) en attente", html)

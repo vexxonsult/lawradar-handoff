@@ -17,21 +17,16 @@ on:
         description: "Clé sûre utilisée pour isoler l'artefact du signal"
         required: true
         type: string
-      persist_core:
-        description: "Autorise uniquement le pilote manuel à actualiser le snapshot historique"
-        required: false
-        default: false
-        type: boolean
     secrets:
       CLAUDE_CODE_OAUTH_TOKEN:
         required: false
 
 permissions:
-  contents: write
+  contents: read
   id-token: write
 
 concurrency:
-  group: agent-presse-lawradar-${{ inputs.artifact_key || github.run_id }}
+  group: agent-presse-lawradar-${{ inputs.signal_id }}
   cancel-in-progress: false
 
 jobs:
@@ -123,29 +118,12 @@ jobs:
             --model claude-sonnet-5
             --max-turns 3
             --allowedTools Read,Write
-      - name: Valider et intégrer l'enrichissement
+      - name: Valider l'enrichissement séparé
         if: steps.access.outputs.should_collect == 'true'
-        run: |
-          python scripts/validate_press_enrichment.py --candidates out/press-candidates.json --enrichment out/press-enrichment.json
-          python scripts/merge_agent_enrichment.py --dossier evidence/universal-signal-latest.json --enrichment out/press-enrichment.json --output out/universal-signal-enriched.json
-      - name: Actualiser le snapshot historique pour un lancement manuel explicite
-        if: steps.access.outputs.should_collect == 'true' && (github.event_name == 'workflow_dispatch' || inputs.persist_core)
-        run: cp out/universal-signal-enriched.json evidence/universal-signal-latest.json
+        run: python scripts/validate_press_enrichment.py --candidates out/press-candidates.json --enrichment out/press-enrichment.json
       - name: Conserver les artefacts du pilote
         uses: actions/upload-artifact@v4
         with:
           name: lawradar-press-${{ inputs.artifact_key || github.run_id }}
           path: out/
           retention-days: 90
-      - name: Versionner l'enrichissement validé
-        if: steps.access.outputs.should_collect == 'true' && (github.event_name == 'workflow_dispatch' || inputs.persist_core)
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config user.name "lawradar-press[bot]"
-          git config user.email "lawradar-press[bot]@users.noreply.github.com"
-          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git add evidence/universal-signal-latest.json
-          git diff --cached --quiet || git commit -m "Enrichissement Presse LawRadar $(date -u +%F)"
-          git pull --rebase origin main
-          git push

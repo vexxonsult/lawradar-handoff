@@ -2,9 +2,14 @@
 
 Le noyau (« Mine d'Or ») produit un unique export neutre :
 `out/universal-signal.json`, conforme à `lawradar-universal-signal-v2`.
-Il contient les preuves compactes, décisions Radar, faits d'opportunité et
-emplacements d'enrichissement. Il ne contient aucune conclusion commerciale
-d'un client.
+Il contient les preuves compactes, décisions Radar, lecture structurée validée
+par le Moteur, faits d'opportunité, flux reliés à leur signal et emplacements
+d'enrichissement. Il ne contient
+aucune conclusion commerciale d'un client.
+
+La provenance `MOTOR_STRUCTURED_READING` identifie ce contrat de production,
+sans attribuer de façon invérifiable la lecture à un fournisseur précis. Les
+données du crash-test portent `SIMULATOR` et restent exclues de la production.
 
 ## Règle Hub & Spoke
 
@@ -44,7 +49,7 @@ sortie.
 
 L'évaluation Claude est opt-in : `--run-claude` requiert `ANTHROPIC_API_KEY`
 dans l'environnement d'exécution et le SDK Python officiel `anthropic`. Elle
-est réalisée avec un unique appel borné au modèle configuré (Sonnet 4.6 par
+est réalisée avec un unique appel borné au modèle configuré (Sonnet 5 par
 défaut), sans outil, sans recherche web et sans écriture dans le noyau. La
 sortie est contrôlée : URLs déjà présentes dans le signal, commission de 5 à
 10 % seulement sur une assiette chiffrée source, et premier pas réversible de
