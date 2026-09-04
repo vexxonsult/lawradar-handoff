@@ -2,6 +2,12 @@ name: Moteur LawRadar — livraison structurée
 
 on:
   workflow_dispatch:
+    inputs:
+      clients_only:
+        description: "Rejouer Presse, Demande et Marché sur le dernier dossier universel, sans lancer le moteur"
+        required: false
+        default: false
+        type: boolean
   workflow_run:
     workflows: ["Collecte primaire DILA JORF"]
     types: [completed]
@@ -28,7 +34,7 @@ concurrency:
 
 jobs:
   gate:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    if: github.event.inputs.clients_only != 'true' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
     outputs:
       should_run: ${{ steps.delta.outputs.should_run }}
@@ -87,7 +93,7 @@ jobs:
 
   record_skipped:
     needs: gate
-    if: needs.gate.outputs.should_run != 'true' && needs.gate.outputs.quiet_idle != 'true'
+    if: github.event.inputs.clients_only != 'true' && needs.gate.outputs.should_run != 'true' && needs.gate.outputs.quiet_idle != 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -134,7 +140,7 @@ jobs:
 
   moteur:
     needs: gate
-    if: needs.gate.outputs.should_run == 'true'
+    if: github.event.inputs.clients_only != 'true' && needs.gate.outputs.should_run == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     outputs:
@@ -345,7 +351,7 @@ jobs:
 
   client_plan:
     needs: [moteur, record_skipped]
-    if: ${{ always() && !cancelled() && (needs.moteur.outputs.batch_ready == 'true' || github.event.schedule == '17 17 * * *' || github.event.schedule == '17 18 * * *' || github.event.schedule == '17 19 * * *') }}
+    if: ${{ always() && !cancelled() && (github.event.inputs.clients_only == 'true' || needs.moteur.outputs.batch_ready == 'true' || github.event.schedule == '17 17 * * *' || github.event.schedule == '17 18 * * *' || github.event.schedule == '17 19 * * *') }}
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.plan.outputs.matrix }}
@@ -418,7 +424,7 @@ jobs:
 
   press:
     needs: client_plan
-    if: needs.client_plan.outputs.matrix != '[]'
+    if: ${{ needs.client_plan.outputs.matrix != '[]' }}
     strategy:
       fail-fast: false
       matrix:
@@ -432,7 +438,7 @@ jobs:
 
   demand_market:
     needs: client_plan
-    if: needs.client_plan.outputs.matrix != '[]'
+    if: ${{ needs.client_plan.outputs.matrix != '[]' }}
     strategy:
       fail-fast: false
       matrix:
