@@ -62,12 +62,16 @@ Chaque collecte publie aussi `evidence/run-manifest-latest.json`. Chaque exécut
 
 Lorsqu’un moteur aboutit, il publie `evidence/universal-signal-latest.json`. Ce dossier rassemble, sans nouvelle interprétation, les preuves compactes, la décision du Radar, les flux éventuellement démontrés et trois emplacements explicitement vides pour les futurs agents Presse, Demande et Marché. Ces agents ne pourront qu’ajouter une sortie sourcée dans leur emplacement ; ils ne modifieront ni la preuve ni la décision du Radar.
 
-Après une moisson Batch réussie, les branches Presse et BOAMP sont déclenchées
-automatiquement pour chaque signal autorisé. La branche BOAMP produit les
-sorties Demande et Marché à partir d'une collecte commune. Les artefacts des
-branches convergent dans `out/client-context.json` ; le noyau versionné reste
-inchangé. Le client Entrepreneur ne reçoit ce contexte qu'après convergence et
-n'appelle Claude que si les filtres déterministes sont à `PASS`.
+Après une moisson Batch réussie, les jobs directs Presse et BOAMP sont
+déclenchés automatiquement pour chaque signal autorisé. Ils lisent l'artefact
+figé du noyau et ne peuvent donc ni modifier la preuve ni la décision du Radar.
+La branche BOAMP produit les sorties Demande et Marché à partir d'une collecte
+commune. Lorsque des candidats Presse ou BOAMP traçables existent, un unique
+appel Claude borné les qualifie ; sans candidat, la branche produit un constat
+`NO_EVIDENCE` sans appel IA. Les artefacts convergent dans
+`out/client-context.json` ; le noyau versionné reste inchangé. Le client
+Entrepreneur ne reçoit ce contexte qu'après convergence et n'appelle Claude que
+si les filtres déterministes sont à `PASS`.
 Un marqueur compact `evidence/client-orchestration-latest.json` empêche les
 créneaux 18:17 et 19:17 de répéter une consolidation déjà réussie ; ils restent
 disponibles comme reprises si le créneau précédent a échoué.
