@@ -14,7 +14,7 @@ PROOF = {"VERIFIED", "PARTIAL", "MISSING"}
 TEXT_STATUSES = {"PUBLISHED", "IN_FORCE", "CONSULTATION_OPEN", "DRAFT", "REPEALED", "EXPIRED", "UNKNOWN"}
 AUTH_STATUSES = {"REQUIRED", "NOT_REQUIRED", "UNKNOWN", "UNAVAILABLE"}
 DEPENDENCY_STATUSES = {"AVAILABLE", "UNKNOWN", "BLOCKING"}
-ACCESS_SECTORS = {"MEDICINES", "FINANCIAL_SERVICES", "LEGAL_SERVICES", "OTHER_REGULATED", "NOT_CLASSIFIED"}
+ACCESS_SECTORS = {"MEDICINES", "FINANCIAL_SERVICES", "LEGAL_SERVICES", "ENERGY_EFFICIENCY", "OTHER_REGULATED", "NOT_CLASSIFIED"}
 DIRECT_OFFER_STATUSES = {"ACCESSIBLE", "OUT_OF_PROFILE", "UNKNOWN", "NOT_APPLICABLE"}
 PERIPHERAL_ROLE_EVIDENCE = {"VERIFIED", "PARTIAL", "MISSING", "NOT_APPLICABLE"}
 PERIPHERAL_SERVICE_TYPES = {"PRESTATIONS_DE_SERVICES", "LOGICIELS", "CONSEIL", "MISE_EN_RELATION", "LOGISTIQUE"}
@@ -235,6 +235,16 @@ def operator_access_filter(facts: dict[str, Any]) -> dict[str, Any]:
             "route": "FULL_ENRICHMENT",
             "allow_external_collection": True,
             "reasons": ["Aucun secteur fortement réglementé n'est déclaré dans les faits."],
+        }
+    if access["sector"] == "ENERGY_EFFICIENCY" and access["direct_offer_status"] in {"ACCESSIBLE", "NOT_APPLICABLE"}:
+        return {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": True,
+            "reasons": [
+                "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+                "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé.",
+            ],
         }
     peripheral = access["peripheral_role_evidence"]
     direct = access["direct_offer_status"]

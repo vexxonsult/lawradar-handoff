@@ -164,6 +164,10 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertEqual(requests[0]["params"]["max_tokens"], 4096)
         self.assertNotIn("jorf:B", requests[0]["params"]["messages"][0]["content"])
         self.assertEqual(requests[0]["params"]["output_config"]["format"]["type"], "json_schema")
+        self.assertIn(
+            "ENERGY_EFFICIENCY",
+            requests[0]["params"]["output_config"]["format"]["schema"]["properties"]["facts"]["properties"]["operator_access"]["properties"]["sector"]["enum"],
+        )
 
     def test_provider_schema_keeps_structure_but_removes_unsupported_constraints(self):
         requests, _ = build_requests(motor_input(candidate("jorf:A")), "claude-sonnet-5")

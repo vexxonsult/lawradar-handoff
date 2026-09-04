@@ -38,7 +38,7 @@
       "type": "object",
       "required": ["sector", "direct_offer_status", "peripheral_role_evidence", "evidence_status"],
       "properties": {
-        "sector": {"enum": ["MEDICINES", "FINANCIAL_SERVICES", "LEGAL_SERVICES", "OTHER_REGULATED", "NOT_CLASSIFIED"]},
+        "sector": {"enum": ["MEDICINES", "FINANCIAL_SERVICES", "LEGAL_SERVICES", "ENERGY_EFFICIENCY", "OTHER_REGULATED", "NOT_CLASSIFIED"]},
         "direct_offer_status": {"enum": ["ACCESSIBLE", "OUT_OF_PROFILE", "UNKNOWN", "NOT_APPLICABLE"]},
         "peripheral_role_evidence": {"enum": ["VERIFIED", "PARTIAL", "MISSING", "NOT_APPLICABLE"]},
         "evidence_status": {"enum": ["VERIFIED", "PARTIAL", "MISSING"]},

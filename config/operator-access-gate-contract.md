@@ -9,7 +9,7 @@ Un fait d'opportunité peut porter l'objet optionnel suivant :
 ```json
 {
   "operator_access": {
-    "sector": "MEDICINES | FINANCIAL_SERVICES | LEGAL_SERVICES | OTHER_REGULATED | NOT_CLASSIFIED",
+    "sector": "MEDICINES | FINANCIAL_SERVICES | LEGAL_SERVICES | ENERGY_EFFICIENCY | OTHER_REGULATED | NOT_CLASSIFIED",
     "direct_offer_status": "ACCESSIBLE | OUT_OF_PROFILE | UNKNOWN | NOT_APPLICABLE",
     "peripheral_role_evidence": "VERIFIED | PARTIAL | MISSING | NOT_APPLICABLE",
     "evidence_status": "VERIFIED | PARTIAL | MISSING",
@@ -41,3 +41,23 @@ Un fait d'opportunité peut porter l'objet optionnel suivant :
   Presse, BOAMP, Demande, Marché ou décision Entrepreneur n'est lancée.
 - Le filtre ne déclare jamais un rôle légal possible sur la seule base d'un
   changement réglementaire.
+
+## Axe Énergie / efficacité énergétique
+
+`ENERGY_EFFICIENCY` couvre notamment une fiche d'opération standardisée CEE ou
+une bonification officielle qui crée un périmètre professionnel identifiable.
+Quand l'offre directe est explicitement limitée à la veille B2B, à la
+qualification du besoin et à la recherche de partenaires (`ACCESSIBLE` ou
+`NOT_APPLICABLE`), la porte autorise les collectes Presse, Demande et Marché.
+Cette ouverture ne vaut **ni** autorisation d'installer un équipement, **ni**
+capacité à monter ou valoriser un dossier CEE, **ni** mandat d'un obligé : ces
+prestations exigent toujours des preuves et partenaires propres au signal.
+
+## Données de contact et médicaments
+
+Une liste de collectivités, d'établissements ou de contacts ne constitue jamais
+une preuve de demande, de rôle B2B légal ou d'autorisation de prospecter. Elle
+ne doit pas être fournie au Radar, aux agents ni à Claude. Pour un médicament,
+la porte conserve `HOLD` tant qu'une source officielle ou BOAMP ne démontre pas
+un service périphérique précis et exclut explicitement vente, dispensation,
+distribution et promotion du médicament.

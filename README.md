@@ -87,3 +87,13 @@ Une réouverture doit ensuite repasser par les enrichissements Presse, Demande
 et Marché avant tout appel du client Entrepreneur. La file moteur, elle, ne
 contenant que des empreintes, ne peut jamais à elle seule créer une fausse
 opportunité à partir d'un texte sans contenu primaire.
+
+## Axe Énergie / CEE
+
+Les fiches d'opération standardisées CEE, bonifications officielles et mesures
+d'efficacité énergétique à périmètre professionnel identifiable constituent un
+axe de veille séparé. Elles sont conservées pour enquête B2B (presse, demande,
+marché et partenaires), même lorsque le montant ou la faisabilité restent
+inconnus. Cette route ne donne pas au projet le droit d'installer, certifier,
+valoriser des CEE ou agir pour un obligé : elle borne l'activité à la veille,
+la qualification et la mise en relation documentée.

@@ -33,7 +33,7 @@ DEFAULT_MODEL = "claude-sonnet-5"
 MAX_CANDIDATES = 250
 # Toute modification de la requête fournisseur doit produire un nouveau batch
 # une fois le batch précédent achevé, sans jamais doubler un batch en cours.
-BATCH_REQUEST_VERSION = "2026-09-03-anthropic-schema-subset-v2"
+BATCH_REQUEST_VERSION = "2026-09-04-energy-cee-v3"
 _UNSUPPORTED_ANTHROPIC_SCHEMA_KEYWORDS = {
     "maxItems", "maxLength", "minLength", "minimum", "maximum",
     "exclusiveMinimum", "exclusiveMaximum", "multipleOf", "pattern", "uniqueItems",
@@ -44,8 +44,24 @@ candidat JSON fourni. Aucune recherche, aucun outil, aucune connaissance
 externe. Toute information non démontrée reste null, MISSING, PARTIAL,
 UNKNOWN ou UNRESOLVED selon le schéma. Ne déduis jamais un capital, un délai,
 une autorisation, un acteur ou un flux financier. Un flux n'est admis que si
-sa direction et ses acteurs sont explicitement étayés dans la preuve. Retourne
-uniquement le JSON demandé, sans markdown."""
+sa direction et ses acteurs sont explicitement étayés dans la preuve.
+
+Routage Énergie / CEE : un texte français publié créant ou modifiant une fiche
+d'opération standardisée CEE, une bonification CEE ou une obligation mesurable
+d'efficacité énergétique ne doit pas être DISCARDED au seul motif qu'il relève
+de l'énergie. S'il décrit un périmètre industriel ou professionnel identifiable,
+retourne RETAINED, classe operator_access.sector à ENERGY_EFFICIENCY et décris
+uniquement un service B2B non réglementé possible de veille, qualification de
+besoin ou mise en relation avec un partenaire ; pour ce seul service, écris
+direct_offer_status à ACCESSIBLE. Ne prétends jamais que LawRadar
+peut installer l'équipement, obtenir des CEE, certifier une opération ou agir
+au nom d'un obligé ; ces éléments restent MISSING ou UNKNOWN sans preuve.
+
+Routage Médicaments : l'existence d'une liste d'établissements, de collectivités
+ou de contacts n'est jamais une preuve de rôle périphérique légal ni de demande.
+Ne transforme jamais une inscription au remboursement ou à l'agrément en marché
+ou en autorisation de vendre, distribuer, promouvoir ou prescrire un médicament.
+Retourne uniquement le JSON demandé, sans markdown."""
 
 
 FLOW_SCHEMA: dict[str, Any] = {
@@ -127,7 +143,7 @@ FACTS_SCHEMA: dict[str, Any] = {
             "additionalProperties": False,
             "required": ["sector", "direct_offer_status", "peripheral_role_evidence", "evidence_status", "peripheral_service_evidence"],
             "properties": {
-                "sector": {"type": "string", "enum": ["MEDICINES", "FINANCIAL_SERVICES", "LEGAL_SERVICES", "OTHER_REGULATED", "NOT_CLASSIFIED"]},
+                "sector": {"type": "string", "enum": ["MEDICINES", "FINANCIAL_SERVICES", "LEGAL_SERVICES", "ENERGY_EFFICIENCY", "OTHER_REGULATED", "NOT_CLASSIFIED"]},
                 "direct_offer_status": {"type": "string", "enum": ["ACCESSIBLE", "OUT_OF_PROFILE", "UNKNOWN", "NOT_APPLICABLE"]},
                 "peripheral_role_evidence": {"type": "string", "enum": ["VERIFIED", "PARTIAL", "MISSING", "NOT_APPLICABLE"]},
                 "evidence_status": {"type": "string", "enum": ["VERIFIED", "PARTIAL", "MISSING"]},

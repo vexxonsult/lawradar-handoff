@@ -19,6 +19,10 @@ Chaque client :
 5. ne déclenche aucune publication, prise de contact, dépense ou action
    irréversible sans une autorisation distincte.
 
+Les listes de contacts, numéros de téléphone ou données personnelles ne sont
+pas des entrées autorisées des clients. Elles restent hors dépôt et hors des
+prompts jusqu'à une décision distincte de conformité et de prospection.
+
 Dans l'orchestration automatique, Presse et la branche BOAMP
 (Demande/Marché) écrivent des artefacts isolés. Le script
 `scripts/consolidate_client_artifacts.py` les assemble dans

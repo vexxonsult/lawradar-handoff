@@ -53,3 +53,21 @@ class PilotReadinessTests(unittest.TestCase):
         entry = build(dossier([signal(attached_facts=infeasible)]), POLICY, PROFILE, NOW)["signals"][0]
         self.assertEqual(entry["status"], "DISCARDED_BY_FILTERS")
         self.assertFalse(entry["ready_for_pilots"])
+
+    def test_energy_cee_signal_can_reach_research_agents_while_business_facts_are_open(self):
+        energy = facts()
+        energy["operator_access"] = {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "NOT_APPLICABLE",
+            "evidence_status": "PARTIAL",
+        }
+        energy["requirements"] = {
+            **energy["requirements"],
+            "minimum_startup_capital_eur": None,
+            "estimated_time_to_market_weeks": None,
+            "evidence_status": "MISSING",
+        }
+        entry = build(dossier([signal(attached_facts=energy)]), POLICY, PROFILE, NOW)["signals"][0]
+        self.assertEqual(entry["status"], "READY_FOR_PILOTS")
+        self.assertTrue(entry["ready_for_pilots"])

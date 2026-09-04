@@ -134,3 +134,21 @@ class DeterministicFilterTests(unittest.TestCase):
         output = self.evaluate(data)
         self.assertEqual(output["operator_access"]["status"], "HOLD")
         self.assertEqual(output["operator_access"]["route"], "LEGAL_ROLE_CHECK_ONLY")
+
+    def test_energy_cee_watch_route_allows_bounded_enrichment_not_delivery(self):
+        data = facts()
+        data["title"] = "Fiche CEE pour chaudière industrielle électrique"
+        data["keywords"] = ["CEE", "chaudière industrielle électrique"]
+        data["operator_access"] = {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "NOT_APPLICABLE",
+            "evidence_status": "PARTIAL",
+        }
+        data["requirements"]["minimum_startup_capital_eur"] = None
+        data["requirements"]["estimated_time_to_market_weeks"] = None
+        data["requirements"]["evidence_status"] = "MISSING"
+        output = self.evaluate(data)
+        self.assertEqual(output["operator_access"]["status"], "PASS")
+        self.assertTrue(output["operator_access"]["allow_external_collection"])
+        self.assertEqual(output["final_constraint"], "INVESTIGATE")
