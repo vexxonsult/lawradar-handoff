@@ -13,17 +13,17 @@
     {
       "file": "jorf-summaries-latest.json",
       "status": "CHANGED",
-      "item_count": 3089,
-      "sha256": "ffbabbf077083ad55e46f7f86963384524292d1cb81aeb82e8d7bdc2f0be6d11",
-      "documents_sha256": "a0c62439f933ddfcdc7aa867dc14a6271539f7f19c9495ed82f6a5badeb2e77d",
+      "item_count": 3023,
+      "sha256": "4f2a142e51664675892855f30c514fb1b18fd4d3297eb83ad2c9ce24ca141b05",
+      "documents_sha256": "a3c9cfbf0b8dd3df665921c6229718ddded539f46816808957de149560f68706",
       "interpretation": null
     },
     {
       "file": "eurlex-oj-latest.json",
-      "status": "UNCHANGED",
-      "item_count": 57,
-      "sha256": "9441a2339d2892540c5e353f077badee58de8f78441d6b852597e9d05bd9d010",
-      "documents_sha256": "324a48420036845f75c31744bb271107202c46c077d11d883bd583353023c3b1",
+      "status": "CHANGED",
+      "item_count": 0,
+      "sha256": "1f32ad9df9caacc4be0178b0190eb84c5d83d1cf12fb28f23278b55d8a45d05d",
+      "documents_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "interpretation": null
     },
     {
@@ -38,13 +38,14 @@
       "file": "status-latest.json",
       "status": "METADATA_CHANGED",
       "item_count": 0,
-      "sha256": "423f30e79b27995bcc7dec1ffe1b1ba8a7c852221d98adbd1c4d42c9d1b6ea2a",
+      "sha256": "bc1bdb21c05e424e0c6da4e341ec03cbbd6dadf66c316b650ddcc7c337e086ef",
       "documents_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "interpretation": null
     }
   ],
   "changed_sources": [
-    "jorf-summaries-latest.json"
+    "jorf-summaries-latest.json",
+    "eurlex-oj-latest.json"
   ],
   "evidence_change_detected": true,
   "supported_model_change_detected": true,
