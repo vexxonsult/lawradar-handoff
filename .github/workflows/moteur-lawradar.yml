@@ -566,6 +566,7 @@ jobs:
   # Ces deux jobs lisent donc le plan-artéfact et déroulent tous les signaux prêts.
   press_direct:
     needs: client_plan
+    if: ${{ always() && needs.client_plan.result == 'success' }}
     runs-on: ubuntu-latest
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -594,6 +595,7 @@ jobs:
 
   demand_market_direct:
     needs: client_plan
+    if: ${{ always() && needs.client_plan.result == 'success' }}
     runs-on: ubuntu-latest
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -723,7 +725,7 @@ jobs:
 
   entrepreneur_direct:
     needs: [client_plan, consolidate_clients]
-    if: needs.consolidate_clients.result == 'success'
+    if: ${{ always() && needs.consolidate_clients.result == 'success' }}
     runs-on: ubuntu-latest
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
