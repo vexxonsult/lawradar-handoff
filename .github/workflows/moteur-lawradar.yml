@@ -355,6 +355,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.plan.outputs.matrix }}
+      has_ready: ${{ steps.plan.outputs.has_ready }}
       mode: ${{ steps.plan.outputs.mode }}
     steps:
       - uses: actions/checkout@v4
@@ -410,6 +411,7 @@ jobs:
           compact = json.dumps(matrix, ensure_ascii=False, separators=(",", ":"))
           with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as output:
               output.write(f"matrix={compact}\n")
+              output.write(f"has_ready={'true' if matrix else 'false'}\n")
               output.write(f"mode={mode}\n")
           print(f"clients_ready={len(matrix)}; mode={mode}; already_consolidated={already_consolidated}")
           PY
@@ -424,7 +426,7 @@ jobs:
 
   press:
     needs: client_plan
-    if: ${{ needs.client_plan.outputs.matrix != '[]' }}
+    if: ${{ needs.client_plan.outputs.has_ready == 'true' }}
     strategy:
       fail-fast: false
       matrix:
@@ -438,7 +440,7 @@ jobs:
 
   demand_market:
     needs: client_plan
-    if: ${{ needs.client_plan.outputs.matrix != '[]' }}
+    if: ${{ needs.client_plan.outputs.has_ready == 'true' }}
     strategy:
       fail-fast: false
       matrix:
@@ -452,7 +454,7 @@ jobs:
 
   consolidate_clients:
     needs: [client_plan, press, demand_market]
-    if: ${{ always() && !cancelled() && needs.client_plan.outputs.matrix != '[]' && needs.press.result == 'success' && needs.demand_market.result == 'success' }}
+    if: ${{ always() && !cancelled() && needs.client_plan.outputs.has_ready == 'true' && needs.press.result == 'success' && needs.demand_market.result == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
