@@ -235,6 +235,52 @@ class AnthropicMotorBatchTests(unittest.TestCase):
             self.assertEqual(client.messages.batches.retrieved, ["msgbatch_test"])
             self.assertFalse(output_path.exists())
 
+    def test_pending_batch_ignores_changed_collection_metadata(self):
+        first_input = motor_input(candidate("jorf:A"))
+        first_input["delta_changed_sources"] = ["JORF-2026-09-04-A"]
+        second_input = motor_input(candidate("jorf:A"))
+        second_input["delta_changed_sources"] = ["JORF-2026-09-04-B"]
+        second_input["excluded_historical_items"] = ["routine:previous-text"]
+        client = FakeClient([], starts_ended=False)
+        with tempfile.TemporaryDirectory() as directory:
+            state_path = Path(directory) / "state.json"
+            output_path = Path(directory) / "delivery.json"
+            run_batch(first_input, client=client, state_path=state_path, output_path=output_path, wait_seconds=0)
+            state = run_batch(second_input, client=client, state_path=state_path, output_path=output_path, wait_seconds=0)
+            self.assertFalse(state["ready"])
+            self.assertEqual(len(client.messages.batches.created), 1)
+            self.assertEqual(client.messages.batches.retrieved, ["msgbatch_test"])
+            self.assertIn("request_sha256", json.loads(state_path.read_text()))
+
+    def test_legacy_active_state_is_migrated_without_duplicate_submission(self):
+        value = motor_input(candidate("jorf:A"))
+        client = FakeClient([], starts_ended=False)
+        with tempfile.TemporaryDirectory() as directory:
+            state_path = Path(directory) / "state.json"
+            output_path = Path(directory) / "delivery.json"
+            run_batch(value, client=client, state_path=state_path, output_path=output_path, wait_seconds=0)
+            legacy_state = json.loads(state_path.read_text())
+            legacy_state.pop("request_sha256")
+            legacy_state["input_sha256"] = "legacy-whole-input-hash"
+            state_path.write_text(json.dumps(legacy_state), encoding="utf-8")
+            state = run_batch(value, client=client, state_path=state_path, output_path=output_path, wait_seconds=0)
+            self.assertFalse(state["ready"])
+            self.assertEqual(len(client.messages.batches.created), 1)
+            self.assertEqual(client.messages.batches.retrieved, ["msgbatch_test"])
+            self.assertIn("request_sha256", json.loads(state_path.read_text()))
+
+    def test_different_pending_batch_is_deferred_without_duplicate_submission(self):
+        client = FakeClient([], starts_ended=False)
+        with tempfile.TemporaryDirectory() as directory:
+            state_path = Path(directory) / "state.json"
+            output_path = Path(directory) / "delivery.json"
+            run_batch(motor_input(candidate("jorf:A")), client=client, state_path=state_path, output_path=output_path, wait_seconds=0)
+            state = run_batch(motor_input(candidate("jorf:B")), client=client, state_path=state_path, output_path=output_path, wait_seconds=0)
+            self.assertEqual(state["deferred_reason"], "ACTIVE_BATCH_DIFFERENT_REQUEST")
+            self.assertEqual(state["processing_status"], "in_progress")
+            self.assertEqual(len(client.messages.batches.created), 1)
+            self.assertEqual(client.messages.batches.retrieved, [])
+
     def test_incomplete_result_never_advances_as_a_delivery(self):
         value = motor_input(candidate("jorf:A"))
         with self.assertRaisesRegex(ValueError, "invalid_request_error"):

@@ -385,11 +385,15 @@ def assemble_delivery(
     return delivery, usage
 
 
-def _state_from_batch(batch: Any, input_hash: str, model: str, request_count: int) -> dict[str, Any]:
+def _state_from_batch(batch: Any, request_hash: str, model: str, request_count: int) -> dict[str, Any]:
     now = datetime.now(UTC).isoformat()
     return {
         "schema": STATE_SCHEMA,
-        "input_sha256": input_hash,
+        # ``input_sha256`` est conservé pour la compatibilité avec les états
+        # déjà versionnés. Depuis les batches, l'identité utile est le contenu
+        # réellement envoyé au fournisseur, pas les métadonnées du delta.
+        "input_sha256": request_hash,
+        "request_sha256": request_hash,
         "model": model,
         "request_version": BATCH_REQUEST_VERSION,
         "batch_id": _field(batch, "id"),
@@ -402,21 +406,47 @@ def _state_from_batch(batch: Any, input_hash: str, model: str, request_count: in
     }
 
 
-def _load_reusable_state(path: Path, input_hash: str, model: str) -> dict[str, Any] | None:
+def _load_reusable_state(
+    path: Path, request_hash: str, model: str, request_count: int
+) -> dict[str, Any] | None:
     if not path.exists():
         return None
     state = _read_json(path)
     if state.get("schema") != STATE_SCHEMA:
         raise ValueError("État de batch Anthropic invalide.")
+    state_hash = state.get("request_sha256", state.get("input_sha256"))
     if (
-        state.get("input_sha256") == input_hash
+        state_hash == request_hash
         and state.get("model") == model
         and state.get("request_version") == BATCH_REQUEST_VERSION
         and state.get("batch_id")
     ):
         return state
     if state.get("processing_status") != "ended":
-        raise ValueError("Un autre batch Anthropic est encore en cours ; refus de mélanger deux lots.")
+        # Migration sans perte : les états produits avant ``request_sha256``
+        # ne permettent pas de recalculer l'ancienne empreinte. Pendant ce
+        # premier passage, la file reste gelée sur le même nombre de candidats
+        # et le batch existant est donc repris, puis réécrit au nouveau format.
+        if (
+            "request_sha256" not in state
+            and state.get("model") == model
+            and state.get("request_version") == BATCH_REQUEST_VERSION
+            and state.get("request_count") == request_count
+            and state.get("batch_id")
+        ):
+            return state
+
+        # Un lot réellement différent ne doit ni être soumis en double ni faire
+        # échouer le workflow. Il reste dans la file : le prochain passage
+        # reprendra le batch actif, puis soumettra ce nouveau lot une fois le
+        # précédent terminé.
+        state.update({
+            "ready": False,
+            "deferred_reason": "ACTIVE_BATCH_DIFFERENT_REQUEST",
+            "updated_at_utc": datetime.now(UTC).isoformat(),
+        })
+        _write_json(path, state)
+        return state
     return None
 
 
@@ -425,19 +455,25 @@ def run_batch(
     model: str = DEFAULT_MODEL, wait_seconds: int = 180, poll_seconds: int = 10,
 ) -> dict[str, Any]:
     requests, source_by_custom_id = build_requests(motor_input, model)
-    input_hash = _canonical_hash(motor_input)
-    previous = _load_reusable_state(state_path, input_hash, model)
+    # Les métadonnées de collecte changent entre deux piges (sources exclues,
+    # horodatages, etc.) sans modifier les candidats ni les requêtes Anthropic.
+    # Hacher les requêtes protège donc le batch actif contre une fausse
+    # différence d'entrée et évite une seconde soumission.
+    request_hash = _canonical_hash(requests)
+    previous = _load_reusable_state(state_path, request_hash, model, len(requests))
     if previous:
+        if previous.get("deferred_reason") == "ACTIVE_BATCH_DIFFERENT_REQUEST":
+            return previous
         batch = client.messages.batches.retrieve(previous["batch_id"])
     else:
         batch = client.messages.batches.create(requests=requests)
-    state = _state_from_batch(batch, input_hash, model, len(requests))
+    state = _state_from_batch(batch, request_hash, model, len(requests))
     _write_json(state_path, state)
     deadline = time.monotonic() + max(0, wait_seconds)
     while state["processing_status"] != "ended" and time.monotonic() < deadline:
         time.sleep(max(1, poll_seconds))
         batch = client.messages.batches.retrieve(state["batch_id"])
-        state = _state_from_batch(batch, input_hash, model, len(requests))
+        state = _state_from_batch(batch, request_hash, model, len(requests))
         _write_json(state_path, state)
     if state["processing_status"] != "ended":
         return state
