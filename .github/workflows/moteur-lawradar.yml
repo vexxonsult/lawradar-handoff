@@ -426,7 +426,9 @@ jobs:
 
   press:
     needs: client_plan
-    if: ${{ needs.client_plan.outputs.has_ready == 'true' }}
+    # Une matrice vide ne crée naturellement aucun job. Éviter une condition
+    # ``if`` devant un workflow réutilisable : GitHub l'évaluait avant de
+    # propager la matrice dynamique et ignorait des signaux pourtant prêts.
     strategy:
       fail-fast: false
       matrix:
@@ -440,7 +442,7 @@ jobs:
 
   demand_market:
     needs: client_plan
-    if: ${{ needs.client_plan.outputs.has_ready == 'true' }}
+    # Voir la même règle de matrice que pour Presse ci-dessus.
     strategy:
       fail-fast: false
       matrix:

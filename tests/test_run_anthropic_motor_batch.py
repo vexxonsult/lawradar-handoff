@@ -153,7 +153,7 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertIn("clients_only", motor)
         self.assertIn("github.event.inputs.clients_only == 'true'", motor)
         self.assertIn("has_ready", motor)
-        self.assertIn("needs.client_plan.outputs.has_ready == 'true'", motor)
+        self.assertIn("Une matrice vide ne crée naturellement aucun job", motor)
         self.assertIn('cron: "17,47 5-7 * * *"', collector)
         self.assertIn('cron: "17 8 * * *"', collector)
         self.assertIn('timezone: "Europe/Paris"', collector)
