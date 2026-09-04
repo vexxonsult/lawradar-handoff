@@ -33,8 +33,10 @@ class QualifyAgentEnrichmentTests(unittest.TestCase):
         self.assertEqual(client.messages.request["model"], "test-model")
         self.assertEqual(json.loads(client.messages.request["messages"][0]["content"]), payload)
         self.assertIn("ni réseau", client.messages.request["system"])
+        self.assertNotIn("temperature", client.messages.request)
+        self.assertEqual(client.messages.request["thinking"], {"type": "adaptive"})
+        self.assertEqual(client.messages.request["output_config"], {"effort": "low"})
 
     def test_rejects_unknown_agent_before_any_call(self):
         with self.assertRaisesRegex(ValueError, "inconnu"):
             qualify({}, "unknown", client=_Client(), model="test-model")
-

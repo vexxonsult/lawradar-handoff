@@ -22,9 +22,9 @@ CORE_SCHEMA = "lawradar-universal-signal-v2"
 CLIENT_SCHEMA = "lawradar-client-entrepreneur-delivery-v1"
 SUPPORT_AGENTS = ("press", "demand", "market")
 TERMINAL_STATUSES = {"COMPLETED", "NO_EVIDENCE"}
-# Claude 3.5 Sonnet n'est plus proposé par Anthropic. Sonnet 4.6 est son
-# successeur actif ; il reste surchargeable avec --model pour les migrations.
-DEFAULT_MODEL = "claude-sonnet-4-6"
+# Le workflow moteur et ses clients partagent le même modèle actif. Le choix
+# reste surchargeable avec --model pour rejouer une livraison historique.
+DEFAULT_MODEL = "claude-sonnet-5"
 
 SYSTEM_PROMPT = """Tu es l'agent Entrepreneur, client externe de LawRadar.
 Analyse exclusivement le JSON transmis : aucune recherche, aucun outil, aucun
@@ -289,11 +289,14 @@ def run_claude_assessment(
     try:
         message = client.messages.create(
             model=model,
-            max_tokens=900,
-            temperature=0,
+            # Claude Sonnet 5 only accepts default sampling.  A business
+            # recommendation needs some structured reasoning, but medium
+            # effort remains deliberately bounded for this external client.
+            max_tokens=2200,
             system=SYSTEM_PROMPT,
             messages=[{"role": "user", "content": json.dumps(client_input, ensure_ascii=False, separators=(",", ":"))}],
-            output_config={"format": {"type": "json_schema", "schema": ASSESSMENT_SCHEMA}},
+            thinking={"type": "adaptive"},
+            output_config={"effort": "medium", "format": {"type": "json_schema", "schema": ASSESSMENT_SCHEMA}},
         )
         assessment = json.loads(_message_text(message))
         assessment = _validate_assessment(assessment, client_input["allowed_source_urls"], client_input["available_amounts_eur"])

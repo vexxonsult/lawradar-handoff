@@ -33,7 +33,7 @@ DEFAULT_MODEL = "claude-sonnet-5"
 MAX_CANDIDATES = 250
 # Toute modification de la requête fournisseur doit produire un nouveau batch
 # une fois le batch précédent achevé, sans jamais doubler un batch en cours.
-BATCH_REQUEST_VERSION = "2026-09-04-readable-primary-review-v5"
+BATCH_REQUEST_VERSION = "2026-09-04-readable-primary-review-v6"
 _UNSUPPORTED_ANTHROPIC_SCHEMA_KEYWORDS = {
     "maxItems", "maxLength", "minLength", "minimum", "maximum",
     "exclusiveMinimum", "exclusiveMaximum", "multipleOf", "pattern", "uniqueItems",
@@ -294,7 +294,13 @@ def build_requests(motor_input: dict[str, Any], model: str) -> tuple[list[dict[s
                     "role": "user",
                     "content": json.dumps(candidate, ensure_ascii=False, separators=(",", ":")),
                 }],
+                "thinking": {"type": "adaptive"},
                 "output_config": {
+                    # Factual reading is deliberately cheaper than the
+                    # downstream Entrepreneur assessment.  Sonnet 5's
+                    # adaptive thinking is enabled explicitly; it must not
+                    # receive temperature/top_p/top_k overrides.
+                    "effort": "low",
                     "format": {"type": "json_schema", "schema": anthropic_output_schema(CANDIDATE_RESULT_SCHEMA)}
                 },
             },
@@ -441,7 +447,10 @@ def assemble_delivery(
     return delivery, usage
 
 
-def _state_from_batch(batch: Any, request_hash: str, model: str, request_count: int) -> dict[str, Any]:
+def _state_from_batch(
+    batch: Any, request_hash: str, model: str, request_count: int,
+    motor_input: dict[str, Any],
+) -> dict[str, Any]:
     now = datetime.now(UTC).isoformat()
     return {
         "schema": STATE_SCHEMA,
@@ -456,6 +465,10 @@ def _state_from_batch(batch: Any, request_hash: str, model: str, request_count: 
         "processing_status": _field(batch, "processing_status"),
         "request_count": request_count,
         "request_counts": _request_counts(batch),
+        # This immutable snapshot is the counterpart of the remote batch.
+        # A subsequent cron must harvest against these exact candidates, not
+        # against a queue that may have received newer official texts.
+        "motor_input": copy.deepcopy(motor_input),
         "ready": False,
         "created_at_utc": str(_field(batch, "created_at") or now),
         "updated_at_utc": now,
@@ -521,10 +534,22 @@ def run_batch(
         previous and previous.get("resumed_after_request_change")
     )
     if previous:
+        pinned_input = previous.get("motor_input")
+        if not isinstance(pinned_input, dict):
+            if previous.get("request_sha256", previous.get("input_sha256")) != request_hash:
+                raise ValueError(
+                    "Batch actif historique sans entrée figée : reprise sûre impossible sans l'entrée d'origine."
+                )
+            pinned_input = motor_input
+        pinned_model = previous.get("model") if isinstance(previous.get("model"), str) else model
+        requests, source_by_custom_id = build_requests(pinned_input, pinned_model)
+        request_hash = _canonical_hash(requests)
+        motor_input = pinned_input
+        model = pinned_model
         batch = client.messages.batches.retrieve(previous["batch_id"])
     else:
         batch = client.messages.batches.create(requests=requests)
-    state = _state_from_batch(batch, request_hash, model, len(requests))
+    state = _state_from_batch(batch, request_hash, model, len(requests), motor_input)
     if resumed_after_request_change:
         state["resumed_after_request_change"] = True
     _write_json(state_path, state)
@@ -532,7 +557,7 @@ def run_batch(
     while state["processing_status"] != "ended" and time.monotonic() < deadline:
         time.sleep(max(1, poll_seconds))
         batch = client.messages.batches.retrieve(state["batch_id"])
-        state = _state_from_batch(batch, request_hash, model, len(requests))
+        state = _state_from_batch(batch, request_hash, model, len(requests), motor_input)
         _write_json(state_path, state)
     if state["processing_status"] != "ended":
         return state
@@ -576,7 +601,7 @@ def main() -> int:
     parser.add_argument("--state", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--model", default=DEFAULT_MODEL)
-    parser.add_argument("--wait-seconds", type=int, default=180)
+    parser.add_argument("--wait-seconds", type=int, default=0)
     parser.add_argument("--poll-seconds", type=int, default=10)
     args = parser.parse_args()
     key = os.environ.get("ANTHROPIC_API_KEY")

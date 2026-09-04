@@ -47,8 +47,8 @@ class ValidateMarketEnrichmentTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate(value, enrichment())
 
-    def test_accepts_empty_collection_as_no_evidence(self):
-        empty = observations(items=[])
+    def test_accepts_successful_empty_collection_as_no_evidence(self):
+        empty = observations(items=[], status="NO_EVIDENCE")
         result = enrichment("NO_EVIDENCE")
         result["summary"] = "Aucune observation de marché n'a été fournie par la collecte exécutée."
         result["sources"] = []

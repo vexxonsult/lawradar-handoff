@@ -59,7 +59,10 @@ def validate(observations: dict[str, Any], enrichment: dict[str, Any]) -> None:
         if not citations or max(citations) > len(enrichment["sources"]):
             raise ValueError("La synthèse Marché doit renvoyer vers ses sources.")
     if enrichment["status"] == "NO_EVIDENCE":
-        if items or observations.get("errors") or details["collection_status"] != "COMPLETED" or source_urls:
+        # ``NO_EVIDENCE`` is the collector's explicit successful-empty
+        # status.  ``COMPLETED`` is also accepted for legacy collectors that
+        # represented the same state with an empty result set.
+        if items or observations.get("errors") or details["collection_status"] not in {"COMPLETED", "NO_EVIDENCE"} or source_urls:
             raise ValueError("NO_EVIDENCE exige une collecte aboutie sans observation.")
     if enrichment["status"] == "UNRESOLVED" and not (observations.get("errors") or details["collection_status"] == "UNRESOLVED" or any(item.get("interpretation") == "AMBIGUOUS" for item in details["conclusions"])):
         raise ValueError("UNRESOLVED doit conserver une cause d'incertitude.")

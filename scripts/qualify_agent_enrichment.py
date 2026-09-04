@@ -50,10 +50,14 @@ def qualify(payload: dict[str, Any], agent: str, *, client: Any, model: str) -> 
         raise ValueError("Agent de qualification inconnu.")
     message = client.messages.create(
         model=model,
-        max_tokens=1400,
-        temperature=0,
+        # Sonnet 5 rejects non-default sampling parameters.  The bounded
+        # task uses adaptive thinking at low effort: enough to compare a few
+        # traced sources, without paying for a long strategic analysis.
+        max_tokens=2200,
         system=PROMPTS[agent],
         messages=[{"role": "user", "content": json.dumps(payload, ensure_ascii=False, separators=(",", ":"))}],
+        thinking={"type": "adaptive"},
+        output_config={"effort": "low"},
     )
     result = json.loads(_text(message))
     if not isinstance(result, dict):

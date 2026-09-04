@@ -123,3 +123,5 @@ class ClientEntrepreneurTests(unittest.TestCase):
         self.assertEqual(result["execution"]["external_calls"], 1)
         self.assertFalse(result["execution"]["writes_to_core"])
         self.assertEqual(client.messages.calls[0]["output_config"]["format"]["type"], "json_schema")
+        self.assertEqual(client.messages.calls[0]["output_config"]["effort"], "medium")
+        self.assertEqual(client.messages.calls[0]["thinking"], {"type": "adaptive"})

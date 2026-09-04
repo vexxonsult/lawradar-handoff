@@ -107,6 +107,7 @@ jobs:
       - name: Enregistrer l'absence d'appel au modèle
         run: |
           mkdir -p out
+          python scripts/manage_motor_queue.py stage --queue evidence/motor-queue-latest.json --queue-output out/motor-queue-proposed.json --batch-output out/motor-input-skipped.json --batch-size 250 --active-batch-state evidence/motor-batch-latest.json
           python scripts/utils/recycle_backlog.py recycle \
             --backlog evidence/recycle-backlog-latest.json \
             --policy config/compliance-policy-v1.json \
@@ -133,7 +134,10 @@ jobs:
           git config user.name "lawradar-motor[bot]"
           git config user.email "lawradar-motor[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git add evidence/recycle-backlog-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json
+          # La file proposée inclut les textes marqués PRIMARY_TEXT_EMPTY.
+          # Les persister ici évite de les oublier pendant un run sans IA.
+          cp out/motor-queue-proposed.json evidence/motor-queue-latest.json
+          git add evidence/motor-queue-latest.json evidence/recycle-backlog-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json
           git diff --cached --quiet || git commit -m "Moteur LawRadar ignoré $(date -u +%F)"
           git pull --rebase origin main
           git push
@@ -185,7 +189,10 @@ jobs:
           --state evidence/motor-batch-latest.json
           --output out/motor-delivery.json
           --model claude-sonnet-5
-          --wait-seconds 180
+          # Le batch est asynchrone : écrire/commiter son identifiant tout de
+          # suite réduit la fenêtre où un arrêt de runner pourrait perdre la
+          # référence fournisseur. Les piges suivantes font la moisson.
+          --wait-seconds 0
           --poll-seconds 10
       - name: Enregistrer la migration en attente de clé API
         if: steps.batch_auth.outputs.configured != 'true'
@@ -211,13 +218,18 @@ jobs:
           git config user.name "lawradar-motor[bot]"
           git config user.email "lawradar-motor[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git add evidence/run-manifest-motor-latest.json evidence/run-index-latest.json
+          cp out/motor-queue-proposed.json evidence/motor-queue-latest.json
+          git add evidence/motor-queue-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json
           git diff --cached --quiet || git commit -m "Moteur LawRadar sans clé Batch $(date -u +%F)"
           git pull --rebase origin main
           git push
       - name: Enregistrer le batch asynchrone en cours
         if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status != 'ended'
         run: |
+          # L'état fournisseur et la file préparée sont conservés ensemble :
+          # le prochain réveil reprend exactement le même lot, même si de
+          # nouveaux textes arrivent entre-temps.
+          cp out/motor-queue-proposed.json evidence/motor-queue-latest.json
           python scripts/build_run_manifest.py --output evidence/run-manifest-motor-latest.json --kind motor --status pending --reason "Message Batch Anthropic en cours ; reprise sans nouvelle soumission au prochain run." --inputs out/motor-input.json --outputs evidence/motor-batch-latest.json
           python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
           python scripts/render_control_dashboard.py --input evidence/run-index-latest.json --backlog evidence/motor-backlog-latest.json --out out/control-dashboard.html
@@ -240,13 +252,14 @@ jobs:
           git config user.name "lawradar-motor[bot]"
           git config user.email "lawradar-motor[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git add evidence/motor-batch-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json
+          git add evidence/motor-batch-latest.json evidence/motor-queue-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json
           git diff --cached --quiet || git commit -m "Batch moteur LawRadar en cours $(date -u +%F)"
           git pull --rebase origin main
           git push
       - name: Enregistrer un batch Anthropic refusé sans le rejouer
         if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status == 'ended'
         run: |
+          cp out/motor-queue-proposed.json evidence/motor-queue-latest.json
           python scripts/build_run_manifest.py --output evidence/run-manifest-motor-latest.json --kind motor --status failed --reason "Message Batch Anthropic achevé sans livraison valide ; consulter evidence/motor-batch-latest.json avant tout rejeu." --inputs out/motor-input.json --outputs evidence/motor-batch-latest.json
           python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
       - name: Mémoriser le diagnostic du batch refusé
@@ -257,7 +270,7 @@ jobs:
           git config user.name "lawradar-motor[bot]"
           git config user.email "lawradar-motor[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git add evidence/motor-batch-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json
+          git add evidence/motor-batch-latest.json evidence/motor-queue-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json
           git diff --cached --quiet || git commit -m "Diagnostic batch moteur LawRadar $(date -u +%F)"
           git pull --rebase origin main
           git push
@@ -298,7 +311,10 @@ jobs:
       - name: Actualiser le registre du centre de contrôle
         if: steps.batch.outputs.ready == 'true'
         run: |
-          python scripts/manage_motor_queue.py advance --queue evidence/motor-queue-latest.json --motor-input out/motor-input.json --output evidence/motor-queue-latest.json
+          # On avance la file exactement telle qu'elle était au moment de la
+          # soumission, plus les nouveaux candidats déjà vus par ce run.
+          # Partir de l'ancienne file ferait disparaître son reliquat.
+          python scripts/manage_motor_queue.py advance --queue out/motor-queue-proposed.json --motor-input out/motor-input.json --output evidence/motor-queue-latest.json
           cp out/run-manifest.json evidence/run-manifest-motor-latest.json
           python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
           python scripts/render_control_dashboard.py --input evidence/run-index-latest.json --backlog evidence/motor-backlog-latest.json --out out/control-dashboard.html
@@ -429,144 +445,12 @@ jobs:
             out/client-plan.json
           retention-days: 90
 
-  press:
-    needs: client_plan
-    # Les jobs étaient auparavant des workflows réutilisables. GitHub pouvait
-    # les ignorer avant d'évaluer leur matrice dynamique. Ils sont exécutés
-    # directement ici : même contrat, mais orchestration lisible et fiable.
-    runs-on: ubuntu-latest
-    env:
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-    strategy:
-      fail-fast: false
-      matrix:
-        signal: ${{ fromJSON(needs.client_plan.outputs.client_matrix) }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Télécharger le noyau figé en lecture seule
-        uses: actions/download-artifact@v4
-        with:
-          name: lawradar-client-core-${{ github.run_id }}
-          path: out/client-core
-      - name: Extraire les faits et appliquer la porte opérateur
-        run: |
-          python scripts/prepare_opportunity_facts.py --dossier out/client-core/evidence/universal-signal-latest.json --signal-id "${{ matrix.signal.id }}" --output out/opportunity-facts.json
-          python scripts/run_deterministic_filters.py --facts out/opportunity-facts.json --policy config/compliance-policy-v1.json --profile config/operator-profile-v1.json --output out/deterministic-filters.json
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          route = json.loads(Path("out/deterministic-filters.json").read_text(encoding="utf-8"))["operator_access"]
-          if route.get("allow_external_collection") is not True:
-              raise SystemExit("La porte opérateur a refusé cette collecte externe.")
-          PY
-      - name: Collecter les sources Presse et préparer la qualification
-        run: |
-          python scripts/collect_press_candidates.py --dossier out/client-core/evidence/universal-signal-latest.json --config config/press-agent-config.json --signal-id "${{ matrix.signal.id }}" --output out/press-candidates.json
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          candidates = json.loads(Path("out/press-candidates.json").read_text(encoding="utf-8"))
-          ready = bool(candidates.get("candidates")) and candidates.get("collection_successful", not candidates.get("errors"))
-          Path("out/press-route.txt").write_text("qualify" if ready else "terminal", encoding="utf-8")
-          PY
-          if [ "$(cat out/press-route.txt)" = "qualify" ]; then
-            python scripts/prepare_press_qualification_input.py --dossier out/client-core/evidence/universal-signal-latest.json --candidates out/press-candidates.json --output out/press-qualification-input.json
-          else
-            python scripts/build_press_terminal_enrichment.py --candidates out/press-candidates.json --output out/press-enrichment.json
-          fi
-      - name: Installer le SDK pour une qualification Presse strictement bornée
-        if: hashFiles('out/press-qualification-input.json') != ''
-        run: python -m pip install --disable-pip-version-check "anthropic>=1.0,<2"
-      - name: Qualifier les candidats Presse avec Claude, seulement si nécessaire
-        if: hashFiles('out/press-qualification-input.json') != ''
-        run: >-
-          python scripts/qualify_agent_enrichment.py --agent press
-          --input out/press-qualification-input.json --output out/press-enrichment.json
-          --model claude-sonnet-5
-      - name: Valider la livraison Presse séparée
-        run: python scripts/validate_press_enrichment.py --candidates out/press-candidates.json --enrichment out/press-enrichment.json
-      - name: Publier la livraison Presse sans modifier le noyau
-        uses: actions/upload-artifact@v4
-        with:
-          name: lawradar-press-${{ matrix.signal.key }}
-          path: out/
-          retention-days: 90
-
-  demand_market:
-    needs: client_plan
-    runs-on: ubuntu-latest
-    env:
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-    strategy:
-      fail-fast: false
-      matrix:
-        signal: ${{ fromJSON(needs.client_plan.outputs.client_matrix) }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Télécharger le noyau figé en lecture seule
-        uses: actions/download-artifact@v4
-        with:
-          name: lawradar-client-core-${{ github.run_id }}
-          path: out/client-core
-      - name: Extraire les faits et confirmer la porte opérateur
-        run: |
-          python scripts/prepare_opportunity_facts.py --dossier out/client-core/evidence/universal-signal-latest.json --signal-id "${{ matrix.signal.id }}" --output out/opportunity-facts.json
-          python scripts/run_deterministic_filters.py --facts out/opportunity-facts.json --policy config/compliance-policy-v1.json --profile config/operator-profile-v1.json --output out/deterministic-filters.json
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          route = json.loads(Path("out/deterministic-filters.json").read_text(encoding="utf-8"))["operator_access"]
-          if route.get("allow_external_collection") is not True:
-              raise SystemExit("La porte opérateur a refusé cette collecte externe.")
-          PY
-      - name: Observer mécaniquement la demande et le marché BOAMP
-        run: |
-          python scripts/fetch_boamp_data.py --facts out/opportunity-facts.json --config config/boamp-collector-config-v1.json --output out/market-demand-boamp.json
-          python scripts/build_boamp_market_observations.py --facts out/opportunity-facts.json --boamp out/market-demand-boamp.json --output out/market-observations.json
-          python scripts/build_boamp_demand_observations.py --facts out/opportunity-facts.json --boamp out/market-demand-boamp.json --output out/demand-observations.json
-          python scripts/build_boamp_demand_enrichment.py --observations out/demand-observations.json --output out/demand-enrichment.json
-          python scripts/validate_demand_enrichment.py --observations out/demand-observations.json --enrichment out/demand-enrichment.json
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          observations = json.loads(Path("out/market-observations.json").read_text(encoding="utf-8"))
-          ready = observations.get("collection_status") == "COMPLETED" and bool(observations.get("observations"))
-          Path("out/market-route.txt").write_text("qualify" if ready else "terminal", encoding="utf-8")
-          PY
-          if [ "$(cat out/market-route.txt)" = "qualify" ]; then
-            python scripts/prepare_market_qualification_input.py --facts out/opportunity-facts.json --observations out/market-observations.json --output out/market-qualification-input.json
-          else
-            python scripts/build_market_terminal_enrichment.py --observations out/market-observations.json --output out/market-enrichment.json
-          fi
-      - name: Installer le SDK pour une qualification Marché strictement bornée
-        if: hashFiles('out/market-qualification-input.json') != ''
-        run: python -m pip install --disable-pip-version-check "anthropic>=1.0,<2"
-      - name: Qualifier les avis BOAMP avec Claude, seulement si traçables
-        if: hashFiles('out/market-qualification-input.json') != ''
-        run: >-
-          python scripts/qualify_agent_enrichment.py --agent market
-          --input out/market-qualification-input.json --output out/market-enrichment.json
-          --model claude-sonnet-5
-      - name: Valider la livraison Marché séparée
-        run: python scripts/validate_market_enrichment.py --observations out/market-observations.json --enrichment out/market-enrichment.json
-      - name: Publier les livraisons Demande et Marché sans modifier le noyau
-        uses: actions/upload-artifact@v4
-        with:
-          name: lawradar-demand-market-boamp-${{ matrix.signal.key }}
-          path: out/
-          retention-days: 90
-
-  # GitHub ne propage pas de façon fiable une matrice construite par client_plan.
-  # Ces deux jobs lisent donc le plan-artéfact et déroulent tous les signaux prêts.
+  # Les deux branches lisent le plan-artéfact et déroulent tous les signaux
+  # prêts. Elles sont l'unique chemin client : aucun ancien job Matrix ne
+  # peut désormais lancer une seconde collecte ou une seconde qualification.
   press_direct:
     needs: client_plan
-    if: ${{ always() && needs.client_plan.result == 'success' }}
+    if: ${{ always() && needs.client_plan.result == 'success' && needs.client_plan.outputs.has_ready == 'true' }}
     runs-on: ubuntu-latest
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -595,7 +479,7 @@ jobs:
 
   demand_market_direct:
     needs: client_plan
-    if: ${{ always() && needs.client_plan.result == 'success' }}
+    if: ${{ always() && needs.client_plan.result == 'success' && needs.client_plan.outputs.has_ready == 'true' }}
     runs-on: ubuntu-latest
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -684,43 +568,6 @@ jobs:
         with:
           name: lawradar-client-context-${{ github.run_id }}
           path: out/client-context.json
-          retention-days: 90
-
-  entrepreneur:
-    needs: [client_plan, consolidate_clients]
-    if: needs.consolidate_clients.result == 'success'
-    strategy:
-      fail-fast: false
-      matrix:
-        signal: ${{ fromJSON(needs.client_plan.outputs.client_matrix) }}
-    runs-on: ubuntu-latest
-    env:
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Télécharger le contexte client convergé
-        uses: actions/download-artifact@v4
-        with:
-          name: lawradar-client-context-${{ github.run_id }}
-          path: out
-      - name: Installer le SDK Anthropic
-        if: env.ANTHROPIC_API_KEY != ''
-        run: python -m pip install --disable-pip-version-check "anthropic>=1.0,<2"
-      - name: Produire la note Entrepreneur, avec coût nul si la porte n'est pas PASS
-        run: >-
-          python scripts/clients/entrepreneur_agent.py
-          --input out/client-context.json
-          --signal-id "${{ matrix.signal.id }}"
-          --output "out/client-entrepreneur-delivery-${{ matrix.signal.key }}.json"
-          --run-claude
-      - name: Publier la livraison Entrepreneur indépendante
-        uses: actions/upload-artifact@v4
-        with:
-          name: lawradar-entrepreneur-${{ matrix.signal.key }}
-          path: out/client-entrepreneur-delivery-${{ matrix.signal.key }}.json
           retention-days: 90
 
   entrepreneur_direct:
