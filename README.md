@@ -88,6 +88,23 @@ et Marché avant tout appel du client Entrepreneur. La file moteur, elle, ne
 contenant que des empreintes, ne peut jamais à elle seule créer une fausse
 opportunité à partir d'un texte sans contenu primaire.
 
+## Détection universelle des frictions
+
+Avant tout appel modèle, `scripts/discover_opportunity_friction.py` examine
+uniquement le titre et l'extrait officiel déjà collectés. Il ouvre une enquête
+(`WATCH_CANDIDATE`) lorsqu'il constate une friction vérifiable : obligation
+visant des organisations, sanction ou contrôle, aide ou bonification,
+certification/éligibilité, commande publique, traçabilité ou transition
+technique. Une consultation publique officielle entre également dans cette
+file d'enquête.
+
+Cette détection est transversale : elle n'est pas limitée à l'énergie, au
+pharmaceutique ou à un secteur connu. Elle reste volontairement non
+commerciale : elle ne démontre ni demande, ni marché, ni droit d'agir. Les
+actes individuels, internes et la routine administrative sortent sans appel
+Anthropic avec une trace explicite. Les textes sans preuve primaire restent
+`PRIMARY_TEXT_EMPTY`, donc audités séparément et jamais assimilés à un rejet.
+
 ## Axe Énergie / CEE
 
 Les fiches d'opération standardisées CEE, bonifications officielles et mesures

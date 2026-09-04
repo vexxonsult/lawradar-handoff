@@ -7,6 +7,7 @@ from scripts.prepare_motor_input import (
     exclude_routine_administration_records,
     requires_model,
 )
+from scripts.discover_opportunity_friction import assess, screen
 
 
 class PrepareMotorInputTests(unittest.TestCase):
@@ -60,3 +61,44 @@ class PrepareMotorInputTests(unittest.TestCase):
         })
         self.assertEqual(result["evidence"]["official_text_excerpt"], "Preuve officielle.")
         self.assertNotIn("official_text_excerpt", record["evidence"])
+
+    def test_routes_a_cross_sector_obligation_to_watch_without_claiming_an_opportunity(self):
+        record = {
+            "source_id": "jorf:energy", "source_kind": "JORF", "change": "NEW",
+            "evidence": {"title": "Arrêté créant une obligation de déclaration", "content_status": "AVAILABLE"},
+        }
+        result = assess(record)
+        self.assertEqual(result["status"], "WATCH_CANDIDATE")
+        self.assertEqual(result["triggers"][0]["kind"], "LEGAL_OBLIGATION")
+        self.assertEqual(result["recommended_enrichment"], ["PRESS", "DEMAND", "MARKET"])
+
+    def test_routes_individual_licence_out_without_spending_a_model_call(self):
+        record = {
+            "source_id": "jorf:doctor", "source_kind": "JORF", "change": "NEW",
+            "evidence": {"title": "Décision d'autorisation d'exercer la profession de médecin", "content_status": "AVAILABLE"},
+        }
+        candidates, excluded = screen([record])
+        self.assertEqual(candidates, [])
+        self.assertEqual(excluded[0]["reason"], "INDIVIDUAL_OR_INTERNAL_ACT_TITLE")
+
+    def test_keeps_missing_primary_text_for_explicit_queue_audit(self):
+        record = {
+            "source_id": "jorf:missing", "source_kind": "JORF", "change": "NEW",
+            "evidence": {"title": "Décret portant obligation", "content_status": "UNAVAILABLE"},
+        }
+        candidates, excluded = screen([record])
+        self.assertEqual(len(candidates), 1)
+        self.assertEqual(candidates[0]["discovery"]["status"], "PRIMARY_EVIDENCE_MISSING")
+        self.assertEqual(excluded, [])
+
+    def test_does_not_route_an_internal_public_operation_on_deadline_words_alone(self):
+        record = {
+            "source_id": "jorf:security", "source_kind": "JORF", "change": "NEW",
+            "evidence": {
+                "title": "Décret relatif à la visite officielle", "content_status": "AVAILABLE",
+                "official_text_excerpt": "Les personnes sont soumises à une procédure. Entrée en vigueur immédiate.",
+            },
+        }
+        candidates, excluded = screen([record])
+        self.assertEqual(candidates, [])
+        self.assertEqual(excluded[0]["reason"], "NO_ECONOMIC_FRICTION_EVIDENCE")

@@ -33,7 +33,7 @@ DEFAULT_MODEL = "claude-sonnet-5"
 MAX_CANDIDATES = 250
 # Toute modification de la requête fournisseur doit produire un nouveau batch
 # une fois le batch précédent achevé, sans jamais doubler un batch en cours.
-BATCH_REQUEST_VERSION = "2026-09-04-energy-cee-v3"
+BATCH_REQUEST_VERSION = "2026-09-04-universal-friction-v4"
 _UNSUPPORTED_ANTHROPIC_SCHEMA_KEYWORDS = {
     "maxItems", "maxLength", "minLength", "minimum", "maximum",
     "exclusiveMinimum", "exclusiveMaximum", "multipleOf", "pattern", "uniqueItems",
@@ -45,6 +45,12 @@ externe. Toute information non démontrée reste null, MISSING, PARTIAL,
 UNKNOWN ou UNRESOLVED selon le schéma. Ne déduis jamais un capital, un délai,
 une autorisation, un acteur ou un flux financier. Un flux n'est admis que si
 sa direction et ses acteurs sont explicitement étayés dans la preuve.
+
+Le champ candidate.discovery est un signal de routage déterministe : il indique
+qu'une obligation, échéance, sanction, aide, accès, achat public ou transition
+technique mérite une enquête. Il ne prouve ni un marché, ni une demande, ni une
+offre légale. Vérifie toujours les preuves officielles du candidat et retourne
+DISCARDED ou UNRESOLVED si elles ne justifient pas la rétention.
 
 Routage Énergie / CEE : un texte français publié créant ou modifiant une fiche
 d'opération standardisée CEE, une bonification CEE ou une obligation mesurable

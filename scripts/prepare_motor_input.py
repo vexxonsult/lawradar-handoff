@@ -10,6 +10,11 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
+try:
+    from scripts.discover_opportunity_friction import screen
+except ModuleNotFoundError:  # pragma: no cover - direct workflow invocation.
+    from discover_opportunity_friction import screen
+
 
 def git_version(path: Path, revision: str) -> dict[str, Any] | None:
     try:
@@ -161,6 +166,7 @@ def prepare(evidence_dir: Path) -> dict[str, Any]:
     candidates: list[dict[str, Any]] = []
     excluded_historical_candidates: list[dict[str, Any]] = []
     excluded_routine_candidates: list[dict[str, Any]] = []
+    excluded_no_friction_candidates: list[dict[str, Any]] = []
     jorf_excerpts = load_jorf_excerpt_index(
         evidence_dir / "jorf-candidate-excerpts-latest.json"
     )
@@ -181,11 +187,17 @@ def prepare(evidence_dir: Path) -> dict[str, Any]:
                 records, set(current.get("covered_dates", []))
             )
             accepted, routine_exclusions = exclude_routine_administration_records(accepted)
-            candidates.extend(attach_jorf_excerpt(record, jorf_excerpts) for record in accepted)
+            enriched, friction_exclusions = screen(
+                [attach_jorf_excerpt(record, jorf_excerpts) for record in accepted]
+            )
+            candidates.extend(enriched)
             excluded_historical_candidates.extend(exclusions)
             excluded_routine_candidates.extend(routine_exclusions)
+            excluded_no_friction_candidates.extend(friction_exclusions)
         else:
-            candidates.extend(records)
+            enriched, friction_exclusions = screen(records)
+            candidates.extend(enriched)
+            excluded_no_friction_candidates.extend(friction_exclusions)
     return {
         "schema": "lawradar-motor-input-v1",
         "report_date": jorf_current.get("coverage_end") or "indéterminée",
@@ -194,7 +206,8 @@ def prepare(evidence_dir: Path) -> dict[str, Any]:
         "candidates": candidates,
         "excluded_historical_candidates": excluded_historical_candidates,
         "excluded_routine_candidates": excluded_routine_candidates,
-        "rules": "Preuves locales diffées uniquement ; réapparition historique et routine administrative explicite = filtrées avec trace ; inconnu = UNRESOLVED.",
+        "excluded_no_economic_friction_candidates": excluded_no_friction_candidates,
+        "rules": "Preuves locales diffées uniquement ; réapparition historique, routine administrative explicite et absence de friction économique détectable = filtrées avec trace ; une friction détectée ouvre seulement une enquête, jamais une opportunité confirmée ; inconnu = UNRESOLVED.",
     }
 
 
