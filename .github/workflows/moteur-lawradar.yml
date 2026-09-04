@@ -409,6 +409,10 @@ jobs:
               key = hashlib.sha256(signal_id.encode("utf-8")).hexdigest()[:16]
               matrix.append({"id": signal_id, "key": key})
           compact = json.dumps(matrix, ensure_ascii=False, separators=(",", ":"))
+          Path("out/client-plan.json").write_text(
+              json.dumps({"schema": "lawradar-client-plan-v1", "mode": mode, "signals": matrix}, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
           with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as output:
               output.write(f"client_matrix={compact}\n")
               output.write(f"has_ready={'true' if matrix else 'false'}\n")
@@ -422,6 +426,7 @@ jobs:
           path: |
             evidence/universal-signal-latest.json
             out/agent-pilot-readiness.json
+            out/client-plan.json
           retention-days: 90
 
   press:
@@ -557,9 +562,67 @@ jobs:
           path: out/
           retention-days: 90
 
+  # GitHub ne propage pas de façon fiable une matrice construite par client_plan.
+  # Ces deux jobs lisent donc le plan-artéfact et déroulent tous les signaux prêts.
+  press_direct:
+    needs: client_plan
+    runs-on: ubuntu-latest
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          name: lawradar-client-core-${{ github.run_id }}
+          path: out/client-core
+      - name: Installer le SDK pour les seuls candidats Presse traçables
+        run: python -m pip install --disable-pip-version-check "anthropic>=1.0,<2"
+      - name: Exécuter Presse sur chaque signal prêt du plan figé
+        run: >-
+          python scripts/run_client_branch.py --branch press
+          --core out/client-core/evidence/universal-signal-latest.json
+          --plan out/client-core/out/client-plan.json --output-root out/press
+          --model claude-sonnet-5
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lawradar-press-direct-${{ github.run_id }}
+          path: out/press/
+          retention-days: 90
+
+  demand_market_direct:
+    needs: client_plan
+    runs-on: ubuntu-latest
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          name: lawradar-client-core-${{ github.run_id }}
+          path: out/client-core
+      - name: Installer le SDK pour les seuls avis BOAMP traçables
+        run: python -m pip install --disable-pip-version-check "anthropic>=1.0,<2"
+      - name: Exécuter Demande et Marché sur chaque signal prêt du plan figé
+        run: >-
+          python scripts/run_client_branch.py --branch demand-market
+          --core out/client-core/evidence/universal-signal-latest.json
+          --plan out/client-core/out/client-plan.json --output-root out/demand-market
+          --model claude-sonnet-5
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lawradar-demand-market-boamp-direct-${{ github.run_id }}
+          path: out/demand-market/
+          retention-days: 90
+
   consolidate_clients:
-    needs: [client_plan, press, demand_market]
-    if: ${{ always() && !cancelled() && needs.press.result == 'success' && needs.demand_market.result == 'success' }}
+    needs: [client_plan, press_direct, demand_market_direct]
+    if: ${{ always() && !cancelled() && needs.press_direct.result == 'success' && needs.demand_market_direct.result == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -656,4 +719,49 @@ jobs:
         with:
           name: lawradar-entrepreneur-${{ matrix.signal.key }}
           path: out/client-entrepreneur-delivery-${{ matrix.signal.key }}.json
+          retention-days: 90
+
+  entrepreneur_direct:
+    needs: [client_plan, consolidate_clients]
+    if: needs.consolidate_clients.result == 'success'
+    runs-on: ubuntu-latest
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          name: lawradar-client-context-${{ github.run_id }}
+          path: out
+      - uses: actions/download-artifact@v4
+        with:
+          name: lawradar-client-core-${{ github.run_id }}
+          path: out/client-core
+      - name: Installer le SDK pour les seules décisions réellement ouvertes
+        if: env.ANTHROPIC_API_KEY != ''
+        run: python -m pip install --disable-pip-version-check "anthropic>=1.0,<2"
+      - name: Produire chaque note Entrepreneur autorisée par le plan figé
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+
+          plan = json.loads(Path("out/client-core/out/client-plan.json").read_text(encoding="utf-8"))
+          for signal in plan.get("signals", []):
+              subprocess.run([
+                  "python", "scripts/clients/entrepreneur_agent.py",
+                  "--input", "out/client-context.json", "--signal-id", signal["id"],
+                  "--output", f"out/client-entrepreneur-delivery-{signal['key']}.json",
+                  "--run-claude",
+              ], check=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lawradar-entrepreneur-direct-${{ github.run_id }}
+          path: out/client-entrepreneur-delivery-*.json
+          if-no-files-found: warn
           retention-days: 90
