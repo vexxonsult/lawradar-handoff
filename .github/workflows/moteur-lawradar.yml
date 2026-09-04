@@ -354,7 +354,7 @@ jobs:
     if: ${{ always() && !cancelled() && (github.event.inputs.clients_only == 'true' || needs.moteur.outputs.batch_ready == 'true' || github.event.schedule == '17 17 * * *' || github.event.schedule == '17 18 * * *' || github.event.schedule == '17 19 * * *') }}
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.plan.outputs.matrix }}
+      client_matrix: ${{ steps.plan.outputs.client_matrix }}
       has_ready: ${{ steps.plan.outputs.has_ready }}
       mode: ${{ steps.plan.outputs.mode }}
     steps:
@@ -410,7 +410,7 @@ jobs:
               matrix.append({"id": signal_id, "key": key})
           compact = json.dumps(matrix, ensure_ascii=False, separators=(",", ":"))
           with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as output:
-              output.write(f"matrix={compact}\n")
+              output.write(f"client_matrix={compact}\n")
               output.write(f"has_ready={'true' if matrix else 'false'}\n")
               output.write(f"mode={mode}\n")
           print(f"clients_ready={len(matrix)}; mode={mode}; already_consolidated={already_consolidated}")
@@ -432,7 +432,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        signal: ${{ fromJSON(needs.client_plan.outputs.matrix) }}
+        signal: ${{ fromJSON(needs.client_plan.outputs.client_matrix) }}
     uses: ./.github/workflows/agent-presse-lawradar.yml
     with:
       signal_id: ${{ matrix.signal.id }}
@@ -446,7 +446,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        signal: ${{ fromJSON(needs.client_plan.outputs.matrix) }}
+        signal: ${{ fromJSON(needs.client_plan.outputs.client_matrix) }}
     uses: ./.github/workflows/agent-marche-boamp-lawradar.yml
     with:
       signal_id: ${{ matrix.signal.id }}

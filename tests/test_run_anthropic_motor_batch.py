@@ -152,6 +152,7 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertIn("evidence/client-orchestration-latest.json", motor)
         self.assertIn("clients_only", motor)
         self.assertIn("github.event.inputs.clients_only == 'true'", motor)
+        self.assertIn("client_matrix", motor)
         self.assertIn("has_ready", motor)
         self.assertIn("Une matrice vide ne crée naturellement aucun job", motor)
         self.assertIn('cron: "17,47 5-7 * * *"', collector)
