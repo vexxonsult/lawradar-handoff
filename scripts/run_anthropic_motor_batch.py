@@ -393,6 +393,18 @@ def assemble_delivery(
         # Le custom_id du batch garantit déjà l'association à la source : on
         # recopie donc systématiquement l'identifiant officiel vérifié.
         facts["signal_id"] = expected_source
+        # A batch submitted under an older output contract may not contain the
+        # readable review. Preserve its paid, valid factual delivery instead of
+        # abandoning it; the dashboard makes the limitation explicit.
+        if "reading" not in value:
+            value["reading"] = {
+                "consequence": value.get("reason", "Lecture factuelle historique."),
+                "affected_actors": [],
+                "beneficiaries": [],
+                "constrained_parties": [],
+                "potential_service_partners": [],
+                "unknowns": ["Batch lancé avant la lecture structurée ; approfondissement à rejouer si nécessaire."],
+            }
         if not isinstance(facts.get("operator_access"), dict):
             failures.append(f"{expected_source}:operator_access_missing")
             continue
@@ -480,16 +492,16 @@ def _load_reusable_state(
         ):
             return state
 
-        # Un lot réellement différent ne doit ni être soumis en double ni faire
-        # échouer le workflow. Il reste dans la file : le prochain passage
-        # reprendra le batch actif, puis soumettra ce nouveau lot une fois le
-        # précédent terminé.
+        # Un lot réellement différent ne doit jamais être soumis en double.
+        # On reprend toutefois le batch déjà payé afin d'en moissonner le
+        # résultat dès qu'il est fini. Les custom_ids sont liés au candidat,
+        # donc une divergence de candidat sera refusée par la validation locale
+        # au lieu de perdre silencieusement une réponse.
         state.update({
             "ready": False,
-            "deferred_reason": "ACTIVE_BATCH_DIFFERENT_REQUEST",
+            "resumed_after_request_change": True,
             "updated_at_utc": datetime.now(UTC).isoformat(),
         })
-        _write_json(path, state)
         return state
     return None
 
@@ -505,13 +517,16 @@ def run_batch(
     # différence d'entrée et évite une seconde soumission.
     request_hash = _canonical_hash(requests)
     previous = _load_reusable_state(state_path, request_hash, model, len(requests))
+    resumed_after_request_change = bool(
+        previous and previous.get("resumed_after_request_change")
+    )
     if previous:
-        if previous.get("deferred_reason") == "ACTIVE_BATCH_DIFFERENT_REQUEST":
-            return previous
         batch = client.messages.batches.retrieve(previous["batch_id"])
     else:
         batch = client.messages.batches.create(requests=requests)
     state = _state_from_batch(batch, request_hash, model, len(requests))
+    if resumed_after_request_change:
+        state["resumed_after_request_change"] = True
     _write_json(state_path, state)
     deadline = time.monotonic() + max(0, wait_seconds)
     while state["processing_status"] != "ended" and time.monotonic() < deadline:

@@ -278,17 +278,27 @@ class AnthropicMotorBatchTests(unittest.TestCase):
             self.assertEqual(client.messages.batches.retrieved, ["msgbatch_test"])
             self.assertIn("request_sha256", json.loads(state_path.read_text()))
 
-    def test_different_pending_batch_is_deferred_without_duplicate_submission(self):
+    def test_different_pending_batch_is_resumed_without_duplicate_submission(self):
         client = FakeClient([], starts_ended=False)
         with tempfile.TemporaryDirectory() as directory:
             state_path = Path(directory) / "state.json"
             output_path = Path(directory) / "delivery.json"
             run_batch(motor_input(candidate("jorf:A")), client=client, state_path=state_path, output_path=output_path, wait_seconds=0)
             state = run_batch(motor_input(candidate("jorf:B")), client=client, state_path=state_path, output_path=output_path, wait_seconds=0)
-            self.assertEqual(state["deferred_reason"], "ACTIVE_BATCH_DIFFERENT_REQUEST")
+            self.assertTrue(state["resumed_after_request_change"])
             self.assertEqual(state["processing_status"], "in_progress")
             self.assertEqual(len(client.messages.batches.created), 1)
-            self.assertEqual(client.messages.batches.retrieved, [])
+            self.assertEqual(client.messages.batches.retrieved, ["msgbatch_test"])
+
+    def test_old_batch_result_receives_a_safe_reading_fallback(self):
+        value = motor_input(candidate("jorf:A"))
+        requests, mapping = build_requests(value, "claude-sonnet-5")
+        old_result = response(requests[0]["custom_id"], "jorf:A")
+        payload = json.loads(old_result["result"]["message"]["content"][0]["text"])
+        del payload["reading"]
+        old_result["result"]["message"]["content"][0]["text"] = json.dumps(payload)
+        delivery, _ = assemble_delivery(value, [old_result], mapping)
+        self.assertIn("Batch lancé avant", delivery["opportunities"][0]["reading"]["unknowns"][0])
 
     def test_incomplete_result_never_advances_as_a_delivery(self):
         value = motor_input(candidate("jorf:A"))
