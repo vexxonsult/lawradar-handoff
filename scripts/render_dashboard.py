@@ -28,6 +28,8 @@ def validate_result(result: dict) -> None:
             raise ValueError(f"Champ obligatoire invalide : {field}.")
     if not isinstance(result.get("flows"), list):
         raise ValueError("Champ obligatoire invalide : flows.")
+    if not isinstance(result.get("readings"), list):
+        raise ValueError("Champ obligatoire invalide : readings.")
     for index, flow in enumerate(result["flows"]):
         if not isinstance(flow, dict):
             raise ValueError(f"Flux {index} invalide.")
@@ -60,11 +62,31 @@ def render_dashboard(result: dict) -> str:
             f"<dt>À faire</dt><dd>{tag(flow['next_action'])}</dd></dl></article>"
         )
     content = "\n".join(cards) or "<p>Aucun flux structuré ce passage.</p>"
+
+    def list_text(values: object) -> str:
+        return ", ".join(tag(item) for item in values) if isinstance(values, list) and values else "Non démontré"
+
+    readings = []
+    for item in result["readings"]:
+        if not isinstance(item, dict) or not isinstance(item.get("reading"), dict):
+            raise ValueError("Lecture de texte invalide.")
+        reading = item["reading"]
+        readings.append(
+            "<tr>"
+            f"<td>{tag(item.get('title', 'Sans titre'))}</td><td>{tag(item.get('status', '—'))}</td>"
+            f"<td>{tag(reading.get('consequence', item.get('reason', '—')))}</td>"
+            f"<td>{list_text(reading.get('affected_actors'))}</td>"
+            f"<td>{list_text(reading.get('beneficiaries'))}</td>"
+            f"<td>{list_text(reading.get('constrained_parties'))}</td>"
+            f"<td>{list_text(reading.get('potential_service_partners'))}</td>"
+            f"<td>{list_text(reading.get('unknowns'))}</td></tr>"
+        )
+    reading_table = "".join(readings) or '<tr><td colspan="8">Aucun texte analysé.</td></tr>'
     return f"""<!doctype html>
 <html lang=\"fr\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
 <title>Money Flow Radar — {tag(result['report_date'])}</title>
-<style>body{{font-family:system-ui,sans-serif;background:#f7f7f5;color:#1f2937;margin:0}}main{{max-width:900px;margin:auto;padding:32px 20px}}header{{border-bottom:1px solid #ddd;padding-bottom:20px}}.coverage,.badge{{display:inline-block;background:#fff3cd;border-radius:999px;padding:4px 10px;font-weight:600}}.flow{{background:white;border:1px solid #e5e7eb;border-radius:14px;padding:20px;margin:18px 0}}.money{{font-size:1.1rem;font-weight:650}}dt{{font-weight:650;margin-top:10px}}dd{{margin:2px 0}}</style>
-</head><body><main><header><p class=\"coverage\">{tag(result['coverage'])}</p><h1>{tag(result['headline'])}</h1><p>{tag(result['report_date'])}</p></header><section><h2>Flux du jour</h2>{content}</section></main></body></html>
+<style>body{{font-family:system-ui,sans-serif;background:#f7f7f5;color:#1f2937;margin:0}}main{{max-width:1300px;margin:auto;padding:32px 20px}}header{{border-bottom:1px solid #ddd;padding-bottom:20px}}.coverage,.badge{{display:inline-block;background:#fff3cd;border-radius:999px;padding:4px 10px;font-weight:600}}.flow{{background:white;border:1px solid #e5e7eb;border-radius:14px;padding:20px;margin:18px 0}}.money{{font-size:1.1rem;font-weight:650}}dt{{font-weight:650;margin-top:10px}}dd{{margin:2px 0}}.table-wrap{{overflow:auto}}table{{width:100%;border-collapse:collapse;background:#fff;font-size:.9rem}}th,td{{padding:10px;border:1px solid #e5e7eb;text-align:left;vertical-align:top}}th{{background:#eef2ff;white-space:nowrap}}</style>
+</head><body><main><header><p class=\"coverage\">{tag(result['coverage'])}</p><h1>{tag(result['headline'])}</h1><p>{tag(result['report_date'])}</p></header><section><h2>Lecture de tous les textes</h2><div class=\"table-wrap\"><table><thead><tr><th>Texte</th><th>Décision</th><th>Ce qui change</th><th>Concernés</th><th>Bénéficiaires</th><th>Contraints</th><th>Partenaires possibles</th><th>À confirmer</th></tr></thead><tbody>{reading_table}</tbody></table></div></section><section><h2>Flux du jour</h2>{content}</section></main></body></html>
 """
 
 

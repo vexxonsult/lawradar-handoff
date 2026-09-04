@@ -40,6 +40,11 @@ def result_value(source_id):
         "source_id": source_id,
         "status": "UNRESOLVED",
         "reason": "Aucun flux financier démontré dans l'extrait.",
+        "reading": {
+            "consequence": "Le texte est lu, sans conséquence économique démontrée.",
+            "affected_actors": [], "beneficiaries": [], "constrained_parties": [],
+            "potential_service_partners": [], "unknowns": ["Impact économique non démontré."],
+        },
         "facts": {
             "schema": "lawradar-opportunity-facts-v1",
             "signal_id": source_id,

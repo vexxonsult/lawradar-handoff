@@ -100,5 +100,5 @@ class PrepareMotorInputTests(unittest.TestCase):
             },
         }
         candidates, excluded = screen([record])
-        self.assertEqual(candidates, [])
-        self.assertEqual(excluded[0]["reason"], "NO_ECONOMIC_FRICTION_EVIDENCE")
+        self.assertEqual(candidates[0]["discovery"]["status"], "CONTEXT_REVIEW")
+        self.assertEqual(excluded, [])

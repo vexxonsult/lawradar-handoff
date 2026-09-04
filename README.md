@@ -102,8 +102,13 @@ Cette détection est transversale : elle n'est pas limitée à l'énergie, au
 pharmaceutique ou à un secteur connu. Elle reste volontairement non
 commerciale : elle ne démontre ni demande, ni marché, ni droit d'agir. Les
 actes individuels, internes et la routine administrative sortent sans appel
-Anthropic avec une trace explicite. Les textes sans preuve primaire restent
-`PRIMARY_TEXT_EMPTY`, donc audités séparément et jamais assimilés à un rejet.
+Anthropic avec une trace explicite. Tout autre texte primaire disponible reçoit
+une lecture Claude courte dans le tableau quotidien, y compris lorsqu'il ne
+porte aucune friction économique immédiate. Cette lecture distingue ce qui
+change, les acteurs concernés, les bénéficiaires, les contraintes, les
+partenaires éventuellement démontrés et les inconnues ; elle n'invente aucun
+de ces éléments. Les textes sans preuve primaire restent `PRIMARY_TEXT_EMPTY`,
+donc audités séparément et jamais assimilés à un rejet.
 
 ## Axe Énergie / CEE
 

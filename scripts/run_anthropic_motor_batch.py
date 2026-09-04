@@ -33,7 +33,7 @@ DEFAULT_MODEL = "claude-sonnet-5"
 MAX_CANDIDATES = 250
 # Toute modification de la requête fournisseur doit produire un nouveau batch
 # une fois le batch précédent achevé, sans jamais doubler un batch en cours.
-BATCH_REQUEST_VERSION = "2026-09-04-universal-friction-v4"
+BATCH_REQUEST_VERSION = "2026-09-04-readable-primary-review-v5"
 _UNSUPPORTED_ANTHROPIC_SCHEMA_KEYWORDS = {
     "maxItems", "maxLength", "minLength", "minimum", "maximum",
     "exclusiveMinimum", "exclusiveMaximum", "multipleOf", "pattern", "uniqueItems",
@@ -46,11 +46,15 @@ UNKNOWN ou UNRESOLVED selon le schéma. Ne déduis jamais un capital, un délai,
 une autorisation, un acteur ou un flux financier. Un flux n'est admis que si
 sa direction et ses acteurs sont explicitement étayés dans la preuve.
 
-Le champ candidate.discovery est un signal de routage déterministe : il indique
-qu'une obligation, échéance, sanction, aide, accès, achat public ou transition
-technique mérite une enquête. Il ne prouve ni un marché, ni une demande, ni une
-offre légale. Vérifie toujours les preuves officielles du candidat et retourne
-DISCARDED ou UNRESOLVED si elles ne justifient pas la rétention.
+Le champ candidate.discovery est un signal de routage déterministe. Quel que
+soit son statut, produis une lecture courte et pédagogique du texte dans
+`reading` : conséquence concrète, acteurs concernés, bénéficiaires, parties
+contraintes, partenaires de service éventuellement documentés et inconnues.
+Ces champs doivent rester vides lorsqu'ils ne sont pas démontrés ; ne déduis
+jamais un gagnant, un perdant, un marché ou une offre légale. Un texte
+CONTEXT_REVIEW doit normalement être DISCARDED comme opportunité, mais sa
+lecture reste utile au tableau quotidien. Vérifie toujours les preuves
+officielles du candidat.
 
 Routage Énergie / CEE : un texte français publié créant ou modifiant une fiche
 d'opération standardisée CEE, une bonification CEE ou une obligation mesurable
@@ -83,6 +87,23 @@ FLOW_SCHEMA: dict[str, Any] = {
             "label", "title", "money_sentence", "explanation", "payer",
             "recipient", "amount", "effective_date", "certainty", "next_action",
         )
+    },
+}
+
+READING_SCHEMA: dict[str, Any] = {
+    "type": "object",
+    "additionalProperties": False,
+    "required": [
+        "consequence", "affected_actors", "beneficiaries",
+        "constrained_parties", "potential_service_partners", "unknowns",
+    ],
+    "properties": {
+        "consequence": {"type": "string", "minLength": 1},
+        "affected_actors": {"type": "array", "maxItems": 8, "items": {"type": "string", "minLength": 1}},
+        "beneficiaries": {"type": "array", "maxItems": 8, "items": {"type": "string", "minLength": 1}},
+        "constrained_parties": {"type": "array", "maxItems": 8, "items": {"type": "string", "minLength": 1}},
+        "potential_service_partners": {"type": "array", "maxItems": 8, "items": {"type": "string", "minLength": 1}},
+        "unknowns": {"type": "array", "maxItems": 8, "items": {"type": "string", "minLength": 1}},
     },
 }
 
@@ -180,12 +201,13 @@ FACTS_SCHEMA: dict[str, Any] = {
 CANDIDATE_RESULT_SCHEMA: dict[str, Any] = {
     "type": "object",
     "additionalProperties": False,
-    "required": ["source_id", "status", "reason", "facts", "money_flows"],
+    "required": ["source_id", "status", "reason", "facts", "reading", "money_flows"],
     "properties": {
         "source_id": {"type": "string", "minLength": 1},
         "status": {"type": "string", "enum": ["RETAINED", "DISCARDED", "UNRESOLVED"]},
         "reason": {"type": "string", "minLength": 1},
         "facts": FACTS_SCHEMA,
+        "reading": READING_SCHEMA,
         "money_flows": {"type": "array", "maxItems": 5, "items": FLOW_SCHEMA},
     },
 }
@@ -319,7 +341,7 @@ def _single_delivery(candidate_result: dict[str, Any], report_date: str) -> dict
     return {
         "schema": DELIVERY_SCHEMA,
         "run": {"report_date": report_date, "coverage": "1 candidat", "summary": "Validation batch unitaire"},
-        "opportunities": [{key: candidate_result[key] for key in ("source_id", "status", "reason", "facts")}],
+        "opportunities": [{key: candidate_result[key] for key in ("source_id", "status", "reason", "facts", "reading")}],
         "money_flows": flows,
     }
 
@@ -388,7 +410,7 @@ def assemble_delivery(
     money_flows: list[dict[str, Any]] = []
     for candidate_index, source_id in enumerate(expected_sources, start=1):
         item = by_source[source_id]
-        opportunities.append({key: item[key] for key in ("source_id", "status", "reason", "facts")})
+        opportunities.append({key: item[key] for key in ("source_id", "status", "reason", "facts", "reading")})
         for flow_index, flow in enumerate(item.get("money_flows", []), start=1):
             money_flows.append({"id": f"MF-{candidate_index:02d}-{flow_index:02d}", **flow})
     counts = {status: sum(item["status"] == status for item in opportunities) for status in ("RETAINED", "DISCARDED", "UNRESOLVED")}

@@ -17,6 +17,14 @@ class RenderDashboardTests(unittest.TestCase):
                 "effective_date": "1er janvier 2027", "certainty": "Rapporté",
                 "next_action": "Lire le texte primaire.",
             }],
+            "readings": [{
+                "title": "Titre <sûr>", "status": "DISCARDED", "reason": "Contexte lu.",
+                "reading": {
+                    "consequence": "Une conséquence factuelle.", "affected_actors": ["Acteur"],
+                    "beneficiaries": [], "constrained_parties": [],
+                    "potential_service_partners": [], "unknowns": ["Montant non démontré."],
+                },
+            }],
         }
 
     def test_renders_user_level_card_and_escapes_content(self):
@@ -25,6 +33,7 @@ class RenderDashboardTests(unittest.TestCase):
         self.assertIn("Une dépense pourrait apparaître.", page)
         self.assertIn("Titre &lt;sûr&gt;", page)
         self.assertNotIn("<sûr>", page)
+        self.assertIn("Lecture de tous les textes", page)
 
     def test_rejects_incomplete_motor_result(self):
         result = self.result()

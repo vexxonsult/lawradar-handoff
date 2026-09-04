@@ -21,11 +21,25 @@ FLOW_FIELDS = (
     "recipient", "amount", "effective_date", "certainty", "next_action",
 )
 FLOW_FIELD_SET = set(FLOW_FIELDS)
+READING_FIELDS = (
+    "consequence", "affected_actors", "beneficiaries", "constrained_parties",
+    "potential_service_partners", "unknowns",
+)
 
 
 def require_text(value: Any, name: str) -> None:
     if not isinstance(value, str) or not value.strip():
         raise ValueError(f"Champ textuel obligatoire invalide : {name}.")
+
+
+def validate_reading(reading: Any, index: int) -> None:
+    if not isinstance(reading, dict) or set(reading) != set(READING_FIELDS):
+        raise ValueError(f"Lecture de texte invalide : {index}.")
+    require_text(reading.get("consequence"), f"opportunities[{index}].reading.consequence")
+    for field in READING_FIELDS[1:]:
+        value = reading.get(field)
+        if not isinstance(value, list) or any(not isinstance(item, str) or not item.strip() for item in value):
+            raise ValueError(f"Lecture de texte invalide : {index}.{field}.")
 
 
 def validate_delivery(delivery: dict[str, Any]) -> None:
@@ -55,6 +69,10 @@ def validate_delivery(delivery: dict[str, Any]) -> None:
             raise ValueError(f"Faits d'opportunité invalides : {index}.") from caught
         if facts["signal_id"] != item["source_id"]:
             raise ValueError(f"Faits rattachés au mauvais signal : {index}.")
+        # Backward-compatible for historical deliveries. New batch results are
+        # required to carry the field by CANDIDATE_RESULT_SCHEMA.
+        if "reading" in item:
+            validate_reading(item["reading"], index)
     flows = delivery.get("money_flows")
     if not isinstance(flows, list):
         raise ValueError("Bloc money_flows invalide.")
@@ -79,6 +97,19 @@ def dashboard_input(delivery: dict[str, Any]) -> dict[str, Any]:
         "flows": [
             {name: flow[name] for name in FLOW_FIELDS if name != "id"}
             for flow in delivery["money_flows"]
+        ],
+        "readings": [
+            {
+                "title": item["facts"]["title"],
+                "status": item["status"],
+                "reason": item["reason"],
+                "reading": item.get("reading", {
+                    "consequence": item["reason"], "affected_actors": [], "beneficiaries": [],
+                    "constrained_parties": [], "potential_service_partners": [],
+                    "unknowns": ["Lecture structurée indisponible pour cette livraison historique."],
+                }),
+            }
+            for item in delivery["opportunities"]
         ],
     }
 

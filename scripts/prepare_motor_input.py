@@ -207,7 +207,7 @@ def prepare(evidence_dir: Path) -> dict[str, Any]:
         "excluded_historical_candidates": excluded_historical_candidates,
         "excluded_routine_candidates": excluded_routine_candidates,
         "excluded_no_economic_friction_candidates": excluded_no_friction_candidates,
-        "rules": "Preuves locales diffées uniquement ; réapparition historique, routine administrative explicite et absence de friction économique détectable = filtrées avec trace ; une friction détectée ouvre seulement une enquête, jamais une opportunité confirmée ; inconnu = UNRESOLVED.",
+        "rules": "Preuves locales diffées uniquement ; réapparition historique et routine administrative explicite = filtrées avec trace ; les autres textes primaires disponibles reçoivent une lecture factuelle. Une friction détectée ouvre seulement une enquête, jamais une opportunité confirmée ; inconnu = UNRESOLVED.",
     }
 
 

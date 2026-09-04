@@ -154,7 +154,10 @@ def assess(candidate: dict[str, Any]) -> dict[str, Any]:
         }
     return {
         "schema": SCHEMA,
-        "status": "NOT_A_WATCH_CANDIDATE",
+        # A text without an immediately detectable economic friction is still
+        # worth a compact factual reading. Claude can explain what it changes;
+        # it simply must not be promoted as a business lead on that basis.
+        "status": "CONTEXT_REVIEW",
         "score": score,
         "triggers": triggers,
         "scope_terms": scope_terms,
@@ -171,7 +174,7 @@ def screen(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[di
         enriched = {**record, "discovery": discovery}
         # Keep unavailable primary texts so the queue can record PRIMARY_TEXT_EMPTY
         # rather than masking a collection deficit as a harmless exclusion.
-        if discovery["status"] in {"WATCH_CANDIDATE", "PRIMARY_EVIDENCE_MISSING"}:
+        if discovery["status"] in {"WATCH_CANDIDATE", "CONTEXT_REVIEW", "PRIMARY_EVIDENCE_MISSING"}:
             candidates.append(enriched)
         else:
             evidence = record.get("evidence", {})
