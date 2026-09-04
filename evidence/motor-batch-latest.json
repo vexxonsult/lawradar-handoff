@@ -1,19 +1,24 @@
 {
   "schema": "lawradar-anthropic-motor-batch-v1",
-  "input_sha256": "68c27ee46f4b0e59eeb440151767dc235a225aa18d02bcefe202d549b2516eab",
+  "input_sha256": "91cb21abf6c4c3756423cb2a57093089d3888ce8d15bca8c80e75592e986213d",
+  "request_sha256": "91cb21abf6c4c3756423cb2a57093089d3888ce8d15bca8c80e75592e986213d",
   "model": "claude-sonnet-5",
   "request_version": "2026-09-03-anthropic-schema-subset-v2",
   "batch_id": "msgbatch_013pswjWbtbJtp6KoxftAiKf",
-  "processing_status": "in_progress",
+  "processing_status": "ended",
   "request_count": 24,
   "request_counts": {
-    "processing": 24,
-    "succeeded": 0,
+    "processing": 0,
+    "succeeded": 24,
     "errored": 0,
     "canceled": 0,
     "expired": 0
   },
-  "ready": false,
+  "ready": true,
   "created_at_utc": "2026-09-04 07:59:16.011067+00:00",
-  "updated_at_utc": "2026-09-04T08:02:19.709383+00:00"
+  "updated_at_utc": "2026-09-04T12:02:25.036568+00:00",
+  "usage": {
+    "input_tokens": 93312,
+    "output_tokens": 32532
+  }
 }

@@ -1,15 +1,16 @@
 {
   "schema": "lawradar-universal-signal-v2",
   "run": {
-    "id": "33730858990",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33730858990",
-    "commit": "00c237cd9039fc839c2e204a40d430ff1711a70d",
-    "report_date": "2026-09-03"
+    "id": "33870744468",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33870744468",
+    "commit": "33109bf563d1ace11ed8d5651f57515dcbdcea96",
+    "report_date": "2026-09-04"
   },
   "context": {
-    "coverage": "2/2 candidats traités indépendamment par Message Batch",
+    "coverage": "24/24 candidats traités indépendamment par Message Batch",
     "delta_changed_sources": [
-      "jorf-summaries-latest.json"
+      "jorf-summaries-latest.json",
+      "eurlex-oj-latest.json"
     ],
     "handled_source_files": [
       "jorf-summaries-latest.json",
@@ -19,13 +20,13 @@
   },
   "signals": [
     {
-      "id": "signal:551a202984a04135",
+      "id": "signal:c4164faa44eae9b3",
       "source": {
-        "source_id": "jorf:JORFTEXT000054791445",
+        "source_id": "jorf:JORFTEXT000054794130",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "title": "Décision n° 2026-431 du 22 juillet 2026 mettant en demeure la société des Éditions Mengès",
+          "title": "Décret n° 2026-839 du 3 septembre 2026 portant application de l'article L. 211-11-1 du code de la sécurité intérieure à la visite du pape Léon XIV en France",
           "url": null,
           "dates": [],
           "detail_status": null,
@@ -39,30 +40,37 @@
       },
       "radar": {
         "status": "DISCARDED",
-        "reason": "Ce texte est une décision individuelle de mise en demeure de l'Arcom à l'encontre d'une société d'édition (Éditions Mengès) pour non-respect d'une obligation légale préexistante (dépôt de fichiers numériques auprès de la BnF, art. L.122-5-1 CPI, en vigueur depuis le 1er janvier 2022). Il ne s'agit ni d'une nouvelle réglementation créant un marché ou une obligation générale, ni d'une opportunité économique pour un opérateur tiers : c'est une sanction administrative visant une entreprise nommément désignée pour l'application d'une règle déjà en vigueur. Aucun flux financier n'est mentionné ni déductible du texte (pas d'amende, pas de tarif, pas de mécanisme de compensation). Aucune capacité, autorisation ou marché de service n'est ouvert par cette décision."
+        "reason": "Le décret organise une procédure de sécurité intérieure (avis conforme pour l'accès à un grand événement) sans créer d'obligation, d'autorisation ou de marché accessible à un opérateur privé, et sans mention d'un quelconque flux financier."
       },
       "opportunity_facts": {
         "schema": "lawradar-opportunity-facts-v1",
-        "signal_id": "signal:551a202984a04135",
-        "title": "Décision n° 2026-431 du 22 juillet 2026 mettant en demeure la société des Éditions Mengès",
+        "signal_id": "signal:c4164faa44eae9b3",
+        "title": "Décret n° 2026-839 du 3 septembre 2026 portant application de l'article L. 211-11-1 du code de la sécurité intérieure à la visite du pape Léon XIV en France",
         "keywords": [
-          "accessibilité",
-          "handicap",
-          "dépôt fichiers numériques",
-          "Arcom",
-          "édition",
-          "CPI L.122-5-1"
+          "sécurité intérieure",
+          "grand événement",
+          "visite papale",
+          "avis conforme",
+          "contrôle d'accès"
         ],
         "affected_scope": [
-          "Société des Éditions Mengès"
+          "Paris (75)",
+          "Saint-Denis (93)",
+          "Lourdes (65)",
+          "Metz (57)",
+          "Goin (57)"
         ],
         "legal": {
           "jurisdiction": "FR",
-          "text_status": "PUBLISHED",
+          "text_status": "IN_FORCE",
           "proof_status": "VERIFIED",
-          "effective_date": "2026-07-22",
+          "effective_date": "2026-09-05",
           "affected_scope": [
-            "Société des Éditions Mengès"
+            "Paris (75)",
+            "Saint-Denis (93)",
+            "Lourdes (65)",
+            "Metz (57)",
+            "Goin (57)"
           ]
         },
         "requirements": {
@@ -97,13 +105,13 @@
       }
     },
     {
-      "id": "signal:406cadd61a8798bd",
+      "id": "signal:de0b3e6e115952f1",
       "source": {
-        "source_id": "jorf:JORFTEXT000054791467",
+        "source_id": "jorf:JORFTEXT000054794183",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "title": "Décision du 31 août 2026 portant nominations au Contrôleur général des lieux de privation de liberté",
+          "title": "Arrêté du 1er septembre 2026 portant création de la fiche d'opération standardisée IND-UT-141, du référentiel de contrôle et de la bonification associés",
           "url": null,
           "dates": [],
           "detail_status": null,
@@ -117,24 +125,1752 @@
       },
       "radar": {
         "status": "DISCARDED",
-        "reason": "Le texte est une décision de nomination administrative interne (nominations au Contrôleur général des lieux de privation de liberté). Il ne crée ni obligation nouvelle, ni marché, ni exigence réglementaire ouvrant une opportunité économique, et ne comporte aucun flux financier identifiable ni acteur privé concerné."
+        "reason": "Le texte crée une fiche d'opération standardisée CEE (IND-UT-141 « Chaudière industrielle électrique ») et modifie les arrêtés CEE de 2014 et 2021. Il s'agit d'un dispositif technique du secteur de l'énergie, sans lien démontré avec les secteurs surveillés (médicaments, services financiers, services juridiques) et sans montant, payeur ou bénéficiaire de bonification explicitement chiffrés dans le texte fourni. Aucune preuve exploitable d'accès opérateur ou de flux financier ne peut être établie sans extrapolation."
       },
       "opportunity_facts": {
         "schema": "lawradar-opportunity-facts-v1",
-        "signal_id": "signal:406cadd61a8798bd",
-        "title": "Décision du 31 août 2026 portant nominations au Contrôleur général des lieux de privation de liberté",
+        "signal_id": "signal:de0b3e6e115952f1",
+        "title": "Arrêté du 1er septembre 2026 portant création de la fiche d'opération standardisée IND-UT-141, du référentiel de contrôle et de la bonification associés",
         "keywords": [
-          "nomination",
-          "Contrôleur général des lieux de privation de liberté",
-          "administration"
+          "certificats d'économies d'énergie",
+          "CEE",
+          "chaudière industrielle électrique",
+          "IND-UT-141",
+          "bonification",
+          "opération standardisée",
+          "énergie industrielle"
+        ],
+        "affected_scope": [
+          "dispositif des certificats d'économies d'énergie",
+          "secteur industriel"
+        ],
+        "legal": {
+          "jurisdiction": "France",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-05",
+          "affected_scope": [
+            "dispositif CEE",
+            "industrie - chaudières électriques"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:82b94351c5f10d9c",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794234",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "L'arrêté concerne l'inscription au remboursement de la spécialité pharmaceutique TAKHZYRO® dans une indication pédiatrique précise, avec prescription réservée aux centres de référence ou de compétence de la maladie. Il s'agit d'un acte réglementaire strictement encadré par le code de la sécurité sociale et de la santé publique, sans ouverture vers un rôle périphérique ou une prestation accessible à un opérateur hors du champ pharmaceutique réglementé. Aucun montant, tarif ou flux financier explicite n'est mentionné dans le texte fourni."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:82b94351c5f10d9c",
+        "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux (TAKHZYRO®)",
+        "keywords": [
+          "TAKHZYRO",
+          "remboursement",
+          "angioœdème héréditaire",
+          "centres de référence",
+          "commission de la transparence"
+        ],
+        "affected_scope": [
+          "FR"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": null,
+          "affected_scope": [
+            "FR"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "MEDICINES",
+          "direct_offer_status": "OUT_OF_PROFILE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:cb41284df04e6601",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794248",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "RETAINED",
+        "reason": "Arrêté officiellement publié au JORF (NOR SFHS2618414A, texte disponible et vérifié par empreinte SHA256) modifiant la liste des spécialités pharmaceutiques agréées aux collectivités pour inclure TAKHZYRO® dans l'indication de prévention des crises d'angioœdème héréditaire chez les enfants de 2 à moins de 12 ans, sous condition de prescription réservée aux centres de référence ou de compétence de la maladie. Le changement réglementaire est explicite et vérifiable, mais aucun élément chiffré (capital, délai, montant financier) n'est fourni dans le texte, et l'accès reste restreint à un cercle de prescripteurs spécialisés, sans preuve d'un rôle périphérique pour un opérateur non pharmaceutique."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:cb41284df04e6601",
+        "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+        "keywords": [
+          "TAKHZYRO",
+          "angioœdème héréditaire",
+          "liste des spécialités agréées",
+          "collectivités",
+          "commission de la transparence",
+          "centre de référence"
+        ],
+        "affected_scope": [
+          "collectivités et divers services publics",
+          "centres de référence ou de compétence de la maladie"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": null,
+          "affected_scope": [
+            "collectivités et divers services publics",
+            "centres de référence ou de compétence de la maladie"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [
+            "Centre de référence ou de compétence de la maladie pour la prescription de TAKHZYRO®"
+          ],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "PARTIAL"
+        },
+        "operator_access": {
+          "sector": "MEDICINES",
+          "direct_offer_status": "OUT_OF_PROFILE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:ffaf4303dc8bbf1e",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794267",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 1er septembre 2026 portant autorisation d'exercer en France la profession de médecin en application des dispositions de l'article L. 4111-3-1 du code de la santé publique",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "L'arrêté est une décision administrative individuelle (nominative) autorisant une personne physique à exercer la profession de médecin sur le fondement de l'article L. 4111-3-1 du code de la santé publique. Il ne crée ni obligation réglementaire générale, ni marché de service exploitable par un opérateur économique, ni flux financier identifiable. Aucune preuve d'un cadre d'affaires, de capital minimum, de délai de mise sur le marché ou d'accès direct/périphérique pour un opérateur n'est présente dans le texte source."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:ffaf4303dc8bbf1e",
+        "title": "Arrêté du 1er septembre 2026 portant autorisation d'exercer en France la profession de médecin en application des dispositions de l'article L. 4111-3-1 du code de la santé publique",
+        "keywords": [
+          "autorisation d'exercer",
+          "médecin",
+          "article L.4111-3-1",
+          "code de la santé publique",
+          "décision individuelle"
+        ],
+        "affected_scope": [
+          "FR"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": null,
+          "affected_scope": [
+            "FR"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:93c36b8e94634024",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794273",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 2 septembre 2026 portant autorisation de la société Pfizer à participer à l'expérimentation du recyclage des stylos préremplis injectables pour l'administration en auto-traitement de médicaments ayant le statut de médicament non utilisé",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "L'arrêté constitue une autorisation individuelle et ad hoc accordée à une société déjà nommément désignée (Pfizer) pour participer à un dispositif expérimental de recyclage de stylos préremplis. Il ne crée pas de cadre réglementaire ouvert à d'autres opérateurs ni d'opportunité de marché généralisable, et aucun flux financier n'est explicité dans le texte fourni."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:93c36b8e94634024",
+        "title": "Arrêté du 2 septembre 2026 portant autorisation de la société Pfizer à participer à l'expérimentation du recyclage des stylos préremplis injectables pour l'administration en auto-traitement de médicaments ayant le statut de médicament non utilisé",
+        "keywords": [
+          "recyclage",
+          "stylos préremplis",
+          "médicament non utilisé",
+          "expérimentation",
+          "auto-traitement",
+          "Pfizer"
+        ],
+        "affected_scope": [
+          "Pfizer"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": null,
+          "affected_scope": [
+            "Pfizer"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "MEDICINES",
+          "direct_offer_status": "OUT_OF_PROFILE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:1c5e18f126b12185",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794406",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 1er septembre 2026 portant autorisation d'exercer en France la profession de médecin en application des dispositions de l'article L. 4111-3-1 du code de la santé publique",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Cet arrêté est une autorisation individuelle d'exercice de la profession de médecin délivrée en application de l'article L. 4111-3-1 du code de la santé publique, sans lien avec une opportunité de marché ou un cadre réglementaire ouvrant un accès à un opérateur. Il ne contient ni exigences, ni flux financiers identifiables, ni périmètre d'activité pertinent pour un service marchand."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:1c5e18f126b12185",
+        "title": "Arrêté du 1er septembre 2026 portant autorisation d'exercer en France la profession de médecin en application de l'article L. 4111-3-1 du code de la santé publique",
+        "keywords": [
+          "autorisation individuelle",
+          "profession de médecin",
+          "article L. 4111-3-1",
+          "code de la santé publique"
         ],
         "affected_scope": [],
         "legal": {
           "jurisdiction": "FR",
           "text_status": "PUBLISHED",
           "proof_status": "VERIFIED",
-          "effective_date": "2026-09-03",
+          "effective_date": "2026-09-04",
           "affected_scope": []
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:b577e5c22d05ef6e",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794412",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 1er septembre 2026 portant autorisation d'exercer en France la profession de médecin en application des dispositions de l'article L. 4111-3-1 du code de la santé publique",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "L'arrêté est une décision nominative d'autorisation individuelle d'exercice de la médecine (art. L.4111-3-1 CSP) et ne constitue pas un texte réglementaire créant une opportunité de marché, une obligation générale, ou un flux financier identifiable. Aucun acteur économique, aucun service périphérique, aucune capacité réglementée générique n'est en jeu."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:b577e5c22d05ef6e",
+        "title": "Arrêté du 1er septembre 2026 portant autorisation d'exercer en France la profession de médecin en application des dispositions de l'article L. 4111-3-1 du code de la santé publique",
+        "keywords": [
+          "autorisation individuelle",
+          "médecin",
+          "article L.4111-3-1 CSP"
+        ],
+        "affected_scope": [],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-04",
+          "affected_scope": []
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "MEDICINES",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:07ffe54a931a7b0d",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794418",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 1er septembre 2026 portant autorisation d'exercer en France la profession de médecin en application des dispositions de l'article L. 4111-3-1 du code de la santé publique",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "L'arrêté est une décision administrative nominative autorisant l'exercice de la profession de médecin par des personnes physiques en application de l'article L. 4111-3-1 du code de la santé publique. Il ne crée ni obligation générale, ni marché, ni flux financier identifiable, ni opportunité commerciale exploitable par un opérateur. Aucun texte d'application substantiel n'est fourni au-delà des visas, et aucune preuve de capital, délai, autorisation professionnelle générique ou service périphérique n'est disponible."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:07ffe54a931a7b0d",
+        "title": "Arrêté du 1er septembre 2026 portant autorisation d'exercer en France la profession de médecin en application des dispositions de l'article L. 4111-3-1 du code de la santé publique",
+        "keywords": [
+          "médecin",
+          "autorisation d'exercice",
+          "L. 4111-3-1",
+          "code de la santé publique",
+          "décision nominative"
+        ],
+        "affected_scope": [
+          "médecins étrangers ou diplômés hors UE demandant une autorisation individuelle d'exercice"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-04",
+          "affected_scope": [
+            "personnes physiques nommément désignées par l'arrêté (non identifiées dans l'extrait fourni)"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "autorisation individuelle d'exercice de la médecine (art. L.4111-3-1 CSP)",
+              "status": "REQUIRED"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "avis du Conseil national de l'ordre des médecins",
+              "status": "AVAILABLE"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "MEDICINES",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:031d709adff5d9fb",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794445",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 24 août 2026 portant extension d'un avenant à la convention collective nationale des employés, techniciens et cadres des agences de presse (IDCC 3221)",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "L'arrêté porte sur l'extension d'un avenant salarial (n°10) à une convention collective sectorielle (agences de presse, IDCC 3221). Il s'agit d'une mesure de droit du travail interne (barèmes de salaires minima) sans création d'opportunité économique, d'autorisation nouvelle, de marché ou de flux financier identifiable entre acteurs distincts. Aucun élément ne permet de caractériser une opportunité au sens du schéma LawRadar (pas de capacité requise, pas d'autorisation, pas de dépendance, pas de secteur régulé au sens opérateur)."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:031d709adff5d9fb",
+        "title": "Arrêté du 24 août 2026 portant extension d'un avenant à la convention collective nationale des employés, techniciens et cadres des agences de presse (IDCC 3221)",
+        "keywords": [
+          "convention collective",
+          "agences de presse",
+          "extension",
+          "avenant salarial",
+          "IDCC 3221"
+        ],
+        "affected_scope": [
+          "Employés, techniciens et cadres des agences de presse"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-04",
+          "affected_scope": [
+            "Employés, techniciens et cadres des agences de presse"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:565670b536ede72e",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794455",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 24 août 2026 portant extension d'un avenant à la convention collective nationale du portage de presse (n° 2683)",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Le texte est un arrêté d'extension d'un avenant à la convention collective nationale du portage de presse (droit du travail, secteur presse/portage). Il ne concerne aucun des secteurs régulés couverts par LawRadar (médicaments, services financiers, services juridiques) et ne comporte aucune information sur une autorisation, une capacité opérationnelle ou un flux financier exploitable. Aucun lien avec un accès opérateur ou une opportunité commerciale n'est démontré dans l'extrait officiel fourni."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:565670b536ede72e",
+        "title": "Arrêté du 24 août 2026 portant extension d'un avenant à la convention collective nationale du portage de presse (n° 2683)",
+        "keywords": [
+          "convention collective",
+          "portage de presse",
+          "extension",
+          "rémunération minimale",
+          "droit du travail"
+        ],
+        "affected_scope": [
+          "portage de presse"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": null,
+          "affected_scope": [
+            "portage de presse"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:e0bacd29eeb7aa14",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794465",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 24 août 2026 portant extension d'un avenant à la convention collective nationale des entreprises au service de la création et de l'événement (n° 3252)",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Cet arrêté procède à l'extension d'un avenant salarial (avenant n°7) à une convention collective de branche (entreprises au service de la création et de l'événement). Il ne crée ni obligation réglementaire nouvelle relevant des secteurs suivis (médicaments, services financiers, services juridiques, autres secteurs régulés), ni accès opérateur, ni flux financier identifiable. Aucun élément de capital, délai, autorisation ou flux monétaire n'est démontré par le texte."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:e0bacd29eeb7aa14",
+        "title": "Arrêté du 24 août 2026 portant extension d'un avenant à la convention collective nationale des entreprises au service de la création et de l'événement (n° 3252)",
+        "keywords": [
+          "convention collective",
+          "extension",
+          "avenant salarial",
+          "droit du travail",
+          "création et événement"
+        ],
+        "affected_scope": [
+          "entreprises au service de la création et de l'événement"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-04",
+          "affected_scope": [
+            "entreprises au service de la création et de l'événement"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:a525a185fca0de25",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794475",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 24 août 2026 portant extension d'un avenant à la convention collective nationale des prothésistes dentaires et des personnels des laboratoires de prothèse dentaire (n° 993)",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Arrêté d'extension d'un avenant salarial à une convention collective (prothésistes dentaires) - texte de droit du travail sans lien avec les secteurs réglementés suivis (médicaments, services financiers, juridiques). Aucune autorisation, capital, délai de mise sur le marché ou flux financier explicite n'est démontré dans l'extrait officiel fourni."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:a525a185fca0de25",
+        "title": "Arrêté du 24 août 2026 portant extension d'un avenant à la convention collective nationale des prothésistes dentaires et des personnels des laboratoires de prothèse dentaire (n° 993)",
+        "keywords": [
+          "convention collective",
+          "prothésistes dentaires",
+          "laboratoires de prothèse dentaire",
+          "extension",
+          "protocole d'accord salaires"
+        ],
+        "affected_scope": [
+          "prothésistes dentaires et personnels des laboratoires de prothèse dentaire"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": null,
+          "affected_scope": [
+            "prothésistes dentaires et personnels des laboratoires de prothèse dentaire"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:0198648ac347261c",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794485",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 24 août 2026 portant extension d'accords territoriaux (Marne - Somme - Gard et Lozère - Aisne - Oise) conclus dans le cadre de la convention collective nationale de la métallurgie (n° 3248)",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Cet arrêté d'extension concerne exclusivement des accords territoriaux de la convention collective de la métallurgie relatifs à la valeur du point pour la prime d'ancienneté et la prime de vacances dans plusieurs départements (Marne, Somme, Gard et Lozère, Aisne, Oise). Il s'agit d'un texte de droit du travail/négociation collective sans lien avec les secteurs régulés couverts (médicaments, services financiers, services juridiques, autres secteurs régulés). Aucun accès direct ou périphérique à un marché régulé n'est identifiable, et aucun flux financier explicite (payeur/bénéficiaire/montant) n'est démontré dans le texte source, qui se limite à des visas administratifs sans montants chiffrés."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:0198648ac347261c",
+        "title": "Arrêté du 24 août 2026 portant extension d'accords territoriaux (Marne - Somme - Gard et Lozère - Aisne - Oise) conclus dans le cadre de la convention collective nationale de la métallurgie (n° 3248)",
+        "keywords": [
+          "convention collective",
+          "métallurgie",
+          "extension",
+          "prime d'ancienneté",
+          "prime de vacances",
+          "accord territorial",
+          "droit du travail"
+        ],
+        "affected_scope": [
+          "Marne",
+          "Somme",
+          "Gard",
+          "Lozère",
+          "Aisne",
+          "Oise"
+        ],
+        "legal": {
+          "jurisdiction": "France",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": null,
+          "affected_scope": [
+            "Marne",
+            "Somme",
+            "Gard",
+            "Lozère",
+            "Aisne",
+            "Oise"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:ceede5b27e3da910",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794495",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 24 août 2026 portant extension d'un accord territorial (Haute-Marne) conclu dans le cadre de la convention collective nationale de la métallurgie (n° 3248)",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte relatif à l'extension d'un accord territorial de branche (métallurgie, Haute-Marne) fixant la valeur du point pour le calcul d'une prime d'ancienneté. Aucun lien avec un secteur régulé (médicaments, services financiers, juridique) ni avec une activité d'opérateur pouvant accéder à une offre directe ou périphérique. Aucun flux financier explicite entre acteurs identifiés n'est démontré dans le texte."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:ceede5b27e3da910",
+        "title": "Arrêté du 24 août 2026 portant extension d'un accord territorial (Haute-Marne) conclu dans le cadre de la convention collective nationale de la métallurgie (n° 3248)",
+        "keywords": [
+          "convention collective",
+          "métallurgie",
+          "accord territorial",
+          "prime d'ancienneté",
+          "extension"
+        ],
+        "affected_scope": [
+          "Haute-Marne"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-04",
+          "affected_scope": [
+            "Haute-Marne"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:86bf9baad81eee03",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794505",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 24 août 2026 portant extension d'un accord territorial (Aube) conclu dans le cadre de la convention collective nationale de la métallurgie (n° 3248)",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Arrêté d'extension d'un accord territorial de branche (métallurgie, Aube) fixant une valeur de point pour prime d'ancienneté. Aucun lien avec un secteur réglementé pertinent (médicaments, services financiers, services juridiques), aucune autorisation, aucun flux financier entre acteurs identifiables au sens LawRadar : il s'agit d'une mesure de droit du travail interne aux relations employeurs-salariés de la branche, sans opportunité commerciale ni accès opérateur démontrable."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:86bf9baad81eee03",
+        "title": "Arrêté du 24 août 2026 portant extension d'un accord territorial (Aube) - convention collective nationale de la métallurgie (n° 3248)",
+        "keywords": [
+          "convention collective",
+          "métallurgie",
+          "accord territorial",
+          "Aube",
+          "prime d'ancienneté",
+          "extension"
+        ],
+        "affected_scope": [
+          "Aube"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": null,
+          "affected_scope": [
+            "Aube"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:09e8ca963a31f583",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794515",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 24 août 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale des taxis (n° 2219)",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Le texte est un arrêté d'extension d'un accord de convention collective des taxis relatif aux rémunérations minimales des personnels. Il ne concerne aucun des secteurs régulés visés par LawRadar (médicaments, services financiers, services juridiques, autre secteur réglementé pertinent) et ne mentionne aucun montant chiffré, aucune date d'effet précise ni aucun accès opérateur démontrable. Aucun flux financier explicite n'est étayé dans l'extrait fourni."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:09e8ca963a31f583",
+        "title": "Arrêté du 24 août 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale des taxis (n° 2219)",
+        "keywords": [
+          "taxis",
+          "convention collective nationale",
+          "extension",
+          "rémunérations minimales",
+          "accord du 28 avril 2026"
+        ],
+        "affected_scope": [
+          "National"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": null,
+          "affected_scope": [
+            "National"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:0586570c9648a67f",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794525",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 24 août 2026 portant extension d'accords régionaux (Pays de la Loire) conclus dans le cadre des conventions collectives nationales des ouvriers des travaux publics (n° 1702) et des employés, techniciens et agents de maîtrise (ETAM) des travaux publics (n° 2614)",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "L'arrêté porte sur l'extension d'accords régionaux (Pays de la Loire) relatifs aux salaires minima hiérarchiques et aux indemnités de petits déplacements dans les conventions collectives des travaux publics (ouvriers et ETAM). Il ne concerne aucun secteur régulé pertinent pour LawRadar (médicaments, services financiers, services juridiques, autre secteur régulé), ne crée aucune opportunité de marché ni accès opérateur, et ne comporte aucun flux financier identifiable avec payeur/bénéficiaire explicites au-delà de barèmes salariaux internes à la convention collective."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:0586570c9648a67f",
+        "title": "Arrêté du 24 août 2026 portant extension d'accords régionaux (Pays de la Loire) - conventions collectives travaux publics (ouvriers n°1702 et ETAM n°2614)",
+        "keywords": [
+          "convention collective",
+          "travaux publics",
+          "extension",
+          "Pays de la Loire",
+          "salaires minima",
+          "indemnités petits déplacements"
+        ],
+        "affected_scope": [
+          "Pays de la Loire"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-04",
+          "affected_scope": [
+            "Pays de la Loire"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:1f11c65f6c4565a5",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794539",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 24 août 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale de la fabrication de l'ameublement (n° 1411)",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Le texte est un arrêté d'extension d'un accord salarial de branche (fabrication de l'ameublement) fixant des minima de salaires professionnels catégoriels. Il ne crée ni obligation réglementaire nouvelle pour un opérateur numérique, ni autorisation, ni flux financier identifiable, ni lien avec un secteur régulé (médicaments, services financiers, services juridiques). Aucun signal d'opportunité économique exploitable n'est démontré."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:1f11c65f6c4565a5",
+        "title": "Arrêté du 24 août 2026 portant extension d'un accord relatif aux salaires minima de la convention collective nationale de la fabrication de l'ameublement (n° 1411)",
+        "keywords": [
+          "convention collective",
+          "fabrication de l'ameublement",
+          "salaires minima",
+          "extension",
+          "code du travail"
+        ],
+        "affected_scope": [
+          "employeurs et salariés relevant de la convention collective nationale de la fabrication de l'ameublement du 14 janvier 1986"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-04",
+          "affected_scope": [
+            "secteur de la fabrication de l'ameublement"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:643a63dcb3859a72",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794549",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 24 août 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale de la fabrication de l'ameublement (n° 1411)",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Arrêté d'extension d'un accord salarial de branche (convention collective de l'ameublement) sans lien avec un secteur régulé (médicaments, services financiers, services juridiques) ni avec une opportunité d'accès direct ou périphérique pour un opérateur. Aucun flux financier explicite entre acteurs identifiables n'est démontré dans le texte."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:643a63dcb3859a72",
+        "title": "Arrêté du 24 août 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale de la fabrication de l'ameublement (n° 1411)",
+        "keywords": [
+          "convention collective",
+          "ameublement",
+          "extension",
+          "salaires minima"
+        ],
+        "affected_scope": [
+          "Fabrication de l'ameublement"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-04",
+          "affected_scope": [
+            "Fabrication de l'ameublement"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:52ccea2e950eb0c5",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794559",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 24 août 2026 portant extension d'accords régionaux (Bourgogne-Franche-Comté) conclus dans le cadre des conventions collectives nationales des ouvriers employés par les entreprises du bâtiment visées et non visées par le décret du 1er mars 1962 (entreprises occupant jusqu'à 10 salariés et entreprises occupant plus de 10 salariés) (nos 1596 et 1597) et de la convention collective nationale des employés, techniciens et agents de maîtrise du bâtiment (n° 2609)",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Le texte est un arrêté d'extension d'accords régionaux de branche (salaires, indemnités de petits déplacements) dans le secteur du bâtiment (Bourgogne-Franche-Comté). Il ne concerne ni un secteur régulé au sens LawRadar (médicaments, services financiers, services juridiques), ni un accès opérateur, ni un flux financier identifiable entre acteurs de marché. Aucune preuve d'opportunité d'accès à un marché régulé ni de flux monétaire explicite ne peut être établie à partir de cet extrait."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:52ccea2e950eb0c5",
+        "title": "Arrêté du 24 août 2026 portant extension d'accords régionaux (Bourgogne-Franche-Comté) - CCN bâtiment (ouvriers et ETAM)",
+        "keywords": [
+          "extension",
+          "accord régional",
+          "convention collective",
+          "bâtiment",
+          "salaires",
+          "indemnités de petits déplacements",
+          "Bourgogne-Franche-Comté"
+        ],
+        "affected_scope": [
+          "Bourgogne-Franche-Comté",
+          "secteur du bâtiment"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-04",
+          "affected_scope": [
+            "Bourgogne-Franche-Comté",
+            "entreprises du bâtiment (ouvriers et ETAM)"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:069a5961922a080e",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794573",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 24 août 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale de l'industrie textile (n° 18)",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Arrêté d'extension d'un accord de branche relatif aux salaires minima dans l'industrie textile. Aucun lien avec un secteur régulé pertinent (médicaments, services financiers, services juridiques) ni avec un accès opérateur à un marché réglementé. Aucun flux financier explicite (montant, payeur, bénéficiaire) n'est démontré dans le texte fourni ; il s'agit d'une procédure d'extension de convention collective sans opportunité économique identifiable au sens du référentiel LawRadar."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:069a5961922a080e",
+        "title": "Arrêté du 24 août 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale de l'industrie textile (n° 18)",
+        "keywords": [
+          "convention collective",
+          "industrie textile",
+          "extension",
+          "salaires minima",
+          "code du travail"
+        ],
+        "affected_scope": [
+          "industrie textile"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-04",
+          "affected_scope": [
+            "industrie textile"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:ed8b452af9ae7f35",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794583",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 24 août 2026 portant extension d'un avenant à un accord conclu dans le cadre de la convention collective nationale des industries de carrières et matériaux de construction applicable aux ouvriers, employés, techniciens, agents de maîtrise et aux cadres (n° 3249)",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Le texte est un arrêté d'extension d'un avenant salarial à une convention collective (industries de carrières et matériaux de construction). Il relève du droit du travail et des relations collectives de travail, sans lien avec les secteurs MEDICINES, FINANCIAL_SERVICES ou LEGAL_SERVICES ni avec une opportunité d'accès direct ou périphérique à un marché régulé pour un opérateur. Aucun flux financier explicite entre acteurs identifiables n'est démontré dans l'extrait fourni."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:ed8b452af9ae7f35",
+        "title": "Arrêté du 24 août 2026 portant extension d'un avenant à un accord conclu dans le cadre de la convention collective nationale des industries de carrières et matériaux de construction (n° 3249)",
+        "keywords": [
+          "convention collective",
+          "extension",
+          "avenant",
+          "salaires minimaux",
+          "industries de carrières et matériaux de construction"
+        ],
+        "affected_scope": [
+          "industries de carrières et matériaux de construction"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-04",
+          "affected_scope": [
+            "industries de carrières et matériaux de construction"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:9fb45aae86faf2d7",
+      "source": {
+        "source_id": "jorf:JORFTEXT000054794594",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "title": "Arrêté du 24 août 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale de la bijouterie joaillerie orfèvrerie horlogerie (n° 3251)",
+          "url": null,
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": []
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Le texte est un arrêté d'extension d'un accord de branche relatif aux salaires minimaux conventionnels du secteur de la bijouterie joaillerie orfèvrerie horlogerie. Il ne concerne aucun secteur régulé pertinent pour LawRadar (médicaments, services financiers, services juridiques, autre secteur régulé) et ne décrit aucune nouvelle obligation, autorisation ou accès de marché exploitable par un opérateur. Aucun flux financier explicite entre acteurs identifiables n'est démontré dans le texte fourni."
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:9fb45aae86faf2d7",
+        "title": "Arrêté du 24 août 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale de la bijouterie joaillerie orfèvrerie horlogerie (n° 3251)",
+        "keywords": [
+          "convention collective",
+          "bijouterie",
+          "joaillerie",
+          "orfèvrerie",
+          "horlogerie",
+          "salaires minimaux",
+          "extension"
+        ],
+        "affected_scope": [
+          "secteur bijouterie joaillerie orfèvrerie horlogerie"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-04",
+          "affected_scope": [
+            "secteur bijouterie joaillerie orfèvrerie horlogerie"
+          ]
         },
         "requirements": {
           "required_capabilities": [],
@@ -170,7 +1906,7 @@
   ],
   "money_flows": [],
   "quality": {
-    "opportunity_count": 2,
+    "opportunity_count": 24,
     "unresolved_count": 0,
     "money_flow_count": 0,
     "limitation": "Les enrichissements sont vides tant qu'aucun agent dédié n'a produit une sortie sourcée."

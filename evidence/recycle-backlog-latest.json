@@ -1,8 +1,234 @@
 {
   "schema": "lawradar-recycle-backlog-v1",
-  "records": [],
+  "records": [
+    {
+      "signal_id": "signal:cb41284df04e6601",
+      "source_id": "jorf:JORFTEXT000054794248",
+      "captured_at_utc": "2026-09-04T12:02:25.410828+00:00",
+      "facts_sha256": "89359af48a60bd37a2c13591c4eaa80338726f43918ee298de372cc78d092419",
+      "initial_status": "HOLD",
+      "latest_status": "HOLD",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:cb41284df04e6601",
+        "evaluated_at_utc": "2026-09-04T12:02:25.410828+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Date d'effet inconnue."
+          ]
+        },
+        "feasibility": {
+          "status": "DISCARD",
+          "reasons": [
+            "Compétence indispensable absente : Centre de référence ou de compétence de la maladie pour la prescription de TAKHZYRO®."
+          ]
+        },
+        "operator_access": {
+          "status": "HOLD",
+          "route": "LEGAL_ROLE_CHECK_ONLY",
+          "allow_external_collection": false,
+          "reasons": [
+            "L'offre directe relève d'un secteur hors profil opérateur.",
+            "Aucun rôle périphérique légal et accessible n'est démontré."
+          ]
+        },
+        "final_constraint": "DISCARD"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:cb41284df04e6601",
+        "evaluated_at_utc": "2026-09-04T12:02:25.410828+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Date d'effet inconnue."
+          ]
+        },
+        "feasibility": {
+          "status": "DISCARD",
+          "reasons": [
+            "Compétence indispensable absente : Centre de référence ou de compétence de la maladie pour la prescription de TAKHZYRO®."
+          ]
+        },
+        "operator_access": {
+          "status": "HOLD",
+          "route": "LEGAL_ROLE_CHECK_ONLY",
+          "allow_external_collection": false,
+          "reasons": [
+            "L'offre directe relève d'un secteur hors profil opérateur.",
+            "Aucun rôle périphérique légal et accessible n'est démontré."
+          ]
+        },
+        "final_constraint": "DISCARD"
+      },
+      "signal": {
+        "id": "signal:cb41284df04e6601",
+        "source": {
+          "source_id": "jorf:JORFTEXT000054794248",
+          "source_kind": "JORF",
+          "change": "NEW",
+          "evidence": {
+            "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+            "url": null,
+            "dates": [],
+            "detail_status": null,
+            "official": {
+              "title": null,
+              "period": null
+            },
+            "attachments": [],
+            "evidence_excerpts": []
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Arrêté officiellement publié au JORF (NOR SFHS2618414A, texte disponible et vérifié par empreinte SHA256) modifiant la liste des spécialités pharmaceutiques agréées aux collectivités pour inclure TAKHZYRO® dans l'indication de prévention des crises d'angioœdème héréditaire chez les enfants de 2 à moins de 12 ans, sous condition de prescription réservée aux centres de référence ou de compétence de la maladie. Le changement réglementaire est explicite et vérifiable, mais aucun élément chiffré (capital, délai, montant financier) n'est fourni dans le texte, et l'accès reste restreint à un cercle de prescripteurs spécialisés, sans preuve d'un rôle périphérique pour un opérateur non pharmaceutique."
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:cb41284df04e6601",
+          "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+          "keywords": [
+            "TAKHZYRO",
+            "angioœdème héréditaire",
+            "liste des spécialités agréées",
+            "collectivités",
+            "commission de la transparence",
+            "centre de référence"
+          ],
+          "affected_scope": [
+            "collectivités et divers services publics",
+            "centres de référence ou de compétence de la maladie"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "PUBLISHED",
+            "proof_status": "VERIFIED",
+            "effective_date": null,
+            "affected_scope": [
+              "collectivités et divers services publics",
+              "centres de référence ou de compétence de la maladie"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [
+              "Centre de référence ou de compétence de la maladie pour la prescription de TAKHZYRO®"
+            ],
+            "required_authorizations": [],
+            "dependencies": [],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "PARTIAL"
+          },
+          "operator_access": {
+            "sector": "MEDICINES",
+            "direct_offer_status": "OUT_OF_PROFILE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:cb41284df04e6601",
+          "evaluated_at_utc": "2026-09-04T12:02:25.410828+00:00",
+          "compliance": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Date d'effet inconnue."
+            ]
+          },
+          "feasibility": {
+            "status": "DISCARD",
+            "reasons": [
+              "Compétence indispensable absente : Centre de référence ou de compétence de la maladie pour la prescription de TAKHZYRO®."
+            ]
+          },
+          "operator_access": {
+            "status": "HOLD",
+            "route": "LEGAL_ROLE_CHECK_ONLY",
+            "allow_external_collection": false,
+            "reasons": [
+              "L'offre directe relève d'un secteur hors profil opérateur.",
+              "Aucun rôle périphérique légal et accessible n'est démontré."
+            ]
+          },
+          "final_constraint": "DISCARD"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:cb41284df04e6601",
+        "title": "Arrêté du 31 août 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+        "keywords": [
+          "TAKHZYRO",
+          "angioœdème héréditaire",
+          "liste des spécialités agréées",
+          "collectivités",
+          "commission de la transparence",
+          "centre de référence"
+        ],
+        "affected_scope": [
+          "collectivités et divers services publics",
+          "centres de référence ou de compétence de la maladie"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": null,
+          "affected_scope": [
+            "collectivités et divers services publics",
+            "centres de référence ou de compétence de la maladie"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [
+            "Centre de référence ou de compétence de la maladie pour la prescription de TAKHZYRO®"
+          ],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "PARTIAL"
+        },
+        "operator_access": {
+          "sector": "MEDICINES",
+          "direct_offer_status": "OUT_OF_PROFILE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-09-04T12:02:25.410828+00:00",
+          "trigger": "CAPTURE",
+          "status": "HOLD",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    }
+  ],
   "queue_audit": {
-    "processed_count": 64,
+    "processed_count": 79,
     "unrecoverable_queue_entries": [
       {
         "fingerprint": "490853c49376a298cfdbefd3d9015889f24dfb149e616097ae78c39d2661a25b",
@@ -92,6 +318,71 @@
       {
         "fingerprint": "84ba2f81c068cb2a331ee9fcab709796f3c1d74047395b6b42ea330f0e6e58a4",
         "source_id": "jorf:JORFTEXT000054791524",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "9d2605b576f06556a35d5722fd5d4efadaa273a30d7a5692daeac7cb207965a1",
+        "source_id": "jorf:JORFTEXT000054794361",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "a687d34feb520440afee430c290647fec43b9c18609534c45d59b74fd1b277a2",
+        "source_id": "jorf:JORFTEXT000054794605",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "99aadb8f7f6991b67fca7fabb44614b4f996bb77d9f1fbb4750afc4b5d55fe17",
+        "source_id": "jorf:JORFTEXT000054794611",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "6f3b9f4cb0d19223da8d16d2fa63a3c444caa28d67f3f8b687225ec349214b8a",
+        "source_id": "jorf:JORFTEXT000054794615",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "c771cd7c3107e90aa6d612e387df77573a7b96331ca368ac4fd5b9b6b9ff0626",
+        "source_id": "jorf:JORFTEXT000054794619",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "f142de5cfeff4275b100515387d760e3762bff7e09d8dc3d5d2547408b1b1bee",
+        "source_id": "jorf:JORFTEXT000054794628",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "eaf024a67ce57ead400a323d87d6995255a794369acef6935b792ce10ff450dd",
+        "source_id": "jorf:JORFTEXT000054794809",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "b8bc53f08afd62cb4f17bb38231458188de9deb991569f60e8f2abb9bba36357",
+        "source_id": "jorf:JORFTEXT000054794816",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "a311c766e6c0f1228b6b9882f5cf1e6f14748dd301ab1e552a0a747af01e6818",
+        "source_id": "jorf:JORFTEXT000054794818",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "89604d5f4bc21a8fda39937cc621f16cdc71196f4eaae8b8aa3e1e3b7ed41cdf",
+        "source_id": "jorf:JORFTEXT000054794820",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "42990339ebd57fa39b805b33790f76ed2d1a148259979b0c316cea16fc84580f",
+        "source_id": "jorf:JORFTEXT000054794822",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "fbd41f3a8e03bd36b02ae3645012d0c5f1a38769c77c0c089f730f77a0f408ff",
+        "source_id": "jorf:JORFTEXT000054794826",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "dcfe813bdab98bc2e9efdea9f4d94aa930b4727b949839d70d64719ef3d69c37",
+        "source_id": "jorf:JORFTEXT000054794831",
         "reason": "PRIMARY_TEXT_EMPTY"
       }
     ],
