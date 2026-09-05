@@ -1,8 +1,34 @@
 {
   "schema": "lawradar-run-index-v1",
-  "generated_at_utc": "2026-09-05T07:36:10.133630+00:00",
+  "generated_at_utc": "2026-09-05T07:40:31.134237+00:00",
   "purpose": "Registre technique des derniers runs, sans interprétation des preuves.",
   "runs": [
+    {
+      "kind": "collector",
+      "status": "success",
+      "reason": null,
+      "run_id": "33953082936",
+      "run_url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33953082936",
+      "workflow": "Collecte primaire DILA JORF",
+      "commit": "1b9d5246626c225a8871c1e322e7286508c5867d",
+      "created_at_utc": "2026-09-05T07:40:31.079298+00:00",
+      "duration_seconds": 159,
+      "inputs": {
+        "count": 5,
+        "missing": 0
+      },
+      "outputs": {
+        "count": 2,
+        "missing": 0
+      },
+      "cost": {
+        "status": "not_reported_by_provider",
+        "model": null,
+        "note": "Le fournisseur ne publie pas le détail des tokens dans ce run ; la durée et le nombre d'appels restent mesurés."
+      },
+      "errors": [],
+      "retries": 0
+    },
     {
       "kind": "motor",
       "status": "pending",
@@ -19,32 +45,6 @@
       },
       "outputs": {
         "count": 1,
-        "missing": 0
-      },
-      "cost": {
-        "status": "not_reported_by_provider",
-        "model": null,
-        "note": "Le fournisseur ne publie pas le détail des tokens dans ce run ; la durée et le nombre d'appels restent mesurés."
-      },
-      "errors": [],
-      "retries": 0
-    },
-    {
-      "kind": "collector",
-      "status": "success",
-      "reason": null,
-      "run_id": "33851014109",
-      "run_url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33851014109",
-      "workflow": "Collecte primaire DILA JORF",
-      "commit": "f929cfd841bf90db7ae85ebc05e387cf5a26659e",
-      "created_at_utc": "2026-09-04T07:58:44.608654+00:00",
-      "duration_seconds": 146,
-      "inputs": {
-        "count": 5,
-        "missing": 0
-      },
-      "outputs": {
-        "count": 2,
         "missing": 0
       },
       "cost": {
