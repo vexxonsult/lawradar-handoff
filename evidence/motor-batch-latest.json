@@ -5,11 +5,11 @@
   "model": "claude-sonnet-5",
   "request_version": "2026-09-04-readable-primary-review-v7",
   "batch_id": "msgbatch_01PsUfrqLvhJ2ZFn9apS35qP",
-  "processing_status": "in_progress",
+  "processing_status": "ended",
   "request_count": 6,
   "request_counts": {
-    "processing": 6,
-    "succeeded": 0,
+    "processing": 0,
+    "succeeded": 6,
     "errored": 0,
     "canceled": 0,
     "expired": 0
@@ -1010,5 +1010,6 @@
   },
   "ready": false,
   "created_at_utc": "2026-09-05 07:36:09.912859+00:00",
-  "updated_at_utc": "2026-09-05T07:36:09.968585+00:00"
+  "updated_at_utc": "2026-09-05T07:41:05.256244+00:00",
+  "error": "ValueError: Batch incomplet ; la file n'est pas avancée : jorf:JORFTEXT000054794273:source_id_mismatch, jorf:JORFTEXT000054794183:invalid_json(stop=end_turn,output_tokens=1015,chars=2469,at=0), jorf:JORFTEXT000054794130:source_id_mismatch, jorf:JORFTEXT000054794525:source_id_mismatch, jorf:JORFTEXT000054794248:invalid_json(stop=end_turn,output_tokens=675,chars=1670,at=0), jorf:JORFTEXT000054794234:invalid_json(stop=end_turn,output_tokens=617,chars=1509,at=0), jorf:JORFTEXT000054794130:missing, jorf:JORFTEXT000054794234:missing, jorf:JORFTEXT000054794273:missing, jorf:JORFTEXT000054794525:missing, jorf:JORFTEXT000054794183:missing, jorf:JORFTEXT000054794248:missing."
 }
