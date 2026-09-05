@@ -1,16 +1,16 @@
 {
   "schema": "lawradar-anthropic-motor-batch-v1",
-  "input_sha256": "4d89ab4e6c1b23f252795a63aaf4889984180c107a07d85bcc176496997821f6",
-  "request_sha256": "4d89ab4e6c1b23f252795a63aaf4889984180c107a07d85bcc176496997821f6",
+  "input_sha256": "c55b81708ec978bc5fa9ebfae46dd3435baf0332acadd5241eda99a729a347ca",
+  "request_sha256": "c55b81708ec978bc5fa9ebfae46dd3435baf0332acadd5241eda99a729a347ca",
   "model": "claude-sonnet-5",
-  "request_version": "2026-09-04-readable-primary-review-v6",
-  "batch_id": "msgbatch_01KargCR6NpbDerXx2K9CBgn",
-  "processing_status": "ended",
+  "request_version": "2026-09-04-readable-primary-review-v7",
+  "batch_id": "msgbatch_01PsUfrqLvhJ2ZFn9apS35qP",
+  "processing_status": "in_progress",
   "request_count": 6,
   "request_counts": {
-    "processing": 0,
+    "processing": 6,
     "succeeded": 0,
-    "errored": 6,
+    "errored": 0,
     "canceled": 0,
     "expired": 0
   },
@@ -1006,63 +1006,9 @@
         }
       }
     ],
-    "deterministically_unresolved_candidates": [
-      {
-        "source_id": "jorf:JORFTEXT000054794361",
-        "reason": "PRIMARY_TEXT_EMPTY"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054794605",
-        "reason": "PRIMARY_TEXT_EMPTY"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054794611",
-        "reason": "PRIMARY_TEXT_EMPTY"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054794615",
-        "reason": "PRIMARY_TEXT_EMPTY"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054794619",
-        "reason": "PRIMARY_TEXT_EMPTY"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054794628",
-        "reason": "PRIMARY_TEXT_EMPTY"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054794809",
-        "reason": "PRIMARY_TEXT_EMPTY"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054794816",
-        "reason": "PRIMARY_TEXT_EMPTY"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054794818",
-        "reason": "PRIMARY_TEXT_EMPTY"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054794820",
-        "reason": "PRIMARY_TEXT_EMPTY"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054794822",
-        "reason": "PRIMARY_TEXT_EMPTY"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054794826",
-        "reason": "PRIMARY_TEXT_EMPTY"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054794831",
-        "reason": "PRIMARY_TEXT_EMPTY"
-      }
-    ]
+    "deterministically_unresolved_candidates": []
   },
   "ready": false,
-  "created_at_utc": "2026-09-04 15:03:32.226680+00:00",
-  "updated_at_utc": "2026-09-04T19:36:32.007462+00:00",
-  "error": "ValueError: Batch incomplet ; la file n'est pas avancée : jorf:JORFTEXT000054794248:errored (invalid_request_error: The compiled grammar is too large, which would cause performance issues. Simplify your tool schemas or reduce the number of strict tools.), jorf:JORFTEXT000054794273:errored (invalid_request_error: The compiled grammar is too large, which would cause performance issues. Simplify your tool schemas or reduce the number of strict tools.), jorf:JORFTEXT000054794234:errored (invalid_request_error: The compiled grammar is too large, which would cause performance issues. Simplify your tool schemas or reduce the number of strict tools.), jorf:JORFTEXT000054794183:errored (invalid_request_error: The compiled grammar is too large, which would cause performance issues. Simplify your tool schemas or reduce the number of strict tools.), jorf:JORFTEXT000054794130:errored (invalid_request_error: The compiled grammar is too large, which would cause performance issues. Simplify your tool schemas or reduce the number of strict tools.), jorf:JORFTEXT000054794525:errored (invalid_request_error: The compiled grammar is too large, which would cause performance issues. Simplify your tool schemas or reduce the number of strict tools.), jorf:JORFTEXT000054794130:missing, jorf:JORFTEXT000054794234:missing, jorf:JORFTEXT000054794273:missing, jorf:JORFTEXT000054794525:missing, jorf:JORFTEXT000054794183:missing, jorf:JORFTEXT000054794248:missing."
+  "created_at_utc": "2026-09-05 07:36:09.912859+00:00",
+  "updated_at_utc": "2026-09-05T07:36:09.968585+00:00"
 }
