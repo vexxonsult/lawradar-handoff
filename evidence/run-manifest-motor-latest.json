@@ -1,15 +1,15 @@
 {
   "schema": "lawradar-run-manifest-v1",
   "run": {
-    "id": "34099272487",
+    "id": "34099733071",
     "attempt": "1",
     "kind": "motor",
     "status": "failed",
     "workflow": "Moteur LawRadar — livraison structurée",
-    "commit": "77a54909a7724da873613f3920ec156601cb3354",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/34099272487",
-    "created_at_utc": "2026-09-07T08:11:47.754910+00:00",
-    "duration_seconds": 6,
+    "commit": "a944a9bf5c7d00ce5c8c04430d62898abbacf523",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/34099733071",
+    "created_at_utc": "2026-09-07T08:16:54.285089+00:00",
+    "duration_seconds": 7,
     "reason": "Message Batch Anthropic achevé sans livraison valide ; consulter evidence/motor-batch-latest.json avant tout rejeu."
   },
   "inputs": [
@@ -25,7 +25,7 @@
       "path": "evidence/motor-batch-latest.json",
       "exists": true,
       "bytes": 54669,
-      "sha256": "a469cf7e244356e422c13468f1f1a94ffafc3d1c931e68fad355f6be2369c4b0"
+      "sha256": "6c7eeb46ab977401bb9c2b7ad3a83485232c2a8935009881c05f6bb4088f9bf0"
     }
   ],
   "cost_estimate": {
