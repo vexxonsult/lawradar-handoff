@@ -34,7 +34,7 @@ DEFAULT_MODEL = "claude-sonnet-5"
 MAX_CANDIDATES = 250
 # Toute modification de la requête fournisseur doit produire un nouveau batch
 # une fois le batch précédent achevé, sans jamais doubler un batch en cours.
-BATCH_REQUEST_VERSION = "2026-09-04-readable-primary-review-v7"
+BATCH_REQUEST_VERSION = "2026-09-12-explicit-json-contract-v8"
 _UNSUPPORTED_ANTHROPIC_SCHEMA_KEYWORDS = {
     "maxItems", "maxLength", "minLength", "minimum", "maximum",
     "exclusiveMinimum", "exclusiveMaximum", "multipleOf", "pattern", "uniqueItems",
@@ -275,6 +275,20 @@ def anthropic_output_schema(schema: dict[str, Any]) -> dict[str, Any]:
 
 def build_requests(motor_input: dict[str, Any], model: str) -> tuple[list[dict[str, Any]], dict[str, str]]:
     candidates = validate_motor_input(motor_input)
+    output_contract = json.dumps(
+        CANDIDATE_RESULT_SCHEMA, ensure_ascii=False, separators=(",", ":")
+    )
+    system_prompt = (
+        f"{SYSTEM_PROMPT}\n\n"
+        "CONTRAT DE SORTIE OBLIGATOIRE : renvoie exactement un objet conforme "
+        "au schéma JSON ci-dessous. Recopie candidate.source_id à l'identique "
+        "dans source_id et facts.signal_id. Toutes les clés required sont "
+        "présentes. Pour une information non démontrée, utilise les valeurs "
+        "UNKNOWN/MISSING/PARTIAL autorisées, null, ou une liste vide ; ne "
+        "supprime jamais le bloc facts. N'entoure pas le JSON de Markdown. "
+        "N'ajoute aucun texte avant ou après.\n"
+        f"{output_contract}"
+    )
     requests: list[dict[str, Any]] = []
     source_by_custom_id: dict[str, str] = {}
     for index, candidate in enumerate(candidates, start=1):
@@ -290,7 +304,7 @@ def build_requests(motor_input: dict[str, Any], model: str) -> tuple[list[dict[s
                 # cible : la sortie reste factuelle et la facturation porte sur
                 # les tokens effectivement produits.
                 "max_tokens": 4096,
-                "system": SYSTEM_PROMPT,
+                "system": system_prompt,
                 "messages": [{
                     "role": "user",
                     "content": json.dumps(candidate, ensure_ascii=False, separators=(",", ":")),

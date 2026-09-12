@@ -203,6 +203,10 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertEqual(requests[0]["params"]["max_tokens"], 4096)
         self.assertNotIn("jorf:B", requests[0]["params"]["messages"][0]["content"])
         self.assertEqual(requests[0]["params"]["output_config"], {"effort": "low"})
+        self.assertIn("CONTRAT DE SORTIE OBLIGATOIRE", requests[0]["params"]["system"])
+        self.assertIn('"facts"', requests[0]["params"]["system"])
+        self.assertIn('"money_flows"', requests[0]["params"]["system"])
+        self.assertEqual(requests[0]["params"]["system"], requests[1]["params"]["system"])
 
     def test_provider_schema_helper_keeps_structure_but_removes_unsupported_constraints(self):
         from scripts.run_anthropic_motor_batch import CANDIDATE_RESULT_SCHEMA
