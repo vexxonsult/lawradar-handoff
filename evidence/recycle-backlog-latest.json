@@ -2,6 +2,1591 @@
   "schema": "lawradar-recycle-backlog-v1",
   "records": [
     {
+      "signal_id": "signal:1af7945f2bade8b0",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-la-creation-de-la-fiche-d-a3399.html",
+      "captured_at_utc": "2026-09-12T17:45:19.645448+00:00",
+      "facts_sha256": "5668d8f44835e426b7d1d2e8f22a3b47ce34aaabba7f9b6d86c5b23c063197fc",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:1af7945f2bade8b0",
+        "evaluated_at_utc": "2026-09-12T17:45:19.645448+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : obligé CEE / délégataire.",
+            "Dépendance non vérifiée : publication de l'arrêté définitif.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:1af7945f2bade8b0",
+        "evaluated_at_utc": "2026-09-12T17:45:19.645448+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : obligé CEE / délégataire.",
+            "Dépendance non vérifiée : publication de l'arrêté définitif.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:1af7945f2bade8b0",
+        "identity": {
+          "stable_source_id": "source:cbbcda06d69eefcd",
+          "evidence_version": "sha256:eecee0613dbdb9a67efb3b3466622a7cefe11e62a63da0b522e07026db98cd09"
+        },
+        "source": {
+          "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-la-creation-de-la-fiche-d-a3399.html",
+          "source_kind": "CONSULTDD",
+          "change": "NEW",
+          "evidence": {
+            "text_id": null,
+            "nature": null,
+            "nor": null,
+            "title": "Projet d’arrêté portant la création de la fiche d’opération standardisée IND-UT-141, du...",
+            "publisher": null,
+            "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-la-creation-de-la-fiche-d-a3399.html",
+            "publication_date": null,
+            "journal_number": null,
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [
+              "2026-07-17",
+              "2026-09-01"
+            ],
+            "detail_status": "PRIMARY_PAGE_READ",
+            "official": {
+              "title": "Projet d’arrêté portant la création de la fiche d’opération standardisée IND-UT-141, du référentiel de contrôle et de la bonification associés",
+              "period": "Consultation du 17/07/2026 au 07/08/2026 - 11 contributions"
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": null,
+              "text_sha256": null,
+              "excerpt": null,
+              "excerpt_truncated": false,
+              "archive_url": null,
+              "archive_sha256": null
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Projet d'arrêté créant la fiche CEE IND-UT-141 (chaudières industrielles électriques) avec référentiel de contrôle et bonification associée : périmètre industriel identifiable, service B2B non réglementé de veille/mise en relation possible."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+              "score": 3,
+              "terms": []
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        },
+        "reading": {
+          "consequence": "Création d'une fiche d'opération standardisée CEE pour le remplacement de chaudières industrielles fossiles par des chaudières électriques, avec un référentiel de contrôle renforcé et une bonification pour les projets de puissance inférieure à 10 MW.",
+          "affected_actors": [
+            "industriels exploitant des chaudières fossiles",
+            "DGEC",
+            "ATEE",
+            "ADEME",
+            "obligés CEE"
+          ],
+          "beneficiaries": [
+            "industriels réalisant l'électrification de leurs chaudières"
+          ],
+          "constrained_parties": [
+            "exploitants industriels souhaitant bénéficier de la bonification",
+            "obligés CEE finançant les certificats"
+          ],
+          "potential_service_partners": [
+            "partenaires de veille réglementaire CEE non identifiés dans le texte"
+          ],
+          "unknowns": [
+            "date d'entrée en vigueur définitive de l'arrêté",
+            "montant exact des CEE par opération",
+            "identité des obligés/délégataires concernés"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-la-creation-de-la-fiche-d-a3399.html"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:1af7945f2bade8b0",
+          "title": "Projet d’arrêté portant la création de la fiche d’opération standardisée IND-UT-141, du référentiel de contrôle et de la bonification associés",
+          "keywords": [
+            "CEE",
+            "chaudière industrielle électrique",
+            "IND-UT-141",
+            "efficacité énergétique",
+            "bonification",
+            "électrification"
+          ],
+          "affected_scope": [
+            "industrie",
+            "chaudières fossiles",
+            "fiche CEE"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "CONSULTATION_OPEN",
+            "proof_status": "PARTIAL",
+            "effective_date": null,
+            "affected_scope": [
+              "industrie",
+              "CEE"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "obligé CEE / délégataire",
+                "status": "UNKNOWN"
+              }
+            ],
+            "dependencies": [
+              {
+                "id": "publication de l'arrêté définitif",
+                "status": "UNKNOWN"
+              }
+            ],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "MISSING"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:1af7945f2bade8b0",
+          "evaluated_at_utc": "2026-09-12T17:45:19.645448+00:00",
+          "compliance": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve juridique incomplète ou absente."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Statut de l'autorisation inconnu : obligé CEE / délégataire.",
+              "Dépendance non vérifiée : publication de l'arrêté définitif.",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:1af7945f2bade8b0",
+        "title": "Projet d’arrêté portant la création de la fiche d’opération standardisée IND-UT-141, du référentiel de contrôle et de la bonification associés",
+        "keywords": [
+          "CEE",
+          "chaudière industrielle électrique",
+          "IND-UT-141",
+          "efficacité énergétique",
+          "bonification",
+          "électrification"
+        ],
+        "affected_scope": [
+          "industrie",
+          "chaudières fossiles",
+          "fiche CEE"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "CONSULTATION_OPEN",
+          "proof_status": "PARTIAL",
+          "effective_date": null,
+          "affected_scope": [
+            "industrie",
+            "CEE"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "obligé CEE / délégataire",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "publication de l'arrêté définitif",
+              "status": "UNKNOWN"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-09-12T17:45:19.645448+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
+      "signal_id": "signal:2cc5bc676c13f472",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-la-revision-de-la-fiche-d-a3422.html",
+      "captured_at_utc": "2026-09-12T17:45:19.645448+00:00",
+      "facts_sha256": "d382370162cacd619752555ec88c47f26959314606075f8c5d138ce351e8c9e7",
+      "initial_status": "DISCARD",
+      "latest_status": "DISCARD",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:2cc5bc676c13f472",
+        "evaluated_at_utc": "2026-09-12T17:45:19.645448+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "DISCARD",
+          "reasons": [
+            "Compétence indispensable absente : Étude préalable de dimensionnement thermique.",
+            "Compétence indispensable absente : Contrôle de conformité de l'installation."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "DISCARD"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:2cc5bc676c13f472",
+        "evaluated_at_utc": "2026-09-12T17:45:19.645448+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "DISCARD",
+          "reasons": [
+            "Compétence indispensable absente : Étude préalable de dimensionnement thermique.",
+            "Compétence indispensable absente : Contrôle de conformité de l'installation."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "DISCARD"
+      },
+      "signal": {
+        "id": "signal:2cc5bc676c13f472",
+        "identity": {
+          "stable_source_id": "source:cbed1313f461550e",
+          "evidence_version": "sha256:56fc50f3141c1a10033f7c55f93f7c3cbfc59925c0ea1d41bf9f1e958fda07b1"
+        },
+        "source": {
+          "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-la-revision-de-la-fiche-d-a3422.html",
+          "source_kind": "CONSULTDD",
+          "change": "CHANGED",
+          "evidence": {
+            "text_id": null,
+            "nature": null,
+            "nor": null,
+            "title": "Projet d’arrêté portant la révision de la fiche d’opération standardisée AGRI-TH-108 et...",
+            "publisher": null,
+            "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-la-revision-de-la-fiche-d-a3422.html",
+            "publication_date": null,
+            "journal_number": null,
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [
+              "2026-09-07",
+              "2026-09-07"
+            ],
+            "detail_status": "PRIMARY_PAGE_READ",
+            "official": {
+              "title": "Projet d’arrêté portant la révision de la fiche d’opération standardisée AGRI-TH-108 et du référentiel de contrôle associé",
+              "period": "Consultation du 07/09/2026 au 28/09/2026 - 1 contribution"
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": null,
+              "text_sha256": null,
+              "excerpt": null,
+              "excerpt_truncated": false,
+              "archive_url": null,
+              "archive_sha256": null
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Consultation publique d'un projet d'arrêté révisant la fiche CEE AGRI-TH-108 (PAC air/eau pour serres agricoles) ; périmètre professionnel identifiable, routage énergie appliqué avec service B2B non réglementé possible."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+              "score": 3,
+              "terms": []
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        },
+        "reading": {
+          "consequence": "Le projet d'arrêté révise les critères d'éligibilité de la fiche CEE AGRI-TH-108, restreignant le dispositif aux PAC air/eau assurant une électrification totale du chauffage des serres, avec étude préalable obligatoire et contrôle systématique des installations.",
+          "affected_actors": [
+            "Exploitants de serres maraîchères et horticoles",
+            "Installateurs de pompes à chaleur",
+            "Obligés CEE",
+            "Bureaux d'étude thermique"
+          ],
+          "beneficiaries": [],
+          "constrained_parties": [
+            "Porteurs de projets de chauffage hybride (non éligibles)",
+            "Exploitants devant réaliser une étude préalable obligatoire"
+          ],
+          "potential_service_partners": [],
+          "unknowns": [
+            "Date de publication définitive de l'arrêté",
+            "Contenu final du référentiel de contrôle",
+            "Montant exact des CEE valorisables par projet"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-la-revision-de-la-fiche-d-a3422.html"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:2cc5bc676c13f472",
+          "title": "Projet d'arrêté portant la révision de la fiche d'opération standardisée AGRI-TH-108 et du référentiel de contrôle associé",
+          "keywords": [
+            "CEE",
+            "AGRI-TH-108",
+            "pompe à chaleur",
+            "serres",
+            "efficacité énergétique",
+            "consultation publique"
+          ],
+          "affected_scope": [
+            "Exploitants agricoles maraîchers/horticoles",
+            "Installateurs de PAC",
+            "Obligés CEE",
+            "Bureaux d'étude thermique"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "CONSULTATION_OPEN",
+            "proof_status": "PARTIAL",
+            "effective_date": null,
+            "affected_scope": [
+              "Filière serres maraîchères et horticoles",
+              "Dispositif CEE"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [
+              "Étude préalable de dimensionnement thermique",
+              "Contrôle de conformité de l'installation"
+            ],
+            "required_authorizations": [
+              {
+                "id": "Fiche CEE AGRI-TH-108 révisée",
+                "status": "UNKNOWN"
+              }
+            ],
+            "dependencies": [
+              {
+                "id": "Publication de l'arrêté final",
+                "status": "UNKNOWN"
+              }
+            ],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "PARTIAL"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:2cc5bc676c13f472",
+          "evaluated_at_utc": "2026-09-12T17:45:19.645448+00:00",
+          "compliance": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve juridique incomplète ou absente."
+            ]
+          },
+          "feasibility": {
+            "status": "DISCARD",
+            "reasons": [
+              "Compétence indispensable absente : Étude préalable de dimensionnement thermique.",
+              "Compétence indispensable absente : Contrôle de conformité de l'installation."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "DISCARD"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:2cc5bc676c13f472",
+        "title": "Projet d'arrêté portant la révision de la fiche d'opération standardisée AGRI-TH-108 et du référentiel de contrôle associé",
+        "keywords": [
+          "CEE",
+          "AGRI-TH-108",
+          "pompe à chaleur",
+          "serres",
+          "efficacité énergétique",
+          "consultation publique"
+        ],
+        "affected_scope": [
+          "Exploitants agricoles maraîchers/horticoles",
+          "Installateurs de PAC",
+          "Obligés CEE",
+          "Bureaux d'étude thermique"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "CONSULTATION_OPEN",
+          "proof_status": "PARTIAL",
+          "effective_date": null,
+          "affected_scope": [
+            "Filière serres maraîchères et horticoles",
+            "Dispositif CEE"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [
+            "Étude préalable de dimensionnement thermique",
+            "Contrôle de conformité de l'installation"
+          ],
+          "required_authorizations": [
+            {
+              "id": "Fiche CEE AGRI-TH-108 révisée",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "Publication de l'arrêté final",
+              "status": "UNKNOWN"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "PARTIAL"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-09-12T17:45:19.645448+00:00",
+          "trigger": "CAPTURE",
+          "status": "DISCARD",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
+      "signal_id": "signal:4bd17841109e86ec",
+      "source_id": "jorf:JORFTEXT000054803961",
+      "captured_at_utc": "2026-09-12T17:45:19.645448+00:00",
+      "facts_sha256": "2c7342ab288f1fd5d9eb3a175c4e6516971b45a8a4310771731f62f0af14b682",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:4bd17841109e86ec",
+        "evaluated_at_utc": "2026-09-12T17:45:19.645448+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : Respect des caractéristiques techniques des panneaux photovoltaïques fixées par le décret.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:4bd17841109e86ec",
+        "evaluated_at_utc": "2026-09-12T17:45:19.645448+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : Respect des caractéristiques techniques des panneaux photovoltaïques fixées par le décret.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:4bd17841109e86ec",
+        "identity": {
+          "stable_source_id": "source:845fe9cee8c002d8",
+          "evidence_version": "sha256:64b5181b5b5b986a720cb1e1b679e13648ddb8a862dcecd6faf6eb03f90eea11"
+        },
+        "source": {
+          "source_id": "jorf:JORFTEXT000054803961",
+          "source_kind": "JORF",
+          "change": "NEW",
+          "evidence": {
+            "text_id": "JORFTEXT000054803961",
+            "nature": "DECRET",
+            "nor": "ECOI2616434D",
+            "title": "Décret n° 2026-842 du 7 septembre 2026 relatif aux caractéristiques des panneaux solaires photovoltaïques permettant un report de l'échéance de l'obligation faite aux parcs de stationnement extérieurs d'une superficie supérieure à 1 500 mètres carrés",
+            "publisher": "DILA / Journal officiel de la République française",
+            "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054803961",
+            "publication_date": "2026-09-08",
+            "journal_number": "0209",
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [],
+            "detail_status": null,
+            "official": {
+              "title": null,
+              "period": null
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": "AVAILABLE",
+              "text_sha256": "294377204d92ff8e86d5162016418a4957af50cb9cd0d29ffdb5eb8ab1e78892",
+              "excerpt": "Publics concernés : propriétaires de parcs de stationnement extérieurs d'une superficie égale ou supérieure à mille cinq cent mètres carrés.\nObjet : le décret précise les performances techniques et environnementales ainsi qu'en termes de résilience d'approvisionnement des panneaux photovoltaïques permettant aux propriétaires de parcs de stationnement de bénéficier d'un délai supplémentaire pour satisfaire à leur obligation d'installation.\nEntrée en vigueur : le texte entre en vigueur le lendemain de sa publication.\nApplication : le décret est pris pour l'application de l'article 40 de la loi n° 2023-175 du 10 mars 2023 relative à l'accélération de la production d'énergies renouvelables, dans sa rédaction issue de l'article 8 de la loi n° 2025-1129 du 26 novembre 2025 de simplification du droit de l'urbanisme et du logement.\nLe Premier ministre,\nSur le rapport du ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique ;\nVu la directive (UE) 2015/1535 du Parlement européen et du Conseil du 9 septembre 2015 prévoyant une procédure d'information dans le domaine des réglementations techniques et des règles relatives aux services de la société de l'information ;\nVu la loi n° 2023-175 du 10 mars 2023 modifiée relative à l'accélération de la production d'énergies renouvelables, notamment son article 40 ;\nVu le décret n° 2009-697 du 16 juin 2009 modifié relatif à la normalisation ;\nVu l'avis du Conseil supérieur de l'énergie en date du 3 mars 2026 ;\nVu la notification 2026/0195/FR adressée à la Commission européenne le 17 avril 2026,\nDécrète :",
+              "excerpt_truncated": false,
+              "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260908-012632.tar.gz",
+              "archive_sha256": "fc4eb88ec81b4f8012eb84f04da61f38b0b530eaeb3f7f3849e476f29f90a398"
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Texte publié modifiant les conditions techniques permettant un report d'échéance de l'obligation photovoltaïque sur parcs de stationnement ; périmètre professionnel identifiable (propriétaires de parcs de stationnement >1500 m²) relevant de l'efficacité/énergie renouvelable. Service B2B non réglementé de veille/qualification possible."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 4,
+          "triggers": [
+            {
+              "kind": "LEGAL_OBLIGATION",
+              "score": 3,
+              "terms": [
+                "obligation"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur",
+                "delai",
+                "echeance"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        },
+        "reading": {
+          "consequence": "Le décret précise les caractéristiques techniques (performance, résilience d'approvisionnement) que doivent avoir les panneaux photovoltaïques pour permettre aux propriétaires de parcs de stationnement extérieurs de plus de 1500 m² de bénéficier d'un délai supplémentaire pour se conformer à leur obligation d'installation issue de la loi énergies renouvelables de 2023.",
+          "affected_actors": [
+            "Propriétaires de parcs de stationnement extérieurs ≥1500 m²",
+            "Ministère de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique"
+          ],
+          "beneficiaries": [],
+          "constrained_parties": [
+            "Propriétaires de parcs de stationnement extérieurs ≥1500 m²"
+          ],
+          "potential_service_partners": [],
+          "unknowns": [
+            "Liste précise des critères techniques et de résilience d'approvisionnement exigés",
+            "Durée exacte du report accordé",
+            "Modalités de contrôle du respect de ces critères"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "jorf:JORFTEXT000054803961"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:4bd17841109e86ec",
+          "title": "Décret n° 2026-842 du 7 septembre 2026 relatif aux caractéristiques des panneaux solaires photovoltaïques permettant un report de l'échéance de l'obligation pour parcs de stationnement extérieurs >1500 m²",
+          "keywords": [
+            "photovoltaïque",
+            "parc de stationnement",
+            "obligation énergie renouvelable",
+            "report d'échéance",
+            "décret"
+          ],
+          "affected_scope": [
+            "Propriétaires de parcs de stationnement extérieurs ≥1500 m²"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "PUBLISHED",
+            "proof_status": "VERIFIED",
+            "effective_date": "2026-09-09",
+            "affected_scope": [
+              "Propriétaires de parcs de stationnement extérieurs ≥1500 m²"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "Respect des caractéristiques techniques des panneaux photovoltaïques fixées par le décret",
+                "status": "UNKNOWN"
+              }
+            ],
+            "dependencies": [
+              {
+                "id": "Article 40 loi n°2023-175 modifiée",
+                "status": "AVAILABLE"
+              }
+            ],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "PARTIAL"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:4bd17841109e86ec",
+          "evaluated_at_utc": "2026-09-12T17:45:19.645448+00:00",
+          "compliance": {
+            "status": "PASS",
+            "reasons": [
+              "Texte vérifié, dans le périmètre et actionnable."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Statut de l'autorisation inconnu : Respect des caractéristiques techniques des panneaux photovoltaïques fixées par le décret.",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:4bd17841109e86ec",
+        "title": "Décret n° 2026-842 du 7 septembre 2026 relatif aux caractéristiques des panneaux solaires photovoltaïques permettant un report de l'échéance de l'obligation pour parcs de stationnement extérieurs >1500 m²",
+        "keywords": [
+          "photovoltaïque",
+          "parc de stationnement",
+          "obligation énergie renouvelable",
+          "report d'échéance",
+          "décret"
+        ],
+        "affected_scope": [
+          "Propriétaires de parcs de stationnement extérieurs ≥1500 m²"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-09",
+          "affected_scope": [
+            "Propriétaires de parcs de stationnement extérieurs ≥1500 m²"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "Respect des caractéristiques techniques des panneaux photovoltaïques fixées par le décret",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "Article 40 loi n°2023-175 modifiée",
+              "status": "AVAILABLE"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "PARTIAL"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-09-12T17:45:19.645448+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
+      "signal_id": "signal:75b2c5cc401ba8ff",
+      "source_id": "jorf:JORFTEXT000054797892",
+      "captured_at_utc": "2026-09-12T17:45:19.645448+00:00",
+      "facts_sha256": "d81bb573e60b55e7830325d4842cc33ce738d357219aea1052fd696fe7390ddd",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:75b2c5cc401ba8ff",
+        "evaluated_at_utc": "2026-09-12T17:45:19.645448+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : UNKNOWN.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:75b2c5cc401ba8ff",
+        "evaluated_at_utc": "2026-09-12T17:45:19.645448+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : UNKNOWN.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:75b2c5cc401ba8ff",
+        "identity": {
+          "stable_source_id": "source:ef6af396f60793c6",
+          "evidence_version": "sha256:41b064ce097bf0d5b8888c893ca80dddedbdb290b90bbd7877a1026baa9b6d24"
+        },
+        "source": {
+          "source_id": "jorf:JORFTEXT000054797892",
+          "source_kind": "JORF",
+          "change": "NEW",
+          "evidence": {
+            "text_id": "JORFTEXT000054797892",
+            "nature": "ARRETE",
+            "nor": "ECOR2620285A",
+            "title": "Arrêté du 4 septembre 2026 relatif à la possibilité de remplacer des équipements fonctionnant avec un combustible déjà valorisés dans le cadre du dispositif des certificats d'économies d'énergie",
+            "publisher": "DILA / Journal officiel de la République française",
+            "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054797892",
+            "publication_date": "2026-09-06",
+            "journal_number": "0208",
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [],
+            "detail_status": null,
+            "official": {
+              "title": null,
+              "period": null
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": "AVAILABLE",
+              "text_sha256": "84e6bfc515aa8351c2aee11379f3aa9e003be18bd34549ddf5b5d2b59594c49d",
+              "excerpt": "Publics concernés : personnes éligibles, professionnels réalisant les travaux et bénéficiaires, dans le cadre du dispositif des certificats d'économies d'énergie.\nObjet : mise en place de la possibilité de remplacer des équipements fonctionnant avec un combustible déjà valorisés dans le cadre du dispositif des certificats d'économies d'énergie.\nEntrée en vigueur : les dispositions entrent en vigueur à compter du lendemain de la publication du présent arrêté et sont applicables aux opérations engagées à compter de cette date.\nApplication : articles R. 221-14 à R. 221-16 et R. 221-31 du code de l'énergie.\nLe ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique,\nVu le code de l'énergie, notamment ses articles R. 221-14 à R. 221-16 et R. 221-31 ;\nVu l'arrêté du 22 décembre 2014 modifié définissant les opérations standardisées d'économies d'énergie ;\nVu l'avis du Conseil supérieur de l'énergie du 23 juillet 2026 ;\nVu les observations formulées lors de la consultation du public réalisée du 27 juillet 2026 au 16 août 2026, en application de l'article L. 123-19-1 du code de l'environnement,\nArrête :",
+              "excerpt_truncated": false,
+              "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260906-002336.tar.gz",
+              "archive_sha256": "c506077cc64f1f52d3dcbb1c94d71aa741ecaf6f1e9d0281974e7f6320833b76"
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Arrêté publié modifiant le dispositif CEE pour permettre le remplacement d'équipements déjà valorisés ; périmètre professionnel identifiable (opérations CEE), routage ENERGY_EFFICIENCY conformément à la règle applicable."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "TECHNICAL_TRANSITION",
+              "score": 2,
+              "terms": [
+                "economies d'energie"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur",
+                "a compter du"
+              ]
+            }
+          ],
+          "scope_terms": [
+            "professionnel"
+          ],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        },
+        "reading": {
+          "consequence": "Le texte crée la possibilité de remplacer des équipements fonctionnant avec un combustible déjà valorisés dans le cadre des certificats d'économies d'énergie, applicable aux opérations engagées à compter de l'entrée en vigueur.",
+          "affected_actors": [
+            "professionnels réalisant des travaux",
+            "bénéficiaires du dispositif CEE",
+            "obligés CEE"
+          ],
+          "beneficiaries": [],
+          "constrained_parties": [],
+          "potential_service_partners": [],
+          "unknowns": [
+            "conditions techniques précises du remplacement",
+            "montant des bonifications ou valorisations associées",
+            "modalités de contrôle applicables"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "jorf:JORFTEXT000054797892"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:75b2c5cc401ba8ff",
+          "title": "Arrêté du 4 septembre 2026 relatif au remplacement d'équipements fonctionnant avec un combustible déjà valorisés dans le cadre des CEE",
+          "keywords": [
+            "CEE",
+            "certificats d'économies d'énergie",
+            "combustible",
+            "opérations standardisées",
+            "code de l'énergie"
+          ],
+          "affected_scope": [
+            "dispositif CEE",
+            "professionnels réalisant des travaux",
+            "bénéficiaires d'opérations CEE"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "PUBLISHED",
+            "proof_status": "VERIFIED",
+            "effective_date": "2026-09-07",
+            "affected_scope": [
+              "dispositif CEE",
+              "professionnels réalisant des travaux",
+              "bénéficiaires d'opérations CEE"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "UNKNOWN",
+                "status": "UNKNOWN"
+              }
+            ],
+            "dependencies": [
+              {
+                "id": "arrêté du 22 décembre 2014 modifié",
+                "status": "AVAILABLE"
+              }
+            ],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "PARTIAL"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:75b2c5cc401ba8ff",
+          "evaluated_at_utc": "2026-09-12T17:45:19.645448+00:00",
+          "compliance": {
+            "status": "PASS",
+            "reasons": [
+              "Texte vérifié, dans le périmètre et actionnable."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Statut de l'autorisation inconnu : UNKNOWN.",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:75b2c5cc401ba8ff",
+        "title": "Arrêté du 4 septembre 2026 relatif au remplacement d'équipements fonctionnant avec un combustible déjà valorisés dans le cadre des CEE",
+        "keywords": [
+          "CEE",
+          "certificats d'économies d'énergie",
+          "combustible",
+          "opérations standardisées",
+          "code de l'énergie"
+        ],
+        "affected_scope": [
+          "dispositif CEE",
+          "professionnels réalisant des travaux",
+          "bénéficiaires d'opérations CEE"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-07",
+          "affected_scope": [
+            "dispositif CEE",
+            "professionnels réalisant des travaux",
+            "bénéficiaires d'opérations CEE"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "UNKNOWN",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "arrêté du 22 décembre 2014 modifié",
+              "status": "AVAILABLE"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "PARTIAL"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-09-12T17:45:19.645448+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
+      "signal_id": "signal:9c9feeb94a29916e",
+      "source_id": "jorf:JORFTEXT000054804204",
+      "captured_at_utc": "2026-09-12T17:45:19.645448+00:00",
+      "facts_sha256": "9d09bfd1d8c41ab31ccdb377d9a6c86d735e367f3b19ee3372d243cca94a67e2",
+      "initial_status": "DISCARD",
+      "latest_status": "DISCARD",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:9c9feeb94a29916e",
+        "evaluated_at_utc": "2026-09-12T17:45:19.645448+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "DISCARD",
+          "reasons": [
+            "Autorisation requise absente : agrement_structure_conseil_FSA."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "DISCARD"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:9c9feeb94a29916e",
+        "evaluated_at_utc": "2026-09-12T17:45:19.645448+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "DISCARD",
+          "reasons": [
+            "Autorisation requise absente : agrement_structure_conseil_FSA."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "DISCARD"
+      },
+      "signal": {
+        "id": "signal:9c9feeb94a29916e",
+        "identity": {
+          "stable_source_id": "source:bf68243381bb816d",
+          "evidence_version": "sha256:46c43c48f6a6af818d779babcd8513b3ba77e190ee2899cad5352f30b9297e3e"
+        },
+        "source": {
+          "source_id": "jorf:JORFTEXT000054804204",
+          "source_kind": "JORF",
+          "change": "NEW",
+          "evidence": {
+            "text_id": "JORFTEXT000054804204",
+            "nature": "ARRETE",
+            "nor": "AGRT2623644A",
+            "title": "Arrêté du 7 septembre 2026 relatif à la composition des dossiers de demande d'agrément des structures de conseil et d'accompagnement du réseau France services agriculture",
+            "publisher": "DILA / Journal officiel de la République française",
+            "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054804204",
+            "publication_date": "2026-09-08",
+            "journal_number": "0209",
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [],
+            "detail_status": null,
+            "official": {
+              "title": null,
+              "period": null
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": "AVAILABLE",
+              "text_sha256": "fc900e327acb39c46b5fd6fa1eebc778b371d59ebeb38da880114ee9606497ec",
+              "excerpt": "Publics concernés : les structures de conseil et d'accompagnement, les conseillers des structures de conseil et d'accompagnement.\nObjet : l'arrêté a pour objet de préciser le contenu et les modalités de présentation et d'instruction du dossier de demande d'agrément des structures de conseil et d'accompagnement du réseau France services agriculture.\nEntrée en vigueur : l'arrêté entre en vigueur le lendemain de sa publication.\nApplication : le présent arrêté est pris pour l'application des articles R. 330-12 et R. 330-14 du code rural et de la pêche maritime, dans leur rédaction issue du décret n° 2026-387 du 20 mai 2026 relatif aux conditions de délivrance, de suspension et de retrait de l'agrément des structures de conseil et d'accompagnement du réseau France services agriculture.\nLa ministre de l'agriculture, de l'agroalimentaire et de la souveraineté alimentaire,\nVu le code rural et de la pêche maritime, notamment le titre III de son livre III et ses articles L. 330-7, D. 330-9 et R. 330-10 à R. 330-16,\nArrête :",
+              "excerpt_truncated": false,
+              "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260908-012632.tar.gz",
+              "archive_sha256": "fc4eb88ec81b4f8012eb84f04da61f38b0b530eaeb3f7f3849e476f29f90a398"
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Le texte crée une exigence documentaire pour l'agrément des structures de conseil et d'accompagnement France services agriculture, ce qui constitue une friction réglementaire mesurable pour les acteurs concernés, sans qu'aucun marché ni offre légale ne soit démontré."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "ELIGIBILITY_OR_CERTIFICATION",
+              "score": 2,
+              "terms": [
+                "agrement"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        },
+        "reading": {
+          "consequence": "Les structures de conseil et d'accompagnement agricole devront constituer un dossier de demande d'agrément conforme au contenu et aux modalités fixés par cet arrêté pour intégrer ou rester dans le réseau France services agriculture.",
+          "affected_actors": [
+            "structures de conseil et d'accompagnement agricole",
+            "conseillers agricoles"
+          ],
+          "beneficiaries": [],
+          "constrained_parties": [
+            "structures de conseil et d'accompagnement",
+            "conseillers des structures de conseil et d'accompagnement"
+          ],
+          "potential_service_partners": [],
+          "unknowns": [
+            "contenu exact du dossier requis",
+            "délai d'instruction",
+            "sanctions en cas de non-conformité"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "jorf:JORFTEXT000054804204"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:9c9feeb94a29916e",
+          "title": "Arrêté relatif à la composition des dossiers de demande d'agrément des structures de conseil et d'accompagnement du réseau France services agriculture",
+          "keywords": [
+            "agrément",
+            "France services agriculture",
+            "conseil agricole",
+            "dossier",
+            "code rural"
+          ],
+          "affected_scope": [
+            "structures de conseil et d'accompagnement",
+            "conseillers agricoles"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "PUBLISHED",
+            "proof_status": "VERIFIED",
+            "effective_date": "2026-09-09",
+            "affected_scope": [
+              "structures de conseil et d'accompagnement",
+              "conseillers des structures de conseil et d'accompagnement"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "agrement_structure_conseil_FSA",
+                "status": "REQUIRED"
+              }
+            ],
+            "dependencies": [
+              {
+                "id": "decret_2026-387_20_mai_2026",
+                "status": "AVAILABLE"
+              }
+            ],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "PARTIAL"
+          },
+          "operator_access": {
+            "sector": "NOT_CLASSIFIED",
+            "direct_offer_status": "UNKNOWN",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "MISSING",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:9c9feeb94a29916e",
+          "evaluated_at_utc": "2026-09-12T17:45:19.645448+00:00",
+          "compliance": {
+            "status": "PASS",
+            "reasons": [
+              "Texte vérifié, dans le périmètre et actionnable."
+            ]
+          },
+          "feasibility": {
+            "status": "DISCARD",
+            "reasons": [
+              "Autorisation requise absente : agrement_structure_conseil_FSA."
+            ]
+          },
+          "operator_access": {
+            "status": "NOT_APPLICABLE",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+            ]
+          },
+          "final_constraint": "DISCARD"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:9c9feeb94a29916e",
+        "title": "Arrêté relatif à la composition des dossiers de demande d'agrément des structures de conseil et d'accompagnement du réseau France services agriculture",
+        "keywords": [
+          "agrément",
+          "France services agriculture",
+          "conseil agricole",
+          "dossier",
+          "code rural"
+        ],
+        "affected_scope": [
+          "structures de conseil et d'accompagnement",
+          "conseillers agricoles"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-09",
+          "affected_scope": [
+            "structures de conseil et d'accompagnement",
+            "conseillers des structures de conseil et d'accompagnement"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "agrement_structure_conseil_FSA",
+              "status": "REQUIRED"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "decret_2026-387_20_mai_2026",
+              "status": "AVAILABLE"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "PARTIAL"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "UNKNOWN",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-09-12T17:45:19.645448+00:00",
+          "trigger": "CAPTURE",
+          "status": "DISCARD",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
       "signal_id": "signal:cb41284df04e6601",
       "source_id": "jorf:JORFTEXT000054794248",
       "captured_at_utc": "2026-09-04T12:02:25.410828+00:00",
@@ -813,7 +2398,7 @@
     }
   ],
   "queue_audit": {
-    "processed_count": 210,
+    "processed_count": 216,
     "unrecoverable_queue_entries": [
       {
         "fingerprint": "490853c49376a298cfdbefd3d9015889f24dfb149e616097ae78c39d2661a25b",
