@@ -8,6 +8,7 @@ from scripts.run_anthropic_motor_batch import (
     assemble_delivery,
     anthropic_output_schema,
     build_requests,
+    _json_object_from_message,
     run_batch,
     validate_motor_input,
 )
@@ -262,6 +263,24 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertEqual(
             delivery["opportunities"][0]["facts"]["signal_id"], "jorf:A"
         )
+
+    def test_normalizes_model_source_id_from_verified_batch_mapping(self):
+        value = motor_input(candidate("jorf:A"))
+        requests, mapping = build_requests(value, "claude-sonnet-5")
+        item = response(requests[0]["custom_id"], "wrong:model-id")
+        delivery, _ = assemble_delivery(value, [item], mapping)
+        self.assertEqual(delivery["opportunities"][0]["source_id"], "jorf:A")
+        self.assertEqual(delivery["opportunities"][0]["facts"]["signal_id"], "jorf:A")
+
+    def test_accepts_json_inside_a_single_markdown_fence(self):
+        self.assertEqual(
+            _json_object_from_message('```json\n{"status":"DISCARDED"}\n```'),
+            {"status": "DISCARDED"},
+        )
+
+    def test_refuses_free_text_around_json(self):
+        with self.assertRaises((ValueError, json.JSONDecodeError)):
+            _json_object_from_message('Voici le résultat : {"status":"DISCARDED"}')
 
     def test_completed_batch_writes_delivery_and_state(self):
         value = motor_input(candidate("jorf:A"))

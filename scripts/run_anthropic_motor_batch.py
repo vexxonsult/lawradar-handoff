@@ -350,6 +350,28 @@ def _message_text(message: Any) -> str:
     raise ValueError("Réponse batch sans bloc texte JSON.")
 
 
+def _json_object_from_message(raw_text: str) -> dict[str, Any]:
+    """Accepte un objet JSON brut ou entouré d'une unique clôture Markdown.
+
+    Sonnet peut placer une réponse JSON valide dans un bloc `````json`` même
+    lorsque le prompt demande du JSON seul. On retire uniquement cette
+    présentation connue ; aucun texte libre n'est interprété ou réparé.
+    """
+    text = raw_text.strip()
+    if text.startswith("```"):
+        first_newline = text.find("\n")
+        if first_newline < 0 or not text.endswith("```"):
+            raise ValueError("Bloc Markdown JSON incomplet.")
+        language = text[3:first_newline].strip().lower()
+        if language not in {"", "json"}:
+            raise ValueError("Bloc Markdown non JSON.")
+        text = text[first_newline + 1:-3].strip()
+    value = json.loads(text)
+    if not isinstance(value, dict):
+        raise ValueError("La réponse batch doit être un objet JSON.")
+    return value
+
+
 def _batch_error_detail(result: Any) -> str:
     """Rend l'erreur fournisseur lisible sans la confondre avec une livraison."""
     error = _field(result, "error", {})
@@ -399,8 +421,8 @@ def assemble_delivery(
         message = _field(result, "message", {})
         raw_text = _message_text(message)
         try:
-            value = json.loads(raw_text)
-        except json.JSONDecodeError as error:
+            value = _json_object_from_message(raw_text)
+        except (json.JSONDecodeError, ValueError) as error:
             # Le texte fournisseur n'est volontairement pas conservé : il
             # peut contenir du contenu officiel long. Ces métadonnées suffisent
             # pour distinguer une troncature d'une réponse mal formée.
@@ -409,12 +431,13 @@ def assemble_delivery(
             output_tokens = int(_field(message_usage, "output_tokens", 0) or 0)
             failures.append(
                 f"{expected_source}:invalid_json"
-                f"(stop={stop_reason},output_tokens={output_tokens},chars={len(raw_text)},at={error.pos})"
+                f"(stop={stop_reason},output_tokens={output_tokens},chars={len(raw_text)},at={getattr(error, 'pos', -1)})"
             )
             continue
-        if not isinstance(value, dict) or value.get("source_id") != expected_source:
-            failures.append(f"{expected_source}:source_id_mismatch")
-            continue
+        # custom_id est généré localement à partir du candidat et lie déjà la
+        # réponse au bon texte. source_id est donc une clé de jointure que le
+        # modèle n'a pas à réinventer : on la recopie depuis ce mapping fiable.
+        value["source_id"] = expected_source
         facts = value.get("facts")
         if not isinstance(facts, dict):
             failures.append(f"{expected_source}:facts_missing")
