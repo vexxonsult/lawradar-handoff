@@ -1,15 +1,28 @@
 {
   "schema": "lawradar-agent-pilot-readiness-v1",
-  "generated_at_utc": "2026-09-04T12:57:43.686383+00:00",
+  "generated_at_utc": "2026-09-12T12:07:34.760856+00:00",
   "source_run": {
-    "id": "33875420570",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/33875420570",
-    "commit": "2940bd5998c059e19e826105d04f168fd67bb668",
-    "report_date": "2026-09-04"
+    "id": "34692804942",
+    "attempt": "1",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/34692804942",
+    "commit": "d16e6720a406bf7786dc94beda1ec8d98e4d9a6e",
+    "report_date": "2026-09-12"
   },
   "signals": [
     {
-      "signal_id": "signal:de0b3e6e115952f1",
+      "signal_id": "signal:9549e4f294a62a11",
+      "source_id": "jorf:JORFTEXT000054794130",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Le Radar n'a pas retenu ce signal."
+      ],
+      "filters": null
+    },
+    {
+      "signal_id": "signal:ed8470c64d37b85e",
       "source_id": "jorf:JORFTEXT000054794183",
       "radar_status": "RETAINED",
       "status": "READY_FOR_PILOTS",
@@ -20,8 +33,8 @@
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:de0b3e6e115952f1",
-        "evaluated_at_utc": "2026-09-04T12:57:43.686383+00:00",
+        "signal_id": "signal:ed8470c64d37b85e",
+        "evaluated_at_utc": "2026-09-12T12:07:34.760856+00:00",
         "compliance": {
           "status": "PASS",
           "reasons": [
@@ -32,6 +45,7 @@
           "status": "INVESTIGATE",
           "reasons": [
             "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : Statut d'obligé ou de délégataire CEE.",
             "Capital de départ inconnu.",
             "Délai de mise sur le marché inconnu."
           ]
@@ -49,8 +63,44 @@
       }
     },
     {
-      "signal_id": "signal:cb41284df04e6601",
+      "signal_id": "signal:464d57c703789cb9",
+      "source_id": "jorf:JORFTEXT000054794234",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Le Radar n'a pas retenu ce signal."
+      ],
+      "filters": null
+    },
+    {
+      "signal_id": "signal:23fedc1621c095b5",
       "source_id": "jorf:JORFTEXT000054794248",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Le Radar n'a pas retenu ce signal."
+      ],
+      "filters": null
+    },
+    {
+      "signal_id": "signal:6ea588ec706a7f8b",
+      "source_id": "jorf:JORFTEXT000054794273",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Le Radar n'a pas retenu ce signal."
+      ],
+      "filters": null
+    },
+    {
+      "signal_id": "signal:08bb0ebd2d2396d8",
+      "source_id": "jorf:JORFTEXT000054794525",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -62,11 +112,11 @@
     }
   ],
   "summary": {
-    "signal_count": 2,
+    "signal_count": 6,
     "ready_for_pilots_count": 1,
     "counts_by_status": {
-      "READY_FOR_PILOTS": 1,
-      "NOT_RETAINED": 1
+      "NOT_RETAINED": 5,
+      "READY_FOR_PILOTS": 1
     }
   }
 }

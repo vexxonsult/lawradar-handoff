@@ -454,10 +454,366 @@
           "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
         }
       ]
+    },
+    {
+      "signal_id": "signal:ed8470c64d37b85e",
+      "source_id": "jorf:JORFTEXT000054794183",
+      "captured_at_utc": "2026-09-12T12:07:34.801874+00:00",
+      "facts_sha256": "1f44c287d902ff59e39f826271ba912ee6adae86936b31e161ff218337c53f45",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:ed8470c64d37b85e",
+        "evaluated_at_utc": "2026-09-12T12:07:34.801874+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : Statut d'obligé ou de délégataire CEE.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:ed8470c64d37b85e",
+        "evaluated_at_utc": "2026-09-12T12:07:34.801874+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : Statut d'obligé ou de délégataire CEE.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:ed8470c64d37b85e",
+        "identity": {
+          "stable_source_id": "source:6810a65506847c56",
+          "evidence_version": "sha256:cdeb1daaf96cb61fec6473419b7b9afca5ea5d5a15ce80d30a4b913cef29ca9a"
+        },
+        "source": {
+          "source_id": "jorf:JORFTEXT000054794183",
+          "source_kind": "JORF",
+          "change": "NEW",
+          "evidence": {
+            "text_id": "JORFTEXT000054794183",
+            "nature": "ARRETE",
+            "nor": "ECOR2620296A",
+            "title": "Arrêté du 1er septembre 2026 portant création de la fiche d'opération standardisée IND-UT-141, du référentiel de contrôle et de la bonification associés",
+            "publisher": "DILA / Journal officiel de la République française",
+            "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054794183",
+            "publication_date": "2026-09-04",
+            "journal_number": "0206",
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [],
+            "detail_status": null,
+            "official": {
+              "title": null,
+              "period": null
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": "AVAILABLE",
+              "text_sha256": "1fbc465c6665eb79b8d479cc93ea07d33996c0aa07a4209fc3da1a3fd93e5d2e",
+              "excerpt": "Publics concernés : bénéficiaires et demandeurs dans le cadre du dispositif des certificats d'économies d'énergie.\nObjet : le présent arrêté crée la fiche d'opération standardisée IND-UT-141 « Chaudière industrielle électrique ».\nEntrée en vigueur : le présent arrêté entre en vigueur le lendemain de sa publication.\nApplication : le présent arrêté modifie l'arrêté du 22 décembre 2014 définissant les opérations standardisées d'économies d'énergie et l'arrêté du 28 septembre 2021 relatif aux contrôles dans le cadre du dispositif des certificats d'économies d'énergie.\nLe ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique,\nVu le code de l'énergie, notamment ses articles L. 221-9, R. R221-14 et R. 221-31 ;\nVu l'arrêté du 22 décembre 2014 modifié définissant les opérations standardisées d'économies d'énergie ;\nVu l'arrêté du 28 septembre 2021 modifié relatif aux contrôles dans le cadre du dispositif des certificats d'économies d'énergie ;\nVu l'avis du Conseil supérieur de l'énergie du 23 juillet 2026 ;\nVu les observations formulées lors de la consultation du public réalisée du 17 juillet 2026 au 7 août 2026 en application de l'article L. 123-19-1 du code de l'environnement,\nArrête :",
+              "excerpt_truncated": false,
+              "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260904-010813.tar.gz",
+              "archive_sha256": "729ca928316cdb1399239d0e58e190e2a84921c85bf531493ca860dd953f1351"
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Arrêté publié créant une fiche d'opération standardisée CEE (IND-UT-141) avec référentiel de contrôle et bonification, périmètre industriel identifiable (chaudière industrielle électrique) ; éligible à un service B2B non réglementé de veille/qualification/mise en relation."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 11,
+          "triggers": [
+            {
+              "kind": "SANCTION_OR_CONTROL",
+              "score": 3,
+              "terms": [
+                "controle"
+              ]
+            },
+            {
+              "kind": "FUNDING_OR_INCENTIVE",
+              "score": 3,
+              "terms": [
+                "bonification"
+              ]
+            },
+            {
+              "kind": "ELIGIBILITY_OR_CERTIFICATION",
+              "score": 2,
+              "terms": [
+                "referentiel"
+              ]
+            },
+            {
+              "kind": "TECHNICAL_TRANSITION",
+              "score": 2,
+              "terms": [
+                "economies d'energie",
+                "chaudiere"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        },
+        "reading": {
+          "consequence": "Création d'une nouvelle fiche d'opération standardisée CEE pour la chaudière industrielle électrique, assortie d'un référentiel de contrôle et d'une bonification, modifiant les arrêtés de 2014 et 2021 relatifs au dispositif des certificats d'économies d'énergie.",
+          "affected_actors": [
+            "Bénéficiaires et demandeurs de CEE",
+            "Obligés énergétiques",
+            "Industriels concernés par le remplacement de chaudières"
+          ],
+          "beneficiaries": [],
+          "constrained_parties": [],
+          "potential_service_partners": [
+            "Partenaire non identifié pour veille ou qualification de besoin CEE"
+          ],
+          "unknowns": [
+            "Montant précis de la bonification",
+            "Conditions techniques exactes du référentiel de contrôle",
+            "Identité des obligés ou délégataires concernés"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "jorf:JORFTEXT000054794183"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:ed8470c64d37b85e",
+          "title": "Arrêté du 1er septembre 2026 portant création de la fiche d'opération standardisée IND-UT-141, du référentiel de contrôle et de la bonification associés",
+          "keywords": [
+            "CEE",
+            "fiche standardisée",
+            "IND-UT-141",
+            "chaudière industrielle",
+            "bonification",
+            "contrôle",
+            "efficacité énergétique"
+          ],
+          "affected_scope": [
+            "Bénéficiaires du dispositif CEE",
+            "Obligés au titre des CEE",
+            "Secteur industriel utilisant des chaudières"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "PUBLISHED",
+            "proof_status": "VERIFIED",
+            "effective_date": "2026-09-05",
+            "affected_scope": [
+              "Bénéficiaires et demandeurs CEE",
+              "Industriels utilisateurs de chaudières"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "Statut d'obligé ou de délégataire CEE",
+                "status": "UNKNOWN"
+              }
+            ],
+            "dependencies": [
+              {
+                "id": "Arrêté du 22 décembre 2014 modifié",
+                "status": "AVAILABLE"
+              },
+              {
+                "id": "Arrêté du 28 septembre 2021 modifié",
+                "status": "AVAILABLE"
+              }
+            ],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "PARTIAL"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:ed8470c64d37b85e",
+          "evaluated_at_utc": "2026-09-12T12:07:34.801874+00:00",
+          "compliance": {
+            "status": "PASS",
+            "reasons": [
+              "Texte vérifié, dans le périmètre et actionnable."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Statut de l'autorisation inconnu : Statut d'obligé ou de délégataire CEE.",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:ed8470c64d37b85e",
+        "title": "Arrêté du 1er septembre 2026 portant création de la fiche d'opération standardisée IND-UT-141, du référentiel de contrôle et de la bonification associés",
+        "keywords": [
+          "CEE",
+          "fiche standardisée",
+          "IND-UT-141",
+          "chaudière industrielle",
+          "bonification",
+          "contrôle",
+          "efficacité énergétique"
+        ],
+        "affected_scope": [
+          "Bénéficiaires du dispositif CEE",
+          "Obligés au titre des CEE",
+          "Secteur industriel utilisant des chaudières"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-05",
+          "affected_scope": [
+            "Bénéficiaires et demandeurs CEE",
+            "Industriels utilisateurs de chaudières"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "Statut d'obligé ou de délégataire CEE",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "Arrêté du 22 décembre 2014 modifié",
+              "status": "AVAILABLE"
+            },
+            {
+              "id": "Arrêté du 28 septembre 2021 modifié",
+              "status": "AVAILABLE"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "PARTIAL"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-09-12T12:07:34.801874+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
     }
   ],
   "queue_audit": {
-    "processed_count": 116,
+    "processed_count": 210,
     "unrecoverable_queue_entries": [
       {
         "fingerprint": "490853c49376a298cfdbefd3d9015889f24dfb149e616097ae78c39d2661a25b",
@@ -677,6 +1033,466 @@
       {
         "fingerprint": "dd3a17bc036e0288a0a4eead970a980851f212d9a815697f3bb7aba4c89bfdfa",
         "source_id": "jorf:JORFTEXT000054794831",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "697d38bd0b037d897f69399308983de36eef57ebb2fed4e5b77b68b0153f9b96",
+        "source_id": "jorf:JORFTEXT000054794361",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "c3de55afe7adee3f3f078c25089f9b33a2219dc5709762efe8324c87e6656397",
+        "source_id": "jorf:JORFTEXT000054794605",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "42f96225b54b1c587d05a27f96a12f59312419a5e8562be053f427118da66bc9",
+        "source_id": "jorf:JORFTEXT000054794611",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "2130ad2c04c06fcaf6993a7da4b7093946059d22181cede5ba2063c1ea0c3641",
+        "source_id": "jorf:JORFTEXT000054794615",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "2e7a715dade39288b0d5b2e0ffec416953f43f7a9bc130b7f1177a728a1845de",
+        "source_id": "jorf:JORFTEXT000054794619",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "9f2a3b5d36e453b2a347f8fb7bef084f1a6d943876a406a27b0a682d07b5bdfe",
+        "source_id": "jorf:JORFTEXT000054794628",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "c018120218b5fced3f79d4e95d3203d18b105fdde5674e9c32cef48dd06085a8",
+        "source_id": "jorf:JORFTEXT000054794809",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "4f186d83f951081709efad988d7646e0b36dc426274f0ca7d5c41bb33ce001db",
+        "source_id": "jorf:JORFTEXT000054794816",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "1c7366a7eebd748e03c0fa318ee788af57c57e4150a1fc61c43cbafd43a9bd50",
+        "source_id": "jorf:JORFTEXT000054794818",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "df0afd06a7db994075efc8ddb68713de2fd5cb371fc0216f27b2dd60db9c6021",
+        "source_id": "jorf:JORFTEXT000054794820",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "122897e5eff12b28679a3707045a0f3e245f69a258ed6d94a68319d69013e22a",
+        "source_id": "jorf:JORFTEXT000054794822",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "de24c97b64aa0a560a7c25d6d262546c6280e822a17827db4b83097d02d32ff7",
+        "source_id": "jorf:JORFTEXT000054794826",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "1c51958f00d5ac13dd1c4d731b3d8802242c144b1583377277cc4d10bf00d47c",
+        "source_id": "jorf:JORFTEXT000054794831",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "275ba47c768548e07d9f10bee87270ab149884c9d54adcc7b717370c3bb5d94d",
+        "source_id": "jorf:JORFTEXT000054796560",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "59a602bbb61398a8e2bccb7ee654dc15c1ff27f2124ad59ab9119a4dd6474e4c",
+        "source_id": "jorf:JORFTEXT000054796582",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "73d6d891b74722432545b2a7eaab904f1d666be5eb0fb8ff3fadc450b046a41b",
+        "source_id": "jorf:JORFTEXT000054797269",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "7d6c5c31598244e5c7c7faa03dcf8a33145af0a0162c147fa5f70066732dede4",
+        "source_id": "jorf:JORFTEXT000054797271",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "a3760215eef972083dce575decb4e7b9552c05fc0c48191632f556fc5c026e7c",
+        "source_id": "jorf:JORFTEXT000054797274",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "96482932b29410cbe6f4614922a8861d11bfbe6d0ffab65ed33f8808f1cc628d",
+        "source_id": "jorf:JORFTEXT000054797379",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "43f4b0ea0a4747bb99ee041b630fdd3b9a026ca85eb243aafbc997a62d9bd3ca",
+        "source_id": "jorf:JORFTEXT000054797389",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "5f6d5e0c86734ead775d1fafc34fe7a35b5fb654be0cbdc2f63c3b0a0a716293",
+        "source_id": "jorf:JORFTEXT000054797391",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "442e2b5ad8ef1fb3bef10372af3c2627173030bb452bd372404dae664708c60d",
+        "source_id": "jorf:JORFTEXT000054797394",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "06ed0f8a9681ca4808aabcabfd7ca9140771102650ecb1e3ffdab5bdc1a888d5",
+        "source_id": "jorf:JORFTEXT000054797451",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "92eb8295c7585eabcfd1d62254a5ceee6f850e07d079694ef1ec9d157c537283",
+        "source_id": "jorf:JORFTEXT000054797453",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "aed52caca404085ebb0accf39990b5274008b88b643e3ae64ebfc33135a25a2f",
+        "source_id": "jorf:JORFTEXT000054798052",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "7b374a31de36a945d1c65db2f9b15fb138ecbfdf3d8cffb80cd207cbd68fbe5d",
+        "source_id": "jorf:JORFTEXT000054798220",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "eb1e14e9d55782b0fcd2fae2cb5c47b05c318d860c151a4f79142cf79dc94584",
+        "source_id": "jorf:JORFTEXT000054798238",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "bab97cbdbc29cf4a1ba3140caad36aa2c521102e00ea7ea609bc6e8200e47d2a",
+        "source_id": "jorf:JORFTEXT000054798243",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "b0ba64a90f487f3ab55d88ed9bdba982456ca3ee4afdc70c99b2a6ae6767a04e",
+        "source_id": "jorf:JORFTEXT000054798247",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "516a85ffbffd5f7f8cad76cbca1ab998ee1cfd4214c7cce4105db6231761db3b",
+        "source_id": "jorf:JORFTEXT000054798251",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "05fa9c88aff159047a9dd02555dc5e4f240ed6b2c76c2f4d90be194e21c671dc",
+        "source_id": "jorf:JORFTEXT000054798275",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "87589bdd8f4ee31f6780ad769022ad56d6100d0775cd04318c67ee67b5f058b7",
+        "source_id": "jorf:JORFTEXT000054798372",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "fb23bd12c1abb44c8dd3098f3ea408fcce3338f76978dd6429192dfa7458ed02",
+        "source_id": "jorf:JORFTEXT000054798377",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "c893669474e999734b23eac230fee9a0c007869ed18fde479c7fd6a62c77af68",
+        "source_id": "jorf:JORFTEXT000054804633",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "8850eebbac9175b8eae9c4d328729215e3682cce726f95303218fc00ff5333fc",
+        "source_id": "jorf:JORFTEXT000054804636",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "0c3b4a99ccad50fd93289ba610d3c8a30416bced01575c78ef726b0a3a1f90ff",
+        "source_id": "jorf:JORFTEXT000054804642",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "22a35154efe9ec0628b7626e75feac80db56b582f94f444936346fb42819cad0",
+        "source_id": "jorf:JORFTEXT000054804647",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "cf4b2eb6329a19c20bcdf2bd68105a935a65ace820ab67c4f272815fd047504e",
+        "source_id": "jorf:JORFTEXT000054804649",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "09f07db563704ae90506c75d8e58ed2c54f368e0a99cac9f90b0a4b9d9675b10",
+        "source_id": "jorf:JORFTEXT000054804651",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "d47a8b1b0322b5bc60f4702fd08a2a2b612f3975db73d57e1fa681687cac6e6c",
+        "source_id": "jorf:JORFTEXT000054804653",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "ce429aa7ebb5369c862a55616afb15a5919cc73ca7f3ffcc5a4317f2183fa08d",
+        "source_id": "jorf:JORFTEXT000054812059",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "61d4c1c4020a26bbf604c5d910505f860589801970429cdba380e37b8070eba9",
+        "source_id": "jorf:JORFTEXT000054812347",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "9630e14f5cb83e4b284a85da012312ec5b99c6a446ad1e866f3b09e063a5a6ca",
+        "source_id": "jorf:JORFTEXT000054812378",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "30c66a5a50436e1f16f065a10ea42f59eff979c0d3911272b0b342fda830e943",
+        "source_id": "jorf:JORFTEXT000054812385",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "bb659cd3bdc1fc685b4ab2a19c744b8ba40ec42d4d534cfaffd4bb3af0b7e798",
+        "source_id": "jorf:JORFTEXT000054812404",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "320a208c943d9251eace3a06e9c5f680e73d43b0e905cd8c11bd413971d20173",
+        "source_id": "jorf:JORFTEXT000054812428",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "e3c3181ca9e621b1ac49e45361221c62e2d59ad4eb60e019709aeab65517febb",
+        "source_id": "jorf:JORFTEXT000054812431",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "cec816ebd3da414b68fae8d680f22e00de5a0d75f3729b78a69454c6ae0c0599",
+        "source_id": "jorf:JORFTEXT000054812450",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "417837f1946991e7204f9464fe44715fd0a4da6d4643cd662e1dccb5a09121bb",
+        "source_id": "jorf:JORFTEXT000054812452",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "e48b2493c107ab406cfd39a95497a8d555d0e2298f4f09d233a2084f5eb16786",
+        "source_id": "jorf:JORFTEXT000054812454",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "d9738da874b409aa1b6b382e0fe1f0a3a322723d122304ca9471e76b0e883ac7",
+        "source_id": "jorf:JORFTEXT000054812458",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "e668aa7683455a20deb15360807442807aa4389cd5c0a9766a61f0aa6177122a",
+        "source_id": "jorf:JORFTEXT000054817219",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "21dd0f03719058e9526e96f13e9967f232697c77a2f7936ccf9994507881a12e",
+        "source_id": "jorf:JORFTEXT000054817277",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "b96f416c4edbf62039331149122beda9f25625ef5430c2f362182de319b8d312",
+        "source_id": "jorf:JORFTEXT000054817315",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "adc1eb081ee3a9b5b5496dbf8177f82cc2a5994bf8de7037090aa4bd4809644b",
+        "source_id": "jorf:JORFTEXT000054817403",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "a9da7a1e9c6c6e59cc3e0797926d4fa8829f2319c9c381e80f7e2747080b5a5a",
+        "source_id": "jorf:JORFTEXT000054817409",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "241cfa92160dcfa8318d72b6ca3477c103256e9e267eceda226868955612e37c",
+        "source_id": "jorf:JORFTEXT000054817411",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "e89461bfa456ddee5651c3fd71f0016da55ba1c1583e598901f446765b022c3f",
+        "source_id": "jorf:JORFTEXT000054817416",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "b138731d11ceb67ee11a04df82c71294bedda0eb4f2be57e74b6e3ec2bdccb31",
+        "source_id": "jorf:JORFTEXT000054817572",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "8e11302981d2475f502358c62d8b20ec302fb936bae065b5a402d94bc91d5346",
+        "source_id": "jorf:JORFTEXT000054817588",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "62e95bd5be4cba8222496320c5c61c1802ce2855379a845413b53b6ec08e138e",
+        "source_id": "jorf:JORFTEXT000054817594",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "69d7dc86ae63ae8e22fbb819078f8f0a3ad1f8a9d1f3596ead08dcff9bb65493",
+        "source_id": "jorf:JORFTEXT000054817596",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "3fdecf12729da32a33584d1c88a337263336031d4e3a9c2ebb426b49a2cde863",
+        "source_id": "jorf:JORFTEXT000054817598",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "120ef43da71560da830195f7f011a3be0a92e27f12809afa1c03b4edb19618b3",
+        "source_id": "jorf:JORFTEXT000054817600",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "8e26afa6ae6ee9f02acbc249c357a4d502d4b363704cdaed06b13987b6de8c13",
+        "source_id": "jorf:JORFTEXT000054817602",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "5451fe5abb46793c04f310169c9aa78711a20ca40c23960d195a760f026fa78c",
+        "source_id": "jorf:JORFTEXT000054817605",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "e886d5e469a9c1d03d3dc966cf701c7c979492871ab6f58ef5d14ee0f2187c40",
+        "source_id": "jorf:JORFTEXT000054817610",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "b268d8e8e4c11e5947a2cf5ea147d381ca609dd69fe07e9548974345d33c06cb",
+        "source_id": "jorf:JORFTEXT000054817612",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "91a4f149d568dfce4357f97876e03408c02513819c67986f7a4ffbbc1f6847e5",
+        "source_id": "jorf:JORFTEXT000054826424",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "3a1f6de74c60b9a3c16937f61b934fe6163fbb683cf6da6041cc73179288bdc8",
+        "source_id": "jorf:JORFTEXT000054826426",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "f410bc5a68169db298ea82e4eb76e08a43ea41765ddefcfce1227e83894eddb6",
+        "source_id": "jorf:JORFTEXT000054826612",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "8e878d213c5991fac5b2db8f376021a3650dc4a13aa4ca188ab6e8b908d88a6e",
+        "source_id": "jorf:JORFTEXT000054826615",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "6de3d7926d2d9fff8d1c8c046e4073a64e804ea4a11461616b9904ee524164f5",
+        "source_id": "jorf:JORFTEXT000054826618",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "c2a84815d925443ac75ec863b50d19a602ef4139edf1fe57a16014c2a3dab396",
+        "source_id": "jorf:JORFTEXT000054826952",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "ee9ad621dc20d698da38fb34a6c3e6406acde987ae447675d9293f1bff5bf94e",
+        "source_id": "jorf:JORFTEXT000054827237",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "e63933d824e61e7a5d12e0a74b2e324a9b0f89d288cecc031895366206c5904b",
+        "source_id": "jorf:JORFTEXT000054827248",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "36e1bb08a628c2b63af0e81d18dae82440103283553c73d7af88ad53df72f864",
+        "source_id": "jorf:JORFTEXT000054827251",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "1d9d9324b0c347f752f3500e0ca6f90fb42f1b64ddf568aac02784747c412cc0",
+        "source_id": "jorf:JORFTEXT000054827253",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "c9410d6a33793f4e4071d3cbb844c1a56cffff4cc70cd43c1caf43462d73c9f6",
+        "source_id": "jorf:JORFTEXT000054827255",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "d2aea959f1a1ee93aca73b6be1c7dff7a771aafb2c0e0e07ac3c4f8a2884b9e8",
+        "source_id": "jorf:JORFTEXT000054827295",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "841707e4fad69c043561e81c731c49c3173e676af084f98350d2ba8a368842c9",
+        "source_id": "jorf:JORFTEXT000054827298",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "9357d90af3c2db4147e937c820e66037033934a8253183f2e620818a089389ac",
+        "source_id": "jorf:JORFTEXT000054827301",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "9cfa04f02da5edd43f051da0bb40102f0fbe01629b02274d0632186d6aa34532",
+        "source_id": "jorf:JORFTEXT000054827304",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "1f20d4454f40f0cf8fb9f7f0c08dc33c40bc70909755fbc9ac2133c851ba2193",
+        "source_id": "jorf:JORFTEXT000054827307",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "6602db3eb238146d240f15fa1ad6d2930b7f5cce9524bd7636505568310df46b",
+        "source_id": "jorf:JORFTEXT000054827310",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "6f1f13069279ccafa19fb935b47296a747ae4f1b9f78ec6dbcf71132dcb62cda",
+        "source_id": "jorf:JORFTEXT000054827312",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "b42c9ebe5327ef4dbd1e6e3486d26f2b4386047b8edb094631893a447939511e",
+        "source_id": "jorf:JORFTEXT000054833563",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "17824d3f6917b693b5b1d468315386c6bee6076c44e0889adddf9bdb9a72e18b",
+        "source_id": "jorf:JORFTEXT000054834169",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "d1ede82bdceb7a51b0773851ad03a8b4030de97d7e12570cc8d32fb65867daa0",
+        "source_id": "jorf:JORFTEXT000054834266",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "5fa4647354195162d9e0e1cea080815a22fe2959ca8f76305aa42d9178b9cedc",
+        "source_id": "jorf:JORFTEXT000054834302",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "1a00dcf298fd158d61c92d1db830724b3dcf6076d77e688cf3f1ee38af441796",
+        "source_id": "jorf:JORFTEXT000054834359",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "ee4b8be17a73398e0a9c9c1815964136eee212f07eb19f44175594f8a84866bc",
+        "source_id": "jorf:JORFTEXT000054834368",
         "reason": "PRIMARY_TEXT_EMPTY"
       }
     ],

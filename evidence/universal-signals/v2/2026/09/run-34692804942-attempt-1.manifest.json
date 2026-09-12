@@ -1,0 +1,60 @@
+{
+  "schema": "lawradar-universal-signal-archive-v1",
+  "status": "ARCHIVED",
+  "run_id": "34692804942",
+  "run_attempt": "1",
+  "report_date": "2026-09-12",
+  "archive_path": "evidence/universal-signals/v2/2026/09/run-34692804942-attempt-1.json",
+  "sha256": "a44fc058ce374565f89547615202c8ee525443a9a2ec30bfdf63daed9045d865",
+  "signal_count": 6,
+  "prefilter_counts": {
+    "excluded_historical_candidates": 87,
+    "excluded_routine_candidates": 41,
+    "excluded_no_economic_friction_candidates": 1,
+    "deterministically_unresolved_candidates": 0
+  },
+  "signals": [
+    {
+      "signal_id": "signal:9549e4f294a62a11",
+      "stable_source_id": "source:fb234609265ac229",
+      "evidence_version": "sha256:1f567de9e0b17b1838da876825488a1b7945460be698815a8b29d0e9d9761e72",
+      "source_id": "jorf:JORFTEXT000054794130",
+      "radar_status": "DISCARDED"
+    },
+    {
+      "signal_id": "signal:ed8470c64d37b85e",
+      "stable_source_id": "source:6810a65506847c56",
+      "evidence_version": "sha256:cdeb1daaf96cb61fec6473419b7b9afca5ea5d5a15ce80d30a4b913cef29ca9a",
+      "source_id": "jorf:JORFTEXT000054794183",
+      "radar_status": "RETAINED"
+    },
+    {
+      "signal_id": "signal:464d57c703789cb9",
+      "stable_source_id": "source:258b8d79cb77c82c",
+      "evidence_version": "sha256:a885c04583179f74be0bff42c1865deed8ceea41c3a20f7279483248a312f79b",
+      "source_id": "jorf:JORFTEXT000054794234",
+      "radar_status": "DISCARDED"
+    },
+    {
+      "signal_id": "signal:23fedc1621c095b5",
+      "stable_source_id": "source:14a85713eada09d0",
+      "evidence_version": "sha256:91fa82c4f1277020ff0049ba4541c8d232ac97c05e6ad7ffc748095bbf8ca7db",
+      "source_id": "jorf:JORFTEXT000054794248",
+      "radar_status": "DISCARDED"
+    },
+    {
+      "signal_id": "signal:6ea588ec706a7f8b",
+      "stable_source_id": "source:cf8f849472302a7d",
+      "evidence_version": "sha256:96686b2949b6a8762eacd8ef57d538c149fb0cbd4bdb5192473bb5823885561c",
+      "source_id": "jorf:JORFTEXT000054794273",
+      "radar_status": "DISCARDED"
+    },
+    {
+      "signal_id": "signal:08bb0ebd2d2396d8",
+      "stable_source_id": "source:dafab54dba7669d1",
+      "evidence_version": "sha256:61021fbfe7e1a3399d34d2a35a77a8609ab1684733f2dcf931937917f565c817",
+      "source_id": "jorf:JORFTEXT000054794525",
+      "radar_status": "DISCARDED"
+    }
+  ]
+}
