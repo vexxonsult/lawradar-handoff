@@ -438,7 +438,10 @@ jobs:
       ${{
         always() && !cancelled() && (
           github.event.inputs.clients_only == 'true' ||
-          (needs.moteur.result == 'success' && needs.moteur.outputs.batch_ready == 'true')
+          (needs.moteur.result == 'success' && (
+            needs.moteur.outputs.batch_ready == 'true' ||
+            github.event_name == 'schedule'
+          ))
         )
       }}
     runs-on: ubuntu-latest
@@ -459,6 +462,7 @@ jobs:
         name: Sélectionner uniquement les signaux autorisés par les filtres
         env:
           TRIGGER_SCHEDULE: ${{ github.event.schedule }}
+          MOTOR_BATCH_READY: ${{ needs.moteur.outputs.batch_ready }}
         run: |
           mkdir -p out
           python scripts/build_agent_pilot_readiness.py \
@@ -490,11 +494,36 @@ jobs:
                   already_consolidated = previous.get("mode") == "consolidated" and same_day and same_core
               except (OSError, ValueError, TypeError):
                   already_consolidated = False
+          # A new motor delivery may open every retained signal.  Later
+          # scheduled wakes never replay all of them: they process only a due,
+          # bounded technical retry recorded by the investigation queue.
+          retry_ids = set()
+          queue_path = Path("evidence/investigation-queue-latest.json")
+          if os.environ.get("MOTOR_BATCH_READY") != "true" and queue_path.exists():
+              try:
+                  queue = json.loads(queue_path.read_text(encoding="utf-8"))
+                  now_utc = datetime.now(ZoneInfo("UTC"))
+                  for pending in queue.get("items", []):
+                      retry_at = pending.get("next_retry_not_before_utc") if isinstance(pending, dict) else None
+                      if (
+                          isinstance(pending, dict)
+                          and pending.get("status") == "WAITING_FOR_EVIDENCE"
+                          and isinstance(retry_at, str)
+                          and datetime.fromisoformat(retry_at.replace("Z", "+00:00")).astimezone(ZoneInfo("UTC")) <= now_utc
+                      ):
+                          retry_ids.add(pending.get("signal_id"))
+              except (OSError, ValueError, TypeError, json.JSONDecodeError):
+                  # A malformed non-core operational queue must never trigger a
+                  # broad client replay. The next clean consolidation replaces it.
+                  retry_ids = set()
+          include_all_ready = os.environ.get("MOTOR_BATCH_READY") == "true" or os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
           matrix = []
           for item in [] if already_consolidated else readiness.get("signals", []):
               if item.get("ready_for_pilots") is not True:
                   continue
               signal_id = item["signal_id"]
+              if not include_all_ready and signal_id not in retry_ids:
+                  continue
               key = hashlib.sha256(signal_id.encode("utf-8")).hexdigest()[:16]
               matrix.append({"id": signal_id, "key": key})
           compact = json.dumps(matrix, ensure_ascii=False, separators=(",", ":"))
@@ -610,6 +639,13 @@ jobs:
           --artifacts out/client-artifacts
           --output out/client-context.json
           --mode "${{ needs.client_plan.outputs.mode }}"
+      - name: Ouvrir ou mettre à jour les enquêtes bornées
+        run: >-
+          python scripts/build_investigation_queue.py
+          --context out/client-context.json
+          --readiness out/client-core/out/agent-pilot-readiness.json
+          --previous evidence/investigation-queue-latest.json
+          --output evidence/investigation-queue-latest.json
       - name: Versionner un marqueur compact séparé du noyau
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -632,7 +668,7 @@ jobs:
           git config user.name "lawradar-clients[bot]"
           git config user.email "lawradar-clients[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git add evidence/client-orchestration-latest.json
+          git add evidence/client-orchestration-latest.json evidence/investigation-queue-latest.json
           git diff --cached --quiet || git commit -m "Contexte clients LawRadar $(date -u +%F)"
           git pull --rebase origin main
           git push

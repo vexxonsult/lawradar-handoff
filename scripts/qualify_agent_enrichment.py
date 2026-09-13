@@ -18,8 +18,8 @@ from typing import Any
 
 PROMPTS = {
     "press": """Tu es l'agent Presse LawRadar. Analyse uniquement le JSON fourni.
-N'utilise ni réseau, ni recherche, ni autre fichier. Retourne uniquement un JSON
-lawradar-agent-enrichment-v1 pour agent=press. Respecte strictement le contrat
+N'utilise ni réseau, ni recherche, ni autre fichier. Appelle exactement une fois
+l'outil submit_enrichment avec un lawradar-agent-enrichment-v1 pour agent=press. Respecte strictement le contrat
 ci-dessous : toutes les URL de sources et décisions doivent être parmi les
 candidats ; COMPLETED exige une ou plusieurs sources DIRECT ou CONTEXTUAL et
 une synthèse avec renvois [1], [2] ; NO_EVIDENCE exige zéro source ; UNRESOLVED
@@ -28,8 +28,8 @@ details contient exactement signal_hash, window, queries, candidates_total,
 candidates_after_dedup, coverage_level, decisions. Chaque décision contient
 url, relevance (DIRECT|CONTEXTUAL|NOT_LINKED|AMBIGUOUS) et why_linked.""",
     "market": """Tu es l'agent Marché LawRadar. Analyse uniquement le JSON fourni.
-N'utilise ni réseau, ni recherche, ni autre fichier. Retourne uniquement un JSON
-lawradar-agent-enrichment-v1 pour agent=market. Toute URL de source ou conclusion
+N'utilise ni réseau, ni recherche, ni autre fichier. Appelle exactement une fois
+l'outil submit_enrichment avec un lawradar-agent-enrichment-v1 pour agent=market. Toute URL de source ou conclusion
 doit provenir des observations BOAMP reçues. N'affirme jamais une taille de marché,
 un chiffre d'affaires ou une concurrence exhaustive. COMPLETED exige une ou plusieurs
 sources pertinentes et une synthèse avec renvois [1], [2]. details contient exactement
@@ -38,12 +38,54 @@ contient url, interpretation (OFFER|ACTOR|CONSTRAINT|NOT_RELEVANT|AMBIGUOUS) et 
 En cas d'ambiguïté, retourne UNRESOLVED ; n'invente aucun fait.""",
 }
 
+# A forced tool call is deliberately used instead of asking for JSON in prose.
+# Sonnet 5 can spend its text block on its reasoning; treating that block as the
+# delivery used to turn otherwise usable work into ``UNRESOLVED``.  The tool
+# keeps the model's conclusion separate from its internal/explanatory text and
+# gives the existing validators the same object they already expect.
+ENRICHMENT_TOOL = {
+    "name": "submit_enrichment",
+    "description": "Submit the one LawRadar enrichment result. Do not add commentary.",
+    "input_schema": {
+        "type": "object",
+        "additionalProperties": False,
+        "required": [
+            "schema", "agent", "signal_id", "status", "observed_at_utc",
+            "summary", "sources", "limitations", "details", "score",
+        ],
+        "properties": {
+            "schema": {"type": "string", "enum": ["lawradar-agent-enrichment-v1"]},
+            "agent": {"type": "string", "enum": ["press", "market"]},
+            "signal_id": {"type": "string", "minLength": 1},
+            "status": {"type": "string", "enum": ["COMPLETED", "NO_EVIDENCE", "UNRESOLVED", "FAILED"]},
+            "observed_at_utc": {"type": "string", "minLength": 1},
+            "summary": {"type": "string", "minLength": 1},
+            "sources": {"type": "array"},
+            "limitations": {"type": "array", "items": {"type": "string"}},
+            "details": {"type": "object"},
+            "score": {"type": "null"},
+        },
+    },
+}
+
 
 def _text(message: Any) -> str:
     for block in getattr(message, "content", []):
         if getattr(block, "type", None) == "text" and isinstance(getattr(block, "text", None), str):
             return block.text
     raise ValueError("La réponse Claude ne contient aucun JSON texte.")
+
+
+def _tool_result(message: Any) -> dict[str, Any] | None:
+    """Return the forced structured delivery when the SDK exposes a tool block."""
+    for block in getattr(message, "content", []):
+        if (
+            getattr(block, "type", None) == "tool_use"
+            and getattr(block, "name", None) == ENRICHMENT_TOOL["name"]
+            and isinstance(getattr(block, "input", None), dict)
+        ):
+            return block.input
+    return None
 
 
 def unresolved_enrichment(payload: dict[str, Any], agent: str, cause: str) -> dict[str, Any]:
@@ -70,6 +112,10 @@ def unresolved_enrichment(payload: dict[str, Any], agent: str, cause: str) -> di
         ]
         if not decisions:
             raise ValueError("Aucun candidat Presse traçable pour la sortie UNRESOLVED.")
+        limitations = [f"Réponse Claude non exploitable : {cause}"]
+        errors = candidates.get("errors", [])
+        if any("429" in str(item.get("error", "")) for item in errors if isinstance(item, dict)):
+            limitations.append("Collecte Presse partiellement limitée par un rate-limit temporaire (HTTP 429) ; retry différé requis.")
         return {
             "schema": "lawradar-agent-enrichment-v1",
             "agent": "press",
@@ -78,7 +124,7 @@ def unresolved_enrichment(payload: dict[str, Any], agent: str, cause: str) -> di
             "observed_at_utc": observed_at,
             "summary": "La qualification Presse n'a pas produit de réponse exploitable ; aucun lien média n'est conclu.",
             "sources": [],
-            "limitations": [f"Réponse Claude non exploitable : {cause}"],
+            "limitations": limitations,
             "details": {
                 "signal_hash": candidates.get("signal_hash"),
                 "window": candidates.get("window", {}),
@@ -146,9 +192,15 @@ def qualify(payload: dict[str, Any], agent: str, *, client: Any, model: str) -> 
         messages=[{"role": "user", "content": json.dumps(payload, ensure_ascii=False, separators=(",", ":"))}],
         thinking={"type": "adaptive"},
         output_config={"effort": "low"},
+        tools=[ENRICHMENT_TOOL],
+        tool_choice={"type": "tool", "name": ENRICHMENT_TOOL["name"]},
     )
     try:
-        result = json.loads(_text(message))
+        result = _tool_result(message)
+        if result is None:
+            # Kept solely for compatibility with older model snapshots and
+            # lightweight SDK test doubles. Production Sonnet 5 uses the tool.
+            result = json.loads(_text(message))
     except (ValueError, json.JSONDecodeError) as error:
         return unresolved_enrichment(payload, agent, str(error))
     if not _looks_like_enrichment(result, agent):

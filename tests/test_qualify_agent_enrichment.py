@@ -11,6 +11,14 @@ class _Block:
         self.text = text
 
 
+class _ToolBlock:
+    type = "tool_use"
+    name = "submit_enrichment"
+
+    def __init__(self, value):
+        self.input = value
+
+
 class _Messages:
     def __init__(self):
         self.request = None
@@ -46,6 +54,31 @@ class _EmptyClient:
         self.messages = _EmptyMessages()
 
 
+class _ToolMessages:
+    def __init__(self):
+        self.request = None
+
+    def create(self, **kwargs):
+        self.request = kwargs
+        return type("Response", (), {"content": [_ToolBlock({
+            "schema": "lawradar-agent-enrichment-v1",
+            "agent": "market",
+            "signal_id": "signal:1",
+            "status": "NO_EVIDENCE",
+            "observed_at_utc": "2026-09-04T12:00:00Z",
+            "summary": "Aucune observation directement liée.",
+            "sources": [],
+            "limitations": ["BOAMP est limité aux marchés publics."],
+            "details": {},
+            "score": None,
+        })]})()
+
+
+class _ToolClient:
+    def __init__(self):
+        self.messages = _ToolMessages()
+
+
 class QualifyAgentEnrichmentTests(unittest.TestCase):
     def test_press_uses_only_the_received_payload(self):
         client = _Client()
@@ -57,6 +90,7 @@ class QualifyAgentEnrichmentTests(unittest.TestCase):
         self.assertNotIn("temperature", client.messages.request)
         self.assertEqual(client.messages.request["thinking"], {"type": "adaptive"})
         self.assertEqual(client.messages.request["output_config"], {"effort": "low"})
+        self.assertEqual(client.messages.request["tool_choice"], {"type": "tool", "name": "submit_enrichment"})
 
     def test_rejects_unknown_agent_before_any_call(self):
         with self.assertRaisesRegex(ValueError, "inconnu"):
@@ -86,3 +120,10 @@ class QualifyAgentEnrichmentTests(unittest.TestCase):
         result = qualify(payload, "market", client=_EmptyClient(), model="test-model")
         self.assertEqual(result["status"], "UNRESOLVED")
         self.assertEqual(result["details"]["conclusions"][0]["interpretation"], "AMBIGUOUS")
+
+    def test_uses_forced_tool_input_instead_of_parsing_reasoning_text(self):
+        client = _ToolClient()
+        payload = {"schema": "lawradar-market-qualification-input-v1", "observations": {"observations": []}}
+        result = qualify(payload, "market", client=client, model="test-model")
+        self.assertEqual(result["status"], "NO_EVIDENCE")
+        self.assertEqual(client.messages.request["tools"][0]["name"], "submit_enrichment")
