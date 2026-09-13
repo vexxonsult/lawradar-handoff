@@ -2,6 +2,344 @@
   "schema": "lawradar-recycle-backlog-v1",
   "records": [
     {
+      "signal_id": "signal:10151b49ad131832",
+      "source_id": "jorf:JORFTEXT000054834748",
+      "captured_at_utc": "2026-09-13T11:53:53.020672+00:00",
+      "facts_sha256": "8d2cb1b31b87de8fd7c81516218e395c1c4e9877adb50554795d11172a2eb004",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:10151b49ad131832",
+        "evaluated_at_utc": "2026-09-13T11:53:53.020672+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : agrement_pac_qualite_resilience.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:10151b49ad131832",
+        "evaluated_at_utc": "2026-09-13T11:53:53.020672+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : agrement_pac_qualite_resilience.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:10151b49ad131832",
+        "identity": {
+          "stable_source_id": "source:02d7dc81437d9fa8",
+          "evidence_version": "sha256:9dce1938107f53d1fbf8ea53c003ebc0fd538be4be554dc8f60f1a9743dcd541"
+        },
+        "source": {
+          "source_id": "jorf:JORFTEXT000054834748",
+          "source_kind": "JORF",
+          "change": "NEW",
+          "evidence": {
+            "text_id": "JORFTEXT000054834748",
+            "nature": "ARRETE",
+            "nor": "ECOI2623495A",
+            "title": "Arrêté du 8 septembre 2026 modifiant l'arrêté du 2 juillet 2026 fixant la liste des modèles de pompes à chaleur agréés en matière de qualité et de résilience industrielle",
+            "publisher": "DILA / Journal officiel de la République française",
+            "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054834748",
+            "publication_date": "2026-09-13",
+            "journal_number": "0214",
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [],
+            "detail_status": null,
+            "official": {
+              "title": null,
+              "period": null
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": "AVAILABLE",
+              "text_sha256": "92a6572d225d85ea197615842f66251abf1fda93098e5b30cc6deee3549a4191",
+              "excerpt": "Publics concernés : fabricants, importateurs, distributeurs et acquéreurs de pompes à chaleur.\nObjet : le présent arrêté actualise la liste des modèles de pompes à chaleur agréés en matière de qualité et de résilience industrielle, fixée par l'arrêté du 2 juillet 2026.\nEntrée en vigueur : le présent arrêté entre en vigueur le lendemain de sa publication.\nApplication : le présent arrêté est pris en application du décret n° 2026-413 du 29 mai 2026 relatif à l'instruction des demandes d'agrément de modèles de pompes à chaleur en matière de qualité et de résilience industrielle.\nLe ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique et le ministre délégué auprès du ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique, chargé de l'industrie,\nVu le décret n° 2026-413 du 29 mai 2026 relatif à l'instruction des demandes d'agrément de modèles de pompes à chaleur en matière de qualité et de résilience industrielle ;\nVu l'arrêté du 29 mai 2026 fixant les conditions d'agrément des modèles de pompes à chaleur en matière de qualité et de résilience industrielle ;\nVu l'arrêté du 2 juillet 2026 fixant la liste des modèles de pompes à chaleur agréés en matière de qualité et de résilience industrielle ;\nVu la notification n° 2026/0482/FR adressée le 3 septembre 2026 à la Commission européenne,\nArrêtent :",
+              "excerpt_truncated": false,
+              "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260913-002329.tar.gz",
+              "archive_sha256": "389fff146cc31068a61446fd34db895df5f0cf2042fa134ae7e3dd076c7faf76"
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Texte publié modifiant la liste des modèles de pompes à chaleur agréés (qualité/résilience industrielle), périmètre industriel identifiable relevant de l'efficacité énergétique ; retenu pour classification sectorielle ENERGY_EFFICIENCY avec service B2B non réglementé possible."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "ELIGIBILITY_OR_CERTIFICATION",
+              "score": 2,
+              "terms": [
+                "agrement"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        },
+        "reading": {
+          "consequence": "L'arrêté mets à jour la liste officielle des modèles de pompes à chaleur reconnus comme agréés en qualité et résilience industrielle, ce qui conditionne certains avantages ou éligibilités liés à ces critères pour les modèles concernés.",
+          "affected_actors": [
+            "Fabricants de pompes à chaleur",
+            "Importateurs",
+            "Distributeurs",
+            "Acquéreurs/installateurs"
+          ],
+          "beneficiaries": [],
+          "constrained_parties": [
+            "Fabricants et importateurs de modèles non agréés"
+          ],
+          "potential_service_partners": [],
+          "unknowns": [
+            "Liste précise des modèles ajoutés ou retirés",
+            "Critères détaillés d'évaluation de l'agrément",
+            "Impact concret sur l'éligibilité à des aides ou CEE",
+            "Conséquences commerciales pour les modèles retirés de la liste"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "jorf:JORFTEXT000054834748"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:10151b49ad131832",
+          "title": "Arrêté modifiant la liste des modèles de pompes à chaleur agréés en matière de qualité et de résilience industrielle",
+          "keywords": [
+            "pompe à chaleur",
+            "agrément",
+            "qualité industrielle",
+            "résilience industrielle",
+            "liste de modèles"
+          ],
+          "affected_scope": [
+            "fabricants",
+            "importateurs",
+            "distributeurs",
+            "acquéreurs de pompes à chaleur"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "PUBLISHED",
+            "proof_status": "VERIFIED",
+            "effective_date": "2026-09-14",
+            "affected_scope": [
+              "fabricants",
+              "importateurs",
+              "distributeurs",
+              "acquéreurs de pompes à chaleur"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "agrement_pac_qualite_resilience",
+                "status": "UNKNOWN"
+              }
+            ],
+            "dependencies": [
+              {
+                "id": "decret_2026-413_instruction_demandes_agrement",
+                "status": "AVAILABLE"
+              },
+              {
+                "id": "arrete_2_juillet_2026_liste_modeles_agrees",
+                "status": "AVAILABLE"
+              }
+            ],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "PARTIAL"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:10151b49ad131832",
+          "evaluated_at_utc": "2026-09-13T11:53:53.020672+00:00",
+          "compliance": {
+            "status": "PASS",
+            "reasons": [
+              "Texte vérifié, dans le périmètre et actionnable."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Statut de l'autorisation inconnu : agrement_pac_qualite_resilience.",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:10151b49ad131832",
+        "title": "Arrêté modifiant la liste des modèles de pompes à chaleur agréés en matière de qualité et de résilience industrielle",
+        "keywords": [
+          "pompe à chaleur",
+          "agrément",
+          "qualité industrielle",
+          "résilience industrielle",
+          "liste de modèles"
+        ],
+        "affected_scope": [
+          "fabricants",
+          "importateurs",
+          "distributeurs",
+          "acquéreurs de pompes à chaleur"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-09-14",
+          "affected_scope": [
+            "fabricants",
+            "importateurs",
+            "distributeurs",
+            "acquéreurs de pompes à chaleur"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "agrement_pac_qualite_resilience",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "decret_2026-413_instruction_demandes_agrement",
+              "status": "AVAILABLE"
+            },
+            {
+              "id": "arrete_2_juillet_2026_liste_modeles_agrees",
+              "status": "AVAILABLE"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "PARTIAL"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-09-13T11:53:53.020672+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
       "signal_id": "signal:1af7945f2bade8b0",
       "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-la-creation-de-la-fiche-d-a3399.html",
       "captured_at_utc": "2026-09-12T17:45:19.645448+00:00",
@@ -1587,6 +1925,370 @@
       ]
     },
     {
+      "signal_id": "signal:c20abf6d37ae4200",
+      "source_id": "jorf:JORFTEXT000054834875",
+      "captured_at_utc": "2026-09-13T11:53:53.020672+00:00",
+      "facts_sha256": "c85c4dcc6459cb6b4ffd61fb3a30c4db148c247e761cd687a085a335fbdeb62c",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:c20abf6d37ae4200",
+        "evaluated_at_utc": "2026-09-13T11:53:53.020672+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : non spécifié.",
+            "Dépendance non vérifiée : non spécifié.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:c20abf6d37ae4200",
+        "evaluated_at_utc": "2026-09-13T11:53:53.020672+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : non spécifié.",
+            "Dépendance non vérifiée : non spécifié.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:c20abf6d37ae4200",
+        "identity": {
+          "stable_source_id": "source:cf27144641d5b9d9",
+          "evidence_version": "sha256:ba77edb174d6ff03630e7f8c8478f8112b6581dcfdc72e32405f4850da3164a8"
+        },
+        "source": {
+          "source_id": "jorf:JORFTEXT000054834875",
+          "source_kind": "JORF",
+          "change": "NEW",
+          "evidence": {
+            "text_id": "JORFTEXT000054834875",
+            "nature": "DECRET",
+            "nor": "VLOL2612626D",
+            "title": "Décret n° 2026-863 du 12 septembre 2026 relatif aux exigences de performance environnementale concernant l'installation d'un équipement de chauffage, de refroidissement ou de production d'eau chaude sanitaire dans un bâtiment",
+            "publisher": "DILA / Journal officiel de la République française",
+            "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054834875",
+            "publication_date": "2026-09-13",
+            "journal_number": "0214",
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [],
+            "detail_status": null,
+            "official": {
+              "title": null,
+              "period": null
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": "AVAILABLE",
+              "text_sha256": "e7c7f490b6a1fbb4f47a4a7c265010d73f8852a637889e6a61c822e11e1dfc7d",
+              "excerpt": "Publics concernés : maîtres d'ouvrage, maîtres d'œuvre, constructeurs et promoteurs, architectes, bureaux d'études thermique et environnement, économistes du bâtiment, contrôleurs techniques, entreprises du bâtiment, industriels des matériaux de construction et des systèmes techniques du bâtiment, fournisseurs d'énergie.\nObjet : définir les exigences de performance environnementale concernant l'installation d'un équipement de chauffage, de refroidissement ou de production d'eau chaude sanitaire dans un bâtiment.\nEntrée en vigueur : le décret entre en vigueur à compter du 1\ner\njanvier 2027.\nApplication : le décret est pris pour application de l'article L. 171-1 du code de la construction et de l'habitation et transpose les articles 7 et 11 de la directive (UE) 2024/1275 du Parlement européen et du Conseil du 24 avril 2024 sur la performance énergétique des bâtiments.\nLe Premier ministre,\nSur le rapport du ministre de la ville et du logement,\nVu la directive (UE) 2015/1535 du Parlement européen et du Conseil du 9 septembre 2015 prévoyant une procédure d'information dans le domaine des réglementations techniques et des règles relatives aux services de la société de l'information, et la notification n° 2026/0278/FR adressée le 5 juin 2026 à la Commission européenne ;\nVu la directive (UE) 2024/1275 du Parlement européen et du Conseil du 24 avril 2024 sur la performance énergétique des bâtiments, notamment ses articles 7 et 11 ;\nVu le code de la constructio\n[… extrait primaire compacté …]\nn ;\nVu l'avis du Conseil supérieur de la construction et de l'efficacité énergétique en date du 19 mai 2026 ;\nVu l'avis du Conseil supérieur de l'énergie en date du 26 mai 2026 ;\nVu l'avis du Conseil national d'évaluation des normes en date du 4 juin 2026 ;\nVu les observations formulées lors de la consultation du public réalisée du 18 mai au 8 juin 2026, en application de l'article L. 123-19-1 du code de l'environnement ;\nLe Conseil d'Etat (section des travaux publics) entendu,\nDécrète :",
+              "excerpt_truncated": true,
+              "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260913-002329.tar.gz",
+              "archive_sha256": "389fff146cc31068a61446fd34db895df5f0cf2042fa134ae7e3dd076c7faf76"
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Décret publié modifiant les exigences de performance environnementale pour l'installation d'équipements de chauffage/refroidissement/ECS, périmètre professionnel identifiable (bâtiment, énergie) ; conforme au routage Énergie/CEE."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 6,
+          "triggers": [
+            {
+              "kind": "SANCTION_OR_CONTROL",
+              "score": 3,
+              "terms": [
+                "controle"
+              ]
+            },
+            {
+              "kind": "TECHNICAL_TRANSITION",
+              "score": 2,
+              "terms": [
+                "efficacite energetique"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur",
+                "a compter du"
+              ]
+            }
+          ],
+          "scope_terms": [
+            "entreprise",
+            "fournisseur"
+          ],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        },
+        "reading": {
+          "consequence": "Le décret impose de nouvelles exigences de performance environnementale pour l'installation d'équipements de chauffage, refroidissement et production d'eau chaude sanitaire dans les bâtiments, applicables à compter du 1er janvier 2027, en transposition de la directive UE 2024/1275.",
+          "affected_actors": [
+            "maîtres d'ouvrage",
+            "maîtres d'œuvre",
+            "constructeurs et promoteurs",
+            "architectes",
+            "bureaux d'études thermique",
+            "économistes du bâtiment",
+            "contrôleurs techniques",
+            "entreprises du bâtiment",
+            "industriels des matériaux et systèmes techniques",
+            "fournisseurs d'énergie"
+          ],
+          "beneficiaries": [],
+          "constrained_parties": [
+            "maîtres d'ouvrage",
+            "constructeurs et promoteurs",
+            "entreprises du bâtiment",
+            "fournisseurs d'énergie"
+          ],
+          "potential_service_partners": [],
+          "unknowns": [
+            "contenu précis des exigences techniques non détaillé dans l'extrait",
+            "modalités de contrôle et sanctions non précisées",
+            "capital ou coût de mise en conformité non chiffré"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "jorf:JORFTEXT000054834875"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:c20abf6d37ae4200",
+          "title": "Décret n° 2026-863 relatif aux exigences de performance environnementale des équipements de chauffage, refroidissement et ECS dans un bâtiment",
+          "keywords": [
+            "performance énergétique",
+            "chauffage",
+            "refroidissement",
+            "eau chaude sanitaire",
+            "bâtiment",
+            "transposition directive UE"
+          ],
+          "affected_scope": [
+            "maîtres d'ouvrage",
+            "maîtres d'œuvre",
+            "constructeurs et promoteurs",
+            "architectes",
+            "bureaux d'études thermique",
+            "économistes du bâtiment",
+            "contrôleurs techniques",
+            "entreprises du bâtiment",
+            "industriels des matériaux et systèmes techniques",
+            "fournisseurs d'énergie"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "PUBLISHED",
+            "proof_status": "VERIFIED",
+            "effective_date": "2027-01-01",
+            "affected_scope": [
+              "maîtres d'ouvrage",
+              "entreprises du bâtiment",
+              "fournisseurs d'énergie"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "non spécifié",
+                "status": "UNKNOWN"
+              }
+            ],
+            "dependencies": [
+              {
+                "id": "non spécifié",
+                "status": "UNKNOWN"
+              }
+            ],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "MISSING"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:c20abf6d37ae4200",
+          "evaluated_at_utc": "2026-09-13T11:53:53.020672+00:00",
+          "compliance": {
+            "status": "PASS",
+            "reasons": [
+              "Texte vérifié, dans le périmètre et actionnable."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Statut de l'autorisation inconnu : non spécifié.",
+              "Dépendance non vérifiée : non spécifié.",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:c20abf6d37ae4200",
+        "title": "Décret n° 2026-863 relatif aux exigences de performance environnementale des équipements de chauffage, refroidissement et ECS dans un bâtiment",
+        "keywords": [
+          "performance énergétique",
+          "chauffage",
+          "refroidissement",
+          "eau chaude sanitaire",
+          "bâtiment",
+          "transposition directive UE"
+        ],
+        "affected_scope": [
+          "maîtres d'ouvrage",
+          "maîtres d'œuvre",
+          "constructeurs et promoteurs",
+          "architectes",
+          "bureaux d'études thermique",
+          "économistes du bâtiment",
+          "contrôleurs techniques",
+          "entreprises du bâtiment",
+          "industriels des matériaux et systèmes techniques",
+          "fournisseurs d'énergie"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2027-01-01",
+          "affected_scope": [
+            "maîtres d'ouvrage",
+            "entreprises du bâtiment",
+            "fournisseurs d'énergie"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "non spécifié",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "non spécifié",
+              "status": "UNKNOWN"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-09-13T11:53:53.020672+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
       "signal_id": "signal:cb41284df04e6601",
       "source_id": "jorf:JORFTEXT000054794248",
       "captured_at_utc": "2026-09-04T12:02:25.410828+00:00",
@@ -2398,7 +3100,7 @@
     }
   ],
   "queue_audit": {
-    "processed_count": 216,
+    "processed_count": 434,
     "unrecoverable_queue_entries": [
       {
         "fingerprint": "490853c49376a298cfdbefd3d9015889f24dfb149e616097ae78c39d2661a25b",
@@ -3078,6 +3780,26 @@
       {
         "fingerprint": "ee4b8be17a73398e0a9c9c1815964136eee212f07eb19f44175594f8a84866bc",
         "source_id": "jorf:JORFTEXT000054834368",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "92bc6c52d7bcb8bf4dd4fbdedaa149f894e96c75d22406c7a6db05197028d220",
+        "source_id": "jorf:JORFTEXT000054834758",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "d0b7d9c7b1b005d9e5c1899ccf712165f98bb949728c18239f9e08f9bc9bb05e",
+        "source_id": "jorf:JORFTEXT000054835040",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "95de488d0c58816db06db3942e930c7ee20af8dcd003f196eaeab5cb732547db",
+        "source_id": "jorf:JORFTEXT000054835044",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "c3a6bc36e785302dc1981e8bea267a5d5b97bf3e8fedc2ad30c3d64968c4ce5a",
+        "source_id": "jorf:JORFTEXT000054835046",
         "reason": "PRIMARY_TEXT_EMPTY"
       }
     ],
