@@ -1,0 +1,38 @@
+{
+  "schema": "lawradar-universal-signal-v2",
+  "run": {
+    "id": "34895939385",
+    "attempt": "1",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/34895939385",
+    "commit": "09d10181191478c3451ec166923c4dedc3479779",
+    "report_date": "2026-09-13"
+  },
+  "context": {
+    "coverage": "0 candidat envoyé au modèle",
+    "delta_changed_sources": [
+      "consultdd-latest.json"
+    ],
+    "handled_source_files": [
+      "jorf-summaries-latest.json",
+      "consultdd-latest.json"
+    ],
+    "rule": "Preuves locales diffées uniquement ; réapparition historique et routine administrative explicite = filtrées avec trace ; les autres textes primaires disponibles reçoivent une lecture factuelle. Une friction détectée ouvre seulement une enquête, jamais une opportunité confirmée ; inconnu = UNRESOLVED.",
+    "prefilter_audit": {
+      "excluded_historical_candidates": [],
+      "excluded_routine_candidates": [],
+      "excluded_no_economic_friction_candidates": [],
+      "deterministically_unresolved_candidates": []
+    }
+  },
+  "signals": [],
+  "money_flows": [],
+  "quality": {
+    "opportunity_count": 0,
+    "unresolved_count": 0,
+    "readings_available_count": 0,
+    "evidence_reference_count": 0,
+    "money_flow_count": 0,
+    "money_flow_unlinked_count": 0,
+    "limitation": "Les enrichissements sont vides tant qu'aucun agent dédié n'a produit une sortie sourcée."
+  }
+}
