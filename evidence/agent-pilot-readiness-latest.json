@@ -1,17 +1,17 @@
 {
   "schema": "lawradar-agent-pilot-readiness-v1",
-  "generated_at_utc": "2026-09-13T11:53:52.970917+00:00",
+  "generated_at_utc": "2026-09-14T15:16:35.410653+00:00",
   "source_run": {
-    "id": "34755614648",
+    "id": "34861044041",
     "attempt": "1",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/34755614648",
-    "commit": "429ea927e6b922ade497deb1dfd8b55587e9688c",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/34861044041",
+    "commit": "a9704914ab32ae955e6482e2ef75229aaffc5fe0",
     "report_date": "2026-09-13"
   },
   "signals": [
     {
-      "signal_id": "signal:fd10d94bd570a4a0",
-      "source_id": "jorf:JORFTEXT000054834581",
+      "signal_id": "signal:3797715bd33cad4b",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/concertation-continue-agir-pour-restaurer-la-a3322.html",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -22,247 +22,8 @@
       "filters": null
     },
     {
-      "signal_id": "signal:04d4dc7c3c90a69a",
-      "source_id": "jorf:JORFTEXT000054834607",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:348b31d1da6f536d",
-      "source_id": "jorf:JORFTEXT000054834615",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:84cf4d8d1aa1b02a",
-      "source_id": "jorf:JORFTEXT000054834627",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:3745064ce4197aec",
-      "source_id": "jorf:JORFTEXT000054834674",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:b4ee1c07c294184d",
-      "source_id": "jorf:JORFTEXT000054834683",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:2e6336f34a6adf74",
-      "source_id": "jorf:JORFTEXT000054834698",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:077145da20408c29",
-      "source_id": "jorf:JORFTEXT000054834711",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:be17110868bb0efe",
-      "source_id": "jorf:JORFTEXT000054834730",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:10151b49ad131832",
-      "source_id": "jorf:JORFTEXT000054834748",
-      "radar_status": "RETAINED",
-      "status": "READY_FOR_PILOTS",
-      "ready_for_pilots": true,
-      "recommended_next_step": "RUN_PRESS_THEN_MARKET_IF_SCOPE_FITS",
-      "reasons": [
-        "Le signal retenu porte des faits valides et passe la porte opérateur."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:10151b49ad131832",
-        "evaluated_at_utc": "2026-09-13T11:53:52.970917+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : agrement_pac_qualite_resilience.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "PASS",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
-            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:631586598b72a394",
-      "source_id": "jorf:JORFTEXT000054834812",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:ab92392f2379b4c4",
-      "source_id": "jorf:JORFTEXT000054834828",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:c20abf6d37ae4200",
-      "source_id": "jorf:JORFTEXT000054834875",
-      "radar_status": "RETAINED",
-      "status": "READY_FOR_PILOTS",
-      "ready_for_pilots": true,
-      "recommended_next_step": "RUN_PRESS_THEN_MARKET_IF_SCOPE_FITS",
-      "reasons": [
-        "Le signal retenu porte des faits valides et passe la porte opérateur."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:c20abf6d37ae4200",
-        "evaluated_at_utc": "2026-09-13T11:53:52.970917+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : non spécifié.",
-            "Dépendance non vérifiée : non spécifié.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "PASS",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
-            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:1cd047e2178a595f",
-      "source_id": "jorf:JORFTEXT000054834938",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:0080547581407232",
-      "source_id": "jorf:JORFTEXT000054834981",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:bd8b8e46cbd89797",
-      "source_id": "jorf:JORFTEXT000054834999",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:8daadb097413fac4",
-      "source_id": "jorf:JORFTEXT000054835010",
+      "signal_id": "signal:4d0dd82ba53bfc42",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/consultation-du-public-portant-sur-le-projet-d-a3424.html",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -274,11 +35,10 @@
     }
   ],
   "summary": {
-    "signal_count": 17,
-    "ready_for_pilots_count": 2,
+    "signal_count": 2,
+    "ready_for_pilots_count": 0,
     "counts_by_status": {
-      "NOT_RETAINED": 15,
-      "READY_FOR_PILOTS": 2
+      "NOT_RETAINED": 2
     }
   }
 }

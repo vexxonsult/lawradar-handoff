@@ -1,0 +1,32 @@
+{
+  "schema": "lawradar-universal-signal-archive-v1",
+  "status": "ARCHIVED",
+  "run_id": "34861044041",
+  "run_attempt": "1",
+  "report_date": "2026-09-13",
+  "archive_path": "evidence/universal-signals/v2/2026/09/run-34861044041-attempt-1.json",
+  "sha256": "a292cdcc651e53c9f7013407c43a335d64e207b9f1fe3fe4e1c9e279dfed0d31",
+  "signal_count": 2,
+  "prefilter_counts": {
+    "excluded_historical_candidates": 0,
+    "excluded_routine_candidates": 0,
+    "excluded_no_economic_friction_candidates": 0,
+    "deterministically_unresolved_candidates": 0
+  },
+  "signals": [
+    {
+      "signal_id": "signal:3797715bd33cad4b",
+      "stable_source_id": "source:c7ac257711697745",
+      "evidence_version": "sha256:f6d6b3395f3baf4a494c97b7c315e0588d16e9ea46501cb34e45fb4eeaddf9dc",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/concertation-continue-agir-pour-restaurer-la-a3322.html",
+      "radar_status": "DISCARDED"
+    },
+    {
+      "signal_id": "signal:4d0dd82ba53bfc42",
+      "stable_source_id": "source:e4a6d8a624236a80",
+      "evidence_version": "sha256:25ae9aee25ad11d4fe842937ba04c585db164417d38571433e40bdd7014059cd",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/consultation-du-public-portant-sur-le-projet-d-a3424.html",
+      "radar_status": "DISCARDED"
+    }
+  ]
+}
