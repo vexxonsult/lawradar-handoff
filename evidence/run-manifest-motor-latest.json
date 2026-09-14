@@ -1,64 +1,59 @@
 {
   "schema": "lawradar-run-manifest-v1",
   "run": {
-    "id": "34861044041",
+    "id": "34889367632",
     "attempt": "1",
     "kind": "motor",
-    "status": "success",
+    "status": "skipped",
     "workflow": "Moteur LawRadar — livraison structurée",
-    "commit": "a9704914ab32ae955e6482e2ef75229aaffc5fe0",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/34861044041",
-    "created_at_utc": "2026-09-14T15:16:35.541469+00:00",
-    "duration_seconds": 10
+    "commit": "062c457213e56e20e315abd23e0c94acb4d5338e",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/34889367632",
+    "created_at_utc": "2026-09-14T19:51:14.343662+00:00",
+    "duration_seconds": 1,
+    "reason": "Aucun candidat JORF ou ConsultDD à interpréter."
   },
   "inputs": [
     {
-      "path": "out/motor-input-resolved.json",
+      "path": "evidence/delta-latest.json",
       "exists": true,
-      "bytes": 15818,
-      "sha256": "62e829f7ba9a622d490414d4fee60ea345382f34a98bd0c69eedeb30a1b21868"
+      "bytes": 1990,
+      "sha256": "1cb8c4922e19d5ee796409afd1de370f4137ef74204847e1f0f81638620bc48f"
     },
     {
-      "path": "config/moteur-delivery-schema.json",
+      "path": "evidence/jorf-summaries-latest.json",
       "exists": true,
-      "bytes": 2758,
-      "sha256": "ddbf26b46f7f620d7e0d5a553cac4c42940e07017054a74086af7ce647c58cee"
+      "bytes": 1690770,
+      "sha256": "2fdaf526ab696aabfe6ddc7c10d6b00bbd2bc318e2e7888dec7afa1d6740f7a4"
+    },
+    {
+      "path": "evidence/consultdd-latest.json",
+      "exists": true,
+      "bytes": 14657,
+      "sha256": "20f349f9314f1083391fe94e83d54717a2b1e42a49dd8377f63b4fd3b20972aa"
+    },
+    {
+      "path": "out/motor-input-skipped.json",
+      "exists": true,
+      "bytes": 751,
+      "sha256": "1e68a64f998562e572d6336ee11747f3c82b6797c89fe7c8307e5edabb9fb63a"
     }
   ],
   "outputs": [
     {
-      "path": "out/motor-delivery.json",
+      "path": "out/universal-signal-skipped.json",
       "exists": true,
-      "bytes": 5138,
-      "sha256": "0448546f02b8a173d6b84d131b160fdb89185624d1c755b497d4c61074632862"
+      "bytes": 1430,
+      "sha256": "1145fe06194751618575ffe47f9fe59699857dfd32f7e43fc533cfa1fd240648"
     },
     {
-      "path": "out/dashboard.html",
+      "path": "out/universal-signal-archive-skipped.json",
       "exists": true,
-      "bytes": 2882,
-      "sha256": "572fb7f455793c4bfb4b450789818d4afd3264d7f5ad50b6036e6423f4be5cf5"
-    },
-    {
-      "path": "out/universal-signal.json",
-      "exists": true,
-      "bytes": 10984,
-      "sha256": "a292cdcc651e53c9f7013407c43a335d64e207b9f1fe3fe4e1c9e279dfed0d31"
-    },
-    {
-      "path": "out/universal-signal-archive.json",
-      "exists": true,
-      "bytes": 1586,
-      "sha256": "ba388252fbcb3b93db9a646ac3621aa52eb1497b27e83e503d140bb0350b3861"
-    },
-    {
-      "path": "out/agent-pilot-readiness.json",
-      "exists": true,
-      "bytes": 1411,
-      "sha256": "34bc76639160bbe9ef7b767064f64970c545980d67631e897b96b4bc9d6f71b5"
+      "bytes": 745,
+      "sha256": "685f80d12c687f0b3d8bf57d59072e2a1ab5ff267372686eefbedd495cd90776"
     }
   ],
   "cost_estimate": {
-    "status": "not_reported_by_provider",
+    "status": "not_called",
     "model": null,
     "note": "Le fournisseur ne publie pas le détail des tokens dans ce run ; la durée et le nombre d'appels restent mesurés."
   },
