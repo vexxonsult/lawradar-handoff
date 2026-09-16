@@ -1,0 +1,482 @@
+{
+  "schema": "lawradar-universal-signal-v2",
+  "run": {
+    "id": "35137320103",
+    "attempt": "1",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/35137320103",
+    "commit": "55a3c5f1d654e44d14740aa2a082993eea8db7e8",
+    "report_date": "2026-09-16"
+  },
+  "context": {
+    "coverage": "0 candidat envoyé au modèle",
+    "delta_changed_sources": [
+      "jorf-summaries-latest.json",
+      "consultdd-latest.json"
+    ],
+    "handled_source_files": [
+      "jorf-summaries-latest.json",
+      "consultdd-latest.json"
+    ],
+    "rule": "Preuves locales diffées uniquement ; réapparition historique et routine administrative explicite = filtrées avec trace ; les autres textes primaires disponibles reçoivent une lecture factuelle. Une friction détectée ouvre seulement une enquête, jamais une opportunité confirmée ; inconnu = UNRESOLVED.",
+    "prefilter_audit": {
+      "excluded_historical_candidates": [
+        {
+          "source_id": "jorf:JORFTEXT000000312165",
+          "publication_date": "1988-05-05",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000314853",
+          "publication_date": "1901-12-25",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000435515",
+          "publication_date": "2004-03-02",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000469540",
+          "publication_date": "2007-10-16",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000870453",
+          "publication_date": "1989-12-23",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000023182427",
+          "publication_date": "2010-12-09",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000023317481",
+          "publication_date": "2010-12-30",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000025414042",
+          "publication_date": "2012-02-29",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000028056664",
+          "publication_date": "2013-10-12",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000029313296",
+          "publication_date": "2014-08-01",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000033087130",
+          "publication_date": "2016-09-04",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000033283857",
+          "publication_date": "2016-10-22",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000042153254",
+          "publication_date": "2020-07-26",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000044156159",
+          "publication_date": "2021-10-03",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000046114630",
+          "publication_date": "2022-07-31",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000047571442",
+          "publication_date": "2023-05-23",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000048276415",
+          "publication_date": "2023-10-29",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000049205200",
+          "publication_date": "2024-02-28",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000051391327",
+          "publication_date": "2025-03-29",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000052990725",
+          "publication_date": "2025-12-05",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000053042351",
+          "publication_date": "2025-12-18",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000053642406",
+          "publication_date": "2026-03-10",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000053717269",
+          "publication_date": "2026-03-26",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000053743387",
+          "publication_date": "2026-04-01",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        }
+      ],
+      "excluded_routine_candidates": [
+        {
+          "source_id": "jorf:JORFTEXT000054842205",
+          "title": "Décision du 9 septembre 2026 portant délégation de signature (budget annexe « publications officielles et information administrative »)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842215",
+          "title": "Arrêté du 24 août 2026 modifiant l'arrêté du 6 mars 2024 relatif aux concours d'admission à l'Ecole spéciale militaire de Saint-Cyr à compter des concours se déroulant en 2026",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842233",
+          "title": "Arrêté du 3 septembre 2026 fixant la liste des diplômes autorisant à se présenter aux concours externes sur titres pour l'accès au corps des attachés de la direction générale de la sécurité extérieure",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842277",
+          "title": "Décision du 10 septembre 2026 portant délégation de signature (état-major de la marine)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842320",
+          "title": "Décision du 7 septembre 2026 portant délégation de signature (direction de l'action européenne et internationale)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842378",
+          "title": "Décision du 4 septembre 2026 portant délégation de signature (direction des affaires criminelles et des grâces)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842484",
+          "title": "Arrêté du 11 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de concours d'accès à la deuxième et à la quatrième catégories des emplois de professeur des établissements d'enseignement agricole privés mentionnés à l'article L. 813-8 du code rural et de la pêche maritime et fixant le nombre de places offertes",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842506",
+          "title": "Arrêté du 14 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de concours pour le recrutement de conseillers principaux d'éducation des établissements d'enseignement agricole et fixant le nombre de places offertes",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842524",
+          "title": "Arrêté du 14 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de concours pour le recrutement de professeurs de lycée professionnel agricole et fixant le nombre de places offertes",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842542",
+          "title": "Arrêté du 14 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de concours pour le recrutement de professeurs certifiés de l'enseignement agricole et fixant le nombre de places offertes",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842562",
+          "title": "Décision du 26 août 2026 modifiant la décision du 22 septembre 2021 portant délégation de signature (direction des affaires financières)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842572",
+          "title": "Décision du 14 septembre 2026 portant délégation de signature (direction générale des affaires politiques et de sécurité)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842605",
+          "title": "Décision du 15 septembre 2026 portant délégation de signature (direction générale de la mondialisation)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842618",
+          "title": "Arrêté du 10 septembre 2026 portant délégation de signature au cabinet de la ministre de la santé, des familles, de l'autonomie et des personnes handicapées",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842719",
+          "title": "Arrêté du 14 septembre 2026 portant ouverture de crédits de fonds de concours",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842727",
+          "title": "Décision du 26 août 2026 modifiant la décision du 22 septembre 2021 portant délégation de signature (direction des affaires financières)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842753",
+          "title": "Arrêté du 11 septembre 2026 portant nomination (directions départementales interministérielles)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842760",
+          "title": "Arrêté du 14 septembre 2026 portant nomination (directions départementales interministérielles)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842767",
+          "title": "Arrêté du 14 septembre 2026 portant nomination (secrétariats généraux pour les affaires régionales)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842775",
+          "title": "Arrêté du 14 septembre 2026 portant nomination (administration centrale)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842785",
+          "title": "Arrêté du 14 septembre 2026 modifiant les arrêtés du 5 mai 2026 et du 20 juillet 2026 portant nomination dans le grade d'attaché principal d'administration de l'Etat au titre de l'année 2026",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842790",
+          "title": "Arrêté du 24 juin 2026 portant nomination au conseil d'administration de France Travail",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842792",
+          "title": "Arrêté du 3 septembre 2026 portant admission à la retraite (inspection du travail)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842794",
+          "title": "Arrêté du 6 septembre 2026 portant admission à la retraite (inspection du travail)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842797",
+          "title": "Arrêté du 11 septembre 2026 portant nomination d'un directeur régional adjoint de l'environnement, de l'aménagement et du logement (région Auvergne-Rhône-Alpes)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842799",
+          "title": "Arrêté du 11 septembre 2026 portant nomination d'une directrice régionale et interdépartementale adjointe de l'environnement, de l'aménagement et des transports de la région Ile-de-France",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842801",
+          "title": "Arrêté du 11 septembre 2026 portant nomination au conseil stratégique du Centre d'études et d'expertise sur les risques, l'environnement, la mobilité et l'aménagement (CEREMA)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842803",
+          "title": "Arrêté du 14 septembre 2026 portant nomination (administration centrale)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842808",
+          "title": "Arrêté du 14 septembre 2026 portant nomination (administration centrale)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842814",
+          "title": "Arrêté du 10 septembre 2026 portant nomination à un emploi de direction du ministère de la justice (groupe III)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842816",
+          "title": "Arrêté du 14 septembre 2026 modifiant l'arrêté du 15 juin 2026 portant nomination au Conseil national des tribunaux de commerce",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842819",
+          "title": "Arrêté du 14 septembre 2026 portant admission à la retraite (tribunaux administratifs et cours administratives d'appel)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842822",
+          "title": "Arrêté du 10 septembre 2026 portant réintégration et admission à la retraite (corps des mines)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842825",
+          "title": "Arrêté du 8 septembre 2026 portant admission à la retraite (inspecteurs de santé publique vétérinaire)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842827",
+          "title": "Arrêté du 10 septembre 2026 portant nomination d'une directrice régionale adjointe de l'alimentation, de l'agriculture et de la forêt (Nouvelle-Aquitaine)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842830",
+          "title": "Arrêté du 8 septembre 2026 portant cessation de fonctions et nomination au cabinet du ministre de l'éducation nationale",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842839",
+          "title": "Arrêté du 10 septembre 2026 portant nomination au cabinet du ministre délégué auprès du ministre de l'Europe et des affaires étrangères, chargé de l'Europe",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842846",
+          "title": "Arrêté du 10 septembre 2026 portant nomination (administration centrale)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842853",
+          "title": "Arrêté du 14 septembre 2026 portant nomination (administration centrale)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842859",
+          "title": "Arrêté du 10 septembre 2026 portant cessation de fonctions et nomination au cabinet de la ministre de la santé, des familles, de l'autonomie et des personnes handicapées",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842868",
+          "title": "Arrêté du 11 septembre 2026 portant nomination du rapporteur général du comité technique et du conseil stratégique de l'innovation en santé",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842872",
+          "title": "Arrêté du 5 septembre 2026 portant nomination au conseil d'administration de l'établissement public d'aménagement Ecovallée-Plaine du Var",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842874",
+          "title": "Arrêté du 14 septembre 2026 portant nomination au cabinet de la ministre de l'aménagement du territoire et de la décentralisation",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842882",
+          "title": "Décret du 14 septembre 2026 portant nomination (direction régionale des finances publiques)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842892",
+          "title": "Arrêté du 9 septembre 2026 portant nomination au cabinet du ministre de l'action et des comptes publics",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842900",
+          "title": "Arrêté du 9 septembre 2026 portant nomination au cabinet du ministre de l'action et des comptes publics",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842908",
+          "title": "Arrêté du 10 septembre 2026 portant nomination (agents comptables)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842910",
+          "title": "Arrêté du 11 septembre 2026 portant nomination (agents comptables)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842975",
+          "title": "Commissions et organes de contrôle",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842982",
+          "title": "Avis de vacance d'un emploi de sous-directeur (administration centrale)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842998",
+          "title": "Avis de vacance d'un emploi de directeur adjoint de la direction départementale des finances publiques de la Manche",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054843021",
+          "title": "Demandes de changement de nom (Accès protégé textes 92 à 96)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        }
+      ],
+      "excluded_no_economic_friction_candidates": [
+        {
+          "source_id": "jorf:JORFTEXT000054842917",
+          "title": "Avis relatif à l'extension d'un avenant et d'un accord conclus dans le cadre de la convention collective nationale du personnel sédentaire des entreprises de navigation",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842922",
+          "title": "Avis relatif à l'extension d'accords conclus dans le cadre de la convention collective nationale du bricolage",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842927",
+          "title": "Avis relatif à l'extension d'un avenant à la convention collective nationale des distributeurs conseils hors domicile",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842932",
+          "title": "Avis relatif à l'extension d'un avenant à la convention collective de la branche du secteur des particuliers employeurs et de l'emploi à domicile",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054842937",
+          "title": "Avis relatif à l'extension d'un avenant à la convention collective nationale de la charcuterie de détail",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        }
+      ],
+      "deterministically_unresolved_candidates": []
+    }
+  },
+  "signals": [],
+  "money_flows": [],
+  "quality": {
+    "opportunity_count": 0,
+    "unresolved_count": 0,
+    "readings_available_count": 0,
+    "evidence_reference_count": 0,
+    "money_flow_count": 0,
+    "money_flow_unlinked_count": 0,
+    "limitation": "Les enrichissements sont vides tant qu'aucun agent dédié n'a produit une sortie sourcée."
+  }
+}
