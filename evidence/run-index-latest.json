@@ -1,8 +1,34 @@
 {
   "schema": "lawradar-run-index-v1",
-  "generated_at_utc": "2026-09-17T20:20:37.250688+00:00",
+  "generated_at_utc": "2026-09-18T08:13:53.358985+00:00",
   "purpose": "Registre technique des derniers runs, sans interprétation des preuves.",
   "runs": [
+    {
+      "kind": "collector",
+      "status": "success",
+      "reason": null,
+      "run_id": "35323138244",
+      "run_url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/35323138244",
+      "workflow": "Collecte primaire DILA JORF",
+      "commit": "461e706212a25823e79edd1497072ddc2d465476",
+      "created_at_utc": "2026-09-18T08:13:53.321875+00:00",
+      "duration_seconds": 121,
+      "inputs": {
+        "count": 5,
+        "missing": 0
+      },
+      "outputs": {
+        "count": 2,
+        "missing": 0
+      },
+      "cost": {
+        "status": "not_reported_by_provider",
+        "model": null,
+        "note": "Le fournisseur ne publie pas le détail des tokens dans ce run ; la durée et le nombre d'appels restent mesurés."
+      },
+      "errors": [],
+      "retries": 0
+    },
     {
       "kind": "motor",
       "status": "skipped",
@@ -23,32 +49,6 @@
       },
       "cost": {
         "status": "not_called",
-        "model": null,
-        "note": "Le fournisseur ne publie pas le détail des tokens dans ce run ; la durée et le nombre d'appels restent mesurés."
-      },
-      "errors": [],
-      "retries": 0
-    },
-    {
-      "kind": "collector",
-      "status": "success",
-      "reason": null,
-      "run_id": "35200573316",
-      "run_url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/35200573316",
-      "workflow": "Collecte primaire DILA JORF",
-      "commit": "6fb11f4c6869ef14189e86a2543faebfd49be695",
-      "created_at_utc": "2026-09-17T08:38:28.623209+00:00",
-      "duration_seconds": 118,
-      "inputs": {
-        "count": 5,
-        "missing": 0
-      },
-      "outputs": {
-        "count": 2,
-        "missing": 0
-      },
-      "cost": {
-        "status": "not_reported_by_provider",
         "model": null,
         "note": "Le fournisseur ne publie pas le détail des tokens dans ce run ; la durée et le nombre d'appels restent mesurés."
       },
