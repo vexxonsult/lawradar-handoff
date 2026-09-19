@@ -1,59 +1,35 @@
 {
   "schema": "lawradar-run-manifest-v1",
   "run": {
-    "id": "35386934162",
+    "id": "35430922207",
     "attempt": "1",
     "kind": "motor",
-    "status": "skipped",
+    "status": "pending",
     "workflow": "Moteur LawRadar — livraison structurée",
-    "commit": "c73203ea017c9f0aef624d403a6d11434f8eab19",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/35386934162",
-    "created_at_utc": "2026-09-18T19:37:20.720318+00:00",
-    "duration_seconds": 1,
-    "reason": "72 réapparition(s) historique(s) hors fenêtre quotidienne, non envoyée(s) au moteur."
+    "commit": "b47bdeedfe12139bce19d8cf1e2b7ef3200fb96f",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/35430922207",
+    "created_at_utc": "2026-09-19T08:02:40.746923+00:00",
+    "duration_seconds": 7,
+    "reason": "Message Batch Anthropic en cours ; reprise sans nouvelle soumission au prochain run."
   },
   "inputs": [
     {
-      "path": "evidence/delta-latest.json",
+      "path": "out/motor-input-resolved.json",
       "exists": true,
-      "bytes": 2070,
-      "sha256": "344dab93393a1bbe4c25186327bf7f560da079faa09df561633905d9b0b009cc"
-    },
-    {
-      "path": "evidence/jorf-summaries-latest.json",
-      "exists": true,
-      "bytes": 1630991,
-      "sha256": "db40e75ed622c530e80f875bfa3a0ef28d7ac5d3b63da614fa114e51634e6f36"
-    },
-    {
-      "path": "evidence/consultdd-latest.json",
-      "exists": true,
-      "bytes": 690,
-      "sha256": "ec2ddf56d91aa8331315c6421855916d7822c54f606ecc57e6602b1e0c8395f0"
-    },
-    {
-      "path": "out/motor-input-skipped.json",
-      "exists": true,
-      "bytes": 25466,
-      "sha256": "b425532747befe71de673e60961c92f3f161a2836cb9a18e3e5042be3886009c"
+      "bytes": 90983,
+      "sha256": "66c8c856f9a10cee9ae37322d09d15b58d47b86d7caf2e533250d7d0768a7676"
     }
   ],
   "outputs": [
     {
-      "path": "out/universal-signal-skipped.json",
+      "path": "evidence/motor-batch-latest.json",
       "exists": true,
-      "bytes": 28595,
-      "sha256": "56470b8a605a0287598b90e158361cad1a15a0a1f33b5a83befe5afc59010021"
-    },
-    {
-      "path": "out/universal-signal-archive-skipped.json",
-      "exists": true,
-      "bytes": 747,
-      "sha256": "b6f1704769222eff169cd298e8076f71d60ca9fe008a67cc44de26f5603728a1"
+      "bytes": 94989,
+      "sha256": "cf5207998ecdf0ebd9ece4d6f6f92121181faed78ead0b604459f53adc6d9783"
     }
   ],
   "cost_estimate": {
-    "status": "not_called",
+    "status": "not_reported_by_provider",
     "model": null,
     "note": "Le fournisseur ne publie pas le détail des tokens dans ce run ; la durée et le nombre d'appels restent mesurés."
   },
