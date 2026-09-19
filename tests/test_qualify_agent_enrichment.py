@@ -71,6 +71,7 @@ class _ToolMessages:
             "limitations": ["BOAMP est limité aux marchés publics."],
             "details": {},
             "score": None,
+            "provider_trace": "metadata outside the LawRadar contract",
         })]})()
 
 
@@ -126,4 +127,5 @@ class QualifyAgentEnrichmentTests(unittest.TestCase):
         payload = {"schema": "lawradar-market-qualification-input-v1", "observations": {"observations": []}}
         result = qualify(payload, "market", client=client, model="test-model")
         self.assertEqual(result["status"], "NO_EVIDENCE")
+        self.assertNotIn("provider_trace", result)
         self.assertEqual(client.messages.request["tools"][0]["name"], "submit_enrichment")

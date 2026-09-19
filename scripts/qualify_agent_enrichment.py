@@ -171,12 +171,22 @@ def unresolved_enrichment(payload: dict[str, Any], agent: str, cause: str) -> di
     raise ValueError("Agent de qualification inconnu.")
 
 
-def _looks_like_enrichment(value: Any, agent: str) -> bool:
+def _normalise_enrichment(value: Any, agent: str) -> dict[str, Any] | None:
+    """Keep the contract fields when the provider appends harmless metadata.
+
+    Some Claude tool responses carry provider-side trace metadata alongside the
+    requested object.  Treating that harmless envelope extension as a total
+    failure discarded an otherwise structured answer.  We deliberately keep
+    only the declared fields; specialised validators below still verify every
+    source, decision and status before any result is used.
+    """
     required = {
         "schema", "agent", "signal_id", "status", "observed_at_utc",
         "summary", "sources", "limitations", "details", "score",
     }
-    return isinstance(value, dict) and value.get("agent") == agent and set(value) == required
+    if not isinstance(value, dict) or value.get("agent") != agent or not required <= set(value):
+        return None
+    return {key: value[key] for key in required}
 
 
 def qualify(payload: dict[str, Any], agent: str, *, client: Any, model: str) -> dict[str, Any]:
@@ -203,7 +213,8 @@ def qualify(payload: dict[str, Any], agent: str, *, client: Any, model: str) -> 
             result = json.loads(_text(message))
     except (ValueError, json.JSONDecodeError) as error:
         return unresolved_enrichment(payload, agent, str(error))
-    if not _looks_like_enrichment(result, agent):
+    result = _normalise_enrichment(result, agent)
+    if result is None:
         return unresolved_enrichment(payload, agent, "Le JSON Claude ne respecte pas le contrat d'enrichissement.")
     return result
 

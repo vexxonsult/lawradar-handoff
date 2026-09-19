@@ -19,6 +19,10 @@ from typing import Any
 SCHEMA = "lawradar-investigation-queue-v1"
 MAX_AUTOMATIC_ATTEMPTS = 2
 RETRY_DELAY = timedelta(hours=6)
+# Bump this only when a deterministic qualification-contract repair makes a
+# previously counted technical retry non-comparable. It grants one clean retry,
+# not an unlimited loop.
+QUALIFICATION_CONTRACT_VERSION = "tool-envelope-v2"
 
 
 def _parse(value: Any) -> datetime | None:
@@ -141,7 +145,12 @@ def build(context: dict[str, Any], readiness: dict[str, Any], previous: dict[str
             continue
         old_item = old.get(signal_id, {})
         automatic = any(item["automatic_retry"] for item in questions)
-        previous_attempts = int(old_item.get("automatic_attempts", 0)) if isinstance(old_item.get("automatic_attempts", 0), int) else 0
+        same_contract = old_item.get("qualification_contract_version") == QUALIFICATION_CONTRACT_VERSION
+        previous_attempts = (
+            int(old_item.get("automatic_attempts", 0))
+            if same_contract and isinstance(old_item.get("automatic_attempts", 0), int)
+            else 0
+        )
         attempts = previous_attempts + 1 if automatic else previous_attempts
         exhausted = automatic and attempts >= MAX_AUTOMATIC_ATTEMPTS
         state = "REVIEW_REQUIRED" if exhausted else "WAITING_FOR_EVIDENCE"
@@ -156,6 +165,7 @@ def build(context: dict[str, Any], readiness: dict[str, Any], previous: dict[str
             "updated_at_utc": current.isoformat(),
             "automatic_attempts": attempts,
             "max_automatic_attempts": MAX_AUTOMATIC_ATTEMPTS,
+            "qualification_contract_version": QUALIFICATION_CONTRACT_VERSION,
             "next_retry_not_before_utc": next_retry,
             "questions": questions,
             "readiness_status": readiness_item.get("status"),

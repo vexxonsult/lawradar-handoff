@@ -85,6 +85,14 @@ class InvestigationQueueTests(unittest.TestCase):
         self.assertEqual(item["status"], "REVIEW_REQUIRED")
         self.assertIsNone(item["next_retry_not_before_utc"])
 
+    def test_contract_repair_grants_one_clean_technical_retry(self):
+        previous = build(context(), readiness(), now=NOW)
+        previous["items"][0]["qualification_contract_version"] = "tool-envelope-v1"
+        result = build(context(), readiness(), previous, now=NOW + timedelta(hours=6))
+        item = result["items"][0]
+        self.assertEqual(item["automatic_attempts"], 1)
+        self.assertEqual(item["status"], "WAITING_FOR_EVIDENCE")
+
     def test_non_retained_signal_never_enters_the_queue(self):
         value = context()
         value["signals"][0]["radar"]["status"] = "DISCARDED"
