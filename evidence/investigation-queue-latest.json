@@ -1,10 +1,10 @@
 {
   "schema": "lawradar-investigation-queue-v1",
-  "generated_at_utc": "2026-09-19T11:06:23.362945+00:00",
+  "generated_at_utc": "2026-09-19T11:15:43.781718+00:00",
   "source_run": {
     "id": "investigation-replay:c05cc5729a94d7fd",
     "kind": "ARCHIVED_FACTS_REPLAY",
-    "generated_at_utc": "2026-09-19T11:01:57.226272+00:00",
+    "generated_at_utc": "2026-09-19T11:11:31.103966+00:00",
     "purpose": "TECHNICAL_ENRICHMENT_RETRY",
     "archive_provenance": {
       "signal:10151b49ad131832": "evidence/universal-signals/v2/2026/09/run-34755614648-attempt-1.json",
@@ -22,10 +22,11 @@
       "title": "Arrêté modifiant la liste des modèles de pompes à chaleur agréés en matière de qualité et de résilience industrielle",
       "status": "WAITING_FOR_EVIDENCE",
       "opened_at_utc": "2026-09-19T11:06:23.362945+00:00",
-      "updated_at_utc": "2026-09-19T11:06:23.362945+00:00",
+      "updated_at_utc": "2026-09-19T11:15:43.781718+00:00",
       "automatic_attempts": 1,
       "max_automatic_attempts": 2,
-      "next_retry_not_before_utc": "2026-09-19T17:06:23.362945+00:00",
+      "qualification_contract_version": "tool-envelope-v2",
+      "next_retry_not_before_utc": "2026-09-19T17:15:43.781718+00:00",
       "questions": [
         {
           "id": "OPERATIONAL_FEASIBILITY",
@@ -50,16 +51,6 @@
             "Collecte Presse partiellement limitée par un rate-limit temporaire (HTTP 429) ; retry différé requis."
           ],
           "automatic_retry": true
-        },
-        {
-          "id": "MARKET_RELEVANCE",
-          "kind": "TECHNICAL_RETRY",
-          "status": "OPEN",
-          "question": "Déterminer si un avis BOAMP cite le texte, son obligation ou un besoin directement lié ; un simple mot-sectoriel ne démontre pas une demande causée par le texte.",
-          "evidence": [
-            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement."
-          ],
-          "automatic_retry": true
         }
       ],
       "readiness_status": "READY_FOR_PILOTS",
@@ -71,10 +62,11 @@
       "title": "Décret n° 2026-863 relatif aux exigences de performance environnementale des équipements de chauffage, refroidissement et ECS dans un bâtiment",
       "status": "WAITING_FOR_EVIDENCE",
       "opened_at_utc": "2026-09-19T11:06:23.362945+00:00",
-      "updated_at_utc": "2026-09-19T11:06:23.362945+00:00",
+      "updated_at_utc": "2026-09-19T11:15:43.781718+00:00",
       "automatic_attempts": 1,
       "max_automatic_attempts": 2,
-      "next_retry_not_before_utc": "2026-09-19T17:06:23.362945+00:00",
+      "qualification_contract_version": "tool-envelope-v2",
+      "next_retry_not_before_utc": "2026-09-19T17:15:43.781718+00:00",
       "questions": [
         {
           "id": "OPERATIONAL_FEASIBILITY",
