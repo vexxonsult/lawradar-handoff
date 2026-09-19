@@ -1,0 +1,14 @@
+{
+  "schema": "lawradar-investigation-seed-v1",
+  "purpose": "One-time recovery of archived energy signals whose first client enrichment did not run reliably.",
+  "max_signals": 2,
+  "signal_ids": [
+    "signal:10151b49ad131832",
+    "signal:c20abf6d37ae4200"
+  ],
+  "safety": {
+    "archive_read_only": true,
+    "requires_manual_workflow_dispatch": true,
+    "does_not_modify_universal_signal_latest": true
+  }
+}

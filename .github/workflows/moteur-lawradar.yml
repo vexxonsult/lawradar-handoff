@@ -8,6 +8,11 @@ on:
         required: false
         default: false
         type: boolean
+      investigation_seed:
+        description: "Rejouer une fois les deux enquêtes énergie archivées, sans modifier le noyau de production"
+        required: false
+        default: false
+        type: boolean
   workflow_run:
     workflows: ["Collecte primaire DILA JORF"]
     types: [completed]
@@ -438,6 +443,7 @@ jobs:
       ${{
         always() && !cancelled() && (
           github.event.inputs.clients_only == 'true' ||
+          github.event.inputs.investigation_seed == 'true' ||
           (needs.moteur.result == 'success' && (
             needs.moteur.outputs.batch_ready == 'true' ||
             github.event_name == 'schedule'
@@ -463,22 +469,19 @@ jobs:
         env:
           TRIGGER_SCHEDULE: ${{ github.event.schedule }}
           MOTOR_BATCH_READY: ${{ needs.moteur.outputs.batch_ready }}
+          INVESTIGATION_SEED: ${{ github.event.inputs.investigation_seed }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: |
-          mkdir -p out
-          python scripts/build_agent_pilot_readiness.py \
-            --dossier evidence/universal-signal-latest.json \
-            --policy config/compliance-policy-v1.json \
-            --profile config/operator-profile-v1.json \
-            --output out/agent-pilot-readiness.json
+          mkdir -p out out/client-core/evidence out/client-core/out
           python - <<'PY'
           import hashlib
           import json
           import os
+          import subprocess
           from datetime import datetime
           from pathlib import Path
           from zoneinfo import ZoneInfo
 
-          readiness = json.loads(Path("out/agent-pilot-readiness.json").read_text(encoding="utf-8"))
           core = json.loads(Path("evidence/universal-signal-latest.json").read_text(encoding="utf-8"))
           evening_schedules = {"17 17 * * *", "17 18 * * *", "17 19 * * *"}
           mode = "consolidated" if os.environ.get("TRIGGER_SCHEDULE") in evening_schedules else "flash"
@@ -498,8 +501,18 @@ jobs:
           # scheduled wakes never replay all of them: they process only a due,
           # bounded technical retry recorded by the investigation queue.
           retry_ids = set()
+          seed = os.environ.get("INVESTIGATION_SEED") == "true"
+          if seed:
+              seed_config = json.loads(Path("config/investigation-seed-v1.json").read_text(encoding="utf-8"))
+              ids = seed_config.get("signal_ids")
+              maximum = seed_config.get("max_signals")
+              if seed_config.get("schema") != "lawradar-investigation-seed-v1" or not isinstance(ids, list) or not all(isinstance(item, str) for item in ids):
+                  raise ValueError("Configuration de graine d'enquête invalide.")
+              if not isinstance(maximum, int) or len(ids) > maximum:
+                  raise ValueError("La graine d'enquête dépasse son plafond déclaré.")
+              retry_ids.update(ids)
           queue_path = Path("evidence/investigation-queue-latest.json")
-          if os.environ.get("MOTOR_BATCH_READY") != "true" and queue_path.exists():
+          if not seed and os.environ.get("MOTOR_BATCH_READY") != "true" and queue_path.exists():
               try:
                   queue = json.loads(queue_path.read_text(encoding="utf-8"))
                   now_utc = datetime.now(ZoneInfo("UTC"))
@@ -516,9 +529,38 @@ jobs:
                   # A malformed non-core operational queue must never trigger a
                   # broad client replay. The next clean consolidation replaces it.
                   retry_ids = set()
+          replay_ids = sorted(item for item in retry_ids if isinstance(item, str))
+          replay_core = Path("out/client-core/evidence/universal-signal-latest.json")
+          if replay_ids:
+              command = ["python", "scripts/build_investigation_replay.py", "--archive-root", "evidence/universal-signals", "--output", str(replay_core)]
+              for signal_id in replay_ids:
+                  command.extend(["--signal-id", signal_id])
+              subprocess.run(command, check=True)
+          else:
+              replay_core.write_bytes(Path("evidence/universal-signal-latest.json").read_bytes())
+          Path("out/client-selection.json").write_text(
+              json.dumps({"mode": mode, "already_consolidated": already_consolidated, "retry_ids": replay_ids, "seed": seed}, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          PY
+          python scripts/build_agent_pilot_readiness.py \
+            --dossier out/client-core/evidence/universal-signal-latest.json \
+            --policy config/compliance-policy-v1.json \
+            --profile config/operator-profile-v1.json \
+            --output out/client-core/out/agent-pilot-readiness.json
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          selection = json.loads(Path("out/client-selection.json").read_text(encoding="utf-8"))
+          readiness = json.loads(Path("out/client-core/out/agent-pilot-readiness.json").read_text(encoding="utf-8"))
+          core = json.loads(Path("out/client-core/evidence/universal-signal-latest.json").read_text(encoding="utf-8"))
+          retry_ids = set(selection.get("retry_ids", []))
           include_all_ready = os.environ.get("MOTOR_BATCH_READY") == "true" or os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
           matrix = []
-          for item in [] if already_consolidated else readiness.get("signals", []):
+          for item in [] if selection.get("already_consolidated") else readiness.get("signals", []):
               if item.get("ready_for_pilots") is not True:
                   continue
               signal_id = item["signal_id"]
@@ -527,24 +569,24 @@ jobs:
               key = hashlib.sha256(signal_id.encode("utf-8")).hexdigest()[:16]
               matrix.append({"id": signal_id, "key": key})
           compact = json.dumps(matrix, ensure_ascii=False, separators=(",", ":"))
-          Path("out/client-plan.json").write_text(
-              json.dumps({"schema": "lawradar-client-plan-v1", "mode": mode, "signals": matrix}, ensure_ascii=False, indent=2) + "\n",
+          Path("out/client-core/out/client-plan.json").write_text(
+              json.dumps({"schema": "lawradar-client-plan-v1", "mode": selection["mode"], "signals": matrix}, ensure_ascii=False, indent=2) + "\n",
               encoding="utf-8",
           )
           with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as output:
               output.write(f"client_matrix={compact}\n")
               output.write(f"has_ready={'true' if matrix else 'false'}\n")
-              output.write(f"mode={mode}\n")
-          print(f"clients_ready={len(matrix)}; mode={mode}; already_consolidated={already_consolidated}")
+              output.write(f"mode={selection['mode']}\n")
+          print(f"clients_ready={len(matrix)}; mode={selection['mode']}; replay_ids={len(retry_ids)}; already_consolidated={selection.get('already_consolidated')}")
           PY
       - name: Conserver le noyau immuable pour la convergence des branches
         uses: actions/upload-artifact@v4
         with:
           name: lawradar-client-core-${{ github.run_id }}
           path: |
-            evidence/universal-signal-latest.json
-            out/agent-pilot-readiness.json
-            out/client-plan.json
+            out/client-core/evidence/universal-signal-latest.json
+            out/client-core/out/agent-pilot-readiness.json
+            out/client-core/out/client-plan.json
           retention-days: 90
 
   # Les deux branches lisent le plan-artéfact et déroulent tous les signaux
