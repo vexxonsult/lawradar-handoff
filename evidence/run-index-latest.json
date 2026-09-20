@@ -1,28 +1,28 @@
 {
   "schema": "lawradar-run-index-v1",
-  "generated_at_utc": "2026-09-20T11:25:33.841555+00:00",
+  "generated_at_utc": "2026-09-20T18:12:21.718331+00:00",
   "purpose": "Registre technique des derniers runs, sans interprétation des preuves.",
   "runs": [
     {
       "kind": "motor",
-      "status": "success",
-      "reason": null,
-      "run_id": "35507776322",
-      "run_url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/35507776322",
+      "status": "skipped",
+      "reason": "79 réapparition(s) historique(s) hors fenêtre quotidienne, non envoyée(s) au moteur.",
+      "run_id": "35528288915",
+      "run_url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/35528288915",
       "workflow": "Moteur LawRadar — livraison structurée",
-      "commit": "ccc7e07563f566e2efbe69be770e9b77f9cba8f4",
-      "created_at_utc": "2026-09-20T11:25:33.742608+00:00",
-      "duration_seconds": 11,
+      "commit": "ce769257267fcd4f8fa0b4dc8c6b1897671417a9",
+      "created_at_utc": "2026-09-20T18:12:21.678233+00:00",
+      "duration_seconds": 1,
       "inputs": {
-        "count": 2,
+        "count": 4,
         "missing": 0
       },
       "outputs": {
-        "count": 5,
+        "count": 2,
         "missing": 0
       },
       "cost": {
-        "status": "not_reported_by_provider",
+        "status": "not_called",
         "model": null,
         "note": "Le fournisseur ne publie pas le détail des tokens dans ce run ; la durée et le nombre d'appels restent mesurés."
       },
