@@ -1,16 +1,15 @@
 {
   "schema": "lawradar-run-manifest-v1",
   "run": {
-    "id": "35499947738",
+    "id": "35507776322",
     "attempt": "1",
     "kind": "motor",
-    "status": "pending",
+    "status": "success",
     "workflow": "Moteur LawRadar — livraison structurée",
-    "commit": "84052ee78240d015725d6ab538e404750f17a8c2",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/35499947738",
-    "created_at_utc": "2026-09-20T08:35:22.974769+00:00",
-    "duration_seconds": 6,
-    "reason": "Message Batch Anthropic en cours ; reprise sans nouvelle soumission au prochain run."
+    "commit": "ccc7e07563f566e2efbe69be770e9b77f9cba8f4",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/35507776322",
+    "created_at_utc": "2026-09-20T11:25:33.742608+00:00",
+    "duration_seconds": 11
   },
   "inputs": [
     {
@@ -18,14 +17,44 @@
       "exists": true,
       "bytes": 49683,
       "sha256": "5ccc96a2ad93536edb71357f8b48803a7b9c48a3fd0a77ab6065ef18749db539"
+    },
+    {
+      "path": "config/moteur-delivery-schema.json",
+      "exists": true,
+      "bytes": 2758,
+      "sha256": "ddbf26b46f7f620d7e0d5a553cac4c42940e07017054a74086af7ce647c58cee"
     }
   ],
   "outputs": [
     {
-      "path": "evidence/motor-batch-latest.json",
+      "path": "out/motor-delivery.json",
       "exists": true,
-      "bytes": 52377,
-      "sha256": "708e2347e15e466c8483de353ee0da2a513a37692c44b0e05fe362709a0e55cc"
+      "bytes": 26187,
+      "sha256": "c82841110b324427689caa0d853e784c1889dd4c155afd1a959bf62e9baccde5"
+    },
+    {
+      "path": "out/dashboard.html",
+      "exists": true,
+      "bytes": 9520,
+      "sha256": "4748b04c022b5f2deee28b0544c88a093f26e66234a41e296b8087d4a8b1fdac"
+    },
+    {
+      "path": "out/universal-signal.json",
+      "exists": true,
+      "bytes": 88957,
+      "sha256": "e3e698220494939ef833af404ebfbdb9c6b1d7135f2257b7017aa7c555682ac7"
+    },
+    {
+      "path": "out/universal-signal-archive.json",
+      "exists": true,
+      "bytes": 3735,
+      "sha256": "b6676a8d3586c00c3955ed689874fd36f74896b7a5be774c5764a189da54d892"
+    },
+    {
+      "path": "out/agent-pilot-readiness.json",
+      "exists": true,
+      "bytes": 3967,
+      "sha256": "35aac8a9523d252ff99f4beb046c10b99d4e2203c538c94c094fa1d6ca2b9d72"
     }
   ],
   "cost_estimate": {
