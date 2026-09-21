@@ -1,15 +1,15 @@
 {
   "schema": "lawradar-run-manifest-v1",
   "run": {
-    "id": "35651066592",
+    "id": "35655039474",
     "attempt": "1",
     "kind": "motor",
     "status": "skipped",
     "workflow": "Moteur LawRadar — livraison structurée",
-    "commit": "88b45a77640184b2e470bbbb2ec7387a5000df06",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/35651066592",
-    "created_at_utc": "2026-09-21T20:26:42.081234+00:00",
-    "duration_seconds": 2,
+    "commit": "bdcead654559cb10a57bfdd275ce78db57555ee9",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/35655039474",
+    "created_at_utc": "2026-09-21T21:05:11.685541+00:00",
+    "duration_seconds": 0,
     "reason": "Aucun candidat JORF ou ConsultDD à interpréter."
   },
   "inputs": [
@@ -43,13 +43,13 @@
       "path": "out/universal-signal-skipped.json",
       "exists": true,
       "bytes": 1395,
-      "sha256": "08b9c37abaab332ba8f4dd86f8690a1e826e6f1fb98fecdfc6032af624e8f16b"
+      "sha256": "1d3d1644282edda25e1e645954b54dc6a06e5f7b74585325acacaad8d57ff5d7"
     },
     {
       "path": "out/universal-signal-archive-skipped.json",
       "exists": true,
       "bytes": 745,
-      "sha256": "547837d32217e16943c20c52a75cbc8d0640405a96839bbedce1d3ea0f27cae0"
+      "sha256": "4813c453371fc01d3c48f16fefe3eb224e4123eb1d05709caa638e6c4f1b180a"
     }
   ],
   "cost_estimate": {
