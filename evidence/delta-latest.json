@@ -12,7 +12,7 @@
     },
     {
       "file": "jorf-summaries-latest.json",
-      "status": "CHANGED",
+      "status": "UNCHANGED",
       "item_count": 3546,
       "sha256": "26dd97b7487fbaf8e38038fc36aa2881203a3b0c08422e042044ece86fee7855",
       "documents_sha256": "cf46de0f9537da7d82e098e3efc09f6ae96241487bcbf13d09e65dbdf96248f2",
@@ -20,7 +20,7 @@
     },
     {
       "file": "eurlex-oj-latest.json",
-      "status": "CHANGED",
+      "status": "UNCHANGED",
       "item_count": 0,
       "sha256": "1b6eee16779cb69a4d01eb9d1a2d645bb4f36f0ad07d5deda2262d1ab249cd73",
       "documents_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
@@ -36,22 +36,17 @@
     },
     {
       "file": "status-latest.json",
-      "status": "METADATA_CHANGED",
+      "status": "UNCHANGED",
       "item_count": 0,
       "sha256": "100d9e67a49d3ded2a7092cbb80ed2018e2793a85b185be32f5b8072560f6ae3",
       "documents_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "interpretation": null
     }
   ],
-  "changed_sources": [
-    "jorf-summaries-latest.json",
-    "eurlex-oj-latest.json"
-  ],
-  "evidence_change_detected": true,
-  "supported_model_change_detected": true,
-  "supported_changed_sources": [
-    "jorf-summaries-latest.json"
-  ],
-  "model_input_required": true,
+  "changed_sources": [],
+  "evidence_change_detected": false,
+  "supported_model_change_detected": false,
+  "supported_changed_sources": [],
+  "model_input_required": false,
   "interpretation": null
 }
