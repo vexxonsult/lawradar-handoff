@@ -1,23 +1,23 @@
 {
   "schema": "lawradar-run-manifest-v1",
   "run": {
-    "id": "35580330538",
+    "id": "35602017170",
     "attempt": "1",
     "kind": "motor",
     "status": "skipped",
     "workflow": "Moteur LawRadar — livraison structurée",
-    "commit": "80ea1becca228d3476652f4ebd27946b2105b13e",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/35580330538",
-    "created_at_utc": "2026-09-21T08:54:31.548003+00:00",
+    "commit": "00fda597413ffa3e9c354bcfef5aa3d64c297326",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/35602017170",
+    "created_at_utc": "2026-09-21T12:52:11.078371+00:00",
     "duration_seconds": 1,
-    "reason": "57 réapparition(s) historique(s) hors fenêtre quotidienne, non envoyée(s) au moteur."
+    "reason": "Aucun candidat JORF ou ConsultDD à interpréter."
   },
   "inputs": [
     {
       "path": "evidence/delta-latest.json",
       "exists": true,
-      "bytes": 2034,
-      "sha256": "977d029744a007acae6292c4c7e8fb2000e68298584010a93fae09a722f60ea5"
+      "bytes": 1933,
+      "sha256": "29a1ba776167628383de5a1b204675addf4ba767cee1c8944d29c00cfb9102dd"
     },
     {
       "path": "evidence/jorf-summaries-latest.json",
@@ -29,27 +29,27 @@
       "path": "evidence/consultdd-latest.json",
       "exists": true,
       "bytes": 690,
-      "sha256": "05a51e21b47d0be1e6f795ffa0f597ab4457f45e166b5c6b9b347dd77fe8d4b9"
+      "sha256": "d733e6fce5696d173816f0eda0863fb839dcf8788b7da7b369cacb1b81c77f62"
     },
     {
       "path": "out/motor-input-skipped.json",
       "exists": true,
-      "bytes": 10363,
-      "sha256": "d533a64237a9ad5468880677521f68d78e0485947502759778e12ce923a7609a"
+      "bytes": 720,
+      "sha256": "dd073752fcad4712b807214a831fca7ae548e1e738b0f0e6b3dce314b8093bf4"
     }
   ],
   "outputs": [
     {
       "path": "out/universal-signal-skipped.json",
       "exists": true,
-      "bytes": 12188,
-      "sha256": "ab2ca822ed6d9f1f6f06af1649f3188a7b9b99b2667098513c6a8e548ae755fd"
+      "bytes": 1395,
+      "sha256": "3e2de0feb7ee7e23b5a153f9fe9b5d69afd10c911607c9e5e58a22746209fc2c"
     },
     {
       "path": "out/universal-signal-archive-skipped.json",
       "exists": true,
-      "bytes": 746,
-      "sha256": "d9969ccb227bc25c5bfa54f453f1d0d1e754b31ce72a47ba8367b64e912da27e"
+      "bytes": 745,
+      "sha256": "4d62d051e74b0ac8466d07a769cc55a0d62d4721b0eb2d0f8bdfb931c46c89d9"
     }
   ],
   "cost_estimate": {
