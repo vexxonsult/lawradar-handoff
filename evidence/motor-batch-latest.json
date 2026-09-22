@@ -1,25 +1,24 @@
 {
   "schema": "lawradar-anthropic-motor-batch-v1",
-  "input_sha256": "e5b87a0d0df5a6eddecdff356337139eedac890dda2176f03871fd9aba519faf",
-  "request_sha256": "e5b87a0d0df5a6eddecdff356337139eedac890dda2176f03871fd9aba519faf",
+  "input_sha256": "9cc3ef4eb738eef42c2bb3112f33bfa696984d40eeac74b2e557bddf4c388680",
+  "request_sha256": "9cc3ef4eb738eef42c2bb3112f33bfa696984d40eeac74b2e557bddf4c388680",
   "model": "claude-sonnet-5",
   "request_version": "2026-09-12-explicit-json-contract-v8",
-  "batch_id": "msgbatch_01JzMLDQqhEvZXNoXEZ3MPcV",
-  "processing_status": "ended",
-  "request_count": 10,
+  "batch_id": "msgbatch_01X4H7zLTYdLdjxBP3qWk5oW",
+  "processing_status": "in_progress",
+  "request_count": 16,
   "request_counts": {
-    "processing": 0,
-    "succeeded": 10,
+    "processing": 16,
+    "succeeded": 0,
     "errored": 0,
     "canceled": 0,
     "expired": 0
   },
   "motor_input": {
     "schema": "lawradar-motor-input-v1",
-    "report_date": "2026-09-20",
+    "report_date": "2026-09-22",
     "delta_changed_sources": [
-      "jorf-summaries-latest.json",
-      "eurlex-oj-latest.json"
+      "jorf-summaries-latest.json"
     ],
     "handled_source_files": [
       "jorf-summaries-latest.json",
@@ -27,515 +26,705 @@
     ],
     "excluded_historical_candidates": [
       {
-        "source_id": "jorf:JORFTEXT000000195882",
-        "publication_date": "1996-11-30",
+        "source_id": "jorf:JORFTEXT000000167667",
+        "publication_date": "1990-10-17",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000242359",
-        "publication_date": "2006-07-04",
+        "source_id": "jorf:JORFTEXT000000219662",
+        "publication_date": "2000-09-21",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000302657",
-        "publication_date": "1950-07-12",
+        "source_id": "jorf:JORFTEXT000000223114",
+        "publication_date": "2001-05-16",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000333157",
-        "publication_date": "1986-03-20",
+        "source_id": "jorf:JORFTEXT000000246728",
+        "publication_date": "2003-11-20",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000421913",
-        "publication_date": "2003-06-27",
+        "source_id": "jorf:JORFTEXT000000249843",
+        "publication_date": "2004-03-27",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000448023",
-        "publication_date": "2005-10-18",
+        "source_id": "jorf:JORFTEXT000000377690",
+        "publication_date": "1996-06-02",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000498714",
-        "publication_date": "1978-03-21",
+        "source_id": "jorf:JORFTEXT000000393606",
+        "publication_date": "1999-03-21",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000522132",
-        "publication_date": "1986-03-15",
+        "source_id": "jorf:JORFTEXT000000408364",
+        "publication_date": "2001-10-23",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000526716",
-        "publication_date": "1990-11-01",
+        "source_id": "jorf:JORFTEXT000000427073",
+        "publication_date": "1904-06-19",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000527196",
-        "publication_date": "1991-10-30",
+        "source_id": "jorf:JORFTEXT000000440473",
+        "publication_date": "1970-09-10",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000599582",
-        "publication_date": "2002-12-29",
+        "source_id": "jorf:JORFTEXT000000504704",
+        "publication_date": "1983-07-14",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000607176",
-        "publication_date": "2006-05-24",
+        "source_id": "jorf:JORFTEXT000000571009",
+        "publication_date": "1998-04-03",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000617982",
-        "publication_date": "2007-03-09",
+        "source_id": "jorf:JORFTEXT000000595061",
+        "publication_date": "2003-01-04",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000649364",
-        "publication_date": "2007-05-16",
+        "source_id": "jorf:JORFTEXT000000606072",
+        "publication_date": "2005-09-09",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000669623",
-        "publication_date": "1948-07-11",
+        "source_id": "jorf:JORFTEXT000000624299",
+        "publication_date": "2004-11-30",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000673420",
-        "publication_date": "1954-07-16",
+        "source_id": "jorf:JORFTEXT000000632645",
+        "publication_date": "2005-07-27",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000684031",
-        "publication_date": "1961-07-30",
+        "source_id": "jorf:JORFTEXT000000639090",
+        "publication_date": "2006-03-24",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000718250",
-        "publication_date": "1991-01-05",
+        "source_id": "jorf:JORFTEXT000000687666",
+        "publication_date": "1971-07-17",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000745571",
-        "publication_date": "1996-11-30",
+        "source_id": "jorf:JORFTEXT000000716856",
+        "publication_date": "1990-10-12",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000809647",
-        "publication_date": "2005-02-12",
+        "source_id": "jorf:JORFTEXT000000718587",
+        "publication_date": "1995-05-10",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000879031",
-        "publication_date": "1971-08-04",
+        "source_id": "jorf:JORFTEXT000000787131",
+        "publication_date": "2004-11-05",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000879968",
-        "publication_date": "1979-01-24",
+        "source_id": "jorf:JORFTEXT000000879365",
+        "publication_date": "1972-03-14",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000017865591",
-        "publication_date": "2008-01-12",
+        "source_id": "jorf:JORFTEXT000000886985",
+        "publication_date": "1985-07-27",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000020237680",
-        "publication_date": "2009-02-11",
+        "source_id": "jorf:JORFTEXT000017765090",
+        "publication_date": "2007-12-30",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000021673844",
-        "publication_date": "2010-01-14",
+        "source_id": "jorf:JORFTEXT000019283050",
+        "publication_date": "2008-08-05",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000022275582",
-        "publication_date": "2010-05-29",
+        "source_id": "jorf:JORFTEXT000019758031",
+        "publication_date": "2008-11-14",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000023239624",
-        "publication_date": "2010-12-17",
+        "source_id": "jorf:JORFTEXT000019951175",
+        "publication_date": "2008-12-19",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000023662298",
-        "publication_date": "2011-03-06",
+        "source_id": "jorf:JORFTEXT000022355229",
+        "publication_date": "2010-06-16",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000024249545",
-        "publication_date": "2011-06-26",
+        "source_id": "jorf:JORFTEXT000023413027",
+        "publication_date": "2011-01-13",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000025376765",
-        "publication_date": "2012-02-18",
+        "source_id": "jorf:JORFTEXT000023776687",
+        "publication_date": "2011-03-29",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000027899801",
-        "publication_date": "2013-08-28",
+        "source_id": "jorf:JORFTEXT000023781468",
+        "publication_date": "2011-03-30",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000029574751",
-        "publication_date": "2014-10-14",
+        "source_id": "jorf:JORFTEXT000026657458",
+        "publication_date": "2012-11-21",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000030586698",
-        "publication_date": "2015-05-13",
+        "source_id": "jorf:JORFTEXT000027721614",
+        "publication_date": "2013-07-18",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000030715134",
-        "publication_date": "2015-06-13",
+        "source_id": "jorf:JORFTEXT000027904809",
+        "publication_date": "2013-08-29",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000032676900",
-        "publication_date": "2016-06-12",
+        "source_id": "jorf:JORFTEXT000028720025",
+        "publication_date": "2014-03-14",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000033578345",
-        "publication_date": "2016-12-13",
+        "source_id": "jorf:JORFTEXT000028738036",
+        "publication_date": "2014-03-18",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000034601538",
-        "publication_date": "2017-05-07",
+        "source_id": "jorf:JORFTEXT000029503068",
+        "publication_date": "2014-09-27",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000034601685",
-        "publication_date": "2017-05-07",
+        "source_id": "jorf:JORFTEXT000030943464",
+        "publication_date": "2015-07-29",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000034675570",
+        "source_id": "jorf:JORFTEXT000030978561",
+        "publication_date": "2015-08-07",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000031046061",
+        "publication_date": "2015-08-18",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000031311177",
+        "publication_date": "2015-10-15",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000031319601",
+        "publication_date": "2015-10-16",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000031319649",
+        "publication_date": "2015-10-16",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000031496966",
+        "publication_date": "2015-11-20",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000031691554",
+        "publication_date": "2015-12-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000032209352",
+        "publication_date": "2016-03-16",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000032466301",
+        "publication_date": "2016-04-29",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000032623546",
+        "publication_date": "2016-06-03",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000033418805",
+        "publication_date": "2016-11-19",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000033511344",
+        "publication_date": "2016-12-02",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000033658895",
+        "publication_date": "2016-12-21",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000033734510",
+        "publication_date": "2016-12-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000034010781",
+        "publication_date": "2017-02-08",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000034103762",
+        "publication_date": "2017-03-01",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000034160223",
+        "publication_date": "2017-03-10",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000034581412",
+        "publication_date": "2017-05-05",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000034676131",
         "publication_date": "2017-05-11",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000036203632",
-        "publication_date": "2017-12-15",
+        "source_id": "jorf:JORFTEXT000035013490",
+        "publication_date": "2017-06-27",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000036396355",
-        "publication_date": "2018-01-06",
+        "source_id": "jorf:JORFTEXT000035250851",
+        "publication_date": "2017-07-21",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000038149660",
-        "publication_date": "2019-02-21",
+        "source_id": "jorf:JORFTEXT000036819883",
+        "publication_date": "2018-04-20",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000038529587",
-        "publication_date": "2019-05-30",
+        "source_id": "jorf:JORFTEXT000037262111",
+        "publication_date": "2018-07-31",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000038683061",
-        "publication_date": "2019-06-26",
+        "source_id": "jorf:JORFTEXT000037547946",
+        "publication_date": "2018-11-01",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000039424735",
-        "publication_date": "2019-11-28",
+        "source_id": "jorf:JORFTEXT000038261631",
+        "publication_date": "2019-03-24",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000039700476",
-        "publication_date": "2019-12-31",
+        "source_id": "jorf:JORFTEXT000038410002",
+        "publication_date": "2019-04-25",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000041880760",
-        "publication_date": "2020-05-15",
+        "source_id": "jorf:JORFTEXT000038720909",
+        "publication_date": "2019-07-04",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000041909263",
-        "publication_date": "2020-05-24",
+        "source_id": "jorf:JORFTEXT000038721017",
+        "publication_date": "2019-07-04",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000041996366",
-        "publication_date": "2020-06-16",
+        "source_id": "jorf:JORFTEXT000038777188",
+        "publication_date": "2019-07-18",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000042185329",
-        "publication_date": "2020-08-02",
+        "source_id": "jorf:JORFTEXT000039070284",
+        "publication_date": "2019-09-10",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000042246730",
-        "publication_date": "2020-08-20",
+        "source_id": "jorf:JORFTEXT000039248641",
+        "publication_date": "2019-10-22",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000043280083",
-        "publication_date": "2021-03-24",
+        "source_id": "jorf:JORFTEXT000039373287",
+        "publication_date": "2019-11-14",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000043280121",
-        "publication_date": "2021-03-24",
+        "source_id": "jorf:JORFTEXT000042334535",
+        "publication_date": "2020-09-17",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000043694803",
-        "publication_date": "2021-06-24",
+        "source_id": "jorf:JORFTEXT000042607095",
+        "publication_date": "2020-12-04",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000043798225",
-        "publication_date": "2021-07-17",
+        "source_id": "jorf:JORFTEXT000043370810",
+        "publication_date": "2021-04-15",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000044376526",
-        "publication_date": "2021-11-27",
+        "source_id": "jorf:JORFTEXT000043534820",
+        "publication_date": "2021-05-27",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000045696136",
-        "publication_date": "2022-04-29",
+        "source_id": "jorf:JORFTEXT000043727761",
+        "publication_date": "2021-07-01",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000046368821",
-        "publication_date": "2022-10-06",
+        "source_id": "jorf:JORFTEXT000043741543",
+        "publication_date": "2021-07-02",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000046619040",
-        "publication_date": "2022-11-27",
+        "source_id": "jorf:JORFTEXT000044044563",
+        "publication_date": "2021-09-16",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000047998955",
-        "publication_date": "2023-08-27",
+        "source_id": "jorf:JORFTEXT000044176983",
+        "publication_date": "2021-10-09",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000048132796",
-        "publication_date": "2023-10-01",
+        "source_id": "jorf:JORFTEXT000045167536",
+        "publication_date": "2022-02-15",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000049171479",
-        "publication_date": "2024-02-21",
+        "source_id": "jorf:JORFTEXT000045388745",
+        "publication_date": "2022-03-22",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000049474038",
-        "publication_date": "2024-04-26",
+        "source_id": "jorf:JORFTEXT000047046768",
+        "publication_date": "2023-01-25",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000049722032",
+        "source_id": "jorf:JORFTEXT000047281777",
+        "publication_date": "2023-03-10",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000047584074",
+        "publication_date": "2023-05-25",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000047914986",
+        "publication_date": "2023-08-02",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000048313483",
+        "publication_date": "2023-11-01",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000048430512",
+        "publication_date": "2023-11-21",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000048519395",
+        "publication_date": "2023-12-07",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000049453263",
+        "publication_date": "2024-04-23",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000049563368",
+        "publication_date": "2024-05-22",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000049675304",
+        "publication_date": "2024-06-08",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000049707573",
+        "publication_date": "2024-06-14",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000049722252",
         "publication_date": "2024-06-15",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000050831243",
-        "publication_date": "2024-12-26",
+        "source_id": "jorf:JORFTEXT000049870394",
+        "publication_date": "2024-07-04",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000050962940",
-        "publication_date": "2025-01-10",
+        "source_id": "jorf:JORFTEXT000050500464",
+        "publication_date": "2024-11-16",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000051106485",
-        "publication_date": "2025-02-01",
+        "source_id": "jorf:JORFTEXT000050500539",
+        "publication_date": "2024-11-16",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000051421837",
-        "publication_date": "2025-04-03",
+        "source_id": "jorf:JORFTEXT000051316108",
+        "publication_date": "2025-03-13",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000051522782",
-        "publication_date": "2025-04-27",
+        "source_id": "jorf:JORFTEXT000051316379",
+        "publication_date": "2025-03-13",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000051655992",
-        "publication_date": "2025-05-24",
+        "source_id": "jorf:JORFTEXT000051465667",
+        "publication_date": "2025-04-15",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000052075903",
-        "publication_date": "2025-08-12",
+        "source_id": "jorf:JORFTEXT000051465730",
+        "publication_date": "2025-04-15",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000052156848",
-        "publication_date": "2025-08-30",
+        "source_id": "jorf:JORFTEXT000051734851",
+        "publication_date": "2025-06-14",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000052385272",
-        "publication_date": "2025-10-14",
+        "source_id": "jorf:JORFTEXT000052533249",
+        "publication_date": "2025-11-07",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000052422582",
-        "publication_date": "2025-10-24",
+        "source_id": "jorf:JORFTEXT000052533258",
+        "publication_date": "2025-11-07",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000053177312",
+        "source_id": "jorf:JORFTEXT000052533277",
+        "publication_date": "2025-11-07",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000052555728",
+        "publication_date": "2025-11-11",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000053177810",
         "publication_date": "2025-12-28",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000053482524",
-        "publication_date": "2026-02-14",
+        "source_id": "jorf:JORFTEXT000053276605",
+        "publication_date": "2026-01-01",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000053981504",
-        "publication_date": "2026-04-30",
+        "source_id": "jorf:JORFTEXT000054646643",
+        "publication_date": "2026-08-09",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054126843",
-        "publication_date": "2026-05-24",
+        "source_id": "jorf:JORFTEXT000054707261",
+        "publication_date": "2026-08-19",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054683092",
-        "publication_date": "2026-08-15",
+        "source_id": "jorf:JORFTEXT000054707856",
+        "publication_date": "2026-08-19",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054743001",
+        "publication_date": "2026-08-25",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054743009",
+        "publication_date": "2026-08-25",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       }
     ],
     "excluded_routine_candidates": [
       {
-        "source_id": "jorf:JORFTEXT000054861433",
-        "title": "Décision du 3 septembre 2026 portant délégation de signature (sous-direction des visas)",
+        "source_id": "jorf:JORFTEXT000054877114",
+        "title": "Décision du 10 septembre 2026 portant délégation de signature (direction nationale de la police aux frontières)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054861441",
-        "title": "Arrêté du 18 septembre 2026 modifiant deux arrêtés fixant le nombre et la répartition des places offertes à des concours pour l'attribution de niveaux de qualification à des praticiens des armées",
+        "source_id": "jorf:JORFTEXT000054877133",
+        "title": "Arrêté du 3 septembre 2026 portant transfert d'affectation de biens des collections du ministère chargé de la mer et de la pêche au bénéfice du ministère des armées et des anciens combattants",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054861449",
-        "title": "Décision du 17 septembre 2026 modifiant la décision du 17 mars 2026 portant délégation de signature (direction de la maintenance aéronautique)",
+        "source_id": "jorf:JORFTEXT000054877291",
+        "title": "Arrêté du 18 septembre 2026 portant délégation de signature (direction générale de la recherche, de l'innovation et du numérique en santé)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054861477",
-        "title": "Arrêté du 9 septembre 2026 autorisant l'ouverture au titre de l'année 2027 des concours externe et interne pour le recrutement de capitaines pénitentiaires",
+        "source_id": "jorf:JORFTEXT000054877315",
+        "title": "Arrêté du 21 septembre 2026 portant délégation de signature au cabinet du ministre de l'action et des comptes publics",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054861548",
-        "title": "Arrêté du 17 juillet 2026 modifiant l'arrêté du 25 janvier 2021 fixant les modalités d'organisation des concours du certificat d'aptitude au professorat d'éducation physique et sportive et l'arrêté du 17 avril 2025 fixant les modalités d'organisation du concours externe du certificat d'aptitude au professorat d'éducation physique et sportive",
+        "source_id": "jorf:JORFTEXT000054877351",
+        "title": "Décision du 18 septembre 2026 autorisant au titre de l'année 2026 l'ouverture d'un concours externe spécial sur titres pour le recrutement d'ingénieurs des travaux de la météorologie",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054861595",
-        "title": "Arrêté du 17 juillet 2026 modifiant l'arrêté du 25 janvier 2021 fixant les sections et modalités d'organisation des concours du certificat d'aptitude au professorat de lycée professionnel et l'arrêté du 17 avril 2025 fixant les sections et modalités d'organisation du concours externe du certificat d'aptitude au professorat de lycée professionnel",
+        "source_id": "jorf:JORFTEXT000054877372",
+        "title": "Arrêté du 18 septembre 2026 modifiant l'arrêté du 22 juin 2026 portant nomination des membres du comité de sélection interministériel prévu à l'article 4 du décret n° 2021-1550 du 1er décembre 2021 modifié portant statut particulier du corps des administrateurs de l'Etat au titre de l'année 2026",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054861667",
-        "title": "Arrêté du 17 juillet 2026 modifiant l'arrêté du 25 janvier 2021 fixant les modalités d'organisation des concours du certificat d'aptitude aux fonctions de conseiller principal d'éducation et l'arrêté du 17 avril 2025 fixant les modalités d'organisation du concours externe du certificat d'aptitude aux fonctions de conseiller principal d'éducation",
+        "source_id": "jorf:JORFTEXT000054877382",
+        "title": "Décret du 21 septembre 2026 portant naturalisation, réintégration, mention d'enfants mineurs bénéficiant de l'effet collectif attaché à l'acquisition de la nationalité française par leurs parents et francisation de noms et de prénoms (Accès protégé)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054861713",
-        "title": "Arrêté du 17 juillet 2026 modifiant l'arrêté du 25 janvier 2021 fixant les modalités d'organisation des concours du certificat d'aptitude au professorat de l'enseignement technique et l'arrêté du 17 avril 2025 fixant les modalités d'organisation du concours externe du certificat d'aptitude au professorat de l'enseignement technique",
+        "source_id": "jorf:JORFTEXT000054877386",
+        "title": "Arrêté du 21 septembre 2026 portant nomination (administration centrale)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054861787",
-        "title": "Arrêté du 17 juillet 2026 modifiant l'arrêté du 17 avril 2025 fixant les modalités d'organisation du concours externe du certificat d'aptitude au professorat de l'enseignement du second degré et l'arrêté du 25 janvier 2021 fixant les modalités d'organisation des concours du certificat d'aptitude au professorat de l'enseignement du second degré",
+        "source_id": "jorf:JORFTEXT000054877392",
+        "title": "Arrêté du 11 septembre 2026 portant admission à la retraite (magistrature)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054861876",
-        "title": "Arrêté du 29 juillet 2026 modifiant l'arrêté du 28 décembre 2009 fixant les sections et les modalités d'organisation des concours de l'agrégation",
+        "source_id": "jorf:JORFTEXT000054877394",
+        "title": "Arrêté du 14 septembre 2026 portant nomination (administration centrale)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054861950",
-        "title": "Arrêté du 20 août 2026 modifiant l'arrêté du 25 janvier 2021 fixant les modalités d'organisation du concours externe, des concours externes spéciaux, du second concours interne, du second concours interne spécial et du troisième concours de recrutement de professeurs des écoles et l'arrêté du 17 avril 2025 fixant les modalités d'organisation du concours externe et des concours externes spéciaux de recrutement de professeurs des écoles",
+        "source_id": "jorf:JORFTEXT000054877399",
+        "title": "Arrêté du 15 septembre 2026 portant nomination d'une notaire salariée (officiers publics ou ministériels)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054862205",
-        "title": "Arrêté du 17 septembre 2026 portant délégation de signature pour l'exécution des opérations des travaux (service national d'ingénierie aéroportuaire)",
+        "source_id": "jorf:JORFTEXT000054877409",
+        "title": "Arrêté du 16 septembre 2026 portant dissolution d'une société civile professionnelle et nomination d'une société d'exercice libéral à responsabilité limitée (officiers publics ou ministériels)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054862216",
-        "title": "Arrêté du 29 juin 2026 portant nomination au conseil d'administration de l'établissement public chargé de la formation professionnelle des adultes",
+        "source_id": "jorf:JORFTEXT000054877423",
+        "title": "Arrêté du 16 septembre 2026 portant nomination d'une société d'exercice libéral à responsabilité limitée (officiers publics ou ministériels)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054862218",
-        "title": "Arrêté du 18 septembre 2026 portant nomination (administration centrale)",
+        "source_id": "jorf:JORFTEXT000054877432",
+        "title": "Arrêté du 16 septembre 2026 portant nomination d'une notaire salariée (officiers publics ou ministériels)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054862224",
-        "title": "Arrêté du 1er juin 2026 portant admission à la retraite (ingénieurs des ponts, des eaux et des forêts)",
+        "source_id": "jorf:JORFTEXT000054877436",
+        "title": "Arrêté du 18 septembre 2026 portant acceptation d'une démission d'une candidate admise au concours de recrutement de magistrats du second grade et du premier grade de la hiérarchie judiciaire, session 2025, nommée en qualité de stagiaire",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054862233",
-        "title": "Arrêté du 17 septembre 2026 portant nomination de certains membres du comité des solutions pour la protection des cultures prévu à l'article L. 253-8-4 du code rural et de la pêche maritime",
+        "source_id": "jorf:JORFTEXT000054877438",
+        "title": "Arrêté du 18 septembre 2026 portant réintégration et affectation (tribunaux administratifs et cours administratives d'appel)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054862236",
-        "title": "Arrêté du 11 septembre 2026 autorisant au titre de l'année 2026 l'ouverture de concours externes pour le recrutement d'ingénieurs de recherche à l'Institut national de recherche en informatique et en automatique (INRIA)",
+        "source_id": "jorf:JORFTEXT000054877441",
+        "title": "Arrêté du 17 septembre 2026 portant nomination au conseil d'administration de la société Chantiers de l'Atlantique",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054862261",
-        "title": "Arrêté du 11 septembre 2026 autorisant au titre de l'année 2026 l'ouverture de concours externes pour le recrutement d'ingénieurs d'études de classe normale à l'Institut national de recherche en informatique et en automatique (INRIA)",
+        "source_id": "jorf:JORFTEXT000054877444",
+        "title": "Arrêté du 16 septembre 2026 portant admission à la retraite (inspecteurs de santé publique vétérinaire)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054862287",
-        "title": "Arrêté du 11 septembre 2026 autorisant au titre de l'année 2026 l'ouverture de concours externes pour le recrutement d'assistants ingénieurs à l'Institut national de recherche en informatique et en automatique (INRIA)",
+        "source_id": "jorf:JORFTEXT000054877447",
+        "title": "Arrêté du 14 septembre 2026 portant nomination d'un régisseur de recettes auprès de la direction générale de l'administration et de la modernisation, direction de la sécurité diplomatique, mission soutien et pilotage financier, bureau du pilotage budgétaire et de l'appui du ministère de l'Europe et des affaires étrangères",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054862315",
-        "title": "Arrêté du 11 septembre 2026 autorisant au titre de l'année 2026 l'ouverture de concours externes pour le recrutement de techniciens de la recherche de classe normale à l'Institut national de recherche en informatique et en automatique (INRIA)",
+        "source_id": "jorf:JORFTEXT000054877452",
+        "title": "Arrêté du 17 septembre 2026 portant nomination (agents comptables)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054862346",
-        "title": "Avis de vacance d'un emploi de directeur de projet",
+        "source_id": "jorf:JORFTEXT000054877487",
+        "title": "Commissions et organes de contrôle",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054862362",
-        "title": "Avis de vacance d'un emploi de délégué régional académique à la jeunesse, à l'engagement et aux sports (DRAJES)",
+        "source_id": "jorf:JORFTEXT000054877492",
+        "title": "Documents publiés",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054862400",
-        "title": "Demandes de changement de nom (Accès protégé textes 37 à 54)",
+        "source_id": "jorf:JORFTEXT000054877497",
+        "title": "Avis de vacance d'un emploi de chargé de mission à temps plein au secrétariat général pour les affaires régionales de la région Hauts-de-France",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054877502",
+        "title": "Avis de vacance d'un emploi de directeur régional adjoint de l'économie, de l'emploi, du travail et des solidarités des Pays de la Loire, chargé des fonctions de responsable du pôle « concurrence, consommation, répression des fraudes et métrologie »",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054877511",
+        "title": "Avis de vacance d'un emploi de directeur adjoint de l'économie, de l'emploi, du travail et des solidarités de Guadeloupe, chargé des fonctions de responsable du pôle « entreprise, emploi, compétences »",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054877522",
+        "title": "Avis de vacance d'un emploi de directeur régional adjoint de l'économie, de l'emploi, du travail et des solidarités des Pays de la Loire, chargé des fonctions de responsable du pôle « concurrence, consommation, répression des fraudes et métrologie »",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054877531",
+        "title": "Avis de vacance d'un emploi de directeur adjoint de l'économie, de l'emploi, du travail et des solidarités de Guadeloupe, chargé des fonctions de responsable du pôle « entreprise, emploi, compétences »",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054877542",
+        "title": "Avis de vacance d'un emploi de sous-directeur (administration centrale)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054877569",
+        "title": "Demandes de changement de nom (Accès protégé textes 51 à 73)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       }
     ],
@@ -543,130 +732,24 @@
     "rules": "Preuves locales diffées uniquement ; réapparition historique et routine administrative explicite = filtrées avec trace ; les autres textes primaires disponibles reçoivent une lecture factuelle. Une friction détectée ouvre seulement une enquête, jamais une opportunité confirmée ; inconnu = UNRESOLVED.",
     "candidates": [
       {
-        "source_id": "jorf:JORFTEXT000054861408",
+        "source_id": "jorf:JORFTEXT000054877080",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "text_id": "JORFTEXT000054861408",
-          "nature": "DECRET",
-          "nor": "INTP2612400D",
-          "publication_date": "2026-09-20",
-          "journal_number": "0220",
-          "title": "Décret n° 2026-880 du 18 septembre 2026 portant modification des limites territoriales de communes et de cantons du département de la Moselle",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054861408",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260920-002436.tar.gz",
-          "archive_sha256": "ecc1d4b2e4633558b245a34c995e6c5e664e4c989e223fab1a63effaf1d325b7",
-          "official_text_excerpt": "Publics concernés : habitants des communes de Fameck et de Hayange, élus, services de l'Etat, collectivités territoriales dans le département de la Moselle.\nObjet : modification des circonscriptions administratives des communes de Fameck et de Hayange entraînant modification des cantons n° 6 (Fameck) et n° 10 (Hayange) dans le département de la Moselle. Cette opération a pour objet de désenclaver un lotissement situé sur la commune de Fameck en le rattachant à la commune de Hayange.\nEntrée en vigueur : le texte entre en vigueur le lendemain de sa publication.\nApplication : le présent décret est un texte autonome.\nLe Premier ministre,\nSur le rapport du ministre de l'intérieur,\nVu le code général des collectivités territoriales, notamment ses articles L. 2112-2 à L. 2112-13 ;\nVu les avis du conseil municipal de Fameck en date des 5 décembre 2018 et 11 avril 2023 ;\nVu les avis du conseil municipal de Hayange en date des 28 février 2019 et 3 avril 2023 ;\nVu l'avis du conseil départemental de la Moselle en date du 19 août 2019 et renouvelé en date du 26 janvier 2026 ;\nVu les plans des lieux ;\nVu le procès-verbal de l'enquête publique ouverte par arrêté préfectoral du 8 juin 2022 ;\nVu les autres pièces du dossier ;\nLe Conseil d'Etat (section de l'intérieur) entendu,\nDécrète :",
-          "official_text_sha256": "610360c751155c2bc1bb6b5129d8090c5f6bcf24f4fb8b09ac0b32172575f529",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "WATCH_CANDIDATE",
-          "score": 4,
-          "triggers": [
-            {
-              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
-              "score": 3,
-              "terms": [
-                "collectivites"
-              ]
-            },
-            {
-              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
-              "score": 1,
-              "terms": [
-                "entree en vigueur"
-              ]
-            }
-          ],
-          "scope_terms": [
-            "collectivites territoriales"
-          ],
-          "reason": "ECONOMIC_FRICTION_DETECTED",
-          "recommended_enrichment": [
-            "PRESS",
-            "DEMAND",
-            "MARKET"
-          ]
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054861421",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054861421",
-          "nature": "DECRET",
-          "nor": "INTP2616560D",
-          "publication_date": "2026-09-20",
-          "journal_number": "0220",
-          "title": "Décret n° 2026-881 du 18 septembre 2026 portant modification des limites territoriales de communes et de cantons du département de l'Orne",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054861421",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260920-002436.tar.gz",
-          "archive_sha256": "ecc1d4b2e4633558b245a34c995e6c5e664e4c989e223fab1a63effaf1d325b7",
-          "official_text_excerpt": "Publics concernés : habitants des communes d'Alençon et de Condé-sur-Sarthe, élus, services de l'Etat, collectivités territoriales dans le département de l'Orne.\nObjet : modification des circonscriptions administratives des communes d'Alençon et de Condé-sur-Sarthe entraînant modification des cantons n° 2 (Alençon-1) et n° 10 (Damigny) dans le département de l'Orne. Cette opération a pour objet d'établir une limite territoriale facilitant l'implantation du nouveau centre hospitalier intercommunal d'Alençon-Mamers (CHICAM).\nEntrée en vigueur : le texte entre en vigueur le lendemain de sa publication.\nApplication : le présent décret est un texte autonome.\nLe Premier ministre,\nSur le rapport du ministre de l'intérieur,\nVu le code général des collectivités territoriales, notamment ses articles L. 2112-2 à L. 2112-13 ;\nVu les avis du conseil municipal de Condé-sur-Sarthe en date des 1\ner\nfévrier 2023 et 13 mars 2024 ;\nVu les avis du conseil municipal d'Alençon en date des 6 février 2023 et 15 avril 2024 ;\nVu l'avis du conseil départemental de l'Orne en date du 13 décembre 2024 ;\nVu les plans des lieux ;\nVu le procès-verbal de l'enquête publique ouverte par arrêté préfectoral du 8 novembre 2023 ;\nVu les autres pièces du dossier ;\nLe Conseil d'Etat (section de l'intérieur) entendu,\nDécrète :",
-          "official_text_sha256": "f834d3bd3446b7a289d72759f83f0dd4e0a869b8e2f9fa68d8d2ef22cae6ce5c",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "WATCH_CANDIDATE",
-          "score": 4,
-          "triggers": [
-            {
-              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
-              "score": 3,
-              "terms": [
-                "collectivites"
-              ]
-            },
-            {
-              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
-              "score": 1,
-              "terms": [
-                "entree en vigueur"
-              ]
-            }
-          ],
-          "scope_terms": [
-            "collectivites territoriales"
-          ],
-          "reason": "ECONOMIC_FRICTION_DETECTED",
-          "recommended_enrichment": [
-            "PRESS",
-            "DEMAND",
-            "MARKET"
-          ]
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054861465",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054861465",
+          "text_id": "JORFTEXT000054877080",
           "nature": "ARRETE",
-          "nor": "TECM2623388A",
-          "publication_date": "2026-09-20",
-          "journal_number": "0220",
-          "title": "Arrêté du 16 septembre 2026 relatif aux modalités de désignation de représentants des coopératives maritimes de conchyliculteurs volontaires comme membres comités régionaux de la conchyliculture",
+          "nor": "INTE2623922A",
+          "publication_date": "2026-09-22",
+          "journal_number": "0221",
+          "title": "Arrêté du 11 septembre 2026 portant reconnaissance de l'état de catastrophe naturelle",
           "article_ids": [],
           "article_titles": [],
           "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054861465",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260920-002436.tar.gz",
-          "archive_sha256": "ecc1d4b2e4633558b245a34c995e6c5e664e4c989e223fab1a63effaf1d325b7",
-          "official_text_excerpt": "La ministre de la transition écologique, de la biodiversité, et des négociations internationales sur le climat et la nature et la ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu le code rural et de la pêche maritime, notamment ses articles L. 912-8 et R. 912-113 à R. 912-129 ;\nVu le décret n° 2026-143 du 27 février 2026 relatif à l'organisation et au fonctionnement des comités de la conchyliculture ;\nVu l'arrêté du 15 octobre 2012 modifié relatif au nombre, aux limites du ressort territorial, au siège et aux circonscriptions électorales des comités régionaux de la conchyliculture ;\nVu la lettre de saisine du conseil du Comité national de la conchyliculture en date du 8 septembre 2026,\nArrêtent :",
-          "official_text_sha256": "12b412c1cbc8c6c266f11369e3baa2a303e38abc3e88616463db49726eb2bd4a",
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054877080",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260922-002206.tar.gz",
+          "archive_sha256": "6ee12efb467af7cd6dcd85d09c733eee730076527f146807a2c746eee45cbbe9",
+          "official_text_excerpt": "Le ministre de l'intérieur, le ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique, la ministre des outre-mer et le ministre de l'action et des comptes publics,\nVu le code des assurances, notamment ses articles L. 122-7, L. 125-1 à L. 125-7, D. 125-1 à D. 125-6 et A. 125-2 et suivants ;\nVu les avis rendus le 8 septembre 2026 par la commission interministérielle instituée par les articles L. 125-1-1 (II) et D. 125-3 et suivants du code des assurances,\nArrêtent :",
+          "official_text_sha256": "702c0c978f7ee553744b0ef3c9d9c22b0c6327b2ac1030bcd75966ee2d4dd098",
           "excerpt_truncated": false,
           "content_status": "AVAILABLE"
         },
@@ -680,24 +763,24 @@
         }
       },
       {
-        "source_id": "jorf:JORFTEXT000054861494",
+        "source_id": "jorf:JORFTEXT000054877144",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "text_id": "JORFTEXT000054861494",
+          "text_id": "JORFTEXT000054877144",
           "nature": "ARRETE",
-          "nor": "JUSB2615968A",
-          "publication_date": "2026-09-20",
-          "journal_number": "0220",
-          "title": "Arrêté du 18 septembre 2026 relatif à l'alimentation, la mise à jour et la gestion du registre public des actions de groupe",
+          "nor": "TECK2623122A",
+          "publication_date": "2026-09-22",
+          "journal_number": "0221",
+          "title": "Arrêté du 16 septembre 2026 modifiant plusieurs arrêtés ministériels relatifs à la nature et au programme des épreuves pour le recrutement dans le corps des secrétaires d'administration et de contrôle du développement durable de classe supérieure et de classe exceptionnelle",
           "article_ids": [],
           "article_titles": [],
           "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054861494",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260920-002436.tar.gz",
-          "archive_sha256": "ecc1d4b2e4633558b245a34c995e6c5e664e4c989e223fab1a63effaf1d325b7",
-          "official_text_excerpt": "Publics concernés : magistrats de l'ordre judiciaire, magistrats de l'ordre administratif, agents de greffe des juridictions administratives et judiciaires, avocats, officiers ministériels, auxiliaires de justice, particuliers et justiciables.\nObjet : précision des conditions d'alimentation par les greffes des juridictions et de mise à jour du registre public des actions de groupe, ainsi que de ses modalités de gestion au sein du ministère de la justice.\nEntrée en vigueur : le présent arrêté entre en vigueur le lendemain de sa publication.\nApplication : le présent arrêté est pris pour l'application de l'article 14 du décret n° 2025-734 du 30 juillet 2025 relatif à la procédure applicable aux actions de groupe et au registre des actions de groupe.\nLe garde des sceaux, ministre de la justice,\nVu la directive (UE) 2020/1828 du Parlement européen et du Conseil du 25 novembre 2020 relative aux actions représentatives visant à protéger les intérêts collectifs des consommateurs et abrogeant la directive 2009/22/CE ;\nVu la loi n° 2025-391 du 30 avril 2025 portant diverses dispositions d'adaptation au droit de l'Union européenne en matière économique, financière, environnementale, énergétique, de transport, de santé et de circulation des personnes, notamment son article 16 ;\nVu le code de l'organisation judiciaire, notamment ses articles L. 211-15 et D. 211-8 et le tableau X qui lui est annexé ;\nVu le décret n° 2025-734 du 30 juillet 2025 relatif à la procédure applicable aux actions de groupe et au registre des actions de groupe, notamment son article 14,\nArrête :",
-          "official_text_sha256": "239ccb51a1f5062eff12930d5621d206b2e016828793b239d04d398b3582bc49",
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054877144",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260922-002206.tar.gz",
+          "archive_sha256": "6ee12efb467af7cd6dcd85d09c733eee730076527f146807a2c746eee45cbbe9",
+          "official_text_excerpt": "La ministre de la transition écologique, de la biodiversité et des négociations internationales sur le climat et la nature et le ministre de l'action et des comptes publics,\nVu le code général de la fonction publique ;\nVu le décret n° 2009-1388 du 11 novembre 2009 modifié portant dispositions statutaires communes à divers corps de fonctionnaires de la catégorie B de la fonction publique de l'Etat ;\nVu le décret n° 2010-302 du 19 mars 2010 modifié fixant les dispositions statutaires communes applicables aux corps des secrétaires administratifs des administrations de l'Etat et à certains corps analogues relevant du décret n° 2009-1388 du 11 novembre 2009 ;\nVu le décret n° 2012-1065 du 18 septembre 2012 portant statut particulier du corps des secrétaires d'administration et de contrôle du développement durable ;\nVu l'arrêté du 12 décembre 2012 fixant la nature et le programme des épreuves des concours externe et interne de recrutement des secrétaires d'administration et de contrôle du développement durable de classe supérieure, spécialité contrôle des transports terrestres ;\nVu l'arrêté du 12 décembre 2012 fixant la nature et le programme des épreuves de l'examen professionnel de recrutement des secrétaires d'administration et de contrôle du développement durable de classe supérieure, spécialité administration générale ;\nVu l'arrêté du 12 décembre 2012 fixant la nature et le programme des épreuves du concours professionnel de recrutement des secrétaires d'administration et de contrôle du développement durable de classe supérieure, spécialité administration générale ;\nVu l'arrêté du 12 décembre 2012 fixant la nature et le programme des épreuves du concours professionnel de recrutement des secrétaires d'administration et de contrôle du développement durable de classe supérieure, spécialité contrôle des transports terrestres ;\nVu l'arrêté du 12 décembre 2012 fixant la nature des épreuves du concours professionnel des secrétaires d'administration et de contrôle du développement durable de classe exceptionnelle, spécialité administration générale ;\nVu l'arrêté du 12 décembre 2012 fixant la nature des épreuves du concours professionnel des secrétaires d'administration et de contrôle du développement durable de classe exceptionnelle, spécialité contrôle des transports terrestres,\nArrêtent :",
+          "official_text_sha256": "b840dcafb6dc54c097384e5adfd1add2de8cb43a91ae81572641a3c26c43ebe0",
           "excerpt_truncated": false,
           "content_status": "AVAILABLE"
         },
@@ -707,117 +790,14 @@
           "score": 3,
           "triggers": [
             {
-              "kind": "REPORTING_OR_TRACEABILITY",
-              "score": 2,
-              "terms": [
-                "registre"
-              ]
-            },
-            {
-              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
-              "score": 1,
-              "terms": [
-                "entree en vigueur"
-              ]
-            }
-          ],
-          "scope_terms": [],
-          "reason": "ECONOMIC_FRICTION_DETECTED",
-          "recommended_enrichment": [
-            "PRESS",
-            "DEMAND",
-            "MARKET"
-          ]
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054861513",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054861513",
-          "nature": "ARRETE",
-          "nor": "ECOT2624231A",
-          "publication_date": "2026-09-20",
-          "journal_number": "0220",
-          "title": "Arrêté du 18 septembre 2026 relatif au versement d'un prêt du Fonds de développement économique et social à la SAS Fibre Excellence Saint-Gaudens",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054861513",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260920-002436.tar.gz",
-          "archive_sha256": "ecc1d4b2e4633558b245a34c995e6c5e664e4c989e223fab1a63effaf1d325b7",
-          "official_text_excerpt": "Le ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique et le ministre délégué, auprès du ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique, chargé de l'industrie,\nVu le décret n° 60-703 du 15 juillet 1960 portant organisation du compte spécial « Prêts du fonds de développement économique et social » ;\nVu l'article 87 de la loi de finances pour 1960,\nArrêtent :",
-          "official_text_sha256": "c2dad91ab30bc0a88a24b76f88b352da327153fd5278addaac701975f3fb2e9c",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "WATCH_CANDIDATE",
-          "score": 3,
-          "triggers": [
-            {
-              "kind": "FUNDING_OR_INCENTIVE",
+              "kind": "SANCTION_OR_CONTROL",
               "score": 3,
               "terms": [
-                "fonds"
-              ]
-            }
-          ],
-          "scope_terms": [],
-          "reason": "ECONOMIC_FRICTION_DETECTED",
-          "recommended_enrichment": [
-            "PRESS",
-            "DEMAND",
-            "MARKET"
-          ]
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054861518",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054861518",
-          "nature": "ARRETE",
-          "nor": "PMEI2610162A",
-          "publication_date": "2026-09-20",
-          "journal_number": "0220",
-          "title": "Arrêté du 24 août 2026 relatif à la Nomenclature d'activités française du secteur des métiers et de l'artisanat",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054861518",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260920-002436.tar.gz",
-          "archive_sha256": "ecc1d4b2e4633558b245a34c995e6c5e664e4c989e223fab1a63effaf1d325b7",
-          "official_text_excerpt": "Publics concernés : artisans. Entreprises artisanales. Chambres de métiers et de l'artisanat de région. Chambres de métiers et de l'artisanat de niveau départemental. Guichet unique électronique des formalités d'entreprises. Registre national des entreprises.\nObjet : l'arrêté actualise les codes et libellés de la nomenclature d'activités française de l'artisanat (NAFA), attribués par les chambres de métiers et de l'artisanat aux entreprises exerçant une activité de nature artisanale, lorsque celles-ci effectuent une formalité sur le guichet unique électronique des formalités d'entreprises. Cette actualisation prend en compte les attentes exprimées par les organisations professionnelles en matière de reconnaissance des spécificités des métiers artisanaux. Ces évolutions s'inscrivent dans le cadre de l'adoption, en juillet 2025, par l'INSEE, de la nouvelle version de la nomenclature d'activités française (NAF) 2025, sur laquelle la NAFA est alignée.\nEntrée en vigueur : le présent arrêté entre en vigueur le 1\ner\njanvier 2027.\nApplication : le texte est pris pour l'application de l'article R. 111-1 du code de l'artisanat.\nLe ministre des petites et moyennes entreprises, du commerce, de l'artisanat, du tourisme et du pouvoir d'achat,\nVu le code de commerce, notamment son article R. 123-223 ;\nVu le code de l'artisanat, notamment son article R. 111-1 ;\nVu le décret n° 2026-87 du 13 février 2026 portant modification de l'article R. 111-1 du code de l'artisanat ;\nVu le décret n° 2025-736 du 31 juillet 2025 portant approbation des nomenclatures d'activités et de produits françaises ;\nVu l'avis du Conseil national de l'information statistique en date du 11 juin 2025,\nArrête :",
-          "official_text_sha256": "505f675d4596aed4a562bd035abb49344a189c7ee3e92b6b56d93575a0661016",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "WATCH_CANDIDATE",
-          "score": 3,
-          "triggers": [
-            {
-              "kind": "REPORTING_OR_TRACEABILITY",
-              "score": 2,
-              "terms": [
-                "registre"
-              ]
-            },
-            {
-              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
-              "score": 1,
-              "terms": [
-                "entree en vigueur"
+                "controle"
               ]
             }
           ],
           "scope_terms": [
-            "entreprise",
             "professionnel"
           ],
           "reason": "ECONOMIC_FRICTION_DETECTED",
@@ -829,24 +809,123 @@
         }
       },
       {
-        "source_id": "jorf:JORFTEXT000054862018",
+        "source_id": "jorf:JORFTEXT000054877171",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "text_id": "JORFTEXT000054862018",
+          "text_id": "JORFTEXT000054877171",
           "nature": "ARRETE",
-          "nor": "SFHP2624616A",
-          "publication_date": "2026-09-20",
-          "journal_number": "0220",
-          "title": "Arrêté du 11 septembre 2026 modifiant l'arrêté du 26 avril 2023 fixant la liste des micro-organismes et toxines prévue à l'article L. 5139-1 du code de la santé publique",
+          "nor": "ECOC2624180A",
+          "publication_date": "2026-09-22",
+          "journal_number": "0221",
+          "title": "Arrêté du 11 septembre 2026 modifiant la notice d'information relative aux prestations funéraires",
           "article_ids": [],
           "article_titles": [],
           "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054862018",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260920-002436.tar.gz",
-          "archive_sha256": "ecc1d4b2e4633558b245a34c995e6c5e664e4c989e223fab1a63effaf1d325b7",
-          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées,\nVu le code de la santé publique, notamment ses articles L. 5139-1, L. 5139-3, R. 5139-1, R. 5139-20 et R. 5139-25 ;\nVu l'arrêté du 26 avril 2023 fixant la liste des micro-organismes et toxines prévue à l'article L. 5139-1 du code de la santé publique ;\nSur proposition de la directrice générale de l'Agence nationale de sécurité du médicament et des produits de santé en date du 31 juillet 2026,\nArrête :",
-          "official_text_sha256": "4aa31d0f643d1ed2bea885d4951b16413d41e0df646e92caf76dd1d0bdc1c736",
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054877171",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260922-002206.tar.gz",
+          "archive_sha256": "6ee12efb467af7cd6dcd85d09c733eee730076527f146807a2c746eee45cbbe9",
+          "official_text_excerpt": "Le ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique,\nVu le code général des collectivités territoriales, notamment ses articles R. 2213-8-1, R. 2223-24, R. 2223-24-1 et R. 2223-79 ;\nVu l'arrêté du 11 janvier 1999 relatif à l'information sur les prix des prestations funéraires ;\nVu l'arrêté du 13 août 2026 relatif à la notice d'information définie à l'article R. 2223-24-1 du code général des collectivités territoriales,\nArrête :",
+          "official_text_sha256": "1df3e01ee9ea63c69fc70d09e9d711e888279fce113b7a77943c711d721bc340",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
+              "score": 3,
+              "terms": [
+                "collectivites"
+              ]
+            }
+          ],
+          "scope_terms": [
+            "collectivites territoriales"
+          ],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054877184",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054877184",
+          "nature": "ARRETE",
+          "nor": "ECOC2620806A",
+          "publication_date": "2026-09-22",
+          "journal_number": "0221",
+          "title": "Arrêté du 13 septembre 2026 modifiant l'arrêté du 14 novembre 2001 modifié fixant les tarifs maxima des frais de fourrière pour automobiles et l'arrêté du 28 novembre 2003 modifié fixant les tarifs maxima des frais de fourrière pour automobiles dans les communes les plus importantes",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054877184",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260922-002206.tar.gz",
+          "archive_sha256": "6ee12efb467af7cd6dcd85d09c733eee730076527f146807a2c746eee45cbbe9",
+          "official_text_excerpt": "Publics concernés : professionnels, services déconcentrés, administrations.\nObjet : l'arrêté revalorise les frais d'enlèvement et de garde journalière des voitures particulières sur le territoire national fixés par l'arrêté du 14 novembre 2001 et l'alignement en conséquence des frais d'enlèvement des voitures particulières des communes visées à l'article 2 de l'arrêté du 28 novembre 2003 fixant les tarifs maxima des frais de fourrière pour automobiles dans les communes les plus importantes. Il prévoit en outre le principe d'une revalorisation annuelle des tarifs maxima des opérations d'enlèvement et de garde journalière et les paramètres sur lesquels elle s'appuie.\nEntrée en vigueur : le présent arrêté entre en vigueur le 1\ner\noctobre 2026. Toutefois, les dispositions du 1° de son article 1\ner\net du 1° de son article 2 s'appliquent à compter d'un an suivant sa publication.\nApplication : le présent arrêté est pris pour l'application de l'article L. 325-9 du code de la route.\nLe ministre de l'intérieur et le ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique,\nVu le code de la route, notamment son article L. 325-9 ;\nVu l'arrêté du 14 novembre 2001 modifié fixant les tarifs maxima des frais de fourrière pour automobiles ;\nVu l'arrêté du 28 novembre 2003 fixant les tarifs maxima des frais de fourrière pour automobiles dans les communes les plus importantes,\nArrêtent :",
+          "official_text_sha256": "89d4db6ae797a210c8f9f2c57305835af9e1bda13784f43c4696ac77ac6e821a",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 4,
+          "triggers": [
+            {
+              "kind": "FUNDING_OR_INCENTIVE",
+              "score": 3,
+              "terms": [
+                "tarif"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [
+            "professionnel"
+          ],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054877197",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054877197",
+          "nature": "DECISION",
+          "nor": "ECOR2624874S",
+          "publication_date": "2026-09-22",
+          "journal_number": "0221",
+          "title": "Décision du 18 septembre 2026 autorisant à titre exceptionnel et temporaire les distributeurs à détenir en vue de la vente et à commercialiser un gazole de qualité été entre le 1er et le 15 novembre 2026",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054877197",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260922-002206.tar.gz",
+          "archive_sha256": "6ee12efb467af7cd6dcd85d09c733eee730076527f146807a2c746eee45cbbe9",
+          "official_text_excerpt": "Le ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique,\nVu le code de l'énergie, notamment ses articles L. 641-4, D. 641-4 à D. 641-11 ;\nVu l'arrêté du 23 décembre 1999 modifié relatif aux caractéristiques du gazole et du gazole grand froid ;\nVu l'arrêté du 19 janvier 2016 modifié relatif à la liste des carburants autorisés au regard des dispositions de l'article 265 ter du code des douanes ;\nConsidérant les difficultés exceptionnelles d'approvisionnement rencontrées au vu de la situation internationale au Moyen-Orient ;\nConsidérant les difficultés à s'approvisionner en gazole aux spécifications de saison,\nDécide :",
+          "official_text_sha256": "6f7e825263b6943714804dee7fedc4a7b20443758c040b74291fccbc0a172e44",
           "excerpt_truncated": false,
           "content_status": "AVAILABLE"
         },
@@ -860,44 +939,68 @@
         }
       },
       {
-        "source_id": "jorf:JORFTEXT000054862030",
+        "source_id": "jorf:JORFTEXT000054877214",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "text_id": "JORFTEXT000054862030",
+          "text_id": "JORFTEXT000054877214",
           "nature": "ARRETE",
-          "nor": "SFHH2624802A",
-          "publication_date": "2026-09-20",
-          "journal_number": "0220",
-          "title": "Arrêté du 17 septembre 2026 fixant la liste des établissements de santé qui démarrent en facturation individuelle des prestations de soins hospitaliers aux caisses d'assurance maladie obligatoire, ainsi que le périmètre de facturation concerné par la facturation individuelle pour chacun de ces établissements de santé",
+          "nor": "SFHS2621725A",
+          "publication_date": "2026-09-22",
+          "journal_number": "0221",
+          "title": "Arrêté du 8 septembre 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
           "article_ids": [],
           "article_titles": [],
           "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054862030",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260920-002436.tar.gz",
-          "archive_sha256": "ecc1d4b2e4633558b245a34c995e6c5e664e4c989e223fab1a63effaf1d325b7",
-          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la sécurité sociale, notamment ses articles L. 162-22-6 et L. 174-2 ;\nVu la loi n° 2003-1199 du 18 décembre 2003 de financement de la sécurité sociale pour 2004, notamment son article 33 modifié ;\nVu la loi n° 2008-1330 du 17 décembre 2008 de financement de la sécurité sociale pour 2009, notamment son article 54 ;\nVu le décret n° 2014-787 du 8 juillet 2014 modifié relatif aux modalités calendaires de la généralisation de la facturation individuelle des établissements de santé mentionnés aux a, b et c de l'article L. 162-22-6 du code de la sécurité sociale ;\nVu l'arrêté du 31 décembre 2022 relatif aux modalités de versement des ressources des établissements de santé par les caisses d'assurance maladie ou par la caisse nationale militaire de sécurité sociale, notamment son article 5,\nArrêtent :",
-          "official_text_sha256": "84d562cb46f9a8af265c32b532cd0dec3281191e806ba03c2322ee9e06a4b93d",
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054877214",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260922-002206.tar.gz",
+          "archive_sha256": "6ee12efb467af7cd6dcd85d09c733eee730076527f146807a2c746eee45cbbe9",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique ;\nVu le code de la sécurité sociale, notamment ses articles L. 162-17, R. 163-2 à R. 163-14 et R. 160-8 ;\nVu l'avis de la commission de la transparence du 2 septembre 2025 relatif à la spécialité ALHEMO\n®\n, avis consultable sur le site internet de la Haute Autorité de santé et favorable à l'inscription au remboursement de ces spécialités ;\nConsidérant que conformément à l'article R. 160-8 (premier alinéa) du code de la sécurité sociale : « La participation de l'assuré prévue au I de l'article L. 160-13 est supprimée pour certains médicaments reconnus comme irremplaçables et particulièrement coûteux, figurant sur une liste établie par arrêté conjoint du ministre chargé de la santé et du ministre chargé de la sécurité sociale (…) » ;\nConsidérant que la spécialité ALHEMO\n®\nconstitue un médicament irremplaçable et particulièrement coûteux au sens des dispositions précitées de l'article R. 160-8 du code de la sécurité sociale et qu'il convient donc, en application de celles-ci, de supprimer la participation de l'assuré pour l'acquisition de cette spécialité,\nArrêtent :",
+          "official_text_sha256": "abfad0ba81b24dc23aa5c0a93dbfb87809d8eea9dc9dc22d4f3a35930d142b86",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054877230",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054877230",
+          "nature": "ARRETE",
+          "nor": "SFHS2621726A",
+          "publication_date": "2026-09-22",
+          "journal_number": "0221",
+          "title": "Arrêté du 8 septembre 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054877230",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260922-002206.tar.gz",
+          "archive_sha256": "6ee12efb467af7cd6dcd85d09c733eee730076527f146807a2c746eee45cbbe9",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code général des impôts, notamment son article 281 octies ;\nVu le code de la santé publique, notamment ses articles L. 5123-2, L. 5123-3 et D. 5123-4 ;\nVu le code de la sécurité sociale, notamment ses articles R. 163-3 et R. 163-4 ;\nVu l'avis de la commission de la transparence du 2 septembre 2025 relatif aux spécialités ALHEMO\n®\n, avis consultable sur le site internet de la Haute Autorité de santé et favorable à l'inscription au remboursement de ces spécialités,\nArrêtent :",
+          "official_text_sha256": "c3f3440e320f103696b4e6d49d75b462e61eece582bc12d53c0380167be01485",
           "excerpt_truncated": false,
           "content_status": "AVAILABLE"
         },
         "discovery": {
           "schema": "lawradar-opportunity-discovery-v1",
           "status": "WATCH_CANDIDATE",
-          "score": 6,
+          "score": 3,
           "triggers": [
             {
-              "kind": "LEGAL_OBLIGATION",
+              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
               "score": 3,
               "terms": [
-                "obligatoire"
-              ]
-            },
-            {
-              "kind": "FUNDING_OR_INCENTIVE",
-              "score": 3,
-              "terms": [
-                "financement"
+                "collectivites"
               ]
             }
           ],
@@ -911,44 +1014,68 @@
         }
       },
       {
-        "source_id": "jorf:JORFTEXT000054862101",
+        "source_id": "jorf:JORFTEXT000054877245",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "text_id": "JORFTEXT000054862101",
+          "text_id": "JORFTEXT000054877245",
           "nature": "ARRETE",
-          "nor": "SFHH2624804A",
-          "publication_date": "2026-09-20",
-          "journal_number": "0220",
-          "title": "Arrêté du 17 septembre 2026 fixant la liste des établissements de santé qui démarrent en facturation individuelle des prestations de soins hospitaliers aux caisses d'assurance maladie obligatoire, ainsi que le périmètre de facturation concerné par la facturation individuelle pour chacun de ces établissements de santé",
+          "nor": "SFHS2607135A",
+          "publication_date": "2026-09-22",
+          "journal_number": "0221",
+          "title": "Arrêté du 17 septembre 2026 modifiant la liste des spécialités pharmaceutiques prises en charge en sus des prestations d'hospitalisation mentionnée à l'article L. 162-22-7 du code de la sécurité sociale",
           "article_ids": [],
           "article_titles": [],
           "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054862101",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260920-002436.tar.gz",
-          "archive_sha256": "ecc1d4b2e4633558b245a34c995e6c5e664e4c989e223fab1a63effaf1d325b7",
-          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la sécurité sociale, notamment ses articles L. 162-22, L. 162-26 et L. 162-27 ;\nVu la loi n° 2015-1702 du 21 décembre 2015 de financement de la sécurité sociale pour 2016, notamment son article 78 modifié ;\nVu la loi n° 2025-1403 du 30 décembre 2025 de financement de la sécurité sociale pour 2026, notamment son article 72 ;\nVu le décret n° 2018-513 du 26 juin 2018 relatif aux modalités calendaires de la généralisation de la facturation individuelle des établissements de santé visés aux a, b et c de l'article L. 162-22-6 du code de la sécurité sociale ;\nVu l'arrêté du 17 avril 2018 relatif aux modalités de versement des ressources des établissements de santé dans le cadre des dispositions transitoires de mise en œuvre de la réforme des soins de suite et de réadaptation par les caisses d'assurance maladie mentionnées à l'article R. 174-1 du code de la sécurité sociale, notamment son article 2 ;\nVu l'arrêté du 31 décembre 2022 relatif aux modalités de versement des ressources des établissements de santé par les caisses d'assurance maladie ou par la caisse nationale militaire de sécurité sociale, notamment son article 5 ;\nVu l'arrêté du 19 décembre 2023 fixant les modalités transitoires pour le financement des activités de soins de suite et de réadaptation à partir du 1\ner\njuillet 2023 et modifiant l'arrêté du 31 décembre 2022 relatif aux modalités de versement des ressources des établissements de santé par les caisses d'assurance maladie ou par la caisse nationale militaire de sécurité sociale, notamment son article 1\ner\n,\nArrêtent :",
-          "official_text_sha256": "3592ef385e100730c1bd6cea8dfaff1d3402f557559054d5461f43e66ce0c581",
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054877245",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260922-002206.tar.gz",
+          "archive_sha256": "6ee12efb467af7cd6dcd85d09c733eee730076527f146807a2c746eee45cbbe9",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique ;\nVu le code de la sécurité sociale, notamment ses articles L. 162-22-7, R. 162-37-2 et R. 162-37-3 ;\nVu l'arrêté du 4 avril 2005 modifié pris en application de l'article L. 162-22-7 du code de la sécurité sociale et fixant la liste des spécialités pharmaceutiques prises en charge par l'assurance maladie en sus des prestations d'hospitalisation,\nArrêtent :",
+          "official_text_sha256": "8547252ec893f60712132645cc41ca5423dbd12d06e50f288b81959cc450308e",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054877260",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054877260",
+          "nature": "ARRETE",
+          "nor": "SFHS2623615A",
+          "publication_date": "2026-09-22",
+          "journal_number": "0221",
+          "title": "Arrêté du 17 septembre 2026 relatif aux conditions de prise en charge de spécialités pharmaceutiques disposant d'une autorisation de mise sur le marché inscrites sur la liste visée à l'article L. 5126-6 du code de la santé publique",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054877260",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260922-002206.tar.gz",
+          "archive_sha256": "6ee12efb467af7cd6dcd85d09c733eee730076527f146807a2c746eee45cbbe9",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la sécurité sociale, notamment ses articles L. 162-16-5, L. 162-17 et R. 160-8 ;\nVu le code de la santé publique, notamment ses articles L. 5123-2, L. 5126-6 et R. 5126-110 ;\nVu la décision en date du 5 mars 2026 de la directrice générale de l'Agence nationale de sécurité du médicament et des produits de santé modifiant la liste mentionnée au 1° de l'article L. 5126-6 du code de la santé publique ;\nVu l'arrêté du 17 septembre 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics,\nArrêtent :",
+          "official_text_sha256": "a1d1d5ab8053da10c999985eda4abf2837049ec1fc6eb9df9d67af8c52b70b25",
           "excerpt_truncated": false,
           "content_status": "AVAILABLE"
         },
         "discovery": {
           "schema": "lawradar-opportunity-discovery-v1",
           "status": "WATCH_CANDIDATE",
-          "score": 6,
+          "score": 3,
           "triggers": [
             {
-              "kind": "LEGAL_OBLIGATION",
+              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
               "score": 3,
               "terms": [
-                "obligatoire"
-              ]
-            },
-            {
-              "kind": "FUNDING_OR_INCENTIVE",
-              "score": 3,
-              "terms": [
-                "financement"
+                "collectivites"
               ]
             }
           ],
@@ -962,24 +1089,212 @@
         }
       },
       {
-        "source_id": "jorf:JORFTEXT000054862197",
+        "source_id": "jorf:JORFTEXT000054877278",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "text_id": "JORFTEXT000054862197",
+          "text_id": "JORFTEXT000054877278",
           "nature": "ARRETE",
-          "nor": "MICC2623985A",
-          "publication_date": "2026-09-20",
-          "journal_number": "0220",
-          "title": "Arrêté du 10 septembre 2026 relatif à l'insaisissabilité de biens culturels",
+          "nor": "SFHS2624801A",
+          "publication_date": "2026-09-22",
+          "journal_number": "0221",
+          "title": "Arrêté du 17 septembre 2026 portant modification de l'arrêté du 10 avril 2026 modifié fixant la liste des groupes biologiques similaires substituables par le pharmacien d'officine et les conditions de substitution et d'information du prescripteur et du patient telles que prévues au 2° de l'article L. 5125-23-2 du code de la santé publique",
           "article_ids": [],
           "article_titles": [],
           "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054862197",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260920-002436.tar.gz",
-          "archive_sha256": "ecc1d4b2e4633558b245a34c995e6c5e664e4c989e223fab1a63effaf1d325b7",
-          "official_text_excerpt": "Le ministre de l'Europe et des affaires étrangères et la ministre de la culture,\nVu la loi n° 94-679 du 8 août 1994 portant diverses dispositions d'ordre économique et financier, modifiée par la loi n° 98-546 du 2 juillet 1998, notamment son article 61,\nArrêtent :",
-          "official_text_sha256": "a336e6ea0c01820622d75f0a8abb8bf9d934a1b475806e99ed601f1b0c9fee8e",
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054877278",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260922-002206.tar.gz",
+          "archive_sha256": "6ee12efb467af7cd6dcd85d09c733eee730076527f146807a2c746eee45cbbe9",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique, notamment ses articles L. 5121-1 et L. 5125-23-2 ;\nVu le code de la sécurité sociale, notamment ses articles L. 162-16 et L. 162-17 ;\nVu l'arrêté du 10 avril 2026 modifié fixant la liste des groupes biologiques similaires substituables par le pharmacien d'officine et les conditions de substitution et d'information du prescripteur et du patient telles que prévues au 2° de l'article L. 5125-23-2 du code de la santé publique ;\nVu l'avis de la directrice générale de l'Agence nationale de sécurité du médicament et des produits de santé sur les conditions de mise en œuvre de la substitution au sein du groupe biologique similaire denosumab en date du 10 juillet 2026 ;\nVu l'avis du conseil de l'Union nationale des organismes complémentaires d'assurance maladie en date du 7 août 2026 ;\nVu l'avis du conseil central d'administration de la Mutualité sociale agricole en date du 13 août 2026 ;\nVu l'avis du conseil de la Caisse nationale de l'assurance maladie en date du 8 septembre 2026 ;\nVu l'avis du conseil de l'Union nationale des caisses d'assurance maladie en date du 8 septembre 2026 ;\nVu l'avis de la commission des accidents du travail et des maladies professionnelles en date du 9 septembre 2026,\nArrêtent :",
+          "official_text_sha256": "28f2b95806677c1af49191a15c74a7e17463ec9c2c9154de2c7af5860a67279b",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [
+            "professionnel"
+          ],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054877325",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054877325",
+          "nature": "ARRETE",
+          "nor": "TRAA2619485A",
+          "publication_date": "2026-09-22",
+          "journal_number": "0221",
+          "title": "Arrêté du 3 septembre 2026 approuvant le plan de servitudes aéronautiques de dégagement de l'aérodrome de Vienne-Reventin (Isère)",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054877325",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260922-002206.tar.gz",
+          "archive_sha256": "6ee12efb467af7cd6dcd85d09c733eee730076527f146807a2c746eee45cbbe9",
+          "official_text_excerpt": "Le ministre des transports,\nVu le code des transports, notamment ses articles L. 6351-1 à L. 6351-3, R. 6351-1, R. 6351-7 et D. 6351-9 ;\nVu l'arrêté du 7 juin 2007 modifié fixant les spécifications techniques destinées à servir de base à l'établissement des servitudes aéronautiques, à l'exclusion des servitudes radioélectriques ;\nVu l'arrêté inter-préfectoral n° 38-2025-10-23-7 du 23 octobre 2025 prescrivant ouverture d'une enquête publique relative à l'instauration de servitudes aéronautiques de dégagement de l'aérodrome Vienne-Reventin ;\nVu le procès-verbal de clôture de la conférence entre services du 18 octobre 2024 ;\nVu le rapport et les conclusions du commissaire enquêteur du 19 décembre 2025,\nArrête :",
+          "official_text_sha256": "171dfd6276035c7020da3ccfb32a4f1ae286fa897021485db0fa25d8f02c4e1a",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054877338",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054877338",
+          "nature": "ARRETE",
+          "nor": "TRAA2619847A",
+          "publication_date": "2026-09-22",
+          "journal_number": "0221",
+          "title": "Arrêté du 3 septembre 2026 approuvant le plan de servitudes aéronautiques de dégagement de l'aérodrome d'Avignon-Caumont (Vaucluse)",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054877338",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260922-002206.tar.gz",
+          "archive_sha256": "6ee12efb467af7cd6dcd85d09c733eee730076527f146807a2c746eee45cbbe9",
+          "official_text_excerpt": "Le ministre des transports,\nVu le code des transports, notamment ses articles L. 6351-1 à L. 6351-3, R. 6351-1, R. 6351-7 et D. 6351-9 ;\nVu l'arrêté du 7 juin 2007 modifié fixant les spécifications techniques destinées à servir de base à l'établissement des servitudes aéronautiques, à l'exclusion des servitudes radioélectriques ;\nVu l'arrêté inter-préfectoral du 6 mai 2025 portant ouverture d'une enquête publique en vue de l'établissement du plan des servitudes aéronautiques de l'aérodrome d'Avignon-Caumont ;\nVu le procès-verbal de clôture de la conférence entre services du 10 janvier 2025 ;\nVu le rapport et les conclusions du commissaire enquêteur du 24 juillet 2025,\nArrête :",
+          "official_text_sha256": "35fc1251cf58593080947ec62a3e2220d8c8e9701a1f6dd52e7c0b570b818334",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054877403",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054877403",
+          "nature": "ARRETE",
+          "nor": "JUSC2624574A",
+          "publication_date": "2026-09-22",
+          "journal_number": "0221",
+          "title": "Arrêté du 16 septembre 2026 relatif à une société à responsabilité limitée (officiers publics ou ministériels)",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054877403",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260922-002206.tar.gz",
+          "archive_sha256": "6ee12efb467af7cd6dcd85d09c733eee730076527f146807a2c746eee45cbbe9",
+          "official_text_excerpt": "Le garde des sceaux, ministre de la justice,\nVu le décret n° 88-814 du 12 juillet 1988 relatif à la nomination et à la cessation de fonctions des officiers publics et ministériels, notamment son article 1\ner\n,\nArrête :",
+          "official_text_sha256": "29780080b86a3de89d8f3613657d18a3714c8883564f1cbb6d67e6ca400b9894",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054877458",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054877458",
+          "nature": "DELIBERATION",
+          "nor": "CNIS2624891X",
+          "publication_date": "2026-09-22",
+          "journal_number": "0221",
+          "title": "Délibération n° 2026-096 du 17 septembre 2026 portant élection du vice-président délégué de la Commission nationale de l'informatique et des libertés",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054877458",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260922-002206.tar.gz",
+          "archive_sha256": "6ee12efb467af7cd6dcd85d09c733eee730076527f146807a2c746eee45cbbe9",
+          "official_text_excerpt": "La Commission nationale de l'informatique et des libertés,\nVu la loi n° 78-17 du 6 janvier 1978 modifiée relative à l'informatique, aux fichiers et aux libertés, notamment son article 9 ;\nVu le décret n° 2019-536 du 29 mai 2019 modifié pris pour l'application de la loi n° 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, notamment son article 4 ;\nVu la délibération n° 2013-175 du 4 juillet 2013 modifiée portant adoption du règlement intérieur de la Commission nationale de l'informatique et des libertés, notamment son article 16 ;\nAprès avoir procédé au vote en présence de M. Damien MILIC, commissaire du Gouvernement,\nConstate :",
+          "official_text_sha256": "37376d88c14e6dc003528f1cc2f0bdff59e01a4fc0039deacbfd75bba9d5b04c",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054877467",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054877467",
+          "nature": "DELIBERATION",
+          "nor": "CNIS2624894X",
+          "publication_date": "2026-09-22",
+          "journal_number": "0221",
+          "title": "Délibération n° 2026-097 du 17 septembre 2026 portant élection du vice-président de la Commission nationale de l'informatique et des libertés",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054877467",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260922-002206.tar.gz",
+          "archive_sha256": "6ee12efb467af7cd6dcd85d09c733eee730076527f146807a2c746eee45cbbe9",
+          "official_text_excerpt": "La Commission nationale de l'informatique et des libertés,\nVu la loi n° 78-17 du 6 janvier 1978 modifiée relative à l'informatique, aux fichiers et aux libertés, notamment son article 9 ;\nVu le décret n° 2019-536 du 29 mai 2019 modifié pris pour l'application de la loi n° 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, notamment son article 4 ;\nVu la délibération n° 2013-175 du 4 juillet 2013 modifiée portant adoption du règlement intérieur de la Commission nationale de l'informatique et des libertés, notamment son article 16 ;\nAprès avoir procédé au vote en présence de M. Damien MILIC, commissaire du Gouvernement,\nConstate :",
+          "official_text_sha256": "37376d88c14e6dc003528f1cc2f0bdff59e01a4fc0039deacbfd75bba9d5b04c",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054877476",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054877476",
+          "nature": "DELIBERATION",
+          "nor": "CNIS2624897X",
+          "publication_date": "2026-09-22",
+          "journal_number": "0221",
+          "title": "Délibération n° 2026-098 du 17 septembre 2026 portant élection de trois membres de la formation restreinte de la Commission nationale de l'informatique et des libertés",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054877476",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260922-002206.tar.gz",
+          "archive_sha256": "6ee12efb467af7cd6dcd85d09c733eee730076527f146807a2c746eee45cbbe9",
+          "official_text_excerpt": "La Commission nationale de l'informatique et des libertés,\nVu la loi n° 78-17 du 6 janvier 1978 modifiée relative à l'informatique, aux fichiers et aux libertés, notamment son article 9 ;\nVu le décret n° 2019-536 du 29 mai 2019 modifié pris pour l'application de la loi n° 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, notamment son article 4 ;\nVu la délibération n° 2013-175 du 4 juillet 2013 modifiée portant adoption du règlement intérieur de la Commission nationale de l'informatique et des libertés, notamment son article 16 ;\nAprès avoir procédé au vote en présence de M. Damien MILIC, commissaire du Gouvernement,\nConstate :",
+          "official_text_sha256": "37376d88c14e6dc003528f1cc2f0bdff59e01a4fc0039deacbfd75bba9d5b04c",
           "excerpt_truncated": false,
           "content_status": "AVAILABLE"
         },
@@ -995,28 +1310,32 @@
     ],
     "deterministically_unresolved_candidates": [
       {
-        "source_id": "jorf:JORFTEXT000054861510",
+        "source_id": "jorf:JORFTEXT000054877455",
         "reason": "PRIMARY_TEXT_EMPTY"
       },
       {
-        "source_id": "jorf:JORFTEXT000054862227",
+        "source_id": "jorf:JORFTEXT000054877489",
         "reason": "PRIMARY_TEXT_EMPTY"
       },
       {
-        "source_id": "jorf:JORFTEXT000054862392",
+        "source_id": "jorf:JORFTEXT000054877553",
         "reason": "PRIMARY_TEXT_EMPTY"
       },
       {
-        "source_id": "jorf:JORFTEXT000054862398",
+        "source_id": "jorf:JORFTEXT000054877557",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054877562",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054877566",
         "reason": "PRIMARY_TEXT_EMPTY"
       }
     ]
   },
-  "ready": true,
-  "created_at_utc": "2026-09-20 08:35:22.778754+00:00",
-  "updated_at_utc": "2026-09-20T11:25:33.244472+00:00",
-  "usage": {
-    "input_tokens": 44139,
-    "output_tokens": 8158
-  }
+  "ready": false,
+  "created_at_utc": "2026-09-22 08:32:25.649884+00:00",
+  "updated_at_utc": "2026-09-22T08:32:25.786490+00:00"
 }
