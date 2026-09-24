@@ -1292,6 +1292,354 @@
       ]
     },
     {
+      "signal_id": "signal:4f91554231c87d6e",
+      "source_id": "jorf:JORFTEXT000054888375",
+      "captured_at_utc": "2026-09-24T11:47:15.463490+00:00",
+      "facts_sha256": "5749039e9ab14285a5f339a094ce53140769014eada5fce26ed4bb53b114b817",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:4f91554231c87d6e",
+        "evaluated_at_utc": "2026-09-24T11:47:15.463490+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : UNKNOWN.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:4f91554231c87d6e",
+        "evaluated_at_utc": "2026-09-24T11:47:15.463490+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : UNKNOWN.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:4f91554231c87d6e",
+        "identity": {
+          "stable_source_id": "source:860da9e5871dc7e7",
+          "evidence_version": "sha256:9c48402b8a61314b1a693d785606df1bab01b5aad2b204c737026267bf726374"
+        },
+        "source": {
+          "source_id": "jorf:JORFTEXT000054888375",
+          "source_kind": "JORF",
+          "change": "NEW",
+          "evidence": {
+            "text_id": "JORFTEXT000054888375",
+            "nature": "ARRETE",
+            "nor": "ECOR2622881A",
+            "title": "Arrêté du 18 septembre 2026 modifiant les niveaux de bonification et les critères d'éligibilité associés de la fiche d'opération standardisée TRA-EQ-128",
+            "publisher": "DILA / Journal officiel de la République française",
+            "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054888375",
+            "publication_date": "2026-09-24",
+            "journal_number": "0223",
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [],
+            "detail_status": null,
+            "official": {
+              "title": null,
+              "period": null
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": "AVAILABLE",
+              "text_sha256": "66b819fe5b0a11b34aa2fd92011df4351016b3093ab5bf6c23ad75a0cc2fb3a5",
+              "excerpt": "Publics concernés : bénéficiaires et demandeurs dans le cadre du dispositif des certificats d'économies d'énergie.\nObjet : le présent arrêté modifie les niveaux de bonification et les critères d'éligibilité associés de la fiche d'opération standardisée TRA-EQ-128.\nEntrée en vigueur : les dispositions du présent arrêté entrent en vigueur à compter du lendemain de la publication, du 1\ner\noctobre 2026, du 1\ner\nnovembre 2026 ou du 1\ner\njanvier 2027, selon les articles.\nApplication : le présent arrêté modifie l'arrêté du 28 septembre 2021 modifié relatif aux contrôles dans le cadre du dispositif des certificats d'économies d'énergie et l'arrêté du 29 décembre 2014 relatif aux modalités d'application du dispositif des certificats d'économies d'énergie.\nLe ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique,\nVu le code de l'énergie, notamment ses articles R. 221-14, R. 221-18 ;\nVu l'arrêté du 29 décembre 2014 modifié relatif aux modalités d'application du dispositif des certificats d'économies d'énergie ;\nVu l'arrêté du 28 septembre 2021 modifié relatif aux contrôles dans le cadre du dispositif des certificats d'économies d'énergie ;\nVu l'avis du Conseil supérieur de l'énergie du 10 septembre 2026 ;\nVu les observations formulées lors de la consultation du public réalisée du 27 août 2026 au 17 septembre 2026 en application de l'article L. 123-19-1 du code de l'environnement ;\nVu la notification n° 2026/0513/FR adressée le 18 septembre 2026 à la Commission européenne,\nArrête :",
+              "excerpt_truncated": false,
+              "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260924-004514.tar.gz",
+              "archive_sha256": "3c897fa2e5724e202fb90e544f164f94640d3f53273a2b0cc17658b57b7ecd7f"
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Arrêté publié modifiant les niveaux de bonification et critères d'éligibilité de la fiche CEE TRA-EQ-128, périmètre professionnel identifiable dans le dispositif CEE ; service B2B de veille/qualification/mise en relation possible sans acte réglementé."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 11,
+          "triggers": [
+            {
+              "kind": "SANCTION_OR_CONTROL",
+              "score": 3,
+              "terms": [
+                "controle"
+              ]
+            },
+            {
+              "kind": "FUNDING_OR_INCENTIVE",
+              "score": 3,
+              "terms": [
+                "bonification"
+              ]
+            },
+            {
+              "kind": "ELIGIBILITY_OR_CERTIFICATION",
+              "score": 2,
+              "terms": [
+                "eligibilite"
+              ]
+            },
+            {
+              "kind": "TECHNICAL_TRANSITION",
+              "score": 2,
+              "terms": [
+                "economies d'energie"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur",
+                "a compter du"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        },
+        "reading": {
+          "consequence": "Les niveaux de bonification et les critères d'éligibilité de la fiche d'opération standardisée CEE TRA-EQ-128 sont modifiés, ce qui change les conditions de valorisation des opérations concernées à compter de dates variables selon les articles (lendemain de publication, 1er octobre 2026, 1er novembre 2026 ou 1er janvier 2027).",
+          "affected_actors": [
+            "Bénéficiaires et demandeurs dans le cadre du dispositif CEE",
+            "Obligés soumis au dispositif CEE"
+          ],
+          "beneficiaries": [],
+          "constrained_parties": [],
+          "potential_service_partners": [
+            "Partenaire de veille réglementaire CEE",
+            "Partenaire de mise en relation pour qualification de besoin CEE"
+          ],
+          "unknowns": [
+            "Nature précise des équipements/opérations visés par TRA-EQ-128",
+            "Montants exacts des nouveaux niveaux de bonification",
+            "Identité des acteurs économiques impactés concrètement"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "jorf:JORFTEXT000054888375"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:4f91554231c87d6e",
+          "title": "Arrêté modifiant les niveaux de bonification et critères d'éligibilité de la fiche CEE TRA-EQ-128",
+          "keywords": [
+            "CEE",
+            "bonification",
+            "fiche standardisée",
+            "TRA-EQ-128",
+            "éligibilité",
+            "certificats d'économies d'énergie"
+          ],
+          "affected_scope": [
+            "Dispositif des certificats d'économies d'énergie"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "PUBLISHED",
+            "proof_status": "VERIFIED",
+            "effective_date": "2026-10-01",
+            "affected_scope": [
+              "Bénéficiaires et demandeurs du dispositif CEE"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "UNKNOWN",
+                "status": "UNKNOWN"
+              }
+            ],
+            "dependencies": [
+              {
+                "id": "Arrêté du 29 décembre 2014 modifié",
+                "status": "AVAILABLE"
+              },
+              {
+                "id": "Arrêté du 28 septembre 2021 modifié",
+                "status": "AVAILABLE"
+              }
+            ],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "PARTIAL"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:4f91554231c87d6e",
+          "evaluated_at_utc": "2026-09-24T11:47:15.463490+00:00",
+          "compliance": {
+            "status": "PASS",
+            "reasons": [
+              "Texte vérifié, dans le périmètre et actionnable."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Statut de l'autorisation inconnu : UNKNOWN.",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:4f91554231c87d6e",
+        "title": "Arrêté modifiant les niveaux de bonification et critères d'éligibilité de la fiche CEE TRA-EQ-128",
+        "keywords": [
+          "CEE",
+          "bonification",
+          "fiche standardisée",
+          "TRA-EQ-128",
+          "éligibilité",
+          "certificats d'économies d'énergie"
+        ],
+        "affected_scope": [
+          "Dispositif des certificats d'économies d'énergie"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-01",
+          "affected_scope": [
+            "Bénéficiaires et demandeurs du dispositif CEE"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "UNKNOWN",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "Arrêté du 29 décembre 2014 modifié",
+              "status": "AVAILABLE"
+            },
+            {
+              "id": "Arrêté du 28 septembre 2021 modifié",
+              "status": "AVAILABLE"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "PARTIAL"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-09-24T11:47:15.463490+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
       "signal_id": "signal:75b2c5cc401ba8ff",
       "source_id": "jorf:JORFTEXT000054797892",
       "captured_at_utc": "2026-09-12T17:45:19.645448+00:00",
@@ -3425,7 +3773,7 @@
     }
   ],
   "queue_audit": {
-    "processed_count": 699,
+    "processed_count": 748,
     "unrecoverable_queue_entries": [
       {
         "fingerprint": "490853c49376a298cfdbefd3d9015889f24dfb149e616097ae78c39d2661a25b",
@@ -4580,6 +4928,106 @@
       {
         "fingerprint": "c60fad996964f5f49ca58c3df1ede9ef5a1394d6d0058f9be9898a7239488142",
         "source_id": "jorf:JORFTEXT000054883826",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "7a504a3fde30b8b4317b08a5a850ca2f005131e906c02687739ac81da59ea7fd",
+        "source_id": "jorf:JORFTEXT000054888540",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "13b6ae4da1d11df5b23e204ad0ccd3e5e4699330b458c8006444cf2388219b1b",
+        "source_id": "jorf:JORFTEXT000054888623",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "cf07780583ccfbc610cfda192a7a201f887d39f2965a21f8fd20695cb9fd2ce3",
+        "source_id": "jorf:JORFTEXT000054888625",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "7dc2605f523ef84de5781ad69798d51657f10b10d55ce1d7163b1ce5deae7bd7",
+        "source_id": "jorf:JORFTEXT000054888690",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "368a8f08bf873fec8399fbabacd4529c0d4d3383002594a48ebf574d9e8770f1",
+        "source_id": "jorf:JORFTEXT000054888704",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "82af258a0ad071279470beaea566dafcff5e73b85a4a98a1c9c326832762885d",
+        "source_id": "jorf:JORFTEXT000054888710",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "cb87968b8dedbaf8bcf823e481486dc89f2b4b6ee3c75c886ded2d16d9b836d1",
+        "source_id": "jorf:JORFTEXT000054888716",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "cddf217a90d2bd24bd4f92f79bc8444eebb8cf24a0e49015f9bb73787e3afe17",
+        "source_id": "jorf:JORFTEXT000054888906",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "abc7de5fcce9f19a72adf24bbcb50fdd138251443ec934cd74c4536a70aa7992",
+        "source_id": "jorf:JORFTEXT000054888910",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "8f879b154f15ac6820149fac3cb1883596cce59e250d06b0dfecb474f713a05a",
+        "source_id": "jorf:JORFTEXT000054888998",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "c17de8f9e1a0176b334a05c5eea3a628a2dc85936c4aa7a251e8c842365df9ec",
+        "source_id": "jorf:JORFTEXT000054889004",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "16530a38cb68848695972c05b38e2ff1641fae4432a919f3ffa95b0bd5049ec9",
+        "source_id": "jorf:JORFTEXT000054889010",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "41134b5b294385413aaf63eb30204430ad376471051f211fdfcaea6ff09e5ac1",
+        "source_id": "jorf:JORFTEXT000054889016",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "0cc7e4a9b1b55339eb13856aca7a62ec254ef0bc2557afcaf0a5401ba7095f77",
+        "source_id": "jorf:JORFTEXT000054889023",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "f166de7d9c2597cd9825c65b0b8e06bde91d0a3afe8098a782427a33dbb6ff2a",
+        "source_id": "jorf:JORFTEXT000054889030",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "04e717f3bc5dea0239c87cbe9e370be997465ff0cda8d2362f295db5267546ff",
+        "source_id": "jorf:JORFTEXT000054889049",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "d654c01a01b254ef328f3c3387cff43b37a5a9f5161a405173369d50b965e124",
+        "source_id": "jorf:JORFTEXT000054889055",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "d4a725f03f7316ca104107ec245759331f870d2c7de652238a321a70908f24c9",
+        "source_id": "jorf:JORFTEXT000054889092",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "b362a800bf345d5cc1313e68a6fe96827abc56d48120fa4e52c5530d4bab8209",
+        "source_id": "jorf:JORFTEXT000054889095",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "c05b59a4b8795800ddece33ca6f1e679c262c307abce4fefbe7b4f70acec2fe8",
+        "source_id": "jorf:JORFTEXT000054889098",
         "reason": "PRIMARY_TEXT_EMPTY"
       }
     ],
