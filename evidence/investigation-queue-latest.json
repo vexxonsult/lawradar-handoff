@@ -1,15 +1,12 @@
 {
   "schema": "lawradar-investigation-queue-v1",
-  "generated_at_utc": "2026-09-23T13:51:38.216468+00:00",
+  "generated_at_utc": "2026-09-24T11:49:26.535374+00:00",
   "source_run": {
-    "id": "investigation-replay:c05cc5729a94d7fd",
-    "kind": "ARCHIVED_FACTS_REPLAY",
-    "generated_at_utc": "2026-09-23T13:47:13.023961+00:00",
-    "purpose": "TECHNICAL_ENRICHMENT_RETRY",
-    "archive_provenance": {
-      "signal:10151b49ad131832": "evidence/universal-signals/v2/2026/09/run-34755614648-attempt-1.json",
-      "signal:c20abf6d37ae4200": "evidence/universal-signals/v2/2026/09/run-34755614648-attempt-1.json"
-    }
+    "id": "35995027624",
+    "attempt": "1",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/35995027624",
+    "commit": "301fe98c95f1405f4e0384875d192d85716cb354",
+    "report_date": "2026-09-24"
   },
   "policy": {
     "max_automatic_attempts": 2,
@@ -17,16 +14,16 @@
   },
   "items": [
     {
-      "signal_id": "signal:10151b49ad131832",
-      "source_id": "jorf:JORFTEXT000054834748",
-      "title": "Arrêté modifiant la liste des modèles de pompes à chaleur agréés en matière de qualité et de résilience industrielle",
-      "status": "REVIEW_REQUIRED",
-      "opened_at_utc": "2026-09-19T11:06:23.362945+00:00",
-      "updated_at_utc": "2026-09-23T13:51:38.216468+00:00",
-      "automatic_attempts": 2,
+      "signal_id": "signal:4f91554231c87d6e",
+      "source_id": "jorf:JORFTEXT000054888375",
+      "title": "Arrêté modifiant les niveaux de bonification et critères d'éligibilité de la fiche CEE TRA-EQ-128",
+      "status": "WAITING_FOR_EVIDENCE",
+      "opened_at_utc": "2026-09-24T11:49:26.535374+00:00",
+      "updated_at_utc": "2026-09-24T11:49:26.535374+00:00",
+      "automatic_attempts": 1,
       "max_automatic_attempts": 2,
       "qualification_contract_version": "tool-envelope-v2",
-      "next_retry_not_before_utc": null,
+      "next_retry_not_before_utc": "2026-09-24T17:49:26.535374+00:00",
       "questions": [
         {
           "id": "OPERATIONAL_FEASIBILITY",
@@ -35,63 +32,11 @@
           "question": "Confirmer l'autorisation, l'agrément ou la voie de sous-traitance applicable, les dépendances opérationnelles nécessaires, le capital de démarrage nécessaire, le délai réaliste de mise sur le marché avant toute décision commerciale.",
           "evidence": [
             "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : agrement_pac_qualite_resilience.",
+            "Statut de l'autorisation inconnu : UNKNOWN.",
             "Capital de départ inconnu.",
             "Délai de mise sur le marché inconnu."
           ],
           "automatic_retry": false
-        },
-        {
-          "id": "PRESS_QUALIFICATION",
-          "kind": "TECHNICAL_RETRY",
-          "status": "OPEN",
-          "question": "Requalifier exclusivement les candidats Presse déjà collectés ; aucune nouvelle conclusion médiatique n'est admise sans URL tracée.",
-          "evidence": [
-            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement.",
-            "Collecte Presse partiellement limitée par un rate-limit temporaire (HTTP 429) ; retry différé requis."
-          ],
-          "automatic_retry": true
-        }
-      ],
-      "readiness_status": "READY_FOR_PILOTS",
-      "final_constraint": "INVESTIGATE"
-    },
-    {
-      "signal_id": "signal:c20abf6d37ae4200",
-      "source_id": "jorf:JORFTEXT000054834875",
-      "title": "Décret n° 2026-863 relatif aux exigences de performance environnementale des équipements de chauffage, refroidissement et ECS dans un bâtiment",
-      "status": "REVIEW_REQUIRED",
-      "opened_at_utc": "2026-09-19T11:06:23.362945+00:00",
-      "updated_at_utc": "2026-09-23T13:51:38.216468+00:00",
-      "automatic_attempts": 2,
-      "max_automatic_attempts": 2,
-      "qualification_contract_version": "tool-envelope-v2",
-      "next_retry_not_before_utc": null,
-      "questions": [
-        {
-          "id": "OPERATIONAL_FEASIBILITY",
-          "kind": "NEW_OFFICIAL_OR_PARTNER_EVIDENCE",
-          "status": "OPEN",
-          "question": "Confirmer l'autorisation, l'agrément ou la voie de sous-traitance applicable, les dépendances opérationnelles nécessaires, le capital de démarrage nécessaire, le délai réaliste de mise sur le marché avant toute décision commerciale.",
-          "evidence": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : non spécifié.",
-            "Dépendance non vérifiée : non spécifié.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ],
-          "automatic_retry": false
-        },
-        {
-          "id": "PRESS_QUALIFICATION",
-          "kind": "TECHNICAL_RETRY",
-          "status": "OPEN",
-          "question": "Requalifier exclusivement les candidats Presse déjà collectés ; aucune nouvelle conclusion médiatique n'est admise sans URL tracée.",
-          "evidence": [
-            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement.",
-            "Collecte Presse partiellement limitée par un rate-limit temporaire (HTTP 429) ; retry différé requis."
-          ],
-          "automatic_retry": true
         },
         {
           "id": "MARKET_RELEVANCE",
@@ -109,8 +54,8 @@
     }
   ],
   "summary": {
-    "open_count": 0,
-    "review_required_count": 2,
-    "automatic_retry_count": 0
+    "open_count": 1,
+    "review_required_count": 0,
+    "automatic_retry_count": 1
   }
 }
