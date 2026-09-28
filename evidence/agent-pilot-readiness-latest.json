@@ -1,62 +1,44 @@
 {
   "schema": "lawradar-agent-pilot-readiness-v1",
-  "generated_at_utc": "2026-09-28T17:49:34.976232+00:00",
+  "generated_at_utc": "2026-09-28T22:04:34.543896+00:00",
   "source_run": {
-    "id": "36460808409",
+    "id": "36490139392",
     "attempt": "1",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/36460808409",
-    "commit": "b12a77f60dedf5b75bec1f20924be668798835fc",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/36490139392",
+    "commit": "0241cf891569c6eabcc8033665691ad078ae86d6",
     "report_date": "2026-09-27"
   },
   "signals": [
     {
+      "signal_id": "signal:da578e19057f0b28",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/consultation-terminee-projet-d-arrete-relatif-a-la-a3423.html",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Le Radar n'a pas retenu ce signal."
+      ],
+      "filters": null
+    },
+    {
       "signal_id": "signal:a4d854a60f6c38f8",
       "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-suppression-de-fiches-d-a3428.html",
-      "radar_status": "RETAINED",
-      "status": "READY_FOR_PILOTS",
-      "ready_for_pilots": true,
-      "recommended_next_step": "RUN_PRESS_THEN_MARKET_IF_SCOPE_FITS",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "recommended_next_step": "NO_ACTION",
       "reasons": [
-        "Le signal retenu porte des faits valides et passe la porte opérateur."
+        "Le Radar n'a pas retenu ce signal."
       ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:a4d854a60f6c38f8",
-        "evaluated_at_utc": "2026-09-28T17:49:34.976232+00:00",
-        "compliance": {
-          "status": "WATCH",
-          "reasons": [
-            "Texte encore en consultation ou projet."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : statut d'obligé ou de délégataire CEE.",
-            "Dépendance non vérifiée : publication de l'arrêté final.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "PASS",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
-            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
+      "filters": null
     }
   ],
   "summary": {
-    "signal_count": 1,
-    "ready_for_pilots_count": 1,
+    "signal_count": 2,
+    "ready_for_pilots_count": 0,
     "counts_by_status": {
-      "READY_FOR_PILOTS": 1
+      "NOT_RETAINED": 2
     }
   }
 }

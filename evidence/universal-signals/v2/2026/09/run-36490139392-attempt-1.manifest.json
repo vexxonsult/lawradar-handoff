@@ -1,0 +1,32 @@
+{
+  "schema": "lawradar-universal-signal-archive-v1",
+  "status": "ARCHIVED",
+  "run_id": "36490139392",
+  "run_attempt": "1",
+  "report_date": "2026-09-27",
+  "archive_path": "evidence/universal-signals/v2/2026/09/run-36490139392-attempt-1.json",
+  "sha256": "7a2447fe224842b746ec7157c73a29d36c1335d7c31d81a7df48ac6b933c97ad",
+  "signal_count": 2,
+  "prefilter_counts": {
+    "excluded_historical_candidates": 0,
+    "excluded_routine_candidates": 0,
+    "excluded_no_economic_friction_candidates": 0,
+    "deterministically_unresolved_candidates": 0
+  },
+  "signals": [
+    {
+      "signal_id": "signal:da578e19057f0b28",
+      "stable_source_id": "source:30a6ffc33dbd64db",
+      "evidence_version": "sha256:d2464432905e901da58046d16742bacb28a70502e0f3e28d683969a72d9938df",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/consultation-terminee-projet-d-arrete-relatif-a-la-a3423.html",
+      "radar_status": "DISCARDED"
+    },
+    {
+      "signal_id": "signal:a4d854a60f6c38f8",
+      "stable_source_id": "source:63085502db306c3b",
+      "evidence_version": "sha256:716391961c94ffda15406737d21cd7ca9a62c79f6dc49cce28a67578c47a3372",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-suppression-de-fiches-d-a3428.html",
+      "radar_status": "DISCARDED"
+    }
+  ]
+}
