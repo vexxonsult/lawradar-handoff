@@ -1,152 +1,62 @@
 {
   "schema": "lawradar-agent-pilot-readiness-v1",
-  "generated_at_utc": "2026-09-27T12:03:54.446637+00:00",
+  "generated_at_utc": "2026-09-28T17:49:34.976232+00:00",
   "source_run": {
-    "id": "36317728396",
+    "id": "36460808409",
     "attempt": "1",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/36317728396",
-    "commit": "a7fd3382ac4b4700414deca494842fe94bf782aa",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/36460808409",
+    "commit": "b12a77f60dedf5b75bec1f20924be668798835fc",
     "report_date": "2026-09-27"
   },
   "signals": [
     {
-      "signal_id": "signal:a959a22e56a818ba",
-      "source_id": "jorf:JORFTEXT000054903726",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
+      "signal_id": "signal:a4d854a60f6c38f8",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-suppression-de-fiches-d-a3428.html",
+      "radar_status": "RETAINED",
+      "status": "READY_FOR_PILOTS",
+      "ready_for_pilots": true,
+      "recommended_next_step": "RUN_PRESS_THEN_MARKET_IF_SCOPE_FITS",
       "reasons": [
-        "Le Radar n'a pas retenu ce signal."
+        "Le signal retenu porte des faits valides et passe la porte opérateur."
       ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:8d22ae763c5f8aac",
-      "source_id": "jorf:JORFTEXT000054903780",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:08383ba8e18cec30",
-      "source_id": "jorf:JORFTEXT000054903873",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:b85fead309cc80de",
-      "source_id": "jorf:JORFTEXT000054903889",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:143bc9f88f459afa",
-      "source_id": "jorf:JORFTEXT000054903906",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:4288bfa12a53a62a",
-      "source_id": "jorf:JORFTEXT000054904062",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:4f715261a0c23bc3",
-      "source_id": "jorf:JORFTEXT000054904084",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:7fb9d2250b705bce",
-      "source_id": "jorf:JORFTEXT000054904107",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:41ee3340014e4a04",
-      "source_id": "jorf:JORFTEXT000054904141",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:a9de99b5ca8210f7",
-      "source_id": "jorf:JORFTEXT000054904169",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
-    },
-    {
-      "signal_id": "signal:5098086f1db07ccf",
-      "source_id": "jorf:JORFTEXT000054904180",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Le Radar n'a pas retenu ce signal."
-      ],
-      "filters": null
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:a4d854a60f6c38f8",
+        "evaluated_at_utc": "2026-09-28T17:49:34.976232+00:00",
+        "compliance": {
+          "status": "WATCH",
+          "reasons": [
+            "Texte encore en consultation ou projet."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : statut d'obligé ou de délégataire CEE.",
+            "Dépendance non vérifiée : publication de l'arrêté final.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
     }
   ],
   "summary": {
-    "signal_count": 11,
-    "ready_for_pilots_count": 0,
+    "signal_count": 1,
+    "ready_for_pilots_count": 1,
     "counts_by_status": {
-      "NOT_RETAINED": 11
+      "READY_FOR_PILOTS": 1
     }
   }
 }

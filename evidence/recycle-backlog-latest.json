@@ -2601,6 +2601,321 @@
       ]
     },
     {
+      "signal_id": "signal:a4d854a60f6c38f8",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-suppression-de-fiches-d-a3428.html",
+      "captured_at_utc": "2026-09-28T17:49:35.029603+00:00",
+      "facts_sha256": "91654097cc1c17cad965c9a3b005684ef38edfaffeaf4450fef678d77520135b",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:a4d854a60f6c38f8",
+        "evaluated_at_utc": "2026-09-28T17:49:35.029603+00:00",
+        "compliance": {
+          "status": "WATCH",
+          "reasons": [
+            "Texte encore en consultation ou projet."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : statut d'obligé ou de délégataire CEE.",
+            "Dépendance non vérifiée : publication de l'arrêté final.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:a4d854a60f6c38f8",
+        "evaluated_at_utc": "2026-09-28T17:49:35.029603+00:00",
+        "compliance": {
+          "status": "WATCH",
+          "reasons": [
+            "Texte encore en consultation ou projet."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : statut d'obligé ou de délégataire CEE.",
+            "Dépendance non vérifiée : publication de l'arrêté final.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:a4d854a60f6c38f8",
+        "identity": {
+          "stable_source_id": "source:63085502db306c3b",
+          "evidence_version": "sha256:4010a0be4b3a7062cfb2395ac335cfc48965811239be6f002c20c6fc7fc2b87f"
+        },
+        "source": {
+          "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-suppression-de-fiches-d-a3428.html",
+          "source_kind": "CONSULTDD",
+          "change": "NEW",
+          "evidence": {
+            "text_id": null,
+            "nature": null,
+            "nor": null,
+            "title": "Projet d’arrêté portant suppression de fiches d’opérations standardisées du dispositif ...",
+            "publisher": null,
+            "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-suppression-de-fiches-d-a3428.html",
+            "publication_date": null,
+            "journal_number": null,
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [
+              "2026-09-16",
+              "2026-09-28"
+            ],
+            "detail_status": "PRIMARY_PAGE_READ",
+            "official": {
+              "title": "Projet d’arrêté portant suppression de fiches d’opérations standardisées du dispositif des certificats d’économies d’énergie",
+              "period": "Consultation du 16/09/2026 au 12/10/2026 - 8 contributions"
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": null,
+              "text_sha256": null,
+              "excerpt": null,
+              "excerpt_truncated": false,
+              "archive_url": null,
+              "archive_sha256": null
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Consultation publique CEE modifiant le catalogue de fiches d'opérations standardisées (suppression) : périmètre professionnel identifiable (obligés, éligibles, installateurs) permettant un service B2B non réglementé de veille/qualification, sans droit à assistance CEE certifiée."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+              "score": 3,
+              "terms": []
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        },
+        "reading": {
+          "consequence": "Le projet d'arrêté vise à supprimer certaines fiches d'opérations standardisées CEE, notamment celles liées aux énergies fossiles et celles peu utilisées, réduisant le catalogue d'opérations éligibles à des certificats d'économies d'énergie.",
+          "affected_actors": [
+            "obligés CEE",
+            "délégataires",
+            "installateurs d'équipements énergies fossiles",
+            "bénéficiaires de travaux d'efficacité énergétique"
+          ],
+          "beneficiaries": [],
+          "constrained_parties": [
+            "professionnels utilisant les fiches supprimées liées aux énergies fossiles"
+          ],
+          "potential_service_partners": [],
+          "unknowns": [
+            "date d'entrée en vigueur définitive de l'arrêté",
+            "liste exacte des fiches supprimées (lots 1 et 2)",
+            "impact sur les opérations déjà engagées"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-suppression-de-fiches-d-a3428.html"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:a4d854a60f6c38f8",
+          "title": "Projet d'arrêté portant suppression de fiches d'opérations standardisées CEE",
+          "keywords": [
+            "CEE",
+            "certificats d'économies d'énergie",
+            "fiches d'opérations standardisées",
+            "énergies fossiles",
+            "consultation publique"
+          ],
+          "affected_scope": [
+            "dispositif CEE",
+            "fiches d'opérations standardisées",
+            "énergies fossiles"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "CONSULTATION_OPEN",
+            "proof_status": "VERIFIED",
+            "effective_date": null,
+            "affected_scope": [
+              "dispositif CEE",
+              "fiches d'opérations standardisées"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "statut d'obligé ou de délégataire CEE",
+                "status": "UNKNOWN"
+              }
+            ],
+            "dependencies": [
+              {
+                "id": "publication de l'arrêté final",
+                "status": "UNKNOWN"
+              }
+            ],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "PARTIAL"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:a4d854a60f6c38f8",
+          "evaluated_at_utc": "2026-09-28T17:49:35.029603+00:00",
+          "compliance": {
+            "status": "WATCH",
+            "reasons": [
+              "Texte encore en consultation ou projet."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Statut de l'autorisation inconnu : statut d'obligé ou de délégataire CEE.",
+              "Dépendance non vérifiée : publication de l'arrêté final.",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:a4d854a60f6c38f8",
+        "title": "Projet d'arrêté portant suppression de fiches d'opérations standardisées CEE",
+        "keywords": [
+          "CEE",
+          "certificats d'économies d'énergie",
+          "fiches d'opérations standardisées",
+          "énergies fossiles",
+          "consultation publique"
+        ],
+        "affected_scope": [
+          "dispositif CEE",
+          "fiches d'opérations standardisées",
+          "énergies fossiles"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "CONSULTATION_OPEN",
+          "proof_status": "VERIFIED",
+          "effective_date": null,
+          "affected_scope": [
+            "dispositif CEE",
+            "fiches d'opérations standardisées"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "statut d'obligé ou de délégataire CEE",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "publication de l'arrêté final",
+              "status": "UNKNOWN"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "PARTIAL"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-09-28T17:49:35.029603+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
       "signal_id": "signal:c20abf6d37ae4200",
       "source_id": "jorf:JORFTEXT000054834875",
       "captured_at_utc": "2026-09-13T11:53:53.020672+00:00",
@@ -4101,7 +4416,7 @@
     }
   ],
   "queue_audit": {
-    "processed_count": 864,
+    "processed_count": 875,
     "unrecoverable_queue_entries": [
       {
         "fingerprint": "490853c49376a298cfdbefd3d9015889f24dfb149e616097ae78c39d2661a25b",

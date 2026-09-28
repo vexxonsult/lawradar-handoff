@@ -1,0 +1,25 @@
+{
+  "schema": "lawradar-universal-signal-archive-v1",
+  "status": "ARCHIVED",
+  "run_id": "36460808409",
+  "run_attempt": "1",
+  "report_date": "2026-09-27",
+  "archive_path": "evidence/universal-signals/v2/2026/09/run-36460808409-attempt-1.json",
+  "sha256": "f5383da81b238655d113fd2af305c738ec26f07903fe4a6b15fa0313ba765429",
+  "signal_count": 1,
+  "prefilter_counts": {
+    "excluded_historical_candidates": 39,
+    "excluded_routine_candidates": 0,
+    "excluded_no_economic_friction_candidates": 0,
+    "deterministically_unresolved_candidates": 0
+  },
+  "signals": [
+    {
+      "signal_id": "signal:a4d854a60f6c38f8",
+      "stable_source_id": "source:63085502db306c3b",
+      "evidence_version": "sha256:4010a0be4b3a7062cfb2395ac335cfc48965811239be6f002c20c6fc7fc2b87f",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-suppression-de-fiches-d-a3428.html",
+      "radar_status": "RETAINED"
+    }
+  ]
+}
