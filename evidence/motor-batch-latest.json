@@ -1,15 +1,15 @@
 {
   "schema": "lawradar-anthropic-motor-batch-v1",
-  "input_sha256": "af63f6c7eaf5784b92bf2f0e4d8b37888c40decf0a67836a561543323f471cf3",
-  "request_sha256": "af63f6c7eaf5784b92bf2f0e4d8b37888c40decf0a67836a561543323f471cf3",
+  "input_sha256": "d87f4c5254b1ae1264a1d43a9152177f6e3aee1071a47e35bb6bea9d59aef848",
+  "request_sha256": "d87f4c5254b1ae1264a1d43a9152177f6e3aee1071a47e35bb6bea9d59aef848",
   "model": "claude-sonnet-5",
   "request_version": "2026-09-12-explicit-json-contract-v8",
-  "batch_id": "msgbatch_01AtwcziT1KzL4q9W5qbDdtY",
-  "processing_status": "ended",
-  "request_count": 1,
+  "batch_id": "msgbatch_01QHzsuw4XhCojunV1q5W693",
+  "processing_status": "in_progress",
+  "request_count": 2,
   "request_counts": {
-    "processing": 0,
-    "succeeded": 1,
+    "processing": 2,
+    "succeeded": 0,
     "errored": 0,
     "canceled": 0,
     "expired": 0
@@ -18,211 +18,13 @@
     "schema": "lawradar-motor-input-v1",
     "report_date": "2026-09-27",
     "delta_changed_sources": [
-      "jorf-summaries-latest.json",
-      "eurlex-oj-latest.json",
       "consultdd-latest.json"
     ],
     "handled_source_files": [
       "jorf-summaries-latest.json",
       "consultdd-latest.json"
     ],
-    "excluded_historical_candidates": [
-      {
-        "source_id": "jorf:JORFTEXT000000169499",
-        "publication_date": "1995-05-11",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000425699",
-        "publication_date": "2006-06-29",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000463584",
-        "publication_date": "1979-03-01",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000521432",
-        "publication_date": "1955-07-21",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000527475",
-        "publication_date": "1991-11-28",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000533674",
-        "publication_date": "1990-08-02",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000587727",
-        "publication_date": "2001-12-12",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000657433",
-        "publication_date": "1961-04-19",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000673433",
-        "publication_date": "1979-09-15",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000709360",
-        "publication_date": "1991-02-09",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000022408104",
-        "publication_date": "2010-06-30",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000023405640",
-        "publication_date": "2011-01-12",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000023557345",
-        "publication_date": "2011-02-08",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000024558163",
-        "publication_date": "2011-09-14",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000027838260",
-        "publication_date": "2013-08-14",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000028017465",
-        "publication_date": "2013-10-01",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000028539339",
-        "publication_date": "2014-01-31",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000029270317",
-        "publication_date": "2014-07-22",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000031646465",
-        "publication_date": "2015-12-20",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000037695131",
-        "publication_date": "2018-12-05",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000039654046",
-        "publication_date": "2019-12-21",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000039697711",
-        "publication_date": "2019-12-31",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000039772149",
-        "publication_date": "2020-01-04",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000041549093",
-        "publication_date": "2020-02-09",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000042838840",
-        "publication_date": "2020-12-31",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000042838893",
-        "publication_date": "2020-12-31",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000043046486",
-        "publication_date": "2021-01-26",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000043985407",
-        "publication_date": "2021-08-29",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000044061254",
-        "publication_date": "2021-09-19",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000044378197",
-        "publication_date": "2021-11-28",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000046820577",
-        "publication_date": "2022-12-28",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000049102019",
-        "publication_date": "2024-02-08",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000052134679",
-        "publication_date": "2025-08-26",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000052157049",
-        "publication_date": "2025-08-30",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000053299153",
-        "publication_date": "2026-01-06",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054126404",
-        "publication_date": "2026-05-24",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054451249",
-        "publication_date": "2026-07-22",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054594151",
-        "publication_date": "2026-08-01",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054743407",
-        "publication_date": "2026-08-25",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      }
-    ],
+    "excluded_historical_candidates": [],
     "excluded_routine_candidates": [],
     "excluded_no_economic_friction_candidates": [],
     "rules": "Preuves locales diffées uniquement ; réapparition historique et routine administrative explicite = filtrées avec trace ; les autres textes primaires disponibles reçoivent une lecture factuelle. Une friction détectée ouvre seulement une enquête, jamais une opportunité confirmée ; inconnu = UNRESOLVED.",
@@ -230,7 +32,7 @@
       {
         "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-suppression-de-fiches-d-a3428.html",
         "source_kind": "CONSULTDD",
-        "change": "NEW",
+        "change": "CHANGED",
         "evidence": {
           "title": "Projet d’arrêté portant suppression de fiches d’opérations standardisées du dispositif ...",
           "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-suppression-de-fiches-d-a3428.html",
@@ -241,8 +43,44 @@
           "interpretation": null,
           "official_detail": {
             "official_title": "Projet d’arrêté portant suppression de fiches d’opérations standardisées du dispositif des certificats d’économies d’énergie",
-            "official_period": "Consultation du 16/09/2026 au 12/10/2026 - 8 contributions",
+            "official_period": "Consultation du 16/09/2026 au 12/10/2026 - 9 contributions",
             "official_text": "La consultation du public est ouverte en application de l’article L. 123-19-1 du code de l’environnement. Le présent texte concerne le dispositif des certificats d’économies d’énergie (CEE) prévu aux articles L. 221-1 et suivants du code de l’énergie. Afin de rationaliser le catalogue des fiches d’opérations standardisées CEE et de ne plus apporte d’incitation à l’installation ou au maintien d’équipements fonctionnant aux énergies fossiles, il est envisagé de supprimer les fiches d’opérations standardisées mentionnées en annexe, réparties en deux catégories : les fiches soutenant encore des économies d’énergies sur des équipements fonctionnant avec des énergies fossiles, et les fiches non utilisées. Il est envisagé la suppression des fiches liées aux énergies fossiles (cf. lot 1 en annexe) car ces fiches contribuent à prolonger la durée de vie de ces équipements et sont relativement peu utilisées (5 TWhc engagés en tout en 2025). De plus, en application de la directive « Efficacité énergétique », les économies d’énergie liées à ces fiches ne peuvent plus être comptabilisées pour respecter les obligations de l’article 8 de cette directive. Les fiches inactives ( cf. lot 2 en annexe ) peuvent ne pas être sollicitées en raison d’un forfait insuffisamment incitatif. Cependant, les opérations concernées par ces fiches ne font pas partie des politiques publiques soutenues prioritairement et il n’est donc pas envisagé de les bonifier. Pour ces raisons et afin de renforcer la lisibilité du dispositif CEE, il est proposé de les supprimer. Il est ainsi proposé la suppression des fiches mentionnées en annexe et le recensement des opérations engagées au titre de ces fiches."
+          },
+          "official_attachments": [],
+          "financial_evidence": [],
+          "detail_status": "PRIMARY_PAGE_READ"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+              "score": 3,
+              "terms": []
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/consultation-terminee-projet-d-arrete-relatif-a-la-a3423.html",
+        "source_kind": "CONSULTDD",
+        "change": "NEW",
+        "evidence": {
+          "title": "[Consultation terminée] - Projet d’arrêté relatif à la capture de pigeons ramiers (Colu...",
+          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/consultation-terminee-projet-d-arrete-relatif-a-la-a3423.html",
+          "dates": [
+            "2026-09-07",
+            "2026-09-28"
+          ],
+          "interpretation": null,
+          "official_detail": {
+            "official_title": "[Consultation terminée] - Projet d’arrêté relatif à la capture de pigeons ramiers (Columba palumbus) et de pigeons colombins (Columba oenas) à l’aide de pantes et de pantières dans les départements du Gers, de la Gironde, des Landes, de Lot-et-Garonne et des Pyrénées-Atlantiques et projet d’arrêté relatif au nombre maximum de pigeons ramiers (Columba palumbus) et de pigeons colombins (Columba oenas) pouvant être capturés à l’aide de pantes et de pantières dans les mêmes départements.",
+            "official_period": "Consultation du 07/09/2026 au 28/09/2026 - 10517 contributions",
+            "official_text": "Note de présentation commune Projet d’arrêté relatif à la capture de pigeons ramiers (Columba palumbus) et de pigeons colombins (Columba oenas) à l’aide de pantes et de pantières dans les départements du Gers, de la Gironde, des Landes, de Lot-et-Garonne et des Pyrénées‑Atlantiques Projet d’arrêté relatif au nombre maximum de pigeons ramiers (Columba palumbus) et de pigeons colombins (Columba oenas) pouvant être capturés à l’aide de pantes et de pantières dans les départements du Gers, de la Gironde, des Landes, de Lot-et-Garonne et des Pyrénées‑Atlantiques Introduction : La chasse des pigeons ramiers (Columba palumbus) et des pigeons colombins (Columba oenas) à l’aide de pantes dans les départements du Gers, de la Gironde, des Landes, de Lot-et-Garonne et des Pyrénées‑Atlantiques et de pantières dans le département des Pyrénées-Atlantiques est une pratique traditionnelle ancrée dans plusieurs départements du Sud-Ouest de la France. Ces méthodes, transmises sur plusieurs générations, font partie du patrimoine cynégétique local. La pratique de la capture des pigeons ramiers (Columba palumbus) et des pigeons colombins (Columba oenas) à l’aide de filets (pantes et pantières) doit s’inscrire dans les dérogations prévues par l’article 9 de la directive européenne « Oiseaux ». Ces arrêtés ont été soumis pour avis au Conseil national de la chasse et de la faune sauvage le 23 juin 2023 et ont recueilli un avis majoritairement favorable. Contexte : Le 12 février 2025, la Commission européenne avait envisagé de saisir la Cour de justice de l’Union européenne d’un recours contre la France pour non-respect de la directive « Oiseaux ». Comme le rappelait la Commission européenne, la France autorise l’utilisation de filets horizontaux et verticaux dans cinq départements (Gers, Lot-et-Garonne, Gironde, Pyrénées-Atlantiques et Landes) pour la capture de deux espèces d’oiseaux de la famille des colombidés, au moyen de cinq actes réglementaires de 2006, 2007 et 2009. Or, si la directive « Oiseaux » autorise la chasse de ces espèces, elle interdit néanmoins les moyens, installations ou méthodes de capture massive ou non sélective en raison de leur incidence sur la biodiversité, étant donné que ces pratiques risquent de causer un préjudice important à des oiseaux non ciblés, ou de les tuer. L’utilisation de filets pour la capture d’oiseaux est interdite, à moins que les États membres ne remplissent les critères stricts de dérogation autorisés par la directive, mais la France ne démontrait pas suffisamment que les filets litigieux satisfaisaient à ces critères. Par la suite de nombreux échanges constructifs ont eu lieu avec les services de la Commission européenne. Il en ressort que la Commission européenne a souhaité que la France modernise son dispositif et mette en conformité ces chasses avec les dispositions de l’article 9 de la directive « Oiseaux ». L’objet de cet arrêté répond à cette attente. La mise en œuvre de cette dérogation s’appuie sur des éléments scientifiques et techniques permettant de démontrer le respect des conditions prévues à l’article 9 de la directive 2009/147/CE concernant la conservation des oiseaux sauvages. Les deux espèces visées disposent de statuts de conservation favorables dans les listes rouges de l’Union internationale pour la conservation de la nature. Les travaux conduits par l’Office français de la biodiversité (OFB) et le Muséum national d’histoire naturelle (MNHN) sur la sélectivité de ces modes de capture ont mis en évidence l’absence de capture accidentelle d’espèces non ciblées. Le dispositif proposé repose sur un encadrement strict des conditions d’exercice de ces pratiques traditionnelles, au travers notamment d’un régime d’autorisation préalable, de prescriptions techniques précises, d’obligations de suivi des captures et de contrôles réalisés par les services compétents. Les plafonds de captures proposés ont été définis de manière à garantir que les prélèvements demeurent limités à de petites quantités au sens de la jurisprudence de la Cour de justice de l’Union européenne. Le quota de 80 000 pigeons ramiers (Columba palumbus) demeure ainsi inférieur au seuil de référence correspondant à 1 % de la mortalité annuelle moyenne de l’espèce, estimé à environ 300 000 individus. De même, le quota de 5 000 pigeons colombins (Columba oenas) demeure inférieur au seuil de 1 % de la mortalité annuelle moyenne de cette espèce. Ces plafonds permettent ainsi de garantir que les prélèvements autorisés restent compatibles avec le maintien des populations concernées dans un état de conservation favorable. La capture de spécimens destinés à être bagués pour améliorer la connaissance de ces deux espèces. Contenu des arrêtés : Sur le projet d’arrêté relatif à la capture de pigeons ramiers (Columba palumbus) et de pigeons colombins (Columba oenas) à l’aide de pantes dans les départements du Gers, de la Gironde, des Landes, de Lot-et-Garonne et des Pyrénées‑Atlantiques et de pantières dans le département des Pyrénées-Atlantiques : L’article 1er : • Précise le cadre spatio-temporel de ces chasses. L’article 2 : • Rappelle l’exigence de sélectivité de ces chasses. L’article 3 : • Liste des prérequis pour pratiquer la capture de pigeons ramiers et de pigeons colombins à l’aide de pantes ou de pantières L’article 4 : • Prévoit un régime d’autorisation préalable pour la capture des pigeons ramiers et des pigeons colombins à l’aide de pantes ou de pantières. L’article 5 : • Fixe le cadre technique de la capture des pigeons ramiers et des pigeons colombins à l’aide de pantes. L’article 6 : • Fixe le cadre technique de la capture de pigeons ramiers et des pigeons colombins à l’aide de pantières. L’article 7 : • Concerne l’enregistrement des captures et les formalités à accomplir. L’article 8 : • Précise le cadre des contrôles et de la remise d’un rapport par les agents de l’OFB. L’article 9 : • Rappelle que l’interdiction de la commercialisation des pigeons colombins. L’article 10 : • Il renvoie à un arrêté quota le soin de préciser le nombre maximum de pigeons ramiers (Columba palumbus) et de pigeons colombins (Columba oenas) pouvant être capturés à l’aide de pantes et de pantières dans les départements. En outre, cet arrêté peut fixer un nombre d’oiseaux capturés pouvant être relâchés munis d’un dispositif de marquage ou de suivi. L’article 11 abroge plusieurs textes relatifs à l’encadrement de la chasse aux colombidés et à la palombe dans les départements du Gers, de la Gironde, des Landes, de Lot-et-Garonne et des Pyrénées‑Atlantiques : Sont ainsi abrogés : • L’arrêté du 11 août 2006 relatif à la chasse des colombidés au moyen de filets dans le département du Gers ; • L’arrêté du 11 août 2006 relatif à la chasse des colombidés au moyen de filets dans le département de la Gironde ; • L’arrêté du 11 août 2006 relatif à la chasse des colombidés au moyen de filets dans le département du Lot et Garonne ; • L’arrêté du 10 septembre 2007 relatif à la chasse des colombidés au moyen de filets dans le département des Pyrénées Atlantiques ; • L’arrêté du 3 août 2009 relatif aux conditions de chasse de la palombe dans le département des Landes ; • L’arrêté du 3 août 2009 relatif aux conditions de chasse de la palombe dans le département de Lot-et-Garonne. Sur le projet d’arrêté relatif au nombre maximum de pigeons ramiers (Columba palumbus) et de pigeons colombins (Columba oenas) pouvant être capturés à l’aide de pantes dans les départements du Gers, de la Gironde, des Landes, de Lot-et-Garonne et des Pyrénées‑Atlantiques et de pantières dans le département des Pyrénées-Atlantiques : L’article 1er fixe : • Le nombre maximum de pigeons ramiers (Columba palumbus) pouvant être capturées, lors de chaque saison cynégétique, à l’aide de pantes et de pantières dans les départements du Gers, de la Gironde, des Landes, de Lot-et-Garonne et des Pyrénées‑Atlantiques. Ce nombre est fixé à 80 000. • Le nombre maximum de pigeons colombins (Columba oenas) pouvant être capturées, lors de chaque saison cynégétique, à l’aide de pantes et de pantières dans les départements du Gers, de la Gironde, des Landes, de Lot-et-Garonne et des Pyrénées‑Atlantiques. Ce nombre est fixé à 5000. L’article 2 prévoit que : Dans chacun des départements mentionnés à l’article 1er de l’arrêté, 1 % des pigeons ramiers et des pigeons colombins capturées à l’aide de pantes ou de pantières peuvent être relâchées avec un dispositif de marquage ou de suivi posé par des personnes autorisées conformément à la réglementation en vigueur. Consultations obligatoires : Le projet d’arrêté nécessitait un examen par le Conseil national de la chasse et de la faune sauvage. Ce dernier a rendu un avis favorable à ces projets d’arrêtés le 23 juin dernier. Le texte présente un d’impact sur l’environnement et nécessite donc à ce titre une consultation publique conformément aux dispositions de l’article L.123-19-1 du code de l’environnement."
           },
           "official_attachments": [],
           "financial_evidence": [],
@@ -266,12 +104,7 @@
     ],
     "deterministically_unresolved_candidates": []
   },
-  "ready": true,
-  "created_at_utc": "2026-09-28 09:44:21.543488+00:00",
-  "updated_at_utc": "2026-09-28T17:49:34.522632+00:00",
-  "resumed_after_request_change": true,
-  "usage": {
-    "input_tokens": 4522,
-    "output_tokens": 1027
-  }
+  "ready": false,
+  "created_at_utc": "2026-09-28 21:14:51.832802+00:00",
+  "updated_at_utc": "2026-09-28T21:14:51.891115+00:00"
 }
