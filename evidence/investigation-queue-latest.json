@@ -1,12 +1,12 @@
 {
   "schema": "lawradar-investigation-queue-v1",
-  "generated_at_utc": "2026-09-24T11:49:26.535374+00:00",
+  "generated_at_utc": "2026-09-28T17:51:46.598135+00:00",
   "source_run": {
-    "id": "35995027624",
+    "id": "36460808409",
     "attempt": "1",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/35995027624",
-    "commit": "301fe98c95f1405f4e0384875d192d85716cb354",
-    "report_date": "2026-09-24"
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/36460808409",
+    "commit": "b12a77f60dedf5b75bec1f20924be668798835fc",
+    "report_date": "2026-09-27"
   },
   "policy": {
     "max_automatic_attempts": 2,
@@ -14,16 +14,16 @@
   },
   "items": [
     {
-      "signal_id": "signal:4f91554231c87d6e",
-      "source_id": "jorf:JORFTEXT000054888375",
-      "title": "Arrêté modifiant les niveaux de bonification et critères d'éligibilité de la fiche CEE TRA-EQ-128",
+      "signal_id": "signal:a4d854a60f6c38f8",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-suppression-de-fiches-d-a3428.html",
+      "title": "Projet d'arrêté portant suppression de fiches d'opérations standardisées CEE",
       "status": "WAITING_FOR_EVIDENCE",
-      "opened_at_utc": "2026-09-24T11:49:26.535374+00:00",
-      "updated_at_utc": "2026-09-24T11:49:26.535374+00:00",
+      "opened_at_utc": "2026-09-28T17:51:46.598135+00:00",
+      "updated_at_utc": "2026-09-28T17:51:46.598135+00:00",
       "automatic_attempts": 1,
       "max_automatic_attempts": 2,
       "qualification_contract_version": "tool-envelope-v2",
-      "next_retry_not_before_utc": "2026-09-24T17:49:26.535374+00:00",
+      "next_retry_not_before_utc": "2026-09-28T23:51:46.598135+00:00",
       "questions": [
         {
           "id": "OPERATIONAL_FEASIBILITY",
@@ -32,7 +32,8 @@
           "question": "Confirmer l'autorisation, l'agrément ou la voie de sous-traitance applicable, les dépendances opérationnelles nécessaires, le capital de démarrage nécessaire, le délai réaliste de mise sur le marché avant toute décision commerciale.",
           "evidence": [
             "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : UNKNOWN.",
+            "Statut de l'autorisation inconnu : statut d'obligé ou de délégataire CEE.",
+            "Dépendance non vérifiée : publication de l'arrêté final.",
             "Capital de départ inconnu.",
             "Délai de mise sur le marché inconnu."
           ],
