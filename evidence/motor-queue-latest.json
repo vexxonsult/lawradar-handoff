@@ -1,6 +1,46 @@
 {
   "schema": "lawradar-motor-queue-v1",
-  "pending": [],
+  "pending": [
+    {
+      "fingerprint": "12d61affae24bfa8bdc94e89c03eff06a606a46b7a689f48da4bb36e1ddc4cc3",
+      "candidate": {
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-suppression-de-fiches-d-a3428.html",
+        "source_kind": "CONSULTDD",
+        "change": "NEW",
+        "evidence": {
+          "title": "Projet d’arrêté portant suppression de fiches d’opérations standardisées du dispositif ...",
+          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-suppression-de-fiches-d-a3428.html",
+          "dates": [
+            "2026-09-16",
+            "2026-09-28"
+          ],
+          "interpretation": null,
+          "official_detail": {
+            "official_title": "Projet d’arrêté portant suppression de fiches d’opérations standardisées du dispositif des certificats d’économies d’énergie",
+            "official_period": "Consultation du 16/09/2026 au 12/10/2026 - 8 contributions",
+            "official_text": "La consultation du public est ouverte en application de l’article L. 123-19-1 du code de l’environnement. Le présent texte concerne le dispositif des certificats d’économies d’énergie (CEE) prévu aux articles L. 221-1 et suivants du code de l’énergie. Afin de rationaliser le catalogue des fiches d’opérations standardisées CEE et de ne plus apporte d’incitation à l’installation ou au maintien d’équipements fonctionnant aux énergies fossiles, il est envisagé de supprimer les fiches d’opérations standardisées mentionnées en annexe, réparties en deux catégories : les fiches soutenant encore des économies d’énergies sur des équipements fonctionnant avec des énergies fossiles, et les fiches non utilisées. Il est envisagé la suppression des fiches liées aux énergies fossiles (cf. lot 1 en annexe) car ces fiches contribuent à prolonger la durée de vie de ces équipements et sont relativement peu utilisées (5 TWhc engagés en tout en 2025). De plus, en application de la directive « Efficacité énergétique », les économies d’énergie liées à ces fiches ne peuvent plus être comptabilisées pour respecter les obligations de l’article 8 de cette directive. Les fiches inactives ( cf. lot 2 en annexe ) peuvent ne pas être sollicitées en raison d’un forfait insuffisamment incitatif. Cependant, les opérations concernées par ces fiches ne font pas partie des politiques publiques soutenues prioritairement et il n’est donc pas envisagé de les bonifier. Pour ces raisons et afin de renforcer la lisibilité du dispositif CEE, il est proposé de les supprimer. Il est ainsi proposé la suppression des fiches mentionnées en annexe et le recensement des opérations engagées au titre de ces fiches."
+          },
+          "official_attachments": [],
+          "financial_evidence": [],
+          "detail_status": "PRIMARY_PAGE_READ"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+              "score": 3,
+              "terms": []
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    }
+  ],
   "processed": [
     {
       "fingerprint": "a296cf4cc3111abe31b2e81b4f607e60736105a42cd2cd6596df0a0a961cc193",
