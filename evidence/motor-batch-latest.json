@@ -1,22 +1,22 @@
 {
   "schema": "lawradar-anthropic-motor-batch-v1",
-  "input_sha256": "15a9cc1bcebafad6d2e287069a4cc819f6b1ed2be89ba0f22cde4193e663bef0",
-  "request_sha256": "15a9cc1bcebafad6d2e287069a4cc819f6b1ed2be89ba0f22cde4193e663bef0",
+  "input_sha256": "cb593fea7685a1f4ff777ea001130e24eb4a95c6041641f94d02f4f4f9a66bbc",
+  "request_sha256": "cb593fea7685a1f4ff777ea001130e24eb4a95c6041641f94d02f4f4f9a66bbc",
   "model": "claude-sonnet-5",
   "request_version": "2026-09-12-explicit-json-contract-v8",
-  "batch_id": "msgbatch_01Rd2MzGR5nnAjnBZZQxfK7N",
-  "processing_status": "ended",
-  "request_count": 27,
+  "batch_id": "msgbatch_01N9U1QpUgGXqiRsu8HUG6be",
+  "processing_status": "in_progress",
+  "request_count": 24,
   "request_counts": {
-    "processing": 0,
-    "succeeded": 27,
+    "processing": 24,
+    "succeeded": 0,
     "errored": 0,
     "canceled": 0,
     "expired": 0
   },
   "motor_input": {
     "schema": "lawradar-motor-input-v1",
-    "report_date": "2026-09-29",
+    "report_date": "2026-09-30",
     "delta_changed_sources": [
       "jorf-summaries-latest.json",
       "consultdd-latest.json"
@@ -27,182 +27,682 @@
     ],
     "excluded_historical_candidates": [
       {
-        "source_id": "jorf:JORFTEXT000000227558",
-        "publication_date": "2002-11-01",
+        "source_id": "jorf:JORFTEXT000000320196",
+        "publication_date": "1983-07-27",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000573817",
-        "publication_date": "1998-08-22",
+        "source_id": "jorf:JORFTEXT000000320434",
+        "publication_date": "1984-01-27",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000037809011",
-        "publication_date": "2018-12-14",
+        "source_id": "jorf:JORFTEXT000000335494",
+        "publication_date": "1989-09-17",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000044238159",
-        "publication_date": "2021-10-23",
+        "source_id": "jorf:JORFTEXT000000339141",
+        "publication_date": "1958-11-29",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000049776019",
-        "publication_date": "2024-06-25",
+        "source_id": "jorf:JORFTEXT000000365194",
+        "publication_date": "1994-07-13",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000053734339",
-        "publication_date": "2026-03-31",
+        "source_id": "jorf:JORFTEXT000000367583",
+        "publication_date": "1994-11-10",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054608060",
-        "publication_date": "2026-08-04",
+        "source_id": "jorf:JORFTEXT000000512373",
+        "publication_date": "1891-06-03",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000521765",
+        "publication_date": "1960-06-03",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000564628",
+        "publication_date": "1997-05-08",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000691960",
+        "publication_date": "1956-12-02",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000699318",
+        "publication_date": "1989-06-11",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000705065",
+        "publication_date": "1958-11-09",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000714886",
+        "publication_date": "1990-03-23",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000810872",
+        "publication_date": "2005-06-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000872483",
+        "publication_date": "1985-11-05",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000872629",
+        "publication_date": "1946-06-15",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000888573",
+        "publication_date": "1951-06-08",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000019278548",
+        "publication_date": "2008-08-03",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000020428769",
+        "publication_date": "2009-03-25",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000021923943",
+        "publication_date": "2010-03-07",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000022204510",
+        "publication_date": "2010-05-13",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000022220619",
+        "publication_date": "2010-05-18",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000023654905",
+        "publication_date": "2011-03-03",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000025595813",
+        "publication_date": "2012-03-31",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000026447892",
+        "publication_date": "2012-10-02",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000027914226",
+        "publication_date": "2013-08-31",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000028221080",
+        "publication_date": "2013-11-22",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000029390906",
+        "publication_date": "2014-08-23",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000029390951",
+        "publication_date": "2014-08-23",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000034053114",
+        "publication_date": "2017-02-17",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000034081955",
+        "publication_date": "2017-02-26",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000035356268",
+        "publication_date": "2017-08-03",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000038203866",
+        "publication_date": "2019-03-07",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000039131070",
+        "publication_date": "2019-09-26",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000039167499",
+        "publication_date": "2019-10-03",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000039494417",
+        "publication_date": "2019-12-13",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000043847531",
+        "publication_date": "2021-07-23",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000044138051",
+        "publication_date": "2021-10-01",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000044177386",
+        "publication_date": "2021-10-09",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000044545992",
+        "publication_date": "2021-12-23",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000045536683",
+        "publication_date": "2022-04-09",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000046793117",
+        "publication_date": "2022-12-24",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000047689005",
+        "publication_date": "2023-06-16",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000048039059",
+        "publication_date": "2023-09-03",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000049447264",
+        "publication_date": "2024-04-21",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000050173449",
+        "publication_date": "2024-09-03",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000050960172",
+        "publication_date": "2025-01-09",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000051331007",
+        "publication_date": "2025-03-16",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000052869349",
+        "publication_date": "2025-11-28",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054152613",
+        "publication_date": "2026-05-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054155074",
+        "publication_date": "2026-05-31",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054248698",
+        "publication_date": "2026-06-14",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054408880",
+        "publication_date": "2026-07-10",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       }
     ],
     "excluded_routine_candidates": [
       {
-        "source_id": "jorf:JORFTEXT000054909396",
-        "title": "Décision du 28 septembre 2026 portant délégation de signature de la direction des ressources humaines des ministères de la transition écologique, aménagement du territoire, transports, ville et logement",
+        "source_id": "jorf:JORFTEXT000054912612",
+        "title": "Décision du 24 septembre 2026 portant délégation de signature (inspection générale de la police nationale)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909432",
-        "title": "Décision du 24 septembre 2026 portant délégation de signature (Institut national de la statistique et des études économiques)",
+        "source_id": "jorf:JORFTEXT000054912681",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de l'examen professionnel de recrutement dans le corps des greffiers des services judiciaires",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909458",
-        "title": "Décision du 24 septembre 2026 portant délégation de signature pour les directions régionales et interrégionales de l'Institut national de la statistique et des études économiques",
+        "source_id": "jorf:JORFTEXT000054912699",
+        "title": "Arrêté du 25 septembre 2026 autorisant l'ouverture des concours externe sur épreuves, externe sur titres, interne et du troisième concours pour le recrutement de conseillers pénitentiaires d'insertion et de probation au titre de l'année 2027",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909553",
-        "title": "Arrêté du 28 septembre 2026 portant délégation de signature (cabinet du ministre de l'Europe et des affaires étrangères)",
+        "source_id": "jorf:JORFTEXT000054912728",
+        "title": "Arrêté du 28 septembre 2026 portant délégation de signature (secrétariat général des ministères économiques et financiers)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909630",
-        "title": "Arrêté du 11 septembre 2026 portant nomination au conseil d'administration de l'Office français de la biodiversité",
+        "source_id": "jorf:JORFTEXT000054912980",
+        "title": "Arrêté du 18 septembre 2026 prorogeant les programmes des concours externes prévus pour le recrutement de personnels enseignants du second degré et de personnels d'éducation",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909634",
-        "title": "Arrêté du 21 septembre 2026 portant nomination au conseil stratégique du Centre d'études et d'expertise sur les risques, l'environnement, la mobilité et l'aménagement (CEREMA)",
+        "source_id": "jorf:JORFTEXT000054912992",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de premiers concours internes de recrutement de professeurs des écoles",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909636",
-        "title": "Arrêté du 21 septembre 2026 portant nomination du commissaire du Gouvernement auprès de l'Agence de l'eau Artois-Picardie",
+        "source_id": "jorf:JORFTEXT000054913011",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de concours externes organisés à titre transitoire conformément aux dispositions du décret n° 2025-352 du 17 avril 2025 modifiant les conditions de recrutement et de formation des corps enseignants, du personnel d'éducation et des maîtres de l'enseignement privé sous contrat du ministère chargé de l'éducation nationale et de concours externes spéciaux (langues régionales) de recrutement de professeurs des écoles",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909638",
-        "title": "Arrêté du 24 septembre 2026 modifiant l'arrêté du 11 mars 2025 portant nomination des membres de la commission professionnelle consultative « Mer et navigation intérieure »",
+        "source_id": "jorf:JORFTEXT000054913034",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de concours externes, de concours externes spéciaux (langues régionales), de seconds concours internes, de seconds concours internes spéciaux et de troisièmes concours de recrutement de professeurs des écoles",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909643",
-        "title": "Décret du 25 septembre 2026 portant nomination de maîtresses et maîtres des requêtes (Conseil d'Etat)",
+        "source_id": "jorf:JORFTEXT000054913057",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de premiers concours internes pour l'accès à l'échelle de rémunération des professeurs des écoles des maîtres contractuels et agréés des établissements d'enseignement privés sous contrat",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909651",
-        "title": "Décret du 28 septembre 2026 portant détachement (magistrature) - Mme BERNIER (Julie)",
+        "source_id": "jorf:JORFTEXT000054913076",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de concours externes organisés à titre transitoire conformément aux dispositions du décret n° 2025-352 du 17 avril 2025 modifiant les conditions de recrutement et de formation des corps enseignants, du personnel d'éducation et des maîtres de l'enseignement privé sous contrat du ministère chargé de l'éducation nationale et de concours externe spéciaux (langues régionales) d'accès à l'échelle de rémunération des professeurs des écoles des établissements d'enseignement privés sous contrat",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909672",
-        "title": "Arrêté du 22 septembre 2026 portant nomination d'une notaire salariée (officiers publics ou ministériels)",
+        "source_id": "jorf:JORFTEXT000054913099",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe organisé à titre transitoire conformément aux dispositions du décret n° 2025-352 du 17 avril 2025 modifiant les conditions de recrutement et de formation des corps enseignants, du personnel d'éducation et des maîtres de l'enseignement privé sous contrat du ministère chargé de l'éducation nationale, d'accès à l'échelle de rémunération des professeurs des écoles des établissements d'enseignement privés sous contrat en Polynésie française",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909676",
-        "title": "Arrêté du 22 septembre 2026 portant nomination d'une notaire salariée (officiers publics ou ministériels)",
+        "source_id": "jorf:JORFTEXT000054913113",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe organisé à titre transitoire conformément aux dispositions du décret n° 2025-352 du 17 avril 2025 modifiant les conditions de recrutement et de formation des corps enseignants, du personnel d'éducation et des maîtres de l'enseignement privé sous contrat du ministère chargé de l'éducation nationale, et du concours interne du certificat d'aptitude au professorat d'éducation physique et sportive (CAPEPS) pour le recrutement de professeurs d'éducation physique et sportive",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909700",
-        "title": "Arrêté du 23 septembre 2026 portant nomination d'une commissaire de justice salariée (officiers publics ou ministériels)",
+        "source_id": "jorf:JORFTEXT000054913146",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe et du troisième concours du certificat d'aptitude au professorat de l'enseignement du second degré (CAPES) et du certificat d'aptitude au professorat de l'enseignement technique (CAPET) pour le recrutement de professeurs certifiés",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909705",
-        "title": "Arrêté du 23 septembre 2026 portant nomination d'une société d'exercice libéral à responsabilité limitée (officiers publics ou ministériels)",
+        "source_id": "jorf:JORFTEXT000054913173",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe et du troisième concours du certificat d'aptitude au professorat de lycée professionnel (CAPLP) pour le recrutement de professeurs de lycée professionnel",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909714",
-        "title": "Arrêté du 23 septembre 2026 portant nomination d'une société d'exercice libéral par actions simplifiée (officiers publics ou ministériels)",
+        "source_id": "jorf:JORFTEXT000054913197",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe, du concours externe spécial et du concours interne de recrutement de professeurs agrégés de l'enseignement du second degré",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909732",
+        "source_id": "jorf:JORFTEXT000054913220",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe, du concours interne et du troisième concours de recrutement de psychologues de l'éducation nationale",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913245",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe organisé à titre transitoire conformément aux dispositions du décret n° 2025-352 du 17 avril 2025 modifiant les conditions de recrutement et de formation des corps enseignants, du personnel d'éducation et des maîtres de l'enseignement privé sous contrat du ministère chargé de l'éducation nationale, et du concours interne pour le recrutement de conseillers principaux d'éducation",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913275",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe et du troisième concours pour le recrutement de conseillers principaux d'éducation",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913295",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture des concours externes organisés à titre transitoire conformément aux dispositions du décret n° 2025-352 du 17 avril 2025 modifiant les conditions de recrutement et de formation des corps enseignants, du personnel d'éducation et des maîtres de l'enseignement privé sous contrat du ministère chargé de l'éducation nationale et des concours internes du certificat d'aptitude au professorat de l'enseignement du second degré (CAPES) et du certificat d'aptitude au professorat de l'enseignement technique (CAPET) pour le recrutement de professeurs certifiés",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913338",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un concours interne de recrutement de professeurs certifiés à affectation locale en Guyane",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913359",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe et du troisième concours d'accès à des listes d'aptitude aux fonctions de maître dans les établissements d'enseignement privés sous contrat du second degré (CAFEP-CAPES, CAFEP-CAPEPS CAFEP-CAPET, CAFEP-CAPLP, troisième CAFEP-CAPES)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913389",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de concours externes organisés à titre transitoire conformément aux dispositions du décret n° 2025-352 du 17 avril 2025 modifiant les conditions de recrutement et de formation des corps enseignants, du personnel d'éducation et des maîtres de l'enseignement privé sous contrat du ministère chargé de l'éducation nationale d'accès à des listes d'aptitude aux fonctions de maître dans les établissements d'enseignement privés sous contrat du second degré (CAFEP) et de concours internes d'accès aux échelles de rémunération de professeurs du second degré (CAER)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913428",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe organisé à titre transitoire conformément aux dispositions du décret n° 2025-352 du 17 avril 2025 modifiant les conditions de recrutement et de formation des corps enseignants, du personnel d'éducation et des maîtres de l'enseignement privé sous contrat du ministère chargé de l'éducation nationale, et du concours interne du certificat d'aptitude au professorat de lycée professionnel (CAPLP) pour le recrutement de professeurs de lycée professionnel",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913463",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de concours externes, de concours externes spéciaux (langues régionales), de seconds concours internes, de seconds concours internes spéciaux et de troisièmes concours pour l'accès à l'échelle de rémunération des professeurs des écoles des établissements d'enseignement privés sous contrat",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913485",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du second concours interne de recrutement de professeurs des écoles à Mayotte",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913505",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe du certificat d'aptitude au professorat d'éducation physique et sportive (CAPEPS) pour le recrutement de professeurs d'éducation physique et sportive",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913529",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe et du concours interne de recrutement de professeurs certifiés à Mayotte",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913552",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe de recrutement de professeurs des écoles du corps de l'Etat créé pour la Polynésie française",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913566",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe organisé à titre transitoire conformément aux dispositions du décret n° 2025-352 du 17 avril 2025 modifiant les conditions de recrutement et de formation des corps enseignants, du personnel d'éducation et des maîtres de l'enseignement privé sous contrat du ministère chargé de l'éducation nationale, du premier concours interne ainsi qu'un recrutement par liste d'aptitude pour l'intégration d'instituteurs titulaires régis par le décret du 19 juillet 1982 dans le corps des professeurs des écoles du corps de l'Etat créé pour la Polynésie française",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913584",
+        "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe d'accès à l'échelle de rémunération des professeurs des écoles des établissements d'enseignement privés sous contrat en Polynésie française",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913596",
+        "title": "Décision du 23 septembre 2026 portant délégation de signature (secrétariat général)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913676",
+        "title": "Décision du 25 septembre 2026 modifiant la décision du 7 avril 2026 portant délégation de signature (secrétariat général)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913707",
+        "title": "Décision du 25 septembre 2026 portant délégation de signature (service de contrôle budgétaire et comptable ministériel)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913716",
+        "title": "Décision du 25 septembre 2026 portant délégation de signature (service de contrôle budgétaire et comptable ministériel)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913730",
+        "title": "Décision du 25 septembre 2026 portant délégation de signature (service de contrôle budgétaire et comptable ministériel)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913742",
+        "title": "Arrêté du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un concours externe et d'un concours interne pour le recrutement de conservateurs stagiaires, élèves de l'Ecole nationale supérieure des sciences de l'information et des bibliothèques",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913761",
+        "title": "Arrêté du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe spécial pour le recrutement de conservateurs stagiaires, élèves de l'Ecole nationale supérieure des sciences de l'information et des bibliothèques",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913781",
+        "title": "Arrêté du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un concours externe et d'un concours interne pour le recrutement de bibliothécaires",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913800",
+        "title": "Arrêté du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe spécial pour le recrutement de bibliothécaires",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913820",
+        "title": "Arrêté du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un concours externe et d'un concours interne pour le recrutement de bibliothécaires assistants spécialisés de classe normale",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913840",
+        "title": "Arrêté du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un examen professionnel pour l'avancement au grade de bibliothécaire assistant spécialisé de classe supérieure",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913860",
+        "title": "Arrêté du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un examen professionnel pour l'avancement au grade de bibliothécaire assistant spécialisé de classe exceptionnelle",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913880",
+        "title": "Arrêté du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un examen professionnel pour l'avancement au grade de bibliothécaire hors classe",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913898",
+        "title": "Arrêté du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un concours externe et d'un concours interne pour le recrutement de magasiniers des bibliothèques principaux de 2e classe",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913946",
+        "title": "Décret du 25 septembre 2026 portant admission à la retraite (Cour des comptes) - M. GREVOUL (Michel)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913953",
+        "title": "Décret du 28 septembre 2026 portant admission à la retraite (Cour des comptes) - M. VALLET (Benoit)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913960",
+        "title": "Arrêté du 25 septembre 2026 portant admission à la retraite (administrateurs de l'Etat)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913965",
+        "title": "Décret du 28 septembre 2026 portant admission à la retraite (inspection générale de l'administration) - M. TEYSSIER (Arnaud)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913981",
+        "title": "Décret du 29 septembre 2026 portant nomination de la sous-préfète d'Issoire - Mme THALOUARN (Flore)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913989",
+        "title": "Décret du 29 septembre 2026 portant nomination du sous-préfet de Dole - M. JOUFFROY (François)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913998",
+        "title": "Décret du 28 septembre 2026 portant nomination d'un attaché de défense",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914003",
+        "title": "Décret du 28 septembre 2026 portant nomination dans la réserve opérationnelle",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914009",
+        "title": "Arrêté du 9 juillet 2026 portant admission à la retraite (ingénieurs civils de la défense)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914011",
+        "title": "Arrêté du 24 septembre 2026 portant admission à la retraite (ingénieurs civils de la défense)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914014",
+        "title": "Arrêté du 25 août 2026 portant nomination à la commission professionnelle consultative « construction »",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914017",
+        "title": "Arrêté du 21 septembre 2026 portant nomination au Conseil supérieur de la forêt et du bois",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914020",
+        "title": "Décret du 28 septembre 2026 portant détachement (magistrature) - Mme MEYER (Myriam)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914035",
+        "title": "Décret du 28 septembre 2026 modifiant le décret du 17 août 2026 portant nomination (magistrature)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914039",
+        "title": "Décret du 28 septembre 2026 portant admission à la retraite (magistrature) - Mme POILLOT-PERUZZETTO (Sylvaine)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914066",
+        "title": "Arrêté du 24 septembre 2026 portant nomination des personnalités qualifiées au collège du Conseil des maisons de vente et du président du Conseil des maisons de vente, institués par l'article L. 321-21 du code de commerce",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914069",
+        "title": "Arrêté du 24 septembre 2026 portant réintégration et affectation (tribunaux administratifs et cours administratives d'appel)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914080",
+        "title": "Liste supplémentaire de candidats déclarés admis à titre définitif au troisième concours de recrutement d'auditeurs de justice - session ouverte le 14 janvier 2025",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914088",
+        "title": "Décret du 28 septembre 2026 portant nomination d'un membre du collège de l'Autorité de la concurrence",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914106",
+        "title": "Arrêté du 16 septembre 2026 portant nomination au conseil d'administration de Safran",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914108",
+        "title": "Arrêté du 17 septembre 2026 portant nomination au conseil d'administration de la Société technique pour l'énergie atomique",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914111",
         "title": "Arrêté du 28 septembre 2026 portant nomination (administration centrale)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909748",
-        "title": "Décret du 28 septembre 2026 portant nomination du président du conseil d'administration de l'Agence nationale pour la gestion des déchets radioactifs - M. DUPUIS (Philippe)",
+        "source_id": "jorf:JORFTEXT000054914118",
+        "title": "Arrêté du 28 septembre 2026 portant nomination au conseil d'administration de l'agence de santé du territoire des îles Wallis et Futuna",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909757",
-        "title": "Décret du 28 septembre 2026 portant nomination des représentants des régions au conseil d'administration de la société anonyme Bpifrance",
+        "source_id": "jorf:JORFTEXT000054914121",
+        "title": "Arrêté du 22 septembre 2026 portant nomination au conseil d'administration de l'Institut national de la santé et de la recherche médicale",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909762",
-        "title": "Arrêté du 4 septembre 2026 portant admission à la retraite (attachés d'administration)",
+        "source_id": "jorf:JORFTEXT000054914124",
+        "title": "Arrêté du 29 septembre 2026 portant nomination (administration centrale)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909764",
-        "title": "Arrêté du 21 septembre 2026 portant nomination à la Commission supérieure nationale du personnel des industries électriques et gazières",
+        "source_id": "jorf:JORFTEXT000054914129",
+        "title": "Arrêté du 29 septembre 2026 portant nomination (administration centrale)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909767",
-        "title": "Décret du 28 septembre 2026 portant nomination d'un inspecteur général (groupe I) au Conseil général de l'alimentation, de l'agriculture et des espaces ruraux",
+        "source_id": "jorf:JORFTEXT000054914135",
+        "title": "Arrêté du 23 septembre 2026 portant nomination par intérim du président du directoire du grand port maritime de la Martinique",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909773",
-        "title": "Arrêté du 17 septembre 2026 portant nomination au cabinet de la ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire",
+        "source_id": "jorf:JORFTEXT000054914138",
+        "title": "Arrêté du 24 septembre 2026 portant nomination du directeur général de l'Agence nationale de l'habitat",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909781",
-        "title": "Décret du 28 septembre 2026 portant nomination du président du directoire du grand port maritime de la Guadeloupe - M. PONTOPARIA (Sammy)",
-        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909935",
+        "source_id": "jorf:JORFTEXT000054914401",
         "title": "Commissions et organes de contrôle",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909940",
+        "source_id": "jorf:JORFTEXT000054914406",
         "title": "Documents déposés",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909942",
+        "source_id": "jorf:JORFTEXT000054914408",
         "title": "Documents publiés",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909960",
-        "title": "Demandes de changement de nom (Accès protégé textes 69 à 94)",
+        "source_id": "jorf:JORFTEXT000054914413",
+        "title": "Avis de vacance d'un emploi de sous-directeur",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914430",
+        "title": "Avis de vacance d'un emploi d'expert de haut niveau, adjoint à la cheffe du service des ressources humaines (administration centrale)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914440",
+        "title": "Avis de vacance d'un emploi d'expert de haut niveau, adjoint à la cheffe du service des ressources humaines (administration centrale)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914471",
+        "title": "Avis de vacance d'un emploi de consul général de France",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914487",
+        "title": "Avis de vacance d'emplois de directeur adjoint ou de directrice adjointe d'établissements sanitaires, sociaux et médico-sociaux réservés aux élèves directeurs et élèves directrices d'établissements sanitaires, sociaux et médico-sociaux",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914498",
+        "title": "Demandes de changement de nom (Accès protégé textes 145 à 153)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       }
     ],
     "excluded_no_economic_friction_candidates": [
       {
-        "source_id": "jorf:JORFTEXT000054909793",
-        "title": "Avis relatif à l'extension d'un avenant à un accord conclu dans le cadre de la convention collective nationale des industries chimiques et connexes",
+        "source_id": "jorf:JORFTEXT000054914142",
+        "title": "Arrêté du 22 septembre 2026 portant extension d'un avenant à la convention collective nationale des vins, cidres, jus de fruits, sirops, spiritueux et liqueurs de France (n° 493)",
         "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
         "discovery": {
           "schema": "lawradar-opportunity-discovery-v1",
@@ -213,8 +713,8 @@
         }
       },
       {
-        "source_id": "jorf:JORFTEXT000054909798",
-        "title": "Avis relatif à l'extension d'un avenant à la convention collective nationale de la production et de la transformation des papiers et cartons",
+        "source_id": "jorf:JORFTEXT000054914152",
+        "title": "Arrêté du 22 septembre 2026 portant extension d'un avenant à la convention collective nationale des activités industrielles de boulangerie et pâtisserie et des professionnels de l'œuf (n° 3255)",
         "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
         "discovery": {
           "schema": "lawradar-opportunity-discovery-v1",
@@ -225,8 +725,8 @@
         }
       },
       {
-        "source_id": "jorf:JORFTEXT000054909803",
-        "title": "Avis relatif à l'extension d'un avenant à un accord interbranche conclu dans le cadre de la convention collective nationale du personnel des industries du cartonnage et de la convention collective de la production et de la transformation des papiers cartons",
+        "source_id": "jorf:JORFTEXT000054914162",
+        "title": "Arrêté du 22 septembre 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale de la répartition pharmaceutique (n° 1621)",
         "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
         "discovery": {
           "schema": "lawradar-opportunity-discovery-v1",
@@ -237,8 +737,8 @@
         }
       },
       {
-        "source_id": "jorf:JORFTEXT000054909808",
-        "title": "Avis relatif à l'extension d'un avenant à la convention collective nationale du commerce de détail alimentaire non spécialisé",
+        "source_id": "jorf:JORFTEXT000054914172",
+        "title": "Arrêté du 22 septembre 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale de travail des industries de la maroquinerie, articles de voyage, chasse-sellerie, gainerie, bracelets en cuir - secteur cordonnerie multiservice (n° 2528)",
         "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
         "discovery": {
           "schema": "lawradar-opportunity-discovery-v1",
@@ -249,8 +749,224 @@
         }
       },
       {
-        "source_id": "jorf:JORFTEXT000054909813",
-        "title": "Avis relatif à l'extension d'un avenant à la convention collective nationale des hôtels, cafés, restaurants",
+        "source_id": "jorf:JORFTEXT000054914182",
+        "title": "Arrêté du 22 septembre 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale de l'industrie textile (secteur des textiles artificiels et synthétiques et produits assimilés) (n° 18)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914192",
+        "title": "Arrêté du 22 septembre 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale des menuiseries, charpentes et constructions industrialisées et portes planes (n° 3222)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914202",
+        "title": "Arrêté du 22 septembre 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale du commerce de détail de l'habillement et des articles textiles (n° 1483)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914212",
+        "title": "Arrêté du 22 septembre 2026 portant extension d'un accord territorial (Ardennes) conclu dans le cadre de la convention collective nationale de la métallurgie (n° 3248)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914222",
+        "title": "Arrêté du 22 septembre 2026 portant extension d'un accord territorial (CPTN Occitanie) conclu dans le cadre de la convention collective nationale de la métallurgie (n° 3248)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914232",
+        "title": "Arrêté du 22 septembre 2026 portant extension d'un avenant à un accord conclu dans le cadre de la convention collective nationale de l'industrie des tuiles et briques (n° 1170)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914244",
+        "title": "Arrêté du 22 septembre 2026 portant extension d'avenants à la convention collective nationale des entreprises d'installation sans fabrication, y compris entretien, réparation, dépannage de matériel aéraulique, thermique, frigorifique et connexes (n° 1412)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914254",
+        "title": "Arrêté du 22 septembre 2026 portant extension d'un avenant à la convention collective nationale de l'industrie et des services nautiques (n° 3236)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914264",
+        "title": "Arrêté du 22 septembre 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale de la coopération maritime (salariés non navigants, cadres et non cadres) (n° 2494)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914274",
+        "title": "Arrêté du 22 septembre 2026 portant extension d'un accord à la convention collective nationale de l'habitat et du logement accompagnés (n° 2336)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914284",
+        "title": "Arrêté du 22 septembre 2026 portant extension d'un avenant à un accord (agences de presse) conclu dans le cadre de la convention collective nationale des journalistes (n° 1480)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914294",
+        "title": "Arrêté du 22 septembre 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale des salariés des cabinets d'avocats (n° 3253)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914304",
+        "title": "Arrêté du 22 septembre 2026 portant extension d'un avenant à un accord conclu dans le cadre de la convention collective nationale des entreprises artistiques et culturelles (n° 1285)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914314",
+        "title": "Arrêté du 23 septembre 2026 portant extension d'un avenant à la convention collective nationale des services de l'automobile (n° 1090)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914323",
+        "title": "Arrêté du 23 septembre 2026 portant extension d'un avenant à la convention collective nationale des professions réglementées auprès des juridictions (n° 3244)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914343",
+        "title": "Avis relatif à l'extension d'un avenant à un accord conclu dans le cadre de la convention collective nationale de la bijouterie, joaillerie, orfèvrerie et horlogerie",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914349",
+        "title": "Avis portant extension de l'avenant n° 52 du 9 juillet 2026 modifiant l'article 10 de la convention collective nationale relatif à la contribution conventionnelle de dialogue social - convention collective nationale de la conchyliculture et des cultures marines - IDCC 7019",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914355",
+        "title": "Avis portant extension de l'avenant n° 51 du 9 juillet 2026 relatif à la grille des salaires en conchyliculture de la convention collective nationale de la conchyliculture et des cultures marines - IDCC 7019",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914379",
+        "title": "Avis portant extension de l'avenant n° 5 du 9 juin 2026 relatif aux salaires minima de la convention collective nationale des personnels navigants officiers des entreprises de transport et services maritimes - IDCC 3223",
         "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
         "discovery": {
           "schema": "lawradar-opportunity-discovery-v1",
@@ -264,24 +980,115 @@
     "rules": "Preuves locales diffées uniquement ; réapparition historique et routine administrative explicite = filtrées avec trace ; les autres textes primaires disponibles reçoivent une lecture factuelle. Une friction détectée ouvre seulement une enquête, jamais une opportunité confirmée ; inconnu = UNRESOLVED.",
     "candidates": [
       {
-        "source_id": "jorf:JORFTEXT000054909286",
+        "source_id": "jorf:JORFTEXT000054912621",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "text_id": "JORFTEXT000054909286",
-          "nature": "DECRET",
-          "nor": "INTD2611868D",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Décret n° 2026-899 du 28 septembre 2026 modifiant l'armement des agents de police municipale en Polynésie française et en Nouvelle-Calédonie",
+          "text_id": "JORFTEXT000054912621",
+          "nature": "ARRETE",
+          "nor": "TRSD2625342A",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Arrêté du 28 septembre 2026 modifiant l'arrêté du 30 décembre 2019 fixant la liste nationale des organismes habilités à percevoir le solde de la taxe d'apprentissage",
           "article_ids": [],
           "article_titles": [],
           "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909286",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "Publics concernés : agents de police municipale.\nObjet : modification des dispositions relatives à l'armement des agents de police municipale en Polynésie française et en Nouvelle-Calédonie.\nEntrée en vigueur : le décret entre en vigueur le dixième jour qui suit sa publication.\nApplication : le présent décret est un texte autonome.\nLe Premier ministre,\nSur le rapport du ministre de l'intérieur,\nVu le code de la sécurité intérieure, notamment son livre V ;\nVu l'avis du Conseil national d'évaluation des normes en date du 26 juillet 2026 ;\nVu l'avis du gouvernement de la Polynésie française en date du12 août 2026 ;\nVu l'avis du gouvernement de la Nouvelle-Calédonie en date du 19 août 2026 ;\nLe Conseil d'Etat (section de l'intérieur) entendu,\nDécrète :",
-          "official_text_sha256": "1a09a1902dae491104accb54795c1eb93e6d32e3ff97c8c02eac6ff40bcb183e",
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054912621",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "Le ministre du travail et des solidarités et le ministre de l'éducation nationale,\nVu le code du travail, notamment ses articles L. 6241-5 et D. 6241-33 ;\nVu l'arrêté du 30 décembre 2019 modifié fixant la liste nationale des organismes habilités à percevoir le solde de la taxe d'apprentissage,\nArrêtent :",
+          "official_text_sha256": "b990ed4fec5ad0b845127a395eb5ab1c0540ae321cca3fc2b483edfb8fb3a1ac",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054912629",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054912629",
+          "nature": "ARRETE",
+          "nor": "TRST2625613A",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Arrêté du 28 septembre 2026 relatif au coût moyen national de l'ensemble socle de services des services de prévention et de santé au travail interentreprises",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054912629",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "Publics concernés : services de prévention et de santé au travail interentreprises.\nObjet : cet arrêté fixe pour l'année 2027 le coût moyen national de l'ensemble socle de services défini à l'article D. 4622-27-5 du code du travail et à partir duquel est calculée l'amplitude au-sein de laquelle le montant des cotisations des services de prévention et de santé au travail interentreprises doit demeurer. L'assemblée générale a la possibilité d'approuver des cotisations qui s'écarteraient de la borne haute de 120 % et de la borne basse de 80 % dans des cas limitativement énumérés aux II et III de l'article D. 4622-27-6 du code du travail.\nEntrée en vigueur : l'arrêté entre en vigueur le 1\ner\njanvier 2027.\nApplication : le présent arrêté est pris en application de l'article D. 4622-27-5 du code du travail.\nLe ministre du travail et des solidarités,\nVu le décret n° 2022-1749 du 30 décembre 2022 relatif au financement des services de prévention et de santé au travail interentreprises ;\nVu l'avis du Conseil d'orientation des conditions de travail (COCT) en date du 10 septembre 2026,\nArrête :",
+          "official_text_sha256": "7472ba4ac0c21089d9309b06e1ae3c0c83c1ff204cdb50b0012488accbbe8e48",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 7,
+          "triggers": [
+            {
+              "kind": "LEGAL_OBLIGATION",
+              "score": 3,
+              "terms": [
+                "doit "
+              ]
+            },
+            {
+              "kind": "FUNDING_OR_INCENTIVE",
+              "score": 3,
+              "terms": [
+                "financement"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [
+            "entreprise"
+          ],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054912638",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054912638",
+          "nature": "ARRETE",
+          "nor": "TECP2611969A",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Arrêté du 8 septembre 2026 fixant les indicateurs de gêne due au bruit événementiel des infrastructures de transport ferroviaire prévu à l'article L. 571-10-2 du code de l'environnement en modifiant l'arrêté du 8 novembre 1999 relatif au bruit des infrastructures de transport ferroviaire",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054912638",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "Publics concernés : entreprises.\nObjet : établissement d'indicateurs de gêne due au bruit événementiel des infrastructures de transport ferroviaire, prenant en compte des critères d'intensité des nuisances ainsi que des critères de répétitivité.\nEntrée en vigueur : le lendemain de la date de publication.\nApplication : l'arrêté est pris pour l'application de l'article L. 571-10-2 du code de l'environnement, introduit par l'article 90 de la loi n° 2019-1428 du 24 décembre 2019 d'orientation des mobilités.\nLe ministre des transports, le ministre de la ville et du logement et le ministre délégué auprès de la ministre de la transition écologique, de la biodiversité et des négociations internationales sur le climat et la nature, chargé de la transition écologique,\nVu le code de l'environnement, notamment ses articles L. 571-9 et suivants et ses articles R. 571-44 et suivants ;\nVu l'arrêté du 8 novembre 1999 relatif au bruit des infrastructures ferroviaires ;\nVu l'avis du Conseil national du bruit en date du 9 mars 2026 ;\nVu les observations formulées lors de la consultation du public réalisée du 21 juillet au 10 août inclus, en application de l'article L. 123-19-1 du code de l'environnement,\nArrêtent :",
+          "official_text_sha256": "a3723d1d98fff047566268d7fca03390445b704a1aefbabcebad45d61b59696e",
           "excerpt_truncated": false,
           "content_status": "AVAILABLE"
         },
@@ -298,372 +1105,31 @@
               ]
             }
           ],
-          "scope_terms": [],
+          "scope_terms": [
+            "entreprise"
+          ],
           "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
         }
       },
       {
-        "source_id": "jorf:JORFTEXT000054909294",
+        "source_id": "jorf:JORFTEXT000054912654",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "text_id": "JORFTEXT000054909294",
+          "text_id": "JORFTEXT000054912654",
           "nature": "ARRETE",
-          "nor": "INTE2624333A",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Arrêté du 14 septembre 2026 portant dérogations au profit de la direction générale de l'enseignement scolaire",
+          "nor": "TECM2625759A",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Arrêté du 29 septembre 2026 portant contingent de licences et de droits d'accès aux bassins pour la pêche dans les estuaires et la pêche des poissons amphihalins (CMEA) pour la période 2026-2027",
           "article_ids": [],
           "article_titles": [],
           "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909294",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "Le ministre de l'intérieur,\nVu le code de la sécurité intérieure, notamment ses articles L. 726-1, L. 726-2, et R. 726-3 (2°) et suivants ;\nVu l'arrêté du 15 juin 2024 modifié relatif à la filière pédagogique de sécurité civile ;\nVu la demande de dérogations formulée par la direction générale de l'enseignement scolaire le 10 septembre 2026,\nArrête :",
-          "official_text_sha256": "29df129a91ede84249c3268dc41d6cdb18c7d7fcbaa8c744b12b001fd73793ec",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "CONTEXT_REVIEW",
-          "score": 0,
-          "triggers": [],
-          "scope_terms": [],
-          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909308",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054909308",
-          "nature": "DECRET",
-          "nor": "TRST2614764D",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Décret n° 2026-900 du 24 septembre 2026 relatif aux modalités générales d'établissement du diagnostic des maladies prévues dans les tableaux de maladies professionnelles",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909308",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "Publics concernés : personnes exposées aux risques professionnels mentionnés aux tableaux de maladies professionnelles annexés au livre IV du code de la sécurité sociale et au livre VII du code rural et de la pêche maritime, dont les salariés du régime général, salariés et non-salariés du régime d'assurance-accidents du code local des assurances sociales en vigueur dans les départements du Haut-Rhin, du Bas-Rhin et de la Moselle, salariés du régime des salariés des professions agricoles, non-salariés du régime des non-salariés des professions agricoles ; médecins-conseils des caisses dont relève l'assuré, professionnels de santé.\nObjet : le décret détermine les modalités générales d'établissement du diagnostic des maladies prévues dans les tableaux de maladies professionnelles. Il prévoit que les modalités générales d'établissement du diagnostic des maladies prévues dans les tableaux de maladies professionnelles tiennent compte des données acquises de la science au regard des recommandations de bonnes pratiques de la Haute Autorité de santé ou des sociétés savantes lorsque des examens complémentaires s'avèrent nécessaires pour les objectiver.\nEntrée en vigueur : les dispositions du présent décret entrent en vigueur conformément aux dispositions du II de l'article 95 de la loi du 30 décembre 2025 de financement de la sécurité sociale pour 2026.\nApplication : le présent décret est pris en application de l'article L. 461-1 du code de la sécurité sociale, dans sa rédaction issue de l'article 95 de la loi n° 2025-403 du 30 décembre 2025 de financement de la sécurité sociale pour 2026.\nLe Premier ministre,\nSur le rapport du ministre du travail et des solidarités et de la ministre de la santé, des familles, de l'autonomie et des personnes handicapées,\nVu le code rural et de la pêche maritime, notamment son article L. 751-7 ;\nVu le code de la sécurité sociale, notamment ses articles L. 461-1, R. 461-9 et R. 743-3-2 ;\nVu le code du travail, notamment son article L. 4641-2 ;\nVu la loi n° 2025-1403 du 30 décembre 2025 de financement de la sécurité sociale pour 2026, notamment son article 95 ;\nVu l'avis de la commission des accidents du travail et des maladies professionnelles en date du 10 juin 2026 ;\nVu l'avis du conseil d'orientation des conditions de travail en date du 19 juin 2026 ;\nVu l'avis du conseil central d'administration de la mutualité sociale agricole en date du 22 juin 2026 ;\nLe Conseil d'Etat (section sociale) entendu,\nDécrète :",
-          "official_text_sha256": "6121877863e878a2c545fcbec8507c0b5b753bfa830cdf95d4d1d84173c8a0f7",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "WATCH_CANDIDATE",
-          "score": 4,
-          "triggers": [
-            {
-              "kind": "FUNDING_OR_INCENTIVE",
-              "score": 3,
-              "terms": [
-                "financement"
-              ]
-            },
-            {
-              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
-              "score": 1,
-              "terms": [
-                "entree en vigueur"
-              ]
-            }
-          ],
-          "scope_terms": [
-            "professionnel"
-          ],
-          "reason": "ECONOMIC_FRICTION_DETECTED",
-          "recommended_enrichment": [
-            "PRESS",
-            "DEMAND",
-            "MARKET"
-          ]
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909329",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054909329",
-          "nature": "DECRET",
-          "nor": "TRST2622882D",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Décret n° 2026-901 du 24 septembre 2026 relatif aux modalités d'établissement du diagnostic des maladies prévues dans les tableaux de maladies professionnelles annexés au livre IV du code de la sécurité sociale",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909329",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "Publics concernés : personnes exposées aux risques professionnels mentionnés aux tableaux de maladies professionnelles modifiés et annexés au livre IV (partie réglementaire) du code de la sécurité sociale ; médecins-conseils des caisses dont relève l'assuré, professionnels de santé.\nObjet : le décret modifie les dispositions des articles D. 491-2 et D. 491-5 du code de la sécurité sociale afin de préciser que, lorsqu'ils sont nécessaires pour établir le diagnostic de la maladie, les examens complémentaires sont conformes aux données acquises de la science au regard des recommandations de bonnes pratiques de la Haute Autorité de santé ou des sociétés savantes. Il procède également à la suppression de certains examens complémentaires des modalités d'établissement du diagnostic des maladies prévues dans les tableaux de maladies professionnelles annexés au code de la sécurité sociale. Enfin, il fixe la date d'entrée en vigueur du décret en Conseil d'Etat en application de la première phrase du II de l'article 95 de la loi n° 2025-1403 du 30 décembre 2025 de financement de la sécurité sociale pour 2026.\nEntrée en vigueur : le texte entre en vigueur le 30 septembre 2026.\nApplication : le décret est pris en application de l'article 95 de la loi n° 2025-1403 du 30 décembre 2025 de financement de la sécurité sociale pour 2026.\nLe Premier ministre,\nSur le rapport du ministre du travail et des solidarités et de la ministre de la santé, des familles, de l'autonomie et des personnes handicapées,\nVu le code de la sécurité sociale, notamment ses articles L. 461-1, R. 461-3, R. 461-9 et R. 743-3-2 ;\nVu la loi n° 2025-1403 du 30 décembre 2025 de financement de la sécurité sociale pour 2026, notamment son article 95 ;\nVu le décret n° 2026-900 du 24 septembre 2026 relatif aux modalités générales d'établissement du diagnostic des maladies prévues dans les tableaux de maladies professionnelles ;\nVu l'avis de la commission des accidents du travail et des maladies professionnelles en date du 10 juin 2026 ;\nVu l'avis du conseil d'orientation des conditions de travail en date du 19 juin 2026 ;\nVu l'avis du conseil central d'administration de la mutualité sociale agricole en date du 22 juin 2026,\nDécrète :",
-          "official_text_sha256": "d5a24f3f48237e3ecdfb381dcd3d2a05ec8765e9b31a9cf8716c84f651e666ea",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "WATCH_CANDIDATE",
-          "score": 4,
-          "triggers": [
-            {
-              "kind": "FUNDING_OR_INCENTIVE",
-              "score": 3,
-              "terms": [
-                "financement"
-              ]
-            },
-            {
-              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
-              "score": 1,
-              "terms": [
-                "entree en vigueur"
-              ]
-            }
-          ],
-          "scope_terms": [
-            "professionnel"
-          ],
-          "reason": "ECONOMIC_FRICTION_DETECTED",
-          "recommended_enrichment": [
-            "PRESS",
-            "DEMAND",
-            "MARKET"
-          ]
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909352",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054909352",
-          "nature": "ARRETE",
-          "nor": "TECM2623774A",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Arrêté du 17 septembre 2026 portant prorogation de l'habilitation à la délivrance de certificats de teneur limite en humidité admissible aux fins du transport (TML) et de déclarations de teneur en humidité moyenne de la cargaison (MKM)",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909352",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "La ministre de la transition écologique, de la biodiversité et des négociations internationales sur le climat et la nature,\nVu la convention internationale pour la sauvegarde de la vie humaine en mer du 1\ner\nnovembre 1974 (SOLAS 1974), telle qu'amendée et publiée par décret du ministère des affaires étrangères et européennes du 23 mai 1980 ;\nVu le code maritime international des cargaisons solides en vrac adopté à Londres le 4 décembre 2008 (code IMSBC), tel qu'amendé et publié par décret du ministère des affaires étrangères et européennes du 3 décembre 2012 ;\nVu la circulaire MSC.1/Circ.1454/Rev.2 de l'Organisation maritime internationale (OMI) relative aux directives pour l'élaboration et l'approbation de procédures d'échantillonnage, d'essai et de contrôle de la teneur en humidité applicables aux cargaisons solides en vrac qui peuvent se liquéfier ;\nVu la lettre-circulaire n° 3681 du 5 octobre 2016, publiée par l'OMI ;\nVu la loi organique n° 99-209 du 19 mars 1999 modifiée relative à la Nouvelle-Calédonie, notamment ses articles 6-1 et 6-2 ;\nVu le code des transports, notamment ses articles L. 5241-4-2 et L. 5241-10-1 ;\nVu le décret n° 84-810 du 30 août 1984 modifié relatif à la sauvegarde de la vie humaine en mer, à la prévention de la pollution, à la sûreté et à la certification sociale des navires, notamment ses articles 42-4 et 56 ;\nVu l'arrêté du 23 novembre 1987 modifié relatif à la sécurité des navires, notamment la division 423 de son règlement annexé ;\nVu l'arrêté du 21 février 2017 portant agrément de l'Institut national de l'environnement industriel et des risques (INERIS) comme organisme agréé pour réaliser certaines prestations pour le compte de l'administration dans le cadre du transport maritime des cargaisons solides en vrac ;\nVu l'arrêté du 10 juillet 2017 relatif aux modalités de maîtrise de la teneur en humidité des cargaisons de minerais de nickel, dans le cadre du transport maritime au départ de la Nouvelle-Calédonie ;\nVu l'arrêté du 20 septembre 2019 portant habilitation à la délivrance de certificats de teneur limite en humidité admissibles aux fins du transport (TML) et de déclarations de teneur en humidité moyenne de la cargaison (NOR : TRET1927016A) ;\nVu l'arrêté du 5 octobre 2021 portant prorogation de l'habilitation à la délivrance de certificats de teneur limite en humidité admissibles aux fins du transport (TML) et de déclarations de teneur en humidité moyenne de la cargaison (NOR : MERT2129743A) ;\nVu l'arrêté du 28 mars 2022 portant prorogation de l'habilitation à la délivrance de certificats de teneur limite en humidité admissible aux fins du transport (TML) et de déclarations de teneur en humidité moyenne de la cargaison (MKM) (NOR : MERT2209517A) ;\nVu l'avis favorable du haut-commissaire de la République en Nouvelle-Calédonie en date du 25 août 2026 ;\nVu l'avis de la direction générale de la prévention des risques en date du 14 septembre 2026,\nArrête :",
-          "official_text_sha256": "fda01ef5795bf7f9f85ff438c732807e1f34dade2ca7d1810eb7c92ab364b17b",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "WATCH_CANDIDATE",
-          "score": 7,
-          "triggers": [
-            {
-              "kind": "SANCTION_OR_CONTROL",
-              "score": 3,
-              "terms": [
-                "amende",
-                "controle"
-              ]
-            },
-            {
-              "kind": "ELIGIBILITY_OR_CERTIFICATION",
-              "score": 2,
-              "terms": [
-                "agrement",
-                "certification",
-                "habilitation"
-              ]
-            },
-            {
-              "kind": "REPORTING_OR_TRACEABILITY",
-              "score": 2,
-              "terms": [
-                "declaration"
-              ]
-            }
-          ],
-          "scope_terms": [],
-          "reason": "ECONOMIC_FRICTION_DETECTED",
-          "recommended_enrichment": [
-            "PRESS",
-            "DEMAND",
-            "MARKET"
-          ]
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909374",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054909374",
-          "nature": "ARRETE",
-          "nor": "TECM2623778A",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Arrêté du 17 septembre 2026 portant prorogation de l'habilitation à la délivrance de certificats de teneur limite en humidité admissible aux fins du transport (TML) et de déclarations de teneur en humidité moyenne de la cargaison (SMT)",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909374",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "La ministre de la transition écologique, de la biodiversité et des négociations internationales sur le climat et la nature,\nVu la convention internationale pour la sauvegarde de la vie humaine en mer du 1\ner\nnovembre 1974 (SOLAS 1974), telle qu'amendée et publiée par décret du ministère des affaires étrangères et européennes du 23 mai 1980 ;\nVu le code maritime international des cargaisons solides en vrac adopté à Londres le 4 décembre 2008 (code IMSBC), tel qu'amendé et publié par décret du ministère des affaires étrangères et européennes du 3 décembre 2012 ;\nVu la circulaire MSC.1/Circ.1454/Rev.2 de l'Organisation maritime internationale (OMI) relative aux directives pour l'élaboration et l'approbation de procédures d'échantillonnage, d'essai et de contrôle de la teneur en humidité applicables aux cargaisons solides en vrac qui peuvent se liquéfier ;\nVu la lettre-circulaire n° 3681 du 5 octobre 2016, publiée par l'OMI ;\nVu la loi organique n° 99-209 du 19 mars 1999 modifiée relative à la Nouvelle-Calédonie, notamment ses articles 6-1 et 6-2 ;\nVu le code des transports, notamment ses articles L. 5241-4-2 et L. 5241-10-1 ;\nVu le décret n° 84-810 du 30 août 1984 modifié relatif à la sauvegarde de la vie humaine en mer, à la prévention de la pollution, à la sûreté et à la certification sociale des navires, notamment ses articles 42-4 et 56 ;\nVu l'arrêté du 23 novembre 1987 modifié relatif à la sécurité des navires, notamment la division 423 de son règlement annexé ;\nVu l'arrêté du 21 février 2017 portant agrément de l'Institut national de l'environnement industriel et des risques (INERIS) comme organisme agréé pour réaliser certaines prestations pour le compte de l'administration dans le cadre du transport maritime des cargaisons solides en vrac ;\nVu l'arrêté du 10 juillet 2017 relatif aux modalités de maîtrise de la teneur en humidité des cargaisons de minerais de nickel, dans le cadre du transport maritime au départ de la Nouvelle-Calédonie ;\nVu l'arrêté du 20 septembre 2019 portant habilitation à la délivrance de certificats de teneur limite en humidité admissibles aux fins du transport (TML) et de déclarations de teneur en humidité moyenne de la cargaison (NOR : TRET1927015A) ;\nVu l'arrêté du 5 octobre 2021 portant prorogation de l'habilitation à la délivrance de certificats de teneur limite en humidité admissibles aux fins du transport (TML) et de déclarations de teneur en humidité moyenne de la cargaison (NOR : MERT2129750A) ;\nVu l'arrêté du 28 mars 2022 portant prorogation de l'habilitation à la délivrance de certificats de teneur limite en humidité admissible aux fins du transport (TML) et de déclarations de teneur en humidité moyenne de la cargaison (SMT) (NOR : MERT2209515A) ;\nVu l'avis favorable du haut-commissaire de la République en Nouvelle-Calédonie en date du 25 août 2026 ;\nVu l'avis de la direction générale de la prévention des risques en date du 14 septembre 2026,\nArrête :",
-          "official_text_sha256": "ac7a27db1e9ca09111a0c263d7a501538281d5ab5bf73ae22074456728a95685",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "WATCH_CANDIDATE",
-          "score": 7,
-          "triggers": [
-            {
-              "kind": "SANCTION_OR_CONTROL",
-              "score": 3,
-              "terms": [
-                "amende",
-                "controle"
-              ]
-            },
-            {
-              "kind": "ELIGIBILITY_OR_CERTIFICATION",
-              "score": 2,
-              "terms": [
-                "agrement",
-                "certification",
-                "habilitation"
-              ]
-            },
-            {
-              "kind": "REPORTING_OR_TRACEABILITY",
-              "score": 2,
-              "terms": [
-                "declaration"
-              ]
-            }
-          ],
-          "scope_terms": [],
-          "reason": "ECONOMIC_FRICTION_DETECTED",
-          "recommended_enrichment": [
-            "PRESS",
-            "DEMAND",
-            "MARKET"
-          ]
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909480",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054909480",
-          "nature": "DECRET",
-          "nor": "AGRS2623481D",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Décret n° 2026-902 du 24 septembre 2026 relatif aux modalités d'établissement du diagnostic des maladies prévues dans les tableaux de maladies professionnelles annexés au code rural et de la pêche maritime",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909480",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "Publics concernés : personnes exposées aux risques professionnels mentionnés aux tableaux de maladies professionnelles annexés au livre VII du code rural et de la pêche maritime, dont les salariés et non-salariés du régime d'assurance-accidents du code local des assurances sociales en vigueur dans les départements du Haut-Rhin, du Bas-Rhin et de la Moselle, salariés du régime des salariés des professions agricoles, non-salariés du régime des non-salariés des professions agricoles ; médecins-conseils des caisses dont relève l'assuré, professionnels de santé.\nObjet : en application du décret en Conseil d'Etat n° 2026-900 du 24 septembre 2026 pris conformément au 1° du I de l'article 95 de la loi n° 2025-1403 du 30 décembre 2025 de financement de la sécurité sociale pour 2026, qui modifie le cinquième alinéa de l'article L. 461-1 du code de la sécurité sociale, le décret procède à la suppression de certains examens complémentaires des modalités d'établissement du diagnostic des maladies prévues dans les tableaux de maladies professionnelles annexés au code rural et de la pêche maritime.\nEntrée en vigueur : le décret entre en vigueur le 30 septembre 2026.\nApplication : le décret est pris en application de l'article 95 de la loi n° 2025-1403 du 30 décembre 2025 de financement de la sécurité sociale pour 2026.\nLe Premier ministre,\nSur le rapport de la ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu le code rural et de la pêche maritime, notamment ses articles L. 751-7, L. 752-2 et R. 751-23 ;\nVu le code de la sécurité sociale, notamment son article L. 461-2 ;\nVu la loi n° 2025-1403 du 30 décembre 2025 de financement de la sécurité sociale pour 2026, notamment son article 95 ;\nVu le décret n° 2026-900 du 24 septembre 2026 relatif aux modalités générales d'établissement du diagnostic des maladies prévues dans les tableaux de maladies professionnelles ;\nVu l'avis du conseil central d'administration de la mutualité sociale agricole en date du 15 septembre 2026 ;\nVu l'avis de la Commission supérieure des maladies professionnelles en agriculture en date du 16 septembre 2026,\nDécrète :",
-          "official_text_sha256": "bd8c3f24fb095280d0200123731e14e9753f1afc3959917a4edc4923e9259d17",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "WATCH_CANDIDATE",
-          "score": 4,
-          "triggers": [
-            {
-              "kind": "FUNDING_OR_INCENTIVE",
-              "score": 3,
-              "terms": [
-                "financement"
-              ]
-            },
-            {
-              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
-              "score": 1,
-              "terms": [
-                "entree en vigueur"
-              ]
-            }
-          ],
-          "scope_terms": [
-            "professionnel"
-          ],
-          "reason": "ECONOMIC_FRICTION_DETECTED",
-          "recommended_enrichment": [
-            "PRESS",
-            "DEMAND",
-            "MARKET"
-          ]
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909498",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054909498",
-          "nature": "ARRETE",
-          "nor": "AGRT2625099A",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Arrêté du 25 septembre 2026 modifiant l'arrêté du 26 novembre 2025 portant approbation du calendrier des courses et réunions de courses de chevaux françaises et étrangères pouvant servir de support aux paris hippiques pour l'année 2026",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909498",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "La ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu la loi du 2 juin 1891 modifiée ayant pour objet de réglementer l'autorisation et le fonctionnement des courses de chevaux ;\nVu la loi n° 2010-476 du 12 mai 2010 modifiée relative à l'ouverture à la concurrence et à la régulation du secteur des jeux d'argent et de hasard en ligne ;\nVu l'ordonnance n° 2019-1015 du 2 octobre 2019 réformant la régulation des jeux d'argent et de hasard ;\nVu le décret n° 97-456 du 5 mai 1997 modifié relatif aux sociétés de courses de chevaux et au pari mutuel ;\nVu le décret n° 2010-498 du 17 mai 2010 modifié relatif à la définition des courses hippiques supports de paris en ligne et aux principes généraux du pari mutuel ;\nVu l'arrêté du 26 novembre 2025 portant approbation du calendrier des courses et réunions de courses de chevaux françaises et étrangères pouvant servir de support aux paris hippiques pour l'année 2026 ;\nVu l'avis de l'Autorité nationale des jeux (ANJ) en date du 17 septembre 2026 ;\nSur proposition de la Fédération nationale des courses hippiques (FNCH),\nArrête :",
-          "official_text_sha256": "35ce64452d3b0d9e6d07befe9d5707e30b125686b04742b8a09f6cddc11e59a6",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "CONTEXT_REVIEW",
-          "score": 0,
-          "triggers": [],
-          "scope_terms": [],
-          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909510",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054909510",
-          "nature": "DECRET",
-          "nor": "EAEM2624525D",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Décret n° 2026-903 du 28 septembre 2026 modifiant le décret n° 2002-22 du 4 janvier 2002 relatif à la situation administrative et financière des personnels des établissements d'enseignement français à l'étranger",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909510",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "Publics concernés : les personnels des établissements du réseau de l'Agence pour l'enseignement français à l'étranger (AEFE).\nObjet : le décret modifie les articles 4, 13 et 15 du décret n° 2002-22 du 4 janvier 2002 afin de faire évoluer les modalités de versement des indemnités tenant actuellement lieu de prestations familiales aux personnels détachés auprès de l'AEFE et exerçant au sein du réseau à l'étranger.\nEntrée en vigueur : les dispositions du décret entrent en vigueur le 1\ner\noctobre 2026, à l'exception de celles de l'article 2, qui entrent en vigueur le 1\ner\nseptembre 2027.\nApplication : le décret modificatif est pris en application de l'article L. 452-5 du code de l'éducation.\nLe Premier ministre,\nSur le rapport du ministre de l'Europe et des affaires étrangères,\nVu le code de l'éducation ;\nVu le code général de la fonction publique ;\nVu le décret n° 67-290 du 28 mars 1967 fixant les modalités de calcul des émoluments des personnels de l'Etat et des établissements publics de l'Etat à caractère administratif en service à l'étranger ;\nVu le décret n° 85-1148 du 24 octobre 1985 modifié relatif à la rémunération des personnels civils et militaires de l'Etat, des personnels des collectivités territoriales et des personnels des établissements publics d'hospitalisation ;\nVu le décret n° 86-83 du 17 janvier 1986 relatif aux dispositions générales applicables aux agents contractuels de l'Etat ;\nVu le décret n° 2002-22 du 4 janvier 2002 modifié relatif à la situation administrative et financière des personnels des établissements d'enseignement français à l'étranger ;\nVu le décret n° 2008-775 du 30 juillet 2008 relatif aux obligations de service et aux missions des personnels enseignants du premier degré ;\nVu le décret n° 2010-235 du 5 mars 2010 relatif à la rémunération des agents publics participant, à titre d'activité accessoire, à des activités de formation et de recrutement ;\nVu le décret n° 2013-790 du 30 août 2013 instituant une indemnité de suivi et d'accompagnement des élèves au bénéfice des personnels enseignants du premier degré ;\nVu le décret n° 2014-940 du 20 août 2014 relatif aux obligations de service et aux missions des personnels enseignants exerçant dans un établissement public d'enseignement du second degré ;\nVu le décret n° 2014-941 du 20 août 2014 portant modification de certains statuts particuliers des personnels enseignants relevant du ministre chargé de l'éducation nationale ;\nVu le décret n° 2022-896 du 16 juin 2022 modifiant les modalités de recrutement, de rémunération et de gestion des personnels des établissements d'enseignement français à l'étranger, notamment son article 22 ;\nVu l'avis du comité social d'administration de l'Agence pour l'enseignement français à l'étranger du 8 septembre 2026,\nDécrète :",
-          "official_text_sha256": "a4b2ea55556257ee675e0a5ed72373d3e1bf8da1f175f782bc25dda3d3561b27",
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054912654",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "Publics concernés : personnes morales, personnes physiques, services déconcentrés, armateurs à la pêche.\nObjet : approbation d'une délibération du Comité national des pêches maritimes et des élevages marins relative au contingent de licences et de droits d'accès aux bassins pour la pêche dans les estuaires et la pêche des poissons amphihalins (CMEA) pour la période 2026-2027.\nEntrée en vigueur : le lendemain de la publication.\nApplication : le présent arrêté est un texte autonome.\nLa ministre de la transition écologique, de la biodiversité, et des négociations internationales pour le climat et la nature,\nVu le règlement (CE) n° 1100/2007 du Conseil du 18 septembre 2007 instituant des mesures de reconstitution du stock d'anguilles européennes ;\nVu le règlement (CE) n° 1224/2009 du Conseil du 20 novembre 2009 instituant un régime communautaire de contrôle afin d'assurer le respect des règles de la PCP ;\nVu le règlement (CE) n° 404/2011 du 8 avril 2011 portant modalités d'application du règlement (CE) n° 1224/2009 du Conseil instituant un régime communautaire de contrôle afin d'assurer le respect des règles de la politique commune de la pêche ;\nVu le règlement (UE) n° 1380/2013 du Parlement européen et du Conseil du 11 décembre 2013 relatif à la politique commune de la pêche ;\nVu le règlement (UE) n° 2023/2842 du Parlement européen et du Conseil du 22 novembre 2023 modifiant le règlement (CE) n° 1224/2009 du Conseil et modifiant les règlements (CE) n° 1967/2006 et (CE) n° 1005/2008 du Conseil et les règlements (UE) 2016/1139, (UE) 2017/2403 et (UE) 2019/473 du Parlement européen et du Conseil en ce qui concerne le contrôle des pêches ;\nVu le règlement (UE) n° 2026/249 du Conseil du 26 janvier 2026 établissant, pour 2026, 2027 et 2028, les possibilités de pêche pour certains stocks halieutiques, applicables dans les eaux de l'Union et, pour les navires de pêche de l'Union, dans certaines eaux n'appartenant pas à l'Union, et modifiant le règlement (UE) 2025/202 ;\nVu le code de l'environnement, notamment ses articles R.436-44 et suivants ;\nVu le livre IX du code rural et de la pêche maritime, notamment ses articles L. 911-1 et suivants, L. 912-2, L. 941-1, L. 946-2, L. 946-5, L. 946-6, R. 912-1 à R. 912-17 et R. 922-45 à R. 922-53 ;\nVu l'arrêté du 15 septembre 1993 modifié instituant un régime commun de licences pour la pêche dans les estuaires et la pêche des poissons migrateurs ;\nVu l'arrêté du 18 mars 2015 relatif aux obligations déclaratives en matière de pêche maritime ;\nVu l'arrêté du 20 avril 2017 portant approbation du règlement intérieur du CNPMEM ;\nVu l'arrêté du 25 octobre 2024 relatif aux mesures de contrôle de la pêcherie professionnelle d'anguille (Anguilla anguilla) dans les eaux maritimes ;\nVu la délibération n° 9/2022 du CNPMEM portant délégation de compétences du Conseil au Bureau du CNPMEM ;\nVu la délibération n° B7/2026 du CNPMEM relative aux conditions d'exercice de la pêche dans les estuaires et de la pêche des poissons migrateurs ;\nAprès consultation écrite de la Commission des « Milieux estuariens et des poissons amphihalins » (CMEA) du CNPMEM du 9 au 20 juillet 2026 ;\nVu la demande du Comité national des pêches maritimes et des élevages marins,\nArrête :",
+          "official_text_sha256": "e1f491e73c060cd4e1cd1cb9a51509c414dbbec0974f903054988ce9ae36a1af",
           "excerpt_truncated": false,
           "content_status": "AVAILABLE"
         },
@@ -680,11 +1146,10 @@
               ]
             },
             {
-              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
+              "kind": "SANCTION_OR_CONTROL",
               "score": 3,
               "terms": [
-                "collectivites",
-                "etablissement public"
+                "controle"
               ]
             },
             {
@@ -696,7 +1161,7 @@
             }
           ],
           "scope_terms": [
-            "collectivites territoriales"
+            "professionnel"
           ],
           "reason": "ECONOMIC_FRICTION_DETECTED",
           "recommended_enrichment": [
@@ -707,205 +1172,24 @@
         }
       },
       {
-        "source_id": "jorf:JORFTEXT000054909563",
+        "source_id": "jorf:JORFTEXT000054912782",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "text_id": "JORFTEXT000054909563",
+          "text_id": "JORFTEXT000054912782",
           "nature": "ARRETE",
-          "nor": "SFHS2616364A",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Arrêté du 23 septembre 2026 portant radiation de spécialités pharmaceutiques de la liste des médicaments agréés à l'usage des collectivités publiques prévue à l'article L. 5123-2 du code de la santé publique",
+          "nor": "AGRG2621735A",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Arrêté du 25 septembre 2026 modifiant l'arrêté du 16 juillet 2025 fixant les mesures de surveillance, de prévention et de lutte relatives à la lutte contre la dermatose nodulaire contagieuse sur le territoire métropolitain",
           "article_ids": [],
           "article_titles": [],
           "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909563",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique ;\nVu le code de la sécurité sociale ;\nConsidérant que les spécialités relevant du présent arrêté ont été abrogées et/ou font l'objet d'un arrêt définitif de commercialisation,\nArrêtent :",
-          "official_text_sha256": "121c63e6d55f0f4839aed327ee12a281b90127872be4decc75e1d8319437a345",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "WATCH_CANDIDATE",
-          "score": 3,
-          "triggers": [
-            {
-              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
-              "score": 3,
-              "terms": [
-                "collectivites"
-              ]
-            }
-          ],
-          "scope_terms": [],
-          "reason": "ECONOMIC_FRICTION_DETECTED",
-          "recommended_enrichment": [
-            "PRESS",
-            "DEMAND",
-            "MARKET"
-          ]
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909571",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054909571",
-          "nature": "ARRETE",
-          "nor": "SFHS2616366A",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Arrêté du 23 septembre 2026 portant radiation de spécialités pharmaceutiques de la liste mentionnée au premier alinéa de l'article L. 162-17 du code de la sécurité sociale",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909571",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique ;\nVu le code de la sécurité sociale ;\nConsidérant que les spécialités relevant du présent arrêté ont été abrogées et/ou font l'objet d'un arrêt définitif de commercialisation,\nArrêtent :",
-          "official_text_sha256": "121c63e6d55f0f4839aed327ee12a281b90127872be4decc75e1d8319437a345",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "CONTEXT_REVIEW",
-          "score": 0,
-          "triggers": [],
-          "scope_terms": [],
-          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909579",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054909579",
-          "nature": "ARRETE",
-          "nor": "SFHS2623735A",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Arrêté du 24 septembre 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909579",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique ;\nVu le code de la sécurité sociale, notamment ses articles L. 162-17 et R. 163-2 à R. 163-14 ;\nVu les avis de la commission de la transparence de la Haute Autorité de santé relatifs à la spécialité de référence CELESTENE\n®\n, avis consultables sur le site de la Haute Autorité de santé et favorables à l'inscription au remboursement de cette spécialité ;\nVu l'avis de la commission de la transparence de la Haute Autorité de santé du 23 septembre 2020 relatif à la spécialité de référence VYNDAQEL\n®\n, avis consultable sur le site de la Haute Autorité de santé et favorable à l'inscription au remboursement de cette spécialité,\nArrêtent :",
-          "official_text_sha256": "269bc8c37b35bf1e32a45f7d33029c74acbb8ab041d61af5f6473b226b460e20",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "CONTEXT_REVIEW",
-          "score": 0,
-          "triggers": [],
-          "scope_terms": [],
-          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909589",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054909589",
-          "nature": "ARRETE",
-          "nor": "SFHS2623736A",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Arrêté du 24 septembre 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909589",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique, notamment ses articles L. 5123-2, L. 5123-3 et D. 5123-4 ;\nVu le code de la sécurité sociale, notamment ses articles R. 163-3 et R. 163-4 ;\nVu le code général des impôts, notamment son article 281 octies ;\nVu les avis de la commission de la transparence de la Haute Autorité de santé relatifs à la spécialité de référence CELESTENE\n®\n, avis consultables sur le site de la Haute Autorité de santé et favorables à l'inscription au remboursement de cette spécialité ;\nVu l'avis de la commission de la transparence de la Haute Autorité de santé du 23 septembre 2020 relatif à la spécialité de référence VYNDAQEL\n®\n, avis consultable sur le site de la Haute Autorité de santé et favorable à l'inscription au remboursement de cette spécialité,\nArrêtent :",
-          "official_text_sha256": "b6f495c47e512a10378cf28a75657b36287e348d6b65c8b509a3dad8ea4209e7",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "WATCH_CANDIDATE",
-          "score": 3,
-          "triggers": [
-            {
-              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
-              "score": 3,
-              "terms": [
-                "collectivites"
-              ]
-            }
-          ],
-          "scope_terms": [],
-          "reason": "ECONOMIC_FRICTION_DETECTED",
-          "recommended_enrichment": [
-            "PRESS",
-            "DEMAND",
-            "MARKET"
-          ]
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909603",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054909603",
-          "nature": "ARRETE",
-          "nor": "SFHP2623527A",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Arrêté du 24 septembre 2026 modifiant l'arrêté du 2 septembre 2024 listant les traitements préventifs à l'égard des maladies infantiles pouvant être administrés par les services départementaux de protection maternelle et infantile",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909603",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées,\nVu le code de la santé publique, notamment ses articles L. 2112-2, L. 5124-1 et R. 2112-3 ;\nVu l'arrêté du 2 septembre 2024 listant les traitements préventifs à l'égard des maladies infantiles pouvant être administrés par les services départementaux de protection maternelle et infantile,\nArrête :",
-          "official_text_sha256": "d2d4c00ba8d523b797d85315e8ff5ff21c9b7075ef3c449d6e9059f1a4f5a3d4",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "CONTEXT_REVIEW",
-          "score": 0,
-          "triggers": [],
-          "scope_terms": [],
-          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909613",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054909613",
-          "nature": "DECRET",
-          "nor": "ESRS2610427D",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Décret n° 2026-904 du 28 septembre 2026 portant renouvellement de la commission chargée d'émettre un avis sur les diplômes étrangers dont les titulaires demandent l'autorisation de faire usage professionnel du titre de psychologue",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909613",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "Publics concernés : usagers titulaires de diplômes étrangers souhaitant les faire reconnaitre en vue de faire usage professionnel du titre de psychologue.\nObjet : le décret procède au renouvellement pour une durée de deux ans de la commission chargée d'émettre un avis sur les diplômes étrangers dont les titulaires demandent l'autorisation de faire usage professionnel du titre de psychologue.\nEntrée en vigueur : le texte entre en vigueur à compter du 1\ner\noctobre 2026.\nApplication : le présent décret est pris pour en application de l'article R.* 133-2 du code des relations entre le public et l'administration.\nLe Premier ministre,\nSur le rapport du ministre de l'enseignement supérieur, de la recherche et de l'espace,\nVu le code des relations entre le public et l'administration, notamment son article R.* 133-2 ;\nVu le décret n° 90-255 du 22 mars 1990 modifié fixant la liste des diplômes permettant de faire usage professionnel du titre de psychologue ;\nVu le décret n° 2021-1277 du 30 septembre 2021 portant renouvellement de la commission chargée d'émettre un avis sur les diplômes étrangers dont les titulaires demandent l'autorisation de faire usage professionnel du titre de psychologue,\nDécrète :",
-          "official_text_sha256": "a1270ee32d1645739cf85bafafce6b3767a5f7518d4788d35ca655060883691e",
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054912782",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "Publics concernés : les propriétaires et détenteurs d'animaux d'espèces répertoriées sensibles à la dermatose nodulaire contagieuse (DNC), les vétérinaires sanitaires.\nObjet : la modification de l'arrêté permet de déployer la surveillance de l'efficacité de la vaccination ainsi que la surveillance post-vaccinale.\nEntrée en vigueur : le présent arrêté entre en vigueur le lendemain de sa publication.\nApplication : le présent arrêté est pris pour l'application de l'article L. 221-1-1 du code rural et de la pêche maritime.\nLa ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu le règlement (UE) 2016/429 du Parlement européen et du Conseil du 9 mars 2016 relatif aux maladies animales transmissibles et modifiant et abrogeant certains actes dans le domaine de la santé animale ;\nVu le règlement délégué (UE) 2020/687 de la Commission du 17 décembre 2019 complétant le règlement (UE) 2016/429 du Parlement européen et du Conseil en ce qui concerne les règles relatives à la prévention de certaines maladies répertoriées et à la lutte contre celles-ci ;\nVu le règlement délégué (UE) 2020/688 de la Commission du 17 décembre 2019 complétant le règlement (UE) 2016/429 du Parlement européen et du Conseil en ce qui concerne les conditions de police sanitaire applicables aux mouvements d'animaux terrestres et d'œufs à couver dans l'Union ;\nVu le règlement délégué (UE) 2020/689 de la Commission du 17 décembre 2019 complétant le règlement (UE) 2016/429 du Parlement européen et du Conseil en ce qui concerne les règles applicables à la surveillance, aux programmes d'éradication et au statut « indemne » de certaines maladies répertoriées et émergentes ;\nVu le code rural et la pêche maritime, notamment le livre II et ses articles L. 201-2, L. 221-1-1, L. 223-6-1, L. 223-8 et R. 236-4 ;\nVu l'arrêté du 30 mars 2001 modifié fixant les modalités de l'estimation des animaux abattus et des denrées et produits détruits sur ordre de l'administration ;\nVu l'arrêté du 16 juillet 2025 fixant les mesures de surveillance, de prévention et de lutte relatives à la lutte contre la dermatose nodulaire contagieuse sur le territoire métropolitain,\nArrête :",
+          "official_text_sha256": "c0d1ce9d6134d24dabfaec4de0afe1b099b1a8efae66342a9c51f3eeee8ca304",
           "excerpt_truncated": false,
           "content_status": "AVAILABLE"
         },
@@ -918,36 +1202,572 @@
               "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
               "score": 1,
               "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054912804",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054912804",
+          "nature": "ARRETE",
+          "nor": "AGRT2625638A",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Arrêté du 25 septembre 2026 modifiant l'arrêté du 12 mai 2025 relatif aux bonnes conditions agricoles et environnementales",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054912804",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "La ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu le règlement (UE) 2021/2115 du Parlement européen et du Conseil du 2 décembre 2021 établissant des règles relatives à l'aide aux plans stratégiques devant être élaborés par les Etats membres dans le cadre de la politique agricole commune (plans stratégiques relevant de la PAC) et financés par le Fonds européen agricole de garantie (FEAGA) et par le Fonds européen agricole pour le développement rural (FEADER), et abrogeant le règlement (UE) n° 1305/2013 du Parlement européen et du Conseil et le règlement (UE) n° 1307/2013 du Parlement européen et du Conseil, modifié ;\nVu le règlement (UE) 2021/2116 du Parlement européen et du Conseil du 2 décembre 2021 relatif au financement, à la gestion et au suivi de la politique agricole commune et abrogeant le règlement (UE) n° 1306/2013, modifié ;\nVu le code de l'environnement, notamment la section 4 du chapitre II du titre I\ner\ndu livre IV de sa partie législative ;\nVu le code rural et de la pêche maritime, notamment son article D. 614-52 ;\nVu l'arrêté du 12 mai 2025 relatif aux bonnes conditions agricoles et environnementales,\nArrête :",
+          "official_text_sha256": "50b16a55c0bfe9888f32d07c4c7cd3a714750ce48b7e0c6075bfa90209001560",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "FUNDING_OR_INCENTIVE",
+              "score": 3,
+              "terms": [
+                "aide ",
+                "financement",
+                "fonds"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054912814",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054912814",
+          "nature": "ARRETE",
+          "nor": "AGRG2625436A",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Arrêté du 28 septembre 2026 modifiant l'arrêté du 25 septembre 2023 relatif aux mesures de surveillance, de prévention, de lutte et de vaccination contre l'influenza aviaire hautement pathogène (IAHP)",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054912814",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "La ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu le règlement (UE) 2016/429 du Parlement européen et du Conseil du 9 mars 2016 relatif aux maladies animales transmissibles et modifiant et abrogeant certains actes dans le domaine de la santé animale (« législation sur la santé animale ») et ses actes délégués et d'exécution ;\nVu le règlement délégué (UE) 2024/2623 de la Commission du 30 juillet 2024 complétant le règlement (UE) 2016/429 du Parlement européen et du Conseil en ce qui concerne les règles relatives à l'approbation et à la reconnaissance du statut « indemne de maladie » de compartiments détenant des animaux terrestres ;\nVu le code rural et de la pêche maritime, notamment son livre II et ses articles L. 201-1 à L. 201-8 et L. 221-1-1 ;\nVu l'arrêté du 25 septembre 2023 modifié relatif aux mesures de surveillance, de prévention, de lutte et de vaccination contre l'influenza aviaire hautement pathogène (IAHP),\nArrête :",
+          "official_text_sha256": "9c98c5f356f23858f1dea4ec34159e6d189426864dbcaeaec25935cb84cc144a",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054912834",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054912834",
+          "nature": "ARRETE",
+          "nor": "MENE2601714A",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Arrêté du 9 septembre 2026 fixant le modèle du diplôme national du brevet",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054912834",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "Le ministre de l'éducation nationale et la ministre des outre-mer,\nVu le code de l'éducation, notamment ses articles L. 332-6, D. 332-12 et D. 332-16 à D. 332-22 ;\nVu le code rural et de la pêche maritime, notamment ses articles L. 811-2 et L. 813-2 ;\nVu l'arrêté du 25 juin 2012 fixant les modalités d'attribution du diplôme national du brevet aux candidats des sections internationales de collège et des établissements franco-allemands ;\nVu l'arrêté du 31 décembre 2015 modifié relatif aux modalités d'attribution du diplôme national du brevet ;\nVu l'arrêté du 23 mai 2016 relatif aux modalités d'attribution du diplôme national du brevet pour les candidats des établissements d'enseignement agricole,\nArrêtent :",
+          "official_text_sha256": "f58a9580f81f110f0e535260f2003e52a1fbe7bc2cdd826fd79eb63fadf76386",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054912856",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054912856",
+          "nature": "ARRETE",
+          "nor": "MENE2622066A",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Arrêté du 9 septembre 2026 fixant les modèles de diplômes professionnels",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054912856",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "Le ministre de l'éducation nationale, la ministre des outre-mer et le ministre de l'enseignement supérieur, de la recherche et de l'espace,\nVu le code de l'éducation, notamment ses articles D. 337-1 à D. 337-225 et D. 643-1 à D. 643-35-1 ;\nVu l'arrêté du 10 mars 1997 modifié portant création du diplôme de technicien des métiers du spectacle, options techniques de l'habillage et machiniste constructeur ;\nVu l'arrêté du 31 juillet 2012 modifié portant définition du diplôme d'expert en automobile,\nArrêtent :",
+          "official_text_sha256": "c46e6e9c2290b9ab574d59e08bed74825d8420095be89a1efea9e39ea60097cc",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [
+            "professionnel"
+          ],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054912927",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054912927",
+          "nature": "ARRETE",
+          "nor": "MENE2622067A",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Arrêté du 9 septembre 2026 relatif aux modèles de diplôme du baccalauréat général et du baccalauréat technologique",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054912927",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "La ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire, le ministre de l'éducation nationale et la ministre des outre-mer,\nVu le code de l'éducation, notamment ses articles L. 331-1 et suivants, L. 333-1 et suivants, D. 334-1 à D. 336-22-1, D. 421-131 à D. 421-142 et D. 613-1 à D. 613-12 ;\nVu l'arrêté du 16 juillet 2018 modifié relatif à l'organisation et aux volumes horaires des enseignements du cycle terminal des lycées, sanctionnés par le baccalauréat général ;\nVu l'arrêté du 16 juillet 2018 modifié portant organisation et volumes horaires des enseignements des classes de première et terminale des lycées sanctionnés par le baccalauréat technologique, séries « sciences et technologies de la santé et du social (ST2S) », « sciences et technologies de laboratoire (STL) », « sciences et technologies du design et des arts appliqués (STD2A) », « sciences et technologies de l'industrie et du développement durable (STI2D) », « sciences et technologies du management et de la gestion (STMG) », « sciences et technologies de l'hôtellerie et de la restauration (STHR) » ;\nVu l'arrêté du 16 juillet 2018 modifié relatif aux modalités d'organisation du contrôle continu pour l'évaluation des enseignements dispensés dans les classes conduisant au baccalauréat général et au baccalauréat technologique ;\nVu l'arrêté du 16 juillet 2018 modifié relatif aux épreuves du baccalauréat général à compter de la session de 2021 ;\nVu l'arrêté du 16 juillet 2018 modifié relatif aux épreuves du baccalauréat technologique à compter de la session de 2021 ;\nVu l'arrêté du 20 décembre 2018 modifié relatif aux conditions d'attribution de l'indication section européenne ou section de langue orientale (SELO) et de l'indication discipline non linguistique ayant fait l'objet d'un enseignement en langue vivante (DNL) sur les diplômes du baccalauréat général et du baccalauréat technologique ;\nVu l'arrêté du 2 mai 2019 fixant la grille horaire de la série STAV « sciences et technologies de l'agronomie et du vivant » du baccalauréat technologique préparé dans les lycées d'enseignement général et technologique agricole ;\nVu l'arrêté du 9 juillet 2019 modifié relatif aux conditions d'attribution de l'indication section européenne et de l'indication discipline non linguistique (DNL) ayant fait l'objet d'un enseignement en langue vivante sur le diplôme du baccalauréat technologique série « sciences et technologies de l'agronomie et du vivant » (STAV) ;\nVu l'arrêté du 6 août 2021 relatif aux sections internationales de classe de seconde et aux classes menant au baccalauréat français international (BFI) ;\nVu l'arrêté du 28 juillet 2025 relatif aux épreuves du baccalauréat technologique série « sciences et technologies de l'agronomie et du vivant » (STAV) préparé dans les établissements de l'enseignement agricole ;\nVu l'arrêté du 28 juillet 2026 relatif aux conditions d'attribution de l'indication « cursus bilingue » sur les diplômes du baccalauréat général et du baccalauréat technologique concernant les langues vivantes régionales,\nArrêtent :",
+          "official_text_sha256": "0bae22627f8908215d887038fee484c58613414f39b8e9ae28125b7ae7d9d0cb",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "SANCTION_OR_CONTROL",
+              "score": 3,
+              "terms": [
+                "sanction",
+                "controle"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913606",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054913606",
+          "nature": "DECRET",
+          "nor": "SFHP2616675D",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Décret n° 2026-905 du 28 septembre 2026 portant création d'une délégation interministérielle à la santé mentale et à la psychiatrie",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054913606",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "Publics concernés : ensemble des acteurs concernés par la santé mentale et la psychiatrie.\nObjet : le décret crée une délégation interministérielle à la santé mentale et à la psychiatrie, placée auprès du ministre chargé de la santé. Il précise les missions relevant de sa compétence.\nEntrée en vigueur : le décret entre en vigueur le 1\ner\noctobre 2026.\nApplication : le présent décret est un texte autonome.\nLe Premier ministre,\nSur le rapport de la ministre de la santé, des familles, de l'autonomie et des personnes handicapées,\nVu la Constitution, notamment son article 37 ;\nVu le code de la santé publique, notamment ses articles L. 1411-1 et suivants et D. 1411-31 et D. 1411-38 ;\nVu le décret n° 2018-688 du 1\ner\naoût 2018 modifié portant création de l'Observatoire national du suicide ;\nVu le décret n° 2022-195 du 17 février 2022 relatif à la prise en charge des séances d'accompagnement réalisées par un psychologue ;\nVu le décret n° 2025-1017 du 29 octobre 2025 relatif aux attributions du ministre de la santé, des familles, de l'autonomie et des personnes handicapées,\nDécrète :",
+          "official_text_sha256": "ba0e6992e72f64c815ff73de8765d61937eb99b41a1f40961a5e4f0442cf0115",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 1,
+          "triggers": [
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913633",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054913633",
+          "nature": "ARRETE",
+          "nor": "SFHA2624462A",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Arrêté du 3 septembre 2026 relatif à la répartition de la première part du fonds spécial destiné au financement des unions d'associations familiales au titre de l'année 2026",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054913633",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de l'action sociale et des familles, notamment ses articles L. 211-10, R. 211-12 et R. 211-13 ;\nVu l'arrêté du 6 août 2026 relatif au montant des deux parts du fonds spécial destiné au financement des unions d'associations familiales pour l'année 2026 et à la contribution de la Caisse nationale d'allocations familiales et de la Caisse centrale de la mutualité sociale agricole ;\nVu la somme de deux euros et quatre-vingt-onze centimes (2,91 €) correspondant au montant des produits financiers relatifs à l'année 2025 déclarés par l'Union nationale des associations familiales,\nArrêtent :",
+          "official_text_sha256": "1867dd65f78ffbe470108763fc1b479dbae4f3603cc44e84a0604eeb08742aee",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "FUNDING_OR_INCENTIVE",
+              "score": 3,
+              "terms": [
+                "financement",
+                "fonds"
+              ]
+            }
+          ],
+          "scope_terms": [
+            "association"
+          ],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913644",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054913644",
+          "nature": "ARRETE",
+          "nor": "SFHS2624393A",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Arrêté du 23 septembre 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054913644",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique, notamment ses articles L. 5123-2, L. 5123-3 et D. 5123-4 ;\nVu le code de la sécurité sociale ;\nVu le code général des impôts, notamment son article 281 octies ;\nVu les avis de la commission de la transparence relatifs à la spécialité AVASTIN\n®\n, médicament biologique de référence du groupe biologique similaire Bevacizumab auquel appartiennent les spécialités OYAVAS 25 mg/ml objet du présent arrêté,\nArrêtent :",
+          "official_text_sha256": "a2de16ff70ef8092316ead1ff8c845e881ddfeb3dcf9ee076f9e2dc05164bfe8",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
+              "score": 3,
+              "terms": [
+                "collectivites"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913656",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054913656",
+          "nature": "ARRETE",
+          "nor": "SFHS2621113A",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Arrêté du 25 septembre 2026 modifiant la liste des spécialités pharmaceutiques prises en charge en sus des prestations d'hospitalisation mentionnée à l'article L. 162-22-7 du code de la sécurité sociale",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054913656",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique ;\nVu le code de la sécurité sociale, notamment ses articles L. 162-22-7, R. 162-37-2 et R. 162-37-3 ;\nVu l'arrêté du 4 avril 2005 modifié pris en application de l'article L. 162-22-7 du code de la sécurité sociale et fixant la liste des spécialités pharmaceutiques prises en charge par l'assurance maladie en sus des prestations d'hospitalisation,\nArrêtent :",
+          "official_text_sha256": "8547252ec893f60712132645cc41ca5423dbd12d06e50f288b81959cc450308e",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913670",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054913670",
+          "nature": "ARRETE",
+          "nor": "SFHP2625744A",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Arrêté du 29 septembre 2026 portant autorisation de la société Sandoz SAS à participer à l'expérimentation du recyclage des stylos préremplis injectables pour l'administration en auto-traitement de médicaments ayant le statut de médicament non utilisé",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054913670",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées,\nVu le décret n° 2022-1228 du 13 septembre 2022 relatif à l'expérimentation du recyclage des stylos préremplis injectables pour l'administration en auto-traitement de médicaments ayant le statut de médicament non utilisé ;\nVu l'arrêté du 10 novembre 2022 relatif aux modalités d'inscriptions à l'expérimentation du recyclage des stylos préremplis injectables pour l'administration en auto-traitement de médicaments ayant le statut de médicament non utilisé ;\nVu le dépôt de dossier par la société Sandoz SAS le 30 juillet 2026 ;\nConsidérant que l'examen de ce dossier permet de démontrer la compatibilité du projet avec la protection de la santé humaine et de l'environnement et permet d'apprécier la conformité du projet aux critères mentionnés dans le décret et l'arrêté susvisés et intègre un engagement du demandeur, d'une part, à effectuer une phase de validation du procédé de recyclage, d'autre part à respecter les modalités de surveillance et de suivi de l'expérimentation figurant dans les mêmes textes,\nArrête :",
+          "official_text_sha256": "8535af19797a5f122f05806b16ca545c3c80171cfabaad3a026fdad19d133f24",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 2,
+          "triggers": [
+            {
+              "kind": "TECHNICAL_TRANSITION",
+              "score": 2,
+              "terms": [
+                "recyclage"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913686",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054913686",
+          "nature": "ARRETE",
+          "nor": "CPPD2623862A",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Arrêté du 23 septembre 2026 modifiant l'arrêté du 2 juin 2026 relatif aux modalités de l'élection des représentants du personnel au conseil d'administration et aux commissions territoriales de l'établissement public de la Masse des douanes",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054913686",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "Le ministre de l'action et des comptes publics,\nVu le code général de la fonction publique ;\nVu le décret n° 2015-462 du 23 avril 2015 portant statut de la Masse des douanes, notamment ses articles 10 et 20 ;\nVu l'arrêté du 2 juin 2026 relatif aux modalités de l'élection des représentants du personnel au conseil d'administration et aux commissions territoriales de la Masse des douanes,\nArrête :",
+          "official_text_sha256": "9a50dfb692586f613c7a76dfc2e034b01d59169e4499167b5b343cf37f5aa2f9",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
+              "score": 3,
+              "terms": [
+                "etablissement public"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913695",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054913695",
+          "nature": "ARRETE",
+          "nor": "CPPE2624715A",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Arrêté du 24 septembre 2026 modifiant l'arrêté du 12 juin 1970 fixant le siège et le ressort des service(s) de la publicité foncière",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054913695",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "Le ministre de l'action et des comptes publics,\nVu le décret n° 2008-310 du 3 avril 2008 modifié relatif à la direction générale des finances publiques ;\nVu le décret n° 2009-707 du 16 juin 2009 modifié relatif aux services déconcentrés de la direction générale des finances publiques, notamment son article 7 ;\nVu le décret n° 2010-986 du 26 août 2010 modifié portant statut particulier des personnels de catégorie A de la direction générale des finances publiques ;\nVu l'arrêté du 12 juin 1970 modifié fixant le siège et le ressort des service(s) de publicité foncière ;\nSur le rapport de la directrice générale des finances publiques,\nArrête :",
+          "official_text_sha256": "32b4ca40f07ab4cbeec17c8b2f077593159e49abab8f7b5667dfc02223f04fa6",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913917",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054913917",
+          "nature": "ARRETE",
+          "nor": "SPOV2625191A",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Arrêté du 22 septembre 2026 modifiant l'arrêté du 13 juillet 2026 portant création de la mention « judo-jujitsu » du diplôme d'Etat supérieur de la jeunesse, de l'éducation populaire et du sport spécialité « direction de la performance sportive »",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054913917",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "La ministre des sports, de la jeunesse et de la vie associative,\nVu le code du sport, notamment ses articles L. 212-1, R. 212-10-17, D. 212-51 et suivants et A. 212-54 et suivants ;\nVu l'arrêté du 13 juillet 2026 portant création de la mention « judo-jujitsu » du diplôme d'Etat supérieur de la jeunesse, de l'éducation populaire et du sport spécialité « direction de la performance sportive »,\nArrête :",
+          "official_text_sha256": "79a9883b247b495f311dc5d7266edaa8c859a42187d946e893d8877d1d5367a0",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913928",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054913928",
+          "nature": "ARRETE",
+          "nor": "VLOL2620735A",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Arrêté du 28 septembre 2026 relatif au calcul des aides personnelles au logement et de l'aide à l'accession sociale et à la sortie de l'insalubrité spécifique à l'outre-mer",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054913928",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "Publics concernés : bénéficiaires des aides personnelles au logement et de l'aide à l'accession sociale et à la sortie de l'insalubrité spécifique à l'outre-mer et organismes payeurs.\nObjet : le présent arrêté a pour objet de revaloriser les paramètres relatifs à la dépense de logement du barème des aides personnelles au logement et de l'aide à l'accession sociale et à la sortie de l'insalubrité dans les départements et régions d'outre-mer selon la dernière évolution de l'indice de référence des loyers (IRL) connue, soit + 1,15 %.\nEntrée en vigueur : le texte s'applique aux prestations dues à compter du 1\ner\noctobre 2026.\nApplication : le présent arrêté est pris en application de l'article L. 823-4 du code de la construction et de l'habitation.\nLa ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire, la ministre de la santé, des familles, de l'autonomie et des personnes handicapées, la ministre des outre-mer, le ministre de l'action et des comptes publics et le ministre de la ville et du logement,\nVu le livre VIII du code de la construction et de l'habitation, notamment son article L. 823-4 ;\nVu le décret n° 2020-3 du 2 janvier 2020 relatif à la création d'une aide à l'accession sociale et à la sortie de l'insalubrité spécifique à l'outre-mer ;\nVu l'arrêté du 27 septembre 2019 modifié relatif au calcul des aides personnelles au logement et de la prime de déménagement ;\nVu l'arrêté du 2 janvier 2020 relatif au calcul de l'aide à l'accession sociale et à la sortie de l'insalubrité spécifique à l'outre-mer ;\nVu l'avis du conseil d'administration de la Caisse nationale des allocations familiales en date du 8 septembre 2026 ;\nVu l'avis du Conseil national de l'habitat en date du 11 septembre 2026 ;\nVu l'avis du conseil central d'administration de la Mutualité sociale agricole en date du 15 septembre 2026,\nArrêtent :",
+          "official_text_sha256": "14f877ebf28dad10b6995d3169d245dfddb7f69535b811ebfa7e11333d72b4ac",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 4,
+          "triggers": [
+            {
+              "kind": "FUNDING_OR_INCENTIVE",
+              "score": 3,
+              "terms": [
+                "aide "
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
                 "entree en vigueur",
                 "a compter du"
               ]
             }
           ],
-          "scope_terms": [
-            "professionnel"
-          ],
-          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
         }
       },
       {
-        "source_id": "jorf:JORFTEXT000054909624",
+        "source_id": "jorf:JORFTEXT000054914048",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "text_id": "JORFTEXT000054909624",
+          "text_id": "JORFTEXT000054914048",
           "nature": "DECRET",
-          "nor": "CPTP2625100D",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Décret du 28 septembre 2026 portant désignation dans les fonctions d'avocat général à la Cour des comptes - M. PUISEUX (Anatole)",
+          "nor": "JUSB2622948D",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Décret du 28 septembre 2026 portant décharge de fonctions (magistrature)",
           "article_ids": [],
           "article_titles": [],
           "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909624",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "Le Président de la République,\nSur le rapport du Premier ministre,\nVu le code des juridictions financières, notamment son article R.* 112-14 ;\nSur la proposition conjointe de la première présidente de la Cour des comptes et de la procureure générale près la Cour des comptes,\nDécrète :",
-          "official_text_sha256": "18ecb4f381269a568e80b5f64047c2622c71f6843f9490ac7e8409ef73d5dc0b",
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054914048",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "Le Président de la République,\nSur le rapport du Premier ministre et du garde des sceaux, ministre de la justice,\nVu l'ordonnance n° 58-1270 du 22 décembre 1958 modifiée portant loi organique relative au statut de la magistrature, notamment son article 38-2 ;\nVu le décret du 10 janvier 2025 portant nomination (magistrature) ;\nVu la demande de l'intéressée en date du 5 août 2026,\nDécrète :",
+          "official_text_sha256": "74a75a5920dca920922768caa7bad044e7267e8bc7f7bb5fc82d611efd63edc1",
           "excerpt_truncated": false,
           "content_status": "AVAILABLE"
         },
@@ -961,181 +1781,55 @@
         }
       },
       {
-        "source_id": "jorf:JORFTEXT000054909665",
+        "source_id": "jorf:JORFTEXT000054914053",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "text_id": "JORFTEXT000054909665",
-          "nature": "ARRETE",
-          "nor": "JUSC2625116A",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Arrêté du 22 septembre 2026 relatif à une société à responsabilité limitée (officiers publics ou ministériels)",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909665",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "Le garde des sceaux, ministre de la justice,\nVu le décret n° 88-814 du 12 juillet 1988 relatif à la nomination et à la cessation de fonctions des officiers publics et ministériels, notamment son article 1\ner\n,\nArrête :",
-          "official_text_sha256": "29780080b86a3de89d8f3613657d18a3714c8883564f1cbb6d67e6ca400b9894",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "CONTEXT_REVIEW",
-          "score": 0,
-          "triggers": [],
-          "scope_terms": [],
-          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909680",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054909680",
-          "nature": "ARRETE",
-          "nor": "JUSC2625148A",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Arrêté du 22 septembre 2026 relatif à une société civile professionnelle (officiers publics ou ministériels)",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909680",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "Le garde des sceaux, ministre de la justice,\nVu le décret n° 88-814 du 12 juillet 1988 relatif à la nomination et à la cessation de fonctions des officiers publics et ministériels, notamment son article 1\ner\n,\nArrête :",
-          "official_text_sha256": "29780080b86a3de89d8f3613657d18a3714c8883564f1cbb6d67e6ca400b9894",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "CONTEXT_REVIEW",
-          "score": 0,
-          "triggers": [],
-          "scope_terms": [
-            "professionnel"
-          ],
-          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909685",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054909685",
-          "nature": "ARRETE",
-          "nor": "JUSC2625258A",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Arrêté du 23 septembre 2026 relatif à une société à responsabilité limitée (officiers publics ou ministériels)",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909685",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "Le garde des sceaux, ministre de la justice,\nVu le décret n° 88-814 du 12 juillet 1988 relatif à la nomination et à la cessation de fonctions des officiers publics et ministériels, notamment son article 1\ner\n,\nArrête :",
-          "official_text_sha256": "29780080b86a3de89d8f3613657d18a3714c8883564f1cbb6d67e6ca400b9894",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "CONTEXT_REVIEW",
-          "score": 0,
-          "triggers": [],
-          "scope_terms": [],
-          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909695",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054909695",
-          "nature": "ARRETE",
-          "nor": "JUSC2625260A",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Arrêté du 23 septembre 2026 relatif à une société d'exercice libéral à responsabilité limitée (officiers publics ou ministériels)",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909695",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "Le garde des sceaux, ministre de la justice,\nVu le décret n° 88-814 du 12 juillet 1988 relatif à la nomination et à la cessation de fonctions des officiers publics et ministériels, notamment son article 1\ner\n,\nArrête :",
-          "official_text_sha256": "29780080b86a3de89d8f3613657d18a3714c8883564f1cbb6d67e6ca400b9894",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "CONTEXT_REVIEW",
-          "score": 0,
-          "triggers": [],
-          "scope_terms": [],
-          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909723",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054909723",
-          "nature": "ARRETE",
-          "nor": "JUSC2625265A",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Arrêté du 23 septembre 2026 relatif à une société d'exercice libéral par actions simplifiée (officiers publics ou ministériels)",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909723",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "Le garde des sceaux, ministre de la justice,\nVu le décret n° 88-814 du 12 juillet 1988 relatif à la nomination et à la cessation de fonctions des officiers publics et ministériels, notamment son article 1\ner\n,\nArrête :",
-          "official_text_sha256": "29780080b86a3de89d8f3613657d18a3714c8883564f1cbb6d67e6ca400b9894",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "CONTEXT_REVIEW",
-          "score": 0,
-          "triggers": [],
-          "scope_terms": [],
-          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909738",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054909738",
+          "text_id": "JORFTEXT000054914053",
           "nature": "DECRET",
-          "nor": "ECOC2619687D",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Décret du 28 septembre 2026 portant renouvellement de deux vice-présidents de l'Autorité de la concurrence",
+          "nor": "JUSB2623408D",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Décret du 28 septembre 2026 portant maintien en disponibilité (magistrature)",
           "article_ids": [],
           "article_titles": [],
           "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909738",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "Le Président de la République,\nSur le rapport du Premier ministre, du ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique et du ministre des petites et moyennes entreprises, du commerce, de l'artisanat, du tourisme et du pouvoir d'achat ;\nVu la Constitution, notamment son article 13 ;\nVu le code du commerce, notamment son article L. 461-1 ;\nVu la loi n° 2017-55 du 20 janvier 2017 modifiée portant statut général des autorités administratives indépendantes, notamment son article 7 ;\nVu le décret n° 2019-169 du 6 mars 2019 fixant les modalités de renouvellement partiel du collège de l'Autorité de la concurrence, notamment son article 1\ner\n;\nVu le décret du 27 décembre 2022 portant nomination d'un vice-président de l'Autorité de la concurrence ;\nVu le décret du 30 mai 2026 portant nomination d'une vice-présidente de l'Autorité de la concurrence ;\nVu l'avis n° 19-A-10 relatif à la durée du mandat des membres du collège de l'Autorité de la concurrence,\nDécrète :",
-          "official_text_sha256": "be77b1f0a3200805fcdec3196bf92527fb605e1f78198e95eb09c3ad85af28f4",
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054914053",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "Le Président de la République,\nSur le rapport du Premier ministre et du garde des sceaux, ministre de la justice,\nVu l'ordonnance n° 58-1270 du 22 décembre 1958 modifiée portant loi organique relative au statut de la magistrature, notamment ses articles 67, 68 et 72 ;\nVu le code général de la fonction publique, notamment ses articles L. 514-1 à L. 514-8 ;\nVu le décret n° 85-986 du 16 septembre 1985 modifié relatif au régime particulier de certaines positions des fonctionnaires de l'Etat, à la mise à disposition, à l'intégration et à la cessation définitive de fonctions, notamment le 1° bis de son article 47 ;\nVu le décret du 10 septembre 2025 portant maintien en disponibilité de Mme Isabelle LINOIS ;\nVu la demande de l'intéressée,\nDécrète :",
+          "official_text_sha256": "02c73f831b823c92c91ce3f2b6cf2a3a4bc43e19696a38528dac74d7b1e2e3aa",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914096",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054914096",
+          "nature": "DECRET",
+          "nor": "ECOC2600860D",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Décret du 28 septembre 2026 portant renouvellement d'une membre du collège de l'Autorité de la concurrence",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054914096",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "Le Président de la République,\nSur le rapport du Premier ministre, du ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique et du ministre des petites et moyennes entreprises, du commerce, de l'artisanat, du tourisme et du pouvoir d'achat,\nVu la Constitution, notamment son article 13 ;\nVu le code du commerce, notamment son article L. 461-1 ;\nVu la loi n° 2017-55 du 20 janvier 2017 modifiée portant statut général des autorités administratives indépendantes, notamment son article 7 ;\nVu le décret n° 2019-169 du 6 mars 2019 fixant les modalités de renouvellement partiel du collège de l'Autorité de la concurrence, notamment son article 1\ner\n;\nVu le décret du 20 mai 2025 portant nomination d'une membre du collège de l'Autorité de la concurrence ;\nVu l'avis n° 19-A-10 relatif à la durée du mandat des membres du collège de l'Autorité de la concurrence,\nDécrète :",
+          "official_text_sha256": "3ce043a79f8106b287d447532f11dff507f93b4e06232859951016400b0e99a2",
           "excerpt_truncated": false,
           "content_status": "AVAILABLE"
         },
@@ -1151,55 +1845,24 @@
         }
       },
       {
-        "source_id": "jorf:JORFTEXT000054909872",
+        "source_id": "jorf:JORFTEXT000054914333",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "text_id": "JORFTEXT000054909872",
-          "nature": "DECISION",
-          "nor": "RCAR2625373S",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Décision n° 2026-MA-21 du 28 août 2026 modifiant la décision n° 2022-784 du 14 décembre 2022 portant reconduction de l'autorisation délivrée à la SAS Radio Émotion FM pour l'exploitation d'un service de radio de catégorie B par voie hertzienne terrestre en modulation de fréquence dénommé Melody d'Azur",
+          "text_id": "JORFTEXT000054914333",
+          "nature": "ARRETE",
+          "nor": "TRST2625015A",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Arrêté du 25 septembre 2026 portant extension d'un accord conclu dans le secteur du travail temporaire (n° 1413)",
           "article_ids": [],
           "article_titles": [],
           "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909872",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "L'ARCOM Marseille,\nVu la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication, notamment ses articles 22 et 25 ;\nVu le décret n° 2024-425 du 10 mai 2024 relatif aux comités techniques prévus à l'article 29-3 de la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication ;\nVu la délibération n° 2011-31 du 12 juillet 2011 modifiée du Conseil supérieur de l'audiovisuel fixant les conditions d'application de l'article 29-3 de la loi du 30 septembre 1986 relatif aux comités territoriaux de l'audiovisuel ;\nVu la décision n° 2013-472 du 26 juin 2013, reconduite par les décisions n° 2017-1114 du 2 décembre 2017 et n° 2022-784 du 14 décembre 2022 et modifiée par les décisions n° 2023-417 du 19 avril 2023 et n° 2023-MA-54 du 15 décembre 2023 rectifiée, portant autorisation d'un service de radio par voie hertzienne terrestre en modulation de fréquence dénommé Melody d'Azur ;\nVu la demande de modification technique présentée par la SAS Radio Emotion FM ;\nVu l'avis de l'Agence nationale des fréquences ;\nAprès en avoir délibéré,\nDécide :",
-          "official_text_sha256": "2bd4fcb3a0f2b311f56c458f9c8bbfd6acf85254527237505cda77b2205b41d7",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "CONTEXT_REVIEW",
-          "score": 0,
-          "triggers": [],
-          "scope_terms": [],
-          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909881",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054909881",
-          "nature": "DECISION",
-          "nor": "RCAR2625368S",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Décision n° 2026-MA-22 du 28 août 2026 modifiant le nom du service Dialogue RCF",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909881",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "L'ARCOM Marseille,\nVu la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication, notamment son article 42-3 ;\nVu le décret n° 2024-425 du 10 mai 2024 relatif aux comités techniques prévus à l'article 29-3 de la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication ;\nVu la délibération n° 2011-31 du 12 juillet 2011 modifiée du Conseil supérieur de l'audiovisuel fixant les conditions d'application de l'article 29-3 de la loi du 30 septembre 1986 relatif aux comités territoriaux de l'audiovisuel ;\nVu la décision n° 2008-132 du 5 février 2008, reconduite par les décisions n° 2012-MA-18 du 4 juillet 2012 et n° 2017-MA-06 du 7 avril 2017, modifiée par la décision n° 2015-MA-01 du 13 mars 2015 et prorogée par la décision n° 2022-405 du 17 mai 2022, autorisant l'association Dialogue la radio des chrétiens de Marseille à exploiter par voie hertzienne terrestre en modulation de fréquence dans les zones d'Aubagne et Marseille un service de radio dénommé Dialogue RCF ;\nVu la décision n° 2025-801 du 8 octobre 2025 autorisant l'association Dialogue la radio des Chrétiens de Marseille à exploiter par voie hertzienne terrestre en modulation de fréquence dans les zones d'Aix-en-Provence et Martigues un service de radio de catégorie A dénommé Dialogue RCF ;\nVu la décision n° 2020-146 du 5 février 2020 autorisant l'association Dialogue la radio des chrétiens de Marseille à exploiter par voie hertzienne terrestre en mode numérique dans la zone Marseille étendu un service de radio de catégorie A dénommé Dialogue RCF ;\nVu la convention conclue entre l'ARCOM et l'association Dialogue la radio des Chrétiens de Marseille ;\nVu le courriel du 13 juillet 2026 par lequel l'association Dialogue la radio des Chrétiens de Marseille a saisi l'ARCOM Marseille d'une demande de changement de dénomination du service Dialogue RCF ;\nAprès en avoir délibéré,\nDécide :",
-          "official_text_sha256": "086638eae0962cb6701f02918f9d10139759fa22f810f89fc8e84af4e4cc5f38",
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054914333",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "Le ministre du travail et des solidarités,\nVu le code du travail, notamment son article L. 2261-15 ;\nVu l'accord du 24 juillet 2026 relatif aux salaires minima conventionnels des salariés permanents des entreprises de travail temporaire, conclu dans le secteur du travail temporaire ;\nVu la demande d'extension présentée par les organisations signataires ;\nVu l'avis publié au Journal officiel de la République française du 22 août 2026 (NOR : TRST2622460V) ;\nVu les avis recueillis au cours de l'enquête ;\nVu l'avis motivé de la Commission nationale de la négociation collective, de l'emploi et de la formation professionnelle (sous-commission des conventions et accords) recueilli suivant la procédure prévue à l'article R. 2261-5 du code du travail,\nArrête :",
+          "official_text_sha256": "6b2b8ce465147fea3c7c9419c88e8de741455997a29ca3a89b148c5ff9151a73",
           "excerpt_truncated": false,
           "content_status": "AVAILABLE"
         },
@@ -1209,30 +1872,31 @@
           "score": 0,
           "triggers": [],
           "scope_terms": [
-            "association"
+            "entreprise",
+            "professionnel"
           ],
           "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
         }
       },
       {
-        "source_id": "jorf:JORFTEXT000054909889",
+        "source_id": "jorf:JORFTEXT000054914386",
         "source_kind": "JORF",
         "change": "NEW",
         "evidence": {
-          "text_id": "JORFTEXT000054909889",
-          "nature": "DECISION",
-          "nor": "RCAR2625369S",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Décision n° 2026-MA-23 du 28 août 2026 rectifiant la décision n° 2021-MA-22 du 5 novembre 2021 modifiant la dénomination sociale de l'association Roya Animation",
+          "text_id": "JORFTEXT000054914386",
+          "nature": "DELIBERATION",
+          "nor": "CNIS2625646X",
+          "publication_date": "2026-09-30",
+          "journal_number": "0228",
+          "title": "Délibération n° HAB-2026-002 du 24 septembre 2026 habilitant des agents de la Commission nationale de l'informatique et des libertés à procéder à des missions de vérification",
           "article_ids": [],
           "article_titles": [],
           "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909889",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "L'ARCOM Marseille,\nVu la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication, notamment son article 28-1 ;\nVu le décret n° 2024-425 du 10 mai 2024 relatif aux comités techniques prévus à l'article 29-3 de la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication ;\nVu la délibération n° 2011-31 du 12 juillet 2011 modifiée du Conseil supérieur de l'audiovisuel fixant les conditions d'application de l'article 29-3 de la loi du 30 septembre 1986 relatif aux comités territoriaux de l'audiovisuel ;\nVu la décision n° 2008-301 du 11 mars 2008, reconduite par les décisions n° 2012-MA-28 du 4 juillet 2012 et n° 2017-MA-19 du 7 avril 2017, autorisant l'association Roya Animation à exploiter le service de radio de catégorie A par voie hertzienne terrestre en modulation de fréquence dénommé Radio Vallée ;\nVu la décision n° 2021-MA-22 du 5 novembre 2021 modifiant la dénomination sociale du titulaire association Roya Animation ;\nConstatant qu'une erreur matérielle affecte la rédaction de la décision n° 2021-MA-22 du 5 novembre 2021 susvisée ;\nAprès en avoir délibéré,\nDécide :",
-          "official_text_sha256": "4a032c90fb81b908b32e5d9e2527da9fd3b5262b5fb77f92a23c671bd9f9e7cd",
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054914386",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260930-011706.tar.gz",
+          "archive_sha256": "0f006f97250337977ad2ae5197942e9f607ec7404e9f85a027a9daa64393739c",
+          "official_text_excerpt": "La Commission nationale de l'informatique et des libertés,\nVu le règlement (UE) 2016/679 du Parlement européen et du Conseil du 27 avril 2016 relatif à la protection des personnes physiques à l'égard du traitement des données à caractère personnel et à la libre circulation de ces données  ;\nVu la loi n° 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, notamment ses articles 8.2. g, 10, 11 et 19  ;",
+          "official_text_sha256": "736be9089073a7154caead2a7f47c74097d7aff3f8b8346f724432bfeb3e4f6d",
           "excerpt_truncated": false,
           "content_status": "AVAILABLE"
         },
@@ -1241,83 +1905,6 @@
           "status": "CONTEXT_REVIEW",
           "score": 0,
           "triggers": [],
-          "scope_terms": [
-            "association"
-          ],
-          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054909897",
-        "source_kind": "JORF",
-        "change": "NEW",
-        "evidence": {
-          "text_id": "JORFTEXT000054909897",
-          "nature": "DECISION",
-          "nor": "RCAC2625629S",
-          "publication_date": "2026-09-29",
-          "journal_number": "0227",
-          "title": "Décision n° 2026-458 du 22 septembre 2026 relative à un appel aux candidatures pour l'exploitation de services de radio par voie hertzienne terrestre en modulation de fréquence à temps complet ou partagé dans le ressort des comités techniques de Nancy, Dijon, Lille et Paris",
-          "article_ids": [],
-          "article_titles": [],
-          "interpretation": null,
-          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054909897",
-          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260929-002340.tar.gz",
-          "archive_sha256": "53ca0449cc7a9cdfbb535067309cafe3a6c36be3fa98fdc56dc840b32f7642ca",
-          "official_text_excerpt": "L'Autorité de régulation de la communication audiovisuelle et numérique,\nVu la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication, notamment ses articles 28, 29 et 29-3 ;\nVu le décret n° 94-972 du 9 novembre 1994 pris pour l'application du 1° de l'article 27 de la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication et définissant les obligations relatives à l'accès à la publicité locale et au parrainage local des services de radiodiffusion sonore autorisés ;\nAprès en avoir délibéré,\nDécide :",
-          "official_text_sha256": "5cde5439e82e08a146922d81036b691b54c56ce95371258515afa57d14b6bbc4",
-          "excerpt_truncated": false,
-          "content_status": "AVAILABLE"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "CONTEXT_REVIEW",
-          "score": 3,
-          "triggers": [
-            {
-              "kind": "LEGAL_OBLIGATION",
-              "score": 3,
-              "terms": [
-                "obligation"
-              ]
-            }
-          ],
-          "scope_terms": [],
-          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
-        }
-      },
-      {
-        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-suppression-de-fiches-d-a3428.html",
-        "source_kind": "CONSULTDD",
-        "change": "CHANGED",
-        "evidence": {
-          "title": "Projet d’arrêté portant suppression de fiches d’opérations standardisées du dispositif ...",
-          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-suppression-de-fiches-d-a3428.html",
-          "dates": [
-            "2026-09-16",
-            "2026-09-28"
-          ],
-          "interpretation": null,
-          "official_detail": {
-            "official_title": "Projet d’arrêté portant suppression de fiches d’opérations standardisées du dispositif des certificats d’économies d’énergie",
-            "official_period": "Consultation du 16/09/2026 au 12/10/2026 - 10 contributions",
-            "official_text": "La consultation du public est ouverte en application de l’article L. 123-19-1 du code de l’environnement. Le présent texte concerne le dispositif des certificats d’économies d’énergie (CEE) prévu aux articles L. 221-1 et suivants du code de l’énergie. Afin de rationaliser le catalogue des fiches d’opérations standardisées CEE et de ne plus apporte d’incitation à l’installation ou au maintien d’équipements fonctionnant aux énergies fossiles, il est envisagé de supprimer les fiches d’opérations standardisées mentionnées en annexe, réparties en deux catégories : les fiches soutenant encore des économies d’énergies sur des équipements fonctionnant avec des énergies fossiles, et les fiches non utilisées. Il est envisagé la suppression des fiches liées aux énergies fossiles (cf. lot 1 en annexe) car ces fiches contribuent à prolonger la durée de vie de ces équipements et sont relativement peu utilisées (5 TWhc engagés en tout en 2025). De plus, en application de la directive « Efficacité énergétique », les économies d’énergie liées à ces fiches ne peuvent plus être comptabilisées pour respecter les obligations de l’article 8 de cette directive. Les fiches inactives ( cf. lot 2 en annexe ) peuvent ne pas être sollicitées en raison d’un forfait insuffisamment incitatif. Cependant, les opérations concernées par ces fiches ne font pas partie des politiques publiques soutenues prioritairement et il n’est donc pas envisagé de les bonifier. Pour ces raisons et afin de renforcer la lisibilité du dispositif CEE, il est proposé de les supprimer. Il est ainsi proposé la suppression des fiches mentionnées en annexe et le recensement des opérations engagées au titre de ces fiches."
-          },
-          "official_attachments": [],
-          "financial_evidence": [],
-          "detail_status": "PRIMARY_PAGE_READ"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "CONTEXT_REVIEW",
-          "score": 3,
-          "triggers": [
-            {
-              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
-              "score": 3,
-              "terms": []
-            }
-          ],
           "scope_terms": [],
           "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
         }
@@ -1325,56 +1912,76 @@
     ],
     "deterministically_unresolved_candidates": [
       {
-        "source_id": "jorf:JORFTEXT000054909632",
+        "source_id": "jorf:JORFTEXT000054912720",
         "reason": "PRIMARY_TEXT_EMPTY"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909819",
+        "source_id": "jorf:JORFTEXT000054912724",
         "reason": "PRIMARY_TEXT_EMPTY"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909844",
+        "source_id": "jorf:JORFTEXT000054913972",
         "reason": "PRIMARY_TEXT_EMPTY"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909931",
+        "source_id": "jorf:JORFTEXT000054913975",
         "reason": "PRIMARY_TEXT_EMPTY"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909937",
+        "source_id": "jorf:JORFTEXT000054913978",
         "reason": "PRIMARY_TEXT_EMPTY"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909944",
+        "source_id": "jorf:JORFTEXT000054914071",
         "reason": "PRIMARY_TEXT_EMPTY"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909949",
+        "source_id": "jorf:JORFTEXT000054914074",
         "reason": "PRIMARY_TEXT_EMPTY"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909951",
+        "source_id": "jorf:JORFTEXT000054914077",
         "reason": "PRIMARY_TEXT_EMPTY"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909953",
+        "source_id": "jorf:JORFTEXT000054914361",
         "reason": "PRIMARY_TEXT_EMPTY"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909955",
+        "source_id": "jorf:JORFTEXT000054914367",
         "reason": "PRIMARY_TEXT_EMPTY"
       },
       {
-        "source_id": "jorf:JORFTEXT000054909957",
+        "source_id": "jorf:JORFTEXT000054914373",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914399",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914403",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914450",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914460",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914490",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054914494",
         "reason": "PRIMARY_TEXT_EMPTY"
       }
     ]
   },
-  "ready": true,
-  "created_at_utc": "2026-09-29 09:49:04.523751+00:00",
-  "updated_at_utc": "2026-09-29T12:54:37.934351+00:00",
-  "usage": {
-    "input_tokens": 119385,
-    "output_tokens": 21160
-  }
+  "ready": false,
+  "created_at_utc": "2026-09-30 09:41:03.437346+00:00",
+  "updated_at_utc": "2026-09-30T09:41:03.481967+00:00"
 }
