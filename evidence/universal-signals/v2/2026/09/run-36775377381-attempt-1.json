@@ -1,0 +1,988 @@
+{
+  "schema": "lawradar-universal-signal-v2",
+  "run": {
+    "id": "36775377381",
+    "attempt": "1",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/36775377381",
+    "commit": "23213c06cacffd9019604a2806256ef761604e36",
+    "report_date": "2026-09-30"
+  },
+  "context": {
+    "coverage": "0 candidat envoyé au modèle",
+    "delta_changed_sources": [
+      "jorf-summaries-latest.json",
+      "consultdd-latest.json"
+    ],
+    "handled_source_files": [
+      "jorf-summaries-latest.json",
+      "consultdd-latest.json"
+    ],
+    "rule": "Preuves locales diffées uniquement ; réapparition historique et routine administrative explicite = filtrées avec trace ; les autres textes primaires disponibles reçoivent une lecture factuelle. Une friction détectée ouvre seulement une enquête, jamais une opportunité confirmée ; inconnu = UNRESOLVED.",
+    "prefilter_audit": {
+      "excluded_historical_candidates": [
+        {
+          "source_id": "jorf:JORFTEXT000000320196",
+          "publication_date": "1983-07-27",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000320434",
+          "publication_date": "1984-01-27",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000335494",
+          "publication_date": "1989-09-17",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000339141",
+          "publication_date": "1958-11-29",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000365194",
+          "publication_date": "1994-07-13",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000367583",
+          "publication_date": "1994-11-10",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000512373",
+          "publication_date": "1891-06-03",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000521765",
+          "publication_date": "1960-06-03",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000564628",
+          "publication_date": "1997-05-08",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000691960",
+          "publication_date": "1956-12-02",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000699318",
+          "publication_date": "1989-06-11",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000705065",
+          "publication_date": "1958-11-09",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000714886",
+          "publication_date": "1990-03-23",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000810872",
+          "publication_date": "2005-06-30",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000872483",
+          "publication_date": "1985-11-05",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000872629",
+          "publication_date": "1946-06-15",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000888573",
+          "publication_date": "1951-06-08",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000019278548",
+          "publication_date": "2008-08-03",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000020428769",
+          "publication_date": "2009-03-25",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000021923943",
+          "publication_date": "2010-03-07",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000022204510",
+          "publication_date": "2010-05-13",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000022220619",
+          "publication_date": "2010-05-18",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000023654905",
+          "publication_date": "2011-03-03",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000025595813",
+          "publication_date": "2012-03-31",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000026447892",
+          "publication_date": "2012-10-02",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000027914226",
+          "publication_date": "2013-08-31",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000028221080",
+          "publication_date": "2013-11-22",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000029390906",
+          "publication_date": "2014-08-23",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000029390951",
+          "publication_date": "2014-08-23",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000034053114",
+          "publication_date": "2017-02-17",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000034081955",
+          "publication_date": "2017-02-26",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000035356268",
+          "publication_date": "2017-08-03",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000038203866",
+          "publication_date": "2019-03-07",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000039131070",
+          "publication_date": "2019-09-26",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000039167499",
+          "publication_date": "2019-10-03",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000039494417",
+          "publication_date": "2019-12-13",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000043847531",
+          "publication_date": "2021-07-23",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000044138051",
+          "publication_date": "2021-10-01",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000044177386",
+          "publication_date": "2021-10-09",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000044545992",
+          "publication_date": "2021-12-23",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000045536683",
+          "publication_date": "2022-04-09",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000046793117",
+          "publication_date": "2022-12-24",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000047689005",
+          "publication_date": "2023-06-16",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000048039059",
+          "publication_date": "2023-09-03",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000049447264",
+          "publication_date": "2024-04-21",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000050173449",
+          "publication_date": "2024-09-03",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000050960172",
+          "publication_date": "2025-01-09",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000051331007",
+          "publication_date": "2025-03-16",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000052869349",
+          "publication_date": "2025-11-28",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054152613",
+          "publication_date": "2026-05-30",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054155074",
+          "publication_date": "2026-05-31",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054248698",
+          "publication_date": "2026-06-14",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054408880",
+          "publication_date": "2026-07-10",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        }
+      ],
+      "excluded_routine_candidates": [
+        {
+          "source_id": "jorf:JORFTEXT000054912612",
+          "title": "Décision du 24 septembre 2026 portant délégation de signature (inspection générale de la police nationale)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054912681",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de l'examen professionnel de recrutement dans le corps des greffiers des services judiciaires",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054912699",
+          "title": "Arrêté du 25 septembre 2026 autorisant l'ouverture des concours externe sur épreuves, externe sur titres, interne et du troisième concours pour le recrutement de conseillers pénitentiaires d'insertion et de probation au titre de l'année 2027",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054912728",
+          "title": "Arrêté du 28 septembre 2026 portant délégation de signature (secrétariat général des ministères économiques et financiers)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054912980",
+          "title": "Arrêté du 18 septembre 2026 prorogeant les programmes des concours externes prévus pour le recrutement de personnels enseignants du second degré et de personnels d'éducation",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054912992",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de premiers concours internes de recrutement de professeurs des écoles",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913011",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de concours externes organisés à titre transitoire conformément aux dispositions du décret n° 2025-352 du 17 avril 2025 modifiant les conditions de recrutement et de formation des corps enseignants, du personnel d'éducation et des maîtres de l'enseignement privé sous contrat du ministère chargé de l'éducation nationale et de concours externes spéciaux (langues régionales) de recrutement de professeurs des écoles",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913034",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de concours externes, de concours externes spéciaux (langues régionales), de seconds concours internes, de seconds concours internes spéciaux et de troisièmes concours de recrutement de professeurs des écoles",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913057",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de premiers concours internes pour l'accès à l'échelle de rémunération des professeurs des écoles des maîtres contractuels et agréés des établissements d'enseignement privés sous contrat",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913076",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de concours externes organisés à titre transitoire conformément aux dispositions du décret n° 2025-352 du 17 avril 2025 modifiant les conditions de recrutement et de formation des corps enseignants, du personnel d'éducation et des maîtres de l'enseignement privé sous contrat du ministère chargé de l'éducation nationale et de concours externe spéciaux (langues régionales) d'accès à l'échelle de rémunération des professeurs des écoles des établissements d'enseignement privés sous contrat",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913099",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe organisé à titre transitoire conformément aux dispositions du décret n° 2025-352 du 17 avril 2025 modifiant les conditions de recrutement et de formation des corps enseignants, du personnel d'éducation et des maîtres de l'enseignement privé sous contrat du ministère chargé de l'éducation nationale, d'accès à l'échelle de rémunération des professeurs des écoles des établissements d'enseignement privés sous contrat en Polynésie française",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913113",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe organisé à titre transitoire conformément aux dispositions du décret n° 2025-352 du 17 avril 2025 modifiant les conditions de recrutement et de formation des corps enseignants, du personnel d'éducation et des maîtres de l'enseignement privé sous contrat du ministère chargé de l'éducation nationale, et du concours interne du certificat d'aptitude au professorat d'éducation physique et sportive (CAPEPS) pour le recrutement de professeurs d'éducation physique et sportive",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913146",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe et du troisième concours du certificat d'aptitude au professorat de l'enseignement du second degré (CAPES) et du certificat d'aptitude au professorat de l'enseignement technique (CAPET) pour le recrutement de professeurs certifiés",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913173",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe et du troisième concours du certificat d'aptitude au professorat de lycée professionnel (CAPLP) pour le recrutement de professeurs de lycée professionnel",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913197",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe, du concours externe spécial et du concours interne de recrutement de professeurs agrégés de l'enseignement du second degré",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913220",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe, du concours interne et du troisième concours de recrutement de psychologues de l'éducation nationale",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913245",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe organisé à titre transitoire conformément aux dispositions du décret n° 2025-352 du 17 avril 2025 modifiant les conditions de recrutement et de formation des corps enseignants, du personnel d'éducation et des maîtres de l'enseignement privé sous contrat du ministère chargé de l'éducation nationale, et du concours interne pour le recrutement de conseillers principaux d'éducation",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913275",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe et du troisième concours pour le recrutement de conseillers principaux d'éducation",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913295",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture des concours externes organisés à titre transitoire conformément aux dispositions du décret n° 2025-352 du 17 avril 2025 modifiant les conditions de recrutement et de formation des corps enseignants, du personnel d'éducation et des maîtres de l'enseignement privé sous contrat du ministère chargé de l'éducation nationale et des concours internes du certificat d'aptitude au professorat de l'enseignement du second degré (CAPES) et du certificat d'aptitude au professorat de l'enseignement technique (CAPET) pour le recrutement de professeurs certifiés",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913338",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un concours interne de recrutement de professeurs certifiés à affectation locale en Guyane",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913359",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe et du troisième concours d'accès à des listes d'aptitude aux fonctions de maître dans les établissements d'enseignement privés sous contrat du second degré (CAFEP-CAPES, CAFEP-CAPEPS CAFEP-CAPET, CAFEP-CAPLP, troisième CAFEP-CAPES)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913389",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de concours externes organisés à titre transitoire conformément aux dispositions du décret n° 2025-352 du 17 avril 2025 modifiant les conditions de recrutement et de formation des corps enseignants, du personnel d'éducation et des maîtres de l'enseignement privé sous contrat du ministère chargé de l'éducation nationale d'accès à des listes d'aptitude aux fonctions de maître dans les établissements d'enseignement privés sous contrat du second degré (CAFEP) et de concours internes d'accès aux échelles de rémunération de professeurs du second degré (CAER)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913428",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe organisé à titre transitoire conformément aux dispositions du décret n° 2025-352 du 17 avril 2025 modifiant les conditions de recrutement et de formation des corps enseignants, du personnel d'éducation et des maîtres de l'enseignement privé sous contrat du ministère chargé de l'éducation nationale, et du concours interne du certificat d'aptitude au professorat de lycée professionnel (CAPLP) pour le recrutement de professeurs de lycée professionnel",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913463",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de concours externes, de concours externes spéciaux (langues régionales), de seconds concours internes, de seconds concours internes spéciaux et de troisièmes concours pour l'accès à l'échelle de rémunération des professeurs des écoles des établissements d'enseignement privés sous contrat",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913485",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du second concours interne de recrutement de professeurs des écoles à Mayotte",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913505",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe du certificat d'aptitude au professorat d'éducation physique et sportive (CAPEPS) pour le recrutement de professeurs d'éducation physique et sportive",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913529",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe et du concours interne de recrutement de professeurs certifiés à Mayotte",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913552",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe de recrutement de professeurs des écoles du corps de l'Etat créé pour la Polynésie française",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913566",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe organisé à titre transitoire conformément aux dispositions du décret n° 2025-352 du 17 avril 2025 modifiant les conditions de recrutement et de formation des corps enseignants, du personnel d'éducation et des maîtres de l'enseignement privé sous contrat du ministère chargé de l'éducation nationale, du premier concours interne ainsi qu'un recrutement par liste d'aptitude pour l'intégration d'instituteurs titulaires régis par le décret du 19 juillet 1982 dans le corps des professeurs des écoles du corps de l'Etat créé pour la Polynésie française",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913584",
+          "title": "Arrêté du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe d'accès à l'échelle de rémunération des professeurs des écoles des établissements d'enseignement privés sous contrat en Polynésie française",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913596",
+          "title": "Décision du 23 septembre 2026 portant délégation de signature (secrétariat général)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913676",
+          "title": "Décision du 25 septembre 2026 modifiant la décision du 7 avril 2026 portant délégation de signature (secrétariat général)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913707",
+          "title": "Décision du 25 septembre 2026 portant délégation de signature (service de contrôle budgétaire et comptable ministériel)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913716",
+          "title": "Décision du 25 septembre 2026 portant délégation de signature (service de contrôle budgétaire et comptable ministériel)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913730",
+          "title": "Décision du 25 septembre 2026 portant délégation de signature (service de contrôle budgétaire et comptable ministériel)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913742",
+          "title": "Arrêté du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un concours externe et d'un concours interne pour le recrutement de conservateurs stagiaires, élèves de l'Ecole nationale supérieure des sciences de l'information et des bibliothèques",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913761",
+          "title": "Arrêté du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe spécial pour le recrutement de conservateurs stagiaires, élèves de l'Ecole nationale supérieure des sciences de l'information et des bibliothèques",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913781",
+          "title": "Arrêté du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un concours externe et d'un concours interne pour le recrutement de bibliothécaires",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913800",
+          "title": "Arrêté du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture du concours externe spécial pour le recrutement de bibliothécaires",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913820",
+          "title": "Arrêté du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un concours externe et d'un concours interne pour le recrutement de bibliothécaires assistants spécialisés de classe normale",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913840",
+          "title": "Arrêté du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un examen professionnel pour l'avancement au grade de bibliothécaire assistant spécialisé de classe supérieure",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913860",
+          "title": "Arrêté du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un examen professionnel pour l'avancement au grade de bibliothécaire assistant spécialisé de classe exceptionnelle",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913880",
+          "title": "Arrêté du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un examen professionnel pour l'avancement au grade de bibliothécaire hors classe",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913898",
+          "title": "Arrêté du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un concours externe et d'un concours interne pour le recrutement de magasiniers des bibliothèques principaux de 2e classe",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913946",
+          "title": "Décret du 25 septembre 2026 portant admission à la retraite (Cour des comptes) - M. GREVOUL (Michel)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913953",
+          "title": "Décret du 28 septembre 2026 portant admission à la retraite (Cour des comptes) - M. VALLET (Benoit)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913960",
+          "title": "Arrêté du 25 septembre 2026 portant admission à la retraite (administrateurs de l'Etat)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913965",
+          "title": "Décret du 28 septembre 2026 portant admission à la retraite (inspection générale de l'administration) - M. TEYSSIER (Arnaud)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913981",
+          "title": "Décret du 29 septembre 2026 portant nomination de la sous-préfète d'Issoire - Mme THALOUARN (Flore)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913989",
+          "title": "Décret du 29 septembre 2026 portant nomination du sous-préfet de Dole - M. JOUFFROY (François)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054913998",
+          "title": "Décret du 28 septembre 2026 portant nomination d'un attaché de défense",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914003",
+          "title": "Décret du 28 septembre 2026 portant nomination dans la réserve opérationnelle",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914009",
+          "title": "Arrêté du 9 juillet 2026 portant admission à la retraite (ingénieurs civils de la défense)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914011",
+          "title": "Arrêté du 24 septembre 2026 portant admission à la retraite (ingénieurs civils de la défense)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914014",
+          "title": "Arrêté du 25 août 2026 portant nomination à la commission professionnelle consultative « construction »",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914017",
+          "title": "Arrêté du 21 septembre 2026 portant nomination au Conseil supérieur de la forêt et du bois",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914020",
+          "title": "Décret du 28 septembre 2026 portant détachement (magistrature) - Mme MEYER (Myriam)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914035",
+          "title": "Décret du 28 septembre 2026 modifiant le décret du 17 août 2026 portant nomination (magistrature)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914039",
+          "title": "Décret du 28 septembre 2026 portant admission à la retraite (magistrature) - Mme POILLOT-PERUZZETTO (Sylvaine)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914066",
+          "title": "Arrêté du 24 septembre 2026 portant nomination des personnalités qualifiées au collège du Conseil des maisons de vente et du président du Conseil des maisons de vente, institués par l'article L. 321-21 du code de commerce",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914069",
+          "title": "Arrêté du 24 septembre 2026 portant réintégration et affectation (tribunaux administratifs et cours administratives d'appel)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914080",
+          "title": "Liste supplémentaire de candidats déclarés admis à titre définitif au troisième concours de recrutement d'auditeurs de justice - session ouverte le 14 janvier 2025",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914088",
+          "title": "Décret du 28 septembre 2026 portant nomination d'un membre du collège de l'Autorité de la concurrence",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914106",
+          "title": "Arrêté du 16 septembre 2026 portant nomination au conseil d'administration de Safran",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914108",
+          "title": "Arrêté du 17 septembre 2026 portant nomination au conseil d'administration de la Société technique pour l'énergie atomique",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914111",
+          "title": "Arrêté du 28 septembre 2026 portant nomination (administration centrale)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914118",
+          "title": "Arrêté du 28 septembre 2026 portant nomination au conseil d'administration de l'agence de santé du territoire des îles Wallis et Futuna",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914121",
+          "title": "Arrêté du 22 septembre 2026 portant nomination au conseil d'administration de l'Institut national de la santé et de la recherche médicale",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914124",
+          "title": "Arrêté du 29 septembre 2026 portant nomination (administration centrale)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914129",
+          "title": "Arrêté du 29 septembre 2026 portant nomination (administration centrale)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914135",
+          "title": "Arrêté du 23 septembre 2026 portant nomination par intérim du président du directoire du grand port maritime de la Martinique",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914138",
+          "title": "Arrêté du 24 septembre 2026 portant nomination du directeur général de l'Agence nationale de l'habitat",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914401",
+          "title": "Commissions et organes de contrôle",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914406",
+          "title": "Documents déposés",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914408",
+          "title": "Documents publiés",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914413",
+          "title": "Avis de vacance d'un emploi de sous-directeur",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914430",
+          "title": "Avis de vacance d'un emploi d'expert de haut niveau, adjoint à la cheffe du service des ressources humaines (administration centrale)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914440",
+          "title": "Avis de vacance d'un emploi d'expert de haut niveau, adjoint à la cheffe du service des ressources humaines (administration centrale)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914471",
+          "title": "Avis de vacance d'un emploi de consul général de France",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914487",
+          "title": "Avis de vacance d'emplois de directeur adjoint ou de directrice adjointe d'établissements sanitaires, sociaux et médico-sociaux réservés aux élèves directeurs et élèves directrices d'établissements sanitaires, sociaux et médico-sociaux",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914498",
+          "title": "Demandes de changement de nom (Accès protégé textes 145 à 153)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        }
+      ],
+      "excluded_no_economic_friction_candidates": [
+        {
+          "source_id": "jorf:JORFTEXT000054914142",
+          "title": "Arrêté du 22 septembre 2026 portant extension d'un avenant à la convention collective nationale des vins, cidres, jus de fruits, sirops, spiritueux et liqueurs de France (n° 493)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914152",
+          "title": "Arrêté du 22 septembre 2026 portant extension d'un avenant à la convention collective nationale des activités industrielles de boulangerie et pâtisserie et des professionnels de l'œuf (n° 3255)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914162",
+          "title": "Arrêté du 22 septembre 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale de la répartition pharmaceutique (n° 1621)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914172",
+          "title": "Arrêté du 22 septembre 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale de travail des industries de la maroquinerie, articles de voyage, chasse-sellerie, gainerie, bracelets en cuir - secteur cordonnerie multiservice (n° 2528)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914182",
+          "title": "Arrêté du 22 septembre 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale de l'industrie textile (secteur des textiles artificiels et synthétiques et produits assimilés) (n° 18)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914192",
+          "title": "Arrêté du 22 septembre 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale des menuiseries, charpentes et constructions industrialisées et portes planes (n° 3222)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914202",
+          "title": "Arrêté du 22 septembre 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale du commerce de détail de l'habillement et des articles textiles (n° 1483)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914212",
+          "title": "Arrêté du 22 septembre 2026 portant extension d'un accord territorial (Ardennes) conclu dans le cadre de la convention collective nationale de la métallurgie (n° 3248)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914222",
+          "title": "Arrêté du 22 septembre 2026 portant extension d'un accord territorial (CPTN Occitanie) conclu dans le cadre de la convention collective nationale de la métallurgie (n° 3248)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914232",
+          "title": "Arrêté du 22 septembre 2026 portant extension d'un avenant à un accord conclu dans le cadre de la convention collective nationale de l'industrie des tuiles et briques (n° 1170)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914244",
+          "title": "Arrêté du 22 septembre 2026 portant extension d'avenants à la convention collective nationale des entreprises d'installation sans fabrication, y compris entretien, réparation, dépannage de matériel aéraulique, thermique, frigorifique et connexes (n° 1412)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914254",
+          "title": "Arrêté du 22 septembre 2026 portant extension d'un avenant à la convention collective nationale de l'industrie et des services nautiques (n° 3236)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914264",
+          "title": "Arrêté du 22 septembre 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale de la coopération maritime (salariés non navigants, cadres et non cadres) (n° 2494)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914274",
+          "title": "Arrêté du 22 septembre 2026 portant extension d'un accord à la convention collective nationale de l'habitat et du logement accompagnés (n° 2336)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914284",
+          "title": "Arrêté du 22 septembre 2026 portant extension d'un avenant à un accord (agences de presse) conclu dans le cadre de la convention collective nationale des journalistes (n° 1480)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914294",
+          "title": "Arrêté du 22 septembre 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale des salariés des cabinets d'avocats (n° 3253)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914304",
+          "title": "Arrêté du 22 septembre 2026 portant extension d'un avenant à un accord conclu dans le cadre de la convention collective nationale des entreprises artistiques et culturelles (n° 1285)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914314",
+          "title": "Arrêté du 23 septembre 2026 portant extension d'un avenant à la convention collective nationale des services de l'automobile (n° 1090)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914323",
+          "title": "Arrêté du 23 septembre 2026 portant extension d'un avenant à la convention collective nationale des professions réglementées auprès des juridictions (n° 3244)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914343",
+          "title": "Avis relatif à l'extension d'un avenant à un accord conclu dans le cadre de la convention collective nationale de la bijouterie, joaillerie, orfèvrerie et horlogerie",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914349",
+          "title": "Avis portant extension de l'avenant n° 52 du 9 juillet 2026 modifiant l'article 10 de la convention collective nationale relatif à la contribution conventionnelle de dialogue social - convention collective nationale de la conchyliculture et des cultures marines - IDCC 7019",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914355",
+          "title": "Avis portant extension de l'avenant n° 51 du 9 juillet 2026 relatif à la grille des salaires en conchyliculture de la convention collective nationale de la conchyliculture et des cultures marines - IDCC 7019",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054914379",
+          "title": "Avis portant extension de l'avenant n° 5 du 9 juin 2026 relatif aux salaires minima de la convention collective nationale des personnels navigants officiers des entreprises de transport et services maritimes - IDCC 3223",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        }
+      ],
+      "deterministically_unresolved_candidates": []
+    }
+  },
+  "signals": [],
+  "money_flows": [],
+  "quality": {
+    "opportunity_count": 0,
+    "unresolved_count": 0,
+    "readings_available_count": 0,
+    "evidence_reference_count": 0,
+    "money_flow_count": 0,
+    "money_flow_unlinked_count": 0,
+    "limitation": "Les enrichissements sont vides tant qu'aucun agent dédié n'a produit une sortie sourcée."
+  }
+}
