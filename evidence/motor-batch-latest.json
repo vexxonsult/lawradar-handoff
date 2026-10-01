@@ -5,11 +5,11 @@
   "model": "claude-sonnet-5",
   "request_version": "2026-09-12-explicit-json-contract-v8",
   "batch_id": "msgbatch_0125HMcqiyGPTY4pi2oZDs3f",
-  "processing_status": "in_progress",
+  "processing_status": "ended",
   "request_count": 39,
   "request_counts": {
-    "processing": 39,
-    "succeeded": 0,
+    "processing": 0,
+    "succeeded": 39,
     "errored": 0,
     "canceled": 0,
     "expired": 0
@@ -3006,7 +3006,11 @@
       }
     ]
   },
-  "ready": false,
+  "ready": true,
   "created_at_utc": "2026-10-01 10:07:27.853553+00:00",
-  "updated_at_utc": "2026-10-01T10:07:27.900853+00:00"
+  "updated_at_utc": "2026-10-01T13:16:48.999797+00:00",
+  "usage": {
+    "input_tokens": 172382,
+    "output_tokens": 31160
+  }
 }
