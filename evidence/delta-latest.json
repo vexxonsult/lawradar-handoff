@@ -13,22 +13,22 @@
     {
       "file": "jorf-summaries-latest.json",
       "status": "CHANGED",
-      "item_count": 3470,
-      "sha256": "f810fbdaf0eaf2d1692361eea225f6f68d893d97ed4b221189f254ecd4571eed",
-      "documents_sha256": "68bbdbb0322bbcaeae1d3c28f0bea5aa2668f9695bc956844c51e552ae417006",
+      "item_count": 3702,
+      "sha256": "a23c5198845a8f08cb3002bfc391d1fd49395972acfcccb5dec305ebcdc1f149",
+      "documents_sha256": "25b8320d7305ccb876aeb8406b90c605d3d7b86b1c23514ba20282fcc2172072",
       "interpretation": null
     },
     {
       "file": "eurlex-oj-latest.json",
       "status": "METADATA_CHANGED",
       "item_count": 0,
-      "sha256": "4a05b290d2bcad7bc209f4e32ddb21886d9d83375985610884e051401744abaf",
+      "sha256": "226792f5ca68221d05787bcbb21ef2202160b1c59398b3c65139d8bc4d69a058",
       "documents_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "interpretation": null
     },
     {
       "file": "consultdd-latest.json",
-      "status": "CHANGED",
+      "status": "UNCHANGED",
       "item_count": 0,
       "sha256": "a181b35a881d0b1368a17b1190eacb88946e05d1a7accce137f159326fdf13f3",
       "documents_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
@@ -38,20 +38,18 @@
       "file": "status-latest.json",
       "status": "METADATA_CHANGED",
       "item_count": 0,
-      "sha256": "b9e817191d8c24c6c8e7c2f32df74673ca277349496d1b1c3193d58b91e6fd55",
+      "sha256": "b925a292301f27ab2436a9b10a1c1a9ce07f4f2bdd53a820947dd82ee94635b6",
       "documents_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "interpretation": null
     }
   ],
   "changed_sources": [
-    "jorf-summaries-latest.json",
-    "consultdd-latest.json"
+    "jorf-summaries-latest.json"
   ],
   "evidence_change_detected": true,
   "supported_model_change_detected": true,
   "supported_changed_sources": [
-    "jorf-summaries-latest.json",
-    "consultdd-latest.json"
+    "jorf-summaries-latest.json"
   ],
   "model_input_required": true,
   "interpretation": null
