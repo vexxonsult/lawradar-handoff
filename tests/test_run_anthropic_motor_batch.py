@@ -179,6 +179,7 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertIn("research_profile", motor)
         self.assertIn("AUTONOMOUS_RESEARCH_PENDING", motor)
         self.assertIn("tool-envelope-v3-structured-tool", motor)
+        self.assertIn("AUTO_RESEARCH_EXHAUSTED", motor)
         self.assertIn("--research-profile", motor)
         self.assertIn("l'unique chemin client", motor)
         self.assertNotIn("  press:\n", motor)

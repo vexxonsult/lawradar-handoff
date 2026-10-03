@@ -535,7 +535,13 @@ jobs:
                               )
                           )
                           and isinstance(pending.get("signal_id"), str)
-                          and int(pending.get("autonomous_research_attempts", 0)) < int(pending.get("max_autonomous_research_attempts", 1))
+                          and (
+                              (
+                                  pending.get("status") == "AUTO_RESEARCH_EXHAUSTED"
+                                  and pending.get("qualification_contract_version") != "tool-envelope-v3-structured-tool"
+                              )
+                              or int(pending.get("autonomous_research_attempts", 0)) < int(pending.get("max_autonomous_research_attempts", 1))
+                          )
                       ):
                           research_ids.add(pending["signal_id"])
               except (OSError, ValueError, TypeError, json.JSONDecodeError):
