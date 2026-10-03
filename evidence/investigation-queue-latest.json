@@ -1,12 +1,14 @@
 {
   "schema": "lawradar-investigation-queue-v1",
-  "generated_at_utc": "2026-09-28T17:51:46.598135+00:00",
+  "generated_at_utc": "2026-10-03T00:46:06.180119+00:00",
   "source_run": {
-    "id": "36460808409",
-    "attempt": "1",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/36460808409",
-    "commit": "b12a77f60dedf5b75bec1f20924be668798835fc",
-    "report_date": "2026-09-27"
+    "id": "investigation-replay:8e9e99f85bcf357e",
+    "kind": "ARCHIVED_FACTS_REPLAY",
+    "generated_at_utc": "2026-10-03T00:44:21.880092+00:00",
+    "purpose": "TECHNICAL_ENRICHMENT_RETRY",
+    "archive_provenance": {
+      "signal:a4d854a60f6c38f8": "evidence/universal-signals/v2/2026/09/run-36460808409-attempt-1.json"
+    }
   },
   "policy": {
     "max_automatic_attempts": 2,
@@ -17,13 +19,13 @@
       "signal_id": "signal:a4d854a60f6c38f8",
       "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-suppression-de-fiches-d-a3428.html",
       "title": "Projet d'arrêté portant suppression de fiches d'opérations standardisées CEE",
-      "status": "WAITING_FOR_EVIDENCE",
+      "status": "REVIEW_REQUIRED",
       "opened_at_utc": "2026-09-28T17:51:46.598135+00:00",
-      "updated_at_utc": "2026-09-28T17:51:46.598135+00:00",
-      "automatic_attempts": 1,
+      "updated_at_utc": "2026-10-03T00:46:06.180119+00:00",
+      "automatic_attempts": 2,
       "max_automatic_attempts": 2,
       "qualification_contract_version": "tool-envelope-v2",
-      "next_retry_not_before_utc": "2026-09-28T23:51:46.598135+00:00",
+      "next_retry_not_before_utc": null,
       "questions": [
         {
           "id": "OPERATIONAL_FEASIBILITY",
@@ -38,6 +40,17 @@
             "Délai de mise sur le marché inconnu."
           ],
           "automatic_retry": false
+        },
+        {
+          "id": "PRESS_QUALIFICATION",
+          "kind": "TECHNICAL_RETRY",
+          "status": "OPEN",
+          "question": "Requalifier exclusivement les candidats Presse déjà collectés ; aucune nouvelle conclusion médiatique n'est admise sans URL tracée.",
+          "evidence": [
+            "Réponse Claude non exploitable : La réponse Claude ne respecte pas le contrat spécialisé d'enrichissement.",
+            "Collecte Presse partiellement limitée par un rate-limit temporaire (HTTP 429) ; retry différé requis."
+          ],
+          "automatic_retry": true
         },
         {
           "id": "MARKET_RELEVANCE",
@@ -55,8 +68,8 @@
     }
   ],
   "summary": {
-    "open_count": 1,
-    "review_required_count": 0,
-    "automatic_retry_count": 1
+    "open_count": 0,
+    "review_required_count": 1,
+    "automatic_retry_count": 0
   }
 }
