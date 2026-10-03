@@ -1,10 +1,10 @@
 {
   "schema": "lawradar-investigation-queue-v1",
-  "generated_at_utc": "2026-10-03T01:02:09.644451+00:00",
+  "generated_at_utc": "2026-10-03T01:10:35.102569+00:00",
   "source_run": {
     "id": "investigation-replay:8e9e99f85bcf357e",
     "kind": "ARCHIVED_FACTS_REPLAY",
-    "generated_at_utc": "2026-10-03T00:59:06.191458+00:00",
+    "generated_at_utc": "2026-10-03T01:09:10.064961+00:00",
     "purpose": "TECHNICAL_ENRICHMENT_RETRY",
     "archive_provenance": {
       "signal:a4d854a60f6c38f8": "evidence/universal-signals/v2/2026/09/run-36460808409-attempt-1.json"
@@ -22,13 +22,13 @@
       "title": "Projet d'arrêté portant suppression de fiches d'opérations standardisées CEE",
       "status": "AUTO_RESEARCH_EXHAUSTED",
       "opened_at_utc": "2026-09-28T17:51:46.598135+00:00",
-      "updated_at_utc": "2026-10-03T01:02:09.644451+00:00",
-      "automatic_attempts": 2,
+      "updated_at_utc": "2026-10-03T01:10:35.102569+00:00",
+      "automatic_attempts": 0,
       "max_automatic_attempts": 2,
       "autonomous_research_attempts": 1,
       "max_autonomous_research_attempts": 1,
-      "qualification_contract_version": "tool-envelope-v2",
-      "next_retry_not_before_utc": null,
+      "qualification_contract_version": "tool-envelope-v3-structured-tool",
+      "next_retry_not_before_utc": "2026-10-03T07:10:35.102569+00:00",
       "questions": [
         {
           "id": "OPERATIONAL_FEASIBILITY",
@@ -43,17 +43,6 @@
             "Délai de mise sur le marché inconnu."
           ],
           "automatic_retry": false
-        },
-        {
-          "id": "PRESS_QUALIFICATION",
-          "kind": "TECHNICAL_RETRY",
-          "status": "OPEN",
-          "question": "Requalifier exclusivement les candidats Presse déjà collectés ; aucune nouvelle conclusion médiatique n'est admise sans URL tracée.",
-          "evidence": [
-            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement.",
-            "Collecte Presse partiellement limitée par un rate-limit temporaire (HTTP 429) ; retry différé requis."
-          ],
-          "automatic_retry": true
         },
         {
           "id": "MARKET_RELEVANCE",
