@@ -47,8 +47,13 @@ def build(archive_root: Path, signal_ids: list[str], *, now: datetime | None = N
         for signal in dossier.get("signals", []):
             if not isinstance(signal, dict) or signal.get("id") not in wanted:
                 continue
+            # The same source can appear in later daily archives as
+            # ``DISCARDED``.  A bounded investigation was opened from its
+            # previously retained, immutable facts; that later routing outcome
+            # must not erase the evidence snapshot that the retry is entitled
+            # to requalify.
             if signal.get("radar", {}).get("status") != "RETAINED":
-                raise ValueError(f"Le signal demandé n'est pas retenu : {signal.get('id')}")
+                continue
             if not isinstance(signal.get("opportunity_facts"), dict):
                 raise ValueError(f"Le signal demandé ne possède pas de faits versionnés : {signal.get('id')}")
             found[signal["id"]] = (copy.deepcopy(signal), path.as_posix())

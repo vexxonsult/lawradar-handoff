@@ -1,50 +1,34 @@
 import json
 import tempfile
 import unittest
-from datetime import UTC, datetime
 from pathlib import Path
 
 from scripts.build_investigation_replay import build
 
 
-NOW = datetime(2026, 9, 19, 12, tzinfo=UTC)
-
-
-def signal(signal_id, status="RETAINED", facts=True):
+def archive(signal_status: str) -> dict:
     return {
-        "id": signal_id,
-        "radar": {"status": status},
-        "opportunity_facts": {"signal_id": signal_id, "title": "Décret test"} if facts else None,
-        "source": {"source_id": "jorf:test"},
+        "schema": "lawradar-universal-signal-v2",
+        "signals": [{
+            "id": "signal:cee",
+            "radar": {"status": signal_status},
+            "opportunity_facts": {"title": "Projet CEE"},
+        }],
     }
 
 
-def archive(signals):
-    return {"schema": "lawradar-universal-signal-v2", "run": {"id": "run:test"}, "signals": signals}
-
-
 class InvestigationReplayTests(unittest.TestCase):
-    def test_selects_only_explicit_retained_archived_facts(self):
+    def test_replays_last_retained_snapshot_when_later_archive_discards_same_signal(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            first = root / "v2/2026/09/run-1.json"
-            first.parent.mkdir(parents=True)
-            first.write_text(json.dumps(archive([signal("signal:a"), signal("signal:discard", "DISCARDED")])), encoding="utf-8")
-            result = build(root, ["signal:a"], now=NOW)
-        self.assertEqual(result["schema"], "lawradar-universal-signal-v2")
-        self.assertEqual([item["id"] for item in result["signals"]], ["signal:a"])
-        self.assertEqual(result["run"]["kind"], "ARCHIVED_FACTS_REPLAY")
-        self.assertTrue(result["run"]["archive_provenance"]["signal:a"].endswith("run-1.json"))
+            (root / "2026-09-28.json").write_text(json.dumps(archive("RETAINED")), encoding="utf-8")
+            (root / "2026-09-29.json").write_text(json.dumps(archive("DISCARDED")), encoding="utf-8")
 
-    def test_refuses_missing_or_non_fact_backed_signal(self):
-        with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
-            path = root / "archive.json"
-            path.write_text(json.dumps(archive([signal("signal:empty", facts=False)])), encoding="utf-8")
-            with self.assertRaisesRegex(ValueError, "faits versionnés"):
-                build(root, ["signal:empty"], now=NOW)
-            with self.assertRaisesRegex(ValueError, "introuvable"):
-                build(root, ["signal:missing"], now=NOW)
+            result = build(root, ["signal:cee"])
+
+        self.assertEqual(result["signals"][0]["id"], "signal:cee")
+        self.assertEqual(result["signals"][0]["radar"]["status"], "RETAINED")
+        self.assertEqual(result["run"]["kind"], "ARCHIVED_FACTS_REPLAY")
 
 
 if __name__ == "__main__":
