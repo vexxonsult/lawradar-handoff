@@ -36,14 +36,14 @@ def _allow(filters: Path) -> bool:
     return _load(filters).get("operator_access", {}).get("allow_external_collection") is True
 
 
-def _press(core: Path, signal_id: str, target: Path, model: str) -> None:
+def _press(core: Path, signal_id: str, target: Path, model: str, research_profile: str) -> None:
     facts, filters = target / "opportunity-facts.json", target / "deterministic-filters.json"
     candidates, qualification, enrichment = target / "press-candidates.json", target / "press-qualification-input.json", target / "press-enrichment.json"
     _run("scripts/prepare_opportunity_facts.py", "--dossier", str(core), "--signal-id", signal_id, "--output", str(facts))
     _run("scripts/run_deterministic_filters.py", "--facts", str(facts), "--policy", "config/compliance-policy-v1.json", "--profile", "config/operator-profile-v1.json", "--output", str(filters))
     if not _allow(filters):
         raise ValueError(f"Collecte Presse interdite par la porte opérateur : {signal_id}")
-    _run("scripts/collect_press_candidates.py", "--dossier", str(core), "--config", "config/press-agent-config.json", "--signal-id", signal_id, "--output", str(candidates))
+    _run("scripts/collect_press_candidates.py", "--dossier", str(core), "--config", "config/press-agent-config.json", "--signal-id", signal_id, "--output", str(candidates), "--research-profile", research_profile)
     collected = _load(candidates)
     ready = bool(collected.get("candidates")) and collected.get("collection_successful", not collected.get("errors"))
     if ready:
@@ -85,6 +85,7 @@ def main() -> int:
     parser.add_argument("--plan", type=Path, required=True)
     parser.add_argument("--output-root", type=Path, required=True)
     parser.add_argument("--model", default="claude-sonnet-5")
+    parser.add_argument("--research-profile", choices=("standard", "escalation"), default="standard")
     args = parser.parse_args()
     plan = _load(args.plan)
     signals = plan.get("signals", [])
@@ -96,7 +97,7 @@ def main() -> int:
         target = args.output_root / item["key"]
         target.mkdir(parents=True, exist_ok=True)
         if args.branch == "press":
-            _press(args.core, item["id"], target, args.model)
+            _press(args.core, item["id"], target, args.model, args.research_profile)
         else:
             _demand_market(args.core, item["id"], target, args.model)
     return 0

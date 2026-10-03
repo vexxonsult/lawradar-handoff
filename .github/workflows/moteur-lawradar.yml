@@ -453,6 +453,7 @@ jobs:
       client_matrix: ${{ steps.plan.outputs.client_matrix }}
       has_ready: ${{ steps.plan.outputs.has_ready }}
       mode: ${{ steps.plan.outputs.mode }}
+      research_profile: ${{ steps.plan.outputs.research_profile }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -499,6 +500,7 @@ jobs:
           # scheduled wakes never replay all of them: they process only a due,
           # bounded technical retry recorded by the investigation queue.
           retry_ids = set()
+          research_ids = set()
           seed = os.environ.get("INVESTIGATION_SEED") == "true"
           if seed:
               seed_config = json.loads(Path("config/investigation-seed-v1.json").read_text(encoding="utf-8"))
@@ -523,11 +525,20 @@ jobs:
                           and datetime.fromisoformat(retry_at.replace("Z", "+00:00")).astimezone(ZoneInfo("UTC")) <= now_utc
                       ):
                           retry_ids.add(pending.get("signal_id"))
+                      if (
+                          isinstance(pending, dict)
+                          and pending.get("status") in {"AUTONOMOUS_RESEARCH_PENDING", "REVIEW_REQUIRED"}
+                          and isinstance(pending.get("signal_id"), str)
+                          and int(pending.get("autonomous_research_attempts", 0)) < int(pending.get("max_autonomous_research_attempts", 1))
+                      ):
+                          research_ids.add(pending["signal_id"])
               except (OSError, ValueError, TypeError, json.JSONDecodeError):
                   # A malformed non-core operational queue must never trigger a
                   # broad client replay. The next clean consolidation replaces it.
                   retry_ids = set()
-          replay_ids = sorted(item for item in retry_ids if isinstance(item, str))
+                  research_ids = set()
+          replay_ids = sorted(item for item in retry_ids | research_ids if isinstance(item, str))
+          research_profile = "escalation" if research_ids else "standard"
           replay_core = Path("out/client-core/evidence/universal-signal-latest.json")
           if replay_ids:
               command = ["python", "scripts/build_investigation_replay.py", "--archive-root", "evidence/universal-signals", "--output", str(replay_core)]
@@ -537,7 +548,7 @@ jobs:
           else:
               replay_core.write_bytes(Path("evidence/universal-signal-latest.json").read_bytes())
           Path("out/client-selection.json").write_text(
-              json.dumps({"mode": mode, "already_consolidated": already_consolidated, "retry_ids": replay_ids, "seed": seed}, ensure_ascii=False, indent=2) + "\n",
+              json.dumps({"mode": mode, "research_profile": research_profile, "already_consolidated": already_consolidated, "retry_ids": replay_ids, "research_ids": sorted(research_ids), "seed": seed}, ensure_ascii=False, indent=2) + "\n",
               encoding="utf-8",
           )
           PY
@@ -575,7 +586,8 @@ jobs:
               output.write(f"client_matrix={compact}\n")
               output.write(f"has_ready={'true' if matrix else 'false'}\n")
               output.write(f"mode={selection['mode']}\n")
-          print(f"clients_ready={len(matrix)}; mode={selection['mode']}; replay_ids={len(retry_ids)}; already_consolidated={selection.get('already_consolidated')}")
+              output.write(f"research_profile={selection['research_profile']}\n")
+          print(f"clients_ready={len(matrix)}; mode={selection['mode']}; research_profile={selection['research_profile']}; replay_ids={len(retry_ids)}; already_consolidated={selection.get('already_consolidated')}")
           PY
       - name: Conserver le noyau immuable pour la convergence des branches
         uses: actions/upload-artifact@v4
@@ -612,7 +624,7 @@ jobs:
           python scripts/run_client_branch.py --branch press
           --core out/client-core/evidence/universal-signal-latest.json
           --plan out/client-core/out/client-plan.json --output-root out/press
-          --model claude-sonnet-5
+          --model claude-sonnet-5 --research-profile "${{ needs.client_plan.outputs.research_profile }}"
       - uses: actions/upload-artifact@v4
         with:
           name: lawradar-press-direct-${{ github.run_id }}
@@ -686,6 +698,7 @@ jobs:
           --readiness out/client-core/out/agent-pilot-readiness.json
           --previous evidence/investigation-queue-latest.json
           --output evidence/investigation-queue-latest.json
+          --mode "${{ needs.client_plan.outputs.research_profile == 'escalation' && 'autonomous-research' || 'standard' }}"
       - name: Versionner un marqueur compact séparé du noyau
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

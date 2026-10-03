@@ -77,13 +77,22 @@ class InvestigationQueueTests(unittest.TestCase):
         self.assertTrue(next(question for question in item["questions"] if question["id"] == "PRESS_QUALIFICATION")["automatic_retry"])
         self.assertFalse(next(question for question in item["questions"] if question["id"] == "OPERATIONAL_FEASIBILITY")["automatic_retry"])
 
-    def test_second_technical_attempt_requires_review_instead_of_looping(self):
+    def test_second_technical_attempt_starts_one_autonomous_research_cycle(self):
         previous = build(context(), readiness(), now=NOW)
         result = build(context(), readiness(), previous, now=NOW + timedelta(hours=6))
         item = result["items"][0]
         self.assertEqual(item["automatic_attempts"], 2)
-        self.assertEqual(item["status"], "REVIEW_REQUIRED")
+        self.assertEqual(item["status"], "AUTONOMOUS_RESEARCH_PENDING")
         self.assertIsNone(item["next_retry_not_before_utc"])
+
+    def test_autonomous_research_is_bounded_and_never_requests_a_human_check(self):
+        first = build(context(), readiness(), now=NOW)
+        pending = build(context(), readiness(), first, now=NOW + timedelta(hours=6))
+        result = build(context(), readiness(), pending, now=NOW + timedelta(hours=7), mode="autonomous-research")
+        item = result["items"][0]
+        self.assertEqual(item["status"], "AUTO_RESEARCH_EXHAUSTED")
+        self.assertEqual(item["autonomous_research_attempts"], 1)
+        self.assertTrue(item["questions"][0]["question"].startswith("Recherche autonome"))
 
     def test_contract_repair_grants_one_clean_technical_retry(self):
         previous = build(context(), readiness(), now=NOW)

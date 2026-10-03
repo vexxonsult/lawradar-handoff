@@ -94,6 +94,38 @@ def build_news_queries(signal: dict[str, Any], limit: int) -> list[str]:
     return queries[:limit]
 
 
+def build_escalation_queries(signal: dict[str, Any], limit: int, *, news: bool = False) -> list[str]:
+    """Broaden one investigation without reusing data from another signal.
+
+    The extra queries are deliberately about a service role around the current
+    official subject (not a claim that such a role is lawful or profitable).
+    They are used only after the bounded technical retries have been exhausted.
+    """
+    queries = (build_news_queries if news else build_queries)(signal, limit)
+    terms = sorted(distinctive_terms(signal))[:6]
+    joined = " ".join(terms)
+    normalized = text_key(" ".join(evidence_titles(signal)))
+    extras: list[str] = []
+    if "cee" in normalized or ("certificats" in normalized and "energie" in normalized):
+        extras = [
+            '"fiches d operations standardisees" CEE',
+            'CEE obliges delegataires sous-traitance',
+        ]
+    elif joined:
+        extras = [
+            f'{joined} "prestations de services"',
+            f'{joined} "mise en conformite"',
+        ]
+    if not news:
+        extras = [f"{query} sourcelang:french" for query in extras]
+    for query in extras:
+        if query not in queries:
+            queries.append(query)
+        if len(queries) >= limit:
+            break
+    return queries[:limit]
+
+
 STOPWORDS = {
     "arrete", "relatif", "publique", "demande", "prolongation", "pour", "dans", "avec",
     "seine", "marne", "consultation", "public", "permis", "decret", "projet", "titre",
@@ -129,6 +161,7 @@ def normalize_article(article: dict[str, Any]) -> dict[str, Any] | None:
         "title": " ".join(title.split()),
         "excerpt": None,
         "source": "gdelt-doc-2.0",
+        "source_kind": "open_web_discovery",
     }
 
 
@@ -235,11 +268,17 @@ def collect(
     now: datetime | None = None, fetch: Callable[[str, dict[str, Any]], dict[str, Any]] = http_json,
     fetch_text: Callable[[str], str] = http_text,
     sleep: Callable[[float], None] = time.sleep,
+    research_profile: str = "standard",
 ) -> dict[str, Any]:
     if config.get("schema") != "lawradar-press-agent-config-v1":
         raise ValueError("Configuration Presse non prise en charge.")
     signal = select_retained_signal(dossier, signal_id)
+    if research_profile not in {"standard", "escalation"}:
+        raise ValueError("Profil de recherche Presse inconnu.")
     limits = config.get("limits", {})
+    escalation = config.get("escalation", {}) if research_profile == "escalation" else {}
+    if not isinstance(escalation, dict):
+        raise ValueError("Configuration d'escalade Presse invalide.")
     sources = config.get("sources", {})
     source = sources.get("gdelt_doc", {})
     news = sources.get("google_news_rss", {})
@@ -247,11 +286,14 @@ def collect(
     if not source.get("enabled") and not news.get("enabled") and not feeds:
         raise ValueError("Aucune source Presse n'est activée dans la configuration.")
     current = now or datetime.now(UTC)
-    before = int(config.get("window_days_before", 14))
-    queries = build_queries(signal, int(limits.get("max_queries_per_signal", 2)))
+    before = int(escalation.get("window_days_before", config.get("window_days_before", 14)))
+    maximum_queries = int(escalation.get("max_queries_per_signal", limits.get("max_queries_per_signal", 2)))
+    query_builder = build_escalation_queries if research_profile == "escalation" else build_queries
+    news_query_builder = (lambda item, amount: build_escalation_queries(item, amount, news=True)) if research_profile == "escalation" else build_news_queries
+    queries = query_builder(signal, maximum_queries)
     if not queries:
         raise ValueError("Le signal ne contient aucun intitulé exploitable pour la recherche Presse.")
-    maximum = int(limits.get("max_candidates_per_signal", 15))
+    maximum = int(escalation.get("max_candidates_per_signal", limits.get("max_candidates_per_signal", 15)))
     gathered: list[dict[str, Any]] = []
     query_log: list[dict[str, Any]] = []
     errors: list[dict[str, str]] = []
@@ -302,7 +344,7 @@ def collect(
             "source_kind": "news_aggregator",
             "minimum_matching_terms": int(news.get("minimum_matching_terms", 2)),
         }
-        for query in build_news_queries(signal, int(limits.get("max_queries_per_signal", 2))):
+        for query in news_query_builder(signal, maximum_queries):
             params = {
                 "q": query,
                 "hl": news.get("language", "fr"),
@@ -340,6 +382,7 @@ def collect(
     successful_sources = [item for item in source_statuses if item["success"]]
     return {
         "schema": "lawradar-press-candidates-v1",
+        "collection_profile": research_profile,
         "signal_id": signal_id,
         "signal_hash": signal_hash(signal),
         "observed_at_utc": current.isoformat(),
@@ -364,11 +407,13 @@ def main() -> int:
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--signal-id", required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--research-profile", choices=("standard", "escalation"), default="standard")
     args = parser.parse_args()
     result = collect(
         json.loads(args.dossier.read_text(encoding="utf-8")),
         json.loads(args.config.read_text(encoding="utf-8")),
         args.signal_id,
+        research_profile=args.research_profile,
     )
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return 0

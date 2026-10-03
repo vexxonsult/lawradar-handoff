@@ -1,5 +1,5 @@
 import unittest
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 
 from scripts.collect_press_candidates import collect
 
@@ -115,6 +115,18 @@ class CollectPressCandidatesTests(unittest.TestCase):
         self.assertEqual(result["candidates_after_dedup"], 1)
         self.assertEqual(result["candidates"][0]["outlet"], "Journal test")
         self.assertEqual(result["candidates"][0]["source"], "publisher-rss:google-news-fr")
+
+    def test_escalation_broadens_only_the_current_signal_with_a_hard_limit(self):
+        input_data = dossier()
+        input_data["signals"][0]["source"]["evidence"]["official"]["title"] = "Projet d'arrêté portant suppression de fiches d'opérations standardisées CEE"
+        input_config = config()
+        input_config["escalation"] = {"window_days_before": 90, "max_queries_per_signal": 4, "max_candidates_per_signal": 25}
+        now = datetime(2026, 9, 2, 12, tzinfo=UTC)
+        result = collect(input_data, input_config, "signal:current", now=now, fetch=lambda *_: {"articles": []}, sleep=lambda _: None, research_profile="escalation")
+        self.assertEqual(result["collection_profile"], "escalation")
+        self.assertEqual(len(result["queries"]), 4)
+        self.assertEqual(result["window"]["from"], (now - timedelta(days=90)).date().isoformat())
+        self.assertIn("delegataires", " ".join(query["query"] for query in result["queries"]))
 
 
 def json_dump(value):

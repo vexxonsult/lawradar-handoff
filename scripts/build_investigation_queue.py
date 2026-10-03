@@ -18,6 +18,7 @@ from typing import Any
 
 SCHEMA = "lawradar-investigation-queue-v1"
 MAX_AUTOMATIC_ATTEMPTS = 2
+MAX_AUTONOMOUS_RESEARCH_ATTEMPTS = 1
 RETRY_DELAY = timedelta(hours=6)
 # Bump this only when a deterministic qualification-contract repair makes a
 # previously counted technical retry non-comparable. It grants one clean retry,
@@ -89,7 +90,7 @@ def _questions(signal: dict[str, Any]) -> list[dict[str, Any]]:
         questions.append(_question(
             "OPERATIONAL_FEASIBILITY",
             "NEW_OFFICIAL_OR_PARTNER_EVIDENCE",
-            "Confirmer " + (", ".join(missing) if missing else "les prérequis opérationnels")
+            "Recherche autonome à mener sur " + (", ".join(missing) if missing else "les prérequis opérationnels")
             + " avant toute décision commerciale.",
             list((filters.get("feasibility") or {}).get("reasons", [])),
             automatic=False,
@@ -119,11 +120,16 @@ def _questions(signal: dict[str, Any]) -> list[dict[str, Any]]:
     return questions
 
 
-def build(context: dict[str, Any], readiness: dict[str, Any], previous: dict[str, Any] | None = None, *, now: datetime | None = None) -> dict[str, Any]:
+def build(
+    context: dict[str, Any], readiness: dict[str, Any], previous: dict[str, Any] | None = None,
+    *, now: datetime | None = None, mode: str = "standard",
+) -> dict[str, Any]:
     if context.get("schema") != "lawradar-universal-signal-v2":
         raise ValueError("La file d'enquête attend un contexte universel V2.")
     if readiness.get("schema") != "lawradar-agent-pilot-readiness-v1":
         raise ValueError("La file d'enquête attend le manifeste de préparation valide.")
+    if mode not in {"standard", "autonomous-research"}:
+        raise ValueError("Mode d'enquête inconnu.")
     current = now or datetime.now(UTC)
     ready_by_id = {
         item.get("signal_id"): item
@@ -151,9 +157,21 @@ def build(context: dict[str, Any], readiness: dict[str, Any], previous: dict[str
             if same_contract and isinstance(old_item.get("automatic_attempts", 0), int)
             else 0
         )
-        attempts = previous_attempts + 1 if automatic else previous_attempts
+        previous_research_attempts = (
+            int(old_item.get("autonomous_research_attempts", 0))
+            if isinstance(old_item.get("autonomous_research_attempts", 0), int)
+            else 0
+        )
+        attempts = previous_attempts + 1 if automatic and mode == "standard" else previous_attempts
+        research_attempts = previous_research_attempts + (1 if mode == "autonomous-research" else 0)
         exhausted = automatic and attempts >= MAX_AUTOMATIC_ATTEMPTS
-        state = "REVIEW_REQUIRED" if exhausted else "WAITING_FOR_EVIDENCE"
+        migration_pending = old_item.get("status") == "REVIEW_REQUIRED" and research_attempts < MAX_AUTONOMOUS_RESEARCH_ATTEMPTS
+        if mode == "autonomous-research" or research_attempts >= MAX_AUTONOMOUS_RESEARCH_ATTEMPTS:
+            state = "AUTO_RESEARCH_EXHAUSTED"
+        elif exhausted or not automatic or migration_pending:
+            state = "AUTONOMOUS_RESEARCH_PENDING"
+        else:
+            state = "WAITING_FOR_EVIDENCE"
         next_retry = (current + RETRY_DELAY).isoformat() if automatic and not exhausted else None
         title = signal.get("opportunity_facts", {}).get("title") or signal.get("facts", {}).get("title") or signal.get("source", {}).get("evidence", {}).get("official", {}).get("title")
         items.append({
@@ -165,6 +183,8 @@ def build(context: dict[str, Any], readiness: dict[str, Any], previous: dict[str
             "updated_at_utc": current.isoformat(),
             "automatic_attempts": attempts,
             "max_automatic_attempts": MAX_AUTOMATIC_ATTEMPTS,
+            "autonomous_research_attempts": research_attempts,
+            "max_autonomous_research_attempts": MAX_AUTONOMOUS_RESEARCH_ATTEMPTS,
             "qualification_contract_version": QUALIFICATION_CONTRACT_VERSION,
             "next_retry_not_before_utc": next_retry,
             "questions": questions,
@@ -175,11 +195,16 @@ def build(context: dict[str, Any], readiness: dict[str, Any], previous: dict[str
         "schema": SCHEMA,
         "generated_at_utc": current.isoformat(),
         "source_run": context.get("run", {}),
-        "policy": {"max_automatic_attempts": MAX_AUTOMATIC_ATTEMPTS, "retry_delay_hours": int(RETRY_DELAY.total_seconds() // 3600)},
+        "policy": {
+            "max_automatic_attempts": MAX_AUTOMATIC_ATTEMPTS,
+            "max_autonomous_research_attempts": MAX_AUTONOMOUS_RESEARCH_ATTEMPTS,
+            "retry_delay_hours": int(RETRY_DELAY.total_seconds() // 3600),
+        },
         "items": items,
         "summary": {
             "open_count": sum(item["status"] == "WAITING_FOR_EVIDENCE" for item in items),
-            "review_required_count": sum(item["status"] == "REVIEW_REQUIRED" for item in items),
+            "autonomous_research_pending_count": sum(item["status"] == "AUTONOMOUS_RESEARCH_PENDING" for item in items),
+            "auto_research_exhausted_count": sum(item["status"] == "AUTO_RESEARCH_EXHAUSTED" for item in items),
             "automatic_retry_count": sum(any(question["automatic_retry"] for question in item["questions"]) and item["status"] == "WAITING_FOR_EVIDENCE" for item in items),
         },
     }
@@ -191,12 +216,14 @@ def main() -> int:
     parser.add_argument("--readiness", type=Path, required=True)
     parser.add_argument("--previous", type=Path)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--mode", choices=("standard", "autonomous-research"), default="standard")
     args = parser.parse_args()
     previous = json.loads(args.previous.read_text(encoding="utf-8")) if args.previous and args.previous.exists() else None
     result = build(
         json.loads(args.context.read_text(encoding="utf-8")),
         json.loads(args.readiness.read_text(encoding="utf-8")),
         previous,
+        mode=args.mode,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
