@@ -172,7 +172,7 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertIn("needs.moteur.outputs.batch_ready == 'true'", motor)
         client_condition = motor.split("  client_plan:\n", 1)[1].split("    runs-on:", 1)[0]
         self.assertIn("github.event_name == 'schedule'", client_condition)
-        self.assertIn("bounded investigation queue", client_condition)
+        self.assertNotIn("#", client_condition)
         self.assertNotIn("record_skipped", client_condition)
         self.assertIn("client_matrix", motor)
         self.assertIn("has_ready", motor)
