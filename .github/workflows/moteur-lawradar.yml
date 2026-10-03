@@ -444,10 +444,11 @@ jobs:
         always() && !cancelled() && (
           github.event.inputs.clients_only == 'true' ||
           github.event.inputs.investigation_seed == 'true' ||
-          (needs.moteur.result == 'success' && (
-            needs.moteur.outputs.batch_ready == 'true' ||
-            github.event_name == 'schedule'
-          ))
+          # A scheduled wake must inspect the bounded investigation queue even
+          # when the motor is skipped: a due technical retry is independent
+          # from the arrival of new primary texts.
+          github.event_name == 'schedule' ||
+          (needs.moteur.result == 'success' && needs.moteur.outputs.batch_ready == 'true')
         )
       }}
     runs-on: ubuntu-latest
