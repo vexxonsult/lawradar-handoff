@@ -189,6 +189,37 @@ def _normalise_enrichment(value: Any, agent: str) -> dict[str, Any] | None:
     return {key: value[key] for key in required}
 
 
+def _is_specialized_contract_valid(payload: dict[str, Any], agent: str, result: dict[str, Any]) -> bool:
+    """Check the branch contract before a malformed model result can fail a run.
+
+    Empty collections take the deterministic terminal path and never call this
+    qualifier in production.  Test doubles and old callers may still use an
+    empty collection, so leave their generic envelope behaviour unchanged.
+    """
+    try:
+        if agent == "press":
+            candidates = payload.get("candidates")
+            if not isinstance(candidates, dict) or not candidates.get("candidates"):
+                return True
+            try:
+                from scripts.validate_press_enrichment import validate
+            except ModuleNotFoundError:  # pragma: no cover - workflow CLI path
+                from validate_press_enrichment import validate
+            validate(candidates, result)
+            return True
+        observations = payload.get("observations")
+        if not isinstance(observations, dict) or not observations.get("observations"):
+            return True
+        try:
+            from scripts.validate_market_enrichment import validate
+        except ModuleNotFoundError:  # pragma: no cover - workflow CLI path
+            from validate_market_enrichment import validate
+        validate(observations, result)
+        return True
+    except (KeyError, TypeError, ValueError):
+        return False
+
+
 def qualify(payload: dict[str, Any], agent: str, *, client: Any, model: str) -> dict[str, Any]:
     if agent not in PROMPTS:
         raise ValueError("Agent de qualification inconnu.")
@@ -216,6 +247,8 @@ def qualify(payload: dict[str, Any], agent: str, *, client: Any, model: str) -> 
     result = _normalise_enrichment(result, agent)
     if result is None:
         return unresolved_enrichment(payload, agent, "Le JSON Claude ne respecte pas le contrat d'enrichissement.")
+    if not _is_specialized_contract_valid(payload, agent, result):
+        return unresolved_enrichment(payload, agent, "La réponse Claude ne respecte pas le contrat spécialisé d'enrichissement.")
     return result
 
 

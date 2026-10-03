@@ -80,6 +80,33 @@ class _ToolClient:
         self.messages = _ToolMessages()
 
 
+class _InvalidPressToolMessages:
+    def create(self, **_kwargs):
+        return type("Response", (), {"content": [_ToolBlock({
+            "schema": "lawradar-agent-enrichment-v1",
+            "agent": "press",
+            "signal_id": "signal:1",
+            "status": "NO_EVIDENCE",
+            "observed_at_utc": "2026-09-04T12:00:00Z",
+            "summary": "Aucun lien confirmé.",
+            "sources": [],
+            "limitations": [],
+            "details": {
+                "signal_hash": "hash", "window": {}, "queries": [],
+                "candidates_total": 1, "candidates_after_dedup": 1,
+                "coverage_level": "UNKNOWN", "decisions": [{
+                    "url": "https://example.test/article", "relevance": "NOT_LINKED", "why_linked": "Test.",
+                }],
+            },
+            "score": None,
+        })]})()
+
+
+class _InvalidPressToolClient:
+    def __init__(self):
+        self.messages = _InvalidPressToolMessages()
+
+
 class QualifyAgentEnrichmentTests(unittest.TestCase):
     def test_press_uses_only_the_received_payload(self):
         client = _Client()
@@ -129,3 +156,17 @@ class QualifyAgentEnrichmentTests(unittest.TestCase):
         self.assertEqual(result["status"], "NO_EVIDENCE")
         self.assertNotIn("provider_trace", result)
         self.assertEqual(client.messages.request["tools"][0]["name"], "submit_enrichment")
+
+    def test_invalid_specialized_model_output_becomes_traceable_unresolved(self):
+        payload = {
+            "schema": "lawradar-press-qualification-input-v1",
+            "candidates": {
+                "signal_id": "signal:1", "signal_hash": "hash", "window": {}, "queries": [],
+                "candidates_total": 1, "candidates_after_dedup": 1,
+                "candidates": [{"url": "https://example.test/article"}],
+            },
+        }
+        result = qualify(payload, "press", client=_InvalidPressToolClient(), model="test-model")
+        self.assertEqual(result["status"], "UNRESOLVED")
+        self.assertEqual(result["details"]["coverage_level"], "NONE")
+        self.assertEqual(result["details"]["decisions"][0]["relevance"], "AMBIGUOUS")
