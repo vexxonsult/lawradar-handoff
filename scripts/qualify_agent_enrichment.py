@@ -43,7 +43,83 @@ En cas d'ambiguïté, retourne UNRESOLVED ; n'invente aucun fait.""",
 # delivery used to turn otherwise usable work into ``UNRESOLVED``.  The tool
 # keeps the model's conclusion separate from its internal/explanatory text and
 # gives the existing validators the same object they already expect.
-ENRICHMENT_TOOL = {
+BASE_ENRICHMENT_PROPERTIES = {
+    "schema": {"type": "string", "enum": ["lawradar-agent-enrichment-v1"]},
+    "agent": {"type": "string", "enum": ["press", "market"]},
+    "signal_id": {"type": "string", "minLength": 1},
+    "status": {"type": "string", "enum": ["COMPLETED", "NO_EVIDENCE", "UNRESOLVED", "FAILED"]},
+    "observed_at_utc": {"type": "string", "minLength": 1},
+    "summary": {"type": "string", "minLength": 1},
+    "sources": {
+        "type": "array",
+        "items": {
+            "type": "object",
+            "additionalProperties": False,
+            "required": ["url", "title"],
+            "properties": {"url": {"type": "string", "minLength": 1}, "title": {"type": "string", "minLength": 1}},
+        },
+    },
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "score": {"type": "null"},
+}
+
+
+def enrichment_tool(agent: str) -> dict[str, Any]:
+    """Give Claude the exact branch contract, not an under-specified envelope."""
+    if agent == "press":
+        details = {
+            "type": "object",
+            "additionalProperties": False,
+            "required": ["signal_hash", "window", "queries", "candidates_total", "candidates_after_dedup", "coverage_level", "decisions"],
+            "properties": {
+                "signal_hash": {"type": "string"},
+                "window": {"type": "object"},
+                "queries": {"type": "array"},
+                "candidates_total": {"type": "integer", "minimum": 0},
+                "candidates_after_dedup": {"type": "integer", "minimum": 0},
+                "coverage_level": {"type": "string", "enum": ["NONE", "LOW", "MEDIUM", "HIGH"]},
+                "decisions": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": False,
+                        "required": ["url", "relevance", "why_linked"],
+                        "properties": {
+                            "url": {"type": "string", "minLength": 1},
+                            "relevance": {"type": "string", "enum": ["DIRECT", "CONTEXTUAL", "NOT_LINKED", "AMBIGUOUS"]},
+                            "why_linked": {"type": "string", "minLength": 1},
+                        },
+                    },
+                },
+            },
+        }
+    elif agent == "market":
+        details = {
+            "type": "object",
+            "additionalProperties": False,
+            "required": ["signal_hash", "collection_status", "observations_total", "conclusions"],
+            "properties": {
+                "signal_hash": {"type": "string"},
+                "collection_status": {"type": "string", "enum": ["COMPLETED", "NO_EVIDENCE", "UNRESOLVED"]},
+                "observations_total": {"type": "integer", "minimum": 0},
+                "conclusions": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": False,
+                        "required": ["url", "interpretation", "why"],
+                        "properties": {
+                            "url": {"type": "string", "minLength": 1},
+                            "interpretation": {"type": "string", "enum": ["OFFER", "ACTOR", "CONSTRAINT", "NOT_RELEVANT", "AMBIGUOUS"]},
+                            "why": {"type": "string", "minLength": 1},
+                        },
+                    },
+                },
+            },
+        }
+    else:
+        raise ValueError("Agent de qualification inconnu.")
+    return {
     "name": "submit_enrichment",
     "description": "Submit the one LawRadar enrichment result. Do not add commentary.",
     "input_schema": {
@@ -53,18 +129,7 @@ ENRICHMENT_TOOL = {
             "schema", "agent", "signal_id", "status", "observed_at_utc",
             "summary", "sources", "limitations", "details", "score",
         ],
-        "properties": {
-            "schema": {"type": "string", "enum": ["lawradar-agent-enrichment-v1"]},
-            "agent": {"type": "string", "enum": ["press", "market"]},
-            "signal_id": {"type": "string", "minLength": 1},
-            "status": {"type": "string", "enum": ["COMPLETED", "NO_EVIDENCE", "UNRESOLVED", "FAILED"]},
-            "observed_at_utc": {"type": "string", "minLength": 1},
-            "summary": {"type": "string", "minLength": 1},
-            "sources": {"type": "array"},
-            "limitations": {"type": "array", "items": {"type": "string"}},
-            "details": {"type": "object"},
-            "score": {"type": "null"},
-        },
+        "properties": {**BASE_ENRICHMENT_PROPERTIES, "details": details},
     },
 }
 
@@ -81,7 +146,7 @@ def _tool_result(message: Any) -> dict[str, Any] | None:
     for block in getattr(message, "content", []):
         if (
             getattr(block, "type", None) == "tool_use"
-            and getattr(block, "name", None) == ENRICHMENT_TOOL["name"]
+            and getattr(block, "name", None) == "submit_enrichment"
             and isinstance(getattr(block, "input", None), dict)
         ):
             return block.input
@@ -189,7 +254,7 @@ def _normalise_enrichment(value: Any, agent: str) -> dict[str, Any] | None:
     return {key: value[key] for key in required}
 
 
-def _is_specialized_contract_valid(payload: dict[str, Any], agent: str, result: dict[str, Any]) -> bool:
+def _specialized_contract_error(payload: dict[str, Any], agent: str, result: dict[str, Any]) -> str | None:
     """Check the branch contract before a malformed model result can fail a run.
 
     Empty collections take the deterministic terminal path and never call this
@@ -200,24 +265,24 @@ def _is_specialized_contract_valid(payload: dict[str, Any], agent: str, result: 
         if agent == "press":
             candidates = payload.get("candidates")
             if not isinstance(candidates, dict) or not candidates.get("candidates"):
-                return True
+                return None
             try:
                 from scripts.validate_press_enrichment import validate
             except ModuleNotFoundError:  # pragma: no cover - workflow CLI path
                 from validate_press_enrichment import validate
             validate(candidates, result)
-            return True
+            return None
         observations = payload.get("observations")
         if not isinstance(observations, dict) or not observations.get("observations"):
-            return True
+            return None
         try:
             from scripts.validate_market_enrichment import validate
         except ModuleNotFoundError:  # pragma: no cover - workflow CLI path
             from validate_market_enrichment import validate
         validate(observations, result)
-        return True
-    except (KeyError, TypeError, ValueError):
-        return False
+        return None
+    except (KeyError, TypeError, ValueError) as error:
+        return str(error)
 
 
 def qualify(payload: dict[str, Any], agent: str, *, client: Any, model: str) -> dict[str, Any]:
@@ -233,8 +298,8 @@ def qualify(payload: dict[str, Any], agent: str, *, client: Any, model: str) -> 
         messages=[{"role": "user", "content": json.dumps(payload, ensure_ascii=False, separators=(",", ":"))}],
         thinking={"type": "adaptive"},
         output_config={"effort": "low"},
-        tools=[ENRICHMENT_TOOL],
-        tool_choice={"type": "tool", "name": ENRICHMENT_TOOL["name"]},
+        tools=[enrichment_tool(agent)],
+        tool_choice={"type": "tool", "name": "submit_enrichment"},
     )
     try:
         result = _tool_result(message)
@@ -247,8 +312,9 @@ def qualify(payload: dict[str, Any], agent: str, *, client: Any, model: str) -> 
     result = _normalise_enrichment(result, agent)
     if result is None:
         return unresolved_enrichment(payload, agent, "Le JSON Claude ne respecte pas le contrat d'enrichissement.")
-    if not _is_specialized_contract_valid(payload, agent, result):
-        return unresolved_enrichment(payload, agent, "La réponse Claude ne respecte pas le contrat spécialisé d'enrichissement.")
+    specialized_error = _specialized_contract_error(payload, agent, result)
+    if specialized_error is not None:
+        return unresolved_enrichment(payload, agent, f"Contrat spécialisé invalide : {specialized_error}")
     return result
 
 

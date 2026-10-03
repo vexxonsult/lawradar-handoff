@@ -128,6 +128,23 @@ class CollectPressCandidatesTests(unittest.TestCase):
         self.assertEqual(result["window"]["from"], (now - timedelta(days=90)).date().isoformat())
         self.assertIn("delegataires", " ".join(query["query"] for query in result["queries"]))
 
+    def test_escalation_uses_a_shorter_single_attempt_profile(self):
+        input_config = config()
+        input_config["escalation"] = {
+            "window_days_before": 90,
+            "max_queries_per_signal": 4,
+            "max_candidates_per_signal": 25,
+            "request_timeout_seconds": 8,
+            "source_overrides": {"gdelt_doc": {"attempts_per_query": 1}},
+        }
+        calls = []
+        result = collect(
+            dossier(), input_config, "signal:current", research_profile="escalation",
+            fetch=lambda endpoint, params: calls.append((endpoint, params)) or {"articles": []}, sleep=lambda _: None,
+        )
+        self.assertEqual(len(calls), 4)
+        self.assertTrue(result["collection_successful"])
+
 
 def json_dump(value):
     import json

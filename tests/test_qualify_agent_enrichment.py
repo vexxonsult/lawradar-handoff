@@ -119,6 +119,8 @@ class QualifyAgentEnrichmentTests(unittest.TestCase):
         self.assertEqual(client.messages.request["thinking"], {"type": "adaptive"})
         self.assertEqual(client.messages.request["output_config"], {"effort": "low"})
         self.assertEqual(client.messages.request["tool_choice"], {"type": "tool", "name": "submit_enrichment"})
+        details = client.messages.request["tools"][0]["input_schema"]["properties"]["details"]
+        self.assertIn("coverage_level", details["properties"])
 
     def test_rejects_unknown_agent_before_any_call(self):
         with self.assertRaisesRegex(ValueError, "inconnu"):
@@ -156,6 +158,8 @@ class QualifyAgentEnrichmentTests(unittest.TestCase):
         self.assertEqual(result["status"], "NO_EVIDENCE")
         self.assertNotIn("provider_trace", result)
         self.assertEqual(client.messages.request["tools"][0]["name"], "submit_enrichment")
+        details = client.messages.request["tools"][0]["input_schema"]["properties"]["details"]
+        self.assertIn("conclusions", details["properties"])
 
     def test_invalid_specialized_model_output_becomes_traceable_unresolved(self):
         payload = {

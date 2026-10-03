@@ -62,6 +62,13 @@
     "window_days_before": 90,
     "max_queries_per_signal": 4,
     "max_candidates_per_signal": 25,
+    "request_timeout_seconds": 8,
+    "source_overrides": {
+      "gdelt_doc": {
+        "attempts_per_query": 1,
+        "minimum_interval_seconds": 2
+      }
+    },
     "purpose": "Une unique recherche autonome, après l'épuisement des reprises techniques. Presse spécialisée, web ouvert et flux éditeurs restent des pistes traçables ; aucune source sociale n'est automatisée.",
     "linkedin": "DISABLED_NO_AUTOMATED_SCRAPING"
   }

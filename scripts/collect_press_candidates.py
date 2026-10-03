@@ -182,18 +182,18 @@ def deduplicate(articles: list[dict[str, Any]], maximum: int) -> list[dict[str, 
     return kept
 
 
-def http_json(url: str, params: dict[str, Any]) -> dict[str, Any]:
+def http_json(url: str, params: dict[str, Any], *, timeout_seconds: int = 20) -> dict[str, Any]:
     request = Request(f"{url}?{urlencode(params)}", headers={"User-Agent": "LawRadar-Press/0.1"})
-    with urlopen(request, timeout=20) as response:  # nosec B310: endpoint is configuration-controlled
+    with urlopen(request, timeout=timeout_seconds) as response:  # nosec B310: endpoint is configuration-controlled
         body = response.read().decode("utf-8").strip()
     if not body:
         raise ValueError("Réponse GDELT vide.")
     return json.loads(body)
 
 
-def http_text(url: str) -> str:
+def http_text(url: str, *, timeout_seconds: int = 20) -> str:
     request = Request(url, headers={"User-Agent": "LawRadar-Press/0.1"})
-    with urlopen(request, timeout=20) as response:  # nosec B310: endpoint is configuration-controlled
+    with urlopen(request, timeout=timeout_seconds) as response:  # nosec B310: endpoint is configuration-controlled
         body = response.read().decode("utf-8").strip()
     if not body:
         raise ValueError("Flux RSS vide.")
@@ -280,8 +280,11 @@ def collect(
     if not isinstance(escalation, dict):
         raise ValueError("Configuration d'escalade Presse invalide.")
     sources = config.get("sources", {})
-    source = sources.get("gdelt_doc", {})
-    news = sources.get("google_news_rss", {})
+    source_overrides = escalation.get("source_overrides", {})
+    if not isinstance(source_overrides, dict):
+        raise ValueError("Surcharges de sources Presse invalides.")
+    source = {**sources.get("gdelt_doc", {}), **source_overrides.get("gdelt_doc", {})}
+    news = {**sources.get("google_news_rss", {}), **source_overrides.get("google_news_rss", {})}
     feeds = [item for item in sources.get("publisher_rss", []) if isinstance(item, dict) and item.get("enabled")]
     if not source.get("enabled") and not news.get("enabled") and not feeds:
         raise ValueError("Aucune source Presse n'est activée dans la configuration.")
@@ -294,6 +297,15 @@ def collect(
     if not queries:
         raise ValueError("Le signal ne contient aucun intitulé exploitable pour la recherche Presse.")
     maximum = int(escalation.get("max_candidates_per_signal", limits.get("max_candidates_per_signal", 15)))
+    timeout_seconds = int(escalation.get("request_timeout_seconds", 20))
+    if timeout_seconds < 1 or timeout_seconds > 20:
+        raise ValueError("Délai de recherche Presse hors bornes.")
+    def fetch_json(endpoint: str, params: dict[str, Any]) -> dict[str, Any]:
+        return http_json(endpoint, params, timeout_seconds=timeout_seconds) if fetch is http_json else fetch(endpoint, params)
+
+    def fetch_feed(endpoint: str) -> str:
+        return http_text(endpoint, timeout_seconds=timeout_seconds) if fetch_text is http_text else fetch_text(endpoint)
+
     gathered: list[dict[str, Any]] = []
     query_log: list[dict[str, Any]] = []
     errors: list[dict[str, str]] = []
@@ -317,7 +329,7 @@ def collect(
             items: list[dict[str, Any]] = []
             for attempt in range(attempts):
                 try:
-                    items = gdelt_articles(fetch(str(source["endpoint"]), params))
+                    items = gdelt_articles(fetch_json(str(source["endpoint"]), params))
                     error = None
                     break
                 except Exception as caught:  # Source failure must be explicit, never become NO_EVIDENCE.
@@ -353,7 +365,7 @@ def collect(
             }
             try:
                 endpoint = f"{news['endpoint']}?{urlencode(params)}"
-                items = rss_articles(news_feed, fetch_text(endpoint), signal)
+                items = rss_articles(news_feed, fetch_feed(endpoint), signal)
                 gathered.extend(items)
                 query_log.append({"source": "google-news-rss", "query": query, "hits": len(items)})
             except Exception as caught:
@@ -367,7 +379,7 @@ def collect(
     for feed in feeds:
         feed_name = f"publisher-rss:{feed.get('id', 'unknown')}"
         try:
-            items = rss_articles(feed, fetch_text(str(feed["url"])), signal)
+            items = rss_articles(feed, fetch_feed(str(feed["url"])), signal)
             gathered.extend(items)
             query_log.append({"source": feed_name, "query": "signal-term-match", "hits": len(items)})
             source_statuses.append({"source": feed_name, "required": feed.get("required", True), "success": True})
