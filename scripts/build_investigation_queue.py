@@ -23,7 +23,7 @@ RETRY_DELAY = timedelta(hours=6)
 # Bump this only when a deterministic qualification-contract repair makes a
 # previously counted technical retry non-comparable. It grants one clean retry,
 # not an unlimited loop.
-QUALIFICATION_CONTRACT_VERSION = "tool-envelope-v2"
+QUALIFICATION_CONTRACT_VERSION = "tool-envelope-v3-structured-tool"
 
 
 def _parse(value: Any) -> datetime | None:
@@ -159,7 +159,7 @@ def build(
         )
         previous_research_attempts = (
             int(old_item.get("autonomous_research_attempts", 0))
-            if isinstance(old_item.get("autonomous_research_attempts", 0), int)
+            if same_contract and isinstance(old_item.get("autonomous_research_attempts", 0), int)
             else 0
         )
         attempts = previous_attempts + 1 if automatic and mode == "standard" else previous_attempts

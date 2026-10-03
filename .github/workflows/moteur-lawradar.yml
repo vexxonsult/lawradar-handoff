@@ -527,7 +527,13 @@ jobs:
                           retry_ids.add(pending.get("signal_id"))
                       if (
                           isinstance(pending, dict)
-                          and pending.get("status") in {"AUTONOMOUS_RESEARCH_PENDING", "REVIEW_REQUIRED"}
+                          and (
+                              pending.get("status") in {"AUTONOMOUS_RESEARCH_PENDING", "REVIEW_REQUIRED"}
+                              or (
+                                  pending.get("status") == "AUTO_RESEARCH_EXHAUSTED"
+                                  and pending.get("qualification_contract_version") != "tool-envelope-v3-structured-tool"
+                              )
+                          )
                           and isinstance(pending.get("signal_id"), str)
                           and int(pending.get("autonomous_research_attempts", 0)) < int(pending.get("max_autonomous_research_attempts", 1))
                       ):

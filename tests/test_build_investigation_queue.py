@@ -102,6 +102,16 @@ class InvestigationQueueTests(unittest.TestCase):
         self.assertEqual(item["automatic_attempts"], 1)
         self.assertEqual(item["status"], "WAITING_FOR_EVIDENCE")
 
+    def test_contract_repair_grants_one_clean_autonomous_research_attempt(self):
+        previous = build(context(), readiness(), now=NOW)
+        previous = build(context(), readiness(), previous, now=NOW + timedelta(hours=6))
+        previous = build(context(), readiness(), previous, now=NOW + timedelta(hours=7), mode="autonomous-research")
+        previous["items"][0]["qualification_contract_version"] = "tool-envelope-v2"
+        result = build(context(), readiness(), previous, now=NOW + timedelta(hours=8), mode="autonomous-research")
+        item = result["items"][0]
+        self.assertEqual(item["autonomous_research_attempts"], 1)
+        self.assertEqual(item["status"], "AUTO_RESEARCH_EXHAUSTED")
+
     def test_non_retained_signal_never_enters_the_queue(self):
         value = context()
         value["signals"][0]["radar"]["status"] = "DISCARDED"
