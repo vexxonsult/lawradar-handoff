@@ -1,10 +1,10 @@
 {
   "schema": "lawradar-investigation-queue-v1",
-  "generated_at_utc": "2026-10-05T22:40:42.802060+00:00",
+  "generated_at_utc": "2026-10-05T23:13:47.563871+00:00",
   "source_run": {
     "id": "investigation-replay:2da01510f73c77e8",
     "kind": "ARCHIVED_FACTS_REPLAY",
-    "generated_at_utc": "2026-10-05T22:37:56.804552+00:00",
+    "generated_at_utc": "2026-10-05T23:11:14.385637+00:00",
     "purpose": "TECHNICAL_ENRICHMENT_RETRY",
     "archive_provenance": {
       "signal:7859c8c56eb4b063": "evidence/universal-signals/v2/2026/10/run-37326972444-attempt-1.json",
@@ -21,12 +21,12 @@
       "signal_id": "signal:7859c8c56eb4b063",
       "source_id": "jorf:JORFTEXT000054945484",
       "title": "Arrêté du 1er octobre 2026 relatif à l'ouverture d'une période transitoire pour l'innovation PEPS 2 MSP",
-      "status": "AUTONOMOUS_RESEARCH_PENDING",
+      "status": "AUTO_RESEARCH_EXHAUSTED",
       "opened_at_utc": "2026-10-05T14:46:50.995712+00:00",
-      "updated_at_utc": "2026-10-05T22:40:42.802060+00:00",
+      "updated_at_utc": "2026-10-05T23:13:47.563871+00:00",
       "automatic_attempts": 2,
       "max_automatic_attempts": 2,
-      "autonomous_research_attempts": 0,
+      "autonomous_research_attempts": 1,
       "max_autonomous_research_attempts": 1,
       "qualification_contract_version": "tool-envelope-v3-structured-tool",
       "next_retry_not_before_utc": null,
@@ -51,7 +51,7 @@
           "status": "OPEN",
           "question": "Déterminer si un avis BOAMP cite le texte, son obligation ou un besoin directement lié ; un simple mot-sectoriel ne démontre pas une demande causée par le texte.",
           "evidence": [
-            "Réponse Claude non exploitable : Contrat spécialisé invalide : Le nombre d'observations Marché ne correspond pas à l'entrée."
+            "Réponse Claude non exploitable : Contrat spécialisé invalide : COMPLETED exige des observations Marché pertinentes."
           ],
           "automatic_retry": true
         }
@@ -63,12 +63,12 @@
       "signal_id": "signal:e8c76895570ca9d7",
       "source_id": "jorf:JORFTEXT000054945477",
       "title": "Arrêté du 1er octobre 2026 relatif à l'ouverture d'une période transitoire pour l'innovation PEPS 2 CDS",
-      "status": "AUTONOMOUS_RESEARCH_PENDING",
+      "status": "AUTO_RESEARCH_EXHAUSTED",
       "opened_at_utc": "2026-10-05T14:46:50.995712+00:00",
-      "updated_at_utc": "2026-10-05T22:40:42.802060+00:00",
+      "updated_at_utc": "2026-10-05T23:13:47.563871+00:00",
       "automatic_attempts": 2,
       "max_automatic_attempts": 2,
-      "autonomous_research_attempts": 0,
+      "autonomous_research_attempts": 1,
       "max_autonomous_research_attempts": 1,
       "qualification_contract_version": "tool-envelope-v3-structured-tool",
       "next_retry_not_before_utc": null,
@@ -104,8 +104,8 @@
   ],
   "summary": {
     "open_count": 0,
-    "autonomous_research_pending_count": 2,
-    "auto_research_exhausted_count": 0,
+    "autonomous_research_pending_count": 0,
+    "auto_research_exhausted_count": 2,
     "automatic_retry_count": 0
   }
 }
