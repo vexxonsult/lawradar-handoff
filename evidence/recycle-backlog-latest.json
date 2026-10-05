@@ -2293,6 +2293,319 @@
       ]
     },
     {
+      "signal_id": "signal:7859c8c56eb4b063",
+      "source_id": "jorf:JORFTEXT000054945484",
+      "captured_at_utc": "2026-10-05T14:43:38.143052+00:00",
+      "facts_sha256": "3cc3e71ba0c114a5a4ac0c32b6b1c73bac1ef37bbe265874e8f82ba9e2ca2d2b",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:7859c8c56eb4b063",
+        "evaluated_at_utc": "2026-10-05T14:43:38.143052+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : adhésion au cahier des charges PEPS 2 MSP.",
+            "Dépendance non vérifiée : cahier des charges de l'innovation PEPS 2 MSP.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:7859c8c56eb4b063",
+        "evaluated_at_utc": "2026-10-05T14:43:38.143052+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : adhésion au cahier des charges PEPS 2 MSP.",
+            "Dépendance non vérifiée : cahier des charges de l'innovation PEPS 2 MSP.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:7859c8c56eb4b063",
+        "identity": {
+          "stable_source_id": "source:9c054b1859b41d4a",
+          "evidence_version": "sha256:606b5092bbaa36c7ad9c8124982cac95f62731fdb0dd0cc6f941944630a943d0"
+        },
+        "source": {
+          "source_id": "jorf:JORFTEXT000054945484",
+          "source_kind": "JORF",
+          "change": "NEW",
+          "evidence": {
+            "text_id": "JORFTEXT000054945484",
+            "nature": "ARRETE",
+            "nor": "SFHZ2626106A",
+            "title": "Arrêté du 1er octobre 2026 relatif à l'ouverture d'une période transitoire pour l'innovation d'un paiement en équipe de professionnels de santé en ville en maisons de santé pluriprofessionnelles 2 (PEPS 2 MSP)",
+            "publisher": "DILA / Journal officiel de la République française",
+            "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054945484",
+            "publication_date": "2026-10-03",
+            "journal_number": "0231",
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [],
+            "detail_status": null,
+            "official": {
+              "title": null,
+              "period": null
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": "AVAILABLE",
+              "text_sha256": "f94bfd3a76018129e0234c14e8f4284fc5b67a5aaded8f33c6670a2e71dbaf02",
+              "excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la sécurité sociale, notamment son article L. 162-31-1 ;\nVu l'arrêté du 5 février 2026 déterminant le montant prévisionnel de la dotation annuelle du fonds pour l'innovation du système de santé pour l'exercice 2026 ;\nVu l'avis favorable du comité technique et du conseil stratégique de l'innovation en santé du 25 septembre sur l'opportunité de généraliser l'expérimentation d'un paiement en équipe de professionnels de santé en ville en maisons de santé pluriprofessionnelles 2 (PEPS 2 MSP) ;\nVu l'avis du comité technique de l'innovation en santé du 30 septembre 2026 sur l'ouverture d'une période transitoire à la suite de l'expérimentation d'un paiement en équipe de professionnels de santé en ville en maisons de santé pluriprofessionnelles 2 (PEPS 2 MSP) ;\nVu le cahier des charges de l'innovation d'un paiement en équipe de professionnels de santé en ville en maisons de santé pluriprofessionnelles 2 (PEPS 2 MSP),\nArrêtent :",
+              "excerpt_truncated": false,
+              "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261003-211138.tar.gz",
+              "archive_sha256": "7d027a062d6e71f8124255de541ffaddf8b082d7c686b212f723c66c35bc8b69"
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Arrêté publié ouvrant une période transitoire pour un dispositif de paiement en équipe (PEPS 2 MSP) dans les maisons de santé pluriprofessionnelles, texte officiel en vigueur avec périmètre identifiable (professionnels de santé en MSP) mais sans montant ni flux financier explicite dans l'extrait fourni."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "FUNDING_OR_INCENTIVE",
+              "score": 3,
+              "terms": [
+                "fonds"
+              ]
+            }
+          ],
+          "scope_terms": [
+            "professionnel"
+          ],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        },
+        "reading": {
+          "consequence": "L'arrêté ouvre une période transitoire faisant suite à une expérimentation de paiement en équipe pour les professionnels de santé exerçant en maisons de santé pluriprofessionnelles, dans l'attente d'une éventuelle généralisation.",
+          "affected_actors": [
+            "maisons de santé pluriprofessionnelles",
+            "professionnels de santé en ville"
+          ],
+          "beneficiaries": [],
+          "constrained_parties": [],
+          "potential_service_partners": [],
+          "unknowns": [
+            "montant et modalités précises du financement via le fonds pour l'innovation du système de santé",
+            "contenu détaillé du cahier des charges",
+            "conditions d'adhésion des MSP au dispositif transitoire",
+            "durée de la période transitoire"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "jorf:JORFTEXT000054945484"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:7859c8c56eb4b063",
+          "title": "Arrêté du 1er octobre 2026 relatif à l'ouverture d'une période transitoire pour l'innovation PEPS 2 MSP",
+          "keywords": [
+            "PEPS 2 MSP",
+            "maison de santé pluriprofessionnelle",
+            "paiement en équipe",
+            "innovation en santé",
+            "période transitoire"
+          ],
+          "affected_scope": [
+            "maisons de santé pluriprofessionnelles",
+            "professionnels de santé en ville"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "PUBLISHED",
+            "proof_status": "PARTIAL",
+            "effective_date": "2026-10-03",
+            "affected_scope": [
+              "maisons de santé pluriprofessionnelles",
+              "professionnels de santé"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "adhésion au cahier des charges PEPS 2 MSP",
+                "status": "UNKNOWN"
+              }
+            ],
+            "dependencies": [
+              {
+                "id": "cahier des charges de l'innovation PEPS 2 MSP",
+                "status": "UNKNOWN"
+              }
+            ],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "PARTIAL"
+          },
+          "operator_access": {
+            "sector": "NOT_CLASSIFIED",
+            "direct_offer_status": "UNKNOWN",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "MISSING",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:7859c8c56eb4b063",
+          "evaluated_at_utc": "2026-10-05T14:43:38.143052+00:00",
+          "compliance": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve juridique incomplète ou absente."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Statut de l'autorisation inconnu : adhésion au cahier des charges PEPS 2 MSP.",
+              "Dépendance non vérifiée : cahier des charges de l'innovation PEPS 2 MSP.",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "NOT_APPLICABLE",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:7859c8c56eb4b063",
+        "title": "Arrêté du 1er octobre 2026 relatif à l'ouverture d'une période transitoire pour l'innovation PEPS 2 MSP",
+        "keywords": [
+          "PEPS 2 MSP",
+          "maison de santé pluriprofessionnelle",
+          "paiement en équipe",
+          "innovation en santé",
+          "période transitoire"
+        ],
+        "affected_scope": [
+          "maisons de santé pluriprofessionnelles",
+          "professionnels de santé en ville"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "PARTIAL",
+          "effective_date": "2026-10-03",
+          "affected_scope": [
+            "maisons de santé pluriprofessionnelles",
+            "professionnels de santé"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "adhésion au cahier des charges PEPS 2 MSP",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "cahier des charges de l'innovation PEPS 2 MSP",
+              "status": "UNKNOWN"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "PARTIAL"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "UNKNOWN",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-10-05T14:43:38.143052+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
       "signal_id": "signal:9c9feeb94a29916e",
       "source_id": "jorf:JORFTEXT000054804204",
       "captured_at_utc": "2026-09-12T17:45:19.645448+00:00",
@@ -3505,6 +3818,346 @@
       ]
     },
     {
+      "signal_id": "signal:cb7e2f793c727998",
+      "source_id": "jorf:JORFTEXT000054945708",
+      "captured_at_utc": "2026-10-05T14:43:38.143052+00:00",
+      "facts_sha256": "98cee93deb027b701b9c1e20d3cff447ba74f89104f8b58f6067f2a21d71153e",
+      "initial_status": "DISCARD",
+      "latest_status": "DISCARD",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:cb7e2f793c727998",
+        "evaluated_at_utc": "2026-10-05T14:43:38.143052+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "DISCARD",
+          "reasons": [
+            "Autorisation requise absente : signe de qualité (type RGE)."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "DISCARD"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:cb7e2f793c727998",
+        "evaluated_at_utc": "2026-10-05T14:43:38.143052+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "DISCARD",
+          "reasons": [
+            "Autorisation requise absente : signe de qualité (type RGE)."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "DISCARD"
+      },
+      "signal": {
+        "id": "signal:cb7e2f793c727998",
+        "identity": {
+          "stable_source_id": "source:24e2d2003a676cda",
+          "evidence_version": "sha256:4def7c8e4ff59836ef4a74201c80da3fff77da2471dab127af9af770d299ff2d"
+        },
+        "source": {
+          "source_id": "jorf:JORFTEXT000054945708",
+          "source_kind": "JORF",
+          "change": "NEW",
+          "evidence": {
+            "text_id": "JORFTEXT000054945708",
+            "nature": "ARRETE",
+            "nor": "VLOL2612469A",
+            "title": "Arrêté du 30 septembre 2026 modifiant l'arrêté du 1er décembre 2015 relatif aux critères de qualifications requis pour le bénéfice du crédit d'impôt pour la transition énergétique et des avances remboursables sans intérêt destinées au financement de travaux de rénovation afin d'améliorer la performance énergétique des logements anciens",
+            "publisher": "DILA / Journal officiel de la République française",
+            "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054945708",
+            "publication_date": "2026-10-03",
+            "journal_number": "0231",
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [],
+            "detail_status": null,
+            "official": {
+              "title": null,
+              "period": null
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": "AVAILABLE",
+              "text_sha256": "aab969e7a7c1a5c34016973c2b1c584c0063533ba32f6e1079dec9258bdb56bc",
+              "excerpt": "Publics concernés : personnes physiques propriétaires, locataires ou occupants à titre gratuit de leur résidence principale qui y effectuent des dépenses de rénovation énergétique ouvrant droit au crédit d'impôt pour la transition énergétique, à des avances remboursables sans intérêts et à la prime de transition énergétique ; entreprises effectuant les travaux de rénovation énergétique de logements ; entreprises principales sous-traitant des travaux et réalisant la facturation ; organismes de qualification des professionnels réalisant des travaux de rénovation énergétique et des audits énergétiques ; les personnes physiques ou les syndicats de copropriétaires, propriétaires d'un logement utilisé ou destiné à être utilisé en tant que résidence principale qui y effectuent des dépenses en faveur des économies d'énergie et du développement durable ouvrant droit à des avances remboursables sans intérêts destinées au financement de travaux de rénovation afin d'améliorer la performance énergétique des logements anciens.\nObjet : l'article 26 de la loi n° 2025-594 du 30 juin 2025 contre toutes les fraudes aux aides publiques prévoit, pour les travaux aidés, l'obligation pour les entreprises ayant recours à la sous-traitance de disposer d'un signe de qualité à partir du 1\ner\njanvier 2027. Le présent arrêté vient préciser les conditions de détention du signe de qualité pour les acteurs concernés.\nEntrée en vigueur : le texte entre en vigueur le lendemain de sa p\n[… extrait primaire compacté …]\nlinéa du 2 du I de l'article 244 quater U du code général des impôts ;\nVu l'arrêté du 1\ner\ndécembre 2015 relatif aux critères de qualifications requis pour le bénéfice du crédit d'impôt pour la transition énergétique et des avances remboursables sans intérêt destinées au financement de travaux de rénovation afin d'améliorer la performance énergétique des logements anciens ;\nVu l'avis du Conseil supérieur de la construction et de l'efficacité énergétique en date du 19 mai 2026,\nArrêtent :",
+              "excerpt_truncated": true,
+              "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261003-211138.tar.gz",
+              "archive_sha256": "7d027a062d6e71f8124255de541ffaddf8b082d7c686b212f723c66c35bc8b69"
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Texte publié modifiant les critères de qualification (signe de qualité) requis pour les entreprises sous-traitantes réalisant des travaux de rénovation énergétique, en application de l'article 26 de la loi 2025-594 ; périmètre professionnel identifiable dans le secteur de l'efficacité énergétique."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 9,
+          "triggers": [
+            {
+              "kind": "LEGAL_OBLIGATION",
+              "score": 3,
+              "terms": [
+                "obligation"
+              ]
+            },
+            {
+              "kind": "FUNDING_OR_INCENTIVE",
+              "score": 3,
+              "terms": [
+                "financement",
+                "credit d'impot"
+              ]
+            },
+            {
+              "kind": "TECHNICAL_TRANSITION",
+              "score": 2,
+              "terms": [
+                "efficacite energetique",
+                "economies d'energie",
+                "transition energetique"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [
+            "entreprise",
+            "professionnel"
+          ],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        },
+        "reading": {
+          "consequence": "À partir du 1er janvier 2027, les entreprises ayant recours à la sous-traitance pour des travaux de rénovation énergétique aidés devront détenir un signe de qualité (type RGE) dont les conditions de détention sont précisées par cet arrêté, sous peine de ne pas pouvoir faire bénéficier leurs clients du crédit d'impôt ou des avances remboursables.",
+          "affected_actors": [
+            "entreprises principales sous-traitant des travaux",
+            "entreprises réalisant les travaux de rénovation",
+            "organismes de qualification des professionnels",
+            "particuliers propriétaires/locataires/occupants"
+          ],
+          "beneficiaries": [],
+          "constrained_parties": [
+            "entreprises de rénovation énergétique recourant à la sous-traitance"
+          ],
+          "potential_service_partners": [],
+          "unknowns": [
+            "Modalités précises de détention du signe de qualité non détaillées dans l'extrait disponible",
+            "Liste exacte des organismes de qualification concernés",
+            "Sanctions en cas de non-respect"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "jorf:JORFTEXT000054945708"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:cb7e2f793c727998",
+          "title": "Arrêté modifiant les critères de qualification pour le CITE et avances remboursables - rénovation énergétique",
+          "keywords": [
+            "efficacité énergétique",
+            "signe de qualité",
+            "sous-traitance",
+            "crédit d'impôt transition énergétique",
+            "rénovation énergétique",
+            "RGE"
+          ],
+          "affected_scope": [
+            "entreprises de rénovation énergétique",
+            "entreprises sous-traitantes",
+            "organismes de qualification",
+            "propriétaires occupants ou bailleurs"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "PUBLISHED",
+            "proof_status": "VERIFIED",
+            "effective_date": "2026-10-04",
+            "affected_scope": [
+              "entreprises de rénovation énergétique",
+              "organismes de qualification",
+              "particuliers bénéficiaires d'aides"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "signe de qualité (type RGE)",
+                "status": "REQUIRED"
+              }
+            ],
+            "dependencies": [
+              {
+                "id": "organismes de qualification agréés",
+                "status": "UNKNOWN"
+              }
+            ],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "PARTIAL"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:cb7e2f793c727998",
+          "evaluated_at_utc": "2026-10-05T14:43:38.143052+00:00",
+          "compliance": {
+            "status": "PASS",
+            "reasons": [
+              "Texte vérifié, dans le périmètre et actionnable."
+            ]
+          },
+          "feasibility": {
+            "status": "DISCARD",
+            "reasons": [
+              "Autorisation requise absente : signe de qualité (type RGE)."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "DISCARD"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:cb7e2f793c727998",
+        "title": "Arrêté modifiant les critères de qualification pour le CITE et avances remboursables - rénovation énergétique",
+        "keywords": [
+          "efficacité énergétique",
+          "signe de qualité",
+          "sous-traitance",
+          "crédit d'impôt transition énergétique",
+          "rénovation énergétique",
+          "RGE"
+        ],
+        "affected_scope": [
+          "entreprises de rénovation énergétique",
+          "entreprises sous-traitantes",
+          "organismes de qualification",
+          "propriétaires occupants ou bailleurs"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-04",
+          "affected_scope": [
+            "entreprises de rénovation énergétique",
+            "organismes de qualification",
+            "particuliers bénéficiaires d'aides"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "signe de qualité (type RGE)",
+              "status": "REQUIRED"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "organismes de qualification agréés",
+              "status": "UNKNOWN"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "PARTIAL"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-10-05T14:43:38.143052+00:00",
+          "trigger": "CAPTURE",
+          "status": "DISCARD",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
       "signal_id": "signal:dd66b3391e0dac1f",
       "source_id": "jorf:JORFTEXT000054883275",
       "captured_at_utc": "2026-09-24T08:21:55.095618+00:00",
@@ -4059,6 +4712,321 @@
       ]
     },
     {
+      "signal_id": "signal:e8c76895570ca9d7",
+      "source_id": "jorf:JORFTEXT000054945477",
+      "captured_at_utc": "2026-10-05T14:43:38.143052+00:00",
+      "facts_sha256": "39a2f4aaeaff1abba9dfc7386e89198c2f9282957d5b7ce4bf934f5d3fad7a8f",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:e8c76895570ca9d7",
+        "evaluated_at_utc": "2026-10-05T14:43:38.143052+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : cahier_des_charges_PEPS_2_CDS.",
+            "Dépendance non vérifiée : fonds_innovation_systeme_sante.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:e8c76895570ca9d7",
+        "evaluated_at_utc": "2026-10-05T14:43:38.143052+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : cahier_des_charges_PEPS_2_CDS.",
+            "Dépendance non vérifiée : fonds_innovation_systeme_sante.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:e8c76895570ca9d7",
+        "identity": {
+          "stable_source_id": "source:6745ae18dcde243d",
+          "evidence_version": "sha256:5b5a9a9cc55f0ef588b2137bb73ced1190e546f996b13bc86ffc481fc2627f98"
+        },
+        "source": {
+          "source_id": "jorf:JORFTEXT000054945477",
+          "source_kind": "JORF",
+          "change": "NEW",
+          "evidence": {
+            "text_id": "JORFTEXT000054945477",
+            "nature": "ARRETE",
+            "nor": "SFHZ2626055A",
+            "title": "Arrêté du 1er octobre 2026 relatif à l'ouverture d'une période transitoire pour l'innovation d'un paiement en équipe de professionnels de santé en ville en centres de santé 2 (PEPS 2 CDS)",
+            "publisher": "DILA / Journal officiel de la République française",
+            "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054945477",
+            "publication_date": "2026-10-03",
+            "journal_number": "0231",
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [],
+            "detail_status": null,
+            "official": {
+              "title": null,
+              "period": null
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": "AVAILABLE",
+              "text_sha256": "e264042b7cad792c9f6723e8d7a40d2a927fc8af7127623f6693010720f84443",
+              "excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la sécurité sociale, notamment son article L. 162-31-1 ;\nVu l'arrêté du 5 février 2026 déterminant le montant prévisionnel de la dotation annuelle du fonds pour l'innovation du système de santé pour l'exercice 2026 ;\nVu l'avis favorable du comité technique et du conseil stratégique de l'innovation en santé du 25 septembre sur l'opportunité de généraliser l'expérimentation d'un paiement en équipe de professionnels de santé en ville en centres de santé 2 (PEPS 2 CDS) ;\nVu l'avis du comité technique de l'innovation en santé du 30 septembre 2026 sur l'ouverture d'une période transitoire à la suite de l'expérimentation d'un paiement en équipe de professionnels de santé en ville en centres de santé 2 (PEPS 2 CDS) ;\nVu le cahier des charges de l'innovation d'un paiement en équipe de professionnels de santé en ville en centres de santé 2 (PEPS 2 CDS),\nArrêtent :",
+              "excerpt_truncated": false,
+              "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261003-211138.tar.gz",
+              "archive_sha256": "7d027a062d6e71f8124255de541ffaddf8b082d7c686b212f723c66c35bc8b69"
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Arrêté publié ouvrant une période transitoire pour un dispositif de paiement en équipe (PEPS 2 CDS) en centres de santé, avec financement via le fonds pour l'innovation du système de santé ; périmètre identifiable (centres de santé, professionnels de santé) mais montants et modalités précises non détaillés dans l'extrait."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "FUNDING_OR_INCENTIVE",
+              "score": 3,
+              "terms": [
+                "fonds"
+              ]
+            }
+          ],
+          "scope_terms": [
+            "professionnel"
+          ],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        },
+        "reading": {
+          "consequence": "L'arrêté ouvre une période transitoire poursuivant l'expérimentation d'un modèle de paiement collectif pour les équipes de professionnels de santé exerçant en centres de santé, financé par le fonds pour l'innovation du système de santé.",
+          "affected_actors": [
+            "centres de santé",
+            "professionnels de santé en ville",
+            "ministère de la santé",
+            "ministère des comptes publics"
+          ],
+          "beneficiaries": [],
+          "constrained_parties": [],
+          "potential_service_partners": [],
+          "unknowns": [
+            "Montant précis de la dotation allouée au PEPS 2 CDS",
+            "Modalités du cahier des charges non détaillées dans l'extrait",
+            "Durée exacte de la période transitoire",
+            "Conditions d'éligibilité des centres de santé"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "jorf:JORFTEXT000054945477"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:e8c76895570ca9d7",
+          "title": "Arrêté du 1er octobre 2026 relatif à l'ouverture d'une période transitoire pour l'innovation PEPS 2 CDS",
+          "keywords": [
+            "PEPS 2 CDS",
+            "centres de santé",
+            "paiement en équipe",
+            "fonds innovation santé",
+            "période transitoire"
+          ],
+          "affected_scope": [
+            "centres de santé",
+            "professionnels de santé"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "PUBLISHED",
+            "proof_status": "PARTIAL",
+            "effective_date": "2026-10-03",
+            "affected_scope": [
+              "centres de santé",
+              "professionnels de santé"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "cahier_des_charges_PEPS_2_CDS",
+                "status": "UNKNOWN"
+              }
+            ],
+            "dependencies": [
+              {
+                "id": "fonds_innovation_systeme_sante",
+                "status": "UNKNOWN"
+              }
+            ],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "PARTIAL"
+          },
+          "operator_access": {
+            "sector": "NOT_CLASSIFIED",
+            "direct_offer_status": "UNKNOWN",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "MISSING",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:e8c76895570ca9d7",
+          "evaluated_at_utc": "2026-10-05T14:43:38.143052+00:00",
+          "compliance": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve juridique incomplète ou absente."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Statut de l'autorisation inconnu : cahier_des_charges_PEPS_2_CDS.",
+              "Dépendance non vérifiée : fonds_innovation_systeme_sante.",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "NOT_APPLICABLE",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:e8c76895570ca9d7",
+        "title": "Arrêté du 1er octobre 2026 relatif à l'ouverture d'une période transitoire pour l'innovation PEPS 2 CDS",
+        "keywords": [
+          "PEPS 2 CDS",
+          "centres de santé",
+          "paiement en équipe",
+          "fonds innovation santé",
+          "période transitoire"
+        ],
+        "affected_scope": [
+          "centres de santé",
+          "professionnels de santé"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "PARTIAL",
+          "effective_date": "2026-10-03",
+          "affected_scope": [
+            "centres de santé",
+            "professionnels de santé"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "cahier_des_charges_PEPS_2_CDS",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "fonds_innovation_systeme_sante",
+              "status": "UNKNOWN"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "PARTIAL"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "UNKNOWN",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-10-05T14:43:38.143052+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
       "signal_id": "signal:ed8470c64d37b85e",
       "source_id": "jorf:JORFTEXT000054794183",
       "captured_at_utc": "2026-09-12T12:07:34.801874+00:00",
@@ -4416,7 +5384,7 @@
     }
   ],
   "queue_audit": {
-    "processed_count": 1036,
+    "processed_count": 1087,
     "unrecoverable_queue_entries": [
       {
         "fingerprint": "490853c49376a298cfdbefd3d9015889f24dfb149e616097ae78c39d2661a25b",
@@ -6171,6 +7139,126 @@
       {
         "fingerprint": "859bbdd8f91fd157ef9cae7e1222942cdd3d7bfb5a23ccc0afcc94665c388596",
         "source_id": "jorf:JORFTEXT000054939657",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "671b1439f438b82289f2f68696c10fd3fc6cc66de9fe5b9c771b71b3731e52de",
+        "source_id": "jorf:JORFTEXT000054945397",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "083bc3b1ea9c1e6f32a9fad0ea8b166dd20980a0028708b9a5521049d0d23d43",
+        "source_id": "jorf:JORFTEXT000054945410",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "31b9491df243cb670d9b50c04d5a48ea77a9aa2f6a8cb065c263a21d2e94bd5f",
+        "source_id": "jorf:JORFTEXT000054945415",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "81bb42984f12d2002004734e694e5bbbf1a0bafbdbca7c6011c05a3cf814efaa",
+        "source_id": "jorf:JORFTEXT000054945420",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "e9df8fc7c57c8bbd9e88a1b46733fccf10363ed3e5aa44b68ec2d36620d06af9",
+        "source_id": "jorf:JORFTEXT000054945426",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "5a919e756a8912fae41b56db50b83068f0ea9f0703bb918d9da056ddbcdb3cd6",
+        "source_id": "jorf:JORFTEXT000054945431",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "247c667e36977896a8fd6e4bc0c6f10b681309e74c7fa6b1b7ad2e1a210899dc",
+        "source_id": "jorf:JORFTEXT000054945434",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "084ae6b9311132d8810b1c9add315d545eb10381f10aec7ddf8091816a098ff8",
+        "source_id": "jorf:JORFTEXT000054945741",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "6d752737ae12c83715fa27fe65e499f0ef47422c0fb8bfe86a40007d2b04b4da",
+        "source_id": "jorf:JORFTEXT000054945775",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "43519964bd6a828836cbd55eae755c6a273baf9a4a5745728e07c8bb2bf1f761",
+        "source_id": "jorf:JORFTEXT000054945825",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "8c7bc6852be77489eea1cda2b0fac228526848191dcc7db6807875bb41685c6a",
+        "source_id": "jorf:JORFTEXT000054945827",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "2a99de7ab87328a3fafc04f8421fab972722825d0e13df76265d3a2408abc85d",
+        "source_id": "jorf:JORFTEXT000054945829",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "debc3e229a863c0380974d512832454ddce50a51583fa4fd9028b2fdd9b65b88",
+        "source_id": "jorf:JORFTEXT000054945901",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "ebca60c5c35f71746887514d7ed68ace528ff465517d07019d449b487a4f91d9",
+        "source_id": "jorf:JORFTEXT000054946200",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "47bdbec3b003de476e6c682ae8124f16f2c492dd132e90f45d33a4fb06c07915",
+        "source_id": "jorf:JORFTEXT000054946203",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "100105808b76f93d3b80a74d4f2c36d824ca8a16d19e7ac9d67da4f1e0c84961",
+        "source_id": "jorf:JORFTEXT000054946205",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "59605ff917478961fda8683f1271f52b7171efd3eba874f78107e91a5e77777f",
+        "source_id": "jorf:JORFTEXT000054946209",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "b570fa66d66a1f8c7ef319b3bb663335d62e187c97c5fe2994338aaa4c1e92b0",
+        "source_id": "jorf:JORFTEXT000054946218",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "0a901c2d6a78214e68c3375075f1e5acaae3d2e3fe9b4f3ad77a80c6141f7bcb",
+        "source_id": "jorf:JORFTEXT000054946220",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "52ced58707f5f7c700853d5d77398946433d502f40aa8282d14b10c8b11026af",
+        "source_id": "jorf:JORFTEXT000054946222",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "c995880af204a132180ef99c369c13c9e342e169d7c01b2ba0c02cceea433790",
+        "source_id": "jorf:JORFTEXT000054946274",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "b917c7c2f5d87722ad3cab6f0dcc6533858d5d7f49a6f52b862e9d607d83e848",
+        "source_id": "jorf:JORFTEXT000054946999",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "2a54baddf8e27405800d40d588d17a50623c5dc72d1c3748593547aca7f5ba64",
+        "source_id": "jorf:JORFTEXT000054947004",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "1daf9293f8c7b3ef3d03e5dcbf702822151903b69b347192663e7e6f98ff3e4e",
+        "source_id": "jorf:JORFTEXT000054947011",
         "reason": "PRIMARY_TEXT_EMPTY"
       }
     ],
