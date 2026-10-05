@@ -1,0 +1,32 @@
+{
+  "schema": "lawradar-universal-signal-archive-v1",
+  "status": "ARCHIVED",
+  "run_id": "37379565597",
+  "run_attempt": "1",
+  "report_date": "2026-10-04",
+  "archive_path": "evidence/universal-signals/v2/2026/10/run-37379565597-attempt-1.json",
+  "sha256": "61c6779ad4019afea452d9497186e02fbea9e3b73280266e17b5eeabcc157fe8",
+  "signal_count": 2,
+  "prefilter_counts": {
+    "excluded_historical_candidates": 0,
+    "excluded_routine_candidates": 0,
+    "excluded_no_economic_friction_candidates": 0,
+    "deterministically_unresolved_candidates": 0
+  },
+  "signals": [
+    {
+      "signal_id": "signal:b60cef6dedbc96b6",
+      "stable_source_id": "source:67489e93f92d2956",
+      "evidence_version": "sha256:a318e7f7970b0f96a0272e40ca071ff3dc4d496072c0461d1b8b1cefe01e8853",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/consultation-du-public-sur-le-projet-d-arrete-a3439.html",
+      "radar_status": "DISCARDED"
+    },
+    {
+      "signal_id": "signal:a4eafdacc44248d9",
+      "stable_source_id": "source:a2472a0936da30f3",
+      "evidence_version": "sha256:4a87dc1ae4799dfc6b43813b4de9d9d82734db73a308509be8092e443cd18dfc",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-autorisation-a3439.html",
+      "radar_status": "DISCARDED"
+    }
+  ]
+}

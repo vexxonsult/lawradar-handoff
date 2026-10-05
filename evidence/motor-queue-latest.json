@@ -1,79 +1,6 @@
 {
   "schema": "lawradar-motor-queue-v1",
-  "pending": [
-    {
-      "fingerprint": "f211b8c3991988996957355df1eae9645b616114debd7ee374762ad98831c1b0",
-      "candidate": {
-        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-autorisation-a3439.html",
-        "source_kind": "CONSULTDD",
-        "change": "NEW",
-        "evidence": {
-          "title": "Projet d’arrêté portant autorisation exceptionnelle, au titre de l’article L. 121-5 du ...",
-          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-autorisation-a3439.html",
-          "dates": [
-            "2026-10-06",
-            "2026-10-05"
-          ],
-          "interpretation": null,
-          "official_detail": null,
-          "official_attachments": [],
-          "financial_evidence": [],
-          "detail_status": "PRIMARY_PAGE_UNAVAILABLE",
-          "detail_error": "HTTPError"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "CONTEXT_REVIEW",
-          "score": 3,
-          "triggers": [
-            {
-              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
-              "score": 3,
-              "terms": []
-            }
-          ],
-          "scope_terms": [],
-          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
-        }
-      }
-    },
-    {
-      "fingerprint": "ef3a6cb6917cad1f23130c5c40f069e5a2b2f3f185fc79a8cad8a59319e1d001",
-      "candidate": {
-        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/consultation-du-public-sur-le-projet-d-arrete-a3439.html",
-        "source_kind": "CONSULTDD",
-        "change": "NEW",
-        "evidence": {
-          "title": "Consultation du public sur le projet d’arrêté autorisant la reconstruction de la station",
-          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/consultation-du-public-sur-le-projet-d-arrete-a3439.html",
-          "dates": [
-            "2026-10-06",
-            "2026-10-05"
-          ],
-          "interpretation": null,
-          "official_detail": null,
-          "official_attachments": [],
-          "financial_evidence": [],
-          "detail_status": "PRIMARY_PAGE_UNAVAILABLE",
-          "detail_error": "HTTPError"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "CONTEXT_REVIEW",
-          "score": 3,
-          "triggers": [
-            {
-              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
-              "score": 3,
-              "terms": []
-            }
-          ],
-          "scope_terms": [],
-          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
-        }
-      }
-    }
-  ],
+  "pending": [],
   "processed": [
     {
       "fingerprint": "a296cf4cc3111abe31b2e81b4f607e60736105a42cd2cd6596df0a0a961cc193",
@@ -6449,6 +6376,16 @@
       "fingerprint": "5c1a88c8b8f33cd92b41cfffa5e3b9789d12a27a18f4d2a6782bc0762cc3cada",
       "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/energies-et-climat-r4.html",
       "processed_at_utc": "2026-10-05T14:43:38.302046+00:00"
+    },
+    {
+      "fingerprint": "f211b8c3991988996957355df1eae9645b616114debd7ee374762ad98831c1b0",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-autorisation-a3439.html",
+      "processed_at_utc": "2026-10-05T22:00:16.676461+00:00"
+    },
+    {
+      "fingerprint": "ef3a6cb6917cad1f23130c5c40f069e5a2b2f3f185fc79a8cad8a59319e1d001",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/consultation-du-public-sur-le-projet-d-arrete-a3439.html",
+      "processed_at_utc": "2026-10-05T22:00:16.676461+00:00"
     }
   ]
 }
