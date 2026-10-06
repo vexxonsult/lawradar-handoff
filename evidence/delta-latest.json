@@ -12,43 +12,45 @@
     },
     {
       "file": "jorf-summaries-latest.json",
-      "status": "UNCHANGED",
-      "item_count": 4112,
-      "sha256": "603bdfbe34cab96d77d39834d540b5b647bb71070687474cacf5976865fc5f6e",
-      "documents_sha256": "01386e5453639307f5cd30552e4f60e7a7859319b0d42fd541ee8a235761e442",
+      "status": "CHANGED",
+      "item_count": 3872,
+      "sha256": "4b214a35be9bb60fcd4b45d5ce936cac01530ede19e54ccb4caefd5a9f48781f",
+      "documents_sha256": "756b4865aa5ccf8bf285bf0a5a2e01adf5cbd9928e9329800c06f774da235a82",
       "interpretation": null
     },
     {
       "file": "eurlex-oj-latest.json",
-      "status": "UNCHANGED",
+      "status": "METADATA_CHANGED",
       "item_count": 0,
-      "sha256": "44fd148d0ad9e4d1c67c1780b4ff0a8ee7cf9270518980df954ea1ff785c1ebf",
+      "sha256": "1b516ccc7cd7a556e84e428f86f38ef8b33a57c9c32a865ed2456e1b3d10f139",
       "documents_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "interpretation": null
     },
     {
       "file": "consultdd-latest.json",
       "status": "CHANGED",
-      "item_count": 3,
-      "sha256": "f15e78258ecf5570602e2d548a4e8c5fec9671a22feff1546801aa92130ba135",
-      "documents_sha256": "2da21f4162c2530472224f39ab6d999ed462f49051fa1008c62a1e418f39469b",
+      "item_count": 5,
+      "sha256": "5895b2ccd1eda53d21949e86eeae7aa1ca5c7c5151e66a5075e9ca182bde67d3",
+      "documents_sha256": "7ee7bc1dfc70a8187f69b6b60dbba8f381ffd798421f3fa08c99e91169732e5c",
       "interpretation": null
     },
     {
       "file": "status-latest.json",
-      "status": "UNCHANGED",
+      "status": "METADATA_CHANGED",
       "item_count": 0,
-      "sha256": "a0c8623fb4b2dea5dd2259d95d22e5527d7aba3cb629ce62ca1d0eac71b4bc0f",
+      "sha256": "4f2a40cc7b41fde6ccf09688c7f612297761c944f4eec95254cd43e1d7851431",
       "documents_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "interpretation": null
     }
   ],
   "changed_sources": [
+    "jorf-summaries-latest.json",
     "consultdd-latest.json"
   ],
   "evidence_change_detected": true,
   "supported_model_change_detected": true,
   "supported_changed_sources": [
+    "jorf-summaries-latest.json",
     "consultdd-latest.json"
   ],
   "model_input_required": true,
