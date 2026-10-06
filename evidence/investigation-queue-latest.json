@@ -1,111 +1,23 @@
 {
   "schema": "lawradar-investigation-queue-v1",
-  "generated_at_utc": "2026-10-05T23:13:47.563871+00:00",
+  "generated_at_utc": "2026-10-06T18:10:19.346656+00:00",
   "source_run": {
-    "id": "investigation-replay:2da01510f73c77e8",
-    "kind": "ARCHIVED_FACTS_REPLAY",
-    "generated_at_utc": "2026-10-05T23:11:14.385637+00:00",
-    "purpose": "TECHNICAL_ENRICHMENT_RETRY",
-    "archive_provenance": {
-      "signal:7859c8c56eb4b063": "evidence/universal-signals/v2/2026/10/run-37326972444-attempt-1.json",
-      "signal:e8c76895570ca9d7": "evidence/universal-signals/v2/2026/10/run-37326972444-attempt-1.json"
-    }
+    "id": "37469836844",
+    "attempt": "1",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/37469836844",
+    "commit": "97bf7821cfe35b44eaf0b87fe3790e34a9c2c041",
+    "report_date": "2026-10-06"
   },
   "policy": {
     "max_automatic_attempts": 2,
     "max_autonomous_research_attempts": 1,
     "retry_delay_hours": 6
   },
-  "items": [
-    {
-      "signal_id": "signal:7859c8c56eb4b063",
-      "source_id": "jorf:JORFTEXT000054945484",
-      "title": "Arrêté du 1er octobre 2026 relatif à l'ouverture d'une période transitoire pour l'innovation PEPS 2 MSP",
-      "status": "AUTO_RESEARCH_EXHAUSTED",
-      "opened_at_utc": "2026-10-05T14:46:50.995712+00:00",
-      "updated_at_utc": "2026-10-05T23:13:47.563871+00:00",
-      "automatic_attempts": 2,
-      "max_automatic_attempts": 2,
-      "autonomous_research_attempts": 1,
-      "max_autonomous_research_attempts": 1,
-      "qualification_contract_version": "tool-envelope-v3-structured-tool",
-      "next_retry_not_before_utc": null,
-      "questions": [
-        {
-          "id": "OPERATIONAL_FEASIBILITY",
-          "kind": "NEW_OFFICIAL_OR_PARTNER_EVIDENCE",
-          "status": "OPEN",
-          "question": "Recherche autonome à mener sur l'autorisation, l'agrément ou la voie de sous-traitance applicable, les dépendances opérationnelles nécessaires, le capital de démarrage nécessaire, le délai réaliste de mise sur le marché avant toute décision commerciale.",
-          "evidence": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : adhésion au cahier des charges PEPS 2 MSP.",
-            "Dépendance non vérifiée : cahier des charges de l'innovation PEPS 2 MSP.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ],
-          "automatic_retry": false
-        },
-        {
-          "id": "MARKET_RELEVANCE",
-          "kind": "TECHNICAL_RETRY",
-          "status": "OPEN",
-          "question": "Déterminer si un avis BOAMP cite le texte, son obligation ou un besoin directement lié ; un simple mot-sectoriel ne démontre pas une demande causée par le texte.",
-          "evidence": [
-            "Réponse Claude non exploitable : Contrat spécialisé invalide : COMPLETED exige des observations Marché pertinentes."
-          ],
-          "automatic_retry": true
-        }
-      ],
-      "readiness_status": "READY_FOR_PILOTS",
-      "final_constraint": "INVESTIGATE"
-    },
-    {
-      "signal_id": "signal:e8c76895570ca9d7",
-      "source_id": "jorf:JORFTEXT000054945477",
-      "title": "Arrêté du 1er octobre 2026 relatif à l'ouverture d'une période transitoire pour l'innovation PEPS 2 CDS",
-      "status": "AUTO_RESEARCH_EXHAUSTED",
-      "opened_at_utc": "2026-10-05T14:46:50.995712+00:00",
-      "updated_at_utc": "2026-10-05T23:13:47.563871+00:00",
-      "automatic_attempts": 2,
-      "max_automatic_attempts": 2,
-      "autonomous_research_attempts": 1,
-      "max_autonomous_research_attempts": 1,
-      "qualification_contract_version": "tool-envelope-v3-structured-tool",
-      "next_retry_not_before_utc": null,
-      "questions": [
-        {
-          "id": "OPERATIONAL_FEASIBILITY",
-          "kind": "NEW_OFFICIAL_OR_PARTNER_EVIDENCE",
-          "status": "OPEN",
-          "question": "Recherche autonome à mener sur l'autorisation, l'agrément ou la voie de sous-traitance applicable, les dépendances opérationnelles nécessaires, le capital de démarrage nécessaire, le délai réaliste de mise sur le marché avant toute décision commerciale.",
-          "evidence": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : cahier_des_charges_PEPS_2_CDS.",
-            "Dépendance non vérifiée : fonds_innovation_systeme_sante.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ],
-          "automatic_retry": false
-        },
-        {
-          "id": "MARKET_RELEVANCE",
-          "kind": "TECHNICAL_RETRY",
-          "status": "OPEN",
-          "question": "Déterminer si un avis BOAMP cite le texte, son obligation ou un besoin directement lié ; un simple mot-sectoriel ne démontre pas une demande causée par le texte.",
-          "evidence": [
-            "Réponse Claude non exploitable : Contrat spécialisé invalide : Le nombre d'observations Marché ne correspond pas à l'entrée."
-          ],
-          "automatic_retry": true
-        }
-      ],
-      "readiness_status": "READY_FOR_PILOTS",
-      "final_constraint": "INVESTIGATE"
-    }
-  ],
+  "items": [],
   "summary": {
     "open_count": 0,
     "autonomous_research_pending_count": 0,
-    "auto_research_exhausted_count": 2,
+    "auto_research_exhausted_count": 0,
     "automatic_retry_count": 0
   }
 }
