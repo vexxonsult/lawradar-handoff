@@ -22,14 +22,17 @@ def signal_hash(signal: dict[str, Any]) -> str:
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
 
-def select_retained_signal(dossier: dict[str, Any], requested_id: str) -> dict[str, Any]:
+def select_retained_signal(
+    dossier: dict[str, Any], requested_id: str, *, allow_research_candidate: bool = False
+) -> dict[str, Any]:
     if dossier.get("schema") not in {"lawradar-universal-signal-v1", "lawradar-universal-signal-v2"}:
         raise ValueError("Dossier universel non pris en charge.")
     matches = [item for item in dossier.get("signals", []) if item.get("id") == requested_id]
     if len(matches) != 1:
         raise ValueError("Signal Presse absent ou dupliqué.")
-    if matches[0].get("radar", {}).get("status") != "RETAINED":
-        raise ValueError("L'agent Presse ne traite que les signaux RETAINED.")
+    status = matches[0].get("radar", {}).get("status")
+    if status != "RETAINED" and not (allow_research_candidate and status == "DISCARDED"):
+        raise ValueError("L'agent Presse ne traite que les signaux RETAINED ou les candidats de recherche explicitement autorisés.")
     return matches[0]
 
 
@@ -51,7 +54,8 @@ def canonical_url(value: str) -> str:
 def evidence_titles(signal: dict[str, Any]) -> list[str]:
     evidence = signal.get("source", {}).get("evidence", {})
     official = evidence.get("official", {}) if isinstance(evidence, dict) else {}
-    candidates = [official.get("title"), evidence.get("title")]
+    facts = signal.get("opportunity_facts") if isinstance(signal.get("opportunity_facts"), dict) else {}
+    candidates = [official.get("title"), evidence.get("title"), facts.get("title")]
     titles: list[str] = []
     seen: set[str] = set()
     for item in candidates:
@@ -269,10 +273,11 @@ def collect(
     fetch_text: Callable[[str], str] = http_text,
     sleep: Callable[[float], None] = time.sleep,
     research_profile: str = "standard",
+    allow_research_candidate: bool = False,
 ) -> dict[str, Any]:
     if config.get("schema") != "lawradar-press-agent-config-v1":
         raise ValueError("Configuration Presse non prise en charge.")
-    signal = select_retained_signal(dossier, signal_id)
+    signal = select_retained_signal(dossier, signal_id, allow_research_candidate=allow_research_candidate)
     if research_profile not in {"standard", "escalation"}:
         raise ValueError("Profil de recherche Presse inconnu.")
     limits = config.get("limits", {})
@@ -420,12 +425,14 @@ def main() -> int:
     parser.add_argument("--signal-id", required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--research-profile", choices=("standard", "escalation"), default="standard")
+    parser.add_argument("--allow-research-candidate", action="store_true")
     args = parser.parse_args()
     result = collect(
         json.loads(args.dossier.read_text(encoding="utf-8")),
         json.loads(args.config.read_text(encoding="utf-8")),
         args.signal_id,
         research_profile=args.research_profile,
+        allow_research_candidate=args.allow_research_candidate,
     )
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return 0

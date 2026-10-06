@@ -1,0 +1,46 @@
+{
+  "schema": "lawradar-research-candidate-policy-v1",
+  "maximum_signals_per_run": 3,
+  "minimum_score": 4,
+  "eligible_legal_statuses": [
+    "PUBLISHED",
+    "IN_FORCE",
+    "CONSULTATION_OPEN",
+    "DRAFT"
+  ],
+  "business_indicators": [
+    "obligation",
+    "conformité",
+    "certificat",
+    "certificats",
+    "cee",
+    "énergie",
+    "énergétique",
+    "équipement",
+    "assainissement",
+    "station d'épuration",
+    "traitement des eaux",
+    "mise en service",
+    "contrôle",
+    "autorisation environnementale",
+    "déchets",
+    "rénovation",
+    "subvention",
+    "aide",
+    "prestation",
+    "logistique"
+  ],
+  "routine_exclusions": [
+    "nomination",
+    "désignation",
+    "recrutement",
+    "emplois réservés",
+    "avancement de grade",
+    "commission administrative",
+    "espèces soumises",
+    "taux de cotisation",
+    "reconduction de l'autorisation",
+    "service de radio",
+    "radio numérique terrestre"
+  ]
+}

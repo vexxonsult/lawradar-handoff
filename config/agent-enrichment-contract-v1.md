@@ -12,6 +12,13 @@ anciens signaux comme exemples ni comme sources de repli. La preuve primaire,
 le changement détecté, le statut (`RETAINED`, `DISCARDED` ou `UNRESOLVED`) et
 la raison du Radar sont immuables.
 
+Exception de routage, sans modification du Radar : un `DISCARDED` peut être
+transmis aux seuls agents Presse, Demande et Marché avec
+`client_scope: RESEARCH_ONLY` s'il satisfait la politique déterministe
+`research-candidate-policy-v1`. Cette passe est plafonnée, dédoublonnée et
+destinée uniquement à documenter une hypothèse. Elle ne peut jamais invoquer
+l'agent Entrepreneur.
+
 ## Sortie minimale commune
 
 Chaque résultat doit contenir :

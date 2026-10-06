@@ -568,6 +568,7 @@ jobs:
             --dossier out/client-core/evidence/universal-signal-latest.json \
             --policy config/compliance-policy-v1.json \
             --profile config/operator-profile-v1.json \
+            --research-policy config/research-candidate-policy-v1.json \
             --output out/client-core/out/agent-pilot-readiness.json
           python - <<'PY'
           import hashlib
@@ -588,7 +589,12 @@ jobs:
               if not include_all_ready and signal_id not in retry_ids:
                   continue
               key = hashlib.sha256(signal_id.encode("utf-8")).hexdigest()[:16]
-              matrix.append({"id": signal_id, "key": key})
+              matrix.append({
+                  "id": signal_id,
+                  "key": key,
+                  "client_scope": item.get("client_scope", "FULL_PIPELINE"),
+                  "entrepreneur_allowed": item.get("entrepreneur_allowed") is True,
+              })
           compact = json.dumps(matrix, ensure_ascii=False, separators=(",", ":"))
           Path("out/client-core/out/client-plan.json").write_text(
               json.dumps({"schema": "lawradar-client-plan-v1", "mode": selection["mode"], "signals": matrix}, ensure_ascii=False, indent=2) + "\n",
@@ -775,6 +781,8 @@ jobs:
 
           plan = json.loads(Path("out/client-core/out/client-plan.json").read_text(encoding="utf-8"))
           for signal in plan.get("signals", []):
+              if signal.get("entrepreneur_allowed") is not True:
+                  continue
               subprocess.run([
                   "python", "scripts/clients/entrepreneur_agent.py",
                   "--input", "out/client-context.json", "--signal-id", signal["id"],

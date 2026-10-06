@@ -58,6 +58,13 @@ class CollectPressCandidatesTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             collect(dossier("UNRESOLVED"), config(), "signal:current", fetch=lambda *_: {}, sleep=lambda _: None)
 
+    def test_allows_discarded_signal_only_with_the_explicit_research_switch(self):
+        result = collect(
+            dossier("DISCARDED"), config(), "signal:current", allow_research_candidate=True,
+            fetch=lambda *_: {"articles": []}, sleep=lambda _: None,
+        )
+        self.assertTrue(result["collection_successful"])
+
     def test_preserves_source_failure_for_later_unresolved_handling(self):
         def unavailable(*_):
             raise TimeoutError("timeout")

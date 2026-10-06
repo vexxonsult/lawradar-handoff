@@ -36,30 +36,32 @@ def _allow(filters: Path) -> bool:
     return _load(filters).get("operator_access", {}).get("allow_external_collection") is True
 
 
-def _press(core: Path, signal_id: str, target: Path, model: str, research_profile: str) -> None:
+def _press(core: Path, signal_id: str, target: Path, model: str, research_profile: str, research_only: bool) -> None:
     facts, filters = target / "opportunity-facts.json", target / "deterministic-filters.json"
     candidates, qualification, enrichment = target / "press-candidates.json", target / "press-qualification-input.json", target / "press-enrichment.json"
-    _run("scripts/prepare_opportunity_facts.py", "--dossier", str(core), "--signal-id", signal_id, "--output", str(facts))
+    research_flag = ["--allow-research-candidate"] if research_only else []
+    _run("scripts/prepare_opportunity_facts.py", "--dossier", str(core), "--signal-id", signal_id, "--output", str(facts), *research_flag)
     _run("scripts/run_deterministic_filters.py", "--facts", str(facts), "--policy", "config/compliance-policy-v1.json", "--profile", "config/operator-profile-v1.json", "--output", str(filters))
     if not _allow(filters):
         raise ValueError(f"Collecte Presse interdite par la porte opérateur : {signal_id}")
-    _run("scripts/collect_press_candidates.py", "--dossier", str(core), "--config", "config/press-agent-config.json", "--signal-id", signal_id, "--output", str(candidates), "--research-profile", research_profile)
+    _run("scripts/collect_press_candidates.py", "--dossier", str(core), "--config", "config/press-agent-config.json", "--signal-id", signal_id, "--output", str(candidates), "--research-profile", research_profile, *research_flag)
     collected = _load(candidates)
     ready = bool(collected.get("candidates")) and collected.get("collection_successful", not collected.get("errors"))
     if ready:
-        _run("scripts/prepare_press_qualification_input.py", "--dossier", str(core), "--candidates", str(candidates), "--output", str(qualification))
+        _run("scripts/prepare_press_qualification_input.py", "--dossier", str(core), "--candidates", str(candidates), "--output", str(qualification), *research_flag)
         _run("scripts/qualify_agent_enrichment.py", "--agent", "press", "--input", str(qualification), "--output", str(enrichment), "--model", model)
     else:
         _run("scripts/build_press_terminal_enrichment.py", "--candidates", str(candidates), "--output", str(enrichment))
     _run("scripts/validate_press_enrichment.py", "--candidates", str(candidates), "--enrichment", str(enrichment))
 
 
-def _demand_market(core: Path, signal_id: str, target: Path, model: str) -> None:
+def _demand_market(core: Path, signal_id: str, target: Path, model: str, research_only: bool) -> None:
     facts, filters = target / "opportunity-facts.json", target / "deterministic-filters.json"
     boamp, observations = target / "market-demand-boamp.json", target / "market-observations.json"
     demand, demand_enrichment = target / "demand-observations.json", target / "demand-enrichment.json"
     qualification, enrichment = target / "market-qualification-input.json", target / "market-enrichment.json"
-    _run("scripts/prepare_opportunity_facts.py", "--dossier", str(core), "--signal-id", signal_id, "--output", str(facts))
+    research_flag = ["--allow-research-candidate"] if research_only else []
+    _run("scripts/prepare_opportunity_facts.py", "--dossier", str(core), "--signal-id", signal_id, "--output", str(facts), *research_flag)
     _run("scripts/run_deterministic_filters.py", "--facts", str(facts), "--policy", "config/compliance-policy-v1.json", "--profile", "config/operator-profile-v1.json", "--output", str(filters))
     if not _allow(filters):
         raise ValueError(f"Collecte BOAMP interdite par la porte opérateur : {signal_id}")
@@ -96,10 +98,11 @@ def main() -> int:
             raise ValueError("Plan client invalide : signal sans id ou clé.")
         target = args.output_root / item["key"]
         target.mkdir(parents=True, exist_ok=True)
+        research_only = item.get("client_scope") == "RESEARCH_ONLY"
         if args.branch == "press":
-            _press(args.core, item["id"], target, args.model, args.research_profile)
+            _press(args.core, item["id"], target, args.model, args.research_profile, research_only)
         else:
-            _demand_market(args.core, item["id"], target, args.model)
+            _demand_market(args.core, item["id"], target, args.model, research_only)
     return 0
 
 

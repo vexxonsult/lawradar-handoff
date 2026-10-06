@@ -36,3 +36,13 @@ class PrepareOpportunityFactsTests(unittest.TestCase):
         }
         with self.assertRaises(ValueError):
             extract(dossier, "signal:current")
+
+    def test_allows_discarded_signal_only_when_research_route_is_explicit(self):
+        signal_id = "signal:research"
+        dossier = {
+            "schema": "lawradar-universal-signal-v1",
+            "signals": [{"id": signal_id, "radar": {"status": "DISCARDED"}, "opportunity_facts": facts(signal_id)}],
+        }
+        with self.assertRaises(ValueError):
+            extract(dossier, signal_id)
+        self.assertEqual(extract(dossier, signal_id, allow_research_candidate=True)["signal_id"], signal_id)

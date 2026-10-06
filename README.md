@@ -96,6 +96,19 @@ Un marqueur compact `evidence/client-orchestration-latest.json` empêche les
 créneaux 18:17 et 19:17 de répéter une consolidation déjà réussie ; ils restent
 disponibles comme reprises si le créneau précédent a échoué.
 
+### Recherche bornée des signaux à potentiel
+
+Un signal `DISCARDED` ne devient jamais une opportunité ni une note
+Entrepreneur par défaut. La politique versionnée
+`config/research-candidate-policy-v1.json` peut toutefois ouvrir une seule
+passe **Presse + Demande/Marché** lorsqu'un titre factuel français porte des
+indices économiques déterministes (obligation, CEE, équipement,
+assainissement, contrôle, etc.). Les textes de routine listés sont exclus, les
+doublons ConsultDD sont fusionnés et le plafond est de trois signaux distincts
+par livraison. Cette route porte `client_scope: RESEARCH_ONLY` : elle ne peut
+jamais appeler l'Entrepreneur. Seul un dossier ultérieurement validé avec
+`PASS` peut ouvrir cette dernière étape.
+
 ## Recyclage déterministe des opportunités bloquées
 
 `scripts/utils/recycle_backlog.py` conserve séparément les signaux retenus dont
