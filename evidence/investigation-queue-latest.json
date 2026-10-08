@@ -1,10 +1,10 @@
 {
   "schema": "lawradar-investigation-queue-v1",
-  "generated_at_utc": "2026-10-08T20:43:11.109602+00:00",
+  "generated_at_utc": "2026-10-08T21:22:09.484827+00:00",
   "source_run": {
     "id": "investigation-replay:ee021514391b5f8c",
     "kind": "ARCHIVED_FACTS_REPLAY",
-    "generated_at_utc": "2026-10-08T20:41:25.583839+00:00",
+    "generated_at_utc": "2026-10-08T21:20:30.516749+00:00",
     "purpose": "TECHNICAL_ENRICHMENT_RETRY",
     "archive_provenance": {
       "signal:bb6efcb175fccfdb": "evidence/universal-signals/v2/2026/10/run-37784889552-attempt-1.json"
@@ -20,12 +20,12 @@
       "signal_id": "signal:bb6efcb175fccfdb",
       "source_id": "jorf:JORFTEXT000054960988",
       "title": "Arrêté du 17 septembre 2026 portant modification d'un programme CEE",
-      "status": "AUTONOMOUS_RESEARCH_PENDING",
+      "status": "AUTO_RESEARCH_EXHAUSTED",
       "opened_at_utc": "2026-10-08T13:37:35.466385+00:00",
-      "updated_at_utc": "2026-10-08T20:43:11.109602+00:00",
+      "updated_at_utc": "2026-10-08T21:22:09.484827+00:00",
       "automatic_attempts": 2,
       "max_automatic_attempts": 2,
-      "autonomous_research_attempts": 0,
+      "autonomous_research_attempts": 1,
       "max_autonomous_research_attempts": 1,
       "qualification_contract_version": "tool-envelope-v3-structured-tool",
       "next_retry_not_before_utc": null,
@@ -49,8 +49,7 @@
           "status": "OPEN",
           "question": "Requalifier exclusivement les candidats Presse déjà collectés ; aucune nouvelle conclusion médiatique n'est admise sans URL tracée.",
           "evidence": [
-            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement.",
-            "Collecte Presse partiellement limitée par un rate-limit temporaire (HTTP 429) ; retry différé requis."
+            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement."
           ],
           "automatic_retry": true
         },
@@ -71,8 +70,8 @@
   ],
   "summary": {
     "open_count": 0,
-    "autonomous_research_pending_count": 1,
-    "auto_research_exhausted_count": 0,
+    "autonomous_research_pending_count": 0,
+    "auto_research_exhausted_count": 1,
     "automatic_retry_count": 0
   }
 }
