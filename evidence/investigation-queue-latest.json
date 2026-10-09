@@ -1,14 +1,12 @@
 {
   "schema": "lawradar-investigation-queue-v1",
-  "generated_at_utc": "2026-10-08T21:22:09.484827+00:00",
+  "generated_at_utc": "2026-10-09T13:26:55.521099+00:00",
   "source_run": {
-    "id": "investigation-replay:ee021514391b5f8c",
-    "kind": "ARCHIVED_FACTS_REPLAY",
-    "generated_at_utc": "2026-10-08T21:20:30.516749+00:00",
-    "purpose": "TECHNICAL_ENRICHMENT_RETRY",
-    "archive_provenance": {
-      "signal:bb6efcb175fccfdb": "evidence/universal-signals/v2/2026/10/run-37784889552-attempt-1.json"
-    }
+    "id": "37935864396",
+    "attempt": "1",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/37935864396",
+    "commit": "6351bb74b307f3b378d29d03fc24e3054f61dc6d",
+    "report_date": "2026-10-09"
   },
   "policy": {
     "max_automatic_attempts": 2,
@@ -17,27 +15,27 @@
   },
   "items": [
     {
-      "signal_id": "signal:bb6efcb175fccfdb",
-      "source_id": "jorf:JORFTEXT000054960988",
-      "title": "Arrêté du 17 septembre 2026 portant modification d'un programme CEE",
-      "status": "AUTO_RESEARCH_EXHAUSTED",
-      "opened_at_utc": "2026-10-08T13:37:35.466385+00:00",
-      "updated_at_utc": "2026-10-08T21:22:09.484827+00:00",
-      "automatic_attempts": 2,
+      "signal_id": "signal:47ada7f4bfdcb394",
+      "source_id": "jorf:JORFTEXT000054965211",
+      "title": "Décret relatif à l'obligation de restitution de certificats de production de biogaz",
+      "status": "WAITING_FOR_EVIDENCE",
+      "opened_at_utc": "2026-10-09T13:26:55.521099+00:00",
+      "updated_at_utc": "2026-10-09T13:26:55.521099+00:00",
+      "automatic_attempts": 1,
       "max_automatic_attempts": 2,
-      "autonomous_research_attempts": 1,
+      "autonomous_research_attempts": 0,
       "max_autonomous_research_attempts": 1,
       "qualification_contract_version": "tool-envelope-v3-structured-tool",
-      "next_retry_not_before_utc": null,
+      "next_retry_not_before_utc": "2026-10-09T19:26:55.521099+00:00",
       "questions": [
         {
           "id": "OPERATIONAL_FEASIBILITY",
           "kind": "NEW_OFFICIAL_OR_PARTNER_EVIDENCE",
           "status": "OPEN",
-          "question": "Recherche autonome à mener sur l'autorisation, l'agrément ou la voie de sous-traitance applicable, les dépendances opérationnelles nécessaires, le capital de démarrage nécessaire, le délai réaliste de mise sur le marché avant toute décision commerciale.",
+          "question": "Recherche autonome à mener sur l'autorisation, l'agrément ou la voie de sous-traitance applicable, le capital de démarrage nécessaire, le délai réaliste de mise sur le marché avant toute décision commerciale.",
           "evidence": [
             "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : statut d'obligé ou éligible CEE.",
+            "Statut de l'autorisation inconnu : certificats de production de biogaz.",
             "Capital de départ inconnu.",
             "Délai de mise sur le marché inconnu."
           ],
@@ -49,9 +47,105 @@
           "status": "OPEN",
           "question": "Requalifier exclusivement les candidats Presse déjà collectés ; aucune nouvelle conclusion médiatique n'est admise sans URL tracée.",
           "evidence": [
+            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement.",
+            "Collecte Presse partiellement limitée par un rate-limit temporaire (HTTP 429) ; retry différé requis."
+          ],
+          "automatic_retry": true
+        },
+        {
+          "id": "MARKET_RELEVANCE",
+          "kind": "TECHNICAL_RETRY",
+          "status": "OPEN",
+          "question": "Déterminer si un avis BOAMP cite le texte, son obligation ou un besoin directement lié ; un simple mot-sectoriel ne démontre pas une demande causée par le texte.",
+          "evidence": [
+            "Réponse Claude non exploitable : Contrat spécialisé invalide : COMPLETED exige des observations Marché pertinentes."
+          ],
+          "automatic_retry": true
+        }
+      ],
+      "readiness_status": "READY_FOR_PILOTS",
+      "final_constraint": "INVESTIGATE"
+    },
+    {
+      "signal_id": "signal:12c58980d4bcb0ec",
+      "source_id": "jorf:JORFTEXT000054965237",
+      "title": "Décret relatif à la suspension des labels, signes de qualité et agrément L.232-3 pour fraudes aux aides à la rénovation énergétique",
+      "status": "WAITING_FOR_EVIDENCE",
+      "opened_at_utc": "2026-10-09T13:26:55.521099+00:00",
+      "updated_at_utc": "2026-10-09T13:26:55.521099+00:00",
+      "automatic_attempts": 1,
+      "max_automatic_attempts": 2,
+      "autonomous_research_attempts": 0,
+      "max_autonomous_research_attempts": 1,
+      "qualification_contract_version": "tool-envelope-v3-structured-tool",
+      "next_retry_not_before_utc": "2026-10-09T19:26:55.521099+00:00",
+      "questions": [
+        {
+          "id": "OPERATIONAL_FEASIBILITY",
+          "kind": "NEW_OFFICIAL_OR_PARTNER_EVIDENCE",
+          "status": "OPEN",
+          "question": "Recherche autonome à mener sur l'autorisation, l'agrément ou la voie de sous-traitance applicable, le capital de démarrage nécessaire, le délai réaliste de mise sur le marché avant toute décision commerciale.",
+          "evidence": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : agrément L.232-3 code de l'énergie.",
+            "Statut de l'autorisation inconnu : label ou signe de qualité RGE.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ],
+          "automatic_retry": false
+        },
+        {
+          "id": "PRESS_QUALIFICATION",
+          "kind": "TECHNICAL_RETRY",
+          "status": "OPEN",
+          "question": "Requalifier exclusivement les candidats Presse déjà collectés ; aucune nouvelle conclusion médiatique n'est admise sans URL tracée.",
+          "evidence": [
+            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement.",
+            "Collecte Presse partiellement limitée par un rate-limit temporaire (HTTP 429) ; retry différé requis."
+          ],
+          "automatic_retry": true
+        },
+        {
+          "id": "MARKET_RELEVANCE",
+          "kind": "TECHNICAL_RETRY",
+          "status": "OPEN",
+          "question": "Déterminer si un avis BOAMP cite le texte, son obligation ou un besoin directement lié ; un simple mot-sectoriel ne démontre pas une demande causée par le texte.",
+          "evidence": [
             "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement."
           ],
           "automatic_retry": true
+        }
+      ],
+      "readiness_status": "READY_FOR_PILOTS",
+      "final_constraint": "INVESTIGATE"
+    },
+    {
+      "signal_id": "signal:80cd1230c04d7629",
+      "source_id": "jorf:JORFTEXT000054965430",
+      "title": "Arrêté du 29 septembre 2026 relatif aux modalités d'édition, de diffusion, de délivrance et de gestion des passeports pour les chiens, chats et furets",
+      "status": "WAITING_FOR_EVIDENCE",
+      "opened_at_utc": "2026-10-09T13:26:55.521099+00:00",
+      "updated_at_utc": "2026-10-09T13:26:55.521099+00:00",
+      "automatic_attempts": 1,
+      "max_automatic_attempts": 2,
+      "autonomous_research_attempts": 0,
+      "max_autonomous_research_attempts": 1,
+      "qualification_contract_version": "tool-envelope-v3-structured-tool",
+      "next_retry_not_before_utc": "2026-10-09T19:26:55.521099+00:00",
+      "questions": [
+        {
+          "id": "OPERATIONAL_FEASIBILITY",
+          "kind": "NEW_OFFICIAL_OR_PARTNER_EVIDENCE",
+          "status": "OPEN",
+          "question": "Recherche autonome à mener sur l'autorisation, l'agrément ou la voie de sous-traitance applicable, les dépendances opérationnelles nécessaires, le capital de démarrage nécessaire, le délai réaliste de mise sur le marché avant toute décision commerciale.",
+          "evidence": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : agrément du matériel d'identification.",
+            "Dépendance non vérifiée : fichier national d'identification.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ],
+          "automatic_retry": false
         },
         {
           "id": "MARKET_RELEVANCE",
@@ -69,9 +163,9 @@
     }
   ],
   "summary": {
-    "open_count": 0,
+    "open_count": 3,
     "autonomous_research_pending_count": 0,
-    "auto_research_exhausted_count": 1,
-    "automatic_retry_count": 0
+    "auto_research_exhausted_count": 0,
+    "automatic_retry_count": 3
   }
 }
