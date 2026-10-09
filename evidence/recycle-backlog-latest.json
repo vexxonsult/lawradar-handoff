@@ -340,6 +340,376 @@
       ]
     },
     {
+      "signal_id": "signal:12c58980d4bcb0ec",
+      "source_id": "jorf:JORFTEXT000054965237",
+      "captured_at_utc": "2026-10-09T13:18:33.781449+00:00",
+      "facts_sha256": "34277a579992bb9846b00d825c434320346e64f7300daa74a982c61060cd20a0",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:12c58980d4bcb0ec",
+        "evaluated_at_utc": "2026-10-09T13:18:33.781449+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : agrément L.232-3 code de l'énergie.",
+            "Statut de l'autorisation inconnu : label ou signe de qualité RGE.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:12c58980d4bcb0ec",
+        "evaluated_at_utc": "2026-10-09T13:18:33.781449+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : agrément L.232-3 code de l'énergie.",
+            "Statut de l'autorisation inconnu : label ou signe de qualité RGE.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:12c58980d4bcb0ec",
+        "identity": {
+          "stable_source_id": "source:82baad9f4b09c875",
+          "evidence_version": "sha256:51ea7cbdd78927bf221eb6c9e220d9b74d2ed63587ea063443ec47cc36680a24"
+        },
+        "source": {
+          "source_id": "jorf:JORFTEXT000054965237",
+          "source_kind": "JORF",
+          "change": "NEW",
+          "evidence": {
+            "text_id": "JORFTEXT000054965237",
+            "nature": "DECRET",
+            "nor": "ECOC2615099D",
+            "title": "Décret n° 2026-935 du 7 octobre 2026 relatif à la suspension des labels et signes de qualité délivrés à une entreprise effectuant des travaux d'économies d'énergie ou de production d'énergie renouvelable et de l'agrément prévu à l'article L. 232-3 du code de l'énergie",
+            "publisher": "DILA / Journal officiel de la République française",
+            "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054965237",
+            "publication_date": "2026-10-09",
+            "journal_number": "0236",
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [],
+            "detail_status": null,
+            "official": {
+              "title": null,
+              "period": null
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": "AVAILABLE",
+              "text_sha256": "cabaa166d6ff8076aae1c70ef235dbdc4f2374bfef1eb0319bc5e046d11d3d8e",
+              "excerpt": "Publics concernés : Agence nationale de l'habitat, autorité administrative chargée de la concurrence, de la consommation et de la répression des fraudes, personnes physiques ou morales détentrices de l'agrément mentionné à l'article L. 232-3 du code de l'énergie ou d'un label ou signe de qualité obligatoire pour les travaux de rénovation énergétique subventionnés, organismes délivrant les labels ou signes de qualité mentionnés par le décret n° 2014-812 du 16 juillet 2014, préfets de département et de région, départements et groupements ayant conclu une convention de délégation mentionnée à l'article L. 321-1-1 du code de la construction et de l'habitation, guichets concourant au service public de la performance énergétique de l'habitat mentionnés à l'article L. 232-2 du code de l'énergie.\nObjet : le décret précise les modalités selon lesquelles l'autorité administrative chargée de la concurrence, de la consommation et de la répression des fraudes peut suspendre, à titre conservatoire, pour une durée de six mois renouvelable une fois, d'une part, le label ou le signe de qualité délivré à une entreprise et auquel est subordonné l'octroi d'aides financières pour les travaux d'installation ou de pose d'équipements ou pour les travaux portant sur des logements en vue de la réalisation d'économies d'énergie ou de la production d'énergie renouvelable, et d'autre part, l'agrément prévu à l'article L. 232-3 du code de l'énergie. Le décret précise également les\n[… extrait primaire compacté …]\nL. 232-3, R. 221-14 à R. 221-25 et R. 232-6 ;\nVu le décret n° 2026-181 du 12 mars 2026 désignant les autorités compétentes pour prendre les mesures consécutives à un contrôle prévues à l'article L. 521-28 du code de la consommation et à l'article L. 321-1-5 du code de la construction et de l'habitation ;\nVu l'avis du Conseil supérieur de la construction et de l'efficacité énergétique en date du 16 juin 2026 ;\nVu l'avis du Conseil national de l'habitat en date du 2 juillet 2026,\nDécrète :",
+              "excerpt_truncated": true,
+              "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261009-003010.tar.gz",
+              "archive_sha256": "587cbb6d4ccac54e20c5d4a4f5da8c717c1acf4f253940daa6fd4a300277f16c"
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Texte publié modifiant un dispositif de contrôle/sanction (suspension de labels, signes de qualité et agrément RGE) dans le périmètre de la rénovation énergétique subventionnée ; périmètre professionnel identifiable (entreprises RGE) justifiant un service B2B de veille documentée."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 14,
+          "triggers": [
+            {
+              "kind": "LEGAL_OBLIGATION",
+              "score": 3,
+              "terms": [
+                "obligatoire"
+              ]
+            },
+            {
+              "kind": "SANCTION_OR_CONTROL",
+              "score": 3,
+              "terms": [
+                "controle"
+              ]
+            },
+            {
+              "kind": "FUNDING_OR_INCENTIVE",
+              "score": 3,
+              "terms": [
+                "subvention",
+                "aide "
+              ]
+            },
+            {
+              "kind": "ELIGIBILITY_OR_CERTIFICATION",
+              "score": 2,
+              "terms": [
+                "agrement"
+              ]
+            },
+            {
+              "kind": "TECHNICAL_TRANSITION",
+              "score": 2,
+              "terms": [
+                "efficacite energetique",
+                "economies d'energie"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [
+            "entreprise"
+          ],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        },
+        "reading": {
+          "consequence": "Le décret organise la suspension conservatoire, pour six mois renouvelable une fois, du label/signe de qualité ou de l'agrément d'une entreprise réalisant des travaux de rénovation énergétique ou de production d'énergie renouvelable, en cas de contrôle défavorable, tout en préservant l'aide financière déjà octroyée au ménage bénéficiaire.",
+          "affected_actors": [
+            "entreprises labellisées RGE",
+            "titulaires de l'agrément L.232-3",
+            "organismes délivrant les labels",
+            "DGCCRF",
+            "ANAH",
+            "préfets",
+            "ménages bénéficiaires d'aides"
+          ],
+          "beneficiaries": [
+            "ménages ayant déjà obtenu l'aide financière"
+          ],
+          "constrained_parties": [
+            "entreprises de travaux de rénovation énergétique sanctionnées",
+            "organismes certificateurs"
+          ],
+          "potential_service_partners": [],
+          "unknowns": [
+            "Liste précise des entreprises concernées par une suspension",
+            "Modalités exactes de contrôle déclenchant la suspension",
+            "Impact sur les devis ou chantiers en cours"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "jorf:JORFTEXT000054965237"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:12c58980d4bcb0ec",
+          "title": "Décret relatif à la suspension des labels, signes de qualité et agrément L.232-3 pour fraudes aux aides à la rénovation énergétique",
+          "keywords": [
+            "agrément RGE",
+            "label qualité",
+            "suspension",
+            "efficacité énergétique",
+            "fraude aux aides",
+            "rénovation énergétique"
+          ],
+          "affected_scope": [
+            "entreprises détentrices d'un label ou signe de qualité RGE",
+            "titulaires de l'agrément L.232-3 du code de l'énergie",
+            "organismes délivrant les labels",
+            "ANAH",
+            "préfets",
+            "guichets service public de la performance énergétique"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "PUBLISHED",
+            "proof_status": "VERIFIED",
+            "effective_date": "2026-10-10",
+            "affected_scope": [
+              "entreprises RGE",
+              "agrément L.232-3 code de l'énergie"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "agrément L.232-3 code de l'énergie",
+                "status": "UNKNOWN"
+              },
+              {
+                "id": "label ou signe de qualité RGE",
+                "status": "UNKNOWN"
+              }
+            ],
+            "dependencies": [],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "MISSING"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:12c58980d4bcb0ec",
+          "evaluated_at_utc": "2026-10-09T13:18:33.781449+00:00",
+          "compliance": {
+            "status": "PASS",
+            "reasons": [
+              "Texte vérifié, dans le périmètre et actionnable."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Statut de l'autorisation inconnu : agrément L.232-3 code de l'énergie.",
+              "Statut de l'autorisation inconnu : label ou signe de qualité RGE.",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:12c58980d4bcb0ec",
+        "title": "Décret relatif à la suspension des labels, signes de qualité et agrément L.232-3 pour fraudes aux aides à la rénovation énergétique",
+        "keywords": [
+          "agrément RGE",
+          "label qualité",
+          "suspension",
+          "efficacité énergétique",
+          "fraude aux aides",
+          "rénovation énergétique"
+        ],
+        "affected_scope": [
+          "entreprises détentrices d'un label ou signe de qualité RGE",
+          "titulaires de l'agrément L.232-3 du code de l'énergie",
+          "organismes délivrant les labels",
+          "ANAH",
+          "préfets",
+          "guichets service public de la performance énergétique"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-10",
+          "affected_scope": [
+            "entreprises RGE",
+            "agrément L.232-3 code de l'énergie"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "agrément L.232-3 code de l'énergie",
+              "status": "UNKNOWN"
+            },
+            {
+              "id": "label ou signe de qualité RGE",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-10-09T13:18:33.781449+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
       "signal_id": "signal:1af7945f2bade8b0",
       "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-la-creation-de-la-fiche-d-a3399.html",
       "captured_at_utc": "2026-09-12T17:45:19.645448+00:00",
@@ -974,6 +1344,327 @@
           "at_utc": "2026-09-12T17:45:19.645448+00:00",
           "trigger": "CAPTURE",
           "status": "DISCARD",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
+      "signal_id": "signal:47ada7f4bfdcb394",
+      "source_id": "jorf:JORFTEXT000054965211",
+      "captured_at_utc": "2026-10-09T13:18:33.781449+00:00",
+      "facts_sha256": "ad03cb77a7c6b127f46166b296f132315d8ca9ef04f436407f66f81bcf18e823",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:47ada7f4bfdcb394",
+        "evaluated_at_utc": "2026-10-09T13:18:33.781449+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : certificats de production de biogaz.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:47ada7f4bfdcb394",
+        "evaluated_at_utc": "2026-10-09T13:18:33.781449+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : certificats de production de biogaz.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:47ada7f4bfdcb394",
+        "identity": {
+          "stable_source_id": "source:e93e4fdda3513e82",
+          "evidence_version": "sha256:66bf269f5497f684abea08c2f8cef16ed680700546504f44954d729ac69f880b"
+        },
+        "source": {
+          "source_id": "jorf:JORFTEXT000054965211",
+          "source_kind": "JORF",
+          "change": "NEW",
+          "evidence": {
+            "text_id": "JORFTEXT000054965211",
+            "nature": "DECRET",
+            "nor": "ECOR2618466D",
+            "title": "Décret n° 2026-933 du 30 septembre 2026 relatif à l'obligation de restitution de certificats de production de biogaz",
+            "publisher": "DILA / Journal officiel de la République française",
+            "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054965211",
+            "publication_date": "2026-10-09",
+            "journal_number": "0236",
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [],
+            "detail_status": null,
+            "official": {
+              "title": null,
+              "period": null
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": "AVAILABLE",
+              "text_sha256": "58eccc4dadb2163cde27b536d049ed86d54597f16c5a8803f2934bc8a849edea",
+              "excerpt": "Publics concernés : producteurs de biogaz, acheteurs de biogaz, fournisseurs de gaz naturel, consommateurs de gaz naturel.\nObjet : le décret vise principalement à prolonger la trajectoire d'obligation de restitution de certificats de production de biogaz jusqu'en 2044, en prolongeant d'une part la première période d'obligation du dispositif jusqu'à fin 2029, tout en ajustant les coefficients de restitution applicables en 2027 et 2028, et en instaurant d'autre part cinq nouvelles périodes triennales d'obligation ; le texte étend par ailleurs le champ des installations de production pouvant bénéficier du dispositif en ouvrant celui-ci aux nouvelles filières de production de biométhane.\nEntrée en vigueur : le texte entre en vigueur le lendemain de sa publication au Journal officiel de la République française.\nApplication : le décret est pris pour l'application de l'article L. 446-42 du code de l'énergie.\nLe Premier ministre,\nSur le rapport du ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique,\nVu le code de l'énergie, notamment son article L. 446-42 ;\nVu l'avis du Conseil supérieur de l'énergie en date du 23 juillet 2026 ;\nVu l'avis de la Commission de régulation de l'énergie en date du 17 septembre 2026 ;\nVu les observations formulées lors de la consultation du public réalisée du 25 juin au 17 juillet 2026, en application de l'article L. 123-19-1 du code de l'environnement ;\nLe Conseil d'Etat (section des travaux publics) entendu,\nDécrète :",
+              "excerpt_truncated": false,
+              "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261009-003010.tar.gz",
+              "archive_sha256": "587cbb6d4ccac54e20c5d4a4f5da8c717c1acf4f253940daa6fd4a300277f16c"
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Décret publié modifiant l'obligation de restitution de certificats de production de biogaz, périmètre identifiable (producteurs/fournisseurs de gaz), classé efficacité énergétique avec service B2B possible de veille/qualification."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 4,
+          "triggers": [
+            {
+              "kind": "LEGAL_OBLIGATION",
+              "score": 3,
+              "terms": [
+                "obligation"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [
+            "fournisseur"
+          ],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        },
+        "reading": {
+          "consequence": "Le décret prolonge jusqu'en 2044 la trajectoire d'obligation de restitution de certificats de production de biogaz, ajuste des coefficients pour 2027-2028 et crée cinq nouvelles périodes triennales, tout en ouvrant le dispositif aux nouvelles filières de biométhane.",
+          "affected_actors": [
+            "producteurs de biogaz",
+            "acheteurs de biogaz",
+            "fournisseurs de gaz naturel",
+            "consommateurs de gaz naturel"
+          ],
+          "beneficiaries": [],
+          "constrained_parties": [
+            "fournisseurs de gaz naturel"
+          ],
+          "potential_service_partners": [],
+          "unknowns": [
+            "montant exact des coefficients de restitution",
+            "modalités précises d'application pour les nouvelles filières de biométhane",
+            "impact financier concret pour les fournisseurs"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "jorf:JORFTEXT000054965211"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:47ada7f4bfdcb394",
+          "title": "Décret relatif à l'obligation de restitution de certificats de production de biogaz",
+          "keywords": [
+            "biogaz",
+            "biométhane",
+            "certificats",
+            "obligation",
+            "gaz naturel"
+          ],
+          "affected_scope": [
+            "producteurs de biogaz",
+            "acheteurs de biogaz",
+            "fournisseurs de gaz naturel",
+            "consommateurs de gaz naturel"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "PUBLISHED",
+            "proof_status": "VERIFIED",
+            "effective_date": "2026-10-10",
+            "affected_scope": [
+              "producteurs de biogaz",
+              "acheteurs de biogaz",
+              "fournisseurs de gaz naturel",
+              "consommateurs de gaz naturel"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "certificats de production de biogaz",
+                "status": "UNKNOWN"
+              }
+            ],
+            "dependencies": [],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "MISSING"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "MISSING",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:47ada7f4bfdcb394",
+          "evaluated_at_utc": "2026-10-09T13:18:33.781449+00:00",
+          "compliance": {
+            "status": "PASS",
+            "reasons": [
+              "Texte vérifié, dans le périmètre et actionnable."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Statut de l'autorisation inconnu : certificats de production de biogaz.",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:47ada7f4bfdcb394",
+        "title": "Décret relatif à l'obligation de restitution de certificats de production de biogaz",
+        "keywords": [
+          "biogaz",
+          "biométhane",
+          "certificats",
+          "obligation",
+          "gaz naturel"
+        ],
+        "affected_scope": [
+          "producteurs de biogaz",
+          "acheteurs de biogaz",
+          "fournisseurs de gaz naturel",
+          "consommateurs de gaz naturel"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-10",
+          "affected_scope": [
+            "producteurs de biogaz",
+            "acheteurs de biogaz",
+            "fournisseurs de gaz naturel",
+            "consommateurs de gaz naturel"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "certificats de production de biogaz",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-10-09T13:18:33.781449+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
           "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
           "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
         }
@@ -2598,6 +3289,334 @@
       "attempts": [
         {
           "at_utc": "2026-10-05T14:43:38.143052+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
+      "signal_id": "signal:80cd1230c04d7629",
+      "source_id": "jorf:JORFTEXT000054965430",
+      "captured_at_utc": "2026-10-09T13:18:33.781449+00:00",
+      "facts_sha256": "fe2db74d07c9bc1bd7482c7b68027ca0bade2bdbe5f2d91040e639a4ce947bd7",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:80cd1230c04d7629",
+        "evaluated_at_utc": "2026-10-09T13:18:33.781449+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : agrément du matériel d'identification.",
+            "Dépendance non vérifiée : fichier national d'identification.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:80cd1230c04d7629",
+        "evaluated_at_utc": "2026-10-09T13:18:33.781449+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : agrément du matériel d'identification.",
+            "Dépendance non vérifiée : fichier national d'identification.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:80cd1230c04d7629",
+        "identity": {
+          "stable_source_id": "source:55d9737e56846f50",
+          "evidence_version": "sha256:f9537fb83e45370feaa09491c9f41c6b62c233c90584a3b5cc47c6f1b02728da"
+        },
+        "source": {
+          "source_id": "jorf:JORFTEXT000054965430",
+          "source_kind": "JORF",
+          "change": "NEW",
+          "evidence": {
+            "text_id": "JORFTEXT000054965430",
+            "nature": "ARRETE",
+            "nor": "AGRG2624435A",
+            "title": "Arrêté du 29 septembre 2026 relatif aux modalités d'édition, de diffusion, de délivrance et de gestion des passeports pour les chiens, chats et furets",
+            "publisher": "DILA / Journal officiel de la République française",
+            "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054965430",
+            "publication_date": "2026-10-09",
+            "journal_number": "0236",
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [],
+            "detail_status": null,
+            "official": {
+              "title": null,
+              "period": null
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": "AVAILABLE",
+              "text_sha256": "d05236f32379f2ba8dbc0bb7983790797e6e1546c9dadd4b7d253a181a377c03",
+              "excerpt": "Le ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu le règlement (UE) 2016/429 du Parlement européen et du Conseil du 9 mars 2016 relatif aux maladies animales transmissibles et modifiant et abrogeant certains actes dans le domaine de la santé animale ;\nVu le règlement délégué (UE) 2019/2035 de la Commission du 28 juin 2019 complétant le règlement (UE) 2016/429 du Parlement européen et du Conseil en ce qui concerne les règles relatives aux établissements détenant des animaux terrestres et aux couvoirs ainsi qu'à la traçabilité de certains animaux terrestres détenus et des œufs à couver ;\nVu le règlement délégué (UE) 2026/131 de la Commission du 20 janvier 2026 complétant le règlement (UE) 2016/429 du Parlement européen et du Conseil en ce qui concerne les conditions de police sanitaire applicables aux mouvements non commerciaux d'animaux de compagnie ;\nVu le règlement délégué (UE) 2026/132 de la Commission du 20 janvier 2026 modifiant le règlement délégué (UE) 2019/2035 en ce qui concerne les dispositions relatives à la traçabilité des chiens, des chats et des furets détenus ;\nVu le règlement d'exécution (UE) 2026/705 de la Commission du 20 mars 2026 établissant des modèles de documents d'identification et de déclarations relatifs aux mouvements non commerciaux d'animaux de compagnie ;\nVu le code rural et de la pêche maritime, notamment son article L. 212-10 ;\nVu l'arrêté du 9 novembre 2023 relatif à l'identification des chiens, chats et furets, l'agrément de leur matériel d'identification et fixant les modalités de mise en œuvre du fichier national d'identification des chiens, chats et furets,\nArrête :",
+              "excerpt_truncated": false,
+              "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261009-003010.tar.gz",
+              "archive_sha256": "587cbb6d4ccac54e20c5d4a4f5da8c717c1acf4f253940daa6fd4a300277f16c"
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Arrêté publié fixant les modalités d'édition, diffusion, délivrance et gestion des passeports pour chiens, chats et furets, en lien avec des obligations réglementaires UE de traçabilité et d'identification; périmètre professionnel identifiable (vétérinaires, organismes gestionnaires) mais aucun flux financier ni marché n'est démontré par le texte."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 4,
+          "triggers": [
+            {
+              "kind": "ELIGIBILITY_OR_CERTIFICATION",
+              "score": 2,
+              "terms": [
+                "agrement"
+              ]
+            },
+            {
+              "kind": "REPORTING_OR_TRACEABILITY",
+              "score": 2,
+              "terms": [
+                "declaration",
+                "tracabilite"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        },
+        "reading": {
+          "consequence": "Le texte encadre les modalités techniques et administratives d'édition et de gestion des passeports pour animaux de compagnie (chiens, chats, furets), en conformité avec de nouveaux règlements européens relatifs à la traçabilité et aux mouvements non commerciaux d'animaux.",
+          "affected_actors": [
+            "vétérinaires habilités",
+            "détenteurs d'animaux",
+            "administration agricole française"
+          ],
+          "beneficiaries": [],
+          "constrained_parties": [
+            "vétérinaires délivrant les passeports",
+            "gestionnaires du fichier national d'identification"
+          ],
+          "potential_service_partners": [],
+          "unknowns": [
+            "identité des opérateurs chargés de l'édition des passeports",
+            "modalités précises de délivrance non détaillées dans l'extrait",
+            "éventuels coûts associés pour les détenteurs d'animaux"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "jorf:JORFTEXT000054965430"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:80cd1230c04d7629",
+          "title": "Arrêté du 29 septembre 2026 relatif aux modalités d'édition, de diffusion, de délivrance et de gestion des passeports pour les chiens, chats et furets",
+          "keywords": [
+            "passeport animal",
+            "identification animale",
+            "traçabilité",
+            "chiens chats furets",
+            "vétérinaire",
+            "réglementation UE"
+          ],
+          "affected_scope": [
+            "vétérinaires",
+            "détenteurs d'animaux de compagnie",
+            "organismes gestionnaires du fichier national d'identification"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "PUBLISHED",
+            "proof_status": "VERIFIED",
+            "effective_date": "2026-10-09",
+            "affected_scope": [
+              "vétérinaires",
+              "détenteurs de chiens, chats et furets",
+              "administration agricole"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "agrément du matériel d'identification",
+                "status": "UNKNOWN"
+              }
+            ],
+            "dependencies": [
+              {
+                "id": "fichier national d'identification",
+                "status": "UNKNOWN"
+              }
+            ],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "MISSING"
+          },
+          "operator_access": {
+            "sector": "NOT_CLASSIFIED",
+            "direct_offer_status": "UNKNOWN",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "MISSING",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:80cd1230c04d7629",
+          "evaluated_at_utc": "2026-10-09T13:18:33.781449+00:00",
+          "compliance": {
+            "status": "PASS",
+            "reasons": [
+              "Texte vérifié, dans le périmètre et actionnable."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Statut de l'autorisation inconnu : agrément du matériel d'identification.",
+              "Dépendance non vérifiée : fichier national d'identification.",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "NOT_APPLICABLE",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:80cd1230c04d7629",
+        "title": "Arrêté du 29 septembre 2026 relatif aux modalités d'édition, de diffusion, de délivrance et de gestion des passeports pour les chiens, chats et furets",
+        "keywords": [
+          "passeport animal",
+          "identification animale",
+          "traçabilité",
+          "chiens chats furets",
+          "vétérinaire",
+          "réglementation UE"
+        ],
+        "affected_scope": [
+          "vétérinaires",
+          "détenteurs d'animaux de compagnie",
+          "organismes gestionnaires du fichier national d'identification"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-09",
+          "affected_scope": [
+            "vétérinaires",
+            "détenteurs de chiens, chats et furets",
+            "administration agricole"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "agrément du matériel d'identification",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "fichier national d'identification",
+              "status": "UNKNOWN"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "UNKNOWN",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-10-09T13:18:33.781449+00:00",
           "trigger": "CAPTURE",
           "status": "INVESTIGATE",
           "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
@@ -5709,7 +6728,7 @@
     }
   ],
   "queue_audit": {
-    "processed_count": 1220,
+    "processed_count": 1281,
     "unrecoverable_queue_entries": [
       {
         "fingerprint": "490853c49376a298cfdbefd3d9015889f24dfb149e616097ae78c39d2661a25b",
@@ -7724,6 +8743,206 @@
       {
         "fingerprint": "decb8277cd33ae85317b6acdb7b2d263b8e0337bd1d3f3bb2cee13bab5defddb",
         "source_id": "jorf:JORFTEXT000054961479",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "6b74a71a7a5dc58ae537e93e1e9fb71e9fcf46fca668727e604bbc0e2f199722",
+        "source_id": "jorf:JORFTEXT000054964979",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "bc13088b1bcdc3897f9f1ebf010ae5d9c4e30d053d352d8603d7a5acff873021",
+        "source_id": "jorf:JORFTEXT000054964983",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "6f04756bb3032f2cdeaf81ffde4b7332f724131d7447bdaacee5a6ecc6d6f3af",
+        "source_id": "jorf:JORFTEXT000054965389",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "749943ad7ff8b2d696e0ecd7e8513d43e1c96ecf81d08b1253f93085742637ad",
+        "source_id": "jorf:JORFTEXT000054965394",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "6d6432479e57f2c4331cb8e88ed15528fc592df771c00a87a5ee73d5b6f0b3d6",
+        "source_id": "jorf:JORFTEXT000054965916",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "facade9a964a1b343097bf7181cd970d50b7e58d0ea2edf9f7e7a8d3eab492f5",
+        "source_id": "jorf:JORFTEXT000054965958",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "ecc5d665864bb3a11993158c09f123d1adc97f53017aadd2a447d15c66477a5f",
+        "source_id": "jorf:JORFTEXT000054966038",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "132467fa9c1959e55bf482416aacba34c5c7d811033be7eb166e386348b82a2c",
+        "source_id": "jorf:JORFTEXT000054966049",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "270b4d6f938001b326921e9fa31737496ab773e0dac7564449513ac6ee955cd0",
+        "source_id": "jorf:JORFTEXT000054966081",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "ab7011704ccc25a3ef76d44735586483a197a270f2b8513a9d991d19e9644305",
+        "source_id": "jorf:JORFTEXT000054966086",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "e1e2fe6e69766615094fb16fe3e6bc2f09e85e26d4420093061e97d798b630ce",
+        "source_id": "jorf:JORFTEXT000054966100",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "6d589feffd148214d91e78634c1ed59aa53186c5786121add6826572dd567c5e",
+        "source_id": "jorf:JORFTEXT000054966114",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "95d859a3f69a7abce07e80ef70d41591036d80b5ac2d1372a9e433a5f19cf52c",
+        "source_id": "jorf:JORFTEXT000054966120",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "3cedec14af15cbb229989f214c6abe8e02e032da3edf3d305596ddebb60ab75e",
+        "source_id": "jorf:JORFTEXT000054966133",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "330b75443f12c372918b3e669e8903ee28094fd8802d58ea1fc05e7f7ea19a2e",
+        "source_id": "jorf:JORFTEXT000054966153",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "1d15a643c287769d2465091a93a1505ccffd962d13571b7f30c42ec5a548e7ef",
+        "source_id": "jorf:JORFTEXT000054966164",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "acc16dfbd3ccb3973c6bb2416373831211653ed6602485699e7e34dca67dcda3",
+        "source_id": "jorf:JORFTEXT000054966178",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "c4a4ee78b77eda374b5089bb77a5eaf22811154788922d00c12f374bfa763d15",
+        "source_id": "jorf:JORFTEXT000054966209",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "c40412e124e5dff0035a895c391a1831c6ecc531474c2c1390f63e80754e7cef",
+        "source_id": "jorf:JORFTEXT000054966214",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "4d87dd06c4b22ec4d787ad75ccf9b29e4293e9b62178e79946ca2eb682a7629d",
+        "source_id": "jorf:JORFTEXT000054966251",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "671f2bfd9779850011b811ba0f33e77048a6e99ae0a6ee5e1b38856f65e48be4",
+        "source_id": "jorf:JORFTEXT000054966321",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "90a72ea5bfddafa87b36d947de69d3931d6112fe96960a768a5ef4c7d8c8ff4e",
+        "source_id": "jorf:JORFTEXT000054966323",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "66d059f826e84e5e7a21beb55aae9fd5140770f7e025a23a5b73d975e2c1590c",
+        "source_id": "jorf:JORFTEXT000054966325",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "a1d9470d7d1cade86794b6ee5df46b5c62deffe56472ab2fb4da3ed5e0945843",
+        "source_id": "jorf:JORFTEXT000054966327",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "2f4e49c5dba3cb65c52eaa289576400c464666ed070b6d8bc692e166f53beaed",
+        "source_id": "jorf:JORFTEXT000054966331",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "349427310fabc5f025aded4c4406df35e0b3e0eaf9b23a68b600c5d34accf5b9",
+        "source_id": "jorf:JORFTEXT000054966334",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "e5dc24facd29917f3803be754751b3208e1f19e9c2a6c1ef30e8a14cb62a0a13",
+        "source_id": "jorf:JORFTEXT000054966340",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "42a3e05f8d07e28e9125ecf04184fdc86dc736ccbf9833f48f9dab5f958b48df",
+        "source_id": "jorf:JORFTEXT000054966402",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "c0aa41521e49d4e02b40f85957b5d9430a67faa530fc638695396b37dbc9e138",
+        "source_id": "jorf:JORFTEXT000054966426",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "878a1ce7759f64351bc060437ca9a96284d43c4acfa97b5bbe837b54093ab50a",
+        "source_id": "jorf:JORFTEXT000054966435",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "5a61ec884a4cee82ae498f09f72cd22221c8979bd396c0d104bc6dd229b6c548",
+        "source_id": "jorf:JORFTEXT000054966437",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "871f5f68a6080aa7c78415303be76b82392499541fb7548f67c63fa3113ba439",
+        "source_id": "jorf:JORFTEXT000054966439",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "52bb7bacf48b142143acae968e1038aa49532369e324c6ae713723c09933015a",
+        "source_id": "jorf:JORFTEXT000054966441",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "78cec54bc55d058030bba0fd80a91b388275331196e7513e68de28a578079e62",
+        "source_id": "jorf:JORFTEXT000054966443",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "0e287fef7bbf240a77f17c41c2f3e1752e065ce6ecc75cb5252b02d6fa9e46eb",
+        "source_id": "jorf:JORFTEXT000054966445",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "d8341d4d9f6bc0347f4a0c4b0f5f744af13eddd1c97c505214050806910b3178",
+        "source_id": "jorf:JORFTEXT000054966448",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "5cfdef1b986d62c7f9d5205a3dda630ca4bad4651fd83b84a8cd8ea5d73d67b1",
+        "source_id": "jorf:JORFTEXT000054966451",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "37ad961c5b7e055e011be60a08356daa690ec4104d2a6f3dd24f2175ad1173ec",
+        "source_id": "jorf:JORFTEXT000054966454",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "1448214a4e560fb27518a42d60164ab0a91f7e3f3dd9c942b7c383c0acfc4243",
+        "source_id": "jorf:JORFTEXT000054966456",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "9ec3bf175741ad8299ac20b0eda99f9bd6db99e17bfb0aa3dc8756555320450e",
+        "source_id": "jorf:JORFTEXT000054966459",
         "reason": "PRIMARY_TEXT_EMPTY"
       }
     ],
