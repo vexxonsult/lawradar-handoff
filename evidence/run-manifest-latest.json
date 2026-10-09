@@ -1,46 +1,46 @@
 {
   "schema": "lawradar-run-manifest-v1",
   "run": {
-    "id": "37763834670",
+    "id": "37917798664",
     "attempt": "1",
     "kind": "collector",
     "status": "success",
     "workflow": "Collecte primaire DILA JORF",
-    "commit": "ba8a0ba4613c1c2b02deaf576230be83813a6df2",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/37763834670",
-    "created_at_utc": "2026-10-08T10:31:55.481224+00:00",
-    "duration_seconds": 124
+    "commit": "4e9cb5101b37ed5a559f22d4dd6ea3cb9bec8a1a",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/37917798664",
+    "created_at_utc": "2026-10-09T10:30:47.560314+00:00",
+    "duration_seconds": 140
   },
   "inputs": [
     {
       "path": "evidence/delta-latest.json",
       "exists": true,
-      "bytes": 2014,
-      "sha256": "3c33da1a46519d326f41300dfd54678334a7a2e3eadd73ec264acfc146f53ea5"
+      "bytes": 2070,
+      "sha256": "d6d6e824788ea4ccb81f4355b118b12ba76f1fa79e6bebe5820fa625a448f47a"
     },
     {
       "path": "evidence/jorf-summaries-latest.json",
       "exists": true,
-      "bytes": 1850326,
-      "sha256": "afed6aeb043ed0a7ba5a5350d8f0e5afec9c11613bfcd9554a7acf7178bcf02e"
+      "bytes": 1808222,
+      "sha256": "eb99922bffd0e081a7bdbfcf0fea9fd03fb6071a0c6e5cbf6b431644082fed20"
     },
     {
       "path": "evidence/jorf-candidate-excerpts-latest.json",
       "exists": true,
-      "bytes": 1935366,
-      "sha256": "50f88e288008368096587dec3887e7a0a8b6a48b4590c94c2078d5c48fe9b242"
+      "bytes": 2011247,
+      "sha256": "f2e0fbbb8628c06f14674c426263bf88b51fd8d5a82233d7fd368ec4084aa25b"
     },
     {
       "path": "evidence/eurlex-oj-latest.json",
       "exists": true,
       "bytes": 1777,
-      "sha256": "9381d1a2348c0d4603de2e51d6d1543e79273cab40ac185efe436cb8e1f3eba9"
+      "sha256": "ffa88a9f3e1a76891e15d974a3bf566cc612db78d393be792efb9a82c728a42d"
     },
     {
       "path": "evidence/consultdd-latest.json",
       "exists": true,
-      "bytes": 690,
-      "sha256": "030de83aa45f198240e8767e3b196b512e3f47a9874c89b6fab5e60bb7aacc42"
+      "bytes": 17006,
+      "sha256": "cf36f259ee8b203527733a6cee080e3fe52250eb2bf1417908ba6ff993f8e3cc"
     }
   ],
   "outputs": [
@@ -54,7 +54,7 @@
       "path": "evidence/status-latest.json",
       "exists": true,
       "bytes": 964,
-      "sha256": "f38b988179d569557c792cbc9180360bcd50ffad5e6709a630f09862aca6ebd2"
+      "sha256": "01f493f2278f76c703d7b9cc0b585229ef6439e62199331bc5f9c0ec0cbb6b06"
     }
   ],
   "cost_estimate": {
