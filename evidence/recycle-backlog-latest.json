@@ -4937,6 +4937,306 @@
       ]
     },
     {
+      "signal_id": "signal:c3c952abdd58475c",
+      "source_id": "jorf:JORFTEXT000054969432",
+      "captured_at_utc": "2026-10-10T12:33:17.827451+00:00",
+      "facts_sha256": "4cd7cff74053dc290545593732b1bf41460e24c029e2075cda1ba1cd18a37d32",
+      "initial_status": "DISCARD",
+      "latest_status": "DISCARD",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:c3c952abdd58475c",
+        "evaluated_at_utc": "2026-10-10T12:33:17.827451+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "DISCARD",
+          "reasons": [
+            "Autorisation requise absente : titre habilitant à réaliser des travaux forestiers éligibles."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "DISCARD"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:c3c952abdd58475c",
+        "evaluated_at_utc": "2026-10-10T12:33:17.827451+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "DISCARD",
+          "reasons": [
+            "Autorisation requise absente : titre habilitant à réaliser des travaux forestiers éligibles."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "DISCARD"
+      },
+      "signal": {
+        "id": "signal:c3c952abdd58475c",
+        "identity": {
+          "stable_source_id": "source:c97591dd7d471c31",
+          "evidence_version": "sha256:fe3dd766103bf982f927d74fa2e294cef9c51e7dc536c51298121b3008d14235"
+        },
+        "source": {
+          "source_id": "jorf:JORFTEXT000054969432",
+          "source_kind": "JORF",
+          "change": "NEW",
+          "evidence": {
+            "text_id": "JORFTEXT000054969432",
+            "nature": "DECRET",
+            "nor": "TECT2624353D",
+            "title": "Décret n° 2026-937 du 8 octobre 2026 portant application de l'article L. 121-6 du code forestier et instaurant un régime d'aides au renouvellement forestier",
+            "publisher": "DILA / Journal officiel de la République française",
+            "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054969432",
+            "publication_date": "2026-10-10",
+            "journal_number": "0237",
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [],
+            "detail_status": null,
+            "official": {
+              "title": null,
+              "period": null
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": "AVAILABLE",
+              "text_sha256": "e9466a88d94162e7874c0e9423d2db4a5926873ad3f2106b754bb354fdd7252c",
+              "excerpt": "Publics concernés : personnes physiques ou morales, autres que l'Etat, justifiant d'un titre habilitant à réaliser des travaux forestiers éligibles.\nObjet : conditions d'attribution d'aides en faveur du renouvellement forestier.\nEntrée en vigueur : le décret entre en vigueur le lendemain de sa publication au Journal officiel de la République française.\nApplication : le présent décret est adopté au titre du septième alinéa de l'article L. 121-6 du code forestier. Il constitue une mesure d'application des 1° à 4° du même article créés par l'article 59 de la loi n° 2023-580 du 10 juillet 2023 visant à renforcer la prévention et la lutte contre l'intensification et l'extension du risque incendie.\nLe Premier ministre,\nSur le rapport de la ministre de la transition écologique, de la biodiversité et des négociations internationales sur le climat et la nature,\nVu le règlement (UE) 2020/852 du Parlement et du Conseil du 18 juin 2020 sur l'établissement d'un cadre visant à favoriser les investissements durables et modifiant le règlement (UE) 2019/2088 ;\nVu la communication 2014/C 249/01 de la Commission européenne du 31 juillet 2014 relative aux lignes directrices concernant les aides d'Etat au sauvetage et à la restructuration d'entreprises en difficulté autres que les établissements financiers ;\nVu la communication 2022/C 485/01 de la Commission européenne du 21 décembre 2022 relative aux lignes directrices concernant les aides d'Etat dans les secteurs agricole et forestier et dans les zones rurales ;\nVu le code de l'environnement ;\nVu le code forestier, notamment son article L. 121-6 ;\nVu le code rural et de la pêche maritime ;\nVu le décret n° 2018-514 du 25 juin 2018 relatif aux subventions de l'Etat pour des projets d'investissement ;\nVu la décision du Conseil d'Etat statuant au contentieux n° 509638 du 15 juillet 2026 ;\nVu la consultation du public réalisée du 8 août 2026 au 31 août 2026 en application de l'article L. 123-19-1 du code de l'environnement,\nDécrète :",
+              "excerpt_truncated": false,
+              "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261010-002617.tar.gz",
+              "archive_sha256": "652798c004800c0ced2bb7b14f101178237344906fc9ef04b0a2aabe467779cf"
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Décret publié créant un régime d'aides au renouvellement forestier pour les personnes physiques ou morales détentrices d'un titre habilitant à réaliser des travaux forestiers; montants, procédure et guichet non détaillés dans l'extrait disponible."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 4,
+          "triggers": [
+            {
+              "kind": "FUNDING_OR_INCENTIVE",
+              "score": 3,
+              "terms": [
+                "subvention"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [
+            "entreprise"
+          ],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        },
+        "reading": {
+          "consequence": "Le texte instaure un régime d'aides financières pour le renouvellement forestier, applicable aux personnes physiques ou morales (hors Etat) disposant d'un titre habilitant à réaliser des travaux forestiers éligibles, en application de l'article L. 121-6 du code forestier.",
+          "affected_actors": [
+            "propriétaires forestiers",
+            "entreprises de travaux forestiers habilitées"
+          ],
+          "beneficiaries": [
+            "personnes physiques ou morales justifiant d'un titre habilitant à réaliser des travaux forestiers éligibles"
+          ],
+          "constrained_parties": [],
+          "potential_service_partners": [],
+          "unknowns": [
+            "montant des aides",
+            "modalités de dépôt des demandes",
+            "organisme gestionnaire des aides",
+            "critères précis d'éligibilité des travaux"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "jorf:JORFTEXT000054969432"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:c3c952abdd58475c",
+          "title": "Décret n° 2026-937 du 8 octobre 2026 - aides au renouvellement forestier",
+          "keywords": [
+            "forêt",
+            "aide",
+            "subvention",
+            "travaux forestiers",
+            "code forestier"
+          ],
+          "affected_scope": [
+            "propriétaires forestiers",
+            "personnes morales habilitées à réaliser des travaux forestiers"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "PUBLISHED",
+            "proof_status": "PARTIAL",
+            "effective_date": "2026-10-11",
+            "affected_scope": [
+              "propriétaires forestiers",
+              "personnes morales habilitées à réaliser des travaux forestiers"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "titre habilitant à réaliser des travaux forestiers éligibles",
+                "status": "REQUIRED"
+              }
+            ],
+            "dependencies": [],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "MISSING"
+          },
+          "operator_access": {
+            "sector": "NOT_CLASSIFIED",
+            "direct_offer_status": "UNKNOWN",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "MISSING",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:c3c952abdd58475c",
+          "evaluated_at_utc": "2026-10-10T12:33:17.827451+00:00",
+          "compliance": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve juridique incomplète ou absente."
+            ]
+          },
+          "feasibility": {
+            "status": "DISCARD",
+            "reasons": [
+              "Autorisation requise absente : titre habilitant à réaliser des travaux forestiers éligibles."
+            ]
+          },
+          "operator_access": {
+            "status": "NOT_APPLICABLE",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+            ]
+          },
+          "final_constraint": "DISCARD"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:c3c952abdd58475c",
+        "title": "Décret n° 2026-937 du 8 octobre 2026 - aides au renouvellement forestier",
+        "keywords": [
+          "forêt",
+          "aide",
+          "subvention",
+          "travaux forestiers",
+          "code forestier"
+        ],
+        "affected_scope": [
+          "propriétaires forestiers",
+          "personnes morales habilitées à réaliser des travaux forestiers"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "PARTIAL",
+          "effective_date": "2026-10-11",
+          "affected_scope": [
+            "propriétaires forestiers",
+            "personnes morales habilitées à réaliser des travaux forestiers"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "titre habilitant à réaliser des travaux forestiers éligibles",
+              "status": "REQUIRED"
+            }
+          ],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "UNKNOWN",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-10-10T12:33:17.827451+00:00",
+          "trigger": "CAPTURE",
+          "status": "DISCARD",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
       "signal_id": "signal:cb41284df04e6601",
       "source_id": "jorf:JORFTEXT000054794248",
       "captured_at_utc": "2026-09-04T12:02:25.410828+00:00",
@@ -6728,7 +7028,7 @@
     }
   ],
   "queue_audit": {
-    "processed_count": 1281,
+    "processed_count": 1345,
     "unrecoverable_queue_entries": [
       {
         "fingerprint": "490853c49376a298cfdbefd3d9015889f24dfb149e616097ae78c39d2661a25b",
@@ -8943,6 +9243,96 @@
       {
         "fingerprint": "9ec3bf175741ad8299ac20b0eda99f9bd6db99e17bfb0aa3dc8756555320450e",
         "source_id": "jorf:JORFTEXT000054966459",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "1abc673f55e0745dc7289ac8dc45efb5001356491e82fa24cf016184aa00ca1e",
+        "source_id": "jorf:JORFTEXT000054969274",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "7b053445a17a519b547731f7a1c716af4ea49f18c216e81bc2964f272dccf439",
+        "source_id": "jorf:JORFTEXT000054969277",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "83b28d6821a8c0b0e1fa35373b6cbebb9d30142a9791762f9331a944fdb53230",
+        "source_id": "jorf:JORFTEXT000054969521",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "aca2a13983377db9e2990ad0e830b47d6feae20e5030ba0774fd56e87704fbbf",
+        "source_id": "jorf:JORFTEXT000054969898",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "4d8487a6eae3c5056bccde74539144055b7ffae71e73926a47859a6d7beb752f",
+        "source_id": "jorf:JORFTEXT000054969901",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "634bcea696bb8f1b2b4108eed3e881a470c61a82f9240fc161baffb3d1e13247",
+        "source_id": "jorf:JORFTEXT000054969944",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "b39c5c9deeb3a4ecd9898a7ab26d9b457f39127cb420c0e87b718aa64e1d0890",
+        "source_id": "jorf:JORFTEXT000054969947",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "c9d983a3e12e0f680ad445c1b30619152a26e573a8cd180357da6de9fffe7d98",
+        "source_id": "jorf:JORFTEXT000054969953",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "6080238dc89f47378f8512a683a83dc48f0ad5935bf2fa0c62e0e99fb2cd83ff",
+        "source_id": "jorf:JORFTEXT000054969986",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "38a2be8b18d5be2bdc59b648e95d21c8c7444ec0d54c2ba445ddaac1632fa157",
+        "source_id": "jorf:JORFTEXT000054969992",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "85ea2a4631200e382ec49e505e524b862b43d78375dc1bc7c41aa488b97acbd9",
+        "source_id": "jorf:JORFTEXT000054970041",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "3d216ad836c8bcec6965c2f6f3d83507daa5ca5248e61ed56f9d264a01bf4830",
+        "source_id": "jorf:JORFTEXT000054970045",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "7661060ae592bc92ff37b5237c937b23933de4e76f0c03581eee9738004f6e3c",
+        "source_id": "jorf:JORFTEXT000054970049",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "a3ca6d486298543b956ce16b776068dd8a15c17c3308e9635cc6c564242f7a1d",
+        "source_id": "jorf:JORFTEXT000054970052",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "34549c80f1056b2f57f8aeebaa46140a2f607119778fb1ad91580714bc83061e",
+        "source_id": "jorf:JORFTEXT000054970056",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "4e90765c077c40c5a1613448cfd6af2e3910ac4effdd825ae52105c52bae5ccf",
+        "source_id": "jorf:JORFTEXT000054970058",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "ad6abeee27acb0b136b9ac65e07543f26bc36b84e10baa8231d1ba91363b518d",
+        "source_id": "jorf:JORFTEXT000054970098",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "124c9a2cb70d56b62cd7b288e6061a3aea313530679fb90e48cdd77675241af6",
+        "source_id": "jorf:JORFTEXT000054970115",
         "reason": "PRIMARY_TEXT_EMPTY"
       }
     ],
