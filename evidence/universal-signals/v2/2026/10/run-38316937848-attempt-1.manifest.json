@@ -1,0 +1,46 @@
+{
+  "schema": "lawradar-universal-signal-archive-v1",
+  "status": "ARCHIVED",
+  "run_id": "38316937848",
+  "run_attempt": "1",
+  "report_date": "2026-10-11",
+  "archive_path": "evidence/universal-signals/v2/2026/10/run-38316937848-attempt-1.json",
+  "sha256": "8fc0c9fc8d09497159529f5235625efb5563287570f77d45ed94eb923b76fb88",
+  "signal_count": 4,
+  "prefilter_counts": {
+    "excluded_historical_candidates": 0,
+    "excluded_routine_candidates": 0,
+    "excluded_no_economic_friction_candidates": 0,
+    "deterministically_unresolved_candidates": 0
+  },
+  "signals": [
+    {
+      "signal_id": "signal:fd19e2e3a1c3f5a6",
+      "stable_source_id": "source:eb0ba9569c7d5578",
+      "evidence_version": "sha256:bcba4daf122ad40e5cf446622b7dc8699b1e728fb5341b82726546602d459d4e",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-modifiant-l-arrete-du-7-octobre-a3430.html",
+      "radar_status": "DISCARDED"
+    },
+    {
+      "signal_id": "signal:3e3fb8a1ce666089",
+      "stable_source_id": "source:4b92f590e83fd960",
+      "evidence_version": "sha256:8debf764dd6bd3af7b3d2fa55127535d089f5a056c84954aff9fc68f87807b95",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-modification-de-fiches-d-a3446.html",
+      "radar_status": "RETAINED"
+    },
+    {
+      "signal_id": "signal:03777fd531fa891d",
+      "stable_source_id": "source:025fb26e7d8682c6",
+      "evidence_version": "sha256:a78e3aa574daade80f4828e889c0cb4c457752aa5c335c415b9586af928a92c4",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-relatif-au-nombre-maximum-d-a3449.html",
+      "radar_status": "DISCARDED"
+    },
+    {
+      "signal_id": "signal:99b1a46677c06c48",
+      "stable_source_id": "source:d519647f4d6c6da8",
+      "evidence_version": "sha256:2a90f6a6cb40de31c86d1234f6555d4c1e49d3030d169f24d37efd0061b65346",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projets-de-decret-relatif-aux-plans-de-prevention-a3445.html",
+      "radar_status": "DISCARDED"
+    }
+  ]
+}
