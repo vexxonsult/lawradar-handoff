@@ -1350,6 +1350,655 @@
       ]
     },
     {
+      "signal_id": "signal:3486b50805a6d833",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-prevoyant-des-bonifications-a3437.html",
+      "captured_at_utc": "2026-10-12T15:29:48.780629+00:00",
+      "facts_sha256": "c48f201ad7ca01fc1f81e13f08809d42519c1832e23c02db3b44e6d1a8552df6",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:3486b50805a6d833",
+        "evaluated_at_utc": "2026-10-12T15:29:48.780629+00:00",
+        "compliance": {
+          "status": "WATCH",
+          "reasons": [
+            "Texte encore en consultation ou projet."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : Appel à candidatures ADEME 'Offres intégrées pompes à chaleur'.",
+            "Dépendance non vérifiée : Sélection par ADEME.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:3486b50805a6d833",
+        "evaluated_at_utc": "2026-10-12T15:29:48.780629+00:00",
+        "compliance": {
+          "status": "WATCH",
+          "reasons": [
+            "Texte encore en consultation ou projet."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : Appel à candidatures ADEME 'Offres intégrées pompes à chaleur'.",
+            "Dépendance non vérifiée : Sélection par ADEME.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:3486b50805a6d833",
+        "identity": {
+          "stable_source_id": "source:84039aedd05f961b",
+          "evidence_version": "sha256:049afc15ceaeae851085eca77cfb0389f88e89aeff73f604549fdbbb25aae0d6"
+        },
+        "source": {
+          "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-prevoyant-des-bonifications-a3437.html",
+          "source_kind": "CONSULTDD",
+          "change": "NEW",
+          "evidence": {
+            "text_id": null,
+            "nature": null,
+            "nor": null,
+            "title": "Projet d’arrêté prévoyant des bonifications particulières pour les opérations relatives...",
+            "publisher": null,
+            "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-prevoyant-des-bonifications-a3437.html",
+            "publication_date": null,
+            "journal_number": null,
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [
+              "2026-09-29",
+              "2026-10-12"
+            ],
+            "detail_status": "PRIMARY_PAGE_READ",
+            "official": {
+              "title": "Projet d’arrêté prévoyant des bonifications particulières pour les opérations relatives aux offres intégrées sélectionnées dans le cadre de l’appel à candidatures « Offres intégrées pompes à chaleur » de l’agence de l’environnement et de la maîtrise de l’énergie, dans le cadre du dispositif des certificats d’économies d’énergie",
+              "period": "Consultation du 29/09/2026 au 22/10/2026 - 1 contribution"
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": null,
+              "text_sha256": null,
+              "excerpt": null,
+              "excerpt_truncated": false,
+              "archive_url": null,
+              "archive_sha256": null
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Consultation publique d'un projet d'arrêté créant une bonification CEE spécifique (fiche BAR-TH-171) pour des offres intégrées pompes à chaleur ADEME ; périmètre sectoriel identifiable (pompes à chaleur, offres intégrées installation+maintenance+fourniture) justifiant un service B2B de veille/qualification de besoin."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 6,
+          "triggers": [
+            {
+              "kind": "FUNDING_OR_INCENTIVE",
+              "score": 3,
+              "terms": [
+                "bonification"
+              ]
+            },
+            {
+              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+              "score": 3,
+              "terms": []
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        },
+        "reading": {
+          "consequence": "Le texte prévoit des bonifications CEE spécifiques pour des offres intégrées (installation, maintenance, fourniture à prix fixe 3 ans) de pompes à chaleur, sélectionnées via un appel à candidatures ADEME ; des obligations de contrôle renforcées sur site sont imposées progressivement aux opérateurs de ces offres.",
+          "affected_actors": [
+            "Obligés CEE",
+            "Opérateurs de l'appel à candidatures ADEME",
+            "Ménages bénéficiaires potentiels"
+          ],
+          "beneficiaries": [
+            "Ménages souscrivant aux offres intégrées sélectionnées"
+          ],
+          "constrained_parties": [
+            "Opérateurs des offres intégrées (obligations de contrôle à 50%, 70%, 100%)"
+          ],
+          "potential_service_partners": [],
+          "unknowns": [
+            "Liste des offres/opérateurs effectivement sélectionnés par l'ADEME",
+            "Date d'entrée en vigueur définitive de l'arrêté",
+            "Montants précis des bonifications"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-prevoyant-des-bonifications-a3437.html"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:3486b50805a6d833",
+          "title": "Projet d'arrêté - bonifications CEE pour offres intégrées pompes à chaleur (ADEME)",
+          "keywords": [
+            "CEE",
+            "bonification",
+            "pompe à chaleur",
+            "BAR-TH-171",
+            "ADEME",
+            "consultation publique"
+          ],
+          "affected_scope": [
+            "Dispositif CEE",
+            "Fiche BAR-TH-171",
+            "Offres intégrées pompes à chaleur"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "CONSULTATION_OPEN",
+            "proof_status": "VERIFIED",
+            "effective_date": null,
+            "affected_scope": [
+              "Secteur résidentiel",
+              "Pompes à chaleur"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "Appel à candidatures ADEME 'Offres intégrées pompes à chaleur'",
+                "status": "UNKNOWN"
+              }
+            ],
+            "dependencies": [
+              {
+                "id": "Sélection par ADEME",
+                "status": "UNKNOWN"
+              }
+            ],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "PARTIAL"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:3486b50805a6d833",
+          "evaluated_at_utc": "2026-10-12T15:29:48.780629+00:00",
+          "compliance": {
+            "status": "WATCH",
+            "reasons": [
+              "Texte encore en consultation ou projet."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Statut de l'autorisation inconnu : Appel à candidatures ADEME 'Offres intégrées pompes à chaleur'.",
+              "Dépendance non vérifiée : Sélection par ADEME.",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:3486b50805a6d833",
+        "title": "Projet d'arrêté - bonifications CEE pour offres intégrées pompes à chaleur (ADEME)",
+        "keywords": [
+          "CEE",
+          "bonification",
+          "pompe à chaleur",
+          "BAR-TH-171",
+          "ADEME",
+          "consultation publique"
+        ],
+        "affected_scope": [
+          "Dispositif CEE",
+          "Fiche BAR-TH-171",
+          "Offres intégrées pompes à chaleur"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "CONSULTATION_OPEN",
+          "proof_status": "VERIFIED",
+          "effective_date": null,
+          "affected_scope": [
+            "Secteur résidentiel",
+            "Pompes à chaleur"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "Appel à candidatures ADEME 'Offres intégrées pompes à chaleur'",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "Sélection par ADEME",
+              "status": "UNKNOWN"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "PARTIAL"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-10-12T15:29:48.780629+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
+      "signal_id": "signal:3e3fb8a1ce666089",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-modification-de-fiches-d-a3446.html",
+      "captured_at_utc": "2026-10-12T15:29:48.780629+00:00",
+      "facts_sha256": "679938ab8b412cc981f04d49923503cc6866bd6682aa336d405dfd036467f69a",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:3e3fb8a1ce666089",
+        "evaluated_at_utc": "2026-10-12T15:29:48.780629+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : Agrément/obligation CEE.",
+            "Dépendance non vérifiée : Publication finale de l'arrêté.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:3e3fb8a1ce666089",
+        "evaluated_at_utc": "2026-10-12T15:29:48.780629+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : Agrément/obligation CEE.",
+            "Dépendance non vérifiée : Publication finale de l'arrêté.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:3e3fb8a1ce666089",
+        "identity": {
+          "stable_source_id": "source:4b92f590e83fd960",
+          "evidence_version": "sha256:957c61a838f08d9b61967262c53f2122787d8ad8dc8b40b15b88214dd8b47d69"
+        },
+        "source": {
+          "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-modification-de-fiches-d-a3446.html",
+          "source_kind": "CONSULTDD",
+          "change": "NEW",
+          "evidence": {
+            "text_id": null,
+            "nature": null,
+            "nor": null,
+            "title": "Projet d’arrêté portant modification de fiches d’opérations standardisées du dispositif...",
+            "publisher": null,
+            "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-modification-de-fiches-d-a3446.html",
+            "publication_date": null,
+            "journal_number": null,
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [
+              "2026-10-05",
+              "2026-10-12"
+            ],
+            "detail_status": "PRIMARY_PAGE_READ",
+            "official": {
+              "title": "Projet d’arrêté portant modification de fiches d’opérations standardisées du dispositif des certificats d’économies d’énergie",
+              "period": "Consultation du 05/10/2026 au 27/10/2026 - 6 contributions"
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": null,
+              "text_sha256": null,
+              "excerpt": null,
+              "excerpt_truncated": false,
+              "archive_url": null,
+              "archive_sha256": null
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Consultation publique française modifiant des fiches d'opérations standardisées CEE (exclusion des entrepôts/locaux de stockage, ajout de dates d'abrogation) : périmètre industriel/professionnel identifiable dans le secteur tertiaire, routage ENERGY_EFFICIENCY applicable."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+              "score": 3,
+              "terms": []
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        },
+        "reading": {
+          "consequence": "Le projet d'arrêté exclut les entrepôts logistiques et locaux de stockage de plusieurs fiches d'opérations standardisées CEE du secteur tertiaire, et fixe une date d'abrogation (31/12/2028) pour certaines fiches qui n'en avaient pas.",
+          "affected_actors": [
+            "Obligés CEE",
+            "Entreprises exploitant des entrepôts logistiques/frigorifiques",
+            "Installateurs d'équipements de chauffage/climatisation/ventilation tertiaires"
+          ],
+          "beneficiaries": [],
+          "constrained_parties": [
+            "Exploitants d'entrepôts et locaux de stockage ne pouvant plus bénéficier de ces fiches",
+            "Installateurs opérant sur ce segment"
+          ],
+          "potential_service_partners": [],
+          "unknowns": [
+            "Date et contenu définitifs de l'arrêté publié",
+            "Impact réel sur les volumes de CEE générés",
+            "Suite donnée à la révision annoncée pour les technologies de chauffage des entrepôts"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-modification-de-fiches-d-a3446.html"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:3e3fb8a1ce666089",
+          "title": "Projet d'arrêté portant modification de fiches d'opérations standardisées du dispositif des certificats d'économies d'énergie",
+          "keywords": [
+            "CEE",
+            "fiches standardisées",
+            "entrepôts",
+            "secteur tertiaire",
+            "chauffage",
+            "BAT-TH"
+          ],
+          "affected_scope": [
+            "Secteur tertiaire",
+            "Entrepôts logistiques",
+            "Obligés CEE",
+            "Opérateurs de travaux de chauffage/climatisation"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "CONSULTATION_OPEN",
+            "proof_status": "PARTIAL",
+            "effective_date": null,
+            "affected_scope": [
+              "Secteur tertiaire",
+              "Entrepôts logistiques"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "Agrément/obligation CEE",
+                "status": "UNKNOWN"
+              }
+            ],
+            "dependencies": [
+              {
+                "id": "Publication finale de l'arrêté",
+                "status": "UNKNOWN"
+              }
+            ],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "PARTIAL"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:3e3fb8a1ce666089",
+          "evaluated_at_utc": "2026-10-12T15:29:48.780629+00:00",
+          "compliance": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve juridique incomplète ou absente."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Statut de l'autorisation inconnu : Agrément/obligation CEE.",
+              "Dépendance non vérifiée : Publication finale de l'arrêté.",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:3e3fb8a1ce666089",
+        "title": "Projet d'arrêté portant modification de fiches d'opérations standardisées du dispositif des certificats d'économies d'énergie",
+        "keywords": [
+          "CEE",
+          "fiches standardisées",
+          "entrepôts",
+          "secteur tertiaire",
+          "chauffage",
+          "BAT-TH"
+        ],
+        "affected_scope": [
+          "Secteur tertiaire",
+          "Entrepôts logistiques",
+          "Obligés CEE",
+          "Opérateurs de travaux de chauffage/climatisation"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "CONSULTATION_OPEN",
+          "proof_status": "PARTIAL",
+          "effective_date": null,
+          "affected_scope": [
+            "Secteur tertiaire",
+            "Entrepôts logistiques"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "Agrément/obligation CEE",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "Publication finale de l'arrêté",
+              "status": "UNKNOWN"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "PARTIAL"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-10-12T15:29:48.780629+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
       "signal_id": "signal:47ada7f4bfdcb394",
       "source_id": "jorf:JORFTEXT000054965211",
       "captured_at_utc": "2026-10-09T13:18:33.781449+00:00",
@@ -2323,6 +2972,296 @@
       "attempts": [
         {
           "at_utc": "2026-09-24T11:47:15.463490+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
+      "signal_id": "signal:56cc5e881d108c1b",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-modifiant-la-definition-de-la-a3438.html",
+      "captured_at_utc": "2026-10-12T15:29:48.780629+00:00",
+      "facts_sha256": "e8b71e319450e6fc47a51f9fd71d11fc6cfa43e124d6cd56e30cbb6370dd08ad",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:56cc5e881d108c1b",
+        "evaluated_at_utc": "2026-10-12T15:29:48.780629+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:56cc5e881d108c1b",
+        "evaluated_at_utc": "2026-10-12T15:29:48.780629+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:56cc5e881d108c1b",
+        "identity": {
+          "stable_source_id": "source:c41f2ec30ccf55fc",
+          "evidence_version": "sha256:9cc23ec3f3f50820c20b583154ef2d9406a7630eed6455ef0f07629cdbd2a01f"
+        },
+        "source": {
+          "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-modifiant-la-definition-de-la-a3438.html",
+          "source_kind": "CONSULTDD",
+          "change": "NEW",
+          "evidence": {
+            "text_id": null,
+            "nature": null,
+            "nor": null,
+            "title": "Projet d'arrêté modifiant la définition de la précarité énergétique dans le cadre ...",
+            "publisher": null,
+            "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-modifiant-la-definition-de-la-a3438.html",
+            "publication_date": null,
+            "journal_number": null,
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [
+              "2026-09-29",
+              "2026-10-12"
+            ],
+            "detail_status": "PRIMARY_PAGE_READ",
+            "official": {
+              "title": "Projet d’arrêté modifiant la définition de la précarité énergétique dans le cadre du dispositif des certificats d’économies d’énergie et adaptant les bonifications des secteurs résidentiel et du transport",
+              "period": "Consultation du 29/09/2026 au 22/10/2026 - 1 contribution"
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": null,
+              "text_sha256": null,
+              "excerpt": null,
+              "excerpt_truncated": false,
+              "archive_url": null,
+              "archive_sha256": null
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Consultation publique sur un projet d'arrêté modifiant le seuil de précarité énergétique et les bonifications CEE associées dans les secteurs résidentiel et transport ; périmètre CEE identifiable, service B2B de veille/qualification possible."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+              "score": 3,
+              "terms": []
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        },
+        "reading": {
+          "consequence": "Le texte redéfinit le seuil de précarité énergétique applicable aux CEE, modifiant l'assiette des ménages éligibles aux bonifications et les niveaux de prime associés dans les secteurs résidentiel et transport.",
+          "affected_actors": [
+            "Ménages bénéficiaires de primes CEE",
+            "Obligés CEE",
+            "Anah"
+          ],
+          "beneficiaries": [],
+          "constrained_parties": [],
+          "potential_service_partners": [],
+          "unknowns": [
+            "Date définitive d'entrée en vigueur",
+            "Impact réel sur le gisement de CEE",
+            "Issue de la consultation publique"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-modifiant-la-definition-de-la-a3438.html"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:56cc5e881d108c1b",
+          "title": "Projet d'arrêté modifiant la définition de la précarité énergétique dans le cadre du dispositif CEE",
+          "keywords": [
+            "CEE",
+            "précarité énergétique",
+            "bonification",
+            "déciles de revenus",
+            "Anah",
+            "consultation publique"
+          ],
+          "affected_scope": [
+            "Dispositif des certificats d'économies d'énergie",
+            "Secteur résidentiel",
+            "Secteur transport",
+            "Ménages précaires/modestes"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "CONSULTATION_OPEN",
+            "proof_status": "PARTIAL",
+            "effective_date": null,
+            "affected_scope": [
+              "Code de l'énergie - articles L.221-1 et suivants",
+              "Code de l'environnement - article L.123-19-1"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [],
+            "dependencies": [],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "MISSING"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:56cc5e881d108c1b",
+          "evaluated_at_utc": "2026-10-12T15:29:48.780629+00:00",
+          "compliance": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve juridique incomplète ou absente."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:56cc5e881d108c1b",
+        "title": "Projet d'arrêté modifiant la définition de la précarité énergétique dans le cadre du dispositif CEE",
+        "keywords": [
+          "CEE",
+          "précarité énergétique",
+          "bonification",
+          "déciles de revenus",
+          "Anah",
+          "consultation publique"
+        ],
+        "affected_scope": [
+          "Dispositif des certificats d'économies d'énergie",
+          "Secteur résidentiel",
+          "Secteur transport",
+          "Ménages précaires/modestes"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "CONSULTATION_OPEN",
+          "proof_status": "PARTIAL",
+          "effective_date": null,
+          "affected_scope": [
+            "Code de l'énergie - articles L.221-1 et suivants",
+            "Code de l'environnement - article L.123-19-1"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-10-12T15:29:48.780629+00:00",
           "trigger": "CAPTURE",
           "status": "INVESTIGATE",
           "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
@@ -7695,7 +8634,7 @@
     }
   ],
   "queue_audit": {
-    "processed_count": 1374,
+    "processed_count": 1396,
     "unrecoverable_queue_entries": [
       {
         "fingerprint": "490853c49376a298cfdbefd3d9015889f24dfb149e616097ae78c39d2661a25b",
