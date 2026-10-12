@@ -1,11 +1,11 @@
 {
   "schema": "lawradar-investigation-queue-v1",
-  "generated_at_utc": "2026-10-11T12:54:08.002985+00:00",
+  "generated_at_utc": "2026-10-12T15:35:14.174174+00:00",
   "source_run": {
-    "id": "38140844703",
+    "id": "38270612049",
     "attempt": "1",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/38140844703",
-    "commit": "abcba6c8f41b96d61eb51d29f09ed4c231d626e6",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/38270612049",
+    "commit": "2ec84e4801f1fbb024a1c89684d74889578c16de",
     "report_date": "2026-10-11"
   },
   "policy": {
@@ -13,11 +13,147 @@
     "max_autonomous_research_attempts": 1,
     "retry_delay_hours": 6
   },
-  "items": [],
+  "items": [
+    {
+      "signal_id": "signal:56cc5e881d108c1b",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-modifiant-la-definition-de-la-a3438.html",
+      "title": "Projet d'arrêté modifiant la définition de la précarité énergétique dans le cadre du dispositif CEE",
+      "status": "WAITING_FOR_EVIDENCE",
+      "opened_at_utc": "2026-10-12T15:35:14.174174+00:00",
+      "updated_at_utc": "2026-10-12T15:35:14.174174+00:00",
+      "automatic_attempts": 1,
+      "max_automatic_attempts": 2,
+      "autonomous_research_attempts": 0,
+      "max_autonomous_research_attempts": 1,
+      "qualification_contract_version": "tool-envelope-v3-structured-tool",
+      "next_retry_not_before_utc": "2026-10-12T21:35:14.174174+00:00",
+      "questions": [
+        {
+          "id": "OPERATIONAL_FEASIBILITY",
+          "kind": "NEW_OFFICIAL_OR_PARTNER_EVIDENCE",
+          "status": "OPEN",
+          "question": "Recherche autonome à mener sur le capital de démarrage nécessaire, le délai réaliste de mise sur le marché avant toute décision commerciale.",
+          "evidence": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ],
+          "automatic_retry": false
+        },
+        {
+          "id": "MARKET_RELEVANCE",
+          "kind": "TECHNICAL_RETRY",
+          "status": "OPEN",
+          "question": "Déterminer si un avis BOAMP cite le texte, son obligation ou un besoin directement lié ; un simple mot-sectoriel ne démontre pas une demande causée par le texte.",
+          "evidence": [
+            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement."
+          ],
+          "automatic_retry": true
+        }
+      ],
+      "readiness_status": "READY_FOR_PILOTS",
+      "final_constraint": "INVESTIGATE"
+    },
+    {
+      "signal_id": "signal:3e3fb8a1ce666089",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-modification-de-fiches-d-a3446.html",
+      "title": "Projet d'arrêté portant modification de fiches d'opérations standardisées du dispositif des certificats d'économies d'énergie",
+      "status": "WAITING_FOR_EVIDENCE",
+      "opened_at_utc": "2026-10-12T15:35:14.174174+00:00",
+      "updated_at_utc": "2026-10-12T15:35:14.174174+00:00",
+      "automatic_attempts": 1,
+      "max_automatic_attempts": 2,
+      "autonomous_research_attempts": 0,
+      "max_autonomous_research_attempts": 1,
+      "qualification_contract_version": "tool-envelope-v3-structured-tool",
+      "next_retry_not_before_utc": "2026-10-12T21:35:14.174174+00:00",
+      "questions": [
+        {
+          "id": "OPERATIONAL_FEASIBILITY",
+          "kind": "NEW_OFFICIAL_OR_PARTNER_EVIDENCE",
+          "status": "OPEN",
+          "question": "Recherche autonome à mener sur l'autorisation, l'agrément ou la voie de sous-traitance applicable, les dépendances opérationnelles nécessaires, le capital de démarrage nécessaire, le délai réaliste de mise sur le marché avant toute décision commerciale.",
+          "evidence": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : Agrément/obligation CEE.",
+            "Dépendance non vérifiée : Publication finale de l'arrêté.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ],
+          "automatic_retry": false
+        },
+        {
+          "id": "PRESS_QUALIFICATION",
+          "kind": "TECHNICAL_RETRY",
+          "status": "OPEN",
+          "question": "Requalifier exclusivement les candidats Presse déjà collectés ; aucune nouvelle conclusion médiatique n'est admise sans URL tracée.",
+          "evidence": [
+            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement.",
+            "Collecte Presse partiellement limitée par un rate-limit temporaire (HTTP 429) ; retry différé requis."
+          ],
+          "automatic_retry": true
+        },
+        {
+          "id": "MARKET_RELEVANCE",
+          "kind": "TECHNICAL_RETRY",
+          "status": "OPEN",
+          "question": "Déterminer si un avis BOAMP cite le texte, son obligation ou un besoin directement lié ; un simple mot-sectoriel ne démontre pas une demande causée par le texte.",
+          "evidence": [
+            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement."
+          ],
+          "automatic_retry": true
+        }
+      ],
+      "readiness_status": "READY_FOR_PILOTS",
+      "final_constraint": "INVESTIGATE"
+    },
+    {
+      "signal_id": "signal:3486b50805a6d833",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-prevoyant-des-bonifications-a3437.html",
+      "title": "Projet d'arrêté - bonifications CEE pour offres intégrées pompes à chaleur (ADEME)",
+      "status": "WAITING_FOR_EVIDENCE",
+      "opened_at_utc": "2026-10-12T15:35:14.174174+00:00",
+      "updated_at_utc": "2026-10-12T15:35:14.174174+00:00",
+      "automatic_attempts": 1,
+      "max_automatic_attempts": 2,
+      "autonomous_research_attempts": 0,
+      "max_autonomous_research_attempts": 1,
+      "qualification_contract_version": "tool-envelope-v3-structured-tool",
+      "next_retry_not_before_utc": "2026-10-12T21:35:14.174174+00:00",
+      "questions": [
+        {
+          "id": "OPERATIONAL_FEASIBILITY",
+          "kind": "NEW_OFFICIAL_OR_PARTNER_EVIDENCE",
+          "status": "OPEN",
+          "question": "Recherche autonome à mener sur l'autorisation, l'agrément ou la voie de sous-traitance applicable, les dépendances opérationnelles nécessaires, le capital de démarrage nécessaire, le délai réaliste de mise sur le marché avant toute décision commerciale.",
+          "evidence": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : Appel à candidatures ADEME 'Offres intégrées pompes à chaleur'.",
+            "Dépendance non vérifiée : Sélection par ADEME.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ],
+          "automatic_retry": false
+        },
+        {
+          "id": "MARKET_RELEVANCE",
+          "kind": "TECHNICAL_RETRY",
+          "status": "OPEN",
+          "question": "Déterminer si un avis BOAMP cite le texte, son obligation ou un besoin directement lié ; un simple mot-sectoriel ne démontre pas une demande causée par le texte.",
+          "evidence": [
+            "Réponse Claude non exploitable : Contrat spécialisé invalide : La synthèse Marché doit renvoyer vers ses sources."
+          ],
+          "automatic_retry": true
+        }
+      ],
+      "readiness_status": "READY_FOR_PILOTS",
+      "final_constraint": "INVESTIGATE"
+    }
+  ],
   "summary": {
-    "open_count": 0,
+    "open_count": 3,
     "autonomous_research_pending_count": 0,
     "auto_research_exhausted_count": 0,
-    "automatic_retry_count": 0
+    "automatic_retry_count": 3
   }
 }
