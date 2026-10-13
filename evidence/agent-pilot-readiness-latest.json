@@ -1,16 +1,16 @@
 {
   "schema": "lawradar-agent-pilot-readiness-v1",
-  "generated_at_utc": "2026-10-12T22:29:44.796992+00:00",
+  "generated_at_utc": "2026-10-13T14:13:04.864402+00:00",
   "source_run": {
-    "id": "38316937848",
+    "id": "38411398358",
     "attempt": "1",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/38316937848",
-    "commit": "7a0bb24093869ebf3ecec31212e1f76e50e5fcf6",
-    "report_date": "2026-10-11"
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/38411398358",
+    "commit": "7465cd0ede36c197e312dafd0067f87255bd5fb3",
+    "report_date": "2026-10-13"
   },
   "signals": [
     {
-      "signal_id": "signal:fd19e2e3a1c3f5a6",
+      "signal_id": "signal:ef24976edf4165bd",
       "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-modifiant-l-arrete-du-7-octobre-a3430.html",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
@@ -24,8 +24,8 @@
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:fd19e2e3a1c3f5a6",
-        "evaluated_at_utc": "2026-10-12T22:29:44.796992+00:00",
+        "signal_id": "signal:ef24976edf4165bd",
+        "evaluated_at_utc": "2026-10-13T14:13:04.864402+00:00",
         "compliance": {
           "status": "INVESTIGATE",
           "reasons": [
@@ -52,21 +52,23 @@
       }
     },
     {
-      "signal_id": "signal:3e3fb8a1ce666089",
-      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-modification-de-fiches-d-a3446.html",
-      "radar_status": "RETAINED",
-      "status": "READY_FOR_PILOTS",
+      "signal_id": "signal:40d5890fe263e031",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-suppression-de-fiches-d-a3428.html",
+      "radar_status": "DISCARDED",
+      "status": "RESEARCH_CANDIDATE",
       "ready_for_pilots": true,
-      "client_scope": "FULL_PIPELINE",
+      "client_scope": "RESEARCH_ONLY",
       "entrepreneur_allowed": false,
-      "recommended_next_step": "RUN_PRESS_THEN_MARKET_IF_SCOPE_FITS",
+      "research_score": 5,
+      "recommended_next_step": "RUN_BOUNDED_PRESS_AND_MARKET_RESEARCH",
       "reasons": [
-        "Le signal retenu porte des faits valides et passe la porte opérateur."
+        "Indices économiques détectés : certificat, certificats.",
+        "La recherche n'autorise aucune décision Entrepreneur."
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:3e3fb8a1ce666089",
-        "evaluated_at_utc": "2026-10-12T22:29:44.796992+00:00",
+        "signal_id": "signal:40d5890fe263e031",
+        "evaluated_at_utc": "2026-10-13T14:13:04.864402+00:00",
         "compliance": {
           "status": "INVESTIGATE",
           "reasons": [
@@ -94,8 +96,8 @@
       }
     },
     {
-      "signal_id": "signal:03777fd531fa891d",
-      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-relatif-au-nombre-maximum-d-a3449.html",
+      "signal_id": "signal:708db9bd87858d62",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-relatif-a-l-integration-des-a3453.html",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -104,25 +106,64 @@
       "research_score": 0,
       "recommended_next_step": "NO_ACTION",
       "reasons": [
-        "Territoire hors périmètre de la recherche élargie."
+        "Aucun indice économique déterministe dans le titre factuel."
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:03777fd531fa891d",
-        "evaluated_at_utc": "2026-10-12T22:29:44.796992+00:00",
+        "signal_id": "signal:708db9bd87858d62",
+        "evaluated_at_utc": "2026-10-13T14:13:04.864402+00:00",
         "compliance": {
-          "status": "DISCARD",
+          "status": "WATCH",
           "reasons": [
-            "Territoire hors périmètre opérateur."
+            "Texte encore en consultation ou projet."
           ]
         },
         "feasibility": {
           "status": "INVESTIGATE",
           "reasons": [
             "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : Autorisation de capture à l'aide de pantes.",
             "Capital de départ inconnu.",
             "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:d2f10fe6d8a177de",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3457.html",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:d2f10fe6d8a177de",
+        "evaluated_at_utc": "2026-10-13T14:13:04.864402+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "DISCARD",
+          "reasons": [
+            "Autorisation requise absente : autorisation_defrichement."
           ]
         },
         "operator_access": {
@@ -137,8 +178,8 @@
       }
     },
     {
-      "signal_id": "signal:99b1a46677c06c48",
-      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projets-de-decret-relatif-aux-plans-de-prevention-a3445.html",
+      "signal_id": "signal:d7b1b39b2705d065",
+      "source_id": "jorf:JORFTEXT000054977578",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -151,12 +192,224 @@
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:99b1a46677c06c48",
-        "evaluated_at_utc": "2026-10-12T22:29:44.796992+00:00",
+        "signal_id": "signal:d7b1b39b2705d065",
+        "evaluated_at_utc": "2026-10-13T14:13:04.864402+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:bee86e4d0e8ccf54",
+      "source_id": "jorf:JORFTEXT000054977621",
+      "radar_status": "RETAINED",
+      "status": "READY_FOR_PILOTS",
+      "ready_for_pilots": true,
+      "client_scope": "FULL_PIPELINE",
+      "entrepreneur_allowed": false,
+      "recommended_next_step": "RUN_PRESS_THEN_MARKET_IF_SCOPE_FITS",
+      "reasons": [
+        "Le signal retenu porte des faits valides et passe la porte opérateur."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:bee86e4d0e8ccf54",
+        "evaluated_at_utc": "2026-10-13T14:13:04.864402+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : agrément de modèle de pompe à chaleur (qualité et résilience industrielle).",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:a56dfc15d1bf85e2",
+      "source_id": "jorf:JORFTEXT000054977679",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:a56dfc15d1bf85e2",
+        "evaluated_at_utc": "2026-10-13T14:13:04.864402+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:861e87d1a91f734a",
+      "source_id": "jorf:JORFTEXT000054977790",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:861e87d1a91f734a",
+        "evaluated_at_utc": "2026-10-13T14:13:04.864402+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:48e05d78797aa798",
+      "source_id": "jorf:JORFTEXT000054977847",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Texte de routine explicitement exclu de la recherche élargie."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:48e05d78797aa798",
+        "evaluated_at_utc": "2026-10-13T14:13:04.864402+00:00",
         "compliance": {
           "status": "INVESTIGATE",
           "reasons": [
             "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : autorisation ARCOM d'exploitation de service de radio.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:3a75c77b3c4aff04",
+      "source_id": "jorf:JORFTEXT000054977863",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:3a75c77b3c4aff04",
+        "evaluated_at_utc": "2026-10-13T14:13:04.864402+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
           ]
         },
         "feasibility": {
@@ -180,11 +433,12 @@
     }
   ],
   "summary": {
-    "signal_count": 4,
-    "ready_for_pilots_count": 1,
-    "research_candidates_selected": 0,
+    "signal_count": 10,
+    "ready_for_pilots_count": 2,
+    "research_candidates_selected": 1,
     "counts_by_status": {
-      "NOT_RETAINED": 3,
+      "NOT_RETAINED": 8,
+      "RESEARCH_CANDIDATE": 1,
       "READY_FOR_PILOTS": 1
     }
   }

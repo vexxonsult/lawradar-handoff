@@ -6151,6 +6151,353 @@
       ]
     },
     {
+      "signal_id": "signal:bee86e4d0e8ccf54",
+      "source_id": "jorf:JORFTEXT000054977621",
+      "captured_at_utc": "2026-10-13T14:13:04.922829+00:00",
+      "facts_sha256": "992f870f2afdb27f77c9eb5e047d8c6c53a47ffed9e158f26b6857e0e3c62b5f",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:bee86e4d0e8ccf54",
+        "evaluated_at_utc": "2026-10-13T14:13:04.922829+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : agrément de modèle de pompe à chaleur (qualité et résilience industrielle).",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:bee86e4d0e8ccf54",
+        "evaluated_at_utc": "2026-10-13T14:13:04.922829+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : agrément de modèle de pompe à chaleur (qualité et résilience industrielle).",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:bee86e4d0e8ccf54",
+        "identity": {
+          "stable_source_id": "source:078017e868afefd8",
+          "evidence_version": "sha256:64899b1617d69d4d8cb47a30be235bdc24c1c954e4a4df5698497b1769e38efc"
+        },
+        "source": {
+          "source_id": "jorf:JORFTEXT000054977621",
+          "source_kind": "JORF",
+          "change": "NEW",
+          "evidence": {
+            "text_id": "JORFTEXT000054977621",
+            "nature": "ARRETE",
+            "nor": "ECOI2626232A",
+            "title": "Arrêté du 6 octobre 2026 modifiant l'arrêté du 2 juillet 2026 fixant la liste des modèles de pompes à chaleur agréés en matière de qualité et de résilience industrielle",
+            "publisher": "DILA / Journal officiel de la République française",
+            "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054977621",
+            "publication_date": "2026-10-13",
+            "journal_number": "0239",
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [],
+            "detail_status": null,
+            "official": {
+              "title": null,
+              "period": null
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": "AVAILABLE",
+              "text_sha256": "5ba205528bf0121aa0258433a0389410e186b7e027919b3e85e95179e5eaccf8",
+              "excerpt": "Publics concernés : fabricants, importateurs, distributeurs et acquéreurs de pompes à chaleur.\nObjet : le présent arrêté actualise la liste des modèles de pompes à chaleur agréés en matière de qualité et de résilience industrielle, fixée par l'arrêté du 2 juillet 2026.\nEntrée en vigueur : le présent arrêté entre en vigueur le lendemain de sa publication.\nApplication : le présent arrêté est pris en application du décret n° 2026-413 du 29 mai 2026 relatif à l'instruction des demandes d'agrément de modèles de pompes à chaleur en matière de qualité et de résilience industrielle.\nLe ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique et le ministre délégué auprès du ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique, chargé de l'industrie,\nVu le décret n° 2026-413 du 29 mai 2026 relatif à l'instruction des demandes d'agrément de modèles de pompes à chaleur en matière de qualité et de résilience industrielle ;\nVu l'arrêté du 29 mai 2026 fixant les conditions d'agrément des modèles de pompes à chaleur en matière de qualité et de résilience industrielle ;\nVu l'arrêté du 2 juillet 2026 fixant la liste des modèles de pompes à chaleur agréés en matière de qualité et de résilience industrielle ;\nVu la notification n° 2026/0539/FR adressée le 5 octobre 2026 à la Commission européenne,\nArrêtent :",
+              "excerpt_truncated": false,
+              "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261013-002011.tar.gz",
+              "archive_sha256": "f52ec6e6c7a6b53ad95371c5bf870c36571a99f5e7430a42a33f17770e7d1eab"
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Arrêté publié modifiant la liste des modèles de pompes à chaleur agréés en matière de qualité et de résilience industrielle, texte officiel en vigueur créant un périmètre industriel identifiable (fabricants, importateurs, distributeurs, acquéreurs) ; relève de l'efficacité énergétique, service B2B non réglementé possible de veille/qualification de besoin envisageable."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "ELIGIBILITY_OR_CERTIFICATION",
+              "score": 2,
+              "terms": [
+                "agrement"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        },
+        "reading": {
+          "consequence": "La liste officielle des modèles de pompes à chaleur agréés qualité/résilience industrielle est mise à jour ; seuls les modèles figurant sur cette liste bénéficient de cet agrément spécifique.",
+          "affected_actors": [
+            "fabricants de pompes à chaleur",
+            "importateurs",
+            "distributeurs"
+          ],
+          "beneficiaries": [
+            "acquéreurs de pompes à chaleur agréées",
+            "fabricants dont les modèles figurent sur la liste"
+          ],
+          "constrained_parties": [
+            "fabricants dont les modèles ne sont pas/plus sur la liste"
+          ],
+          "potential_service_partners": [],
+          "unknowns": [
+            "contenu exact de la liste mise à jour (ajouts/retraits de modèles)",
+            "impact sur l'éligibilité à des dispositifs d'aide ou CEE",
+            "critères précis de résilience industrielle évalués"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "jorf:JORFTEXT000054977621"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:bee86e4d0e8ccf54",
+          "title": "Arrêté du 6 octobre 2026 modifiant la liste des modèles de pompes à chaleur agréés en matière de qualité et de résilience industrielle",
+          "keywords": [
+            "pompe à chaleur",
+            "agrément",
+            "qualité industrielle",
+            "résilience industrielle",
+            "liste de modèles"
+          ],
+          "affected_scope": [
+            "fabricants de pompes à chaleur",
+            "importateurs",
+            "distributeurs",
+            "acquéreurs"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "PUBLISHED",
+            "proof_status": "VERIFIED",
+            "effective_date": "2026-10-14",
+            "affected_scope": [
+              "fabricants",
+              "importateurs",
+              "distributeurs",
+              "acquéreurs"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "agrément de modèle de pompe à chaleur (qualité et résilience industrielle)",
+                "status": "UNKNOWN"
+              }
+            ],
+            "dependencies": [
+              {
+                "id": "décret n° 2026-413 du 29 mai 2026",
+                "status": "AVAILABLE"
+              },
+              {
+                "id": "arrêté du 29 mai 2026 (conditions d'agrément)",
+                "status": "AVAILABLE"
+              },
+              {
+                "id": "arrêté du 2 juillet 2026 (liste initiale)",
+                "status": "AVAILABLE"
+              }
+            ],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "PARTIAL"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:bee86e4d0e8ccf54",
+          "evaluated_at_utc": "2026-10-13T14:13:04.922829+00:00",
+          "compliance": {
+            "status": "PASS",
+            "reasons": [
+              "Texte vérifié, dans le périmètre et actionnable."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Statut de l'autorisation inconnu : agrément de modèle de pompe à chaleur (qualité et résilience industrielle).",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:bee86e4d0e8ccf54",
+        "title": "Arrêté du 6 octobre 2026 modifiant la liste des modèles de pompes à chaleur agréés en matière de qualité et de résilience industrielle",
+        "keywords": [
+          "pompe à chaleur",
+          "agrément",
+          "qualité industrielle",
+          "résilience industrielle",
+          "liste de modèles"
+        ],
+        "affected_scope": [
+          "fabricants de pompes à chaleur",
+          "importateurs",
+          "distributeurs",
+          "acquéreurs"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-14",
+          "affected_scope": [
+            "fabricants",
+            "importateurs",
+            "distributeurs",
+            "acquéreurs"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "agrément de modèle de pompe à chaleur (qualité et résilience industrielle)",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "décret n° 2026-413 du 29 mai 2026",
+              "status": "AVAILABLE"
+            },
+            {
+              "id": "arrêté du 29 mai 2026 (conditions d'agrément)",
+              "status": "AVAILABLE"
+            },
+            {
+              "id": "arrêté du 2 juillet 2026 (liste initiale)",
+              "status": "AVAILABLE"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "PARTIAL"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-10-13T14:13:04.922829+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
       "signal_id": "signal:c20abf6d37ae4200",
       "source_id": "jorf:JORFTEXT000054834875",
       "captured_at_utc": "2026-09-13T11:53:53.020672+00:00",
@@ -8606,7 +8953,7 @@
     }
   ],
   "queue_audit": {
-    "processed_count": 1406,
+    "processed_count": 1418,
     "unrecoverable_queue_entries": [
       {
         "fingerprint": "490853c49376a298cfdbefd3d9015889f24dfb149e616097ae78c39d2661a25b",
@@ -10951,6 +11298,46 @@
       {
         "fingerprint": "c4c863738c008f615fec8b16875e6483645b07402ea9cfa913299b557f0e471c",
         "source_id": "jorf:JORFTEXT000054971444",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "767b979c39da108548811bf3a4dc58f3681b041aa7e846920012ebb4f92549ab",
+        "source_id": "jorf:JORFTEXT000054977644",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "4ee324fbba73a417189de9392d39c583290f9f6868105ce3a4bbbc46b1543169",
+        "source_id": "jorf:JORFTEXT000054977699",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "a8ffea1cb8b382aaf18d8b4bc64337cfcec1e535fd858772bd18720300d06b31",
+        "source_id": "jorf:JORFTEXT000054977873",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "b37acb653cb34730b0cd7587d3db68da7e8ea668d9ac0460980c85b56fa85357",
+        "source_id": "jorf:JORFTEXT000054977877",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "c2f3839b88bfb9160bc47918a893711cab7581e1672323db8336317d6b9ab080",
+        "source_id": "jorf:JORFTEXT000054977884",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "a1e34941e79f94a9435d225859ff55ce7ff5ef7e7beb5c5f163f22c482322e36",
+        "source_id": "jorf:JORFTEXT000054977886",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "d8f8d5ef7c3fb571ad555df2f4b08a4f5f5745d111f8b61c60b8954b341fe343",
+        "source_id": "jorf:JORFTEXT000054977914",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "e469dd0829c43017f38785f9aa282a22b443302a2b6c9751c25fb92f95c4d6c3",
+        "source_id": "jorf:JORFTEXT000054977916",
         "reason": "PRIMARY_TEXT_EMPTY"
       }
     ],
