@@ -1,34 +1,1139 @@
 {
   "schema": "lawradar-anthropic-motor-batch-v1",
-  "input_sha256": "01f3395e9cbe25a253497b7bf596834ce0446ea658f352e881a62989e3df7e2a",
-  "request_sha256": "01f3395e9cbe25a253497b7bf596834ce0446ea658f352e881a62989e3df7e2a",
+  "input_sha256": "aec2073be5460889c257eea1b8b81e8ac5e90590e4ea1df170ae02f4b3e5f139",
+  "request_sha256": "aec2073be5460889c257eea1b8b81e8ac5e90590e4ea1df170ae02f4b3e5f139",
   "model": "claude-sonnet-5",
   "request_version": "2026-09-12-explicit-json-contract-v8",
-  "batch_id": "msgbatch_014tsyYtn6ubComAfnPyJ2Bp",
-  "processing_status": "ended",
-  "request_count": 4,
+  "batch_id": "msgbatch_01L2SsRCvubDRZ43LkZm3Usv",
+  "processing_status": "in_progress",
+  "request_count": 10,
   "request_counts": {
-    "processing": 0,
-    "succeeded": 4,
+    "processing": 10,
+    "succeeded": 0,
     "errored": 0,
     "canceled": 0,
     "expired": 0
   },
   "motor_input": {
     "schema": "lawradar-motor-input-v1",
-    "report_date": "2026-10-11",
+    "report_date": "2026-10-13",
     "delta_changed_sources": [
+      "jorf-summaries-latest.json",
       "consultdd-latest.json"
     ],
     "handled_source_files": [
       "jorf-summaries-latest.json",
       "consultdd-latest.json"
     ],
-    "excluded_historical_candidates": [],
-    "excluded_routine_candidates": [],
-    "excluded_no_economic_friction_candidates": [],
+    "excluded_historical_candidates": [
+      {
+        "source_id": "jorf:JORFTEXT000000317523",
+        "publication_date": "1985-07-26",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000335722",
+        "publication_date": "1989-09-23",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000356568",
+        "publication_date": "1991-11-28",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000425470",
+        "publication_date": "2007-01-13",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000512228",
+        "publication_date": "1970-01-04",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000534501",
+        "publication_date": "1991-03-21",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000578193",
+        "publication_date": "2001-03-25",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000681478",
+        "publication_date": "1973-07-07",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000787339",
+        "publication_date": "2004-08-08",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000794807",
+        "publication_date": "2003-11-16",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000855024",
+        "publication_date": "1972-07-22",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000858252",
+        "publication_date": "1973-06-23",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000875172",
+        "publication_date": "1971-07-17",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000876235",
+        "publication_date": "1975-08-22",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000879673",
+        "publication_date": "1982-05-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000022205388",
+        "publication_date": "2010-05-13",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000023086292",
+        "publication_date": "2010-11-16",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000024079803",
+        "publication_date": "2011-05-28",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000025596222",
+        "publication_date": "2012-03-31",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000026597385",
+        "publication_date": "2012-11-10",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000029218119",
+        "publication_date": "2014-07-11",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000029497140",
+        "publication_date": "2014-09-25",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000030194055",
+        "publication_date": "2015-02-06",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000030715134",
+        "publication_date": "2015-06-13",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000031199801",
+        "publication_date": "2015-09-23",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000031692607",
+        "publication_date": "2015-12-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000031844697",
+        "publication_date": "2016-01-16",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000032005497",
+        "publication_date": "2016-02-11",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000032587047",
+        "publication_date": "2016-05-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000032587192",
+        "publication_date": "2016-05-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000032770243",
+        "publication_date": "2016-06-26",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000032927800",
+        "publication_date": "2016-07-23",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000032948965",
+        "publication_date": "2016-07-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000033479390",
+        "publication_date": "2016-11-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000033927512",
+        "publication_date": "2017-01-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000034485233",
+        "publication_date": "2017-04-26",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000034518674",
+        "publication_date": "2017-04-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000034631482",
+        "publication_date": "2017-05-10",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000034675453",
+        "publication_date": "2017-05-11",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000034675719",
+        "publication_date": "2017-05-11",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000035104177",
+        "publication_date": "2017-07-06",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000036692487",
+        "publication_date": "2018-03-10",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000036927339",
+        "publication_date": "2018-05-20",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000036927366",
+        "publication_date": "2018-05-20",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000036927499",
+        "publication_date": "2018-05-20",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000037218444",
+        "publication_date": "2018-07-19",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000038100696",
+        "publication_date": "2019-02-07",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000038272532",
+        "publication_date": "2019-03-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000038371010",
+        "publication_date": "2019-04-14",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000038396874",
+        "publication_date": "2019-04-21",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000038914192",
+        "publication_date": "2019-08-13",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000039184769",
+        "publication_date": "2019-10-06",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000039296813",
+        "publication_date": "2019-10-31",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000039305888",
+        "publication_date": "2019-11-03",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000039309275",
+        "publication_date": "2019-11-05",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000039309339",
+        "publication_date": "2019-11-05",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000039472996",
+        "publication_date": "2019-12-11",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000039700476",
+        "publication_date": "2019-12-31",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000041491716",
+        "publication_date": "2020-01-29",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000041661760",
+        "publication_date": "2020-02-29",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000041782400",
+        "publication_date": "2020-04-05",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000041885587",
+        "publication_date": "2020-05-17",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000041909263",
+        "publication_date": "2020-05-24",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000041937140",
+        "publication_date": "2020-05-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000041937165",
+        "publication_date": "2020-05-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000042183265",
+        "publication_date": "2020-08-01",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000042238259",
+        "publication_date": "2020-08-15",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000042357530",
+        "publication_date": "2020-09-24",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000042360690",
+        "publication_date": "2020-09-25",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000042366357",
+        "publication_date": "2020-09-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000042445735",
+        "publication_date": "2020-10-21",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000042475106",
+        "publication_date": "2020-10-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000042545890",
+        "publication_date": "2020-11-22",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000042738446",
+        "publication_date": "2020-12-26",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000042739593",
+        "publication_date": "2020-12-26",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000043189755",
+        "publication_date": "2021-02-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000043189840",
+        "publication_date": "2021-02-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000043370810",
+        "publication_date": "2021-04-15",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000043519165",
+        "publication_date": "2021-05-21",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000043936420",
+        "publication_date": "2021-08-15",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000044019478",
+        "publication_date": "2021-09-05",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000044027187",
+        "publication_date": "2021-09-08",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000044206637",
+        "publication_date": "2021-10-15",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000044319445",
+        "publication_date": "2021-11-14",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000044336518",
+        "publication_date": "2021-11-18",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000044638867",
+        "publication_date": "2021-12-31",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000044740106",
+        "publication_date": "2021-12-31",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000045410797",
+        "publication_date": "2022-03-26",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000045862535",
+        "publication_date": "2022-06-04",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000046503473",
+        "publication_date": "2022-10-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000047614226",
+        "publication_date": "2023-06-01",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000048709359",
+        "publication_date": "2023-12-29",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000051194412",
+        "publication_date": "2025-02-19",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000051206866",
+        "publication_date": "2025-02-20",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000051550563",
+        "publication_date": "2025-05-04",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000052836106",
+        "publication_date": "2025-11-25",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000053165830",
+        "publication_date": "2025-12-26",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000053482889",
+        "publication_date": "2026-02-14",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054361736",
+        "publication_date": "2026-07-01",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054408388",
+        "publication_date": "2026-07-10",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054643102",
+        "publication_date": "2026-08-08",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054683209",
+        "publication_date": "2026-08-15",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      }
+    ],
+    "excluded_routine_candidates": [
+      {
+        "source_id": "jorf:JORFTEXT000054977630",
+        "title": "Arrêté du 9 octobre 2026 portant délégation de signature (cabinet du ministre de l'Europe et des affaires étrangères)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977639",
+        "title": "Arrêté du 9 octobre 2026 portant nomination (administration centrale)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977647",
+        "title": "Arrêté du 5 octobre 2026 portant nomination au conseil d'administration de l'établissement public Autorité des relations sociales des plateformes d'emploi",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977649",
+        "title": "Arrêté du 8 octobre 2026 portant nomination (administration centrale)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977655",
+        "title": "Arrêté du 9 octobre 2026 portant maintien en détachement (Conseil d'Etat) - Mme DELORME (Angélique)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977664",
+        "title": "Arrêté du 5 octobre 2026 portant nomination du chef du service commun des laboratoires par intérim (direction générale de la concurrence, de la consommation et de la répression des fraudes)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977666",
+        "title": "Arrêté du 12 octobre 2026 portant nomination (administration centrale)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977672",
+        "title": "Décret du 12 octobre 2026 portant nomination de deux directeurs académiques adjoints des services de l'éducation nationale",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977690",
+        "title": "Arrêté du 9 octobre 2026 portant cessation de fonctions et nomination au cabinet du ministre de l'Europe et des affaires étrangères",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977702",
+        "title": "Arrêté du 9 octobre 2026 portant nomination du commissaire du Gouvernement auprès de l'Autorité nationale des jeux",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977704",
+        "title": "Arrêté du 12 octobre 2026 portant nomination (administration centrale)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977711",
+        "title": "Arrêté du 8 octobre 2026 portant nomination au cabinet du ministre de l'enseignement supérieur, de la recherche et de l'espace",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977718",
+        "title": "Arrêté du 12 octobre 2026 portant nomination (administration centrale)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977723",
+        "title": "Arrêté du 12 octobre 2026 portant nomination (administration centrale)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977729",
+        "title": "Arrêté du 8 octobre 2026 portant nomination au conseil d'administration de l'Agence nationale de l'habitat",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977875",
+        "title": "Commissions et organes de contrôle",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977880",
+        "title": "Documents déposés",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977882",
+        "title": "Documents publiés",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977891",
+        "title": "Avis de vacance d'un emploi de directeur régional adjoint de l'économie, de l'emploi, du travail et des solidarités des Pays de la Loire, chargé des fonctions de responsable du pôle « entreprises, emploi et compétences »",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977902",
+        "title": "Avis de vacance d'un emploi de directeur régional adjoint de l'économie, de l'emploi, du travail et des solidarités des Pays de la Loire, chargé des fonctions de responsable du pôle « entreprises, emploi et compétences »",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977919",
+        "title": "Demandes de changement de nom (Accès protégé textes 48 à 67)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      }
+    ],
+    "excluded_no_economic_friction_candidates": [
+      {
+        "source_id": "jorf:JORFTEXT000054977733",
+        "title": "Arrêté du 8 octobre 2026 portant extension d'avenants à la convention collective nationale du personnel navigant technique des exploitants d'hélicoptères (n° 1944)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977744",
+        "title": "Arrêté du 8 octobre 2026 portant extension d'un avenant à la convention collective nationale des mareyeurs-expéditeurs (n° 1589)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977754",
+        "title": "Arrêté du 8 octobre 2026 portant extension d'un accord collectif conclu dans le cadre de la convention collective nationale de la fabrication et du commerce des produits à usage pharmaceutique, parapharmaceutique et vétérinaire (n° 1555)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977764",
+        "title": "Arrêté du 8 octobre 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale de l'industrie de la chaussure et des articles chaussants (n° 1580)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977774",
+        "title": "Arrêté du 8 octobre 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale des commerces de gros (n° 573)",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977784",
+        "title": "Avis relatif à l'extension d'un avenant à un accord collectif conclu dans le cadre de la convention collective nationale de l'industrie pharmaceutique",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977804",
+        "title": "Avis relatif à l'extension d'un accord régional sur la mise en place d'un régime de prévoyance des entreprises de travaux et services agricoles ruraux des Hauts-de-France au profit des salaries ne relevant pas des articles 2.1 et 2.2 de l'accord national interprofessionnel relatif a la prévoyance des cadres du 17 novembre 2017",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977810",
+        "title": "Avis relatif à l'extension d'un accord régional sur la mise en place d'un régime frais de santé des entreprises de travaux et services agricoles ruraux des Hauts-de-France au profit des salaries ne relevant pas des articles 2.1 et 2.2 de l'accord national interprofessionnel relatif à la prévoyance des cadres du 17 novembre 2017",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977816",
+        "title": "Avis relatif à l'extension d'un avenant à l'annexe n° 4 du personnel des centres équestres (ex-IDCC 7012) de la convention collective nationale des personnels des activités hippiques du 16 novembre 2023",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977822",
+        "title": "Avis relatif à l'extension d'un avenant à l'annexe n° 4 du personnel des centres équestres (ex-IDCC 7012) de la convention collective nationale des personnels des activités hippiques du 16 novembre 2023",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977828",
+        "title": "Avis relatif à l'extension d'un avenant à l'annexe n° 4 du personnel des centres équestres (ex-IDCC 7012) de la convention collective nationale des personnels des activités hippiques du 16 novembre 2023",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977834",
+        "title": "Avis relatif à l'extension d'un avenant à l'annexe n° 4 du personnel des centres équestres (ex-IDCC 7012) de la convention collective nationale des personnels des activités hippiques du 16 novembre 2023",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977840",
+        "title": "Avis relatif à l'extension d'un avenant à la convention collective des exploitations forestières du massif de Gascogne du 11 septembre 2015",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      }
+    ],
     "rules": "Preuves locales diffées uniquement ; réapparition historique et routine administrative explicite = filtrées avec trace ; les autres textes primaires disponibles reçoivent une lecture factuelle. Une friction détectée ouvre seulement une enquête, jamais une opportunité confirmée ; inconnu = UNRESOLVED.",
     "candidates": [
+      {
+        "source_id": "jorf:JORFTEXT000054977578",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054977578",
+          "nature": "DECRET",
+          "nor": "TRSS2616720D",
+          "publication_date": "2026-10-13",
+          "journal_number": "0239",
+          "title": "Décret n° 2026-948 du 12 octobre 2026 définissant les modalités d'application de la majoration de durée d'assurance pour l'exercice d'un mandat local",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054977578",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261013-002011.tar.gz",
+          "archive_sha256": "f52ec6e6c7a6b53ad95371c5bf870c36571a99f5e7430a42a33f17770e7d1eab",
+          "official_text_excerpt": "Publics concernés : anciens élus locaux demandant l'entrée en jouissance d'une pension de retraite de base.\nObjet : le décret définit les modalités d'application de la majoration de durée d'assurance instituée au bénéfice des anciens élus locaux ayant exercé une fonction au sein d'un organe exécutif.\nEntrée en vigueur : le texte entre en vigueur le lendemain de sa publication, dans les conditions précisées à son article 8.\nApplication : le présent décret est pris en application de l'article 5 de la loi n° 2025-1249 du 22 décembre 2025 portant création d'un statut de l'élu local.\nLe Premier ministre,\nSur le rapport du ministre du travail et des solidarités,\nVu le code électoral, notamment son article LO 151 ;\nVu le code des pensions civiles et militaires de retraite, notamment son article R. 26 bis ;\nVu le code des pensions de retraite des marins français du commerce, de pêche ou de plaisance, notamment son article R. 8-1 ;\nVu le code rural et de la pêche maritime, notamment son article R. 732-61 ;\nVu le code de la sécurité sociale, notamment ses articles L. 161-21-2 et R. 173-15 ;\nVu le décret n° 2003-1306 du 26 décembre 2003 modifié relatif au régime de retraite des fonctionnaires affiliés à la Caisse nationale de retraites des agents des collectivités locales, notamment son article 15 ;\nVu le décret n° 2004-1056 du 5 octobre 2004 modifié relatif au régime des pensions des ouvriers des établissements industriels de l'Etat, notamment son article 12 ;\nVu le décret n° 2017-1000 du 10 mai 2017 modifié relatif à l'assurance vieillesse-veuvage applicable à Saint-Pierre-et-Miquelon, notamment son article 3 ;\nVu l'avis du conseil d'administration de la Caisse nationale d'assurance vieillesse en date du 1\ner\njuillet 2026 ;\nVu l'avis du Conseil national d'évaluation des normes en date du 2 juillet 2026 ;\nVu l'avis du conseil central d'administration de la Mutualité sociale agricole en date du 8 juillet 2026 ;\nVu l'avis du conseil territorial de Saint-Pierre-et-Miquelon en date du 13 juillet 2026 ;\nLe Conseil d'Etat (section sociale) entendu,\nDécrète :",
+          "official_text_sha256": "cad2e78c358f0aff72f2bbf49bfe576ebb5da7712b0bf38071ff9c0e266d8ad1",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 4,
+          "triggers": [
+            {
+              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
+              "score": 3,
+              "terms": [
+                "collectivites"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977621",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054977621",
+          "nature": "ARRETE",
+          "nor": "ECOI2626232A",
+          "publication_date": "2026-10-13",
+          "journal_number": "0239",
+          "title": "Arrêté du 6 octobre 2026 modifiant l'arrêté du 2 juillet 2026 fixant la liste des modèles de pompes à chaleur agréés en matière de qualité et de résilience industrielle",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054977621",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261013-002011.tar.gz",
+          "archive_sha256": "f52ec6e6c7a6b53ad95371c5bf870c36571a99f5e7430a42a33f17770e7d1eab",
+          "official_text_excerpt": "Publics concernés : fabricants, importateurs, distributeurs et acquéreurs de pompes à chaleur.\nObjet : le présent arrêté actualise la liste des modèles de pompes à chaleur agréés en matière de qualité et de résilience industrielle, fixée par l'arrêté du 2 juillet 2026.\nEntrée en vigueur : le présent arrêté entre en vigueur le lendemain de sa publication.\nApplication : le présent arrêté est pris en application du décret n° 2026-413 du 29 mai 2026 relatif à l'instruction des demandes d'agrément de modèles de pompes à chaleur en matière de qualité et de résilience industrielle.\nLe ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique et le ministre délégué auprès du ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique, chargé de l'industrie,\nVu le décret n° 2026-413 du 29 mai 2026 relatif à l'instruction des demandes d'agrément de modèles de pompes à chaleur en matière de qualité et de résilience industrielle ;\nVu l'arrêté du 29 mai 2026 fixant les conditions d'agrément des modèles de pompes à chaleur en matière de qualité et de résilience industrielle ;\nVu l'arrêté du 2 juillet 2026 fixant la liste des modèles de pompes à chaleur agréés en matière de qualité et de résilience industrielle ;\nVu la notification n° 2026/0539/FR adressée le 5 octobre 2026 à la Commission européenne,\nArrêtent :",
+          "official_text_sha256": "5ba205528bf0121aa0258433a0389410e186b7e027919b3e85e95179e5eaccf8",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "ELIGIBILITY_OR_CERTIFICATION",
+              "score": 2,
+              "terms": [
+                "agrement"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977679",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054977679",
+          "nature": "DECRET",
+          "nor": "MEND2624816D",
+          "publication_date": "2026-10-13",
+          "journal_number": "0239",
+          "title": "Décret du 12 octobre 2026 portant renouvellement de cinq directeurs académiques des services de l'éducation nationale et d'un directeur académique adjoint des services de l'éducation nationale",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054977679",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261013-002011.tar.gz",
+          "archive_sha256": "f52ec6e6c7a6b53ad95371c5bf870c36571a99f5e7430a42a33f17770e7d1eab",
+          "official_text_excerpt": "Le Président de la République,\nSur le rapport du Premier ministre et du ministre de l'éducation nationale,\nVu le code de l'éducation, notamment son article R. 222-24 ;\nVu le décret n° 2016-1413 du 20 octobre 2016 modifié relatif aux emplois fonctionnels des services déconcentrés de l'éducation nationale ;\nVu le décret n° 2019-1594 du 31 décembre 2019 modifié relatif aux emplois de direction de l'Etat ;\nVu le décret du 10 octobre 2022 portant nomination de quatre directeurs académiques des services de l'éducation nationale et de trois directeurs académiques adjoints des services de l'éducation nationale ;\nVu le décret du 28 octobre 2022 portant nomination de deux directeurs académiques des services de l'éducation nationale ;\nVu le décret du 27 novembre 2022 portant nomination de quatre directeurs académiques des services de l'éducation nationale et d'une directrice académique adjointe des services de l'éducation nationale,\nDécrète :",
+          "official_text_sha256": "abaa9f1287614ac073478726c179c3d8fc6532dff34ef20f80c6cca2c66a9e20",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977790",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054977790",
+          "nature": "ARRETE",
+          "nor": "TECM2625169A",
+          "publication_date": "2026-10-13",
+          "journal_number": "0239",
+          "title": "Arrêté du 29 septembre 2026 portant extension du protocole d'accord négociation annuelle obligatoire 2026 Groupement des armateurs de services publics maritimes de passages d'eau (GASPE)",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054977790",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261013-002011.tar.gz",
+          "archive_sha256": "f52ec6e6c7a6b53ad95371c5bf870c36571a99f5e7430a42a33f17770e7d1eab",
+          "official_text_excerpt": "Le ministre du travail et des solidarités et la ministre de la transition écologique, de la biodiversité et des négociations internationales sur le climat et la nature,\nVu le code du travail, notamment son article L. 2261-15 ;\nVu le code des transports, notamment son article L. 5543-1-1 ;\nVu le décret n° 2015-918 du 27 juillet 2015 relatif aux conventions et accords collectifs des gens de mer et à la composition et au fonctionnement de la Commission nationale de la négociation collective maritime ;\nVu le décret n° 2020-1410 du 17 novembre 2020 modifiant la composition de la Commission nationale de la négociation collective maritime, de l'emploi et de la formation professionnelle et adaptant diverses dispositions réglementaires relatives aux gens de mer ;\nVu la convention collective nationale du personnel navigant du groupement des armateurs de services de passages d'eau (GASPE) du 23 mai 2018 ;\nVu l'arrêté du 2 mars 2021 portant extension de la convention collective nationale du personnel navigant du groupement des armateurs de services de passages d'eau et d'accords la complétant ;\nVu le protocole d'accord négociation annuelle obligatoire GASPE du 31 mars 2026 ;\nVu la demande d'extension présentée par les organisations signataires ;\nVu l'avis relatif à l'extension publié au Journal officiel de la République française du 31 mai 2026 ;\nVu l'avis de la commission nationale de la négociation collective maritime, de l'emploi et de la formation professionnelle du 9 septembre 2026,\nArrêtent :",
+          "official_text_sha256": "1785a5b141c062708a9d8ea9ffa2c094fabaf3716f3e2690db5c2970890d486a",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "LEGAL_OBLIGATION",
+              "score": 3,
+              "terms": [
+                "obligatoire"
+              ]
+            }
+          ],
+          "scope_terms": [
+            "professionnel"
+          ],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977847",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054977847",
+          "nature": "DECISION",
+          "nor": "RCAR2626840S",
+          "publication_date": "2026-10-13",
+          "journal_number": "0239",
+          "title": "Décision n° 2026-CA-23 du 15 septembre 2026 autorisant l'association Zones d'Ondes - Agence Associative : Normandie Média Edition Diffusion à exploiter un service de radio temporaire par voie hertzienne terrestre en modulation de fréquence dénommé Radio Courant d'R",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054977847",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261013-002011.tar.gz",
+          "archive_sha256": "f52ec6e6c7a6b53ad95371c5bf870c36571a99f5e7430a42a33f17770e7d1eab",
+          "official_text_excerpt": "L'ARCOM Caen,\nVu l'article R. 3323-1 du code de la santé publique ;\nVu la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication, notamment son article 28-3 ;\nVu le décret n° 87-239 du 6 avril 1987 pris pour l'application du 1° de l'article 27 de la loi n° 86-1067 du 30 septembre 1986 relative à la liberté de communication et fixant, pour les services privés de radiodiffusion sonore diffusés par voie hertzienne terrestre ou par satellite, le régime applicable à la publicité et au parrainage ;\nVu le décret n° 2024-425 du 10 mai 2024 relatif aux comités techniques prévus à l'article 29-3 de la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication ;\nVu la décision n° 87-23 du 6 mars 1987 de la Commission nationale de la communication et des libertés, modifiée par la décision n° 90-829 du 7 décembre 1990 du Conseil supérieur de l'audiovisuel, définissant les conditions techniques d'usage des fréquences pour la diffusion de signaux de radiodiffusion sonore en modulation de fréquence ;\nVu la décision n° 2015-315 du 28 juillet 2015 du Conseil supérieur de l'audiovisuel fixant le règlement intérieur des comités territoriaux de l'audiovisuel et leurs règles générales d'organisation et de fonctionnement ;\nVu la convention conclue entre l'association Zones d'Ondes - Agence Associative : Normandie Média Edition Diffusion et l'ARCOM Caen ;\nAprès en avoir délibéré,\nDécide :",
+          "official_text_sha256": "f88e246a892515ac1b5697e8e811eaedc9da78fd9913f8d4090d88b67aa67a96",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [
+            "association"
+          ],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977863",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054977863",
+          "nature": "DECISION",
+          "nor": "RCAC2626408S",
+          "publication_date": "2026-10-13",
+          "journal_number": "0239",
+          "title": "Décision n° 2026-482 du 22 septembre 2026 mettant en demeure la SARL Lyon Media Plus",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054977863",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261013-002011.tar.gz",
+          "archive_sha256": "f52ec6e6c7a6b53ad95371c5bf870c36571a99f5e7430a42a33f17770e7d1eab",
+          "official_text_excerpt": "L'Autorité de régulation de la communication audiovisuelle et numérique,\nVu la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication, notamment ses articles 28 et 42 ;\nVu la délibération n° 2021-103 du 8 décembre 2021 relative aux engagements des services de radio pour l'application du 2° bis de l'article 28 de la loi n° 86-1067 du 30 septembre 1986 relative à la liberté de communication, notamment son article 16 ;\nVu l'ensemble des décisions de l'Autorité de régulation de la communication audiovisuelle et numérique autorisant la SARL Lyon Media Plus à exploiter par voie hertzienne terrestre en modulation de fréquence un service de radio de catégorie B dénommé « Tonic Radio, la radio du sport » ;\nVu la convention signée le 5 février 2020 entre le Conseil supérieur de l'audiovisuel et la SARL Lyon Media Plus, et modifiée notamment par l'avenant n° 2 signé le 30 mars 2022 entre l'Autorité de régulation de la communication audiovisuelle et numérique et la SARL Lyon Media Plus, notamment ses articles 3-2 et 4-2-1, et l'annexe IV ;\nVu les courriers de l'Autorité de régulation de la communication audiovisuelle et numérique des 29 juillet 2024 et 22 mai 2025 demandant à la SARL Lyon Media Plus de se conformer à ses obligations de diffusion de chansons d'expression française ;\nVu le courriel des services de l'Autorité de régulation de la communication audiovisuelle et numérique du 25 juin 2026 auquel la SARL Lyon Media Plus a répondu par courriel du même jour ;\nVu les résultats des relevés de diffusion réalisés, à la demande de l'Autorité de régulation de la communication audiovisuelle et numérique, par la société Yacast, et portant sur le programme musical diffusé par la SARL Lyon Media Plus au cours des mois de janvier, février et mars 2026 ;\nConsidérant ce qui suit :\n1. En vertu des stipulations de l'article 4-2-1 de la convention du 5 février 2020, l'Autorité de régulation de la communication audiovisuelle et numérique peut mettre en demeure l'éditeur de respecter ses obligations conventionnelles ; selon l'article 3-2 et l'annexe IV de cette convention, la SARL Lyon Media Plus s'est engagée, en tant que radio spécialisée dans la promotion des jeunes talents, à ce qu'au moins 35 % de la totalité des chansons diffusées soient des chansons d'expression française ou interprétées dans une langue régionale en usage en France et à ce que les chansons d'expression française ou interprétées dans une langue régionale en usage en France provenant de nouveaux talents représentent au moins 25 % du nombre total des chansons diffusées ;\n2. Il ressort des résultats du relevé de diffusions que la SARL Lyon Media Plus a diffusé mensuellement 28,9 %, 29,5 % et 29,5 % de chansons francophones, soit une moyenne de 29,3 % pour les mois de janvier, février et mars 2026, pour une obligation fixée à 35 %. Sur la même période, le service a diffusé 21,1 %, 21,4 % et 21,6 % de nouveaux talents francophones, soit une moyenne de 21,4 % sur ce trimestre, pour une obligation fixée à 25 %. En conséquence des manquements aux stipulations de l'article 3-2 et de l'annexe IV de la convention du 5 février 2020 ayant été relevés, il y a lieu d'adresser à la SARL Lyon Media Plus la présente mise en demeure ;\nAprès en avoir délibéré,\nDécide :",
+          "official_text_sha256": "91d60e128ff293dffa05340b901b603956813e1f8fa08b5c609dce458daf55d3",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 6,
+          "triggers": [
+            {
+              "kind": "LEGAL_OBLIGATION",
+              "score": 3,
+              "terms": [
+                "obligation"
+              ]
+            },
+            {
+              "kind": "SANCTION_OR_CONTROL",
+              "score": 3,
+              "terms": [
+                "manquement"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3457.html",
+        "source_kind": "CONSULTDD",
+        "change": "NEW",
+        "evidence": {
+          "title": "Projet de décret en Conseil d’État relatif aux conditions d’application des exonération...",
+          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3457.html",
+          "dates": [
+            "2026-10-13",
+            "2026-10-13"
+          ],
+          "interpretation": null,
+          "official_detail": {
+            "official_title": "Projet de décret en Conseil d’État relatif aux conditions d’application des exonérations de mesures compensatoires aux autorisations de défrichement prévues à l’article L. 341-6 du code forestier",
+            "official_period": "Consultation du 13/10/2026 au 04/11/2026 - aucune contribution",
+            "official_text": "Le contexte Le défrichement est défini à l’article L. 341-1 du code forestier comme une opération qui consiste à détruire l’état boisé et à mettre fin à sa destination forestière. Les autorisations de défrichement sont subordonnées à l’exécution de certaines conditions énumérées à l’article L. 341-6 du code forestier comme des travaux de boisement ou reboisement, des travaux d’amélioration sylvicole ou le versement d’une indemnité financière au fonds stratégique de la forêt et du bois (FSFB), afin de compenser la destruction de l’état boisé. L’article 167 de la loi n° 2016-1087 du 8 août 2016 pour la reconquête de la biodiversité, de la nature et des paysages a introduit un régime d’exonération à ce principe de compensation forestière. Il concerne les opérations de défrichement autorisées pour un motif de préservation ou de restauration du patrimoine naturel ou paysager et réalisées conformément à un plan de gestion ou un programme validé par les autorités administratives portant sur différents espaces naturels visé par la loi (soit les parcs nationaux, soit les parcs naturels régionaux, soit les réserves naturelles, soit les sites Natura 2000, soit les conservatoires d’espaces naturels, soit les réserves biologiques, soit les sites inscrits). Les objectifs Le projet de décret a pour objectif de préciser le cadre dans lequel peut s’appliquer l’exonération de la compensation forestière pour ces opérations et, notamment, la procédure à suivre pour bénéficier de cette exonération. Les autorisations de défrichement ayant pour conséquence de réduire le patrimoine forestier, il convient de s’assurer que les exonérations de compensation seront strictement limitées au champ prévu par l’article L. 341-6 du code forestier, à savoir qu’elles porteront sur des travaux nécessairement réalisés pour un motif de préservation ou de restauration du patrimoine naturel ou paysager dans le cadre de de la mise œuvre d’un plan de gestion ou d’un programme validé par les autorités administratives des différents espaces naturels visés par la loi. Le projet de décret définit les conditions permettant d’avoir un niveau d’information suffisant pour autoriser ces exonérations, mais également pour les refuser dès lors qu’elles ne remplissent pas les objectifs fixés par la loi. Les dispositions Le projet de décret fixe les pièces justificatives à fournir pour pouvoir bénéficier d’une exonération de compensation au titre de l’article L. 341-6 du code forestier. Ces pièces doivent permettre de s’assurer de la bonne conformité des opérations de défrichement aux motifs d’exonération de la compensation forestière. Il s’agit, d’une part, d’une notice explicative du projet, réalisée sous la responsabilité du demandeur et validée par le gestionnaire de l’espace concerné et, d’autre part, du document de gestion, programme ou plan de l’espace naturel visé au premier alinéa de l’article L. 341-6 du code forestier. Le projet de décret prévoit également que, lors de demandes d’autorisation de défrichement relatives à des bois et forêt relevant du régime forestier, les pièces justificatives d’une exonération de la compensation forestière au titre du premier alinéa de l’article L. 341-6 du code forestier seront déposées par l’Office national des forêts (ONF). Enfin, le projet de décret précise que le bénéficiaire d’une autorisation tacite de défrichement est exonéré de mesures compensatoires, dès lors qu’il a assorti sa demande des pièces justificatives de l’exonération de la compensation forestière. Consultation Pour la bonne prise en compte de votre avis, veuillez faire apparaitre le mot « favorable » ou « défavorable » dans le titre de votre contribution."
+          },
+          "official_attachments": [],
+          "financial_evidence": [],
+          "detail_status": "PRIMARY_PAGE_READ"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+              "score": 3,
+              "terms": []
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-relatif-a-l-integration-des-a3453.html",
+        "source_kind": "CONSULTDD",
+        "change": "NEW",
+        "evidence": {
+          "title": "Projet d’arrêté relatif à l’intégration des véhicules légers répondant à la norme Euro ...",
+          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-relatif-a-l-integration-des-a3453.html",
+          "dates": [
+            "2026-10-13",
+            "2026-10-13"
+          ],
+          "interpretation": null,
+          "official_detail": {
+            "official_title": "Projet d’arrêté relatif à l’intégration des véhicules légers répondant à la norme Euro 7 dans la nomenclature Crit’Air",
+            "official_period": "Consultation du 13/10/2026 au 03/11/2026 - aucune contribution",
+            "official_text": "Cette consultation publique est réalisée en application de l’article L. 123-19-1 du code de l’environnement pour la mise en œuvre du principe de participation du public aux décisions publiques ayant une incidence sur l’environnement prévu à l’article 7 de la Charte de l’environnement. La pollution atmosphérique est un enjeu de santé publique. D’après Santé Publique France, plus de 40 000 décès prématurés sont imputables chaque année à la pollution atmosphérique, notamment liée aux particules fines, et plus de 7 000 décès prématurés par an sont liés au dioxyde d’azote. Le coût annuel pour la société française de la pollution de l’air en France est estimé à 100 milliards d’euros (Sénat, 2015). D’après les derniers résultats de l’inventaire national d’émissions annuelles de polluants atmosphériques, le transport routier est le premier secteur émetteur d’oxyde d’azote (NOx), avec environ 40% des émissions totales en France en 2025 ayant un impact sanitaire et environnemental, qui se révèle plus marqué à proximité des axes routiers très fréquentés. Pour répondre à ces enjeux de santé publique, les véhicules routiers à moteur sont depuis 2016 classés en fonction de leur niveau d’émission de polluants atmosphériques au travers d’un certificat relatif à la qualité de l’air à coller sur le véhicule, la vignette Crit’air. Celle-ci permet la mise en œuvre de deux dispositifs reposant sur ce classement : - En cas de pic de pollution liée au transport routier, la mise en œuvre de la circulation différenciée par les Préfets ; - Dans les grandes agglomérations pour lesquelles une zone à faibles émissions « mobilité » ( ZFE -m) a été mise en place, la restriction de la circulation des véhicules les plus polluants, en fonction des modalités (nature des restrictions, calendrier de mise en œuvre, dérogations, etc.) définies au niveau local par la collectivité. Le classement des certificats relatifs à la qualité de l’air est issu de l’arrêté du 21 juin 2016 établissant la nomenclature des véhicules selon leur niveau d’émission de polluants atmosphériques. Le présent projet d’arrêté soumis à la consultation du public vise à actualiser le classement des certificats relatifs à la qualité de l’air afin de tenir compte de l’entrée en vigueur prochaine de la nouvelle norme Euro 7 pour les véhicules légers, soit les voitures particulières et les véhicules utilitaires légers. Celui-ci prévoit de modifier l’annexe I de l’arrêté de manière à intégrer cette nouvelle norme au sein de la classification. Cette évolution réglementaire a pour objectif d’assurer la continuité du dispositif Crit’Air à l’occasion de l’évolution des normes européennes d’émissions applicables aux véhicules routiers. Au regard des enjeux liés à la qualité de l’air en France et des niveaux d’émissions de polluants à l’échappement associés aux différentes motorisations, dont les seuils ne sont pas abaissés dans le cadre de la norme Euro 7, le projet d’arrêté prévoit de maintenir une distinction entre les véhicules légers à essence et roulant au diesel répondant à cette norme. Les véhicules légers à essence conforme aux exigences de la norme Euro 7 seraient ainsi classés en Crit’Air 1, alors que leurs équivalents diesel demeureraient classés en Crit’Air 2. Cette distinction s’inscrirait dans la continuité de celle actuellement appliquée aux véhicules légers répondant aux précédentes normes Euro 5 et Euro 6. Le présent projet d’arrêté n’apporte par ailleurs aucune modification pour les autres catégories de véhicules déjà inscrites dans la classification des vignettes Crit’Air."
+          },
+          "official_attachments": [],
+          "financial_evidence": [],
+          "detail_status": "PRIMARY_PAGE_READ"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+              "score": 3,
+              "terms": []
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
       {
         "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-modifiant-l-arrete-du-7-octobre-a3430.html",
         "source_kind": "CONSULTDD",
@@ -43,7 +1148,7 @@
           "interpretation": null,
           "official_detail": {
             "official_title": "Projet d’arrêté modifiant l’arrêté du 7 octobre 2023 relatif à la méthodologie de calcul du score environnemental et à la valeur de score minimale à atteindre pour l’éligibilité au bonus écologique pour les voitures particulières neuves électriques",
-            "official_period": "Consultation du 12/10/2026 au 13/10/2026 - 23 contributions",
+            "official_period": "Consultation du 12/10/2026 au 13/10/2026 - 24 contributions",
             "official_text": "Cette consultation est effectuée en application de l’article L.123-19-1 du code de l’environnement. Elle présente un projet d’arrêté relatif à l’évolution de la méthodologie de calcul du score environnemental en fonction des catégories et usages de véhicules particuliers électriques. L’arrêté du 7 octobre 2023 relatif à la méthodologie de calcul du score environnemental et à sa valeur minimale à atteindre, différencie à son article 3 le mode de calcul du score entre deux catégories de véhicules électriques. Le seuil qui sépare ces deux catégories repose sur trois critères techniques (autonomie électrique, volume de coffre, nombre de places assises), sélectionnés pour refléter la variété des cas d’usages des véhicules. Le mode de conversion de l’empreinte carbone en score final est différencié en fonction de la catégorie du véhicule, ce qui permet de prendre en compte cette variété des cas d’usages, d’évaluer des véhicules aux segments et usages comparables, et de valoriser ainsi l’effort environnemental d’un véhicule à l’intérieur de sa catégorie. Le projet d’arrêté approfondit cette différenciation en créant, à l’appui des critères précités (autonomie, volume de coffre, nombre de places assises), une troisième catégorie de véhicules électriques. Cette création répond à un double constat : d’une part, une très grande proportion de véhicules électriques qui atteignent le score minimal est située à ce jour dans la 2nde catégorie ; d’autre part, la segmentation actuelle en deux catégories n’appréhende pas suffisamment la variété des cas d’usage – allant du petit véhicule citadin et à usage personnel jusqu’au grand véhicule à usage familial ou utilitaire. Le maintien d’une différenciation entre les nouvelles catégories 2 et 3 sans alléger les exigences environnementales du score suppose dès lors une modification du mode de calcul du score pour les véhicules de catégorie 2."
           },
           "official_attachments": [],
@@ -66,92 +1171,21 @@
         }
       },
       {
-        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-modification-de-fiches-d-a3446.html",
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-suppression-de-fiches-d-a3428.html",
         "source_kind": "CONSULTDD",
         "change": "CHANGED",
         "evidence": {
-          "title": "Projet d’arrêté portant modification de fiches d’opérations standardisées du dispositif...",
-          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-modification-de-fiches-d-a3446.html",
+          "title": "Projet d’arrêté portant suppression de fiches d’opérations standardisées du dispositif ...",
+          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-portant-suppression-de-fiches-d-a3428.html",
           "dates": [
-            "2026-10-05",
+            "2026-09-16",
             "2026-10-12"
           ],
           "interpretation": null,
           "official_detail": {
-            "official_title": "Projet d’arrêté portant modification de fiches d’opérations standardisées du dispositif des certificats d’économies d’énergie",
-            "official_period": "Consultation du 05/10/2026 au 27/10/2026 - 7 contributions",
-            "official_text": "Cette consultation est effectuée en application de l’article L.123-19-1 du code de l’environnement. Le présent texte concerne le dispositif des certificats d’économies d’énergie (CEE) prévu aux articles L. 221-1 et suivants du code de l’énergie. Les fiches d’opérations standardisées du secteur tertiaire listées ci-dessous sont modifiées pour indiquer l’exclusion des entrepôts logistiques, réserves, entrepôts (frigorifiques ou non) et locaux de stockage : • BAT-TH-103 « Plancher chauffant hydraulique à basse température » • BAT-TH-105 « Radiateur basse température pour un chauffage central » • BAT-TH-108 « Système de régulation par programmation d’intermittence » • BAT-TH-109 « Optimiseur de relance en chauffage collectif comprenant une fonction auto-adaptative » • BAT-TH-110 « Récupérateur de chaleur à condensation » • BAT-TH-116 « Système de gestion technique du bâtiment pour le chauffage, l’eau chaude sanitaire, le refroidissement/climatisation, l’éclairage et les auxiliaires » • BAT-TH-122 « Programmateur d’intermittence pour la climatisation (France d’outre-mer) » • BAT-TH-125 « Ventilation mécanique simple flux à débit d’air constant ou modulé » • BAT-TH-126 « Ventilation mécanique double flux avec échangeur à débit d’air constant ou modulé » • BAT-TH-127 « Raccordement d’un bâtiment tertiaire à un réseau de chaleur » • BAT-TH-143 « Ventilo-convecteurs haute performance » • BAT-TH-158 « Pompe à chaleur réversible de type air/air (France métropolitaine) » • BAT-TH-162 « Système géothermique » • BAT-TH-163 « Pompe à chaleur de type air/eau » • BAT-TH-164 « Pompe à chaleur de type eau/eau ou eau glycolée/eau » En effet, d’une part les forfaits n’ont pas été dimensionnés et sont donc inadaptés pour ces locaux, et d’autre part la dépendance des forfaits à la surface chauffée a conduit récemment à des dévoiements de certaines fiches signalés par plusieurs acteurs. Le Gouvernement reste toutefois ouvert à une révision prochaine de certaines de ces fiches concernant les technologies de chauffage des entrepôts et en appelle aux propositions de la filière et des acteurs du dispositif des CEE. Les référentiels de contrôle existants sont mis en cohérence avec cette exclusion. Par ailleurs, une date d’abrogation, fixée au 31 décembre 2028, est indiquée pour les fiches qui n’en disposaient pas : BAT-TH-103, BAT-TH-105, BAT-TH-108, BAT-TH-110, BAT-TH-122, BAT-TH-125, BAT-TH-126, BAT-TH-127, BAT-TH-143."
-          },
-          "official_attachments": [],
-          "financial_evidence": [],
-          "detail_status": "PRIMARY_PAGE_READ"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "CONTEXT_REVIEW",
-          "score": 3,
-          "triggers": [
-            {
-              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
-              "score": 3,
-              "terms": []
-            }
-          ],
-          "scope_terms": [],
-          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
-        }
-      },
-      {
-        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projets-de-decret-relatif-aux-plans-de-prevention-a3445.html",
-        "source_kind": "CONSULTDD",
-        "change": "CHANGED",
-        "evidence": {
-          "title": "Projets de décret relatif aux plans de prévention des risques naturels et à la préventi...",
-          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projets-de-decret-relatif-aux-plans-de-prevention-a3445.html",
-          "dates": [
-            "2026-10-01",
-            "2026-10-09"
-          ],
-          "interpretation": null,
-          "official_detail": {
-            "official_title": "Projets de décret relatif aux plans de prévention des risques naturels et à la prévention des inondations et d’arrêté relatif à la détermination, qualification et représentation cartographique de l’aléa de référence dans le cadre de l’élaboration ou de la révision des plans de prévention des risques concernant les aléas débordement de cours d’eau, ruissellements et submersion marine",
-            "official_period": "Consultation du 01/10/2026 au 23/10/2026 - 17 contributions",
-            "official_text": "Le contexte Ces projets de décret et d’arrêté s’inscrivent dans la mise en œuvre du troisième plan national d’adaptation au changement climatique (PNACC-3) ainsi que de la loi n° 2026-381 du 19 mai 2026 visant à soutenir les collectivités territoriales dans la prévention et la gestion des inondations. Ils traitent des plans de prévention des risques naturels (PPRN). Ces plans sont élaborés par l’État, en concertation avec les collectivités territoriales, et permettent principalement de maîtriser l’urbanisation dans les zones exposées aux risques naturels. Leur objectif est de préserver les vies humaines en interdisant des constructions dans les zones les plus dangereuses et à limiter la vulnérabilité des constructions en imposant des règles dans les secteurs où le risque est moins élevé. Ces plans ont démontré leur efficacité en permettant d’économiser en moyenne 160 millions d’euros par an de sinistres liés aux inondations entre 1995 et 2018, selon la Caisse centrale de réassurance. Les objectifs Le projet de décret en Conseil d’État et l’arrêté d’application soumis à la consultation du public ont pour objectif d’adapter deux catégories de PPRN pour mieux tenir compte des effets du changement climatique : il s’agit des plans de prévention des risques d’inondation (PPRI) et des plans de prévention des risques de submersion marine (PPRSM). Ce texte vise ainsi à répondre aux objectifs du PNACC-3. Le projet de décret abroge et remplace le décret n° 2019-715 du 5 juillet 2019 relatif aux plans de prévention des risques concernant les « aléas débordement de cours d’eau et submersion marine ». Le projet d’arrêté abroge et remplace l’arrêté du 5 juillet 2019 associé au décret. Les autres risques naturels traités par les PPRN ne sont pas concernés, car les connaissances scientifiques sur les événements pris en référence ne sont pas encore disponibles à une échelle géographique suffisamment précise. Le projet de décret traduit également, au niveau réglementaire, des dispositions prévues par la loi n° 2026-381 du 19 mai 2026 visant à soutenir les collectivités territoriales dans la prévention et la gestion des inondations. Il simplifie les démarches administratives de l’ensemble des PPRN qui servent à encadrer et adapter l’urbanisation pour mieux protéger les populations et les territoires face aux risques naturels. Il modifie ainsi plusieurs articles des codes de l’environnement, de la construction et de l’habitation, et du code général des collectivités territoriales. Les dispositions Le décret prévoit trois grandes évolutions : En premier lieu, il vise à intégrer systématiquement la trajectoire de réchauffement de référence pour l’adaptation au changement climatique (TRACC) dans l’élaboration des PPRI et PPRSM pour anticiper l’intensification des pluies intenses et l’augmentation du niveau de la mer prévues sous l’effet du changement climatique. L’élaboration d’un PPRI ou d’un PPRSM nécessite tout d’abord de déterminer un aléa de référence qui correspond au phénomène le plus important entre les deux suivants : • un épisode d’inondation ou de submersion marine historique de grande ampleur et suffisamment documenté ; • un épisode théorique équivalent à une période de retour centennale, c’est-à-dire qui a une chance sur cent de se produire chaque année (ce n’est pas un épisode qui se produit tous les cent ans). Afin de prendre en compte le changement climatique, cet aléa de période de retour centennale devra désormais être majoré par un coefficient. Entre l’événement historique et l’épisode centennal majoré, c’est toujours l’événement le plus important qui sera retenu en référence pour le PPRI ou le PPRSM. Cet aléa de référence sera ensuite représenté par une seule « carte d’aléa » qui délimitera sur le territoire les risques d’inondation ou de submersion marine à climat futur. En deuxième lieu, en application de la loi du 19 mai 2026 citée précédemment, le décret intègre plusieurs mesures pour alléger les procédures relatives aux PPRN et moderniser les modalités de publicité et de consultation. Il supprime l’obligation d’affichage en mairie des arrêtés préfectoraux d’approbation, de révision et de modification des PPRN, ce qui sera remplacé par une publication unique au recueil des actes administratifs dans le département et une notification directe aux maires et présidents d’intercommunalité. Les documents resteront néanmoins consultables en préfecture et en ligne. Les procédures de consultation sont également optimisées : les avis des conseils municipaux, des établissements publics de coopération intercommunale et des autres personnes publiques associées seront désormais recueillis en parallèle de l’enquête publique, avec un délai maintenu à deux mois, à l’issue duquel les avis non transmis seront considérés comme favorables. Une procédure simplifiée permettant de corriger les erreurs matérielles (coquilles ou références erronées) par arrêté préfectoral est par ailleurs mise en œuvre, évitant de relancer l’intégralité de la procédure. Enfin, le décret concrétise la suppression des stratégies locales de gestion des risques d’inondation prévue par la loi du 19 mai 2026 mentionnée ci-dessus en supprimant les articles réglementaires associés dans le code de l’environnement. Il met également à jour les références aux articles supprimés dans les codes de la construction et de l’habitation et dans le code général des collectivités territoriales. Le projet d’arrêté fixe quant à lui les majorations prévues par le projet de décret afin d’intégrer le changement climatique dans les PPRI et les PPRSM. Ces majorations définies dans le projet d’arrêté se fondent sur les dernières études scientifiques disponibles, réalisées par le Bureau de recherche géologique et minière (BRGM), Météo-France et l’Institut national de recherche pour l’agriculture, l’alimentation et l’environnement (INRAE). L’article 3 du projet d’arrêté soumis à consultation reprend à l’identique l’article 2 de l’arrêté du 5 juillet 2019 relatif aux modalités de qualification des niveaux de l’aléa de référence. L’article 4 du projet d’arrêté reprend à l’identique l’article 3 de l’arrêté du 5 juillet 2019 relatif à la largeur minimale de la bande de précaution des systèmes d’endiguement, à l’exception d’une précision de calcul en faisant référence à la crête de l’ouvrage."
-          },
-          "official_attachments": [],
-          "financial_evidence": [],
-          "detail_status": "PRIMARY_PAGE_READ"
-        },
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "CONTEXT_REVIEW",
-          "score": 3,
-          "triggers": [
-            {
-              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
-              "score": 3,
-              "terms": []
-            }
-          ],
-          "scope_terms": [],
-          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
-        }
-      },
-      {
-        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-relatif-au-nombre-maximum-d-a3449.html",
-        "source_kind": "CONSULTDD",
-        "change": "CHANGED",
-        "evidence": {
-          "title": "Projet d’arrêté relatif au nombre maximum d’alouettes des champs pouvant être capturées...",
-          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-relatif-au-nombre-maximum-d-a3449.html",
-          "dates": [
-            "2026-10-09"
-          ],
-          "interpretation": null,
-          "official_detail": {
-            "official_title": "Projet d’arrêté relatif au nombre maximum d’alouettes des champs pouvant être capturées au moyen de pantes dans les départements de la Gironde, des Landes, du Lot-et-Garonne et des Pyrénées-Atlantiques pour la campagne 2026-2027",
-            "official_period": "Consultation du 09/10/2026 au 29/10/2026 - 1773 contributions",
-            "official_text": "Note de présentation Projet d’arrêté relatif au nombre maximum d’alouettes des champs capturées au moyen de pantes dans les départements de la Gironde, des Landes, du Lot-et-Garonne et des Pyrénées-Atlantiques durant la saison cynégétiques 2026-2027 Contexte : L’arrêté ministériel du 28 août 2025 relatif à la capture de l’alouette des champs à l’aide de pantes dans les départements de la Gironde, des Landes, du Lot-et-Garonne et des Pyrénées-Atlantiques dispose que le ministre en charge de la chasse fixe, chaque année, le nombre maximum d’individus pouvant être capturés dans les départements précités. Ces quotas visent à garantir le prélèvement de petites quantités d’oiseaux entre le 1er octobre et le 20 novembre. L’utilisation des pantes – paires de filets horizontaux – a pour objectif de garantir la sélectivité des captures. L’arrêté cadre du 28 août 2025 prévoit par ailleurs que l’arrêté ministériel annuel précise annuellement un nombre d’oiseaux capturés pouvant être relâchés munis d’un dispositif de marquage ou de suivi posé par des personnes autorisées conformément à la réglementation en vigueur. Par décision n° 507798 en date du 2 octobre 2026 (Association One Voice et Ligue pour la protection des oiseaux), le Conseil d’État a rejeté les requêtes par lesquelles l’association One Voice et la Ligue pour la protection des oiseaux demandaient l’annulation de l’arrêté cadre du 28 août 2025 et celle de l’arrêté pris à la même date pour définir les quotas annuels de capture. Le Conseil d’État a ainsi jugé qu’étaient satisfaites la condition relative au caractère sélectif du mode de chasse, celle relative aux prélèvements en petites quantités, enfin la condition relative à l’absence de solution alternative satisfaisante. Contenu du projet d’arrêté : Le projet d’arrêté présenté au Conseil national de la chasse et de la faune sauvage vient compléter le dispositif réglementaire défini par l’arrêté cadre du 28 août 2025 encadrant la capture à l’aide de pantes de l’alouette des champs (Alauda arvensis) dans les départements de la Gironde, des Landes, du Lot-et-Garonne et des Pyrénées-Atlantiques. Ce projet de texte fixe, pour chacun des quatre départements concernés, le nombre maximal d’alouettes des champs pouvant être capturées au moyen de pantes. Les plafonds de capture sont déterminés dans le respect du critère de « petites quantités » tel qu’interprété par la jurisprudence de la Cour de justice de l’Union européenne (moins de 1 % de la mortalité naturelle), et en cohérence avec les données démographiques et migratoires de l’espèce. Les quotas proposés résultent d’une concertation avec les acteurs locaux, de l’analyse des prélèvements antérieurs et des données populationnelles observées. Ainsi, pour la saison 2026-2027, les quotas départementaux s’établissent comme suit : 38 600 pour la Gironde, 56 672 pour les Landes, 1 230 alouettes pour le Lot-et-Garonne et 2 200 pour les Pyrénées-Atlantiques. Consultations obligatoires : Le projet d’arrêté ayant une incidence directe sur l’exercice de la chasse et sur l’environnement, il nécessite un examen par le Conseil national de la chasse et de la faune sauvage, conformément à l’article L. 421-1 A du code de l’environnement. Présentant un impact sur l’environnement, ce texte requiert à ce titre une consultation publique, en application des dispositions de l’article L.123-19-1 du code de l’environnement."
+            "official_title": "Projet d’arrêté portant suppression de fiches d’opérations standardisées du dispositif des certificats d’économies d’énergie",
+            "official_period": "Consultation du 16/09/2026 au 14/10/2026 - 17 contributions",
+            "official_text": "La consultation du public est ouverte en application de l’article L. 123-19-1 du code de l’environnement. Le présent texte concerne le dispositif des certificats d’économies d’énergie (CEE) prévu aux articles L. 221-1 et suivants du code de l’énergie. Afin de rationaliser le catalogue des fiches d’opérations standardisées CEE et de ne plus apporte d’incitation à l’installation ou au maintien d’équipements fonctionnant aux énergies fossiles, il est envisagé de supprimer les fiches d’opérations standardisées mentionnées en annexe, réparties en deux catégories : les fiches soutenant encore des économies d’énergies sur des équipements fonctionnant avec des énergies fossiles, et les fiches non utilisées. Il est envisagé la suppression des fiches liées aux énergies fossiles (cf. lot 1 en annexe) car ces fiches contribuent à prolonger la durée de vie de ces équipements et sont relativement peu utilisées (5 TWhc engagés en tout en 2025). De plus, en application de la directive « Efficacité énergétique », les économies d’énergie liées à ces fiches ne peuvent plus être comptabilisées pour respecter les obligations de l’article 8 de cette directive. Les fiches inactives ( cf. lot 2 en annexe ) peuvent ne pas être sollicitées en raison d’un forfait insuffisamment incitatif. Cependant, les opérations concernées par ces fiches ne font pas partie des politiques publiques soutenues prioritairement et il n’est donc pas envisagé de les bonifier. Pour ces raisons et afin de renforcer la lisibilité du dispositif CEE, il est proposé de les supprimer. Il est ainsi proposé la suppression des fiches mentionnées en annexe et le recensement des opérations engagées au titre de ces fiches."
           },
           "official_attachments": [],
           "financial_evidence": [],
@@ -173,13 +1207,42 @@
         }
       }
     ],
-    "deterministically_unresolved_candidates": []
+    "deterministically_unresolved_candidates": [
+      {
+        "source_id": "jorf:JORFTEXT000054977644",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977699",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977873",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977877",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977884",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977886",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977914",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054977916",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      }
+    ]
   },
-  "ready": true,
-  "created_at_utc": "2026-10-12 20:00:15.279008+00:00",
-  "updated_at_utc": "2026-10-12T22:29:44.340727+00:00",
-  "usage": {
-    "input_tokens": 21181,
-    "output_tokens": 3940
-  }
+  "ready": false,
+  "created_at_utc": "2026-10-13 10:33:15.610790+00:00",
+  "updated_at_utc": "2026-10-13T10:33:15.714521+00:00"
 }
