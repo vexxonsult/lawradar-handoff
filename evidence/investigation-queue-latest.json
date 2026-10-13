@@ -1,10 +1,10 @@
 {
   "schema": "lawradar-investigation-queue-v1",
-  "generated_at_utc": "2026-10-13T20:41:50.360064+00:00",
+  "generated_at_utc": "2026-10-13T21:16:57.857973+00:00",
   "source_run": {
     "id": "investigation-replay:226a81378b19f070",
     "kind": "ARCHIVED_FACTS_REPLAY",
-    "generated_at_utc": "2026-10-13T20:39:54.849245+00:00",
+    "generated_at_utc": "2026-10-13T21:14:49.382974+00:00",
     "purpose": "TECHNICAL_ENRICHMENT_RETRY",
     "archive_provenance": {
       "signal:bee86e4d0e8ccf54": "evidence/universal-signals/v2/2026/10/run-38411398358-attempt-1.json"
@@ -20,12 +20,12 @@
       "signal_id": "signal:bee86e4d0e8ccf54",
       "source_id": "jorf:JORFTEXT000054977621",
       "title": "Arrêté du 6 octobre 2026 modifiant la liste des modèles de pompes à chaleur agréés en matière de qualité et de résilience industrielle",
-      "status": "AUTONOMOUS_RESEARCH_PENDING",
+      "status": "AUTO_RESEARCH_EXHAUSTED",
       "opened_at_utc": "2026-10-13T14:16:25.531271+00:00",
-      "updated_at_utc": "2026-10-13T20:41:50.360064+00:00",
+      "updated_at_utc": "2026-10-13T21:16:57.857973+00:00",
       "automatic_attempts": 2,
       "max_automatic_attempts": 2,
-      "autonomous_research_attempts": 0,
+      "autonomous_research_attempts": 1,
       "max_autonomous_research_attempts": 1,
       "qualification_contract_version": "tool-envelope-v3-structured-tool",
       "next_retry_not_before_utc": null,
@@ -49,8 +49,7 @@
           "status": "OPEN",
           "question": "Requalifier exclusivement les candidats Presse déjà collectés ; aucune nouvelle conclusion médiatique n'est admise sans URL tracée.",
           "evidence": [
-            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement.",
-            "Collecte Presse partiellement limitée par un rate-limit temporaire (HTTP 429) ; retry différé requis."
+            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement."
           ],
           "automatic_retry": true
         },
@@ -71,8 +70,8 @@
   ],
   "summary": {
     "open_count": 0,
-    "autonomous_research_pending_count": 1,
-    "auto_research_exhausted_count": 0,
+    "autonomous_research_pending_count": 0,
+    "auto_research_exhausted_count": 1,
     "automatic_retry_count": 0
   }
 }
