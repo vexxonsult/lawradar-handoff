@@ -1,0 +1,366 @@
+{
+  "schema": "lawradar-universal-signal-v2",
+  "run": {
+    "id": "38630052265",
+    "attempt": "1",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/38630052265",
+    "commit": "831f224bd184e215964da9110506402171e06469",
+    "report_date": "2026-10-14"
+  },
+  "context": {
+    "coverage": "0 candidat envoyé au modèle",
+    "delta_changed_sources": [
+      "jorf-summaries-latest.json",
+      "consultdd-latest.json"
+    ],
+    "handled_source_files": [
+      "jorf-summaries-latest.json",
+      "consultdd-latest.json"
+    ],
+    "rule": "Preuves locales diffées uniquement ; réapparition historique et routine administrative explicite = filtrées avec trace ; les autres textes primaires disponibles reçoivent une lecture factuelle. Une friction détectée ouvre seulement une enquête, jamais une opportunité confirmée ; inconnu = UNRESOLVED.",
+    "prefilter_audit": {
+      "excluded_historical_candidates": [
+        {
+          "source_id": "jorf:JORFTEXT000000257037",
+          "publication_date": "2005-04-22",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000335363",
+          "publication_date": "1966-11-03",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000440905",
+          "publication_date": "2004-10-07",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000508752",
+          "publication_date": "1906-06-17",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000518067",
+          "publication_date": "1993-12-01",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000611945",
+          "publication_date": "2003-12-30",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000811800",
+          "publication_date": "2005-10-01",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000023022127",
+          "publication_date": "2010-11-10",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000033283857",
+          "publication_date": "2016-10-22",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000034676972",
+          "publication_date": "2017-05-11",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000042532989",
+          "publication_date": "2020-11-19",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000046404878",
+          "publication_date": "2022-10-12",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000046502411",
+          "publication_date": "2022-10-29",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000046652656",
+          "publication_date": "2022-11-29",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054151822",
+          "publication_date": "2026-05-30",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054151992",
+          "publication_date": "2026-05-30",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054388298",
+          "publication_date": "2026-07-05",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054399113",
+          "publication_date": "2026-07-09",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054666103",
+          "publication_date": "2026-08-12",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        }
+      ],
+      "excluded_routine_candidates": [
+        {
+          "source_id": "jorf:JORFTEXT000054979537",
+          "title": "Arrêté du 13 octobre 2026 fixant au titre de l'année 2027 le nombre de postes offerts à l'examen professionnel pour l'accès au grade d'attaché principal d'administration de l'Etat relevant du ministère de l'intérieur",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979550",
+          "title": "Arrêté du 13 octobre 2026 fixant au titre de l'année 2027 le nombre de postes offerts aux examens professionnels de contrôleur de classe exceptionnelle des services techniques du ministère de l'intérieur",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979574",
+          "title": "Décision du 12 octobre 2026 modifiant la décision du 4 avril 2025 portant délégation de signature (DGEFP)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979644",
+          "title": "Arrêté du 5 octobre 2026 portant délégation de signature (direction générale de l'aviation civile, direction des services de la navigation aérienne)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979750",
+          "title": "Décret du 13 octobre 2026 portant cessation de fonctions du sous-préfet de Langres - M. MAROCHINI (Eric)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979758",
+          "title": "Décret du 13 octobre 2026 portant cessation de fonctions de la sous-préfète, directrice de cabinet du préfet de l'Allier - Mme FRANCHI (Cyrielle)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979766",
+          "title": "Décret du 13 octobre 2026 portant nomination du sous-préfet de Riom - M. CARDOUAT (Thierry)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979774",
+          "title": "Décret du 13 octobre 2026 portant nomination de la directrice de cabinet du préfet de l'Allier - Mme BALU (Danielle)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979782",
+          "title": "Décret du 13 octobre 2026 portant cessation de fonctions de la sous-préfète de Verdun - Mme MALLICK (Alice)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979790",
+          "title": "Décret du 13 octobre 2026 portant nomination de la sous-préfète de Langres - Mme EMSELLEM (Sandra)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979798",
+          "title": "Décret du 13 octobre 2026 portant nomination de la sous-préfète de Verdun - Mme TAMELIKECHT (Saadia)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979807",
+          "title": "Décret du 12 octobre 2026 portant nomination du président du conseil d'administration du musée de l'air et de l'espace - M. ALVAREZ (Manuel)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979812",
+          "title": "Arrêté du 14 septembre 2026 portant nomination du vice-président du Conseil général de l'armement",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979814",
+          "title": "Arrêté du 8 octobre 2026 portant nomination du vice-président du conseil d'administration de l'établissement public Economat des armées",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979829",
+          "title": "Arrêté du 8 octobre 2026 portant nomination (administration centrale)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979843",
+          "title": "Arrêté du 6 octobre 2026 portant nomination d'un notaire salarié (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979847",
+          "title": "Arrêté du 6 octobre 2026 portant nomination d'une société d'exercice libéral à responsabilité limitée (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979860",
+          "title": "Arrêté du 7 octobre 2026 portant nomination d'un notaire salarié (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979864",
+          "title": "Arrêté du 7 octobre 2026 portant dissolution d'une société civile professionnelle et nomination d'une société d'exercice libéral à responsabilité limitée (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979874",
+          "title": "Arrêté du 8 octobre 2026 portant nomination d'une commissaire de justice salariée (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979881",
+          "title": "Arrêté du 8 octobre 2026 portant nomination d'un notaire salarié (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979885",
+          "title": "Arrêté du 8 octobre 2026 portant nomination d'une société d'exercice libéral par actions simplifiée (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979895",
+          "title": "Arrêté du 8 octobre 2026 portant nomination d'un notaire salarié (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979912",
+          "title": "Arrêté du 9 octobre 2026 portant nomination d'une commissaire de justice salariée (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979930",
+          "title": "Arrêté du 12 octobre 2026 portant affectation (tribunaux administratifs et cours administratives d'appel)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979933",
+          "title": "Arrêté du 9 octobre 2026 portant admission à la retraite (attachés d'administration de l'Etat)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979935",
+          "title": "Arrêté du 12 octobre 2026 portant nomination (administration centrale)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979942",
+          "title": "Arrêté du 8 octobre 2026 portant admission à la retraite (inspecteurs de santé publique vétérinaire)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979944",
+          "title": "Arrêté du 12 octobre 2026 modifiant l'arrêté du 5 octobre 2026 portant admission à la retraite (inspection générale de santé publique vétérinaire)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979963",
+          "title": "Décret du 12 octobre 2026 portant nomination et titularisation dans le grade de professeur de 2e classe des écoles nationales supérieures d'architecture",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979968",
+          "title": "Arrêté du 7 octobre 2026 portant nomination à la Commission nationale du patrimoine et de l'architecture",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979971",
+          "title": "Arrêté du 7 octobre 2026 portant nomination (agents comptables)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979973",
+          "title": "Arrêté du 8 octobre 2026 portant nomination au conseil d'administration de l'Etablissement public foncier de la Vendée",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979975",
+          "title": "Arrêté du 9 octobre 2026 portant prolongation de nomination dans un emploi de direction de la direction générale des finances publiques",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979978",
+          "title": "Arrêté du 7 octobre 2026 modifiant l'arrêté du 13 mars 2025 portant nomination des membres de la commission de reconnaissance des qualifications prévue à l'article R. 212-84 du code du sport",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979983",
+          "title": "Arrêté du 7 octobre 2026 portant nomination au comité des aides de la Caisse de garantie du logement locatif social (CGLLS)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980063",
+          "title": "Avis de concours pour le recrutement d'assistants (h/f)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980065",
+          "title": "Avis de concours pour le recrutement d'assistants (h/f)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980067",
+          "title": "Avis de concours pour le recrutement d'assistants (h/f)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980069",
+          "title": "Avis de concours pour le recrutement d'assistants (h/f)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980071",
+          "title": "Avis de concours pour le recrutement d'assistants (h/f)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980079",
+          "title": "Commissions et organes de contrôle",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980086",
+          "title": "Documents déposés",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980088",
+          "title": "Documents publiés",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980095",
+          "title": "Avis de vacance d'un emploi de sous-directeur",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980116",
+          "title": "Demandes de changement de nom (Accès protégé textes 85 à 96)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        }
+      ],
+      "excluded_no_economic_friction_candidates": [],
+      "deterministically_unresolved_candidates": []
+    }
+  },
+  "signals": [],
+  "money_flows": [],
+  "quality": {
+    "opportunity_count": 0,
+    "unresolved_count": 0,
+    "readings_available_count": 0,
+    "evidence_reference_count": 0,
+    "money_flow_count": 0,
+    "money_flow_unlinked_count": 0,
+    "limitation": "Les enrichissements sont vides tant qu'aucun agent dédié n'a produit une sortie sourcée."
+  }
+}
