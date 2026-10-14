@@ -1,0 +1,3295 @@
+{
+  "schema": "lawradar-universal-signal-v2",
+  "run": {
+    "id": "38559813485",
+    "attempt": "1",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/38559813485",
+    "commit": "accec8f9773b725cf0c285fb2808b32d657bd81c",
+    "report_date": "2026-10-14"
+  },
+  "context": {
+    "coverage": "21/21 candidats traités indépendamment par Message Batch",
+    "delta_changed_sources": [
+      "jorf-summaries-latest.json",
+      "consultdd-latest.json"
+    ],
+    "handled_source_files": [
+      "jorf-summaries-latest.json",
+      "consultdd-latest.json"
+    ],
+    "rule": "Preuves locales diffées uniquement ; réapparition historique et routine administrative explicite = filtrées avec trace ; les autres textes primaires disponibles reçoivent une lecture factuelle. Une friction détectée ouvre seulement une enquête, jamais une opportunité confirmée ; inconnu = UNRESOLVED.",
+    "prefilter_audit": {
+      "excluded_historical_candidates": [
+        {
+          "source_id": "jorf:JORFTEXT000000257037",
+          "publication_date": "2005-04-22",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000335363",
+          "publication_date": "1966-11-03",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000440905",
+          "publication_date": "2004-10-07",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000508752",
+          "publication_date": "1906-06-17",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000518067",
+          "publication_date": "1993-12-01",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000611945",
+          "publication_date": "2003-12-30",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000811800",
+          "publication_date": "2005-10-01",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000023022127",
+          "publication_date": "2010-11-10",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000033283857",
+          "publication_date": "2016-10-22",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000034676972",
+          "publication_date": "2017-05-11",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000042532989",
+          "publication_date": "2020-11-19",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000046404878",
+          "publication_date": "2022-10-12",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000046502411",
+          "publication_date": "2022-10-29",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000046652656",
+          "publication_date": "2022-11-29",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054151822",
+          "publication_date": "2026-05-30",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054151992",
+          "publication_date": "2026-05-30",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054388298",
+          "publication_date": "2026-07-05",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054399113",
+          "publication_date": "2026-07-09",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054666103",
+          "publication_date": "2026-08-12",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        }
+      ],
+      "excluded_routine_candidates": [
+        {
+          "source_id": "jorf:JORFTEXT000054979537",
+          "title": "Arrêté du 13 octobre 2026 fixant au titre de l'année 2027 le nombre de postes offerts à l'examen professionnel pour l'accès au grade d'attaché principal d'administration de l'Etat relevant du ministère de l'intérieur",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979550",
+          "title": "Arrêté du 13 octobre 2026 fixant au titre de l'année 2027 le nombre de postes offerts aux examens professionnels de contrôleur de classe exceptionnelle des services techniques du ministère de l'intérieur",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979574",
+          "title": "Décision du 12 octobre 2026 modifiant la décision du 4 avril 2025 portant délégation de signature (DGEFP)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979644",
+          "title": "Arrêté du 5 octobre 2026 portant délégation de signature (direction générale de l'aviation civile, direction des services de la navigation aérienne)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979750",
+          "title": "Décret du 13 octobre 2026 portant cessation de fonctions du sous-préfet de Langres - M. MAROCHINI (Eric)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979758",
+          "title": "Décret du 13 octobre 2026 portant cessation de fonctions de la sous-préfète, directrice de cabinet du préfet de l'Allier - Mme FRANCHI (Cyrielle)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979766",
+          "title": "Décret du 13 octobre 2026 portant nomination du sous-préfet de Riom - M. CARDOUAT (Thierry)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979774",
+          "title": "Décret du 13 octobre 2026 portant nomination de la directrice de cabinet du préfet de l'Allier - Mme BALU (Danielle)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979782",
+          "title": "Décret du 13 octobre 2026 portant cessation de fonctions de la sous-préfète de Verdun - Mme MALLICK (Alice)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979790",
+          "title": "Décret du 13 octobre 2026 portant nomination de la sous-préfète de Langres - Mme EMSELLEM (Sandra)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979798",
+          "title": "Décret du 13 octobre 2026 portant nomination de la sous-préfète de Verdun - Mme TAMELIKECHT (Saadia)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979807",
+          "title": "Décret du 12 octobre 2026 portant nomination du président du conseil d'administration du musée de l'air et de l'espace - M. ALVAREZ (Manuel)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979812",
+          "title": "Arrêté du 14 septembre 2026 portant nomination du vice-président du Conseil général de l'armement",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979814",
+          "title": "Arrêté du 8 octobre 2026 portant nomination du vice-président du conseil d'administration de l'établissement public Economat des armées",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979829",
+          "title": "Arrêté du 8 octobre 2026 portant nomination (administration centrale)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979843",
+          "title": "Arrêté du 6 octobre 2026 portant nomination d'un notaire salarié (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979847",
+          "title": "Arrêté du 6 octobre 2026 portant nomination d'une société d'exercice libéral à responsabilité limitée (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979860",
+          "title": "Arrêté du 7 octobre 2026 portant nomination d'un notaire salarié (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979864",
+          "title": "Arrêté du 7 octobre 2026 portant dissolution d'une société civile professionnelle et nomination d'une société d'exercice libéral à responsabilité limitée (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979874",
+          "title": "Arrêté du 8 octobre 2026 portant nomination d'une commissaire de justice salariée (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979881",
+          "title": "Arrêté du 8 octobre 2026 portant nomination d'un notaire salarié (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979885",
+          "title": "Arrêté du 8 octobre 2026 portant nomination d'une société d'exercice libéral par actions simplifiée (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979895",
+          "title": "Arrêté du 8 octobre 2026 portant nomination d'un notaire salarié (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979912",
+          "title": "Arrêté du 9 octobre 2026 portant nomination d'une commissaire de justice salariée (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979930",
+          "title": "Arrêté du 12 octobre 2026 portant affectation (tribunaux administratifs et cours administratives d'appel)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979933",
+          "title": "Arrêté du 9 octobre 2026 portant admission à la retraite (attachés d'administration de l'Etat)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979935",
+          "title": "Arrêté du 12 octobre 2026 portant nomination (administration centrale)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979942",
+          "title": "Arrêté du 8 octobre 2026 portant admission à la retraite (inspecteurs de santé publique vétérinaire)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979944",
+          "title": "Arrêté du 12 octobre 2026 modifiant l'arrêté du 5 octobre 2026 portant admission à la retraite (inspection générale de santé publique vétérinaire)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979963",
+          "title": "Décret du 12 octobre 2026 portant nomination et titularisation dans le grade de professeur de 2e classe des écoles nationales supérieures d'architecture",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979968",
+          "title": "Arrêté du 7 octobre 2026 portant nomination à la Commission nationale du patrimoine et de l'architecture",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979971",
+          "title": "Arrêté du 7 octobre 2026 portant nomination (agents comptables)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979973",
+          "title": "Arrêté du 8 octobre 2026 portant nomination au conseil d'administration de l'Etablissement public foncier de la Vendée",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979975",
+          "title": "Arrêté du 9 octobre 2026 portant prolongation de nomination dans un emploi de direction de la direction générale des finances publiques",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979978",
+          "title": "Arrêté du 7 octobre 2026 modifiant l'arrêté du 13 mars 2025 portant nomination des membres de la commission de reconnaissance des qualifications prévue à l'article R. 212-84 du code du sport",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979983",
+          "title": "Arrêté du 7 octobre 2026 portant nomination au comité des aides de la Caisse de garantie du logement locatif social (CGLLS)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980063",
+          "title": "Avis de concours pour le recrutement d'assistants (h/f)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980065",
+          "title": "Avis de concours pour le recrutement d'assistants (h/f)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980067",
+          "title": "Avis de concours pour le recrutement d'assistants (h/f)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980069",
+          "title": "Avis de concours pour le recrutement d'assistants (h/f)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980071",
+          "title": "Avis de concours pour le recrutement d'assistants (h/f)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980079",
+          "title": "Commissions et organes de contrôle",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980086",
+          "title": "Documents déposés",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980088",
+          "title": "Documents publiés",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980095",
+          "title": "Avis de vacance d'un emploi de sous-directeur",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980116",
+          "title": "Demandes de changement de nom (Accès protégé textes 85 à 96)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        }
+      ],
+      "excluded_no_economic_friction_candidates": [],
+      "deterministically_unresolved_candidates": [
+        {
+          "source_id": "jorf:JORFTEXT000054979747",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979816",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979819",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979821",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979823",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979825",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979827",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054979841",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980039",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980044",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980048",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980055",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980075",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980077",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980081",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980084",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980090",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980107",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054980113",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        }
+      ]
+    }
+  },
+  "signals": [
+    {
+      "id": "signal:1fa959092ec37279",
+      "identity": {
+        "stable_source_id": "source:e4751abf733ea1bd",
+        "evidence_version": "sha256:d80202f150e5a462ce1648af106dbf778c5b4edbed7caba4b62a944d8523a6c9"
+      },
+      "source": {
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/energies-et-climat-r4.html",
+        "source_kind": "CONSULTDD",
+        "change": "NEW",
+        "evidence": {
+          "text_id": null,
+          "nature": null,
+          "nor": null,
+          "title": "Energies et climat",
+          "publisher": null,
+          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/energies-et-climat-r4.html",
+          "publication_date": null,
+          "journal_number": null,
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [
+            "2026-10-15"
+          ],
+          "detail_status": "PRIMARY_PAGE_READ",
+          "official": {
+            "title": "Energies et climat",
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": null,
+            "text_sha256": null,
+            "excerpt": null,
+            "excerpt_truncated": false,
+            "archive_url": null,
+            "archive_sha256": null
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Page de consultation publique générique 'Energies et climat' sans contenu officiel exploitable, sans texte normatif identifié, sans preuve de périmètre industriel ou d'obligation mesurable. Aucun élément permettant de caractériser une opportunité."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 3,
+        "triggers": [
+          {
+            "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+            "score": 3,
+            "terms": []
+          }
+        ],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Page listant une consultation publique sur le thème énergie et climat, sans texte ni contenu normatif exploitable à ce stade.",
+        "affected_actors": [],
+        "beneficiaries": [],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Contenu réel de la consultation",
+          "Périmètre concerné",
+          "Date d'ouverture/fermeture effective"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/energies-et-climat-r4.html"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:1fa959092ec37279",
+        "title": "Energies et climat",
+        "keywords": [
+          "consultation publique",
+          "énergie",
+          "climat"
+        ],
+        "affected_scope": [],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "CONSULTATION_OPEN",
+          "proof_status": "MISSING",
+          "effective_date": null,
+          "affected_scope": []
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:c9495e4447fad130",
+      "identity": {
+        "stable_source_id": "source:b93002fd8bc2f76f",
+        "evidence_version": "sha256:072d97b71d78aed1123d247b3a8617c1062e2d19ea6c23f202f2c07f9fbf948f"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054979509",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054979509",
+          "nature": "DECRET",
+          "nor": "INTD2510937D",
+          "title": "Décret n° 2026-949 du 13 octobre 2026 modifiant le décret n° 2002-1392 du 28 novembre 2002 instituant une mission interministérielle de vigilance et de lutte contre les dérives sectaires",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054979509",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "f169e53492569ccac9fe633e57d0438f44ff06e46031bc4914ac942488646d3a",
+            "excerpt": "Publics concernés : victimes de dérives sectaires et leurs proches, associations de prévention et de lutte contre les dérives sectaires, communauté de la recherche universitaire, collectivités territoriales, autres personnes publiques ou privées collaborant avec la Mission interministérielle de vigilance et de lutte contre les dérives sectaires (MIVILUDES).\nObjet : modification du décret n° 2002-1392 du 28 novembre 2002 instituant une mission interministérielle de vigilance et de lutte contre les dérives sectaires, afin de mettre en conformité les missions de la MIVILUDES à la loi.\nEntrée en vigueur : le texte entre en vigueur le lendemain de sa publication.\nApplication : loi n° 2001-504 du 12 juin 2001 tendant à renforcer la prévention et la répression des mouvements sectaires portant atteinte aux droits de l'homme et aux libertés fondamentales modifiée par la loi n° 2024-420 du 10 mai 2024 visant à renforcer la lutte contre les dérives sectaires et à améliorer l'accompagnement des victimes.\nLe Premier ministre,\nSur le rapport du ministre de l'intérieur,\nVu la loi n° 2001-504 du 12 juin 2001 modifiée tendant à renforcer la prévention et la répression des mouvements sectaires portant atteinte aux droits de l'homme et aux libertés fondamentales ;\nVu la loi n° 2024-420 du 10 mai 2024 visant à renforcer la lutte contre les dérives sectaires et à améliorer l'accompagnement des victimes ;\nVu le décret n° 2002-1392 du 28 novembre 2002 modifié instituant une mission interministérielle de vigilance et de lutte contre les dérives sectaires,\nDécrète :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte réglementaire d'organisation administrative (MIVILUDES) sans création de marché, obligation mesurable ou flux financier identifiable ; aucune opportunité économique démontrée."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "WATCH_CANDIDATE",
+        "score": 4,
+        "triggers": [
+          {
+            "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
+            "score": 3,
+            "terms": [
+              "collectivites"
+            ]
+          },
+          {
+            "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+            "score": 1,
+            "terms": [
+              "entree en vigueur"
+            ]
+          }
+        ],
+        "scope_terms": [
+          "association",
+          "collectivites territoriales"
+        ],
+        "reason": "ECONOMIC_FRICTION_DETECTED",
+        "recommended_enrichment": [
+          "PRESS",
+          "DEMAND",
+          "MARKET"
+        ]
+      },
+      "reading": {
+        "consequence": "Le décret met à jour les missions de la MIVILUDES pour les conformer à la loi de 2024 sur la lutte contre les dérives sectaires, sans créer de nouvelle obligation économique ni de marché identifiable.",
+        "affected_actors": [
+          "MIVILUDES",
+          "ministère de l'intérieur",
+          "associations de prévention",
+          "collectivités territoriales"
+        ],
+        "beneficiaries": [
+          "victimes de dérives sectaires et leurs proches"
+        ],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Détail des missions précisément modifiées non fourni dans l'extrait",
+          "Absence d'article détaillant des obligations concrètes"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054979509"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:c9495e4447fad130",
+        "title": "Décret n° 2026-949 du 13 octobre 2026 modifiant le décret n° 2002-1392 du 28 novembre 2002 instituant une mission interministérielle de vigilance et de lutte contre les dérives sectaires",
+        "keywords": [
+          "MIVILUDES",
+          "dérives sectaires",
+          "mission interministérielle",
+          "décret"
+        ],
+        "affected_scope": [
+          "victimes de dérives sectaires",
+          "associations de prévention",
+          "collectivités territoriales",
+          "communauté universitaire"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-15",
+          "affected_scope": [
+            "victimes de dérives sectaires",
+            "associations de prévention",
+            "collectivités territoriales",
+            "communauté universitaire"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:bd6d4b6c75e2b6d6",
+      "identity": {
+        "stable_source_id": "source:e9852845077fae59",
+        "evidence_version": "sha256:59eefa1aa7518fc4fab4d5b16cd72d95e725fd086becd79e7aab971b045fd30b"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054979521",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054979521",
+          "nature": "DECRET",
+          "nor": "INTD2621781D",
+          "title": "Décret n° 2026-950 du 13 octobre 2026 portant création d'une délégation à la prévention de la délinquance, de la radicalisation, de vigilance et de lutte contre les dérives sectaires (VigiRep)",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054979521",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "f0341af9ef80ac24ff3eaa0d54dd8fd9ac32b13a7c2094fcd579e437a6ea2b22",
+            "excerpt": "Publics concernés : administrations de l'Etat, collectivités territoriales, acteurs de la politique de prévention de la délinquance et de la radicalisation, acteurs de la politique de lutte contre les dérives sectaires.\nObjet : création d'une délégation à la prévention de la délinquance, de la radicalisation, de vigilance et de lutte contre les dérives sectaires (VigiRep) auprès du ministre de l'intérieur. Ce décret crée la délégation à la prévention de la délinquance, de la radicalisation, de vigilance et de lutte contre les dérives sectaires (VigiRep) auprès du ministre de l'intérieur, afin de préparer les délibérations et veiller à la mise en œuvre des décisions prises par le comité interministériel de prévention de la délinquance et de la radicalisation (CIPDR).\nEntrée en vigueur : le texte entre en vigueur au lendemain de sa publication au Journal officiel de la République française.\nApplication : le présent décret est un texte autonome.\nLe Premier ministre,\nSur le rapport du ministre de l'intérieur,\nVu la Constitution, notamment son article 37 ;\nVu le code de la sécurité intérieure, notamment le chapitre II du titre III du livre I\ner\nde sa partie réglementaire ;\nVu la loi n° 2024-420 du 10 mai 2024 visant à renforcer la lutte contre les dérives sectaires et à améliorer l'accompagnement des victimes ;\nVu le décret n° 2002-1392 du 28 novembre 2002 modifié instituant une mission interministérielle de vigilance et de lutte contre les dérives sectaires ;\nVu le décret n° 2019-1594 du 31 décembre 2019 modifié relatif aux emplois de direction de l'Etat,\nDécrète :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte organisationnel interne créant une délégation administrative auprès du ministre de l'intérieur ; aucune obligation mesurable, aucun marché, aucun flux financier ni opportunité commerciale identifiable."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "WATCH_CANDIDATE",
+        "score": 4,
+        "triggers": [
+          {
+            "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
+            "score": 3,
+            "terms": [
+              "collectivites"
+            ]
+          },
+          {
+            "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+            "score": 1,
+            "terms": [
+              "entree en vigueur"
+            ]
+          }
+        ],
+        "scope_terms": [
+          "collectivites territoriales"
+        ],
+        "reason": "ECONOMIC_FRICTION_DETECTED",
+        "recommended_enrichment": [
+          "PRESS",
+          "DEMAND",
+          "MARKET"
+        ]
+      },
+      "reading": {
+        "consequence": "Le texte crée une structure administrative (délégation VigiRep) rattachée au ministre de l'intérieur, chargée de préparer les délibérations et suivre la mise en œuvre des décisions du CIPDR en matière de prévention de la délinquance, de radicalisation et de lutte contre les dérives sectaires.",
+        "affected_actors": [
+          "ministère de l'intérieur",
+          "administrations de l'État",
+          "collectivités territoriales"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Composition et moyens de la délégation",
+          "Modalités concrètes d'action auprès des collectivités",
+          "Impact budgétaire éventuel"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054979521"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:bd6d4b6c75e2b6d6",
+        "title": "Création de la délégation VigiRep auprès du ministre de l'intérieur",
+        "keywords": [
+          "délégation",
+          "prévention délinquance",
+          "radicalisation",
+          "dérives sectaires",
+          "CIPDR"
+        ],
+        "affected_scope": [
+          "administrations de l'État",
+          "collectivités territoriales",
+          "acteurs de la politique de prévention de la délinquance"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-15",
+          "affected_scope": [
+            "administrations de l'État",
+            "collectivités territoriales"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:e5e10619e61eac24",
+      "identity": {
+        "stable_source_id": "source:9aa2ce8a01dd5f6c",
+        "evidence_version": "sha256:1b149ee61270cbac7c18d7559fe0723e7bcded469cf992168c0644065e52bbc0"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054979559",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054979559",
+          "nature": "DECRET",
+          "nor": "TRSS2625216D",
+          "title": "Décret n° 2026-951 du 13 octobre 2026 généralisant le calcul des taux de cotisation au titre des accidents du travail et des maladies professionnelles au niveau de l'entreprise",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054979559",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "43a8548a8205ab0a882a41a4ffc6be1f99939ac1f17eb7a23e0324adbf6920b5",
+            "excerpt": "Publics concernés : employeurs du régime général hors Alsace-Moselle soumis aux règles de tarification des accidents du travail et maladies professionnelles individuelle ou mixte, caisses d'assurance retraite et de la santé au travail, caisses générales de sécurité sociale.\nObjet : le décret généralise la détermination des taux de cotisation d'accidents du travail et maladies professionnelles par groupes de risques pour les entreprises en tarification individuelle et mixte. Le ou les taux sont déterminés au niveau de l'entreprise pour chaque établissement ou groupe d'établissements appartenant à la même catégorie de risque.\nEntrée en vigueur : les dispositions du décret sont applicables pour la détermination des cotisations d'accidents du travail et maladies professionnelles dues à compter de l'année 2027.\nApplication : le présent décret est pris en application de l'article L. 242-5 du code de la sécurité sociale.\nLe Premier ministre,\nSur le rapport du ministre du travail et des solidarités,\nVu le code de la sécurité sociale, notamment son article L. 242-5 ;\nVu l'avis de la Commission des accidents du travail et des maladies professionnelles en date du 25 septembre 2026,\nDécrète :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte réglementaire de sécurité sociale modifiant la méthode de calcul des cotisations AT/MP ; aucune autorisation, marché ou service périphérique démontré ; relève du suivi réglementaire, pas d'une opportunité commerciale."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "WATCH_CANDIDATE",
+        "score": 7,
+        "triggers": [
+          {
+            "kind": "LEGAL_OBLIGATION",
+            "score": 3,
+            "terms": [
+              "soumis a"
+            ]
+          },
+          {
+            "kind": "FUNDING_OR_INCENTIVE",
+            "score": 3,
+            "terms": [
+              "tarif"
+            ]
+          },
+          {
+            "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+            "score": 1,
+            "terms": [
+              "entree en vigueur"
+            ]
+          }
+        ],
+        "scope_terms": [
+          "entreprise",
+          "employeur",
+          "professionnel"
+        ],
+        "reason": "ECONOMIC_FRICTION_DETECTED",
+        "recommended_enrichment": [
+          "PRESS",
+          "DEMAND",
+          "MARKET"
+        ]
+      },
+      "reading": {
+        "consequence": "Le mode de calcul des taux de cotisation accidents du travail et maladies professionnelles sera désormais déterminé au niveau de l'entreprise (par établissement ou groupe d'établissements de même catégorie de risque) pour les employeurs en tarification individuelle ou mixte, à compter des cotisations dues en 2027.",
+        "affected_actors": [
+          "employeurs du régime général hors Alsace-Moselle",
+          "CARSAT",
+          "CGSS",
+          "Commission des accidents du travail et des maladies professionnelles"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "employeurs soumis à la tarification individuelle ou mixte"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "impact financier précis par entreprise",
+          "modalités techniques de calcul par groupe de risques",
+          "existence d'un service d'accompagnement tiers documenté"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054979559"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:e5e10619e61eac24",
+        "title": "Décret généralisant le calcul des taux de cotisation AT/MP au niveau de l'entreprise",
+        "keywords": [
+          "AT/MP",
+          "cotisations",
+          "tarification",
+          "employeurs",
+          "sécurité sociale"
+        ],
+        "affected_scope": [
+          "employeurs régime général hors Alsace-Moselle",
+          "CARSAT",
+          "CGSS"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2027-01-01",
+          "affected_scope": [
+            "employeurs régime général hors Alsace-Moselle",
+            "CARSAT",
+            "CGSS"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:3cde814e6746bcbe",
+      "identity": {
+        "stable_source_id": "source:6620696faee5ce4e",
+        "evidence_version": "sha256:55ec9fd7014fc08faec4d1a8b986562e1967c28106b2cc2761686a46f4ce8f92"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054979583",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054979583",
+          "nature": "DECRET",
+          "nor": "EAEJ2624348D",
+          "title": "Décret n° 2026-952 du 12 octobre 2026 portant publication de l'accord entre le Gouvernement de la République française et le Gouvernement de la République du Paraguay relatif à la coproduction cinématographique (ensemble une annexe), signé à Cannes le 20 mai 2025 (1)",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054979583",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "c62f6f371f814ff9a31905ac5dcc0f73e9250759d063de39665a7efe2bd04813",
+            "excerpt": "Le Président de la République,\nSur le rapport du Premier ministre et du ministre de l'Europe et des affaires étrangères,\nVu la Constitution, notamment ses articles 52 à 55 ;\nVu le décret n° 53-192 du 14 mars 1953 modifié relatif à la ratification et à la publication des engagements internationaux souscrits par la France,\nDécrète :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte de publication d'un accord international de coproduction cinématographique entre la France et le Paraguay; aucune friction économique, obligation mesurable ou périmètre d'activité identifiable n'est démontré dans l'extrait fourni."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Publication officielle d'un accord bilatéral permettant un cadre juridique pour les coproductions cinématographiques entre la France et le Paraguay, sans création d'obligation économique mesurable ni marché identifiable à ce stade.",
+        "affected_actors": [
+          "Gouvernement français",
+          "Gouvernement du Paraguay",
+          "producteurs de cinéma potentiellement concernés par de futures coproductions"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Contenu détaillé de l'annexe de l'accord",
+          "Modalités pratiques de mise en œuvre de la coproduction",
+          "Impact concret pour les producteurs de cinéma"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054979583"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:3cde814e6746bcbe",
+        "title": "Décret n° 2026-952 du 12 octobre 2026 portant publication de l'accord France-Paraguay relatif à la coproduction cinématographique",
+        "keywords": [
+          "coproduction cinématographique",
+          "accord international",
+          "France",
+          "Paraguay",
+          "décret de publication"
+        ],
+        "affected_scope": [
+          "secteur audiovisuel/cinéma France-Paraguay"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-14",
+          "affected_scope": [
+            "secteur audiovisuel/cinéma France-Paraguay"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:f955ce0d63acb48c",
+      "identity": {
+        "stable_source_id": "source:5ef8b96d38b93ac5",
+        "evidence_version": "sha256:518856d22046468d452f1fda997da575bfc8e832479f61a2376e8de9e50485ce"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054979591",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054979591",
+          "nature": "ARRETE",
+          "nor": "EAEA2625602A",
+          "title": "Arrêté du 7 octobre 2026 relatif à la procédure interne de recueil et de traitement des signalements d'alerte au ministère de l'Europe et des affaires étrangères",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054979591",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "5b5d79a6c0648c076fe87f71bbc8d96fe105cb7221c4c5a890c211d5a1d4e39b",
+            "excerpt": "Le ministre de l'Europe et des affaires étrangères,\nVu le code civil, notamment son article 1240 ;\nVu le code pénal, notamment son article 226-10 ;\nVu le code général de la fonction publique ;\nVu la loi n° 2016-1691 du 9 décembre 2016 relative à la transparence, à la lutte contre la corruption et à la modernisation de la vie économique, modifiée, notamment son chapitre II ;\nVu le décret n° 2022-1284 du 3 octobre 2022 relatif aux procédures de recueil et de traitement des signalements émis par les lanceurs d'alerte et fixant la liste des autorités externes instituées par la loi n° 2022-401 du 21 mars 2022 visant à améliorer la protection des lanceurs d'alerte ;\nVu l'arrêté du 4 septembre 2017 relatif au référent déontologue du ministère des affaires étrangères ;\nVu la délibération n° 2017-191 du 22 juin 2017 portant modification de la délibération n° 2005-305 du 8 décembre 2005 portant autorisation unique de traitements automatisés de données à caractère personnel mis en œuvre dans le cadre de dispositifs d'alerte professionnelle ;\nVu la note du directeur général de l'Agence en date du 8 janvier 2018 portant désignation du référent chargé du recueil des alertes au sein de ses services ;\nVu l'avis du comité social d'administration ministériel en date du 28 janvier 2026 ;\nVu l'avis du comité social d'administration de l'Agence pour l'enseignement français à l'étranger en date du 25 juin 2026,\nArrête :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte organisationnel interne (procédure de recueil des signalements d'alerte au MEAE) sans friction économique, marché, obligation mesurable ou flux financier démontré. CONTEXT_REVIEW confirmé."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [
+          "professionnel"
+        ],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Le texte organise la procédure interne de recueil et de traitement des signalements d'alerte au sein du ministère de l'Europe et des affaires étrangères et de l'AEFE, conformément au cadre légal sur les lanceurs d'alerte.",
+        "affected_actors": [
+          "Agents du ministère de l'Europe et des affaires étrangères",
+          "Agents de l'Agence pour l'enseignement français à l'étranger",
+          "Référent déontologue"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "Ministère de l'Europe et des affaires étrangères"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Modalités concrètes de mise en œuvre de la procédure",
+          "Identité du référent chargé du recueil des alertes"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054979591"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:f955ce0d63acb48c",
+        "title": "Arrêté relatif à la procédure interne de recueil et de traitement des signalements d'alerte au ministère de l'Europe et des affaires étrangères",
+        "keywords": [
+          "lanceur d'alerte",
+          "signalement",
+          "déontologie",
+          "fonction publique",
+          "MEAE"
+        ],
+        "affected_scope": [
+          "Ministère de l'Europe et des affaires étrangères",
+          "Agence pour l'enseignement français à l'étranger"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-14",
+          "affected_scope": [
+            "Ministère de l'Europe et des affaires étrangères",
+            "Agence pour l'enseignement français à l'étranger"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:3d6f258d2400b687",
+      "identity": {
+        "stable_source_id": "source:40cccc4391bcac43",
+        "evidence_version": "sha256:4423c04c3636770c1e76d896c9854e40c582abf3ea9a7989a742efb97d6a9327"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054979619",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054979619",
+          "nature": "ARRETE",
+          "nor": "TRAA2624577A",
+          "title": "Arrêté du 30 septembre 2026 modifiant l'arrêté du 2 décembre 2025 fixant la liste des sites ou services de la direction générale de l'aviation civile en application de l'arrêté du 8 juillet 2024 fixant les modalités d'application du complément de la part liée aux fonctions en application de l'article 7 du décret n° 2016-1869 du 26 décembre 2016 fixant le régime applicable aux corps techniques de la direction générale de l'aviation civile",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054979619",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "feed0a16fe39339cf095ba08c0fb5eba571408ec8ae601ef86e8baab13ff73a1",
+            "excerpt": "Le ministre des transports,\nVu le code général de la fonction publique ;\nVu l'arrêté du 8 juillet 2024 relatif à l'organisation du temps de travail des personnels de la direction générale de l'aviation civile assurant le service du contrôle dans les organismes de contrôle de la circulation aérienne et des instructeurs de formation pratique au contrôle de l'Ecole nationale de l'aviation civile ;\nVu l'arrêté du 8 juillet 2024 fixant les modalités d'application du complément de la part liée aux fonctions en application de l'article 7 du décret n° 2016-1869 du 26 décembre 2016 fixant le régime applicable aux corps techniques de la direction générale de l'aviation civile ;\nVu l'arrêté du 2 décembre 2025 fixant la liste des sites ou services de la direction générale de l'aviation civile en application de l'arrêté du 8 juillet 2024 fixant les modalités d'application du complément de la part liée aux fonctions en application de l'article 7 du décret n° 2016-1869 du 26 décembre 2016 fixant le régime applicable aux corps techniques de la direction générale de l'aviation civile,\nArrête :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte réglementaire interne à la fonction publique (DGAC) fixant une liste de sites/services pour un complément indemnitaire de personnels de contrôle aérien ; aucune friction économique, aucun marché, aucune opportunité de service B2B identifiable."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 3,
+        "triggers": [
+          {
+            "kind": "SANCTION_OR_CONTROL",
+            "score": 3,
+            "terms": [
+              "controle"
+            ]
+          }
+        ],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Mise à jour administrative de la liste des sites ou services de la DGAC entrant dans le périmètre d'application d'un complément indemnitaire lié aux fonctions pour certains agents.",
+        "affected_actors": [
+          "Personnels des corps techniques de la DGAC",
+          "Ministère des transports"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Liste précise des sites ou services modifiés",
+          "Impact financier individuel non détaillé dans l'extrait"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054979619"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:3d6f258d2400b687",
+        "title": "Arrêté du 30 septembre 2026 modifiant la liste des sites ou services de la DGAC pour le complément de la part liée aux fonctions",
+        "keywords": [
+          "DGAC",
+          "fonction publique",
+          "complément indemnitaire",
+          "contrôle aérien",
+          "arrêté"
+        ],
+        "affected_scope": [
+          "Direction générale de l'aviation civile"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "PARTIAL",
+          "effective_date": "2026-10-14",
+          "affected_scope": [
+            "Direction générale de l'aviation civile"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:897a86acc41a26e4",
+      "identity": {
+        "stable_source_id": "source:7898f0346fc1cb97",
+        "evidence_version": "sha256:6d477afe2aaa546043f60e45f0082d87ed6aacb11c525386b928ec1bc1c143a7"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054979835",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054979835",
+          "nature": "DECRET",
+          "nor": "JUSB2622995D",
+          "title": "Décret du 12 octobre 2026 portant acceptation de démission et radiation des cadres (magistrature) - M. BEDOS (Eric)",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054979835",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "6beb97d69150e6b1049d8c86f3b171906cc55aaa5b3c20ed2d59f0170b54425f",
+            "excerpt": "Le Président de la République,\nSur le rapport du Premier ministre et du garde des sceaux, ministre de la justice,\nVu l'ordonnance n° 58-1270 du 22 décembre 1958 modifiée portant loi organique relative au statut de la magistrature, notamment ses articles 73 à 75 ;\nVu le décret portant nomination en date du 3 avril 2025 ;\nVu la demande de l'intéressé,\nDécrète :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Acte individuel de radiation des cadres d'un magistrat, sans friction économique ni marché identifiable ; relève de la gestion administrative de la magistrature."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Un magistrat (M. Bedos Eric) voit sa démission acceptée et est radié des cadres de la magistrature, sur sa propre demande.",
+        "affected_actors": [
+          "M. Bedos Eric",
+          "ministère de la Justice"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "M. Bedos Eric"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Motif de la démission",
+          "Situation professionnelle future de l'intéressé"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054979835"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:897a86acc41a26e4",
+        "title": "Décret du 12 octobre 2026 portant acceptation de démission et radiation des cadres (magistrature) - M. BEDOS (Eric)",
+        "keywords": [
+          "magistrature",
+          "radiation des cadres",
+          "démission",
+          "décret individuel"
+        ],
+        "affected_scope": [
+          "magistrature"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-14",
+          "affected_scope": [
+            "magistrature"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:b5b7b5a760e3f6da",
+      "identity": {
+        "stable_source_id": "source:49693cb0dba6d922",
+        "evidence_version": "sha256:b4c9706b9dacd756366a738097ce24d1c562c7ce5b3091af9110e901887b9e09"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054979899",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054979899",
+          "nature": "ARRETE",
+          "nor": "JUSC2626907A",
+          "title": "Arrêté du 9 octobre 2026 relatif à une société d'exercice libéral par actions simplifiée (officiers publics ou ministériels)",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054979899",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "29780080b86a3de89d8f3613657d18a3714c8883564f1cbb6d67e6ca400b9894",
+            "excerpt": "Le garde des sceaux, ministre de la justice,\nVu le décret n° 88-814 du 12 juillet 1988 relatif à la nomination et à la cessation de fonctions des officiers publics et ministériels, notamment son article 1\ner\n,\nArrête :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Arrêté individuel de nomination d'officiers publics ou ministériels (SELAS), sans friction économique ni périmètre d'opportunité démontré ; CONTEXT_REVIEW confirmé."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Le texte acte une nomination administrative relative à une société d'exercice libéral d'officiers publics ou ministériels, sans créer de marché ou d'obligation économique identifiable.",
+        "affected_actors": [
+          "officiers publics ou ministériels concernés"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Identité précise de la société et des officiers concernés",
+          "Portée exacte de la nomination"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054979899"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:b5b7b5a760e3f6da",
+        "title": "Arrêté du 9 octobre 2026 relatif à une société d'exercice libéral par actions simplifiée (officiers publics ou ministériels)",
+        "keywords": [
+          "SELAS",
+          "officiers publics",
+          "officiers ministériels",
+          "nomination",
+          "justice"
+        ],
+        "affected_scope": [
+          "officiers publics ou ministériels"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "PARTIAL",
+          "effective_date": "2026-10-14",
+          "affected_scope": [
+            "officiers publics ou ministériels"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "LEGAL_SERVICES",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:e92f77b10fbba634",
+      "identity": {
+        "stable_source_id": "source:0b063b9cf89c6525",
+        "evidence_version": "sha256:c2998130dc78c34afcc3a1e78e9a7aeea76bf1cdd30b6ff91dfdc1f9c7f85dad"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054979904",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054979904",
+          "nature": "ARRETE",
+          "nor": "JUSC2626909A",
+          "title": "Arrêté du 9 octobre 2026 relatif à une société d'exercice libéral par actions simplifiée (officiers publics ou ministériels)",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054979904",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "29780080b86a3de89d8f3613657d18a3714c8883564f1cbb6d67e6ca400b9894",
+            "excerpt": "Le garde des sceaux, ministre de la justice,\nVu le décret n° 88-814 du 12 juillet 1988 relatif à la nomination et à la cessation de fonctions des officiers publics et ministériels, notamment son article 1\ner\n,\nArrête :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Arrêté individuel de nomination relatif à une SELAS d'officiers publics ou ministériels, sans friction économique identifiable ni périmètre d'opportunité démontré ; discovery=CONTEXT_REVIEW confirmé."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Nomination administrative individuelle concernant une société d'exercice libéral d'officiers publics ou ministériels, sans impact de marché identifiable.",
+        "affected_actors": [
+          "Officiers publics ou ministériels concernés"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Identité des officiers nommés",
+          "Nature exacte de l'opération (création, cession, modification)"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054979904"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:e92f77b10fbba634",
+        "title": "Arrêté du 9 octobre 2026 relatif à une société d'exercice libéral par actions simplifiée (officiers publics ou ministériels)",
+        "keywords": [
+          "officiers publics",
+          "officiers ministériels",
+          "SELAS",
+          "nomination",
+          "justice"
+        ],
+        "affected_scope": [
+          "Officiers publics ou ministériels"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "PARTIAL",
+          "effective_date": "2026-10-14",
+          "affected_scope": [
+            "Officiers publics ou ministériels"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:602757de8c6fa5d9",
+      "identity": {
+        "stable_source_id": "source:02015e9bc2561ead",
+        "evidence_version": "sha256:c4b2979df841d19054f47e1e3a646b6e198c0a3f2eba527b5ff24587aba8debf"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054979917",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054979917",
+          "nature": "ARRETE",
+          "nor": "JUSE2624199A",
+          "title": "Arrêté du 12 octobre 2026 portant maintien dans la position de disponibilité (Conseil d'Etat)",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054979917",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "1cfbf1206e155b8a0de0e41450b2587c54967dd7104efe414190f6b30ad33e52",
+            "excerpt": "Le Premier ministre et le garde des sceaux, ministre de la justice,\nSur la proposition du vice-président du Conseil d'Etat délibérant avec les présidents de section,\nVu le code général de la fonction publique ;\nVu le code de justice administrative, notamment ses articles R.* 135-2, R.* 135-8 et R.* 135-9 ;\nVu le décret n° 85-986 du 16 septembre 1985 modifié relatif au régime particulier de certaines positions des fonctionnaires de l'Etat, à la mise à disposition, à l'intégration et à la cessation définitive de fonctions, notamment le b de son article 44 ;\nVu l'arrêté du 25 novembre 2024 modifiant l'arrêté du 5 septembre 2024 portant maintien dans la position de disponibilité ;\nVu la demande présentée par M. Laurent OLLÉON, conseiller d'Etat,\nArrêtent :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Arrêté individuel de maintien en position de disponibilité d'un conseiller d'Etat ; aucune friction économique, obligation nouvelle, marché ou opportunité professionnelle démontrée."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Un conseiller d'Etat (M. Laurent Olléon) voit sa position de disponibilité administrative maintenue par arrêté conjoint du Premier ministre et du garde des sceaux.",
+        "affected_actors": [
+          "M. Laurent Olléon",
+          "Conseil d'Etat",
+          "Premier ministre",
+          "Garde des sceaux"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Durée du maintien en disponibilité",
+          "Motif de la demande initiale"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054979917"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:602757de8c6fa5d9",
+        "title": "Arrêté du 12 octobre 2026 portant maintien dans la position de disponibilité (Conseil d'Etat)",
+        "keywords": [
+          "disponibilité",
+          "Conseil d'Etat",
+          "fonction publique",
+          "arrêté individuel"
+        ],
+        "affected_scope": [
+          "Conseil d'Etat"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-14",
+          "affected_scope": [
+            "Conseil d'Etat"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:92dbd276ddc96868",
+      "identity": {
+        "stable_source_id": "source:fde0afc0ddb1887b",
+        "evidence_version": "sha256:a969163804a97dc1a41dbe632b27c34a568b198e3bdd77b261221c7f470d38bc"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054979948",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054979948",
+          "nature": "ARRETE",
+          "nor": "SFHN2627024A",
+          "title": "Arrêté du 7 octobre 2026 portant modification de l'arrêté du 28 août 2026 fixant la liste des personnes autorisées à exercer en France la profession de médecin dans la spécialité « chirurgie orthopédique et traumatologique » application des dispositions de l'article L. 4111-2 (I) du code de la santé publique et du IV de l'article 83 de la loi n° 2006-1640 du 21 décembre 2006 de financement de la sécurité sociale pour 2007",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054979948",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "77b2458f4439cade2c5e9c178e05c969d937c0ef3b875e8aa34d1a29079aa35f",
+            "excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées,\nVu l'arrêté du 28 août 2026 fixant la liste des personnes autorisées à exercer en France la profession de médecin dans la spécialité « chirurgie orthopédique et traumatologique », application des dispositions de l'article L. 4111-2 (I) du code de la santé publique et du IV de l'article 83 de la loi n° 2006-1640 du 21 décembre 2006 de financement de la sécurité sociale pour 2007,\nArrête :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte administratif individuel fixant/modifiant une liste nominative d'autorisation d'exercice médical dans une spécialité donnée ; aucun périmètre industriel ou B2B exploitable, aucune opportunité d'offre de service identifiée."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "WATCH_CANDIDATE",
+        "score": 3,
+        "triggers": [
+          {
+            "kind": "FUNDING_OR_INCENTIVE",
+            "score": 3,
+            "terms": [
+              "financement"
+            ]
+          }
+        ],
+        "scope_terms": [],
+        "reason": "ECONOMIC_FRICTION_DETECTED",
+        "recommended_enrichment": [
+          "PRESS",
+          "DEMAND",
+          "MARKET"
+        ]
+      },
+      "reading": {
+        "consequence": "L'arrêté met à jour la liste nominative des médecins autorisés à exercer en France la spécialité de chirurgie orthopédique et traumatologique, sans créer de dispositif, de financement ou de marché.",
+        "affected_actors": [
+          "médecins concernés par la liste",
+          "ministère de la santé"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "médecins inscrits ou retirés de la liste"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "identité précise des personnes concernées par la modification",
+          "motif exact de la modification (ajout, retrait, correction)"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054979948"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:92dbd276ddc96868",
+        "title": "Arrêté du 7 octobre 2026 portant modification de l'arrêté du 28 août 2026 fixant la liste des personnes autorisées à exercer en France la profession de médecin en chirurgie orthopédique et traumatologique",
+        "keywords": [
+          "médecin",
+          "chirurgie orthopédique",
+          "autorisation d'exercice",
+          "liste nominative",
+          "santé publique"
+        ],
+        "affected_scope": [
+          "médecins spécialistes en chirurgie orthopédique et traumatologique"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-14",
+          "affected_scope": [
+            "médecins spécialistes en chirurgie orthopédique et traumatologique"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "autorisation d'exercice de la médecine (art. L4111-2 I CSP)",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:2a383456b8ef987b",
+      "identity": {
+        "stable_source_id": "source:71bdcff09547631e",
+        "evidence_version": "sha256:fa595ce176452560f591bbe062e52599bfec7b4fadce4c1677f4c944de454e44"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054979955",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054979955",
+          "nature": "ARRETE",
+          "nor": "SFHN2627074A",
+          "title": "Arrêté du 12 octobre 2026 fixant la liste des personnes autorisées à exercer en France la profession de médecin dans la spécialité « pédiatrie » en application des dispositions de l'article L. 4111-2 (II) du code de la santé publique",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054979955",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "1a2cb5f548796dd6b1278e1b6d37d44ea3c48fb7710baffd67f9ad5578693177",
+            "excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées,\nVu le code de la santé publique, notamment les dispositions de son article L. 4111-2 (II) ;\nVu la loi n° 2019-774 du 24 juillet 2019 modifiée relative à l'organisation et à la transformation du système de santé ;\nVu l'avis de la commission d'autorisation d'exercice en date du 30 septembre 2026,\nArrête :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte administratif nominatif fixant une liste de médecins autorisés à exercer en pédiatrie; aucune friction économique, marché ou opportunité de service démontrée."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "L'arrêté autorise nominativement certaines personnes à exercer la médecine en spécialité pédiatrie en France, sans créer d'obligation économique ou de marché identifiable.",
+        "affected_actors": [
+          "Médecins concernés par la liste",
+          "Ministère de la santé"
+        ],
+        "beneficiaries": [
+          "Personnes inscrites sur la liste autorisées à exercer"
+        ],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Identité des personnes listées",
+          "Portée pratique de l'autorisation pour chaque praticien"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054979955"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:2a383456b8ef987b",
+        "title": "Arrêté fixant la liste des personnes autorisées à exercer en France la profession de médecin dans la spécialité pédiatrie",
+        "keywords": [
+          "médecin",
+          "pédiatrie",
+          "autorisation d'exercice",
+          "santé publique"
+        ],
+        "affected_scope": [
+          "Médecins spécialistes en pédiatrie"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-14",
+          "affected_scope": [
+            "Médecins spécialistes en pédiatrie"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "autorisation_exercice_medecin_L4111-2",
+              "status": "REQUIRED"
+            }
+          ],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:0369a9ea497f4e67",
+      "identity": {
+        "stable_source_id": "source:a1846f302b108c53",
+        "evidence_version": "sha256:61d769a127e9e31258f8b80029f97adc4cd3ac196920bdbc9a68bd7f386423d1"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054979986",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054979986",
+          "nature": "DECISION",
+          "nor": "RCAR2626882S",
+          "title": "Décision n° 2026-CA-24 du 15 septembre 2026 modifiant le nom du service RCF Sarthe",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054979986",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "2ad9f0ab20aedd1214ce0e4707fe269035f85ebec09ac7892d3aef6fcb15b365",
+            "excerpt": "L'ARCOM Caen,\nVu la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication, notamment son article 28-3 ;\nVu le décret n° 2024-425 du 10 mai 2024 relatif aux comités techniques prévus à l'article 29-3 de la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication ;\nVu la délibération n° 2011-31 du 12 juillet 2011 modifiée du Conseil supérieur de l'audiovisuel fixant les conditions d'application de l'article 29-3 de la loi du 30 septembre 1986 relatif aux comités territoriaux de l'audiovisuel ;\nVu l'ensemble des décisions autorisant l'association Médias Chrétiens en Sarthe à exploiter un service de radio de catégorie A par voie hertzienne terrestre en mode analogique et en mode numérique dénommé RCF Sarthe ;\nVu la convention conclue entre le comité territorial de l'audiovisuel de Caen et l'association Médias Chrétiens en Sarthe ;\nVu le courriel en date du 14 août 2026 par lequel l'association Médias Chrétiens en Sarthe a saisi l'ARCOM Caen d'une demande de changement de nom du service ;\nAprès en avoir délibéré,\nDécide :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Décision administrative de l'ARCOM actant un simple changement de nom d'un service de radio associatif existant ; aucune friction économique, aucun marché ni opportunité de service B2B identifiable."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [
+          "association"
+        ],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Le service de radio associatif RCF Sarthe change de nom, sans modification des conditions d'exploitation déjà autorisées.",
+        "affected_actors": [
+          "association Médias Chrétiens en Sarthe",
+          "ARCOM"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Nouveau nom retenu non précisé dans l'extrait"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054979986"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:0369a9ea497f4e67",
+        "title": "Décision n° 2026-CA-24 modifiant le nom du service RCF Sarthe",
+        "keywords": [
+          "ARCOM",
+          "radio associative",
+          "changement de nom",
+          "autorisation audiovisuelle"
+        ],
+        "affected_scope": [
+          "association Médias Chrétiens en Sarthe"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-14",
+          "affected_scope": [
+            "association Médias Chrétiens en Sarthe"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "autorisation ARCOM d'exploitation de service radio",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:b21427f0a23b8c60",
+      "identity": {
+        "stable_source_id": "source:ed2c0e65face6ed0",
+        "evidence_version": "sha256:3948f756d21ff409e241f9aa1e63c55760e5df9ad2690de614ce8207457557f5"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054979994",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054979994",
+          "nature": "DECISION",
+          "nor": "RCAC2626977S",
+          "title": "Décision n° 2026-484 du 7 octobre 2026 abrogeant la décision n° 2023-200 du 15 mars 2023 autorisant la société ENSEMBLE TV à utiliser une ressource radioélectrique pour la diffusion par voie hertzienne terrestre, en clair et en haute définition, du service de télévision à vocation locale dénommé 20 Minutes TV Ile-de-France en région parisienne",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054979994",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "48bb7646e808a4d9602f069fc622242acc8bbec67ee8d06813cf6039842049d0",
+            "excerpt": "L'Autorité de régulation de la communication audiovisuelle et numérique,\nVu la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication ;\nVu le courrier du 23 juin 2026 par lequel la société ENSEMBLE TV fait part à l'Autorité de régulation de la communication audiovisuelle et numérique de sa demande d'abrogation, à compter du 29 novembre 2026, de la décision n° 2023-200 du 15 mars 2023 autorisant la société ENSEMBLE TV à utiliser une ressource radioélectrique pour la diffusion par voie hertzienne terrestre, en clair et haute définition, du service de télévision à vocation locale dénommé 20 Minutes TV Ile-de-France en région parisienne ;\nConsidérant ce qui suit :\n1. Aucun motif d'intérêt général ne fait obstacle à ce que soit abrogée l'autorisation accordée à la société ENSEMBLE TV d'utiliser une ressource radioélectrique pour l'exploitation du service de télévision 20 Minutes TV Ile-de-France ;\n2. L'abrogation sollicitée n'est pas susceptible de porter atteinte aux droits des tiers ;\nAprès en avoir délibéré,\nDécide :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Décision administrative d'abrogation d'une autorisation d'usage de fréquence à la demande de l'opérateur lui-même ; aucune friction économique, obligation nouvelle ou marché identifiable n'est démontré."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 1,
+        "triggers": [
+          {
+            "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+            "score": 1,
+            "terms": [
+              "a compter du"
+            ]
+          }
+        ],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "L'autorisation accordée à ENSEMBLE TV pour diffuser 20 Minutes TV Ile-de-France par voie hertzienne terrestre est abrogée à compter du 29 novembre 2026, à la demande de la société elle-même.",
+        "affected_actors": [
+          "ENSEMBLE TV",
+          "Autorité de régulation de la communication audiovisuelle et numérique (ARCOM)"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "ENSEMBLE TV"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Motif commercial ou stratégique de la demande d'abrogation",
+          "Devenir de la fréquence libérée"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054979994"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:b21427f0a23b8c60",
+        "title": "Décision n° 2026-484 abrogeant l'autorisation d'ENSEMBLE TV pour 20 Minutes TV Ile-de-France",
+        "keywords": [
+          "ARCOM",
+          "abrogation",
+          "autorisation",
+          "ressource radioélectrique",
+          "télévision locale"
+        ],
+        "affected_scope": [
+          "ENSEMBLE TV",
+          "20 Minutes TV Ile-de-France"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-11-29",
+          "affected_scope": [
+            "ENSEMBLE TV"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "Autorisation d'usage de ressource radioélectrique (abrogée)",
+              "status": "NOT_REQUIRED"
+            }
+          ],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:93a4658d3ed0f4e2",
+      "identity": {
+        "stable_source_id": "source:2bd3dc5b74e70020",
+        "evidence_version": "sha256:6bc92175e7e183c085c65ba5fb677bd78585327cfdde69335f4417bf120ab921"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054979998",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054979998",
+          "nature": "DECISION",
+          "nor": "RCAC2626983S",
+          "title": "Décision n° 2026-485 du 7 octobre 2026 abrogeant la décision n° 2013-170 du 15 janvier 2013 autorisant la société Angers Loire Télévision à utiliser une ressource radioélectrique pour la diffusion du service de télévision à vocation locale par voie hertzienne terrestre dénommé Angers Télé",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054979998",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "3f821ffdb5b902a3ad66101b13134121a3f859003c876d9a62778990ccc99a0d",
+            "excerpt": "L'Autorité de régulation de la communication audiovisuelle et numérique,\nVu la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication ;\nVu le courrier du 31 juillet 2026 par lequel la société Angers Loire Télévision fait part à l'Autorité de régulation de la communication audiovisuelle et numérique de sa demande d'abrogation, à compter du 15 octobre 2026, de la décision n° 2013-170 du 15 janvier 2013 autorisant la société Angers Loire Télévision à utiliser une ressource radioélectrique pour la diffusion du service de télévision à vocation locale par voie hertzienne dénommé Angers Télé ;\nConsidérant ce qui suit :\n1. Aucun motif d'intérêt général ne fait obstacle à ce que soit abrogée l'autorisation accordée à la société Angers Loire Télévision d'utiliser une ressource radioélectrique pour l'exploitation du service de télévision Angers Télé ;\n2. L'abrogation sollicitée n'est pas susceptible de porter atteinte aux droits des tiers ;\nAprès en avoir délibéré,\nDécide :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Décision administrative individuelle abrogeant une autorisation de diffusion locale à la demande de l'opérateur concerné ; aucune friction économique, aucun marché ni besoin de service B2B démontré."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 1,
+        "triggers": [
+          {
+            "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+            "score": 1,
+            "terms": [
+              "a compter du"
+            ]
+          }
+        ],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "L'autorisation d'utiliser une ressource radioélectrique pour diffuser le service de télévision locale Angers Télé est abrogée à compter du 15 octobre 2026, à la demande de l'opérateur lui-même.",
+        "affected_actors": [
+          "Angers Loire Télévision",
+          "ARCOM"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "Angers Loire Télévision"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Motif précis de la demande d'abrogation",
+          "Devenir du service Angers Télé après abrogation"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054979998"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:93a4658d3ed0f4e2",
+        "title": "Décision n° 2026-485 abrogeant l'autorisation d'Angers Loire Télévision pour Angers Télé",
+        "keywords": [
+          "ARCOM",
+          "ressource radioélectrique",
+          "télévision locale",
+          "abrogation",
+          "Angers Télé"
+        ],
+        "affected_scope": [
+          "Angers Loire Télévision"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-15",
+          "affected_scope": [
+            "Angers Loire Télévision"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "autorisation_ressource_radioelectrique",
+              "status": "NOT_REQUIRED"
+            }
+          ],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:37254a2697fcf5ac",
+      "identity": {
+        "stable_source_id": "source:ec4fe6f8a008c2cf",
+        "evidence_version": "sha256:9df8d0bb10486c07c6721436e4588d5206d61f2cc7ee5eb6f0523ab0b8a76804"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054980002",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054980002",
+          "nature": "DECISION",
+          "nor": "RCAC2626987S",
+          "title": "Décision n° 2026-486 du 7 octobre 2026 abrogeant la décision n° 2019-558 du 20 novembre 2019 autorisant la société Télévision Bretagne Ouest à utiliser une ressource radioélectrique pour la diffusion du service de télévision locale par voie hertzienne terrestre dénommé Tébésud dans la zone de Lorient-Vannes",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054980002",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "09de6c1d6a34fc863f70e532f5830ecae81561173f04ffd91a5435bc12d42acb",
+            "excerpt": "L'Autorité de régulation de la communication audiovisuelle et numérique,\nVu la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication ;\nVu le courrier du 11 septembre 2026 par lequel la société Télévision Bretagne Ouest fait part à l'Autorité de régulation de la communication audiovisuelle et numérique de son intention de cesser l'édition du service Tébésud le 31 octobre 2026, et demande en conséquence l'abrogation de la décision n° 2019-558 du 20 novembre 2019 autorisant la société Télévision Bretagne Ouest à utiliser une ressource radioélectrique pour la diffusion du service de télévision locale par voie hertzienne terrestre dénommé Tébésud ;\nConsidérant ce qui suit :\n1. Aucun motif d'intérêt général ne fait obstacle à ce que soit abrogée l'autorisation accordée à la société Télévision Bretagne Ouest d'utiliser une ressource radioélectrique pour l'exploitation du service de télévision Tébésud ;\n2. L'abrogation sollicitée n'est pas susceptible de porter atteinte aux droits des tiers ;\nAprès en avoir délibéré,\nDécide :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Décision administrative d'abrogation d'une autorisation d'usage de fréquence suite à cessation d'activité d'un éditeur TV local ; aucune friction économique, obligation nouvelle ou marché identifiable n'est démontrée."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Le service de télévision locale Tébésud cesse d'émettre à compter du 31 octobre 2026, la société ayant elle-même demandé l'arrêt de son autorisation de diffusion hertzienne.",
+        "affected_actors": [
+          "Télévision Bretagne Ouest",
+          "ARCOM",
+          "téléspectateurs de la zone Lorient-Vannes"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "Télévision Bretagne Ouest"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Devenir des salariés et des équipements",
+          "Raisons de la cessation d'activité",
+          "Possibilité de réattribution de la ressource radioélectrique"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054980002"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:37254a2697fcf5ac",
+        "title": "Abrogation de l'autorisation d'usage de ressource radioélectrique de Tébésud (Lorient-Vannes)",
+        "keywords": [
+          "télévision locale",
+          "ressource radioélectrique",
+          "abrogation",
+          "ARCOM",
+          "Tébésud"
+        ],
+        "affected_scope": [
+          "Télévision Bretagne Ouest",
+          "zone Lorient-Vannes"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-14",
+          "affected_scope": [
+            "Télévision Bretagne Ouest",
+            "zone Lorient-Vannes"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "Autorisation d'usage de ressource radioélectrique (abrogée)",
+              "status": "NOT_REQUIRED"
+            }
+          ],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:5448064d3a00360c",
+      "identity": {
+        "stable_source_id": "source:c4990649c8b54f7c",
+        "evidence_version": "sha256:ccaeedb3473546b216f1914a769de031393614eda442ef368b89e3a7ab036798"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054980006",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054980006",
+          "nature": "DECISION",
+          "nor": "RCAC2627049S",
+          "title": "Décision n° 2026-504 du 7 octobre 2026 portant abrogation de la décision n° 2021-1392 du 1er décembre 2021 autorisant la SARL TSF Jazz à exploiter un service de radio de catégorie D par voie hertzienne terrestre en mode numérique dénommé TSF Jazz dans la zone Nancy étendu",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054980006",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "10d0494a56340d6ba237f24792e82e52746890767d5bbfa97a111d39a532f1c5",
+            "excerpt": "L'Autorité de régulation de la communication audiovisuelle et numérique,\nVu la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication ;\nVu la décision n° 2022-185 du 16 mars 2022 de l'Autorité de régulation de la communication audiovisuelle et numérique autorisant la SAS Compagnie des multiplex DAB à utiliser une ressource radioélectrique pour le multiplexage des programmes des éditeurs de service de radio par voie hertzienne terrestre en mode numérique dans la zone Nancy étendu ;\nVu le courrier du 5 août 2026 de la SARL TSF Jazz par laquelle elle renonce à l'utilisation de la ressource radioélectrique qui lui a été attribuée pour l'exploitation du service TSF Jazz en mode numérique dans la zone Nancy étendu ;\nConsidérant ce qui suit :\n1. Par ce courrier, la SARL TSF Jazz déclare renoncer à l'utilisation de la ressource radioélectrique qui lui a été attribuée pour l'exploitation du service TSF Jazz en mode numérique dans la zone Nancy étendu ;\n2. Aucun motif ne justifie de s'opposer à cette renonciation ;\nAprès en avoir délibéré,\nDécide :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Décision administrative d'abrogation d'une autorisation d'exploitation radio suite à renonciation volontaire de l'opérateur ; aucune friction économique, aucune nouvelle obligation ni marché identifiable."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "L'ARCOM abroge l'autorisation d'exploitation du service de radio TSF Jazz dans la zone Nancy étendu, à la suite d'une renonciation volontaire de l'opérateur à la ressource radioélectrique attribuée.",
+        "affected_actors": [
+          "SARL TSF Jazz",
+          "Autorité de régulation de la communication audiovisuelle et numérique (ARCOM)",
+          "SAS Compagnie des multiplex DAB"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "SARL TSF Jazz"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Motif commercial de la renonciation",
+          "Devenir de la ressource radioélectrique libérée",
+          "Éventuel futur appel à candidatures pour la zone concernée"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054980006"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:5448064d3a00360c",
+        "title": "Décision n° 2026-504 portant abrogation de l'autorisation de la SARL TSF Jazz (zone Nancy étendu)",
+        "keywords": [
+          "ARCOM",
+          "radio numérique",
+          "abrogation",
+          "autorisation",
+          "DAB"
+        ],
+        "affected_scope": [
+          "SARL TSF Jazz",
+          "zone Nancy étendu"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-14",
+          "affected_scope": [
+            "SARL TSF Jazz",
+            "zone Nancy étendu"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:5cd9ecba27dfd44a",
+      "identity": {
+        "stable_source_id": "source:f907d74f89561158",
+        "evidence_version": "sha256:13fafd6dbcac3eab54c4b52033d7760bd5b85512ce0222ed451ddfc29e07b74a"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054980010",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054980010",
+          "nature": "DECISION",
+          "nor": "RCAC2627073S",
+          "title": "Décision n° 2026-510 du 7 octobre 2026 portant abrogation de la décision n° 2020-870 du 9 décembre 2020 autorisant la SARL TSF Jazz à exploiter un service de radio de catégorie D par voie hertzienne terrestre en mode numérique dénommé TSF Jazz dans la zone Tours étendu",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054980010",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "7d3c5939b9442e08c40e5b9eda7a319108e89dd97c1556d029ab80e57a63c9ad",
+            "excerpt": "L'Autorité de régulation de la communication audiovisuelle et numérique,\nVu la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication ;\nVu la décision n° 2021-609 du 19 mai 2021 du Conseil supérieur de l'audiovisuel autorisant la SAS Compagnie des multiplex DAB à utiliser une ressource radioélectrique pour le multiplexage des programmes des éditeurs de service de radio par voie hertzienne terrestre en mode numérique dans la zone Tours étendu ;\nVu le courrier du 5 août 2026 de la SARL TSF Jazz par laquelle elle renonce à l'utilisation de la ressource radioélectrique qui lui a été attribuée pour l'exploitation du service TSF Jazz en mode numérique dans la zone Tours étendu ;\nConsidérant ce qui suit :\n1. Par ce courrier, la SARL TSF Jazz déclare renoncer à l'utilisation de la ressource radioélectrique qui lui a été attribuée pour l'exploitation du service TSF Jazz en mode numérique dans la zone Tours étendu ;\n2. Aucun motif ne justifie de s'opposer à cette renonciation ;\nAprès en avoir délibéré,\nDécide :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Décision administrative d'abrogation d'une autorisation d'exploitation radio (renonciation volontaire), sans friction économique ni marché identifiable pour un service tiers."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "L'autorisation d'exploitation du service de radio TSF Jazz en mode numérique dans la zone Tours étendu est abrogée à la demande de l'exploitant, qui renonce à l'usage de la ressource radioélectrique attribuée.",
+        "affected_actors": [
+          "SARL TSF Jazz",
+          "ARCOM",
+          "SAS Compagnie des multiplex DAB"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "SARL TSF Jazz"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Raison de la renonciation de TSF Jazz",
+          "Devenir de la ressource radioélectrique libérée"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054980010"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:5cd9ecba27dfd44a",
+        "title": "Décision n° 2026-510 portant abrogation de l'autorisation de la SARL TSF Jazz à exploiter un service de radio catégorie D à Tours étendu",
+        "keywords": [
+          "radio",
+          "ARCOM",
+          "abrogation",
+          "autorisation",
+          "fréquence",
+          "DAB"
+        ],
+        "affected_scope": [
+          "SARL TSF Jazz",
+          "zone Tours étendu"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-14",
+          "affected_scope": [
+            "SARL TSF Jazz",
+            "zone Tours étendu"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "autorisation ARCOM d'exploitation radio",
+              "status": "NOT_REQUIRED"
+            }
+          ],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:90a6484d2e060651",
+      "identity": {
+        "stable_source_id": "source:e492e84695d770d3",
+        "evidence_version": "sha256:9af058c8966917953eb50efe0d5537576266c5e580d47c89644dc547e8cca94b"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054980014",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054980014",
+          "nature": "DECISION",
+          "nor": "RCAR2627170S",
+          "title": "Décision n° 2026-AG-04 du 9 septembre 2026 relative à la possibilité de reconduire pour cinq ans hors appel aux candidatures des autorisations délivrées dans le ressort de l'ARCOM Antilles-Guyane",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054980014",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "fc75fc5d9ac0372d2b33eff1d6340758d0611c7ed972aaf62d320634aebbe677",
+            "excerpt": "L'ARCOM Antilles-Guyane,\nVu la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication, notamment ses articles 28-1 et 29-3 ;\nVu le décret n° 2024-425 du 10 mai 2024 relatif aux comités techniques prévus à l'article 29-3 de la loi n° 86-1067 du 30 septembre 1986 relative à la liberté de communication ;\nVu la décision n° 2017-737 du 27 septembre 2017 du Conseil supérieur de l'audiovisuel, reconduite par décision n° 2022-AG-02 du 13 avril 2022, autorisant l'association Bonne Nouvelle Guyane à exploiter un service de radio de catégorie A par voie hertzienne terrestre en modulation de fréquence dénommé Radio Bonne Nouvelle Guyane et dont le terme est fixé au 16 octobre 2027 ;\nVu la décision n° 2017-736 du 27 septembre 2017 du Conseil supérieur de l'audiovisuel, reconduite par décision n° 2022-AG-03 du 13 avril 2022, autorisant l'association Reak à exploiter un service de radio de catégorie A par voie hertzienne terrestre en modulation de fréquence dénommé Radio Kourou Savanes et dont le terme est fixé au 16 octobre 2027 ;\nVu la décision n° 2017-738 du 27 septembre 2017 du Conseil supérieur de l'audiovisuel, reconduite par décision n° 2022-AG-05 du 13 avril 2022, autorisant l'association culturelle et éducative Gabriel à exploiter un service de radio de catégorie A par voie hertzienne terrestre en modulation de fréquence dénommé Radio Saint-Gabriel et dont le terme est fixé au 16 octobre 2027 ;\nConsidérant qu'aucun des motifs prévus au I de l'article 28-1 de loi n° 86-1067 du 30 septembre 1986 modifiée et faisant obstacle à la reconduction d'une autorisation hors appel aux candidatures ne trouve à s'appliquer aux autorisations concernées ;\nAprès en avoir délibéré,\nDécide :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Décision administrative de reconduction d'autorisations de radio associatives existantes, sans appel à candidatures ni création d'obligation ou de marché nouveau ; aucune friction économique ni flux financier démontré."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [
+          "association"
+        ],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "L'ARCOM reconduit pour cinq ans, sans nouvel appel à candidatures, les autorisations d'exploitation de trois radios associatives en Guyane (Radio Bonne Nouvelle Guyane, Radio Kourou Savanes, Radio Saint-Gabriel).",
+        "affected_actors": [
+          "ARCOM Antilles-Guyane",
+          "Association Bonne Nouvelle Guyane",
+          "Association Reak",
+          "Association culturelle et éducative Gabriel"
+        ],
+        "beneficiaries": [
+          "Associations titulaires des autorisations reconduites"
+        ],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Date exacte et modalités précises de la nouvelle échéance d'autorisation",
+          "Absence d'appel à candidatures empêchant tout nouvel entrant"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054980014"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:90a6484d2e060651",
+        "title": "Reconduction hors appel aux candidatures d'autorisations radio ARCOM Antilles-Guyane",
+        "keywords": [
+          "ARCOM",
+          "radio associative",
+          "reconduction",
+          "autorisation",
+          "Guyane"
+        ],
+        "affected_scope": [
+          "Antilles-Guyane"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-14",
+          "affected_scope": [
+            "Antilles-Guyane"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "Autorisation ARCOM d'exploitation radio catégorie A",
+              "status": "NOT_REQUIRED"
+            }
+          ],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:cc91d0401ce605a5",
+      "identity": {
+        "stable_source_id": "source:ae3fd2f3a5b67b3d",
+        "evidence_version": "sha256:93d6f9099e618c814c85c80aa11c576617509972ad789ddda1f4c7917712e181"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000054980027",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000054980027",
+          "nature": "DECISION",
+          "nor": "RCAR2627173S",
+          "title": "Décision n° 2026-AG-05 du 9 septembre 2026 relative à la possibilité de reconduire pour cinq ans hors appel aux candidatures une autorisation délivrée dans le ressort de l'ARCOM Antilles-Guyane",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054980027",
+          "publication_date": "2026-10-14",
+          "journal_number": "0240",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "46ffa4584663c6e1ee4622546a61e0135d392ebe5eae7b48a46732b853e6e066",
+            "excerpt": "L'ARCOM Antilles-Guyane,\nVu la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication, notamment ses articles 28-1 et 29-3 ;\nVu le décret n° 2024-425 du 10 mai 2024 relatif aux comités techniques prévus à l'article 29-3 de la loi n° 86-1067 du 30 septembre 1986 modifiée relative à la liberté de communication ;\nVu la décision n° 2017-740 du 27 septembre 2017 du Conseil supérieur de l'audiovisuel, reconduite par décision n° 2022-AG-06 du 13 avril 2022, autorisant l'association Ouest FM à exploiter un service de radio de catégorie B par voie hertzienne terrestre en modulation de fréquence dénommé BBlack et dont le terme est fixé au 16 octobre 2027 ;\nConsidérant qu'aucun des motifs prévus au I de l'article 28-1 de la loi n° 86-1067 du 30 septembre 1986 modifiée et faisant obstacle à la reconduction d'une autorisation hors appel aux candidatures ne trouve à s'appliquer à l'autorisation concernée ;\nAprès en avoir délibéré,\nDécide :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261014-002349.tar.gz",
+            "archive_sha256": "fffc5bca34102d3007534f87d69b912d5aab27f111b68e530edaba759fbc3861"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte CONTEXT_REVIEW relatif à la reconduction hors appel aux candidatures d'une autorisation de radiodiffusion existante au bénéfice d'une association déjà titulaire ; aucune friction économique, aucun marché, aucune offre de service documentée."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [
+          "association"
+        ],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "L'autorisation déjà détenue par l'association Ouest FM pour exploiter le service de radio BBlack est reconduite pour cinq ans sans nouvel appel à candidatures, prolongeant la situation existante sans ouverture de marché.",
+        "affected_actors": [
+          "Association Ouest FM",
+          "ARCOM Antilles-Guyane"
+        ],
+        "beneficiaries": [
+          "Association Ouest FM"
+        ],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Motifs détaillés de la reconduction",
+          "Modalités d'exploitation futures du service"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000054980027"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:cc91d0401ce605a5",
+        "title": "Décision ARCOM Antilles-Guyane relative à la reconduction hors appel aux candidatures d'une autorisation de radio (BBlack - Ouest FM)",
+        "keywords": [
+          "ARCOM",
+          "radio",
+          "reconduction",
+          "autorisation",
+          "Antilles-Guyane"
+        ],
+        "affected_scope": [
+          "association Ouest FM"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-14",
+          "affected_scope": [
+            "association Ouest FM"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "autorisation ARCOM d'exploitation de service de radio",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    }
+  ],
+  "money_flows": [],
+  "quality": {
+    "opportunity_count": 21,
+    "unresolved_count": 0,
+    "readings_available_count": 21,
+    "evidence_reference_count": 21,
+    "money_flow_count": 0,
+    "money_flow_unlinked_count": 0,
+    "limitation": "Les enrichissements sont vides tant qu'aucun agent dédié n'a produit une sortie sourcée."
+  }
+}
