@@ -1,77 +1,23 @@
 {
   "schema": "lawradar-investigation-queue-v1",
-  "generated_at_utc": "2026-10-13T21:16:57.857973+00:00",
+  "generated_at_utc": "2026-10-15T11:32:48.465036+00:00",
   "source_run": {
-    "id": "investigation-replay:226a81378b19f070",
-    "kind": "ARCHIVED_FACTS_REPLAY",
-    "generated_at_utc": "2026-10-13T21:14:49.382974+00:00",
-    "purpose": "TECHNICAL_ENRICHMENT_RETRY",
-    "archive_provenance": {
-      "signal:bee86e4d0e8ccf54": "evidence/universal-signals/v2/2026/10/run-38411398358-attempt-1.json"
-    }
+    "id": "38727758759",
+    "attempt": "1",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/38727758759",
+    "commit": "69acc69c9b66d12f607fc064d59c9c98edbe1f2f",
+    "report_date": "2026-10-15"
   },
   "policy": {
     "max_automatic_attempts": 2,
     "max_autonomous_research_attempts": 1,
     "retry_delay_hours": 6
   },
-  "items": [
-    {
-      "signal_id": "signal:bee86e4d0e8ccf54",
-      "source_id": "jorf:JORFTEXT000054977621",
-      "title": "Arrêté du 6 octobre 2026 modifiant la liste des modèles de pompes à chaleur agréés en matière de qualité et de résilience industrielle",
-      "status": "AUTO_RESEARCH_EXHAUSTED",
-      "opened_at_utc": "2026-10-13T14:16:25.531271+00:00",
-      "updated_at_utc": "2026-10-13T21:16:57.857973+00:00",
-      "automatic_attempts": 2,
-      "max_automatic_attempts": 2,
-      "autonomous_research_attempts": 1,
-      "max_autonomous_research_attempts": 1,
-      "qualification_contract_version": "tool-envelope-v3-structured-tool",
-      "next_retry_not_before_utc": null,
-      "questions": [
-        {
-          "id": "OPERATIONAL_FEASIBILITY",
-          "kind": "NEW_OFFICIAL_OR_PARTNER_EVIDENCE",
-          "status": "OPEN",
-          "question": "Recherche autonome à mener sur l'autorisation, l'agrément ou la voie de sous-traitance applicable, les dépendances opérationnelles nécessaires, le capital de démarrage nécessaire, le délai réaliste de mise sur le marché avant toute décision commerciale.",
-          "evidence": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : agrément de modèle de pompe à chaleur (qualité et résilience industrielle).",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ],
-          "automatic_retry": false
-        },
-        {
-          "id": "PRESS_QUALIFICATION",
-          "kind": "TECHNICAL_RETRY",
-          "status": "OPEN",
-          "question": "Requalifier exclusivement les candidats Presse déjà collectés ; aucune nouvelle conclusion médiatique n'est admise sans URL tracée.",
-          "evidence": [
-            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement."
-          ],
-          "automatic_retry": true
-        },
-        {
-          "id": "MARKET_RELEVANCE",
-          "kind": "TECHNICAL_RETRY",
-          "status": "OPEN",
-          "question": "Déterminer si un avis BOAMP cite le texte, son obligation ou un besoin directement lié ; un simple mot-sectoriel ne démontre pas une demande causée par le texte.",
-          "evidence": [
-            "Réponse Claude non exploitable : Contrat spécialisé invalide : COMPLETED exige des observations Marché pertinentes."
-          ],
-          "automatic_retry": true
-        }
-      ],
-      "readiness_status": "READY_FOR_PILOTS",
-      "final_constraint": "INVESTIGATE"
-    }
-  ],
+  "items": [],
   "summary": {
     "open_count": 0,
     "autonomous_research_pending_count": 0,
-    "auto_research_exhausted_count": 1,
+    "auto_research_exhausted_count": 0,
     "automatic_retry_count": 0
   }
 }
