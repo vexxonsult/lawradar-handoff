@@ -1,0 +1,419 @@
+{
+  "schema": "lawradar-universal-signal-v2",
+  "run": {
+    "id": "39481591004",
+    "attempt": "1",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/39481591004",
+    "commit": "a9a78e2598d2f959a65955f443064be5d240a52d",
+    "report_date": "2026-10-20"
+  },
+  "context": {
+    "coverage": "0 candidat envoyé au modèle",
+    "delta_changed_sources": [
+      "jorf-summaries-latest.json",
+      "consultdd-latest.json"
+    ],
+    "handled_source_files": [
+      "jorf-summaries-latest.json",
+      "consultdd-latest.json"
+    ],
+    "rule": "Preuves locales diffées uniquement ; réapparition historique et routine administrative explicite = filtrées avec trace ; les autres textes primaires disponibles reçoivent une lecture factuelle. Une friction détectée ouvre seulement une enquête, jamais une opportunité confirmée ; inconnu = UNRESOLVED.",
+    "prefilter_audit": {
+      "excluded_historical_candidates": [
+        {
+          "source_id": "jorf:JORFTEXT000000463423",
+          "publication_date": "1980-01-27",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000468856",
+          "publication_date": "2007-07-11",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000530525",
+          "publication_date": "1993-08-25",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000568344",
+          "publication_date": "2000-01-21",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000704908",
+          "publication_date": "2999-01-01",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000023246361",
+          "publication_date": "2010-12-18",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000029238168",
+          "publication_date": "2014-07-16",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000029278690",
+          "publication_date": "2014-07-23",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000031069983",
+          "publication_date": "2015-08-21",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000031070040",
+          "publication_date": "2015-08-21",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000042031998",
+          "publication_date": "2020-06-25",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000042575090",
+          "publication_date": "2020-11-28",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000043575801",
+          "publication_date": "2021-06-02",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000045872838",
+          "publication_date": "2022-06-08",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000051146070",
+          "publication_date": "2025-02-09",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000051146139",
+          "publication_date": "2025-02-09",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054179919",
+          "publication_date": "2026-06-03",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        }
+      ],
+      "excluded_routine_candidates": [
+        {
+          "source_id": "jorf:JORFTEXT000054999129",
+          "title": "Arrêté du 14 octobre 2026 fixant le nombre de places offertes au recrutement par concours dans le corps des ingénieurs militaires d'infrastructure de la défense en 2027",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999198",
+          "title": "Décision du 19 octobre 2026 portant délégation de signature (secrétariat général du ministère de la justice - affaires juridiques, expertise et stratégie, affaires européennes et internationales, aide aux victimes et accès au droit, communication)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999543",
+          "title": "Décret du 19 octobre 2026 portant nomination de la déléguée interministérielle à la prévention de la délinquance, de la radicalisation, de vigilance et de lutte contre les dérives sectaires - Mme MIRALLES (Patricia)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999551",
+          "title": "Décret du 19 octobre 2026 portant naturalisation, réintégration, mention d'enfants mineurs bénéficiant de l'effet collectif attaché à l'acquisition de la nationalité française par leurs parents et francisation de noms et de prénoms (Accès protégé)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999554",
+          "title": "Arrêté du 14 octobre 2026 portant nomination (mission interministérielle de vigilance et de lutte contre les dérives sectaires)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999556",
+          "title": "Arrêté du 14 octobre 2026 portant nomination du chef de la mission interministérielle de vigilance et de lutte contre les dérives sectaires",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999558",
+          "title": "Arrêté du 14 octobre 2026 portant admission à la retraite (commissaires divisionnaires de police)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999561",
+          "title": "Décret du 19 octobre 2026 portant nomination du président du conseil d'administration du Musée national de la Marine - M. VAUJOUR (Nicolas)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999568",
+          "title": "Décret du 19 octobre 2026 portant nomination du vice-président du conseil d'administration du Musée national de la Marine - M. OLSON (Terry)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999575",
+          "title": "Décret du 19 octobre 2026 portant détachement (magistrature) - Mme BELAOUAR (Solène)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999590",
+          "title": "Décret du 19 octobre 2026 portant détachement (magistrature) - Mme SORIANO (Cécile)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999604",
+          "title": "Décret du 19 octobre 2026 portant maintien en détachement (magistrature) - Mme ROQUIGNY (Laurence)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999620",
+          "title": "Décret du 19 octobre 2026 modifiant le décret du 24 août 2026 portant maintien en détachement (magistrature) - M. CALBO (Laurent)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999633",
+          "title": "Arrêté du 9 octobre 2026 portant admission à la retraite (magistrature)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999635",
+          "title": "Arrêté du 13 octobre 2026 portant nomination d'une commissaire de justice salariée (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999640",
+          "title": "Arrêté du 13 octobre 2026 portant nomination d'une commissaire de justice salariée (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999651",
+          "title": "Arrêté du 13 octobre 2026 portant nomination d'une société d'exercice libéral à responsabilité limitée (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999660",
+          "title": "Arrêté du 13 octobre 2026 portant nomination d'un notaire salarié (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999664",
+          "title": "Arrêté du 13 octobre 2026 portant nomination d'une notaire salariée (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999668",
+          "title": "Arrêté du 13 octobre 2026 portant nomination d'une notaire salariée (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999672",
+          "title": "Arrêté du 13 octobre 2026 portant nomination d'une notaire salariée (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999676",
+          "title": "Arrêté du 13 octobre 2026 modifiant l'arrêté du 9 mars 2026 portant radiation des cadres et admission à la retraite (magistrature)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999678",
+          "title": "Arrêté du 13 octobre 2026 portant admission à la retraite et maintien en activité (magistrature)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999681",
+          "title": "Arrêté du 14 octobre 2026 portant nomination d'une notaire salariée (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999685",
+          "title": "Arrêté du 14 octobre 2026 portant nomination d'une société d'exercice libéral par actions simplifiée (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999701",
+          "title": "Arrêté du 14 octobre 2026 portant nomination d'une notaire (officiers publics ou ministériels)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999706",
+          "title": "Arrêté du 19 octobre 2026 portant réintégration et placement dans la position de disponibilité (Conseil d'Etat)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999718",
+          "title": "Arrêté du 19 octobre 2026 portant maintien en détachement (Conseil d'Etat)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999726",
+          "title": "Arrêté du 19 octobre 2026 portant détachement (Conseil d'Etat)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999738",
+          "title": "Arrêté du 12 octobre 2026 portant cessation de fonctions au cabinet de la ministre déléguée auprès du ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique, chargée de l'intelligence artificielle et du numérique",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999746",
+          "title": "Arrêté du 12 octobre 2026 portant nomination au cabinet de la ministre déléguée auprès du ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique, chargée de l'intelligence artificielle et du numérique",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999755",
+          "title": "Décret du 19 octobre 2026 portant nomination au conseil d'administration de l'Agence française de développement - M. ANDRES (Alexis)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999760",
+          "title": "Arrêté du 15 octobre 2026 portant nomination au comité spécialisé pour les opérations à l'étranger de l'Agence française de développement",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999763",
+          "title": "Décret du 19 octobre 2026 portant nomination du directeur général de l'Agence nationale de santé publique - M. POT (Etienne)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999770",
+          "title": "Arrêté du 19 octobre 2026 portant nomination d'une administratrice provisoire à la commission des marchés de l'Union des caisses nationales de sécurité sociale",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999773",
+          "title": "Arrêté du 1er octobre 2026 portant nomination au conseil d'administration et au conseil professionnel du Centre national de la musique",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999775",
+          "title": "Arrêté du 19 octobre 2026 portant nomination (administration centrale)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999781",
+          "title": "Décret du 19 octobre 2026 portant renouvellement de détachement dans le statut d'emploi de direction de la direction générale des finances publiques",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999895",
+          "title": "Commissions et organes de contrôle",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999902",
+          "title": "Documents déposés",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999904",
+          "title": "Documents publiés",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999911",
+          "title": "Avis de vacance d'un emploi de directeur régional adjoint de l'économie, de l'emploi, du travail et des solidarités de Bourgogne-Franche-Comté, chargé des fonctions de responsable du pôle « économie, emploi, compétences et solidarités »",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999921",
+          "title": "Avis de vacance d'un emploi de directeur régional adjoint de l'économie, de l'emploi, du travail et des solidarités de Bourgogne-Franche-Comté, chargé des fonctions de responsable du pôle « économie, emploi, compétences et solidarités »",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999944",
+          "title": "Demandes de changement de nom (Accès protégé textes 85 à 97)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        }
+      ],
+      "excluded_no_economic_friction_candidates": [
+        {
+          "source_id": "jorf:JORFTEXT000054999788",
+          "title": "Avis relatif à l'extension d'un accord conclu dans le cadre de la convention collective nationale de travail des journalistes",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999793",
+          "title": "Avis relatif à l'extension d'un accord conclu dans le cadre de la convention collective nationale de la radiodiffusion",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999803",
+          "title": "Avis relatif à l'extension d'un avenant à la convention collective nationale de l'esthétique-cosmétique et de l'enseignement technique et professionnel lié aux métiers de l'esthétique et de la parfumerie",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999808",
+          "title": "Avis relatif à l'extension d'un avenant à la convention collective nationale des entreprises du secteur privé du spectacle vivant",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999813",
+          "title": "Avis relatif à l'extension d'avenants à la convention collective nationale des activités du déchet",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054999818",
+          "title": "Avis relatif à l'extension d'accords territoriaux (Hauts-de-France - Ile-de-France - Normandie) conclus dans le cadre de la convention collective nationale relative aux conditions de travail dans les industries de carrières et de matériaux (ouvriers - employés, techniciens et agents de maîtrise)",
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+          "discovery": {
+            "schema": "lawradar-opportunity-discovery-v1",
+            "status": "NOT_A_WATCH_CANDIDATE",
+            "score": 0,
+            "triggers": [],
+            "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+          }
+        }
+      ],
+      "deterministically_unresolved_candidates": []
+    }
+  },
+  "signals": [],
+  "money_flows": [],
+  "quality": {
+    "opportunity_count": 0,
+    "unresolved_count": 0,
+    "readings_available_count": 0,
+    "evidence_reference_count": 0,
+    "money_flow_count": 0,
+    "money_flow_unlinked_count": 0,
+    "limitation": "Les enrichissements sont vides tant qu'aucun agent dédié n'a produit une sortie sourcée."
+  }
+}
