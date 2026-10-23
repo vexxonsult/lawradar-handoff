@@ -5189,6 +5189,354 @@
       ]
     },
     {
+      "signal_id": "signal:88928cb0984149d4",
+      "source_id": "jorf:JORFTEXT000055009148",
+      "captured_at_utc": "2026-10-23T11:40:31.431205+00:00",
+      "facts_sha256": "6365ab60f12dcd1d99f7753c0ad266e44d2c28a382c164cb1f4867284d7dd931",
+      "initial_status": "DISCARD",
+      "latest_status": "DISCARD",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:88928cb0984149d4",
+        "evaluated_at_utc": "2026-10-23T11:40:31.431205+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "DISCARD",
+          "reasons": [
+            "Autorisation requise absente : Dossier constructeur instruit par l'ADEME pour inscription sur la liste."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "DISCARD"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:88928cb0984149d4",
+        "evaluated_at_utc": "2026-10-23T11:40:31.431205+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "DISCARD",
+          "reasons": [
+            "Autorisation requise absente : Dossier constructeur instruit par l'ADEME pour inscription sur la liste."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "DISCARD"
+      },
+      "signal": {
+        "id": "signal:88928cb0984149d4",
+        "identity": {
+          "stable_source_id": "source:356d06cc0065ac26",
+          "evidence_version": "sha256:d0774e8d5686f4e5b4521c1476938ae64d1c31a151dc3d59bf9a04d63cea0f08"
+        },
+        "source": {
+          "source_id": "jorf:JORFTEXT000055009148",
+          "source_kind": "JORF",
+          "change": "NEW",
+          "evidence": {
+            "text_id": "JORFTEXT000055009148",
+            "nature": "ARRETE",
+            "nor": "TECR2628100A",
+            "title": "Arrêté du 22 octobre 2026 modifiant l'arrêté du 14 décembre 2023 fixant la liste des versions de voitures particulières électriques ayant atteint le score environnemental minimal conditionnant l'éligibilité à certaines aides à l'achat ou à la location de véhicules peu polluants",
+            "publisher": "DILA / Journal officiel de la République française",
+            "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055009148",
+            "publication_date": "2026-10-23",
+            "journal_number": "0248",
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [],
+            "detail_status": null,
+            "official": {
+              "title": null,
+              "period": null
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": "AVAILABLE",
+              "text_sha256": "7ea7b0970da83485e2fea55e8d20f16aba572092232ebef41e19c34ec8eb50fa",
+              "excerpt": "Publics concernés : acquéreurs et locataires de véhicules ; professionnels de l'automobile.\nObjet : actualisation de la liste des versions de voitures particulières électriques ayant atteint le score environnemental minimal mentionné à l'article D. 251-1 du code de l'énergie, fixée par l'arrêté du 14 décembre 2023, et dès lors éligibles à certaines aides à l'achat ou à la location de véhicules peu polluants, et pris en compte dans le cadre de certaines dispositions fiscales, au titre de ce critère.\nLe présent arrêté actualise, à la suite de la modification de la méthodologie de calcul du score environnemental, la liste des versions de voitures particulières électriques ayant atteint le score environnemental minimal mentionné à l'article D. 251-1 du code de l'énergie, fixé par l'arrêté du 14 décembre 2023, après instruction, par l'Agence de l'environnement et de la maîtrise de l'énergie, d'un dossier déposé par leur constructeur. Il s'agit notamment d'une des conditions d'éligibilité au Coup de pouce « Véhicules Particuliers Electriques » dans le cadre des certificats d'économie d'énergie, et au leasing social, lié à l'impact environnemental et climatique de la production et de l'acheminement du véhicule. Cette liste détaille :\n- le type variante version (TVV) associé à la version ayant atteint le score environnemental minimal ;\n- la marque de la version de véhicule considérée ;\n- le modèle de la version de véhicule considérée.\nEntrée en vigueur : le p\n[… extrait primaire compacté …]\nur de score minimale à atteindre pour l'éligibilité au bonus écologique pour les voitures particulières neuves électriques ;\nVu l'arrêté du 21 octobre 2026 modifiant l'arrêté du 7 octobre 2023 relatif à la méthodologie de calcul du score environnemental et à la valeur de score minimale à atteindre pour l'éligibilité au bonus écologique pour les voitures particulières neuves électriques ;\nVu la notification n° 2026/0570/FR adressée le 22 octobre 2026 à la Commission européenne,\nArrêtent :",
+              "excerpt_truncated": true,
+              "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261023-014741.tar.gz",
+              "archive_sha256": "c7e39100a55bc1b971ed20333003697add734c04c9e87225b9950c425b576cd7"
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Texte publié mettant à jour la liste des véhicules électriques éligibles au score environnemental minimal, conditionnant l'accès au bonus écologique, au leasing social et au Coup de pouce CEE Véhicules Particuliers Electriques ; périmètre industriel/professionnel identifiable (constructeurs, ADEME, acquéreurs/locataires)."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 5,
+          "triggers": [
+            {
+              "kind": "ELIGIBILITY_OR_CERTIFICATION",
+              "score": 2,
+              "terms": [
+                "eligibilite"
+              ]
+            },
+            {
+              "kind": "TECHNICAL_TRANSITION",
+              "score": 2,
+              "terms": [
+                "economies d'energie"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [
+            "professionnel"
+          ],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        },
+        "reading": {
+          "consequence": "La liste des versions de voitures électriques éligibles au score environnemental minimal est actualisée suite au changement de méthodologie de calcul, ce qui conditionne l'accès de certains véhicules aux aides (bonus écologique, leasing social, Coup de pouce CEE Véhicules Particuliers Electriques).",
+          "affected_actors": [
+            "constructeurs automobiles",
+            "ADEME",
+            "acquéreurs et locataires de véhicules électriques"
+          ],
+          "beneficiaries": [
+            "acquéreurs et locataires de véhicules dont la version figure désormais sur la liste"
+          ],
+          "constrained_parties": [
+            "constructeurs dont les véhicules ne figurent pas ou plus sur la liste"
+          ],
+          "potential_service_partners": [],
+          "unknowns": [
+            "quelles versions de véhicules entrent ou sortent précisément de la liste",
+            "impact chiffré sur le nombre de véhicules éligibles",
+            "effet concret sur les montants d'aides versés"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "jorf:JORFTEXT000055009148"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:88928cb0984149d4",
+          "title": "Arrêté modifiant la liste des véhicules électriques éligibles au score environnemental minimal",
+          "keywords": [
+            "score environnemental",
+            "CEE",
+            "véhicules électriques",
+            "leasing social",
+            "ADEME",
+            "bonus écologique"
+          ],
+          "affected_scope": [
+            "constructeurs automobiles",
+            "acquéreurs de véhicules électriques",
+            "locataires de véhicules électriques",
+            "ADEME"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "PUBLISHED",
+            "proof_status": "VERIFIED",
+            "effective_date": "2026-11-24",
+            "affected_scope": [
+              "constructeurs automobiles",
+              "acquéreurs et locataires de véhicules électriques"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "Dossier constructeur instruit par l'ADEME pour inscription sur la liste",
+                "status": "REQUIRED"
+              }
+            ],
+            "dependencies": [
+              {
+                "id": "Méthodologie de calcul du score environnemental (arrêté du 7 octobre 2023 modifié)",
+                "status": "AVAILABLE"
+              }
+            ],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "PARTIAL"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": [
+              {
+                "service_type": "MISE_EN_RELATION",
+                "source_kind": "OFFICIAL_TEXT",
+                "source_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055009148",
+                "excerpt": "conditions d'éligibilité au Coup de pouce « Véhicules Particuliers Electriques » dans le cadre des certificats d'économie d'énergie, et au leasing social",
+                "scope_excludes_regulated_acts": true,
+                "scope_exclusion_excerpt": "Le texte ne mentionne aucune capacité d'installation, de certification CEE ou d'action au nom d'un obligé.",
+                "evidence_status": "PARTIAL"
+              }
+            ]
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:88928cb0984149d4",
+          "evaluated_at_utc": "2026-10-23T11:40:31.431205+00:00",
+          "compliance": {
+            "status": "PASS",
+            "reasons": [
+              "Texte vérifié, dans le périmètre et actionnable."
+            ]
+          },
+          "feasibility": {
+            "status": "DISCARD",
+            "reasons": [
+              "Autorisation requise absente : Dossier constructeur instruit par l'ADEME pour inscription sur la liste."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "DISCARD"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:88928cb0984149d4",
+        "title": "Arrêté modifiant la liste des véhicules électriques éligibles au score environnemental minimal",
+        "keywords": [
+          "score environnemental",
+          "CEE",
+          "véhicules électriques",
+          "leasing social",
+          "ADEME",
+          "bonus écologique"
+        ],
+        "affected_scope": [
+          "constructeurs automobiles",
+          "acquéreurs de véhicules électriques",
+          "locataires de véhicules électriques",
+          "ADEME"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-11-24",
+          "affected_scope": [
+            "constructeurs automobiles",
+            "acquéreurs et locataires de véhicules électriques"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "Dossier constructeur instruit par l'ADEME pour inscription sur la liste",
+              "status": "REQUIRED"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "Méthodologie de calcul du score environnemental (arrêté du 7 octobre 2023 modifié)",
+              "status": "AVAILABLE"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "PARTIAL"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": [
+            {
+              "service_type": "MISE_EN_RELATION",
+              "source_kind": "OFFICIAL_TEXT",
+              "source_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055009148",
+              "excerpt": "conditions d'éligibilité au Coup de pouce « Véhicules Particuliers Electriques » dans le cadre des certificats d'économie d'énergie, et au leasing social",
+              "scope_excludes_regulated_acts": true,
+              "scope_exclusion_excerpt": "Le texte ne mentionne aucune capacité d'installation, de certification CEE ou d'action au nom d'un obligé.",
+              "evidence_status": "PARTIAL"
+            }
+          ]
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-10-23T11:40:31.431205+00:00",
+          "trigger": "CAPTURE",
+          "status": "DISCARD",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
       "signal_id": "signal:97872d76b2d99705",
       "source_id": "jorf:JORFTEXT000054970521",
       "captured_at_utc": "2026-10-11T12:51:32.219226+00:00",
@@ -9255,7 +9603,7 @@
     }
   ],
   "queue_audit": {
-    "processed_count": 1779,
+    "processed_count": 1861,
     "unrecoverable_queue_entries": [
       {
         "fingerprint": "490853c49376a298cfdbefd3d9015889f24dfb149e616097ae78c39d2661a25b",
@@ -12130,6 +12478,126 @@
       {
         "fingerprint": "295d692425ce7f2415b3b7aa6494e080b9ebadbec666246ae73cb0fb96f57461",
         "source_id": "jorf:JORFTEXT000055006934",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "7e7f8f297fd83d3c304fa038084f58fd97211cbe63c28515162c5062dff36102",
+        "source_id": "jorf:JORFTEXT000055009757",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "d8f200e2e4e75f09c812f6c25927c6d716d29af99ef512277e9d193b38523059",
+        "source_id": "jorf:JORFTEXT000055009776",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "5024239d678092b4e84666179d0a13f96b5b916d7e564f4f39d40e5e21d327c1",
+        "source_id": "jorf:JORFTEXT000055009823",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "1129cd8d705d76f415dfebe288f6afdac1f86500f7d3bbc7be7f8c9c237caf6a",
+        "source_id": "jorf:JORFTEXT000055009845",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "ed28448ec8e1e0094332f66d5dac5603089252e17946e4bd5f13354b7b745651",
+        "source_id": "jorf:JORFTEXT000055009893",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "6104aa6bf69ee32970ab5f91f9d4072d34ed4e7f4f5ee5bc2a5ef2f43213e5a1",
+        "source_id": "jorf:JORFTEXT000055009928",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "35cd1756c88b098d34f77f283f9f1fc03ed8993bcfcd6aead6110e37ad0e48b8",
+        "source_id": "jorf:JORFTEXT000055009930",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "60aa171fe1cfe875b8b7667cb2930685e40b3d9eef85b0e5b6ee540ef7a654f5",
+        "source_id": "jorf:JORFTEXT000055009934",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "83d4a020b9ee6c144ae98dc8699f751b5d5930641174d7272986272931b5b9e7",
+        "source_id": "jorf:JORFTEXT000055009937",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "c4e8b8d83e9e60c72a830348475ea40b4bbec4b1a07d7d09841b9548529bd605",
+        "source_id": "jorf:JORFTEXT000055009939",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "58f5dc2e00b9c41b55f10a9d011b983109d518fc1fd14edb6f84b17db15b800f",
+        "source_id": "jorf:JORFTEXT000055009945",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "5ceb809f2392b80ca2df56fb1ce2409f17f130c1cd790d92608075d8d1b4ad85",
+        "source_id": "jorf:JORFTEXT000055009948",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "4f1c4c151353e16ca9ee3c9afabab9336981dc38b53c1a767d49d9d5efcf2652",
+        "source_id": "jorf:JORFTEXT000055010030",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "2e439df6c28f7173e8f169557eaa9ad583131e91fcaa61d95262d7ec40302124",
+        "source_id": "jorf:JORFTEXT000055010032",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "a7784a775ae255e118140a5df3bbf6796bdfdcd5094e014936b9b80e77a5d4c7",
+        "source_id": "jorf:JORFTEXT000055010038",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "e844490f2accc9bd9041c0480bb7ff4b7253883859ef500922f0447fa7675e9a",
+        "source_id": "jorf:JORFTEXT000055010040",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "00cf79455099da62b6eae2cd77481f42685c07d14427e65b3bddbc63cd2437f4",
+        "source_id": "jorf:JORFTEXT000055010042",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "d406f4a7211a054c2737c2603a9d50197815ea1a48f2d1890620fb19add91557",
+        "source_id": "jorf:JORFTEXT000055010044",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "f63234af681be772baea512d0dc868f6bd93bc567ff22f10ad3df0e50d0f410c",
+        "source_id": "jorf:JORFTEXT000055010046",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "525a0e44b5c466f381844672d436e71b94b79e000e5c3b7cb81607a56af42ea4",
+        "source_id": "jorf:JORFTEXT000055010049",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "5bece8a3c9368c323637b5092a600238daed10b979c2e53edce76a22252c5b26",
+        "source_id": "jorf:JORFTEXT000055010051",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "2d63a8d32d3b7b8f3032266116841619567b7a5123d06adbdc38f4c537264c2c",
+        "source_id": "jorf:JORFTEXT000055010053",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "8eb10e383da96a4fb5384aca5951791bb68aa0413eef2ff30937fc9b502a6577",
+        "source_id": "jorf:JORFTEXT000055010055",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "cd9a877954962abfcba1acf0c4e776856deb200b5599e62215ca4c03d99339e0",
+        "source_id": "jorf:JORFTEXT000055010058",
         "reason": "PRIMARY_TEXT_EMPTY"
       }
     ],
