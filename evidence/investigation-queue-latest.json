@@ -1,10 +1,10 @@
 {
   "schema": "lawradar-investigation-queue-v1",
-  "generated_at_utc": "2026-10-24T18:49:31.538725+00:00",
+  "generated_at_utc": "2026-10-24T19:33:33.969957+00:00",
   "source_run": {
     "id": "investigation-replay:d1013085fa386a5d",
     "kind": "ARCHIVED_FACTS_REPLAY",
-    "generated_at_utc": "2026-10-24T18:47:37.380671+00:00",
+    "generated_at_utc": "2026-10-24T19:32:00.032894+00:00",
     "purpose": "TECHNICAL_ENRICHMENT_RETRY",
     "archive_provenance": {
       "signal:ba14af9aa51d0aad": "evidence/universal-signals/v2/2026/10/run-40094624737-attempt-1.json"
@@ -20,12 +20,12 @@
       "signal_id": "signal:ba14af9aa51d0aad",
       "source_id": "jorf:JORFTEXT000055012074",
       "title": "Décret relatif à la protection sociale complémentaire en matière de prévoyance des agents publics territoriaux",
-      "status": "AUTONOMOUS_RESEARCH_PENDING",
+      "status": "AUTO_RESEARCH_EXHAUSTED",
       "opened_at_utc": "2026-10-24T12:42:46.493372+00:00",
-      "updated_at_utc": "2026-10-24T18:49:31.538725+00:00",
+      "updated_at_utc": "2026-10-24T19:33:33.969957+00:00",
       "automatic_attempts": 2,
       "max_automatic_attempts": 2,
-      "autonomous_research_attempts": 0,
+      "autonomous_research_attempts": 1,
       "max_autonomous_research_attempts": 1,
       "qualification_contract_version": "tool-envelope-v3-structured-tool",
       "next_retry_not_before_utc": null,
@@ -48,8 +48,7 @@
           "status": "OPEN",
           "question": "Requalifier exclusivement les candidats Presse déjà collectés ; aucune nouvelle conclusion médiatique n'est admise sans URL tracée.",
           "evidence": [
-            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement.",
-            "Collecte Presse partiellement limitée par un rate-limit temporaire (HTTP 429) ; retry différé requis."
+            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement."
           ],
           "automatic_retry": true
         },
@@ -70,8 +69,8 @@
   ],
   "summary": {
     "open_count": 0,
-    "autonomous_research_pending_count": 1,
-    "auto_research_exhausted_count": 0,
+    "autonomous_research_pending_count": 0,
+    "auto_research_exhausted_count": 1,
     "automatic_retry_count": 0
   }
 }
