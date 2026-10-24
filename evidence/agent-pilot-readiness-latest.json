@@ -1,17 +1,17 @@
 {
   "schema": "lawradar-agent-pilot-readiness-v1",
-  "generated_at_utc": "2026-10-23T11:40:31.366109+00:00",
+  "generated_at_utc": "2026-10-24T12:36:54.516421+00:00",
   "source_run": {
-    "id": "39947680873",
+    "id": "40094624737",
     "attempt": "1",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/39947680873",
-    "commit": "9ddc92f655a8e9de2b1c03a281778448564eec79",
-    "report_date": "2026-10-23"
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/40094624737",
+    "commit": "f197ac78cc3802ba33e0ca5accd8263f3e5ba5de",
+    "report_date": "2026-10-24"
   },
   "signals": [
     {
-      "signal_id": "signal:f89f2fde125a1495",
-      "source_id": "jorf:JORFTEXT000055008942",
+      "signal_id": "signal:8b56f402b565945c",
+      "source_id": "jorf:JORFTEXT000055011490",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -24,132 +24,8 @@
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:f89f2fde125a1495",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "NOT_APPLICABLE",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:b9eb5f4bbbb1cc9c",
-      "source_id": "jorf:JORFTEXT000055008972",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:b9eb5f4bbbb1cc9c",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "NOT_APPLICABLE",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:a3faf627e375443e",
-      "source_id": "jorf:JORFTEXT000055009001",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:a3faf627e375443e",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "DISCARD",
-          "reasons": [
-            "Autorisation indisponible : Agrément ministériel organisateur épreuve théorique permis de conduire."
-          ]
-        },
-        "operator_access": {
-          "status": "NOT_APPLICABLE",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
-          ]
-        },
-        "final_constraint": "DISCARD"
-      }
-    },
-    {
-      "signal_id": "signal:ac55cb3249d9a7f8",
-      "source_id": "jorf:JORFTEXT000055009017",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:ac55cb3249d9a7f8",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
+        "signal_id": "signal:8b56f402b565945c",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
         "compliance": {
           "status": "INVESTIGATE",
           "reasons": [
@@ -176,8 +52,8 @@
       }
     },
     {
-      "signal_id": "signal:a34c49c4519ba884",
-      "source_id": "jorf:JORFTEXT000055009041",
+      "signal_id": "signal:2c392eb22bdc8c59",
+      "source_id": "jorf:JORFTEXT000055011497",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -190,8 +66,92 @@
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:a34c49c4519ba884",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
+        "signal_id": "signal:2c392eb22bdc8c59",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:492790725eb13e32",
+      "source_id": "jorf:JORFTEXT000055011551",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:492790725eb13e32",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:910795d36bf04215",
+      "source_id": "jorf:JORFTEXT000055011587",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Texte de routine explicitement exclu de la recherche élargie."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:910795d36bf04215",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
         "compliance": {
           "status": "PASS",
           "reasons": [
@@ -218,8 +178,8 @@
       }
     },
     {
-      "signal_id": "signal:327179b494b869e7",
-      "source_id": "jorf:JORFTEXT000055009052",
+      "signal_id": "signal:45a4649d04832e73",
+      "source_id": "jorf:JORFTEXT000055011608",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -232,8 +192,8 @@
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:327179b494b869e7",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
+        "signal_id": "signal:45a4649d04832e73",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
         "compliance": {
           "status": "PASS",
           "reasons": [
@@ -260,8 +220,8 @@
       }
     },
     {
-      "signal_id": "signal:70353a036dac0b33",
-      "source_id": "jorf:JORFTEXT000055009063",
+      "signal_id": "signal:97a8b32f63bb240d",
+      "source_id": "jorf:JORFTEXT000055011615",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -274,8 +234,8 @@
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:70353a036dac0b33",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
+        "signal_id": "signal:97a8b32f63bb240d",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
         "compliance": {
           "status": "PASS",
           "reasons": [
@@ -302,532 +262,744 @@
       }
     },
     {
-      "signal_id": "signal:88928cb0984149d4",
-      "source_id": "jorf:JORFTEXT000055009148",
+      "signal_id": "signal:27f2ee7ac5480c6c",
+      "source_id": "jorf:JORFTEXT000055011620",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:27f2ee7ac5480c6c",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:2bf4551f2a3cd3a5",
+      "source_id": "jorf:JORFTEXT000055011729",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:2bf4551f2a3cd3a5",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:be9d37cda8739937",
+      "source_id": "jorf:JORFTEXT000055011743",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:be9d37cda8739937",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:fb06dd2b22187cf4",
+      "source_id": "jorf:JORFTEXT000055011774",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:fb06dd2b22187cf4",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:d0ec1a75cc64d27d",
+      "source_id": "jorf:JORFTEXT000055011838",
+      "radar_status": "DISCARDED",
+      "status": "RESEARCH_CANDIDATE",
+      "ready_for_pilots": true,
+      "client_scope": "RESEARCH_ONLY",
+      "entrepreneur_allowed": false,
+      "research_score": 5,
+      "recommended_next_step": "RUN_BOUNDED_PRESS_AND_MARKET_RESEARCH",
+      "reasons": [
+        "Indices économiques détectés : aide.",
+        "La recherche n'autorise aucune décision Entrepreneur."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:d0ec1a75cc64d27d",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : demande_aide_financiere.",
+            "Dépendance non vérifiée : modalites_demande_aide.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:9dabdecf718a9e87",
+      "source_id": "jorf:JORFTEXT000055011865",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:9dabdecf718a9e87",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:669d56617be1ae1a",
+      "source_id": "jorf:JORFTEXT000055011874",
+      "radar_status": "DISCARDED",
+      "status": "RESEARCH_CANDIDATE",
+      "ready_for_pilots": true,
+      "client_scope": "RESEARCH_ONLY",
+      "entrepreneur_allowed": false,
+      "research_score": 4,
+      "recommended_next_step": "RUN_BOUNDED_PRESS_AND_MARKET_RESEARCH",
+      "reasons": [
+        "Indices économiques détectés : controle.",
+        "La recherche n'autorise aucune décision Entrepreneur."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:669d56617be1ae1a",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : respect du cahier des charges AOC.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:f65fdf97cba3a288",
+      "source_id": "jorf:JORFTEXT000055011887",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:f65fdf97cba3a288",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:0d8a07a6cb1f45c3",
+      "source_id": "jorf:JORFTEXT000055011896",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:0d8a07a6cb1f45c3",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:50c623001093c351",
+      "source_id": "jorf:JORFTEXT000055011911",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:50c623001093c351",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:5d4f5e711371b027",
+      "source_id": "jorf:JORFTEXT000055011918",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:5d4f5e711371b027",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:0f69d00f21ba3318",
+      "source_id": "jorf:JORFTEXT000055011932",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:0f69d00f21ba3318",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : participation_CPTS.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:029dffa14189f82b",
+      "source_id": "jorf:JORFTEXT000055011949",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:029dffa14189f82b",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:ab2a6ed9d98838ce",
+      "source_id": "jorf:JORFTEXT000055011961",
+      "radar_status": "DISCARDED",
+      "status": "RESEARCH_CANDIDATE",
+      "ready_for_pilots": true,
+      "client_scope": "RESEARCH_ONLY",
+      "entrepreneur_allowed": false,
+      "research_score": 4,
+      "recommended_next_step": "RUN_BOUNDED_PRESS_AND_MARKET_RESEARCH",
+      "reasons": [
+        "Indices économiques détectés : prestation.",
+        "La recherche n'autorise aucune décision Entrepreneur."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:ab2a6ed9d98838ce",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Un rôle opérateur accessible est documenté pour ce signal."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:e7c5e097c5d3a83a",
+      "source_id": "jorf:JORFTEXT000055011969",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:e7c5e097c5d3a83a",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "DISCARD",
+          "reasons": [
+            "Autorisation requise absente : formation_aspiration_orthophonistes."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Un rôle opérateur accessible est documenté pour ce signal."
+          ]
+        },
+        "final_constraint": "DISCARD"
+      }
+    },
+    {
+      "signal_id": "signal:943d614e5be5fe3c",
+      "source_id": "jorf:JORFTEXT000055011981",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:943d614e5be5fe3c",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:cdd3cab9065d666b",
+      "source_id": "jorf:JORFTEXT000055012004",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:cdd3cab9065d666b",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "WATCH",
+          "reasons": [
+            "Entrée en vigueur trop lointaine pour une action immédiate."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:ba14af9aa51d0aad",
+      "source_id": "jorf:JORFTEXT000055012074",
       "radar_status": "RETAINED",
-      "status": "DISCARDED_BY_FILTERS",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "recommended_next_step": "NO_EXTERNAL_COLLECTION",
-      "reasons": [
-        "Texte vérifié, dans le périmètre et actionnable.",
-        "Autorisation requise absente : Dossier constructeur instruit par l'ADEME pour inscription sur la liste."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:88928cb0984149d4",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "DISCARD",
-          "reasons": [
-            "Autorisation requise absente : Dossier constructeur instruit par l'ADEME pour inscription sur la liste."
-          ]
-        },
-        "operator_access": {
-          "status": "PASS",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
-            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
-          ]
-        },
-        "final_constraint": "DISCARD"
-      }
-    },
-    {
-      "signal_id": "signal:d66630f7620d6e61",
-      "source_id": "jorf:JORFTEXT000055009166",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:d66630f7620d6e61",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "NOT_APPLICABLE",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:acedce5cb2e64dd9",
-      "source_id": "jorf:JORFTEXT000055009179",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:acedce5cb2e64dd9",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "NOT_APPLICABLE",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:a8430090ce5a1861",
-      "source_id": "jorf:JORFTEXT000055009237",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:a8430090ce5a1861",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "NOT_APPLICABLE",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:1e62d48821373200",
-      "source_id": "jorf:JORFTEXT000055009246",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:1e62d48821373200",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "NOT_APPLICABLE",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:d7e5d5618b9066c1",
-      "source_id": "jorf:JORFTEXT000055009255",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:d7e5d5618b9066c1",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve juridique incomplète ou absente."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "NOT_APPLICABLE",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:6648dbcf2f2593a5",
-      "source_id": "jorf:JORFTEXT000055009263",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:6648dbcf2f2593a5",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve juridique incomplète ou absente."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "NOT_APPLICABLE",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:b4852f3528bdfdea",
-      "source_id": "jorf:JORFTEXT000055009272",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:b4852f3528bdfdea",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "NOT_APPLICABLE",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:6bedc49be2356a87",
-      "source_id": "jorf:JORFTEXT000055009301",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:6bedc49be2356a87",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve juridique incomplète ou absente."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : participation_experimentation_art51.",
-            "Dépendance non vérifiée : cahier_des_charges_VENTILADOM.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "PASS",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Un rôle opérateur accessible est documenté pour ce signal."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:af083833985f0ddd",
-      "source_id": "jorf:JORFTEXT000055009308",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:af083833985f0ddd",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve juridique incomplète ou absente."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "NOT_APPLICABLE",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:bfa00ef5b9bd8613",
-      "source_id": "jorf:JORFTEXT000055009321",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:bfa00ef5b9bd8613",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve juridique incomplète ou absente."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "PASS",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Un rôle opérateur accessible est documenté pour ce signal."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:71afb7a17c672501",
-      "source_id": "jorf:JORFTEXT000055009331",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:71afb7a17c672501",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve juridique incomplète ou absente."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "PASS",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Un rôle opérateur accessible est documenté pour ce signal."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:c9b6352061f060a1",
-      "source_id": "jorf:JORFTEXT000055009345",
-      "radar_status": "DISCARDED",
-      "status": "RESEARCH_CANDIDATE",
+      "status": "READY_FOR_PILOTS",
       "ready_for_pilots": true,
-      "client_scope": "RESEARCH_ONLY",
+      "client_scope": "FULL_PIPELINE",
       "entrepreneur_allowed": false,
-      "research_score": 5,
-      "recommended_next_step": "RUN_BOUNDED_PRESS_AND_MARKET_RESEARCH",
+      "recommended_next_step": "RUN_PRESS_THEN_MARKET_IF_SCOPE_FITS",
       "reasons": [
-        "Indices économiques détectés : prestation.",
-        "La recherche n'autorise aucune décision Entrepreneur."
+        "Le signal retenu porte des faits valides et passe la porte opérateur."
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:c9b6352061f060a1",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
+        "signal_id": "signal:ba14af9aa51d0aad",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
         "compliance": {
-          "status": "PASS",
+          "status": "INVESTIGATE",
           "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
+            "Date d'effet inconnue."
           ]
         },
         "feasibility": {
@@ -839,38 +1011,37 @@
           ]
         },
         "operator_access": {
-          "status": "PASS",
+          "status": "NOT_APPLICABLE",
           "route": "FULL_ENRICHMENT",
           "allow_external_collection": true,
           "reasons": [
-            "Un rôle opérateur accessible est documenté pour ce signal."
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
           ]
         },
         "final_constraint": "INVESTIGATE"
       }
     },
     {
-      "signal_id": "signal:9c0345ea931a89a5",
-      "source_id": "jorf:JORFTEXT000055009359",
+      "signal_id": "signal:9705e4a09f54d0a0",
+      "source_id": "jorf:JORFTEXT000055012146",
       "radar_status": "DISCARDED",
-      "status": "RESEARCH_CANDIDATE",
-      "ready_for_pilots": true,
-      "client_scope": "RESEARCH_ONLY",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
       "entrepreneur_allowed": false,
-      "research_score": 5,
-      "recommended_next_step": "RUN_BOUNDED_PRESS_AND_MARKET_RESEARCH",
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
       "reasons": [
-        "Indices économiques détectés : prestation.",
-        "La recherche n'autorise aucune décision Entrepreneur."
+        "Aucun indice économique déterministe dans le titre factuel."
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:9c0345ea931a89a5",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
+        "signal_id": "signal:9705e4a09f54d0a0",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
         "compliance": {
-          "status": "PASS",
+          "status": "WATCH",
           "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
+            "Entrée en vigueur trop lointaine pour une action immédiate."
           ]
         },
         "feasibility": {
@@ -882,19 +1053,19 @@
           ]
         },
         "operator_access": {
-          "status": "PASS",
+          "status": "NOT_APPLICABLE",
           "route": "FULL_ENRICHMENT",
           "allow_external_collection": true,
           "reasons": [
-            "Un rôle opérateur accessible est documenté pour ce signal."
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
           ]
         },
         "final_constraint": "INVESTIGATE"
       }
     },
     {
-      "signal_id": "signal:cb8ef6698307f569",
-      "source_id": "jorf:JORFTEXT000055009372",
+      "signal_id": "signal:378cc80d16ac76fe",
+      "source_id": "jorf:JORFTEXT000055012220",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -907,8 +1078,8 @@
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:cb8ef6698307f569",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
+        "signal_id": "signal:378cc80d16ac76fe",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
         "compliance": {
           "status": "PASS",
           "reasons": [
@@ -924,19 +1095,19 @@
           ]
         },
         "operator_access": {
-          "status": "PASS",
+          "status": "NOT_APPLICABLE",
           "route": "FULL_ENRICHMENT",
           "allow_external_collection": true,
           "reasons": [
-            "Un rôle opérateur accessible est documenté pour ce signal."
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
           ]
         },
         "final_constraint": "INVESTIGATE"
       }
     },
     {
-      "signal_id": "signal:5a6f3c138172b350",
-      "source_id": "jorf:JORFTEXT000055009382",
+      "signal_id": "signal:5cd1cf76e31ab06c",
+      "source_id": "jorf:JORFTEXT000055012232",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -949,348 +1120,8 @@
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:5a6f3c138172b350",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "PASS",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Un rôle opérateur accessible est documenté pour ce signal."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:df056615c997fa86",
-      "source_id": "jorf:JORFTEXT000055009394",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:df056615c997fa86",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "PASS",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Un rôle opérateur accessible est documenté pour ce signal."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:6985c7579504153f",
-      "source_id": "jorf:JORFTEXT000055009407",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:6985c7579504153f",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "HOLD",
-          "route": "LEGAL_ROLE_CHECK_ONLY",
-          "allow_external_collection": false,
-          "reasons": [
-            "L'offre directe relève d'un secteur hors profil opérateur.",
-            "Aucun rôle périphérique légal et accessible n'est démontré."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:71abca9d75a73313",
-      "source_id": "jorf:JORFTEXT000055009423",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:71abca9d75a73313",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "PASS",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Un rôle opérateur accessible est documenté pour ce signal."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:8cb77f08e7a43e3e",
-      "source_id": "jorf:JORFTEXT000055009433",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:8cb77f08e7a43e3e",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "PASS",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Un rôle opérateur accessible est documenté pour ce signal."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:fcd829bfdb35f0c8",
-      "source_id": "jorf:JORFTEXT000055009445",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:fcd829bfdb35f0c8",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : reconnaissance_automatique_titre_medecin.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "HOLD",
-          "route": "LEGAL_ROLE_CHECK_ONLY",
-          "allow_external_collection": false,
-          "reasons": [
-            "L'offre directe relève d'un secteur hors profil opérateur.",
-            "Aucun rôle périphérique légal et accessible n'est démontré."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:409416d80499b1bb",
-      "source_id": "jorf:JORFTEXT000055009457",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:409416d80499b1bb",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : inscription_remboursement_CSS_R163-2.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "PASS",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Un rôle opérateur accessible est documenté pour ce signal."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:10e3e25b90569be8",
-      "source_id": "jorf:JORFTEXT000055009469",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:10e3e25b90569be8",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "PASS",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Un rôle opérateur accessible est documenté pour ce signal."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:4bf059ca7c566576",
-      "source_id": "jorf:JORFTEXT000055009500",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:4bf059ca7c566576",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
+        "signal_id": "signal:5cd1cf76e31ab06c",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
         "compliance": {
           "status": "INVESTIGATE",
           "reasons": [
@@ -1317,8 +1148,8 @@
       }
     },
     {
-      "signal_id": "signal:a4caf03399339349",
-      "source_id": "jorf:JORFTEXT000055009507",
+      "signal_id": "signal:dc8af1fda1b31d01",
+      "source_id": "jorf:JORFTEXT000055012299",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -1331,218 +1162,8 @@
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:a4caf03399339349",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve juridique incomplète ou absente."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "NOT_APPLICABLE",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:5c3d01676569857a",
-      "source_id": "jorf:JORFTEXT000055009513",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:5c3d01676569857a",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve juridique incomplète ou absente."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "NOT_APPLICABLE",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:f20520a1776b444d",
-      "source_id": "jorf:JORFTEXT000055009520",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:f20520a1776b444d",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve juridique incomplète ou absente."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "NOT_APPLICABLE",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:ce10d62ca3856a8c",
-      "source_id": "jorf:JORFTEXT000055009527",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:ce10d62ca3856a8c",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve juridique incomplète ou absente."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "NOT_APPLICABLE",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:46f1581f49300353",
-      "source_id": "jorf:JORFTEXT000055009534",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:46f1581f49300353",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve juridique incomplète ou absente."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "NOT_APPLICABLE",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:4bfddd0c0a5aad4d",
-      "source_id": "jorf:JORFTEXT000055009541",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:4bfddd0c0a5aad4d",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
+        "signal_id": "signal:dc8af1fda1b31d01",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
         "compliance": {
           "status": "PASS",
           "reasons": [
@@ -1569,8 +1190,8 @@
       }
     },
     {
-      "signal_id": "signal:819e936d167f5f95",
-      "source_id": "jorf:JORFTEXT000055009600",
+      "signal_id": "signal:dd8da04b851414f9",
+      "source_id": "jorf:JORFTEXT000055012392",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -1583,8 +1204,8 @@
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:819e936d167f5f95",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
+        "signal_id": "signal:dd8da04b851414f9",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
         "compliance": {
           "status": "PASS",
           "reasons": [
@@ -1595,7 +1216,6 @@
           "status": "INVESTIGATE",
           "reasons": [
             "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : Licence d'exploitation de transporteur aérien.",
             "Capital de départ inconnu.",
             "Délai de mise sur le marché inconnu."
           ]
@@ -1612,8 +1232,8 @@
       }
     },
     {
-      "signal_id": "signal:fc1ba4571ebf2c27",
-      "source_id": "jorf:JORFTEXT000055009607",
+      "signal_id": "signal:ad2917acdf6c6e2e",
+      "source_id": "jorf:JORFTEXT000055012403",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -1626,48 +1246,8 @@
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:fc1ba4571ebf2c27",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve juridique incomplète ou absente."
-          ]
-        },
-        "feasibility": {
-          "status": "DISCARD",
-          "reasons": [
-            "Autorisation requise absente : agrément organisme de formation navigation intérieure."
-          ]
-        },
-        "operator_access": {
-          "status": "NOT_APPLICABLE",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
-          ]
-        },
-        "final_constraint": "DISCARD"
-      }
-    },
-    {
-      "signal_id": "signal:e529cacc2e103d7f",
-      "source_id": "jorf:JORFTEXT000055009621",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:e529cacc2e103d7f",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
+        "signal_id": "signal:ad2917acdf6c6e2e",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
         "compliance": {
           "status": "PASS",
           "reasons": [
@@ -1678,7 +1258,6 @@
           "status": "INVESTIGATE",
           "reasons": [
             "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : Licence d'entreprise ferroviaire.",
             "Capital de départ inconnu.",
             "Délai de mise sur le marché inconnu."
           ]
@@ -1695,51 +1274,8 @@
       }
     },
     {
-      "signal_id": "signal:d1c211b742f729d4",
-      "source_id": "jorf:JORFTEXT000055009737",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Territoire hors périmètre de la recherche élargie."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:d1c211b742f729d4",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "DISCARD",
-          "reasons": [
-            "Territoire hors périmètre opérateur."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : agrément de suppression d'office notarial.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "NOT_APPLICABLE",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
-          ]
-        },
-        "final_constraint": "DISCARD"
-      }
-    },
-    {
-      "signal_id": "signal:335f40ceff5c11ec",
-      "source_id": "jorf:JORFTEXT000055009768",
+      "signal_id": "signal:185bc43f87e5b01c",
+      "source_id": "jorf:JORFTEXT000055012412",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -1752,8 +1288,50 @@
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:335f40ceff5c11ec",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
+        "signal_id": "signal:185bc43f87e5b01c",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:7fcf54126a77d8a1",
+      "source_id": "jorf:JORFTEXT000055012463",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:7fcf54126a77d8a1",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
         "compliance": {
           "status": "PASS",
           "reasons": [
@@ -1781,8 +1359,8 @@
       }
     },
     {
-      "signal_id": "signal:4da14f5adcade5f9",
-      "source_id": "jorf:JORFTEXT000055009849",
+      "signal_id": "signal:1781d108444a7dc5",
+      "source_id": "jorf:JORFTEXT000055012470",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -1791,53 +1369,12 @@
       "research_score": 0,
       "recommended_next_step": "NO_ACTION",
       "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
+        "Texte de routine explicitement exclu de la recherche élargie."
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:4da14f5adcade5f9",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve juridique incomplète ou absente."
-          ]
-        },
-        "feasibility": {
-          "status": "DISCARD",
-          "reasons": [
-            "Autorisation requise absente : agrement_jeux_cercle_en_ligne."
-          ]
-        },
-        "operator_access": {
-          "status": "HOLD",
-          "route": "LEGAL_ROLE_CHECK_ONLY",
-          "allow_external_collection": false,
-          "reasons": [
-            "L'offre directe relève d'un secteur hors profil opérateur.",
-            "Aucun rôle périphérique légal et accessible n'est démontré."
-          ]
-        },
-        "final_constraint": "DISCARD"
-      }
-    },
-    {
-      "signal_id": "signal:39e971832f9eee9b",
-      "source_id": "jorf:JORFTEXT000055009869",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:39e971832f9eee9b",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
+        "signal_id": "signal:1781d108444a7dc5",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
         "compliance": {
           "status": "PASS",
           "reasons": [
@@ -1848,25 +1385,24 @@
           "status": "INVESTIGATE",
           "reasons": [
             "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : agrément de jeu de cercle en ligne.",
             "Capital de départ inconnu.",
             "Délai de mise sur le marché inconnu."
           ]
         },
         "operator_access": {
-          "status": "PASS",
+          "status": "NOT_APPLICABLE",
           "route": "FULL_ENRICHMENT",
           "allow_external_collection": true,
           "reasons": [
-            "Un rôle opérateur accessible est documenté pour ce signal."
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
           ]
         },
         "final_constraint": "INVESTIGATE"
       }
     },
     {
-      "signal_id": "signal:07fb90826409e1d5",
-      "source_id": "jorf:JORFTEXT000055009878",
+      "signal_id": "signal:d229160054134ae2",
+      "source_id": "jorf:JORFTEXT000055012558",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -1879,8 +1415,433 @@
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:07fb90826409e1d5",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
+        "signal_id": "signal:d229160054134ae2",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:5457a09fa23b11e0",
+      "source_id": "jorf:JORFTEXT000055012644",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:5457a09fa23b11e0",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:54dd9f5b1299e060",
+      "source_id": "jorf:JORFTEXT000055012654",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:54dd9f5b1299e060",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:d9417434fcc578d0",
+      "source_id": "jorf:JORFTEXT000055012670",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:d9417434fcc578d0",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:f4f5ed52fb2e7f60",
+      "source_id": "jorf:JORFTEXT000055012685",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:f4f5ed52fb2e7f60",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:39b1801d3379e910",
+      "source_id": "jorf:JORFTEXT000055012701",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Texte de routine explicitement exclu de la recherche élargie."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:39b1801d3379e910",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : Autorisation ARCOM d'exploitation radio.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:555c98e654562510",
+      "source_id": "jorf:JORFTEXT000055012709",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:555c98e654562510",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : Autorisation ARCOM d'exploitation de service de radio.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:73a903c7991b1ea6",
+      "source_id": "jorf:JORFTEXT000055012717",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Texte de routine explicitement exclu de la recherche élargie."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:73a903c7991b1ea6",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : autorisation ARCOM d'exploitation radio catégorie D.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:f04083e0d5aad032",
+      "source_id": "jorf:JORFTEXT000055012725",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:f04083e0d5aad032",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : autorisation ARCOM catégorie D.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:2aef8e10940658ef",
+      "source_id": "jorf:JORFTEXT000055012733",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Texte de routine explicitement exclu de la recherche élargie."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:2aef8e10940658ef",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
+        "compliance": {
+          "status": "PASS",
+          "reasons": [
+            "Texte vérifié, dans le périmètre et actionnable."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : Autorisation ARCOM d'exploitation de service de radio.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:0a8c8251c04ecbf2",
+      "source_id": "jorf:JORFTEXT000055012736",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Texte de routine explicitement exclu de la recherche élargie."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:0a8c8251c04ecbf2",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
         "compliance": {
           "status": "INVESTIGATE",
           "reasons": [
@@ -1907,8 +1868,8 @@
       }
     },
     {
-      "signal_id": "signal:54a61110f453e985",
-      "source_id": "jorf:JORFTEXT000055009897",
+      "signal_id": "signal:9ef3a68be123ddc9",
+      "source_id": "jorf:JORFTEXT000055012743",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -1921,8 +1882,8 @@
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:54a61110f453e985",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
+        "signal_id": "signal:9ef3a68be123ddc9",
+        "evaluated_at_utc": "2026-10-24T12:36:54.516421+00:00",
         "compliance": {
           "status": "INVESTIGATE",
           "reasons": [
@@ -1933,93 +1894,8 @@
           "status": "INVESTIGATE",
           "reasons": [
             "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : agrément assurance L.321-1 code des assurances.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "PASS",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Un rôle opérateur accessible est documenté pour ce signal."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:3729a5229822492e",
-      "source_id": "jorf:JORFTEXT000055009907",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:3729a5229822492e",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : agrément assurance (extension) - code des assurances L.321-1, R.321-1, R.321-14, R.321-18.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ]
-        },
-        "operator_access": {
-          "status": "PASS",
-          "route": "FULL_ENRICHMENT",
-          "allow_external_collection": true,
-          "reasons": [
-            "Un rôle opérateur accessible est documenté pour ce signal."
-          ]
-        },
-        "final_constraint": "INVESTIGATE"
-      }
-    },
-    {
-      "signal_id": "signal:607d4ac68bc4249f",
-      "source_id": "jorf:JORFTEXT000055009918",
-      "radar_status": "DISCARDED",
-      "status": "NOT_RETAINED",
-      "ready_for_pilots": false,
-      "client_scope": "NONE",
-      "entrepreneur_allowed": false,
-      "research_score": 0,
-      "recommended_next_step": "NO_ACTION",
-      "reasons": [
-        "Aucun indice économique déterministe dans le titre factuel."
-      ],
-      "filters": {
-        "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:607d4ac68bc4249f",
-        "evaluated_at_utc": "2026-10-23T11:40:31.366109+00:00",
-        "compliance": {
-          "status": "PASS",
-          "reasons": [
-            "Texte vérifié, dans le périmètre et actionnable."
-          ]
-        },
-        "feasibility": {
-          "status": "INVESTIGATE",
-          "reasons": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : autorisation_ARCOM_radio_categorie_D.",
+            "Statut de l'autorisation inconnu : autorisation ARCOM d'exploitation radio numérique terrestre.",
+            "Dépendance non vérifiée : multiplex M2 - OpeNMux.",
             "Capital de départ inconnu.",
             "Délai de mise sur le marché inconnu."
           ]
@@ -2037,13 +1913,13 @@
     }
   ],
   "summary": {
-    "signal_count": 48,
-    "ready_for_pilots_count": 2,
-    "research_candidates_selected": 2,
+    "signal_count": 45,
+    "ready_for_pilots_count": 4,
+    "research_candidates_selected": 3,
     "counts_by_status": {
-      "NOT_RETAINED": 45,
-      "DISCARDED_BY_FILTERS": 1,
-      "RESEARCH_CANDIDATE": 2
+      "NOT_RETAINED": 41,
+      "RESEARCH_CANDIDATE": 3,
+      "READY_FOR_PILOTS": 1
     }
   }
 }
