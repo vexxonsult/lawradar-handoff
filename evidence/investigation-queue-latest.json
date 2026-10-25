@@ -1,76 +1,23 @@
 {
   "schema": "lawradar-investigation-queue-v1",
-  "generated_at_utc": "2026-10-24T19:33:33.969957+00:00",
+  "generated_at_utc": "2026-10-25T12:38:07.322693+00:00",
   "source_run": {
-    "id": "investigation-replay:d1013085fa386a5d",
-    "kind": "ARCHIVED_FACTS_REPLAY",
-    "generated_at_utc": "2026-10-24T19:32:00.032894+00:00",
-    "purpose": "TECHNICAL_ENRICHMENT_RETRY",
-    "archive_provenance": {
-      "signal:ba14af9aa51d0aad": "evidence/universal-signals/v2/2026/10/run-40094624737-attempt-1.json"
-    }
+    "id": "40193703734",
+    "attempt": "1",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/40193703734",
+    "commit": "6d1cc115f8b4c5f0e66c309eaea3f0634f731f31",
+    "report_date": "2026-10-25"
   },
   "policy": {
     "max_automatic_attempts": 2,
     "max_autonomous_research_attempts": 1,
     "retry_delay_hours": 6
   },
-  "items": [
-    {
-      "signal_id": "signal:ba14af9aa51d0aad",
-      "source_id": "jorf:JORFTEXT000055012074",
-      "title": "Décret relatif à la protection sociale complémentaire en matière de prévoyance des agents publics territoriaux",
-      "status": "AUTO_RESEARCH_EXHAUSTED",
-      "opened_at_utc": "2026-10-24T12:42:46.493372+00:00",
-      "updated_at_utc": "2026-10-24T19:33:33.969957+00:00",
-      "automatic_attempts": 2,
-      "max_automatic_attempts": 2,
-      "autonomous_research_attempts": 1,
-      "max_autonomous_research_attempts": 1,
-      "qualification_contract_version": "tool-envelope-v3-structured-tool",
-      "next_retry_not_before_utc": null,
-      "questions": [
-        {
-          "id": "OPERATIONAL_FEASIBILITY",
-          "kind": "NEW_OFFICIAL_OR_PARTNER_EVIDENCE",
-          "status": "OPEN",
-          "question": "Recherche autonome à mener sur les dépendances opérationnelles nécessaires, le capital de démarrage nécessaire, le délai réaliste de mise sur le marché avant toute décision commerciale.",
-          "evidence": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ],
-          "automatic_retry": false
-        },
-        {
-          "id": "PRESS_QUALIFICATION",
-          "kind": "TECHNICAL_RETRY",
-          "status": "OPEN",
-          "question": "Requalifier exclusivement les candidats Presse déjà collectés ; aucune nouvelle conclusion médiatique n'est admise sans URL tracée.",
-          "evidence": [
-            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement."
-          ],
-          "automatic_retry": true
-        },
-        {
-          "id": "MARKET_RELEVANCE",
-          "kind": "TECHNICAL_RETRY",
-          "status": "OPEN",
-          "question": "Déterminer si un avis BOAMP cite le texte, son obligation ou un besoin directement lié ; un simple mot-sectoriel ne démontre pas une demande causée par le texte.",
-          "evidence": [
-            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement."
-          ],
-          "automatic_retry": true
-        }
-      ],
-      "readiness_status": "READY_FOR_PILOTS",
-      "final_constraint": "INVESTIGATE"
-    }
-  ],
+  "items": [],
   "summary": {
     "open_count": 0,
     "autonomous_research_pending_count": 0,
-    "auto_research_exhausted_count": 1,
+    "auto_research_exhausted_count": 0,
     "automatic_retry_count": 0
   }
 }
