@@ -1,0 +1,3645 @@
+{
+  "schema": "lawradar-universal-signal-v2",
+  "run": {
+    "id": "40193703734",
+    "attempt": "1",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/40193703734",
+    "commit": "6d1cc115f8b4c5f0e66c309eaea3f0634f731f31",
+    "report_date": "2026-10-25"
+  },
+  "context": {
+    "coverage": "22/22 candidats traités indépendamment par Message Batch",
+    "delta_changed_sources": [
+      "jorf-summaries-latest.json"
+    ],
+    "handled_source_files": [
+      "jorf-summaries-latest.json",
+      "consultdd-latest.json"
+    ],
+    "rule": "Preuves locales diffées uniquement ; réapparition historique et routine administrative explicite = filtrées avec trace ; les autres textes primaires disponibles reçoivent une lecture factuelle. Une friction détectée ouvre seulement une enquête, jamais une opportunité confirmée ; inconnu = UNRESOLVED.",
+    "prefilter_audit": {
+      "excluded_historical_candidates": [
+        {
+          "source_id": "jorf:JORFTEXT000000214706",
+          "publication_date": "2001-06-10",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000320434",
+          "publication_date": "1984-01-27",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000335042",
+          "publication_date": "1977-11-15",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000379386",
+          "publication_date": "1996-09-13",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000396649",
+          "publication_date": "2001-12-20",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000428372",
+          "publication_date": "2007-05-12",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000466728",
+          "publication_date": "2007-05-16",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000476113",
+          "publication_date": "1989-08-22",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000521836",
+          "publication_date": "1987-08-01",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000579088",
+          "publication_date": "2000-12-24",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000649178",
+          "publication_date": "2007-05-10",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000689011",
+          "publication_date": "1985-07-17",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000718718",
+          "publication_date": "1991-03-22",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000762078",
+          "publication_date": "1999-10-03",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000801164",
+          "publication_date": "2004-06-22",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000820024",
+          "publication_date": "2006-12-08",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000000874956",
+          "publication_date": "1987-07-24",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000017865591",
+          "publication_date": "2008-01-12",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000020352793",
+          "publication_date": "2009-03-07",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000020753002",
+          "publication_date": "2009-06-18",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000021276755",
+          "publication_date": "2009-11-17",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000021557902",
+          "publication_date": "2009-12-31",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000022747628",
+          "publication_date": "2010-08-28",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000024248472",
+          "publication_date": "2011-06-25",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000024772150",
+          "publication_date": "2011-11-10",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000024908673",
+          "publication_date": "2011-12-03",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000024961630",
+          "publication_date": "2011-12-14",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000025044460",
+          "publication_date": "2011-12-29",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000025062536",
+          "publication_date": "2012-01-01",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000026447905",
+          "publication_date": "2012-10-02",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000027379114",
+          "publication_date": "2013-05-02",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000027899801",
+          "publication_date": "2013-08-28",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000028387362",
+          "publication_date": "2013-12-27",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000033293745",
+          "publication_date": "2016-10-25",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000033734341",
+          "publication_date": "2016-12-30",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000037882341",
+          "publication_date": "2018-12-30",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000038149660",
+          "publication_date": "2019-02-21",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000041983113",
+          "publication_date": "2020-06-11",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000042665307",
+          "publication_date": "2020-12-15",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000043336101",
+          "publication_date": "2021-04-08",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000043535478",
+          "publication_date": "2021-05-27",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000044053303",
+          "publication_date": "2021-09-17",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000045072766",
+          "publication_date": "2022-01-26",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000045327395",
+          "publication_date": "2022-03-10",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000045545721",
+          "publication_date": "2022-04-12",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000045614702",
+          "publication_date": "2022-04-21",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000045683211",
+          "publication_date": "2022-04-28",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000045797799",
+          "publication_date": "2022-05-15",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000046760892",
+          "publication_date": "2022-12-20",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000046793117",
+          "publication_date": "2022-12-24",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000047247304",
+          "publication_date": "2023-03-02",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000047278302",
+          "publication_date": "2023-03-09",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000047561956",
+          "publication_date": "2023-05-20",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000048376508",
+          "publication_date": "2023-11-09",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000048493688",
+          "publication_date": "2023-12-01",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000048514135",
+          "publication_date": "2023-12-06",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000049219913",
+          "publication_date": "2024-03-01",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000049496365",
+          "publication_date": "2024-05-03",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000049734465",
+          "publication_date": "2024-06-18",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000049871837",
+          "publication_date": "2024-07-04",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000049891335",
+          "publication_date": "2024-07-07",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000049894205",
+          "publication_date": "2024-07-07",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000050789317",
+          "publication_date": "2024-12-18",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000050830779",
+          "publication_date": "2024-12-26",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000051013680",
+          "publication_date": "2025-01-21",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000051454146",
+          "publication_date": "2025-04-13",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000051522400",
+          "publication_date": "2025-04-27",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000051597810",
+          "publication_date": "2025-05-16",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000051670003",
+          "publication_date": "2025-05-29",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000052657424",
+          "publication_date": "2025-11-21",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000053043512",
+          "publication_date": "2025-12-18",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000053142418",
+          "publication_date": "2025-12-23",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000053275772",
+          "publication_date": "2026-01-01",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000053275800",
+          "publication_date": "2026-01-01",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000053594773",
+          "publication_date": "2026-02-28",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000053613553",
+          "publication_date": "2026-03-04",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000053650130",
+          "publication_date": "2026-03-11",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054131304",
+          "publication_date": "2026-05-27",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054381281",
+          "publication_date": "2026-07-03",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054436661",
+          "publication_date": "2026-07-17",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054694832",
+          "publication_date": "2026-08-18",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054834999",
+          "publication_date": "2026-09-13",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000054903095",
+          "publication_date": "2026-09-26",
+          "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+        }
+      ],
+      "excluded_routine_candidates": [
+        {
+          "source_id": "jorf:JORFTEXT000055013189",
+          "title": "Décision du 1er octobre 2026 portant délégation de signature (direction générale de la police nationale, service national des enquêtes administratives de sécurité)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013205",
+          "title": "Décision du 23 octobre 2026 portant délégation de signature (direction générale de la police nationale, service national des enquêtes d'autorisation de voyage)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013335",
+          "title": "Arrêté du 20 octobre 2026 fixant le nombre de postes offerts au concours professionnel pour l'accès au grade de brigadier-chef pénitentiaire de la filière « encadrement » au titre de l'année 2027",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013344",
+          "title": "Arrêté du 21 octobre 2026 autorisant au titre de l'année 2027 l'ouverture d'une 2e session de concours externe et interne pour le recrutement des greffiers des services judiciaires (épreuves écrites en mars et avril 2027)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013543",
+          "title": "Arrêté du 23 octobre 2026 fixant le nombre de postes offerts à l'examen professionnel d'avancement au grade de technicien d'art de classe exceptionnelle du ministère de la culture (session 2027)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013575",
+          "title": "Décret du 23 octobre 2026 portant naturalisation, réintégration, mention d'enfants mineurs bénéficiant de l'effet collectif attaché à l'acquisition de la nationalité française par leurs parents et francisation de noms et de prénoms (Accès protégé)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013578",
+          "title": "Arrêté du 20 octobre 2026 rapportant les dispositions d'un arrêté portant admission à la retraite",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013582",
+          "title": "Arrêté du 6 octobre 2026 portant nomination à la commission de labellisation du label diversité",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013584",
+          "title": "Arrêté du 22 octobre 2026 portant nomination du commissaire du Gouvernement aux instances de délibération et d'administration de l'instance paritaire nationale mentionnée à l'article L. 6323-17-5-1 du code de travail",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013588",
+          "title": "Arrêté du 21 octobre 2026 portant nomination du président et du vice-président du conseil de discipline des marins et des pilotes",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013591",
+          "title": "Décret du 22 octobre 2026 portant changements de noms (Accès protégé)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013601",
+          "title": "Arrêté du 21 octobre 2026 portant nomination à un emploi de direction du ministère de la justice (groupe III)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013603",
+          "title": "Arrêté du 21 octobre 2026 portant nomination à un emploi de direction du ministère de la justice (groupe III)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013609",
+          "title": "Arrêté du 12 octobre 2026 portant nomination au comité consultatif de la législation et de la réglementation financières",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013612",
+          "title": "Arrêté du 15 octobre 2026 modifiant l'arrêté du 16 décembre 2022 fixant la composition de la commission disciplinaire nationale des praticiens-conseils prévue à l'article D. 723-149 du code rural et de la pêche maritime",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013622",
+          "title": "Arrêté du 19 octobre 2026 portant admission à la retraite (ingénieurs des ponts, des eaux et des forêts)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013624",
+          "title": "Arrêté du 20 octobre 2026 portant nomination des membres du conseil d'administration de l'Office de développement de l'économie agricole d'outre-mer (ODEADOM)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013627",
+          "title": "Arrêté du 20 octobre 2026 relatif à l'affectation des internes en odontologie ayant satisfait aux épreuves du concours d'internat à titre européen pour les praticiens de l'art dentaire français andorrans ou ressortissants d'un Etat membre de l'Union européenne, d'un autre Etat partie à l'accord sur l'Espace économique européen ou de la Confédération suisse au titre de l'année universitaire 2026-2027",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013639",
+          "title": "Arrêté du 20 octobre 2026 relatif à l'affectation des internes de pharmacie ayant satisfait aux épreuves du concours national d'internat donnant accès au troisième cycle spécialisé des études pharmaceutiques au titre de l'année universitaire 2026-2027",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013653",
+          "title": "Arrêté du 20 octobre 2026 relatif à l'affectation des internes de pharmacie ayant satisfait aux épreuves du concours d'internat à titre européen pour les pharmaciens français andorrans, suisses ou ressortissants de l'un des Etats membres de l'Union européenne ou d'un autre Etat partie à l'accord sur l'Espace économique européen au titre de l'année universitaire 2026-2027",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013669",
+          "title": "Arrêté du 20 octobre 2026 relatif à l'affectation des internes en odontologie ayant satisfait aux épreuves du concours national d'internat en odontologie au titre de l'année universitaire 2026-2027",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013700",
+          "title": "Arrêté du 23 octobre 2026 portant nomination (agents comptables)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013740",
+          "title": "Avis de vacance d'un emploi de directeur du secrétariat général commun départemental (secrétariat général commun départemental de l'Essonne)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013768",
+          "title": "Avis de vacance d'un emploi de directeur du secrétariat général commun départemental (secrétariat général commun départemental de l'Isère)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013796",
+          "title": "Avis de vacance d'un emploi de directeur du secrétariat général commun départemental (secrétariat général commun départemental de la Haute-Garonne)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013825",
+          "title": "Avis de vacance d'un emploi de directeur régional adjoint de l'économie, de l'emploi, du travail et des solidarités de Provence-Alpes-Côte d'Azur, chargé des fonctions de responsable du pôle « concurrence, consommation, répression des fraudes et métrologie »",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013836",
+          "title": "Avis de vacance d'un emploi de directeur régional adjoint de l'économie, de l'emploi, du travail et des solidarités de Provence-Alpes-Côte d'Azur, chargé des fonctions de responsable du pôle « concurrence, consommation, répression des fraudes et métrologie »",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013847",
+          "title": "Avis de vacance d'un emploi de chef de service (administration centrale)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013862",
+          "title": "Demandes de changement de nom (Accès protégé textes 57 à 69)",
+          "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+        }
+      ],
+      "excluded_no_economic_friction_candidates": [],
+      "deterministically_unresolved_candidates": [
+        {
+          "source_id": "jorf:JORFTEXT000055013187",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013605",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013704",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013720",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013725",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        },
+        {
+          "source_id": "jorf:JORFTEXT000055013860",
+          "reason": "PRIMARY_TEXT_EMPTY"
+        }
+      ]
+    }
+  },
+  "signals": [
+    {
+      "id": "signal:1f44ebd1d2e32940",
+      "identity": {
+        "stable_source_id": "source:9ed4f8a61f6aa1e5",
+        "evidence_version": "sha256:3ec720bac1ab362920b1f25f6c77f29d111653480a5de5b0bc869c77e47fedd1"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013174",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013174",
+          "nature": "DECRET",
+          "nor": "INTD2411669D",
+          "title": "Décret du 23 octobre 2026 abrogeant le décret portant reconnaissance de l'association dite « Fédération nationale des militaires belges mutilés et invalides de guerre » comme établissement d'utilité publique",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013174",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "e66b700d9b8236611aff0d80b2b2e344f43b3da5ca66ccaa5539c70c2756537c",
+            "excerpt": "Le Premier ministre,\nSur le rapport du ministre de l'intérieur,\nVu la loi du 1\ner\njuillet 1901 modifiée relative au contrat d'association, notamment son article 10, et le décret du 16 août 1901 modifié pris pour l'exécution de cette loi ;\nVu, en date du 2 juin 2023, le courrier du ministre de l'intérieur et des outre-mer à l'association reconnue d'utilité publique dite « Fédération nationale des militaires belges mutilés et invalides de guerre » et l'avis de réception portant la mention « destinataire inconnu à l'adresse » ;\nVu, en date du 2 février 2024, la demande d'avis à la ministre du travail, de la santé et des solidarités ;\nLe Conseil d'Etat (section de l'intérieur) entendu ;\nConsidérant que l'association dite « Fédération nationale des militaires belges mutilés et invalides de guerre » n'a pas envoyé ses comptes annuels au ministère de l'intérieur depuis au moins 2014, en méconnaissance de ses obligations statutaires, et qu'elle ne justifie plus d'aucune activité en France,\nDécrète :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte administratif abrogeant la reconnaissance d'utilité publique d'une association inactive depuis 2014, faute de dépôt de comptes. Aucune obligation mesurable, aucun périmètre industriel ou professionnel, aucune opportunité de service B2B identifiable."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "WATCH_CANDIDATE",
+        "score": 3,
+        "triggers": [
+          {
+            "kind": "LEGAL_OBLIGATION",
+            "score": 3,
+            "terms": [
+              "obligation"
+            ]
+          }
+        ],
+        "scope_terms": [
+          "association"
+        ],
+        "reason": "ECONOMIC_FRICTION_DETECTED",
+        "recommended_enrichment": [
+          "PRESS",
+          "DEMAND",
+          "MARKET"
+        ]
+      },
+      "reading": {
+        "consequence": "L'association perd son statut d'établissement reconnu d'utilité publique, faute de dépôt de comptes depuis 2014 et d'activité justifiée en France.",
+        "affected_actors": [
+          "Fédération nationale des militaires belges mutilés et invalides de guerre",
+          "Ministère de l'intérieur"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "Fédération nationale des militaires belges mutilés et invalides de guerre"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Devenir des éventuels biens ou fonds résiduels de l'association",
+          "Motifs précis de l'absence d'activité depuis 2014"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013174"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:1f44ebd1d2e32940",
+        "title": "Décret abrogeant la reconnaissance d'utilité publique de la Fédération nationale des militaires belges mutilés et invalides de guerre",
+        "keywords": [
+          "association",
+          "utilité publique",
+          "abrogation",
+          "décret"
+        ],
+        "affected_scope": [
+          "association dite Fédération nationale des militaires belges mutilés et invalides de guerre"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-25",
+          "affected_scope": [
+            "association dite Fédération nationale des militaires belges mutilés et invalides de guerre"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:3b53f2251981b2a3",
+      "identity": {
+        "stable_source_id": "source:f7cd35cf9b763691",
+        "evidence_version": "sha256:dd3b8f782478791639fccc8dedac7dba6bc49afff371973bf65f36a763d51630"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013179",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013179",
+          "nature": "DECRET",
+          "nor": "INTD2616575D",
+          "title": "Décret du 23 octobre 2026 abrogeant le décret portant reconnaissance de l'association « Société archéologique de Montpellier » comme établissement d'utilité publique",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013179",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "855b316f16b597f749e2d0349d233e0206f989f56fe5fbfa308cae991d833b1b",
+            "excerpt": "Le Premier ministre,\nSur le rapport du ministre de l'intérieur,\nVu la loi du 1\ner\njuillet 1901 modifiée relative au contrat d'association, notamment son article 10, et le décret du 16 août 1901 modifié pris pour l'exécution de cette loi ;\nVu le code des relations entre le public et l'administration, notamment ses articles L. 122-1 et L. 122-2 ;\nVu le décret du 17 février 1888 portant reconnaissance comme établissement d'utilité publique de l'association « Société archéologique de Montpellier » ;\nVu l'avis du ministre de la culture en date du 26 février 2026 ;\nVu le courrier en date du 23 mars 2026 du sous-directeur des libertés publiques par lequel l'association « Société archéologique de Montpellier » est informée de l'intention du ministère de l'intérieur d'engager la procédure de retrait de reconnaissance d'utilité publique à l'initiative du Gouvernement ;\nVu le courrier en date du 22 avril 2026 du conseil de la « Société archéologique de Montpellier » faisant part de ses observations sur le projet d'ouverture d'une procédure d'abrogation de la reconnaissance d'utilité publique ;\nLe Conseil d'Etat (section de l'intérieur) entendu ;\nConsidérant qu'il ressort du dossier un ensemble d'éléments permettant de considérer que l'association « Société archéologique de Montpellier » ne remplit plus la mission pour laquelle la reconnaissance d'utilité publique lui a été accordée ; qu'en ne transmettant à l'administration ni rapport d'activité ni comptes annue\n[… extrait primaire compacté …]\n'association « Société archéologique de Montpellier » porte atteinte aux intérêts protégés par le ministère de la culture, relatifs à la fois à la protection du patrimoine classé au titre des monuments historiques et à l'application de l'appellation Musée de France destinée à protéger les œuvres exposées ;\nConsidérant par suite, que les faits susmentionnés constituent des dysfonctionnements graves justifiant l'abrogation du décret ayant reconnu l'association d'utilité publique,\nDécrète :",
+            "excerpt_truncated": true,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Décret individuel abrogeant la reconnaissance d'utilité publique d'une association spécifique, pour non-respect d'obligations de transparence et de conservation patrimoniale ; aucun périmètre économique, marché ou opportunité B2B identifiable, aucun flux financier démontré."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "WATCH_CANDIDATE",
+        "score": 3,
+        "triggers": [
+          {
+            "kind": "LEGAL_OBLIGATION",
+            "score": 3,
+            "terms": [
+              "obligation"
+            ]
+          }
+        ],
+        "scope_terms": [
+          "association"
+        ],
+        "reason": "ECONOMIC_FRICTION_DETECTED",
+        "recommended_enrichment": [
+          "PRESS",
+          "DEMAND",
+          "MARKET"
+        ]
+      },
+      "reading": {
+        "consequence": "L'association « Société archéologique de Montpellier » perd son statut d'établissement d'utilité publique, pour manquement répété à ses obligations de transparence (absence de rapports d'activité et comptes) et à ses obligations liées au classement monument historique et à l'appellation Musée de France.",
+        "affected_actors": [
+          "Société archéologique de Montpellier",
+          "Ministère de l'intérieur",
+          "Ministère de la culture"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "Société archéologique de Montpellier"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Conséquences patrimoniales et financières précises de l'abrogation",
+          "Devenir du monument historique et de la collection labellisée Musée de France"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013179"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:3b53f2251981b2a3",
+        "title": "Décret abrogeant la reconnaissance d'utilité publique de la « Société archéologique de Montpellier »",
+        "keywords": [
+          "association",
+          "utilité publique",
+          "abrogation",
+          "monument historique",
+          "Musée de France"
+        ],
+        "affected_scope": [
+          "Société archéologique de Montpellier"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-25",
+          "affected_scope": [
+            "Société archéologique de Montpellier"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:6072568795a59ffe",
+      "identity": {
+        "stable_source_id": "source:5d4cda47735d8f92",
+        "evidence_version": "sha256:7da05b36d661c3ca14a8e04209c4e54cf92152fcbca0292312f06e5d66285cb1"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013219",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013219",
+          "nature": "ARRETE",
+          "nor": "ARML2625594A",
+          "title": "Arrêté du 22 octobre 2026 modifiant l'arrêté du 21 septembre 2026 portant création d'une zone interdite identifiée LF-P 87 Narbonne Malvési, dans la région de Narbonne (Aude), dans la région d'information de vol de Marseille",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013219",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "bd05656212b798cc17553c4c0ea130ea9cdf9b5baecb1c154f4b4b0ff973e4bf",
+            "excerpt": "La ministre des armées et des anciens combattants et le ministre des transports,\nVu le code des transports, notamment ses articles R. 6213-1 à D. 6213-24 ;\nVu le décret n° 2013-366 du 29 avril 2013 modifié portant création de la direction de la sécurité aéronautique d'Etat ;\nVu l'arrêté du 19 juin 2006 relatif au directoire de l'espace aérien ;\nVu l'arrêté du 3 mai 2013 modifié portant organisation de la direction de la sécurité aéronautique d'Etat ;\nVu l'arrêté du 21 septembre 2026 portant création d'une zone interdite identifiée LF-P 87 Narbonne Malvési dans la région de Narbonne (Aude) dans la région d'information de vol de Marseille ;\nVu l'accord à publication du directoire de l'espace aérien du 23 juillet 2026,\nArrêtent :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Arrêté modifiant une zone interdite aérienne militaire (LF-P 87 Narbonne Malvési) sans friction économique démontrée ni opportunité de marché identifiable."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Modification des caractéristiques d'une zone aérienne interdite existante au-dessus du site de Narbonne Malvési, sans précision sur les changements apportés dans l'extrait disponible.",
+        "affected_actors": [
+          "ministère des Armées",
+          "ministère des Transports",
+          "direction de la sécurité aéronautique d'État",
+          "usagers de l'espace aérien dans la région de Marseille"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "aéronefs et exploitants devant respecter l'interdiction de survol de la zone LF-P 87"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "nature exacte des modifications apportées à la zone interdite",
+          "impact sur les activités civiles ou commerciales à proximité"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013219"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:6072568795a59ffe",
+        "title": "Arrêté du 22 octobre 2026 modifiant l'arrêté du 21 septembre 2026 portant création d'une zone interdite identifiée LF-P 87 Narbonne Malvési",
+        "keywords": [
+          "zone interdite",
+          "espace aérien",
+          "Narbonne",
+          "sécurité aéronautique d'État",
+          "aviation militaire"
+        ],
+        "affected_scope": [
+          "Narbonne (Aude)",
+          "région d'information de vol de Marseille"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-25",
+          "affected_scope": [
+            "Narbonne (Aude)",
+            "région d'information de vol de Marseille"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:e056f014c8f8f0f8",
+      "identity": {
+        "stable_source_id": "source:6a3afdab4843837a",
+        "evidence_version": "sha256:c8fee56a7338855fb5e04908d182f068461bcdd78f8544d78ecb24663aeaa585"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013231",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013231",
+          "nature": "ARRETE",
+          "nor": "TECK2622314A",
+          "title": "Arrêté du 7 octobre 2026 fixant pour les années 2026, 2027 et 2028 le nombre maximal de brevets de l'enseignement militaire supérieur pouvant être attribués aux officiers du ministère de la transition écologique, de la biodiversité et des négociations internationales sur le climat et la nature",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013231",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "9f1c779bdc83ed3d718e2214d613978d4c088c95f605881e102e275520ba1108",
+            "excerpt": "La ministre des armées et des anciens combattants, la ministre de la transition écologique, de la biodiversité et des négociations internationales sur le climat et la nature et le ministre de l'action et des comptes publics,\nVu le code de la défense ;\nVu le décret n° 77-33 du 4 janvier 1977 modifié portant statut particulier du corps des professeurs de l'enseignement maritime ;\nVu le décret n° 2009-20 du 7 janvier 2009 modifié fixant les indices de solde applicables à certains corps d'officiers, notamment son article 3 ;\nVu le décret n° 2012-1546 du 28 décembre 2012 modifié portant statut particulier du corps des administrateurs des affaires maritimes,\nArrêtent :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte administratif interne fixant un quota de brevets de l'enseignement militaire supérieur pour des officiers d'un ministère ; aucune friction économique, marché, obligation mesurable ou flux financier démontré."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "L'arrêté fixe un plafond annuel de brevets d'enseignement militaire supérieur pouvant être attribués à des officiers d'un corps ministériel civil, sans créer d'obligation ou de marché pour des tiers.",
+        "affected_actors": [
+          "officiers du ministère de la transition écologique",
+          "ministère des armées",
+          "ministère de l'action et des comptes publics"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "nombre exact de brevets fixé par l'arrêté",
+          "modalités de sélection des officiers concernés"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013231"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:e056f014c8f8f0f8",
+        "title": "Arrêté fixant le nombre maximal de brevets de l'enseignement militaire supérieur pour les officiers du ministère de la transition écologique (2026-2028)",
+        "keywords": [
+          "brevet",
+          "enseignement militaire supérieur",
+          "officiers",
+          "ministère transition écologique",
+          "administration publique"
+        ],
+        "affected_scope": [
+          "officiers du ministère de la transition écologique"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-25",
+          "affected_scope": [
+            "officiers du ministère de la transition écologique"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:0498f3755eba63d4",
+      "identity": {
+        "stable_source_id": "source:253284d0cb87b319",
+        "evidence_version": "sha256:d126c7104f57fb68a7200b78ba00115783e6e15055acc8edffca0776bf0f25dc"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013239",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013239",
+          "nature": "ARRETE",
+          "nor": "TECM2623446A",
+          "title": "Arrêté du 19 octobre 2026 pris pour l'application de l'article 2 du décret n° 2011-2109 du 30 décembre 2011 portant création du Conseil supérieur des gens de mer",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013239",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "901fd7368930946f084165dfc82465146ddd7ae46dec4cd371e24ab5ecded813",
+            "excerpt": "La ministre de la transition écologique, de la biodiversité et des négociations internationales sur le climat et la nature,\nVu le décret n° 2011-2109 du 30 décembre 2011 portant création du Conseil supérieur des gens de mer, notamment son article 2,\nArrête :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Arrêté de nomination/composition d'une instance consultative (Conseil supérieur des gens de mer) sans friction économique, obligation mesurable ou marché identifiable démontré."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Cet arrêté met en application une disposition du décret de 2011 relatif au Conseil supérieur des gens de mer, probablement pour en organiser la composition ou le fonctionnement, sans créer d'obligation économique ou de marché identifiable dans l'extrait disponible.",
+        "affected_actors": [
+          "Ministère de la transition écologique",
+          "Conseil supérieur des gens de mer"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Contenu précis des dispositions de l'article 2 appliquées",
+          "Composition ou modalités de fonctionnement du Conseil visées par l'arrêté"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013239"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:0498f3755eba63d4",
+        "title": "Arrêté du 19 octobre 2026 pris pour l'application de l'article 2 du décret n° 2011-2109 du 30 décembre 2011 portant création du Conseil supérieur des gens de mer",
+        "keywords": [
+          "gens de mer",
+          "conseil supérieur",
+          "arrêté",
+          "transition écologique"
+        ],
+        "affected_scope": [],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "PARTIAL",
+          "effective_date": "2026-10-25",
+          "affected_scope": []
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:2b323b0655b23c1a",
+      "identity": {
+        "stable_source_id": "source:2cdde79ff21d444c",
+        "evidence_version": "sha256:6a160030ddaadb56cf71658f6d82e0a5f9e5927be187a5615f1b57a5f88427cf"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013248",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013248",
+          "nature": "DECRET",
+          "nor": "JUST2616922D",
+          "title": "Décret n° 2026-990 du 23 octobre 2026 relatif à l'extension de l'aide juridictionnelle en matières civile et administrative au territoire de Wallis-et-Futuna",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013248",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "a817c92215135b8fec1fae6ff62e8ebea8c0cfadc97e316ab676caedf43151d8",
+            "excerpt": "Publics concernés : justiciables, avocats, juridictions judiciaires et administratives.\nObjet : ce décret prévoit les mesures d'application de l'article 190 de la loi de finances pour 2026 qui a modifié l'ordonnance n° 92-1147 du 12 octobre 1992 aux fins d'extension de l'aide juridictionnelle en matières civile et administrative sur le territoire de Wallis-et-Futuna et à revaloriser la prise en charge des frais de déplacements des avocats des barreaux de Papeete et de Nouméa.\nEntrée en vigueur : les dispositions du présent décret entrent en vigueur à compter du 1\ner\nnovembre 2026.\nApplication : ce décret modifie le décret n° 2020-1717 du 28 décembre 2020 portant application de la loi n° 91-647 du 10 juillet 1991 relative à l'aide juridique et relatif à l'aide juridictionnelle et à l'aide à l'intervention de l'avocat dans les procédures non juridictionnelles et le décret n° 93-1425 du 31 décembre 1993 relatif à l'aide juridictionnelle en Nouvelle-Calédonie et dans les îles Wallis-et-Futuna.\nLe Premier ministre,\nSur le rapport du garde des sceaux, ministre de la justice,\nVu la loi n° 61-814 du 29 juillet 1961 conférant aux îles Wallis et Futuna le statut de territoire d'outre-mer ;\nVu la loi n° 91-647 du 10 juillet 1991 modifiée relative à l'aide juridique ;\nVu la loi n° 2026-103 du 19 février 2026 de finances pour 2026, notamment son article 190 ;\nVu l'ordonnance n° 92-1147 du 12 octobre 1992 relative à l'aide juridictionnelle en Nouvelle-Calédonie et \n[… extrait primaire compacté …]\n1-647 du 10 juillet 1991 relative à l'aide juridique et relatif à l'aide juridictionnelle et à l'aide à l'intervention de l'avocat dans les procédures non juridictionnelles ;\nVu les avis du Conseil national de l'aide juridique en date du 1\ner\navril et du 26 mai 2026 ;\nVu la saisine du gouvernement de la Nouvelle-Calédonie en date du 17 juin 2026 ;\nVu la saisine du gouvernement de la Polynésie française en date du 4 juin 2026 ;\nLe Conseil d'Etat (section de l'intérieur) entendu,\nDécrète :",
+            "excerpt_truncated": true,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte réglementaire relatif à l'extension de l'aide juridictionnelle à Wallis-et-Futuna et revalorisation des frais de déplacement d'avocats. Mesure d'application administrative sans création de marché, d'opportunité commerciale ou de service accessible à un opérateur privé non réglementé."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "WATCH_CANDIDATE",
+        "score": 4,
+        "triggers": [
+          {
+            "kind": "FUNDING_OR_INCENTIVE",
+            "score": 3,
+            "terms": [
+              "aide "
+            ]
+          },
+          {
+            "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+            "score": 1,
+            "terms": [
+              "entree en vigueur",
+              "a compter du"
+            ]
+          }
+        ],
+        "scope_terms": [],
+        "reason": "ECONOMIC_FRICTION_DETECTED",
+        "recommended_enrichment": [
+          "PRESS",
+          "DEMAND",
+          "MARKET"
+        ]
+      },
+      "reading": {
+        "consequence": "Le décret étend le dispositif d'aide juridictionnelle civile et administrative à Wallis-et-Futuna et revalorise la prise en charge des frais de déplacement des avocats des barreaux de Papeete et Nouméa, en application de l'article 190 de la loi de finances pour 2026.",
+        "affected_actors": [
+          "justiciables de Wallis-et-Futuna",
+          "avocats des barreaux de Papeete et Nouméa",
+          "juridictions judiciaires et administratives",
+          "Etat"
+        ],
+        "beneficiaries": [
+          "justiciables éligibles à l'aide juridictionnelle",
+          "avocats intervenant à Wallis-et-Futuna"
+        ],
+        "constrained_parties": [
+          "Etat (budget de l'aide juridictionnelle)"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Montants précis de revalorisation des frais de déplacement",
+          "Modalités pratiques d'instruction des demandes d'aide à Wallis-et-Futuna"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013248"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:2b323b0655b23c1a",
+        "title": "Décret n° 2026-990 du 23 octobre 2026 relatif à l'extension de l'aide juridictionnelle en matières civile et administrative au territoire de Wallis-et-Futuna",
+        "keywords": [
+          "aide juridictionnelle",
+          "Wallis-et-Futuna",
+          "avocats",
+          "frais de déplacement",
+          "justice"
+        ],
+        "affected_scope": [
+          "Wallis-et-Futuna",
+          "Nouvelle-Calédonie",
+          "Polynésie française"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-11-01",
+          "affected_scope": [
+            "Wallis-et-Futuna",
+            "Nouvelle-Calédonie",
+            "Polynésie française"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "LEGAL_SERVICES",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:82474ed51df1aab1",
+      "identity": {
+        "stable_source_id": "source:9aebe27d58f85065",
+        "evidence_version": "sha256:3748372f5a4ef14d5103d7446257e9e44a60159f2db86f3378280a732ad85028"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013363",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013363",
+          "nature": "DECRET",
+          "nor": "AGRT2626454D",
+          "title": "Décret n° 2026-991 du 23 octobre 2026 relatif à la mise en œuvre de la norme relative aux bonnes conditions agricoles et environnementales des sols (norme BCAE 6) applicable aux aides de la politique agricole commune pour la campagne 2026",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013363",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "50cf1fb4df2a14a01c0a1f3f2bb602b7704bdd169b869aece16587c5132a7931",
+            "excerpt": "Publics concernés : agriculteurs ; services déconcentrés de l'Etat.\nObjet : le décret prévoit la possibilité de déroger, pour la campagne 2026, aux dispositions du deuxième alinéa de l'article D. 614-50 du code rural et de la pêche maritime, relatif à la norme BCAE 6 en dehors des zones vulnérables, du fait des conditions climatiques exceptionnelles touchant le territoire français.\nEntrée en vigueur : le texte entre en vigueur le lendemain de sa publication.\nApplication : le présent décret est pris pour l'application de l'article 13, paragraphe 2 bis, du règlement (UE) 2021/2115 du Parlement européen et du Conseil du 2 décembre 2021 établissant des règles régissant l'aide aux plans stratégiques devant être établis par les Etats membres dans le cadre de la politique agricole commune (plans stratégiques relevant de la PAC) et financés par le Fonds européen agricole de garantie (FEAGA) et par le Fonds européen agricole pour le développement rural (Feader), et abrogeant les règlements (UE) n° 1305/2013 et (UE) n° 1307/2013.\nLe Premier ministre,\nSur le rapport de la ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu le règlement (UE) 2021/2115 du Parlement européen et du Conseil du 2 décembre 2021 établissant des règles régissant l'aide aux plans stratégiques devant être établis par les Etats membres dans le cadre de la politique agricole commune (plans stratégiques relevant de la PAC) et financés par le Fonds européen agricole de garantie (FEAGA) et par le Fonds européen agricole pour le développement rural (Feader), et abrogeant les règlements (UE) n° 1305/2013 et (UE) n° 1307/2013, notamment son article 13, paragraphe 2 bis ;\nVu le code rural et de la pêche maritime, notamment ses articles D. 614-44 et D. 614-50,\nDécrète :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte réglementaire dérogeant à une norme PAC (BCAE 6) pour les agriculteurs hors zones vulnérables en 2026 ; aucune opportunité de marché, aucun flux financier identifiable, aucun périmètre de service B2B documenté."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "WATCH_CANDIDATE",
+        "score": 4,
+        "triggers": [
+          {
+            "kind": "FUNDING_OR_INCENTIVE",
+            "score": 3,
+            "terms": [
+              "aide ",
+              "fonds"
+            ]
+          },
+          {
+            "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+            "score": 1,
+            "terms": [
+              "entree en vigueur"
+            ]
+          }
+        ],
+        "scope_terms": [],
+        "reason": "ECONOMIC_FRICTION_DETECTED",
+        "recommended_enrichment": [
+          "PRESS",
+          "DEMAND",
+          "MARKET"
+        ]
+      },
+      "reading": {
+        "consequence": "Le décret permet, pour la campagne 2026, de déroger à l'obligation de maintien des terres en jachère ou couverture environnementale (norme BCAE 6) hors zones vulnérables, en raison de conditions climatiques exceptionnelles.",
+        "affected_actors": [
+          "Agriculteurs exploitant hors zones vulnérables",
+          "Services déconcentrés de l'Etat chargés du contrôle PAC"
+        ],
+        "beneficiaries": [
+          "Agriculteurs bénéficiant de la dérogation"
+        ],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Modalités précises de mise en œuvre de la dérogation",
+          "Durée et conditions exactes d'application pour la campagne 2026",
+          "Impact financier éventuel sur les aides PAC perçues"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013363"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:82474ed51df1aab1",
+        "title": "Décret n° 2026-991 relatif à la dérogation BCAE 6 pour la campagne PAC 2026",
+        "keywords": [
+          "PAC",
+          "BCAE 6",
+          "agriculture",
+          "dérogation",
+          "conditions climatiques"
+        ],
+        "affected_scope": [
+          "agriculteurs",
+          "services déconcentrés de l'Etat"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-26",
+          "affected_scope": [
+            "agriculteurs",
+            "services déconcentrés de l'Etat"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:b39cfe8a7c98dd4d",
+      "identity": {
+        "stable_source_id": "source:522dcafdd4031a0b",
+        "evidence_version": "sha256:4ddf9e82699b9ac9ba5f630fa015f34be92c3678e4e15bb6a4aa423a8add1b13"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013372",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013372",
+          "nature": "ARRETE",
+          "nor": "AGRT2626685A",
+          "title": "Arrêté du 12 octobre 2026 modifiant l'arrêté du 22 mars 2023 fixant les conditions d'accès à l'aide aux bovins de plus de 16 mois dans les départements de Corse mise en œuvre à partir de la campagne 2023",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013372",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "98ad299eb5f21414d7d0d9f4d3300bd0b8139b647346d27443fce538e4ac066c",
+            "excerpt": "La ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu le règlement (UE) 2021/2115 du Parlement européen et du Conseil du 2 décembre 2021 établissant des règles régissant l'aide aux plans stratégiques devant être établis par les Etats membres dans le cadre de la politique agricole commune (plans stratégiques relevant de la PAC) et financés par le Fonds européen agricole de garantie (FEAGA) et par le Fonds européen agricole pour le développement rural (Feader), et abrogeant les règlements (UE) n° 1305/2013 et (UE) n° 1307/2013 ;\nVu le règlement (UE) 2021/2116 du Parlement européen et du Conseil du 2 décembre 2021 relatif au financement, à la gestion et au suivi de la politique agricole commune et abrogeant le règlement (UE) n° 1306/2013 ;\nVu le règlement d'exécution (UE) 2022/1173 de la Commission du 31 mai 2022 établissant les modalités d'application du règlement (UE) 2021/2116 du Parlement européen et du Conseil en ce qui concerne le système intégré de gestion et de contrôle dans la politique agricole commune ;\nVu le plan stratégique national français de la PAC 2023-2027 approuvé le 2 mars 2026 par décision C (2026) 1266 de la Commission européenne ;\nVu le code rural et de la pêche maritime ;\nVu l'arrêté du 22 mars 2023 fixant les conditions d'accès à l'aide aux bovins de plus de 16 mois dans les départements de Corse mise en œuvre à partir de la campagne 2023,\nArrête :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Arrêté modifiant les conditions d'accès à une aide agricole PAC (bovins Corse) ; aucun flux financier chiffré ni service périphérique démontré dans l'extrait fourni."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "WATCH_CANDIDATE",
+        "score": 6,
+        "triggers": [
+          {
+            "kind": "SANCTION_OR_CONTROL",
+            "score": 3,
+            "terms": [
+              "controle"
+            ]
+          },
+          {
+            "kind": "FUNDING_OR_INCENTIVE",
+            "score": 3,
+            "terms": [
+              "aide ",
+              "financement",
+              "fonds"
+            ]
+          }
+        ],
+        "scope_terms": [],
+        "reason": "ECONOMIC_FRICTION_DETECTED",
+        "recommended_enrichment": [
+          "PRESS",
+          "DEMAND",
+          "MARKET"
+        ]
+      },
+      "reading": {
+        "consequence": "L'arrêté modifie les conditions d'accès à une aide PAC couplée pour les bovins de plus de 16 mois dans les départements de Corse, dans le cadre du plan stratégique national PAC 2023-2027.",
+        "affected_actors": [
+          "éleveurs de bovins en Corse",
+          "ministère de l'agriculture"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "exploitants agricoles corses demandeurs de l'aide"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Nature exacte des modifications apportées aux conditions d'accès",
+          "Montant de l'aide concernée",
+          "Impact sur le nombre de bénéficiaires"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013372"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:b39cfe8a7c98dd4d",
+        "title": "Arrêté du 12 octobre 2026 modifiant les conditions d'accès à l'aide aux bovins de plus de 16 mois en Corse",
+        "keywords": [
+          "PAC",
+          "aide bovine",
+          "Corse",
+          "FEAGA",
+          "agriculture"
+        ],
+        "affected_scope": [
+          "Corse",
+          "éleveurs bovins"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "PARTIAL",
+          "effective_date": "2026-10-25",
+          "affected_scope": [
+            "Corse"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:bfdc3bf9b199794c",
+      "identity": {
+        "stable_source_id": "source:7254039adcbb5d70",
+        "evidence_version": "sha256:3216427940cf9571e61ca814182e76f8f33df60bc78dd4c183650192b28f742b"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013388",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013388",
+          "nature": "ARRETE",
+          "nor": "AGRS2624027A",
+          "title": "Arrêté du 15 octobre 2026 modifiant l'arrêté du 10 octobre 2013 fixant les conditions d'inscription sur la liste d'aptitude aux emplois d'agent de direction des organismes de mutualité sociale agricole",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013388",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "4a62f2a930ed8219612064fd998e73a39dd8262808d6badf0189b6f9660c8954",
+            "excerpt": "Le ministre du travail et des solidarités, la ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire et la ministre de la santé, des familles, de l'autonomie et des personnes handicapées,\nVu le code de la sécurité sociale, notamment son article R. 123-45 ;\nVu l'arrêté du 10 octobre 2013 modifié fixant les conditions d'inscription sur la liste d'aptitude aux emplois d'agent de direction des organismes de mutualité sociale agricole,\nArrêtent :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte administratif modifiant les conditions d'inscription sur une liste d'aptitude pour agents de direction de la MSA ; aucune friction économique, aucun marché ni service B2B identifiable."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "L'arrêté modifie les conditions administratives d'inscription sur la liste d'aptitude permettant d'occuper un emploi d'agent de direction dans un organisme de MSA, sans créer de marché ou d'obligation économique identifiable.",
+        "affected_actors": [
+          "Organismes de mutualité sociale agricole",
+          "Candidats aux emplois d'agent de direction"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "Candidats aux emplois d'agent de direction des organismes de MSA"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Contenu précis des modifications apportées",
+          "Impact concret sur les critères d'inscription"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013388"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:bfdc3bf9b199794c",
+        "title": "Arrêté du 15 octobre 2026 modifiant l'arrêté du 10 octobre 2013 fixant les conditions d'inscription sur la liste d'aptitude aux emplois d'agent de direction des organismes de mutualité sociale agricole",
+        "keywords": [
+          "MSA",
+          "liste d'aptitude",
+          "agent de direction",
+          "mutualité sociale agricole"
+        ],
+        "affected_scope": [
+          "Organismes de mutualité sociale agricole"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "PARTIAL",
+          "effective_date": "2026-10-25",
+          "affected_scope": [
+            "Organismes de mutualité sociale agricole"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:1f99e36e45f0d3ed",
+      "identity": {
+        "stable_source_id": "source:63f77bd1fb6f38ed",
+        "evidence_version": "sha256:4d0adfb750bcff1f459c586f56736d7003048b29bf616eacecaec328b4ca52d2"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013395",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013395",
+          "nature": "ARRETE",
+          "nor": "AGRG2627095A",
+          "title": "Arrêté du 16 octobre 2026 fixant les modalités de transmission par les gestionnaires de restaurants collectifs des données nécessaires à l'établissement du bilan statistique annuel mentionné au V de l'article L. 230-5-1 du code rural et de la pêche maritime",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013395",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "976f124df5bc88773ae4cb84eca215610a33fa11ecad9dba8c21b7fe3bbd4ee9",
+            "excerpt": "La ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu le code rural et de la pêche maritime, notamment ses articles L. 230-5-1, L. 230-5-2 et R. 230-30-1 à R. 230-30-4 ;\nVu l'avis du Conseil national de l'évaluation des normes du 8 octobre 2026,\nArrête :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte de reporting administratif (transmission de données statistiques par les gestionnaires de restaurants collectifs) sans friction économique identifiable ni marché démontré ; conforme au statut discovery CONTEXT_REVIEW."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 2,
+        "triggers": [
+          {
+            "kind": "REPORTING_OR_TRACEABILITY",
+            "score": 2,
+            "terms": [
+              "transmission"
+            ]
+          }
+        ],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Les gestionnaires de restaurants collectifs devront transmettre certaines données nécessaires à l'établissement d'un bilan statistique annuel prévu par le code rural et de la pêche maritime.",
+        "affected_actors": [
+          "gestionnaires de restaurants collectifs",
+          "administration en charge du bilan statistique"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "gestionnaires de restaurants collectifs"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "modalités techniques précises de transmission",
+          "périmètre exact des données requises",
+          "sanctions éventuelles en cas de non-transmission"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013395"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:1f99e36e45f0d3ed",
+        "title": "Arrêté du 16 octobre 2026 fixant les modalités de transmission par les gestionnaires de restaurants collectifs des données nécessaires à l'établissement du bilan statistique annuel mentionné au V de l'article L. 230-5-1 du code rural et de la pêche maritime",
+        "keywords": [
+          "restauration collective",
+          "transmission de données",
+          "bilan statistique",
+          "code rural"
+        ],
+        "affected_scope": [
+          "gestionnaires de restaurants collectifs"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "PARTIAL",
+          "effective_date": "2026-10-25",
+          "affected_scope": [
+            "gestionnaires de restaurants collectifs"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:21398c4452d1dfc7",
+      "identity": {
+        "stable_source_id": "source:7d1e66be8789f709",
+        "evidence_version": "sha256:1df96b2bc63047849c3b88f67bfaf84714ae133b285c557a6d12d97304210b84"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013467",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013467",
+          "nature": "ARRETE",
+          "nor": "AGRT2627761A",
+          "title": "Arrêté du 20 octobre 2026 modifiant l'arrêté du 26 novembre 2025 portant approbation du calendrier des courses et réunions de courses de chevaux françaises et étrangères pouvant servir de support aux paris hippiques pour l'année 2026",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013467",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "79cf51f825ccbc447d7ed8ac2913aabfe085919bea7b70491c177745694044c1",
+            "excerpt": "La ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu la loi du 2 juin 1891 modifiée ayant pour objet de réglementer l'autorisation et le fonctionnement des courses de chevaux ;\nVu la loi n° 2010-476 du 12 mai 2010 modifiée relative à l'ouverture à la concurrence et à la régulation du secteur des jeux d'argent et de hasard en ligne ;\nVu l'ordonnance n° 2019-1015 du 2 octobre 2019 réformant la régulation des jeux d'argent et de hasard ;\nVu le décret n° 97-456 du 5 mai 1997 modifié relatif aux sociétés de courses de chevaux et au pari mutuel ;\nVu le décret n° 2010-498 du 17 mai 2010 modifié relatif à la définition des courses hippiques supports de paris en ligne et aux principes généraux du pari mutuel ;\nVu l'arrêté du 26 novembre 2025 portant approbation du calendrier des courses et réunions de courses de chevaux françaises et étrangères pouvant servir de support aux paris hippiques pour l'année 2026 ;\nVu l'avis de l'Autorité nationale des jeux (ANJ) en date du 15 octobre 2026 ;\nSur proposition de la Fédération nationale des courses hippiques (FNCH),\nArrête :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte administratif modifiant un calendrier de courses hippiques, sans création d'obligation économique mesurable ni de périmètre professionnel identifiable démontré; CONTEXT_REVIEW conformément au signal de routage."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Modification du calendrier officiel des courses et réunions de chevaux pouvant servir de support aux paris hippiques pour 2026, sans création d'obligation économique ou de marché nouveau démontré.",
+        "affected_actors": [
+          "Sociétés de courses de chevaux",
+          "Autorité nationale des jeux (ANJ)",
+          "Fédération nationale des courses hippiques (FNCH)"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Nature exacte des modifications apportées au calendrier initial",
+          "Impact économique éventuel sur les opérateurs de paris hippiques"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013467"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:21398c4452d1dfc7",
+        "title": "Arrêté modifiant le calendrier des courses hippiques 2026 pour les paris hippiques",
+        "keywords": [
+          "courses hippiques",
+          "paris hippiques",
+          "calendrier",
+          "ANJ",
+          "FNCH"
+        ],
+        "affected_scope": [
+          "Sociétés de courses de chevaux",
+          "Autorité nationale des jeux"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "PARTIAL",
+          "effective_date": "2026-10-25",
+          "affected_scope": [
+            "Sociétés de courses de chevaux",
+            "Autorité nationale des jeux"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:2e237aff1cbf8c17",
+      "identity": {
+        "stable_source_id": "source:cd0045dc4c6797f7",
+        "evidence_version": "sha256:9b98616b53ce8d54728526a900bfec81073295f95f072ee84a685a17a2a1c444"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013478",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013478",
+          "nature": "ARRETE",
+          "nor": "AGRT2624464A",
+          "title": "Arrêté du 22 octobre 2026 homologuant le cahier des charges de l'appellation d'origine contrôlée « Fiefs Vendéens »",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013478",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "6fdb50fbbcc7e1087344b896b7d5ddbcc38c7bff72b33b6ed9175fd75a0b1877",
+            "excerpt": "Le ministre des petites et moyennes entreprises, du commerce, de l'artisanat, du tourisme et du pouvoir d'achat, la ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire et le ministre de l'action et des comptes publics,\nVu le règlement (UE) n° 1308/2013 du Parlement européen et du Conseil du 17 décembre 2013 portant organisation commune des marchés des produits agricoles ;\nVu le règlement (UE) n° 2024/1143 du Parlement européen et du Conseil du 11 avril 2024 concernant les indications géographiques relatives au vin, aux boissons spiritueuses et aux produits agricoles, ainsi que les spécialités traditionnelles garanties et les mentions de qualité facultatives pour les produits agricoles ;\nVu le code de la consommation ;\nVu le code des douanes ;\nVu le code rural et de la pêche maritime, notamment son article L. 641-7 ;\nVu la proposition du comité national des appellations d'origine relatives aux vins et aux boissons alcoolisées et des boissons spiritueuses de l'Institut national de l'origine et de la qualité validée en séance des 17 et 18 juin 2026,\nArrêtent :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte réglementaire homologuant un cahier des charges AOC viticole ; aucune obligation mesurable, aucun flux financier ni opportunité de service B2B identifiable dans le texte fourni."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "WATCH_CANDIDATE",
+        "score": 3,
+        "triggers": [
+          {
+            "kind": "SANCTION_OR_CONTROL",
+            "score": 3,
+            "terms": [
+              "controle"
+            ]
+          }
+        ],
+        "scope_terms": [
+          "entreprise"
+        ],
+        "reason": "ECONOMIC_FRICTION_DETECTED",
+        "recommended_enrichment": [
+          "PRESS",
+          "DEMAND",
+          "MARKET"
+        ]
+      },
+      "reading": {
+        "consequence": "L'arrêté homologue officiellement le cahier des charges révisé de l'appellation d'origine contrôlée « Fiefs Vendéens », ce qui fixe les règles de production que doivent respecter les exploitants viticoles concernés.",
+        "affected_actors": [
+          "producteurs viticoles de l'AOC Fiefs Vendéens",
+          "INAO"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "producteurs viticoles de l'AOC Fiefs Vendéens"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "contenu précis des modifications du cahier des charges",
+          "impact économique pour les exploitants"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013478"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:2e237aff1cbf8c17",
+        "title": "Arrêté homologuant le cahier des charges de l'AOC « Fiefs Vendéens »",
+        "keywords": [
+          "AOC",
+          "Fiefs Vendéens",
+          "INAO",
+          "cahier des charges",
+          "viticulture"
+        ],
+        "affected_scope": [
+          "producteurs viticoles AOC Fiefs Vendéens"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "PARTIAL",
+          "effective_date": "2026-10-25",
+          "affected_scope": [
+            "producteurs viticoles AOC Fiefs Vendéens"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:91fd3320344f7a5b",
+      "identity": {
+        "stable_source_id": "source:1c879184195d6e0b",
+        "evidence_version": "sha256:6351b948670bd5a74f9294e25b9de84ac47562a2f68eeed986f286a54f07cdeb"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013491",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013491",
+          "nature": "ARRETE",
+          "nor": "AGRT2626007A",
+          "title": "Arrêté du 22 octobre 2026 relatif à l'avenant n° 8 portant application des dispositions de l'accord interprofessionnel triennal 2026-2027-2028 d'Inter Rhône et de ses annexes l'AOC Laudun",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013491",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "9bb393c1d0ae9b02665cbbb060b7096cdf1dfe877867c0bcf95b35c538a8a113",
+            "excerpt": "Le ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique, la ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire et le ministre de l'action et des comptes publics,\nVu le règlement (UE) n° 1308/2013 du Parlement européen et du Conseil du 17 décembre 2013 portant organisation commune des marchés des produits agricoles ;\nVu le code rural et de la pêche maritime, notamment ses articles L. 632-1 à L. 632-11 ;\nVu le décret n° 2014-572 du 2 juin 2014 relatif à la reconnaissance des organisations interprofessionnelles ;\nVu l'arrêté du 24 juillet 1989 modifié relatif à la reconnaissance du comité interprofessionnel des vins d'appellations d'origine contrôlées « Côtes du Rhône » et de la « Vallée du Rhône » ;\nVu l'arrêté du 17 novembre 2025 relatif à l'accord interprofessionnel triennal 2026-2028 d'Inter Rhône relatif aux règles d'organisation du marché des vins AOC et des indications géographiques spiritueuses de la Vallée du Rhône ;\nVu l'arrêté du 12 mai 2026 modifiant l'arrêté du 24 juillet 1989 relatif à la reconnaissance du comité interprofessionnel des vins d'appellations d'origine contrôlées « Côtes du Rhône » et de la « Vallée du Rhône » ;\nVu la décision de l'assemblée générale d'Inter Rhône en date du 3 juillet 2026,\nArrêtent :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte d'extension d'un accord interprofessionnel viticole (AOC Laudun / Inter Rhône) sans création d'obligation mesurable, de fiche CEE, ni de service B2B accessible; aucun flux financier ni rôle périphérique démontré."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "WATCH_CANDIDATE",
+        "score": 3,
+        "triggers": [
+          {
+            "kind": "SANCTION_OR_CONTROL",
+            "score": 3,
+            "terms": [
+              "controle"
+            ]
+          }
+        ],
+        "scope_terms": [
+          "professionnel"
+        ],
+        "reason": "ECONOMIC_FRICTION_DETECTED",
+        "recommended_enrichment": [
+          "PRESS",
+          "DEMAND",
+          "MARKET"
+        ]
+      },
+      "reading": {
+        "consequence": "L'arrêté étend l'application d'un avenant à l'accord interprofessionnel triennal 2026-2028 d'Inter Rhône au secteur de l'AOC Laudun, rendant ses règles d'organisation de marché obligatoires pour les opérateurs concernés.",
+        "affected_actors": [
+          "Producteurs de vin AOC Laudun",
+          "Comité interprofessionnel Inter Rhône"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "Opérateurs viticoles de l'appellation Laudun"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Contenu précis de l'avenant n° 8",
+          "Impact économique concret sur les opérateurs",
+          "Existence d'une cotisation ou contribution financière associée"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013491"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:91fd3320344f7a5b",
+        "title": "Arrêté du 22 octobre 2026 relatif à l'avenant n° 8 de l'accord interprofessionnel triennal Inter Rhône - AOC Laudun",
+        "keywords": [
+          "Inter Rhône",
+          "AOC Laudun",
+          "accord interprofessionnel",
+          "vin",
+          "vallée du Rhône"
+        ],
+        "affected_scope": [
+          "filière viticole AOC Laudun",
+          "Inter Rhône"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "PARTIAL",
+          "effective_date": "2026-10-25",
+          "affected_scope": [
+            "producteurs viticoles AOC Laudun",
+            "Inter Rhône"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:b7604c3b69484b2e",
+      "identity": {
+        "stable_source_id": "source:a1337797ffd3d917",
+        "evidence_version": "sha256:d09dfab50fac0198480fc8f62f84d0d6f6531f0dd59802b29aeaf7be13ce3147"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013502",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013502",
+          "nature": "ARRETE",
+          "nor": "AGRT2627207A",
+          "title": "Arrêté du 23 octobre 2026 relatif au champ d'application de la dérogation prévue par le décret n° 2026-991 du 23 octobre 2026 relatif à la mise en œuvre de la norme relative aux bonnes conditions agricoles et environnementales des sols (norme BCAE 6) applicable aux aides de la politique agricole commune pour la campagne 2026",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013502",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "69a02b04a0d776beadeba80a1e4c88ab3b9074d22686f2c2e8eee835af6f5202",
+            "excerpt": "La ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu le règlement (UE) 2021/2115 du Parlement européen et du Conseil du 2 décembre 2021 établissant des règles régissant l'aide aux plans stratégiques devant être établis par les Etats membres dans le cadre de la politique agricole commune (plans stratégiques relevant de la PAC) et financés par le Fonds européen agricole de garantie (FEAGA) et par le Fonds européen agricole pour le développement rural (Feader), et abrogeant les règlements (UE) n° 1305/2013 et (UE) n° 1307/2013 ;\nVu le code rural et de la pêche maritime, notamment ses articles D. 614-44 et D. 614-50 ;\nVu le décret n° 2026-991 du 23 octobre 2026 relatif à la mise en œuvre de la norme relative aux bonnes conditions agricoles et environnementales des sols (norme BCAE 6) applicable aux aides de la politique agricole commune pour la campagne 2026,\nArrête :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte réglementaire agricole fixant une dérogation BCAE 6 pour les aides PAC 2026 ; aucun marché, prestation ou flux financier concret n'est démontré par l'extrait fourni."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "WATCH_CANDIDATE",
+        "score": 3,
+        "triggers": [
+          {
+            "kind": "FUNDING_OR_INCENTIVE",
+            "score": 3,
+            "terms": [
+              "aide ",
+              "fonds"
+            ]
+          }
+        ],
+        "scope_terms": [],
+        "reason": "ECONOMIC_FRICTION_DETECTED",
+        "recommended_enrichment": [
+          "PRESS",
+          "DEMAND",
+          "MARKET"
+        ]
+      },
+      "reading": {
+        "consequence": "Le texte définit le champ d'application d'une dérogation à la norme BCAE 6 sur les bonnes conditions agricoles et environnementales des sols, applicable aux aides PAC pour la campagne 2026.",
+        "affected_actors": [
+          "exploitants agricoles",
+          "ministère de l'agriculture"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "périmètre géographique précis de la dérogation",
+          "critères techniques d'éligibilité",
+          "impact financier réel sur les aides versées"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013502"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:b7604c3b69484b2e",
+        "title": "Arrêté relatif au champ d'application de la dérogation BCAE 6 (PAC campagne 2026)",
+        "keywords": [
+          "BCAE 6",
+          "PAC",
+          "dérogation",
+          "agriculture",
+          "aides agricoles"
+        ],
+        "affected_scope": [
+          "exploitants agricoles",
+          "aides PAC"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "PARTIAL",
+          "effective_date": "2026-10-25",
+          "affected_scope": [
+            "exploitants agricoles bénéficiaires des aides PAC"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:015d9f0761022eed",
+      "identity": {
+        "stable_source_id": "source:cd31cb5e5885956a",
+        "evidence_version": "sha256:1ebb6b55ff38eb7d3ea5c4e20db6e7e105dea22dbad2766fe0c2cc979261043d"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013512",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013512",
+          "nature": "ARRETE",
+          "nor": "SFHP2626911A",
+          "title": "Arrêté du 17 octobre 2026 portant ouverture de l'examen d'accès au diplôme national de thanatopracteur pour la session 2027",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013512",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "add2815feb2313e4a651dcdb2a1cb6ce4f9b1944ae049fbd7b4b2b8e2413e776",
+            "excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées,\nVu le code général des collectivités territoriales, notamment ses articles D. 2223-122 à D. 2223-131 ;\nVu l'arrêté du 18 mai 2010 modifié fixant les conditions d'organisation de la formation et de l'examen d'accès au diplôme national de thanatopracteur,\nArrête :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte administratif ouvrant une session d'examen pour le diplôme de thanatopracteur ; aucune opportunité commerciale, aucun marché, aucune autorisation exploitable démontrée. Mention des collectivités territoriales renvoie au code général (réglementation funéraire) sans lien avec un flux financier ou un service B2B identifiable."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "WATCH_CANDIDATE",
+        "score": 3,
+        "triggers": [
+          {
+            "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
+            "score": 3,
+            "terms": [
+              "collectivites"
+            ]
+          }
+        ],
+        "scope_terms": [
+          "collectivites territoriales"
+        ],
+        "reason": "ECONOMIC_FRICTION_DETECTED",
+        "recommended_enrichment": [
+          "PRESS",
+          "DEMAND",
+          "MARKET"
+        ]
+      },
+      "reading": {
+        "consequence": "Ouverture administrative de la session 2027 de l'examen national de thanatopracteur, encadrant l'accès à cette profession réglementée.",
+        "affected_actors": [
+          "Candidats à l'examen de thanatopracteur",
+          "Ministère de la santé"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "Candidats devant respecter les modalités de l'examen"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Modalités précises d'organisation de l'examen non détaillées dans l'extrait",
+          "Lien effectif avec les collectivités territoriales non explicité"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013512"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:015d9f0761022eed",
+        "title": "Arrêté portant ouverture de l'examen d'accès au diplôme national de thanatopracteur pour la session 2027",
+        "keywords": [
+          "thanatopracteur",
+          "examen",
+          "diplôme national",
+          "formation",
+          "santé"
+        ],
+        "affected_scope": [
+          "collectivites territoriales"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-25",
+          "affected_scope": [
+            "collectivites territoriales"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "OTHER_REGULATED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:6cc875edbbd27d3c",
+      "identity": {
+        "stable_source_id": "source:c5ae287f11ed0a68",
+        "evidence_version": "sha256:3cd211a6615118631dd5cedf08497fb3dbe6ca6b8111cd859533c9e9d01936a9"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013524",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013524",
+          "nature": "ARRETE",
+          "nor": "SFHH2628449A",
+          "title": "Arrêté du 23 octobre 2026 relatif à la liste des spécialités pour lesquelles le docteur junior peut être autorisé à participer, à sa demande, au service des gardes et astreintes médicales pris pour application de l'article R. 6153-1-5 du code de la santé publique",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013524",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "ed1ebb26f6669e46ac0faff6b98dd83f15e0b421c8aa4fb9102644fa345738a7",
+            "excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées,\nVu le code de l'éducation, notamment ses articles R. 632-20 et D. 633-11 ;\nVu le code de la santé publique, notamment ses articles R. 6153-1-5 et R. 6153-93,\nArrête :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte organisant la liste des spécialités pour la participation des docteurs juniors aux gardes et astreintes médicales ; aucune friction économique, aucun marché ni service B2B identifiable n'est démontré par la preuve."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Le texte fixe la liste des spécialités médicales pour lesquelles un docteur junior peut, à sa demande, participer au service des gardes et astreintes, en application du code de la santé publique.",
+        "affected_actors": [
+          "Docteurs juniors",
+          "Établissements de santé formateurs"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Liste précise des spécialités concernées non détaillée dans l'extrait",
+          "Modalités pratiques d'organisation des gardes"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013524"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:6cc875edbbd27d3c",
+        "title": "Arrêté du 23 octobre 2026 relatif à la liste des spécialités pour lesquelles le docteur junior peut être autorisé à participer, à sa demande, au service des gardes et astreintes médicales",
+        "keywords": [
+          "docteur junior",
+          "gardes et astreintes",
+          "internat",
+          "code de la santé publique"
+        ],
+        "affected_scope": [
+          "Docteurs juniors",
+          "Établissements de santé formateurs"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-25",
+          "affected_scope": [
+            "Docteurs juniors",
+            "Établissements de santé"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:2e92cf8e42f351e1",
+      "identity": {
+        "stable_source_id": "source:e2211c4e0582d4c9",
+        "evidence_version": "sha256:d510946b549584f677be9f20c6ec2972fa264427a7bd355bce471d5004199d73"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013552",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013552",
+          "nature": "ARRETE",
+          "nor": "CPPE2627967A",
+          "title": "Arrêté du 22 octobre 2026 portant désignation du comptable assignataire de la direction générale des finances publiques",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013552",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "82326ecf3c437fa8966920a38452825f59b68ddc312c4605f84ed8d5c54da9cd",
+            "excerpt": "Le ministre de l'action et des comptes publics,\nVu le code de l'action sociale et des familles, notamment ses article L. 315-16 et R. 314-1913-13 ;\nVu le décret n° 2008-310 du 3 avril 2008 modifié relatif à la direction générale des finances publiques ;\nVu le décret n° 2009-707 du 16 juin 2009 modifié relatif aux services déconcentrés de la direction générale des finances publiques ;\nVu le décret n° 2010-986 du 26 août 2010 modifié portant statut particulier des personnels de catégorie A de la direction générale des finances publiques ;\nVu le décret n° 2012-1246 du 7 novembre 2012 modifié relatif à la gestion budgétaire et comptable publique ;\nVu la convention constitutive du groupement territorial social et médico-social GTSMS CASA (Cœur Ardèche Solidarités Aînés) publiée le 16 septembre 2026 au recueil des actes administratifs spécial de la préfecture d'Auvergne-Rhône-Alpes n° 84-2026-216,\nArrête :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte administratif interne (désignation d'un comptable assignataire DGFiP pour un groupement territorial social et médico-social) sans friction économique, obligation nouvelle ou marché identifiable."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "L'arrêté désigne le comptable public assignataire chargé des opérations comptables du groupement territorial social et médico-social GTSMS CASA, sans créer d'obligation ni d'ouverture de marché pour des tiers.",
+        "affected_actors": [
+          "Groupement GTSMS CASA",
+          "Direction générale des finances publiques"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Identité précise du comptable désigné",
+          "Impact opérationnel sur les relations financières du groupement"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013552"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:2e92cf8e42f351e1",
+        "title": "Arrêté du 22 octobre 2026 portant désignation du comptable assignataire de la direction générale des finances publiques",
+        "keywords": [
+          "comptable assignataire",
+          "DGFiP",
+          "GTSMS CASA",
+          "gestion budgétaire"
+        ],
+        "affected_scope": [
+          "GTSMS CASA",
+          "direction générale des finances publiques"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-25",
+          "affected_scope": [
+            "GTSMS CASA (Cœur Ardèche Solidarités Aînés)"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:046ed56896e54579",
+      "identity": {
+        "stable_source_id": "source:d84929bbd27b4ceb",
+        "evidence_version": "sha256:ab13cdc0cc6451b4c48dcbfa54d44a69caed1d99b8a3b81715712f1d97472a27"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013561",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013561",
+          "nature": "ARRETE",
+          "nor": "TECK2621785A",
+          "title": "Arrêté du 22 octobre 2026 modifiant l'arrêté du 7 avril 2003 portant application à Météo-France de l'article 1er du décret n° 2000-815 du 25 août 2000 relatif à l'aménagement et à la réduction du temps de travail dans la fonction publique de l'Etat",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013561",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "812cb99179f4e3666c4079157931fddce15082fdb498be40fba92d2a212bfb5a",
+            "excerpt": "Le ministre de l'action et des comptes publics et le ministre des transports,\nVu le décret n° 90-933 du 19 octobre 1990 relatif à l'indemnité pour horaires adaptés susceptible d'être accordée aux personnels techniques et assimilés de la météorologie nationale ;\nVu le décret n° 2000-815 du 25 août 2000 modifié relatif à l'aménagement et à la réduction du temps de travail dans la fonction publique de l'Etat et dans la magistrature ;\nVu le décret n° 2002-1623 du 30 décembre 2002 portant dérogations aux garanties minimales de durée du travail et de repos applicables à certains personnels de Météo-France ;\nVu l'arrêté du 7 avril 2003 portant application à Météo-France de l'article 1\ner\ndu décret n° 2000-815 du 25 août 2000 relatif à l'aménagement et à la réduction du temps de travail dans la fonction publique de l'Etat ;\nVu l'avis du comité social d'administration de l'établissement public Météo-France en date du 15 juin 2023 ;\nVu l'avis de la formation spécialisée du comité social d'administration de l'établissement public Météo-France en date du 26 octobre 2023,\nArrêtent :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte d'organisation interne du temps de travail à Météo-France (fonction publique d'État) ; aucune opportunité économique, aucun marché, aucune autorisation ni flux financier identifiable."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "WATCH_CANDIDATE",
+        "score": 3,
+        "triggers": [
+          {
+            "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
+            "score": 3,
+            "terms": [
+              "etablissement public"
+            ]
+          }
+        ],
+        "scope_terms": [],
+        "reason": "ECONOMIC_FRICTION_DETECTED",
+        "recommended_enrichment": [
+          "PRESS",
+          "DEMAND",
+          "MARKET"
+        ]
+      },
+      "reading": {
+        "consequence": "Le texte modifie les règles d'aménagement du temps de travail applicables aux personnels de Météo-France, sans créer de marché ni d'obligation pour des tiers extérieurs.",
+        "affected_actors": [
+          "Météo-France",
+          "personnels techniques de la météorologie"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "Météo-France"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Contenu précis des modifications apportées à l'arrêté de 2003",
+          "Impact organisationnel sur les agents concernés"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013561"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:046ed56896e54579",
+        "title": "Arrêté du 22 octobre 2026 modifiant l'arrêté du 7 avril 2003 portant application à Météo-France de l'article 1er du décret n° 2000-815 relatif à l'ARTT dans la fonction publique de l'Etat",
+        "keywords": [
+          "Météo-France",
+          "temps de travail",
+          "fonction publique",
+          "ARTT",
+          "arrêté"
+        ],
+        "affected_scope": [
+          "Météo-France",
+          "personnels techniques de la météorologie"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "PARTIAL",
+          "effective_date": "2026-10-25",
+          "affected_scope": [
+            "Météo-France"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:d6390779ce36bb2d",
+      "identity": {
+        "stable_source_id": "source:81133a8d86c371bd",
+        "evidence_version": "sha256:68aa6ff8363422833e33cd35e849e03da60b36af9582a444be859d89a96d3a53"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013594",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013594",
+          "nature": "DECRET",
+          "nor": "JUSB2624453D",
+          "title": "Décret du 23 octobre 2026 portant radiation des cadres (magistrature) - Mme DUQUESNAY (Charlène)",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013594",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "9ac8a086689dbc3f38bb81bd2f531093ed0c6b3a598fc1df4e1f2f6573c7fb57",
+            "excerpt": "Le Président de la République,\nSur le rapport du Premier ministre et du garde des sceaux, ministre de la justice,\nVu l'ordonnance n° 58-1270 du 22 décembre 1958 modifiée portant loi organique relative au statut de la magistrature, notamment ses articles 73 et 76-2 ;\nVu le décret du 17 août 2026 portant intégration (administrateurs de l'Etat) ;\nVu la demande de l'intéressée,\nDécrète :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Texte individuel de nomenclature RH (radiation des cadres d'une magistrate) sans friction économique, aucun flux financier, marché ou obligation démontrée."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 0,
+        "triggers": [],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Ce décret individuel acte la radiation des cadres de la magistrature de Mme Charlène Duquesnay, à la suite de sa demande et de son intégration au corps des administrateurs de l'Etat.",
+        "affected_actors": [
+          "Mme Charlène Duquesnay",
+          "Ministère de la justice"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Aucun impact économique ou marché identifié dans le texte"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013594"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:d6390779ce36bb2d",
+        "title": "Décret du 23 octobre 2026 portant radiation des cadres (magistrature) - Mme DUQUESNAY (Charlène)",
+        "keywords": [
+          "magistrature",
+          "radiation des cadres",
+          "décret individuel",
+          "statut de la magistrature"
+        ],
+        "affected_scope": [
+          "Magistrature"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-25",
+          "affected_scope": [
+            "Magistrature"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:2812e590c117ed9d",
+      "identity": {
+        "stable_source_id": "source:1ba2c39733187776",
+        "evidence_version": "sha256:798270b19655b5178f1e556daf57b7b01791c0dd14706fb0f08bb743eb48e767"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013679",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013679",
+          "nature": "ARRETE",
+          "nor": "SFHN2628461A",
+          "title": "Arrêté du 22 octobre 2026 fixant la liste des personnes autorisées à exercer en France la profession de médecin dans la spécialité « dermatologie et vénéréologie » en application des dispositions de l'article L. 4111-2 (I) du code de la santé publique et du IV de l'article 83 de la loi n° 2006-1640 du 21 décembre 2006 de financement de la sécurité sociale pour 2007",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013679",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "f6e0229e538d3e96a278365db314ed45d55e4d592c3303018427a016cc791de2",
+            "excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées,\nVu le code de la santé publique, notamment les dispositions de son article L. 4111-2 (I) ;\nVu la loi n° 2006-1640 du 21 décembre 2006 modifiée de financement de la sécurité sociale pour 2007, notamment le IV de son article 83 ;\nVu la loi n° 2019-774 du 24 juillet 2019 modifiée relative à l'organisation et à la transformation du système de santé ;\nVu l'avis de la commission d'autorisation d'exercice en date du 28 septembre 2026,\nArrête :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Arrêté administratif fixant une liste nominative de médecins autorisés à exercer en dermatologie et vénéréologie en application de l'article L. 4111-2 du code de la santé publique ; aucun flux financier, aucune opportunité de marché ni rôle périphérique légal n'est démontré dans le texte."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "WATCH_CANDIDATE",
+        "score": 3,
+        "triggers": [
+          {
+            "kind": "FUNDING_OR_INCENTIVE",
+            "score": 3,
+            "terms": [
+              "financement"
+            ]
+          }
+        ],
+        "scope_terms": [],
+        "reason": "ECONOMIC_FRICTION_DETECTED",
+        "recommended_enrichment": [
+          "PRESS",
+          "DEMAND",
+          "MARKET"
+        ]
+      },
+      "reading": {
+        "consequence": "Le texte autorise nommément des personnes à exercer en France la médecine dans la spécialité dermatologie et vénéréologie, sans créer d'obligation, de marché ou de flux financier identifiable.",
+        "affected_actors": [
+          "Médecins inscrits sur la liste"
+        ],
+        "beneficiaries": [
+          "Médecins autorisés à exercer"
+        ],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Identité des personnes listées",
+          "Portée exacte de l'autorisation individuelle"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013679"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:2812e590c117ed9d",
+        "title": "Arrêté du 22 octobre 2026 fixant la liste des personnes autorisées à exercer en France la profession de médecin dans la spécialité « dermatologie et vénéréologie »",
+        "keywords": [
+          "médecin",
+          "autorisation d'exercice",
+          "dermatologie",
+          "santé publique",
+          "commission d'autorisation"
+        ],
+        "affected_scope": [
+          "Médecins spécialistes en dermatologie et vénéréologie"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "PARTIAL",
+          "effective_date": "2026-10-25",
+          "affected_scope": [
+            "Médecins spécialistes en dermatologie et vénéréologie"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "Autorisation d'exercice de la médecine (article L. 4111-2 CSP)",
+              "status": "REQUIRED"
+            }
+          ],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:f7ee17f1b69ef8ff",
+      "identity": {
+        "stable_source_id": "source:c3b7978299ed12f2",
+        "evidence_version": "sha256:885b601fecfcd3ffc206148d228e2a57b0fbe70591c25851004e8ae8ab1600c4"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013689",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013689",
+          "nature": "ARRETE",
+          "nor": "SFHN2628477A",
+          "title": "Arrêté du 22 octobre 2026 fixant la liste des personnes autorisées à exercer en France la profession de médecin dans la spécialité « médecine légale et expertises médicales » en application des dispositions de l'article L. 4111-2 (I) du code de la santé publique et du IV de l'article 83 de la loi n° 2006-1640 du 21 décembre 2006 de financement de la sécurité sociale pour 2007",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013689",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "4d640787941f6d485aa54eb0fdacba777410bdb130bf7217f4047e98a8f62ea3",
+            "excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées,\nVu le code de la santé publique, notamment les dispositions de son article L. 4111-2 (I) ;\nVu la loi n° 2006-1640 du 21 décembre 2006 modifiée de financement de la sécurité sociale pour 2007, notamment le IV de son article 83 ;\nVu la loi n° 2019-774 du 24 juillet 2019 modifiée relative à l'organisation et à la transformation du système de santé ;\nVu l'avis de la commission d'autorisation d'exercice en date du 2 octobre 2026,\nArrête :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Arrêté nominatif fixant une liste de médecins autorisés à exercer dans une spécialité médicale ; aucune opportunité de marché, service B2B ou flux financier démontré."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "WATCH_CANDIDATE",
+        "score": 3,
+        "triggers": [
+          {
+            "kind": "FUNDING_OR_INCENTIVE",
+            "score": 3,
+            "terms": [
+              "financement"
+            ]
+          }
+        ],
+        "scope_terms": [],
+        "reason": "ECONOMIC_FRICTION_DETECTED",
+        "recommended_enrichment": [
+          "PRESS",
+          "DEMAND",
+          "MARKET"
+        ]
+      },
+      "reading": {
+        "consequence": "L'arrêté autorise nominativement certains médecins à exercer dans la spécialité médecine légale et expertises médicales, sans créer d'obligation, de marché ou de dispositif de financement.",
+        "affected_actors": [
+          "médecins concernés par la liste"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "identité des médecins listés non précisée dans l'extrait",
+          "portée pratique de l'autorisation non détaillée"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013689"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:f7ee17f1b69ef8ff",
+        "title": "Arrêté du 22 octobre 2026 fixant la liste des personnes autorisées à exercer en France la profession de médecin dans la spécialité « médecine légale et expertises médicales »",
+        "keywords": [
+          "médecine légale",
+          "autorisation d'exercice",
+          "profession médicale",
+          "liste nominative"
+        ],
+        "affected_scope": [
+          "médecins"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "VERIFIED",
+          "effective_date": "2026-10-25",
+          "affected_scope": [
+            "médecins"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "autorisation_exercice_medecine",
+              "status": "REQUIRED"
+            }
+          ],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:ed87e09ca94b5a3b",
+      "identity": {
+        "stable_source_id": "source:1ed4b1c957917934",
+        "evidence_version": "sha256:5be511f40c89eaa0ace3a49a93c6b58c716e2b2bdb5f1c576cafabdec1aa6d0e"
+      },
+      "source": {
+        "source_id": "jorf:JORFTEXT000055013712",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055013712",
+          "nature": "DECISION",
+          "nor": "ACPP2622537S",
+          "title": "Décision n° 2026-C-43 du 21 octobre 2026 portant extension d'agrément d'une mutuelle",
+          "publisher": "DILA / Journal officiel de la République française",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055013712",
+          "publication_date": "2026-10-25",
+          "journal_number": "0250",
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [],
+          "detail_status": null,
+          "official": {
+            "title": null,
+            "period": null
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": "AVAILABLE",
+            "text_sha256": "afc089be037dc4e3e994f3c2d1331cc80424ec8b4add3d0cff4c81a08181cdb9",
+            "excerpt": "Le sous-collège sectoriel de l'assurance,\nVu le code monétaire et financier, notamment son article L. 612-1 ;\nVu le code de la mutualité, notamment ses articles L. 211-8 et R. 211- 2 ;\nVu les pièces du dossier,\nDécide :",
+            "excerpt_truncated": false,
+            "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261025-002405.tar.gz",
+            "archive_sha256": "6877ecce1a02eb4d59257d07f456f6e5fd82c8d2c7bfbd4aae2367d3c5f4dc36"
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Décision individuelle d'extension d'agrément d'une mutuelle par l'ACPR, sans friction économique ni service B2B identifiable ; CONTEXT_REVIEW confirmé."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 2,
+        "triggers": [
+          {
+            "kind": "ELIGIBILITY_OR_CERTIFICATION",
+            "score": 2,
+            "terms": [
+              "agrement"
+            ]
+          }
+        ],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "L'ACPR étend l'agrément d'une mutuelle nommément visée pour exercer sur un périmètre additionnel, selon le code de la mutualité.",
+        "affected_actors": [
+          "Mutuelle concernée",
+          "ACPR"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "Mutuelle concernée"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Identité de la mutuelle",
+          "Nature exacte du périmètre étendu",
+          "Impact sur les adhérents"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "jorf:JORFTEXT000055013712"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:ed87e09ca94b5a3b",
+        "title": "Décision n° 2026-C-43 du 21 octobre 2026 portant extension d'agrément d'une mutuelle",
+        "keywords": [
+          "agrément",
+          "mutuelle",
+          "ACPR",
+          "code de la mutualité"
+        ],
+        "affected_scope": [
+          "mutuelles"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "PUBLISHED",
+          "proof_status": "PARTIAL",
+          "effective_date": "2026-10-25",
+          "affected_scope": [
+            "mutuelles"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "agrément mutuelle",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "FINANCIAL_SERVICES",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    }
+  ],
+  "money_flows": [],
+  "quality": {
+    "opportunity_count": 22,
+    "unresolved_count": 0,
+    "readings_available_count": 22,
+    "evidence_reference_count": 22,
+    "money_flow_count": 0,
+    "money_flow_unlinked_count": 0,
+    "limitation": "Les enrichissements sont vides tant qu'aucun agent dédié n'a produit une sortie sourcée."
+  }
+}
