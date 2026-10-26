@@ -1,0 +1,32 @@
+{
+  "schema": "lawradar-universal-signal-archive-v1",
+  "status": "ARCHIVED",
+  "run_id": "40338506208",
+  "run_attempt": "1",
+  "report_date": "2026-10-25",
+  "archive_path": "evidence/universal-signals/v2/2026/10/run-40338506208-attempt-1.json",
+  "sha256": "43dbc3b0a2062a3cef5063efb4e290b185a655d811108d009928f5bf87dd40e7",
+  "signal_count": 2,
+  "prefilter_counts": {
+    "excluded_historical_candidates": 58,
+    "excluded_routine_candidates": 0,
+    "excluded_no_economic_friction_candidates": 0,
+    "deterministically_unresolved_candidates": 0
+  },
+  "signals": [
+    {
+      "signal_id": "signal:0687a0cc7e132204",
+      "stable_source_id": "source:b0edbe36c6e8a4bd",
+      "evidence_version": "sha256:430303745c681f7cb122d921cc2a293699d44140b8622d2f9f112ec1bdf6ea3b",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/developpement-durable-r1.html",
+      "radar_status": "DISCARDED"
+    },
+    {
+      "signal_id": "signal:e3e4514d0a64b4b9",
+      "stable_source_id": "source:025fb26e7d8682c6",
+      "evidence_version": "sha256:547d6cede613df9f88355e2b25c5b298add7e2f5a82d33b044cab59dcd7f5259",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-relatif-au-nombre-maximum-d-a3449.html",
+      "radar_status": "DISCARDED"
+    }
+  ]
+}
