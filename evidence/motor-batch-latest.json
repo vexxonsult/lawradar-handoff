@@ -1,15 +1,15 @@
 {
   "schema": "lawradar-anthropic-motor-batch-v1",
-  "input_sha256": "dae9c2492026ece5d20f204b823854d49c8148078608b96f98590b2321014ee3",
-  "request_sha256": "dae9c2492026ece5d20f204b823854d49c8148078608b96f98590b2321014ee3",
+  "input_sha256": "88887aac6d966c88e7d6db2bb070605e7aafe835fc9b6ecd16fe15f0c147d41f",
+  "request_sha256": "88887aac6d966c88e7d6db2bb070605e7aafe835fc9b6ecd16fe15f0c147d41f",
   "model": "claude-sonnet-5",
   "request_version": "2026-09-12-explicit-json-contract-v8",
-  "batch_id": "msgbatch_01MdzCD43XfzzSk5xRW7x5dH",
-  "processing_status": "ended",
-  "request_count": 2,
+  "batch_id": "msgbatch_019f4TbSFBrrCvXc7FHXZ5UX",
+  "processing_status": "in_progress",
+  "request_count": 5,
   "request_counts": {
-    "processing": 0,
-    "succeeded": 2,
+    "processing": 5,
+    "succeeded": 0,
     "errored": 0,
     "canceled": 0,
     "expired": 0
@@ -18,305 +18,13 @@
     "schema": "lawradar-motor-input-v1",
     "report_date": "2026-10-25",
     "delta_changed_sources": [
-      "jorf-summaries-latest.json",
       "consultdd-latest.json"
     ],
     "handled_source_files": [
       "jorf-summaries-latest.json",
       "consultdd-latest.json"
     ],
-    "excluded_historical_candidates": [
-      {
-        "source_id": "jorf:JORFTEXT000000236422",
-        "publication_date": "2003-04-23",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000351318",
-        "publication_date": "1990-10-21",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000512373",
-        "publication_date": "1891-06-03",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000537611",
-        "publication_date": "1991-07-13",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000564628",
-        "publication_date": "1997-05-08",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000599592",
-        "publication_date": "2003-01-01",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000607682",
-        "publication_date": "2006-07-04",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000684031",
-        "publication_date": "1961-07-30",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000697335",
-        "publication_date": "1977-01-15",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000710420",
-        "publication_date": "1992-10-16",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000727515",
-        "publication_date": "1994-01-01",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000764403",
-        "publication_date": "2000-04-30",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000771533",
-        "publication_date": "2002-03-23",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000791022",
-        "publication_date": "2006-10-31",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000020052696",
-        "publication_date": "2009-01-09",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000022220619",
-        "publication_date": "2010-05-18",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000022235468",
-        "publication_date": "2010-05-20",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000022747697",
-        "publication_date": "2010-08-28",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000024852411",
-        "publication_date": "2011-11-27",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000025061915",
-        "publication_date": "2011-12-31",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000025630844",
-        "publication_date": "2012-04-05",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000025753008",
-        "publication_date": "2012-04-27",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000026864465",
-        "publication_date": "2012-12-30",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000027379073",
-        "publication_date": "2013-05-02",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000027386393",
-        "publication_date": "2013-05-05",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000028129951",
-        "publication_date": "2013-10-29",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000031313295",
-        "publication_date": "2015-10-15",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000032552133",
-        "publication_date": "2016-05-21",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000034513043",
-        "publication_date": "2017-04-29",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000035589599",
-        "publication_date": "2017-09-20",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000039167499",
-        "publication_date": "2019-10-03",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000039184807",
-        "publication_date": "2019-10-06",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000039626292",
-        "publication_date": "2019-12-17",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000041423925",
-        "publication_date": "2020-01-19",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000042512680",
-        "publication_date": "2020-11-11",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000042748211",
-        "publication_date": "2020-12-29",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000044011120",
-        "publication_date": "2021-09-02",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000045614910",
-        "publication_date": "2022-04-21",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000046335035",
-        "publication_date": "2022-09-28",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000046772706",
-        "publication_date": "2022-12-22",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000047396318",
-        "publication_date": "2023-04-04",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000047753210",
-        "publication_date": "2023-06-30",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000052044701",
-        "publication_date": "2025-08-05",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000052869349",
-        "publication_date": "2025-11-28",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000053029829",
-        "publication_date": "2025-12-16",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000053029844",
-        "publication_date": "2025-12-16",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000053043625",
-        "publication_date": "2025-12-18",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000053165186",
-        "publication_date": "2025-12-26",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000053482856",
-        "publication_date": "2026-02-14",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000053934830",
-        "publication_date": "2026-04-24",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000053934844",
-        "publication_date": "2026-04-24",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054103808",
-        "publication_date": "2026-05-16",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054284104",
-        "publication_date": "2026-06-21",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054408190",
-        "publication_date": "2026-07-10",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054471762",
-        "publication_date": "2026-07-24",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054708801",
-        "publication_date": "2026-08-19",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054811936",
-        "publication_date": "2026-09-09",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000054894282",
-        "publication_date": "2026-09-25",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      }
-    ],
+    "excluded_historical_candidates": [],
     "excluded_routine_candidates": [],
     "excluded_no_economic_friction_candidates": [],
     "rules": "Preuves locales diffées uniquement ; réapparition historique et routine administrative explicite = filtrées avec trace ; les autres textes primaires disponibles reçoivent une lecture factuelle. Une friction détectée ouvre seulement une enquête, jamais une opportunité confirmée ; inconnu = UNRESOLVED.",
@@ -324,7 +32,7 @@
       {
         "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-relatif-au-nombre-maximum-d-a3449.html",
         "source_kind": "CONSULTDD",
-        "change": "NEW",
+        "change": "CHANGED",
         "evidence": {
           "title": "Projet d’arrêté relatif au nombre maximum d'alouettes des champs pouvant être capt...",
           "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-relatif-au-nombre-maximum-d-a3449.html",
@@ -335,7 +43,7 @@
           "interpretation": null,
           "official_detail": {
             "official_title": "Projet d’arrêté relatif au nombre maximum d’alouettes des champs pouvant être capturées au moyen de pantes dans les départements de la Gironde, des Landes, du Lot-et-Garonne et des Pyrénées-Atlantiques pour la campagne 2026-2027",
-            "official_period": "Consultation du 09/10/2026 au 30/10/2026 - 6059 contributions",
+            "official_period": "Consultation du 09/10/2026 au 30/10/2026 - 6117 contributions",
             "official_text": "Note de présentation Projet d’arrêté relatif au nombre maximum d’alouettes des champs capturées au moyen de pantes dans les départements de la Gironde, des Landes, du Lot-et-Garonne et des Pyrénées-Atlantiques durant la saison cynégétiques 2026-2027 Contexte : L’arrêté ministériel du 28 août 2025 relatif à la capture de l’alouette des champs à l’aide de pantes dans les départements de la Gironde, des Landes, du Lot-et-Garonne et des Pyrénées-Atlantiques dispose que le ministre en charge de la chasse fixe, chaque année, le nombre maximum d’individus pouvant être capturés dans les départements précités. Ces quotas visent à garantir le prélèvement de petites quantités d’oiseaux entre le 1er octobre et le 20 novembre. L’utilisation des pantes – paires de filets horizontaux – a pour objectif de garantir la sélectivité des captures. L’arrêté cadre du 28 août 2025 prévoit par ailleurs que l’arrêté ministériel annuel précise annuellement un nombre d’oiseaux capturés pouvant être relâchés munis d’un dispositif de marquage ou de suivi posé par des personnes autorisées conformément à la réglementation en vigueur. Par décision n° 507798 en date du 2 octobre 2026 (Association One Voice et Ligue pour la protection des oiseaux), le Conseil d’État a rejeté les requêtes par lesquelles l’association One Voice et la Ligue pour la protection des oiseaux demandaient l’annulation de l’arrêté cadre du 28 août 2025 et celle de l’arrêté pris à la même date pour définir les quotas annuels de capture. Le Conseil d’État a ainsi jugé qu’étaient satisfaites la condition relative au caractère sélectif du mode de chasse, celle relative aux prélèvements en petites quantités, enfin la condition relative à l’absence de solution alternative satisfaisante. Contenu du projet d’arrêté : Le projet d’arrêté présenté au Conseil national de la chasse et de la faune sauvage vient compléter le dispositif réglementaire défini par l’arrêté cadre du 28 août 2025 encadrant la capture à l’aide de pantes de l’alouette des champs (Alauda arvensis) dans les départements de la Gironde, des Landes, du Lot-et-Garonne et des Pyrénées-Atlantiques. Ce projet de texte fixe, pour chacun des quatre départements concernés, le nombre maximal d’alouettes des champs pouvant être capturées au moyen de pantes. Les plafonds de capture sont déterminés dans le respect du critère de « petites quantités » tel qu’interprété par la jurisprudence de la Cour de justice de l’Union européenne (moins de 1 % de la mortalité naturelle), et en cohérence avec les données démographiques et migratoires de l’espèce. Les quotas proposés résultent d’une concertation avec les acteurs locaux, de l’analyse des prélèvements antérieurs et des données populationnelles observées. Ainsi, pour la saison 2026-2027, les quotas départementaux s’établissent comme suit : 38 600 pour la Gironde, 56 672 pour les Landes, 1 230 alouettes pour le Lot-et-Garonne et 2 200 pour les Pyrénées-Atlantiques. Consultations obligatoires : Le projet d’arrêté ayant une incidence directe sur l’exercice de la chasse et sur l’environnement, il nécessite un examen par le Conseil national de la chasse et de la faune sauvage, conformément à l’article L. 421-1 A du code de l’environnement. Présentant un impact sur l’environnement, ce texte requiert à ce titre une consultation publique, en application des dispositions de l’article L.123-19-1 du code de l’environnement."
           },
           "official_attachments": [],
@@ -358,19 +66,128 @@
         }
       },
       {
-        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/developpement-durable-r1.html",
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-supprimant-la-fiche-d-operation-a3473.html",
         "source_kind": "CONSULTDD",
         "change": "NEW",
         "evidence": {
-          "title": "Développement durable",
-          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/developpement-durable-r1.html",
+          "title": "Projet d’arrêté supprimant la fiche d’opération standardisée BAR-TH-159 « Pompe à chale...",
+          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-supprimant-la-fiche-d-operation-a3473.html",
           "dates": [
-            "2026-10-25"
+            "2026-10-26",
+            "2026-10-26"
           ],
           "interpretation": null,
           "official_detail": {
-            "official_title": "Développement durable",
-            "official_period": null,
+            "official_title": "Projet d’arrêté supprimant la fiche d’opération standardisée BAR-TH-159 « Pompe à chaleur hybride individuelle » du dispositif des certificats d’économies d’énergie",
+            "official_period": "Consultation du 26/10/2026 au 16/11/2026 - aucune contribution",
+            "official_text": "Cette consultation publique est réalisée en application de l’article L. 123-19-1 du code de l’environnement pour la mise en œuvre du principe de participation du public aux décisions publiques ayant une incidence sur l’environnement prévu à l’article 7 de la Charte de l’environnement. Le présent texte concerne le dispositif des certificats d’économies d’énergie (CEE) prévu aux articles L. 221-1 et suivants du code de l’énergie. Les CEE sont des aides financières destinées aux entreprises qui réalisent des travaux améliorant leur performance énergétique : isolation, remplacement de chauffage, optimisation de procédés… de nombreuses actions sont éligibles à ce dispositif. Les CEE permettent de financer des travaux de rénovation énergétique figurant dans une liste officielle appelée fiches d’opérations standardisées. Ces fiches définissent : les travaux concernés, les critères techniques à respecter (par exemple performances minimales, équipement), le niveau d’économies d’énergie associé à chaque opération. Le projet d’arrêté prévoit la suppression de la fiche d’opération standardisée BAR-TH-159 « Pompe à chaleur hybride individuelle ». Celle-ci concerne le secteur résidentiel existant et vise la mise en place d’une pompe à chaleur air/eau couplée à un dispositif d’appoint à combustible liquide ou gazeux. Cette suppression vise à assurer une cohérence des dispositifs de soutien avec les objectifs nationaux de décarbonation des systèmes de chauffage et du plan d’électrification. Ces objectifs nécessitent de réduire les consommations de gaz dans le secteur du bâtiment partout où cela est possible, au regard des enjeux de souveraineté énergétique, de préservation du pouvoir d’achat des ménages, et du fait que la consommation actuelle de gaz naturel excède fortement le gisement de développement de biogaz. Dans cette logique, plusieurs évolutions réglementaires récentes ont déjà conduit à interdire l’installation de chaudières à combustible fossile dans les logements neufs ou encore à arrêter le soutien par le dispositif des CEE à l’installation de chaudières gaz. La fiche BAR-TH-159, dont l’appoint fossile peut représenter jusqu’à 30 % des besoins de chauffage, contribue indirectement au maintien de consommations de combustibles fossile. Sa suppression favorisera le déploiement des pompes à chaleur 100 % électriques et permet ainsi de (i) réorienter le dispositif des CEE vers les solutions les plus efficaces en termes d’économies d’énergie, (ii) contribuer à la souveraineté énergétique de la France, et (iii) participer à crédibiliser l’atteinte des objectifs de neutralité carbone à 2050 de la stratégie nationale bas carbone (SNBC3). La SNBC3 est la feuille de route climatique de la France fixant des objectifs clés, dont la réduction de 50 % des émissions de gaz à effet de serre d’ici 2030, l’atteinte de la neutralité carbone en 2050 et la sortie des énergies fossiles (charbon en 2030, pétrole en 2045, gaz en 2050). Enfin, en application de la directive européenne relative à l’efficacité énergétique, les économies d’énergie liées à cette fiche ne peuvent plus être comptabilisées pour respecter les obligations de son article 8. Cet article impose aux États membres d’atteindre des objectifs annuels d’économies d’énergie cumulées chez les consommateurs finaux, notamment pour la période 2021-2030. Il encadre les économies pouvant être comptabilisées à ce titre, en excluant notamment celles liées à des mesures favorisant la combustion directe de combustibles fossiles. Il est ainsi proposé la suppression de cette fiche le lendemain de la publication du présent arrêté et le recensement des opérations engagées au titre de cette fiche."
+          },
+          "official_attachments": [],
+          "financial_evidence": [],
+          "detail_status": "PRIMARY_PAGE_READ"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+              "score": 3,
+              "terms": []
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3457.html",
+        "source_kind": "CONSULTDD",
+        "change": "NEW",
+        "evidence": {
+          "title": "Projet de décret en Conseil d’État relatif aux conditions d’application des exonération...",
+          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3457.html",
+          "dates": [
+            "2026-10-14",
+            "2026-10-26"
+          ],
+          "interpretation": null,
+          "official_detail": {
+            "official_title": "Projet de décret en Conseil d’État relatif aux conditions d’application des exonérations de mesures compensatoires aux autorisations de défrichement prévues à l’article L. 341-6 du code forestier",
+            "official_period": "Consultation du 14/10/2026 au 06/11/2026 - 46 contributions",
+            "official_text": "Le contexte Le défrichement est défini à l’article L. 341-1 du code forestier comme une opération qui consiste à détruire l’état boisé et à mettre fin à sa destination forestière. Les autorisations de défrichement sont subordonnées à l’exécution de certaines conditions énumérées à l’article L. 341-6 du code forestier comme des travaux de boisement ou reboisement, des travaux d’amélioration sylvicole ou le versement d’une indemnité financière au fonds stratégique de la forêt et du bois (FSFB), afin de compenser la destruction de l’état boisé. L’article 167 de la loi n° 2016-1087 du 8 août 2016 pour la reconquête de la biodiversité, de la nature et des paysages a introduit un régime d’exonération à ce principe de compensation forestière. Il concerne les opérations de défrichement autorisées pour un motif de préservation ou de restauration du patrimoine naturel ou paysager et réalisées conformément à un plan de gestion ou un programme validé par les autorités administratives portant sur différents espaces naturels visé par la loi (soit les parcs nationaux, soit les parcs naturels régionaux, soit les réserves naturelles, soit les sites Natura 2000, soit les conservatoires d’espaces naturels, soit les réserves biologiques, soit les sites inscrits). Les objectifs Le projet de décret a pour objectif de préciser le cadre dans lequel peut s’appliquer l’exonération de la compensation forestière pour ces opérations et, notamment, la procédure à suivre pour bénéficier de cette exonération. Les autorisations de défrichement ayant pour conséquence de réduire le patrimoine forestier, il convient de s’assurer que les exonérations de compensation seront strictement limitées au champ prévu par l’article L. 341-6 du code forestier, à savoir qu’elles porteront sur des travaux nécessairement réalisés pour un motif de préservation ou de restauration du patrimoine naturel ou paysager dans le cadre de de la mise œuvre d’un plan de gestion ou d’un programme validé par les autorités administratives des différents espaces naturels visés par la loi. Le projet de décret définit les conditions permettant d’avoir un niveau d’information suffisant pour autoriser ces exonérations, mais également pour les refuser dès lors qu’elles ne remplissent pas les objectifs fixés par la loi. Les dispositions Le projet de décret fixe les pièces justificatives à fournir pour pouvoir bénéficier d’une exonération de compensation au titre de l’article L. 341-6 du code forestier. Ces pièces doivent permettre de s’assurer de la bonne conformité des opérations de défrichement aux motifs d’exonération de la compensation forestière. Il s’agit, d’une part, d’une notice explicative du projet, réalisée sous la responsabilité du demandeur et validée par le gestionnaire de l’espace concerné et, d’autre part, du document de gestion, programme ou plan de l’espace naturel visé au premier alinéa de l’article L. 341-6 du code forestier. Le projet de décret prévoit également que, lors de demandes d’autorisation de défrichement relatives à des bois et forêt relevant du régime forestier, les pièces justificatives d’une exonération de la compensation forestière au titre du premier alinéa de l’article L. 341-6 du code forestier seront déposées par l’Office national des forêts (ONF). Enfin, le projet de décret précise que le bénéficiaire d’une autorisation tacite de défrichement est exonéré de mesures compensatoires, dès lors qu’il a assorti sa demande des pièces justificatives de l’exonération de la compensation forestière. Consultation Consultation publique en application de l’article L. 123-19-1 du code de l’environnement. Pour la bonne prise en compte de votre avis, veuillez faire apparaitre le mot « favorable » ou « défavorable » dans le titre de votre contribution."
+          },
+          "official_attachments": [],
+          "financial_evidence": [],
+          "detail_status": "PRIMARY_PAGE_READ"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+              "score": 3,
+              "terms": []
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3455.html",
+        "source_kind": "CONSULTDD",
+        "change": "NEW",
+        "evidence": {
+          "title": "Projet de décret en Conseil d’État relatif aux conditions d’application des exonération...",
+          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3455.html",
+          "dates": [
+            "2026-10-13",
+            "2026-10-26"
+          ],
+          "interpretation": null,
+          "official_detail": {
+            "official_title": "Projet de décret en Conseil d’État relatif aux conditions d’application des exonérations de mesures compensatoires aux autorisations de défrichement prévues à l’article L. 341-6 du code forestier",
+            "official_period": "Consultation du 13/10/2026 au 06/11/2026 - aucune contribution",
+            "official_text": null
+          },
+          "official_attachments": [],
+          "financial_evidence": [],
+          "detail_status": "PRIMARY_PAGE_READ"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+              "score": 3,
+              "terms": []
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      },
+      {
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3456.html",
+        "source_kind": "CONSULTDD",
+        "change": "NEW",
+        "evidence": {
+          "title": "Projet de décret en Conseil d’État relatif aux conditions d’application des exonération...",
+          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3456.html",
+          "dates": [
+            "2026-10-13",
+            "2026-10-26"
+          ],
+          "interpretation": null,
+          "official_detail": {
+            "official_title": "Projet de décret en Conseil d’État relatif aux conditions d’application des exonérations de mesures compensatoires aux autorisations de défrichement prévues à l’article L. 341-6 du code forestier",
+            "official_period": "Consultation du 13/10/2026 au 06/11/2026 - aucune contribution",
             "official_text": null
           },
           "official_attachments": [],
@@ -395,12 +212,7 @@
     ],
     "deterministically_unresolved_candidates": []
   },
-  "ready": true,
-  "created_at_utc": "2026-10-26 10:06:18.693259+00:00",
-  "updated_at_utc": "2026-10-26T14:19:19.959524+00:00",
-  "resumed_after_request_change": true,
-  "usage": {
-    "input_tokens": 9029,
-    "output_tokens": 1553
-  }
+  "ready": false,
+  "created_at_utc": "2026-10-26 16:43:24.034895+00:00",
+  "updated_at_utc": "2026-10-26T16:43:24.086252+00:00"
 }
