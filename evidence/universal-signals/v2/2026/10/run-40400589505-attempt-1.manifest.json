@@ -1,0 +1,53 @@
+{
+  "schema": "lawradar-universal-signal-archive-v1",
+  "status": "ARCHIVED",
+  "run_id": "40400589505",
+  "run_attempt": "1",
+  "report_date": "2026-10-25",
+  "archive_path": "evidence/universal-signals/v2/2026/10/run-40400589505-attempt-1.json",
+  "sha256": "2a82adedb705f7346b81586fe849a04bd2b3995f5430d6ef02e24b6ca11efe12",
+  "signal_count": 5,
+  "prefilter_counts": {
+    "excluded_historical_candidates": 0,
+    "excluded_routine_candidates": 0,
+    "excluded_no_economic_friction_candidates": 0,
+    "deterministically_unresolved_candidates": 0
+  },
+  "signals": [
+    {
+      "signal_id": "signal:e3e4514d0a64b4b9",
+      "stable_source_id": "source:025fb26e7d8682c6",
+      "evidence_version": "sha256:e29575d0bc5ce730c056b2c350939f0e0f349d7c48c270f910847c6b2df7acfb",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-relatif-au-nombre-maximum-d-a3449.html",
+      "radar_status": "DISCARDED"
+    },
+    {
+      "signal_id": "signal:82b6c5b092e49e91",
+      "stable_source_id": "source:77103f77eeca0c71",
+      "evidence_version": "sha256:8e3a164643a02e54ce50c4811f5a6a5fa9c1d2e943bf3920400afa02510e6ae5",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-supprimant-la-fiche-d-operation-a3473.html",
+      "radar_status": "RETAINED"
+    },
+    {
+      "signal_id": "signal:a73b111f42bbd97f",
+      "stable_source_id": "source:b7079f167a6eb9f4",
+      "evidence_version": "sha256:77a40f5883ebcba512a3161a4f8e5f7fd66f94b472ca0a6816688702c5847b72",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3455.html",
+      "radar_status": "DISCARDED"
+    },
+    {
+      "signal_id": "signal:b7a95e1d0d58571c",
+      "stable_source_id": "source:bb770a1549559a47",
+      "evidence_version": "sha256:219dd2d1c27519f2129718ebcf451a61cf8fcea213352b3334e61a9bf065704e",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3456.html",
+      "radar_status": "DISCARDED"
+    },
+    {
+      "signal_id": "signal:f77b37cfb3be39c9",
+      "stable_source_id": "source:d667e2bd8c20dc90",
+      "evidence_version": "sha256:875c880fca2b85b0e2d26c4e315b92ebf88f73a86414488b43c34f8f29e6a978",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3457.html",
+      "radar_status": "DISCARDED"
+    }
+  ]
+}

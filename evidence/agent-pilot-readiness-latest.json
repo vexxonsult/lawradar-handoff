@@ -1,17 +1,17 @@
 {
   "schema": "lawradar-agent-pilot-readiness-v1",
-  "generated_at_utc": "2026-10-26T14:19:20.300150+00:00",
+  "generated_at_utc": "2026-10-26T21:00:34.401304+00:00",
   "source_run": {
-    "id": "40338506208",
+    "id": "40400589505",
     "attempt": "1",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/40338506208",
-    "commit": "a459f84c7141b4a9d886dc056276e5a490abebec",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/40400589505",
+    "commit": "7d8a1cd1880e55e394d3915925507b3560d5bcd5",
     "report_date": "2026-10-25"
   },
   "signals": [
     {
-      "signal_id": "signal:0687a0cc7e132204",
-      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/developpement-durable-r1.html",
+      "signal_id": "signal:e3e4514d0a64b4b9",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-relatif-au-nombre-maximum-d-a3449.html",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -20,12 +20,96 @@
       "research_score": 0,
       "recommended_next_step": "NO_ACTION",
       "reasons": [
-        "Statut juridique non éligible à la recherche élargie."
+        "Aucun indice économique déterministe dans le titre factuel."
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:0687a0cc7e132204",
-        "evaluated_at_utc": "2026-10-26T14:19:20.300150+00:00",
+        "signal_id": "signal:e3e4514d0a64b4b9",
+        "evaluated_at_utc": "2026-10-26T21:00:34.401304+00:00",
+        "compliance": {
+          "status": "WATCH",
+          "reasons": [
+            "Texte encore en consultation ou projet."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:82b6c5b092e49e91",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-supprimant-la-fiche-d-operation-a3473.html",
+      "radar_status": "RETAINED",
+      "status": "READY_FOR_PILOTS",
+      "ready_for_pilots": true,
+      "client_scope": "FULL_PIPELINE",
+      "entrepreneur_allowed": false,
+      "recommended_next_step": "RUN_PRESS_THEN_MARKET_IF_SCOPE_FITS",
+      "reasons": [
+        "Le signal retenu porte des faits valides et passe la porte opérateur."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:82b6c5b092e49e91",
+        "evaluated_at_utc": "2026-10-26T21:00:34.401304+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
+    },
+    {
+      "signal_id": "signal:a73b111f42bbd97f",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3455.html",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:a73b111f42bbd97f",
+        "evaluated_at_utc": "2026-10-26T21:00:34.401304+00:00",
         "compliance": {
           "status": "INVESTIGATE",
           "reasons": [
@@ -52,8 +136,8 @@
       }
     },
     {
-      "signal_id": "signal:e3e4514d0a64b4b9",
-      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-relatif-au-nombre-maximum-d-a3449.html",
+      "signal_id": "signal:b7a95e1d0d58571c",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3456.html",
       "radar_status": "DISCARDED",
       "status": "NOT_RETAINED",
       "ready_for_pilots": false,
@@ -66,12 +150,12 @@
       ],
       "filters": {
         "schema": "lawradar-deterministic-filters-v1",
-        "signal_id": "signal:e3e4514d0a64b4b9",
-        "evaluated_at_utc": "2026-10-26T14:19:20.300150+00:00",
+        "signal_id": "signal:b7a95e1d0d58571c",
+        "evaluated_at_utc": "2026-10-26T21:00:34.401304+00:00",
         "compliance": {
-          "status": "WATCH",
+          "status": "INVESTIGATE",
           "reasons": [
-            "Texte encore en consultation ou projet."
+            "Preuve juridique incomplète ou absente."
           ]
         },
         "feasibility": {
@@ -92,14 +176,58 @@
         },
         "final_constraint": "INVESTIGATE"
       }
+    },
+    {
+      "signal_id": "signal:f77b37cfb3be39c9",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3457.html",
+      "radar_status": "DISCARDED",
+      "status": "NOT_RETAINED",
+      "ready_for_pilots": false,
+      "client_scope": "NONE",
+      "entrepreneur_allowed": false,
+      "research_score": 0,
+      "recommended_next_step": "NO_ACTION",
+      "reasons": [
+        "Aucun indice économique déterministe dans le titre factuel."
+      ],
+      "filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:f77b37cfb3be39c9",
+        "evaluated_at_utc": "2026-10-26T21:00:34.401304+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : Autorisation de défrichement (art. L.341-6 code forestier).",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "NOT_APPLICABLE",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Aucun secteur fortement réglementé n'est déclaré dans les faits."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      }
     }
   ],
   "summary": {
-    "signal_count": 2,
-    "ready_for_pilots_count": 0,
+    "signal_count": 5,
+    "ready_for_pilots_count": 1,
     "research_candidates_selected": 0,
     "counts_by_status": {
-      "NOT_RETAINED": 2
+      "NOT_RETAINED": 4,
+      "READY_FOR_PILOTS": 1
     }
   }
 }

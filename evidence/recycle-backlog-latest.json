@@ -5189,6 +5189,294 @@
       ]
     },
     {
+      "signal_id": "signal:82b6c5b092e49e91",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-supprimant-la-fiche-d-operation-a3473.html",
+      "captured_at_utc": "2026-10-26T21:00:34.457449+00:00",
+      "facts_sha256": "699278cee0a75a4d89db2f146ce2fdd2c245948b3c482d7f0fe38c16dd6e79b7",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:82b6c5b092e49e91",
+        "evaluated_at_utc": "2026-10-26T21:00:34.457449+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:82b6c5b092e49e91",
+        "evaluated_at_utc": "2026-10-26T21:00:34.457449+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:82b6c5b092e49e91",
+        "identity": {
+          "stable_source_id": "source:77103f77eeca0c71",
+          "evidence_version": "sha256:8e3a164643a02e54ce50c4811f5a6a5fa9c1d2e943bf3920400afa02510e6ae5"
+        },
+        "source": {
+          "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-supprimant-la-fiche-d-operation-a3473.html",
+          "source_kind": "CONSULTDD",
+          "change": "NEW",
+          "evidence": {
+            "text_id": null,
+            "nature": null,
+            "nor": null,
+            "title": "Projet d’arrêté supprimant la fiche d’opération standardisée BAR-TH-159 « Pompe à chale...",
+            "publisher": null,
+            "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-supprimant-la-fiche-d-operation-a3473.html",
+            "publication_date": null,
+            "journal_number": null,
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [
+              "2026-10-26",
+              "2026-10-26"
+            ],
+            "detail_status": "PRIMARY_PAGE_READ",
+            "official": {
+              "title": "Projet d’arrêté supprimant la fiche d’opération standardisée BAR-TH-159 « Pompe à chaleur hybride individuelle » du dispositif des certificats d’économies d’énergie",
+              "period": "Consultation du 26/10/2026 au 16/11/2026 - aucune contribution"
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": null,
+              "text_sha256": null,
+              "excerpt": null,
+              "excerpt_truncated": false,
+              "archive_url": null,
+              "archive_sha256": null
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Projet d'arrêté CEE supprimant la fiche BAR-TH-159, périmètre industriel/professionnel identifiable (chauffage résidentiel, PAC hybrides) ; routage énergie/CEE applicable, service B2B de veille possible."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+              "score": 3,
+              "terms": []
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        },
+        "reading": {
+          "consequence": "Le projet d'arrêté prévoit la suppression de la fiche CEE BAR-TH-159 (pompe à chaleur hybride individuelle) à compter du lendemain de sa publication, excluant cette opération du dispositif de certificats d'économies d'énergie.",
+          "affected_actors": [
+            "ménages du secteur résidentiel existant",
+            "installateurs de pompes à chaleur hybrides",
+            "obligés CEE"
+          ],
+          "beneficiaries": [],
+          "constrained_parties": [
+            "professionnels proposant des pompes à chaleur hybrides financées par CEE"
+          ],
+          "potential_service_partners": [],
+          "unknowns": [
+            "date définitive de publication de l'arrêté",
+            "modalités de recensement des opérations engagées avant suppression",
+            "impact sur les devis en cours"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-supprimant-la-fiche-d-operation-a3473.html"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:82b6c5b092e49e91",
+          "title": "Projet d’arrêté supprimant la fiche d’opération standardisée BAR-TH-159 « Pompe à chaleur hybride individuelle »",
+          "keywords": [
+            "CEE",
+            "BAR-TH-159",
+            "pompe à chaleur hybride",
+            "suppression fiche",
+            "décarbonation chauffage"
+          ],
+          "affected_scope": [
+            "secteur résidentiel existant",
+            "installateurs de pompes à chaleur",
+            "obligés CEE"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "CONSULTATION_OPEN",
+            "proof_status": "PARTIAL",
+            "effective_date": null,
+            "affected_scope": [
+              "secteur résidentiel existant",
+              "dispositif CEE"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [],
+            "dependencies": [],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "MISSING"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:82b6c5b092e49e91",
+          "evaluated_at_utc": "2026-10-26T21:00:34.457449+00:00",
+          "compliance": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve juridique incomplète ou absente."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:82b6c5b092e49e91",
+        "title": "Projet d’arrêté supprimant la fiche d’opération standardisée BAR-TH-159 « Pompe à chaleur hybride individuelle »",
+        "keywords": [
+          "CEE",
+          "BAR-TH-159",
+          "pompe à chaleur hybride",
+          "suppression fiche",
+          "décarbonation chauffage"
+        ],
+        "affected_scope": [
+          "secteur résidentiel existant",
+          "installateurs de pompes à chaleur",
+          "obligés CEE"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "CONSULTATION_OPEN",
+          "proof_status": "PARTIAL",
+          "effective_date": null,
+          "affected_scope": [
+            "secteur résidentiel existant",
+            "dispositif CEE"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-10-26T21:00:34.457449+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
       "signal_id": "signal:88928cb0984149d4",
       "source_id": "jorf:JORFTEXT000055009148",
       "captured_at_utc": "2026-10-23T11:40:31.431205+00:00",
@@ -9935,7 +10223,7 @@
     }
   ],
   "queue_audit": {
-    "processed_count": 2006,
+    "processed_count": 2008,
     "unrecoverable_queue_entries": [
       {
         "fingerprint": "490853c49376a298cfdbefd3d9015889f24dfb149e616097ae78c39d2661a25b",

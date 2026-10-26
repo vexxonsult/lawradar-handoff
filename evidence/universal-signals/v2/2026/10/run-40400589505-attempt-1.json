@@ -1,0 +1,746 @@
+{
+  "schema": "lawradar-universal-signal-v2",
+  "run": {
+    "id": "40400589505",
+    "attempt": "1",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/40400589505",
+    "commit": "7d8a1cd1880e55e394d3915925507b3560d5bcd5",
+    "report_date": "2026-10-25"
+  },
+  "context": {
+    "coverage": "5/5 candidats traités indépendamment par Message Batch",
+    "delta_changed_sources": [
+      "consultdd-latest.json"
+    ],
+    "handled_source_files": [
+      "jorf-summaries-latest.json",
+      "consultdd-latest.json"
+    ],
+    "rule": "Preuves locales diffées uniquement ; réapparition historique et routine administrative explicite = filtrées avec trace ; les autres textes primaires disponibles reçoivent une lecture factuelle. Une friction détectée ouvre seulement une enquête, jamais une opportunité confirmée ; inconnu = UNRESOLVED.",
+    "prefilter_audit": {
+      "excluded_historical_candidates": [],
+      "excluded_routine_candidates": [],
+      "excluded_no_economic_friction_candidates": [],
+      "deterministically_unresolved_candidates": []
+    }
+  },
+  "signals": [
+    {
+      "id": "signal:e3e4514d0a64b4b9",
+      "identity": {
+        "stable_source_id": "source:025fb26e7d8682c6",
+        "evidence_version": "sha256:e29575d0bc5ce730c056b2c350939f0e0f349d7c48c270f910847c6b2df7acfb"
+      },
+      "source": {
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-relatif-au-nombre-maximum-d-a3449.html",
+        "source_kind": "CONSULTDD",
+        "change": "CHANGED",
+        "evidence": {
+          "text_id": null,
+          "nature": null,
+          "nor": null,
+          "title": "Projet d’arrêté relatif au nombre maximum d'alouettes des champs pouvant être capt...",
+          "publisher": null,
+          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-relatif-au-nombre-maximum-d-a3449.html",
+          "publication_date": null,
+          "journal_number": null,
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [
+            "2026-10-09",
+            "2026-10-26"
+          ],
+          "detail_status": "PRIMARY_PAGE_READ",
+          "official": {
+            "title": "Projet d’arrêté relatif au nombre maximum d’alouettes des champs pouvant être capturées au moyen de pantes dans les départements de la Gironde, des Landes, du Lot-et-Garonne et des Pyrénées-Atlantiques pour la campagne 2026-2027",
+            "period": "Consultation du 09/10/2026 au 30/10/2026 - 6117 contributions"
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": null,
+            "text_sha256": null,
+            "excerpt": null,
+            "excerpt_truncated": false,
+            "archive_url": null,
+            "archive_sha256": null
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Consultation publique réglementaire fixant des quotas de chasse administratifs, sans friction économique ni marché identifiable pour un service B2B."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 3,
+        "triggers": [
+          {
+            "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+            "score": 3,
+            "terms": []
+          }
+        ],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Le projet d'arrêté fixe, pour la saison de chasse 2026-2027, des quotas départementaux maximaux de capture de l'alouette des champs au moyen de pantes dans quatre départements, en application d'un arrêté cadre existant validé par le Conseil d'État.",
+        "affected_actors": [
+          "Chasseurs utilisant des pantes dans les quatre départements concernés",
+          "Administration (ministère chargé de la chasse)",
+          "Conseil national de la chasse et de la faune sauvage"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "Chasseurs pratiquant la capture à la pante dans les départements visés"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Issue de la consultation publique et version finale de l'arrêté",
+          "Modalités précises de marquage des oiseaux relâchés"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-relatif-au-nombre-maximum-d-a3449.html"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:e3e4514d0a64b4b9",
+        "title": "Projet d'arrêté relatif au nombre maximum d'alouettes des champs pouvant être capturées au moyen de pantes dans quatre départements pour la saison 2026-2027",
+        "keywords": [
+          "chasse",
+          "alouette des champs",
+          "pantes",
+          "quotas",
+          "consultation publique",
+          "environnement"
+        ],
+        "affected_scope": [
+          "Gironde",
+          "Landes",
+          "Lot-et-Garonne",
+          "Pyrénées-Atlantiques"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "CONSULTATION_OPEN",
+          "proof_status": "VERIFIED",
+          "effective_date": null,
+          "affected_scope": [
+            "Gironde",
+            "Landes",
+            "Lot-et-Garonne",
+            "Pyrénées-Atlantiques"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:82b6c5b092e49e91",
+      "identity": {
+        "stable_source_id": "source:77103f77eeca0c71",
+        "evidence_version": "sha256:8e3a164643a02e54ce50c4811f5a6a5fa9c1d2e943bf3920400afa02510e6ae5"
+      },
+      "source": {
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-supprimant-la-fiche-d-operation-a3473.html",
+        "source_kind": "CONSULTDD",
+        "change": "NEW",
+        "evidence": {
+          "text_id": null,
+          "nature": null,
+          "nor": null,
+          "title": "Projet d’arrêté supprimant la fiche d’opération standardisée BAR-TH-159 « Pompe à chale...",
+          "publisher": null,
+          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-supprimant-la-fiche-d-operation-a3473.html",
+          "publication_date": null,
+          "journal_number": null,
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [
+            "2026-10-26",
+            "2026-10-26"
+          ],
+          "detail_status": "PRIMARY_PAGE_READ",
+          "official": {
+            "title": "Projet d’arrêté supprimant la fiche d’opération standardisée BAR-TH-159 « Pompe à chaleur hybride individuelle » du dispositif des certificats d’économies d’énergie",
+            "period": "Consultation du 26/10/2026 au 16/11/2026 - aucune contribution"
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": null,
+            "text_sha256": null,
+            "excerpt": null,
+            "excerpt_truncated": false,
+            "archive_url": null,
+            "archive_sha256": null
+          }
+        }
+      },
+      "radar": {
+        "status": "RETAINED",
+        "reason": "Projet d'arrêté CEE supprimant la fiche BAR-TH-159, périmètre industriel/professionnel identifiable (chauffage résidentiel, PAC hybrides) ; routage énergie/CEE applicable, service B2B de veille possible."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 3,
+        "triggers": [
+          {
+            "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+            "score": 3,
+            "terms": []
+          }
+        ],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Le projet d'arrêté prévoit la suppression de la fiche CEE BAR-TH-159 (pompe à chaleur hybride individuelle) à compter du lendemain de sa publication, excluant cette opération du dispositif de certificats d'économies d'énergie.",
+        "affected_actors": [
+          "ménages du secteur résidentiel existant",
+          "installateurs de pompes à chaleur hybrides",
+          "obligés CEE"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "professionnels proposant des pompes à chaleur hybrides financées par CEE"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "date définitive de publication de l'arrêté",
+          "modalités de recensement des opérations engagées avant suppression",
+          "impact sur les devis en cours"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-supprimant-la-fiche-d-operation-a3473.html"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:82b6c5b092e49e91",
+        "title": "Projet d’arrêté supprimant la fiche d’opération standardisée BAR-TH-159 « Pompe à chaleur hybride individuelle »",
+        "keywords": [
+          "CEE",
+          "BAR-TH-159",
+          "pompe à chaleur hybride",
+          "suppression fiche",
+          "décarbonation chauffage"
+        ],
+        "affected_scope": [
+          "secteur résidentiel existant",
+          "installateurs de pompes à chaleur",
+          "obligés CEE"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "CONSULTATION_OPEN",
+          "proof_status": "PARTIAL",
+          "effective_date": null,
+          "affected_scope": [
+            "secteur résidentiel existant",
+            "dispositif CEE"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:a73b111f42bbd97f",
+      "identity": {
+        "stable_source_id": "source:b7079f167a6eb9f4",
+        "evidence_version": "sha256:77a40f5883ebcba512a3161a4f8e5f7fd66f94b472ca0a6816688702c5847b72"
+      },
+      "source": {
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3455.html",
+        "source_kind": "CONSULTDD",
+        "change": "NEW",
+        "evidence": {
+          "text_id": null,
+          "nature": null,
+          "nor": null,
+          "title": "Projet de décret en Conseil d’État relatif aux conditions d’application des exonération...",
+          "publisher": null,
+          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3455.html",
+          "publication_date": null,
+          "journal_number": null,
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [
+            "2026-10-13",
+            "2026-10-26"
+          ],
+          "detail_status": "PRIMARY_PAGE_READ",
+          "official": {
+            "title": "Projet de décret en Conseil d’État relatif aux conditions d’application des exonérations de mesures compensatoires aux autorisations de défrichement prévues à l’article L. 341-6 du code forestier",
+            "period": "Consultation du 13/10/2026 au 06/11/2026 - aucune contribution"
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": null,
+            "text_sha256": null,
+            "excerpt": null,
+            "excerpt_truncated": false,
+            "archive_url": null,
+            "archive_sha256": null
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Consultation publique sur un projet de décret relatif aux exonérations de mesures compensatoires au défrichement; aucune preuve de friction économique mesurable, de capital, de délai ou d'acteur bénéficiaire identifié."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 3,
+        "triggers": [
+          {
+            "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+            "score": 3,
+            "terms": []
+          }
+        ],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Le texte propose de préciser les conditions dans lesquelles certaines autorisations de défrichement pourraient être exonérées de l'obligation de mesures compensatoires prévue par le code forestier. Il s'agit d'une consultation publique, le texte n'est pas encore en vigueur.",
+        "affected_actors": [
+          "demandeurs d'autorisation de défrichement",
+          "administration forestière"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "contenu précis des critères d'exonération",
+          "impact financier sur les porteurs de projet",
+          "date d'entrée en vigueur éventuelle"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3455.html"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:a73b111f42bbd97f",
+        "title": "Projet de décret en Conseil d'État relatif aux conditions d'application des exonérations de mesures compensatoires aux autorisations de défrichement (art. L. 341-6 code forestier)",
+        "keywords": [
+          "défrichement",
+          "exonération",
+          "mesures compensatoires",
+          "code forestier",
+          "consultation publique"
+        ],
+        "affected_scope": [
+          "propriétaires forestiers",
+          "autorités d'autorisation de défrichement"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "CONSULTATION_OPEN",
+          "proof_status": "PARTIAL",
+          "effective_date": null,
+          "affected_scope": [
+            "code forestier - article L. 341-6"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:b7a95e1d0d58571c",
+      "identity": {
+        "stable_source_id": "source:bb770a1549559a47",
+        "evidence_version": "sha256:219dd2d1c27519f2129718ebcf451a61cf8fcea213352b3334e61a9bf065704e"
+      },
+      "source": {
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3456.html",
+        "source_kind": "CONSULTDD",
+        "change": "NEW",
+        "evidence": {
+          "text_id": null,
+          "nature": null,
+          "nor": null,
+          "title": "Projet de décret en Conseil d’État relatif aux conditions d’application des exonération...",
+          "publisher": null,
+          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3456.html",
+          "publication_date": null,
+          "journal_number": null,
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [
+            "2026-10-13",
+            "2026-10-26"
+          ],
+          "detail_status": "PRIMARY_PAGE_READ",
+          "official": {
+            "title": "Projet de décret en Conseil d’État relatif aux conditions d’application des exonérations de mesures compensatoires aux autorisations de défrichement prévues à l’article L. 341-6 du code forestier",
+            "period": "Consultation du 13/10/2026 au 06/11/2026 - aucune contribution"
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": null,
+            "text_sha256": null,
+            "excerpt": null,
+            "excerpt_truncated": false,
+            "archive_url": null,
+            "archive_sha256": null
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Consultation publique relative à un projet de décret sur les exonérations de mesures compensatoires au défrichement (code forestier) ; aucune preuve de friction économique, de marché ou de flux financier démontré. Classé CONTEXT_REVIEW par le signal de découverte."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 3,
+        "triggers": [
+          {
+            "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+            "score": 3,
+            "terms": []
+          }
+        ],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Le texte propose de définir les conditions permettant d'exonérer certaines autorisations de défrichement de l'obligation de mesures compensatoires prévue par le code forestier. Aucun flux financier ni marché n'est démontré dans les éléments disponibles.",
+        "affected_actors": [
+          "Propriétaires ou exploitants forestiers sollicitant une autorisation de défrichement",
+          "Administration en charge des autorisations de défrichement"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Contenu exact des critères d'exonération",
+          "Impact économique pour les demandeurs d'autorisation",
+          "Date d'entrée en vigueur du décret final",
+          "Résultat de la consultation (aucune contribution recensée)"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3456.html"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:b7a95e1d0d58571c",
+        "title": "Projet de décret en Conseil d'État relatif aux conditions d'application des exonérations de mesures compensatoires aux autorisations de défrichement (article L. 341-6 du code forestier)",
+        "keywords": [
+          "défrichement",
+          "code forestier",
+          "mesures compensatoires",
+          "exonération",
+          "consultation publique"
+        ],
+        "affected_scope": [
+          "Propriétaires forestiers",
+          "Autorisations de défrichement"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "CONSULTATION_OPEN",
+          "proof_status": "PARTIAL",
+          "effective_date": null,
+          "affected_scope": [
+            "Propriétaires forestiers",
+            "Autorisations de défrichement"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    },
+    {
+      "id": "signal:f77b37cfb3be39c9",
+      "identity": {
+        "stable_source_id": "source:d667e2bd8c20dc90",
+        "evidence_version": "sha256:875c880fca2b85b0e2d26c4e315b92ebf88f73a86414488b43c34f8f29e6a978"
+      },
+      "source": {
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3457.html",
+        "source_kind": "CONSULTDD",
+        "change": "NEW",
+        "evidence": {
+          "text_id": null,
+          "nature": null,
+          "nor": null,
+          "title": "Projet de décret en Conseil d’État relatif aux conditions d’application des exonération...",
+          "publisher": null,
+          "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3457.html",
+          "publication_date": null,
+          "journal_number": null,
+          "article_ids": [],
+          "article_titles": [],
+          "dates": [
+            "2026-10-14",
+            "2026-10-26"
+          ],
+          "detail_status": "PRIMARY_PAGE_READ",
+          "official": {
+            "title": "Projet de décret en Conseil d’État relatif aux conditions d’application des exonérations de mesures compensatoires aux autorisations de défrichement prévues à l’article L. 341-6 du code forestier",
+            "period": "Consultation du 14/10/2026 au 06/11/2026 - 46 contributions"
+          },
+          "attachments": [],
+          "evidence_excerpts": [],
+          "primary_evidence": {
+            "content_status": null,
+            "text_sha256": null,
+            "excerpt": null,
+            "excerpt_truncated": false,
+            "archive_url": null,
+            "archive_sha256": null
+          }
+        }
+      },
+      "radar": {
+        "status": "DISCARDED",
+        "reason": "Consultation publique sur un projet de décret précisant une procédure administrative (pièces justificatives pour exonération de compensation forestière) ; aucune friction économique, marché ou flux financier démontré."
+      },
+      "discovery": {
+        "schema": "lawradar-opportunity-discovery-v1",
+        "status": "CONTEXT_REVIEW",
+        "score": 3,
+        "triggers": [
+          {
+            "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+            "score": 3,
+            "terms": []
+          }
+        ],
+        "scope_terms": [],
+        "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+      },
+      "reading": {
+        "consequence": "Le projet de décret précise les pièces justificatives (notice explicative, document de gestion/plan) requises pour bénéficier d'une exonération de compensation forestière lors d'un défrichement réalisé dans un espace naturel protégé, et confie à l'ONF le dépôt de ces pièces pour les forêts relevant du régime forestier.",
+        "affected_actors": [
+          "Demandeurs d'autorisation de défrichement",
+          "ONF",
+          "Gestionnaires d'espaces naturels protégés",
+          "Administration (autorités de délivrance des autorisations)"
+        ],
+        "beneficiaries": [],
+        "constrained_parties": [
+          "Demandeurs de défrichement devant fournir des pièces justificatives supplémentaires"
+        ],
+        "potential_service_partners": [],
+        "unknowns": [
+          "Date d'entrée en vigueur du décret définitif",
+          "Contenu exact des pièces justificatives finalement exigées",
+          "Impact concret sur les délais de procédure"
+        ]
+      },
+      "reading_provenance": {
+        "status": "AVAILABLE",
+        "basis": "CANDIDATE_EVIDENCE_ONLY",
+        "producer": "MOTOR_STRUCTURED_READING",
+        "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-de-decret-en-conseil-d-etat-relatif-aux-a3457.html"
+      },
+      "opportunity_facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:f77b37cfb3be39c9",
+        "title": "Projet de décret relatif aux conditions d'exonération de mesures compensatoires aux autorisations de défrichement (art. L.341-6 code forestier)",
+        "keywords": [
+          "défrichement",
+          "compensation forestière",
+          "code forestier",
+          "ONF",
+          "consultation publique",
+          "exonération"
+        ],
+        "affected_scope": [
+          "Demandeurs d'autorisation de défrichement",
+          "ONF",
+          "Gestionnaires d'espaces naturels"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "CONSULTATION_OPEN",
+          "proof_status": "PARTIAL",
+          "effective_date": null,
+          "affected_scope": [
+            "Demandeurs d'autorisation de défrichement",
+            "ONF"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "Autorisation de défrichement (art. L.341-6 code forestier)",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "MISSING"
+        },
+        "operator_access": {
+          "sector": "NOT_CLASSIFIED",
+          "direct_offer_status": "NOT_APPLICABLE",
+          "peripheral_role_evidence": "NOT_APPLICABLE",
+          "evidence_status": "MISSING",
+          "peripheral_service_evidence": []
+        }
+      },
+      "enrichments": {
+        "press": {
+          "status": "PENDING",
+          "result": null
+        },
+        "demand": {
+          "status": "PENDING",
+          "result": null
+        },
+        "market": {
+          "status": "PENDING",
+          "result": null
+        }
+      }
+    }
+  ],
+  "money_flows": [],
+  "quality": {
+    "opportunity_count": 5,
+    "unresolved_count": 0,
+    "readings_available_count": 5,
+    "evidence_reference_count": 5,
+    "money_flow_count": 0,
+    "money_flow_unlinked_count": 0,
+    "limitation": "Les enrichissements sont vides tant qu'aucun agent dédié n'a produit une sortie sourcée."
+  }
+}
