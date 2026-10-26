@@ -1,22 +1,22 @@
 {
   "schema": "lawradar-run-manifest-v1",
   "run": {
-    "id": "40304362398",
+    "id": "40338070213",
     "attempt": "1",
     "kind": "collector",
     "status": "success",
     "workflow": "Collecte primaire DILA JORF",
-    "commit": "9f2ebb4877382659908e63cc84e3f60eb9fe0ede",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/40304362398",
-    "created_at_utc": "2026-10-26T10:05:48.292031+00:00",
-    "duration_seconds": 145
+    "commit": "20fc254a34e90cab86399425e1fb1865c8e2f636",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/40338070213",
+    "created_at_utc": "2026-10-26T14:18:51.523745+00:00",
+    "duration_seconds": 153
   },
   "inputs": [
     {
       "path": "evidence/delta-latest.json",
       "exists": true,
-      "bytes": 2070,
-      "sha256": "10f2496cb71aa22f88d31a9613887cafeb24c7129ba790fb6f393158c7b4905a"
+      "bytes": 1990,
+      "sha256": "c2dfe63a2411a1e36ecedb351699e851455aa63c36c5578a677e2b83d0f26f4d"
     },
     {
       "path": "evidence/jorf-summaries-latest.json",
@@ -34,13 +34,13 @@
       "path": "evidence/eurlex-oj-latest.json",
       "exists": true,
       "bytes": 1777,
-      "sha256": "58604166c6950c926de9dabb92ae7f7ac5c5b0279229890057b2167702f22069"
+      "sha256": "bd94aeb1fc3c6a262148a1f235c0e77f938055705e1816333621d7f5d867f1a1"
     },
     {
       "path": "evidence/consultdd-latest.json",
       "exists": true,
-      "bytes": 6065,
-      "sha256": "d4bda4df3971c3621aaf17a0db7b2b711ccef33a66671aefe7c7dbde67ffac97"
+      "bytes": 16701,
+      "sha256": "403d46b55a6998244a76d89b4b41059e69db3fac5ae77e32241a6a19df0f7d25"
     }
   ],
   "outputs": [
@@ -54,7 +54,7 @@
       "path": "evidence/status-latest.json",
       "exists": true,
       "bytes": 965,
-      "sha256": "c24c77a42fa875af7c24a3d1e1fe54aca02a495f70b43b1eee4335836d55ab55"
+      "sha256": "7d8bf6fe4a3d90c9580790851132d3da3822a3baf3982774d8674c8b0bc6b688"
     }
   ],
   "cost_estimate": {
