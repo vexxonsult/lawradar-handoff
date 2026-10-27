@@ -8997,6 +8997,321 @@
       ]
     },
     {
+      "signal_id": "signal:d580962dcdf28fa8",
+      "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-supprimant-la-fiche-d-operation-a3473.html",
+      "captured_at_utc": "2026-10-27T13:13:03.513964+00:00",
+      "facts_sha256": "359ddb54891d06269315769afa61943846a000c75e1d1d1f558618c9cfc53919",
+      "initial_status": "INVESTIGATE",
+      "latest_status": "INVESTIGATE",
+      "state": "BACKLOG",
+      "initial_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:d580962dcdf28fa8",
+        "evaluated_at_utc": "2026-10-27T13:13:03.513964+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : Agrément obligé/délégataire CEE.",
+            "Dépendance non vérifiée : Publication de l'arrêté définitif.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "latest_filters": {
+        "schema": "lawradar-deterministic-filters-v1",
+        "signal_id": "signal:d580962dcdf28fa8",
+        "evaluated_at_utc": "2026-10-27T13:13:03.513964+00:00",
+        "compliance": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve juridique incomplète ou absente."
+          ]
+        },
+        "feasibility": {
+          "status": "INVESTIGATE",
+          "reasons": [
+            "Preuve opérationnelle incomplète ou absente.",
+            "Statut de l'autorisation inconnu : Agrément obligé/délégataire CEE.",
+            "Dépendance non vérifiée : Publication de l'arrêté définitif.",
+            "Capital de départ inconnu.",
+            "Délai de mise sur le marché inconnu."
+          ]
+        },
+        "operator_access": {
+          "status": "PASS",
+          "route": "FULL_ENRICHMENT",
+          "allow_external_collection": true,
+          "reasons": [
+            "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+            "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+          ]
+        },
+        "final_constraint": "INVESTIGATE"
+      },
+      "signal": {
+        "id": "signal:d580962dcdf28fa8",
+        "identity": {
+          "stable_source_id": "source:77103f77eeca0c71",
+          "evidence_version": "sha256:5cbc505934bb651573ea2f9d5134d058a5e275e632c08480b8820f840c49528d"
+        },
+        "source": {
+          "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-supprimant-la-fiche-d-operation-a3473.html",
+          "source_kind": "CONSULTDD",
+          "change": "CHANGED",
+          "evidence": {
+            "text_id": null,
+            "nature": null,
+            "nor": null,
+            "title": "Projet d’arrêté supprimant la fiche d’opération standardisée BAR-TH-159 « Pompe à chale...",
+            "publisher": null,
+            "url": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-supprimant-la-fiche-d-operation-a3473.html",
+            "publication_date": null,
+            "journal_number": null,
+            "article_ids": [],
+            "article_titles": [],
+            "dates": [
+              "2026-10-26",
+              "2026-10-26"
+            ],
+            "detail_status": "PRIMARY_PAGE_READ",
+            "official": {
+              "title": "Projet d’arrêté supprimant la fiche d’opération standardisée BAR-TH-159 « Pompe à chaleur hybride individuelle » du dispositif des certificats d’économies d’énergie",
+              "period": "Consultation du 26/10/2026 au 16/11/2026 - 1 contribution"
+            },
+            "attachments": [],
+            "evidence_excerpts": [],
+            "primary_evidence": {
+              "content_status": null,
+              "text_sha256": null,
+              "excerpt": null,
+              "excerpt_truncated": false,
+              "archive_url": null,
+              "archive_sha256": null
+            }
+          }
+        },
+        "radar": {
+          "status": "RETAINED",
+          "reason": "Texte publié relatif au dispositif CEE modifiant (suppression) une fiche d'opération standardisée (BAR-TH-159), périmètre identifiable (pompes à chaleur hybrides résidentiel) ; conformément au routage Énergie/CEE, retenu avec service B2B non réglementé possible."
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "OFFICIAL_PUBLIC_CONSULTATION",
+              "score": 3,
+              "terms": []
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        },
+        "reading": {
+          "consequence": "Le projet d'arrêté prévoit la suppression de la fiche CEE BAR-TH-159 (pompe à chaleur hybride individuelle), ce qui met fin à la possibilité de valoriser ces opérations en CEE à compter du lendemain de la publication de l'arrêté, avec recensement des opérations déjà engagées.",
+          "affected_actors": [
+            "Ménages du secteur résidentiel existant",
+            "Installateurs de pompes à chaleur hybrides",
+            "Obligés CEE finançant les opérations"
+          ],
+          "beneficiaries": [],
+          "constrained_parties": [
+            "Installateurs/fabricants de PAC hybrides",
+            "Ménages ayant engagé des travaux non finalisés"
+          ],
+          "potential_service_partners": [],
+          "unknowns": [
+            "Date définitive de publication de l'arrêté",
+            "Modalités exactes de recensement des opérations engagées",
+            "Impact sur les dossiers en cours"
+          ]
+        },
+        "reading_provenance": {
+          "status": "AVAILABLE",
+          "basis": "CANDIDATE_EVIDENCE_ONLY",
+          "producer": "MOTOR_STRUCTURED_READING",
+          "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-supprimant-la-fiche-d-operation-a3473.html"
+        },
+        "opportunity_facts": {
+          "schema": "lawradar-opportunity-facts-v1",
+          "signal_id": "signal:d580962dcdf28fa8",
+          "title": "Projet d’arrêté supprimant la fiche d’opération standardisée BAR-TH-159 « Pompe à chaleur hybride individuelle »",
+          "keywords": [
+            "CEE",
+            "BAR-TH-159",
+            "pompe à chaleur hybride",
+            "suppression fiche",
+            "efficacité énergétique"
+          ],
+          "affected_scope": [
+            "Secteur résidentiel existant",
+            "Dispositif CEE",
+            "Obligés CEE"
+          ],
+          "legal": {
+            "jurisdiction": "FR",
+            "text_status": "CONSULTATION_OPEN",
+            "proof_status": "PARTIAL",
+            "effective_date": null,
+            "affected_scope": [
+              "Secteur résidentiel existant",
+              "Dispositif CEE"
+            ]
+          },
+          "requirements": {
+            "required_capabilities": [],
+            "required_authorizations": [
+              {
+                "id": "Agrément obligé/délégataire CEE",
+                "status": "UNKNOWN"
+              }
+            ],
+            "dependencies": [
+              {
+                "id": "Publication de l'arrêté définitif",
+                "status": "UNKNOWN"
+              }
+            ],
+            "minimum_startup_capital_eur": null,
+            "estimated_time_to_market_weeks": null,
+            "evidence_status": "PARTIAL"
+          },
+          "operator_access": {
+            "sector": "ENERGY_EFFICIENCY",
+            "direct_offer_status": "ACCESSIBLE",
+            "peripheral_role_evidence": "MISSING",
+            "evidence_status": "PARTIAL",
+            "peripheral_service_evidence": []
+          }
+        },
+        "enrichments": {
+          "press": {
+            "status": "PENDING",
+            "result": null
+          },
+          "demand": {
+            "status": "PENDING",
+            "result": null
+          },
+          "market": {
+            "status": "PENDING",
+            "result": null
+          }
+        },
+        "deterministic_filters": {
+          "schema": "lawradar-deterministic-filters-v1",
+          "signal_id": "signal:d580962dcdf28fa8",
+          "evaluated_at_utc": "2026-10-27T13:13:03.513964+00:00",
+          "compliance": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve juridique incomplète ou absente."
+            ]
+          },
+          "feasibility": {
+            "status": "INVESTIGATE",
+            "reasons": [
+              "Preuve opérationnelle incomplète ou absente.",
+              "Statut de l'autorisation inconnu : Agrément obligé/délégataire CEE.",
+              "Dépendance non vérifiée : Publication de l'arrêté définitif.",
+              "Capital de départ inconnu.",
+              "Délai de mise sur le marché inconnu."
+            ]
+          },
+          "operator_access": {
+            "status": "PASS",
+            "route": "FULL_ENRICHMENT",
+            "allow_external_collection": true,
+            "reasons": [
+              "Axe Énergie / efficacité : la collecte est limitée à la veille B2B, la qualification du besoin et la recherche de partenaires.",
+              "Cette route n'autorise ni installation, ni montage de dossier CEE, ni certification, ni engagement au nom d'un obligé."
+            ]
+          },
+          "final_constraint": "INVESTIGATE"
+        }
+      },
+      "facts": {
+        "schema": "lawradar-opportunity-facts-v1",
+        "signal_id": "signal:d580962dcdf28fa8",
+        "title": "Projet d’arrêté supprimant la fiche d’opération standardisée BAR-TH-159 « Pompe à chaleur hybride individuelle »",
+        "keywords": [
+          "CEE",
+          "BAR-TH-159",
+          "pompe à chaleur hybride",
+          "suppression fiche",
+          "efficacité énergétique"
+        ],
+        "affected_scope": [
+          "Secteur résidentiel existant",
+          "Dispositif CEE",
+          "Obligés CEE"
+        ],
+        "legal": {
+          "jurisdiction": "FR",
+          "text_status": "CONSULTATION_OPEN",
+          "proof_status": "PARTIAL",
+          "effective_date": null,
+          "affected_scope": [
+            "Secteur résidentiel existant",
+            "Dispositif CEE"
+          ]
+        },
+        "requirements": {
+          "required_capabilities": [],
+          "required_authorizations": [
+            {
+              "id": "Agrément obligé/délégataire CEE",
+              "status": "UNKNOWN"
+            }
+          ],
+          "dependencies": [
+            {
+              "id": "Publication de l'arrêté définitif",
+              "status": "UNKNOWN"
+            }
+          ],
+          "minimum_startup_capital_eur": null,
+          "estimated_time_to_market_weeks": null,
+          "evidence_status": "PARTIAL"
+        },
+        "operator_access": {
+          "sector": "ENERGY_EFFICIENCY",
+          "direct_offer_status": "ACCESSIBLE",
+          "peripheral_role_evidence": "MISSING",
+          "evidence_status": "PARTIAL",
+          "peripheral_service_evidence": []
+        }
+      },
+      "attempts": [
+        {
+          "at_utc": "2026-10-27T13:13:03.513964+00:00",
+          "trigger": "CAPTURE",
+          "status": "INVESTIGATE",
+          "policy_sha256": "141e52554dc142befe6581074dfb550f8f9456d2d8ebab0b15217acb278c733e",
+          "profile_sha256": "226da24d09116402eea6c03b7fbd44ee550a35a180ad2b0358779a763d7be38d"
+        }
+      ]
+    },
+    {
       "signal_id": "signal:dd66b3391e0dac1f",
       "source_id": "jorf:JORFTEXT000054883275",
       "captured_at_utc": "2026-09-24T08:21:55.095618+00:00",
@@ -10223,7 +10538,7 @@
     }
   ],
   "queue_audit": {
-    "processed_count": 2008,
+    "processed_count": 2039,
     "unrecoverable_queue_entries": [
       {
         "fingerprint": "490853c49376a298cfdbefd3d9015889f24dfb149e616097ae78c39d2661a25b",
@@ -13368,6 +13683,136 @@
       {
         "fingerprint": "6df1d94ed1cdc33e2d74467703606adec50603ef8034e10278cca8c09122a054",
         "source_id": "jorf:JORFTEXT000055013860",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "cef0362d1367927b3fa227a3edf3f60aee208d1276617869664d23c5f0def654",
+        "source_id": "jorf:JORFTEXT000055017309",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "1cf3d504bd72abb972cc69b028035e1f2c05a109f2c2e4b50d9cc29a6fd69ca2",
+        "source_id": "jorf:JORFTEXT000055018565",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "8ea7047c2b7849f0e0c19f80e1a98a595734b9e688bf4dd9d1d2af061edc855f",
+        "source_id": "jorf:JORFTEXT000055018846",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "2649e1eedef7999ed89f64b4e57c5ad319e9508b14e57b9b735900b497067385",
+        "source_id": "jorf:JORFTEXT000055018851",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "ba73675e788fbd49b62c06b475d7dab06bca0f51fb83b917d0bde9e5ffd6b7ee",
+        "source_id": "jorf:JORFTEXT000055018853",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "9191fbd1c401f07d48978233441aed73e36264b3e221b537a787146375f5f647",
+        "source_id": "jorf:JORFTEXT000055018972",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "1d80849762cb30ee4e445e297970ebd3d105ea32eb421d18823c4fc4382635a6",
+        "source_id": "jorf:JORFTEXT000055018977",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "90c0d8d0a897a572e1b456ad44fef2a9f67e5c7ed6118f8251af0fae9d6edd0c",
+        "source_id": "jorf:JORFTEXT000055018979",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "cd0ddbacb1ac484dd9772eb6dac584392b587372b3ee4a903d7f4c6e411afada",
+        "source_id": "jorf:JORFTEXT000055018981",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "1dbe3926d95915e37db8a27b995dc12f0909da03ac3680615f8645b86c6bf09b",
+        "source_id": "jorf:JORFTEXT000055018983",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "f371c9c0f5a2f23ef946393e4df4dcce36fd71f93d1862b44850398b62c69fa2",
+        "source_id": "jorf:JORFTEXT000055018985",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "734d8ebbc1028617f8ecaf891d068d1a4e1729ab7a856150516d02d57e5e03d9",
+        "source_id": "jorf:JORFTEXT000055018987",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "cacaf7f9e1bd579f05c77c1afa6457d01c503eaffe29006a92832cc2d8b055f3",
+        "source_id": "jorf:JORFTEXT000055018991",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "d5be26303320dce40a9d9bdb0f86019c00ee9e26ff03fd7b86ff19417987a233",
+        "source_id": "jorf:JORFTEXT000055018993",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "278f48f1e7802e46057dfbef2e5ec989a6b423398011f590404da19d68b97e55",
+        "source_id": "jorf:JORFTEXT000055018995",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "7dba388efc1019ad38c2eba473a0d9f12bfbd7e821e619f877fd11e097f67dff",
+        "source_id": "jorf:JORFTEXT000055018997",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "494ee7522a0884f14e47af032fb6b543d948ae5704b49c66503d6ff34c775a8f",
+        "source_id": "jorf:JORFTEXT000055018999",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "d59b5f447833f7749bfca91f85f8f5a0d97b9fa30380e59b9935ee59e46ef4e6",
+        "source_id": "jorf:JORFTEXT000055019001",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "b4df8c242d5cf963a047d04c5572ac2039e9b63571df9652a772a1390e63f083",
+        "source_id": "jorf:JORFTEXT000055019003",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "f0588c1730009ec1824ea08e2502adba536a542eed2d8ec48f195aa35e342eb5",
+        "source_id": "jorf:JORFTEXT000055019005",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "42a076b75c85e4d66e712912ad1ca502d27cc8a2641a8f0d4479449b385940f5",
+        "source_id": "jorf:JORFTEXT000055019007",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "ef12a32b101c00a9fa7851ac8ef2249c5c9ebd95111860e8ff0dc6fc6c60a6cf",
+        "source_id": "jorf:JORFTEXT000055019009",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "f072229f081a9901b2b1c990197241590e95135d6dd00efcb346fcedf50d1cb8",
+        "source_id": "jorf:JORFTEXT000055019011",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "7c0346bb8abd058f60da80a747f61c6c1f70a1b9ee76b2be75adbe1bf478c56b",
+        "source_id": "jorf:JORFTEXT000055019013",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "fbf7a5b7aa69d74ec81fe7d39e87df9a38c3289932237333586b00a995d418a3",
+        "source_id": "jorf:JORFTEXT000055019015",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "fingerprint": "141f719afd0ba494c6d8f321f247488e1a8107a97a9bd5824894fc456baf131b",
+        "source_id": "jorf:JORFTEXT000055019017",
         "reason": "PRIMARY_TEXT_EMPTY"
       }
     ],
