@@ -1,6 +1,1964 @@
 {
   "schema": "lawradar-motor-queue-v1",
-  "pending": [],
+  "pending": [
+    {
+      "fingerprint": "00c7bd133d8ad34927737d50a5bba928dbab3bcc87cd1561453a2deca21bef75",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020035",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020035",
+          "nature": "ARRETE",
+          "nor": "INTJ2628262A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 22 octobre 2026 modifiant l'arrêté du 18 juin 2024 fixant la liste des unités de gendarmerie départementale ouvrant droit au versement de la prime de voie publique",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020035",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Le ministre de l'intérieur,\nVu le décret n° 2024-559 du 18 juin 2024 relatif à la prime de voie publique des militaires de la gendarmerie nationale ;\nVu l'arrêté du 18 juin 2024 fixant la liste des unités de gendarmerie départementale ouvrant droit au versement de la prime de voie publique,\nArrête :",
+          "official_text_sha256": "4ee8df794d16ca001d71bc8772a518321d37166db907cdc751d644637842238c",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "06e1cf0e631603134827728956672f7bd3deec3dc0d84066b778aaeb9b6e0b06",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020072",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020072",
+          "nature": "DECRET",
+          "nor": "TRSD2627962D",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Décret n° 2026-995 du 27 octobre 2026 portant création d'une aide exceptionnelle à destination des entreprises de moins de deux cent cinquante salariés ayant subi des dommages lors des troubles urbains intervenus en marge des manifestations des 17 et 18 octobre 2026",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020072",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Publics concernés : entreprises de moins de 250 salariés ayant subi des dommages lors des troubles urbains intervenus en marge des manifestations des 17 et 18 octobre 2026, Agence de services et de paiement.\nObjet : le décret instaure une aide exceptionnelle pour les entreprises de moins de 250 salariés ayant subi des dommages lors des troubles urbains intervenus en marge des manifestations des 17 et 18 octobre 2026. Cette aide a pour objet de porter l'allocation d'activité partielle au niveau de l'indemnité d'activité partielle au titre des heures chômées entre le 17 octobre 2026 et le 31 janvier 2027.\nEntrée en vigueur : le texte entre en vigueur le lendemain de sa publication.\nApplication : le présent décret est un texte autonome.\nLe Premier ministre,\nSur le rapport du ministre du travail et des solidarités,\nVu le règlement (UE) 2023/2831 de la Commission du 13 décembre 2023 relatif à l'application des articles 107 et 108 du traité sur le fonctionnement de l'Union européenne aux aides de minimis ;\nVu le code de la sécurité sociale, notamment son article L. 130-1 ;\nVu le code du travail ;\nVu l'avis de la Commission nationale de la négociation collective, de l'emploi et de la formation professionnelle en date du 22 octobre 2026,\nDécrète :",
+          "official_text_sha256": "98fd761edd894653fb505b3ead32a1871735990015ce53895e0c8d49a2c9e91d",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 4,
+          "triggers": [
+            {
+              "kind": "FUNDING_OR_INCENTIVE",
+              "score": 3,
+              "terms": [
+                "aide "
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [
+            "entreprise",
+            "professionnel"
+          ],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      }
+    },
+    {
+      "fingerprint": "9d166b1cf2b918b408af2f71efab46ba4a58a651077ff606c7cece43cad25feb",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020087",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020087",
+          "nature": "DECRET",
+          "nor": "JUSD2617562D",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Décret n° 2026-996 du 26 octobre 2026 modifiant le décret n° 2023-935 du 10 octobre 2023 autorisant la création d'un traitement automatisé de données à caractère personnel dénommé « Système informatisé de suivi de politiques pénales prioritaires » (SISPoPP)",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020087",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Publics concernés : personnels des services judiciaires.\nObjet : modification du décret autorisant la création d'un traitement automatisé de données à caractère personnel dénommé « Système informatisé de suivi de politiques pénales prioritaires » (SISPoPP).\nEntrée en vigueur : le décret entre en vigueur le lendemain de sa publication.\nApplication : le présent décret est un texte autonome.\nLe Premier ministre,\nSur le rapport du garde des sceaux, ministre de la justice,\nVu le code civil ;\nVu le code de la justice pénale des mineurs ;\nVu le code de l'organisation judiciaire ;\nVu le code de procédure civile ;\nVu le code de procédure pénale, notamment ses articles 30, 35, 39-1 et 39-2 ;\nVu la loi n° 7817 du 6 janvier 1978 modifiée relative à l'informatique, aux fichiers et aux libertés, notamment son article 31 et son titre III ;\nVu la loi n° 95-125 du 8 février 1995 relative à l'organisation des juridictions et à la procédure civile, pénale et administrative, notamment son article 20 ;\nVu le décret n° 2019-536 du 29 mai 2019 pris pour l'application de la loi n° 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, notamment son titre III ;\nVu le décret n° 2023-935 du 10 octobre 2023 autorisant la création d'un traitement automatisé de données à caractère personnel dénommé « Système informatisé de suivi de politiques pénales prioritaires » (SISPoPP) ;\nVu l'avis n° 2026-091 du 3 septembre 2026 de la Commission nationale de l'informatique et des libertés ;\nLe Conseil d'Etat (section de l'intérieur) entendu,\nDécrète :",
+          "official_text_sha256": "8daec6dd7ca99795d4513b12183959cb2c2bbbfdf5a093c5c2036a50a470f877",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 1,
+          "triggers": [
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "2a1c0a4957f24123a3ec7552b0d80e38e05bcf1736403491c9e82da5abc3d175",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020117",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020117",
+          "nature": "DECISION",
+          "nor": "JUSC2622791S",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Décision du 12 juin 2026 portant modification du règlement intérieur national de la profession d'avocat (article 21-1 de la loi du 31 décembre 1971 modifiée)",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020117",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Le Conseil national des barreaux,\nVu la loi n° 71-1130 du 31 décembre 1971 modifiée portant réforme de certaines professions judiciaires et juridiques, notamment son article 21-1 ;\nVu le décret n° 91-1197 du 27 novembre 1991 modifié organisant la profession d'avocat, notamment son article 38-1 ;\nVu la décision du Conseil national des barreaux à caractère normatif n° 2007-001 du 12 juillet 2007 modifiée portant adoption du règlement intérieur national (RIN) de la profession d'avocat,\nDécide :",
+          "official_text_sha256": "281dd18a9194275c73d7d9d71055b338c160a7f1edfef42cd606fae019b663dd",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "8f464ee374cafc56f8afe53e408b5871b698f17424f2ec538a628d93aab44f6f",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020182",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020182",
+          "nature": "DECRET",
+          "nor": "ECOR2606960D",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Décret n° 2026-997 du 26 octobre 2026 relatif aux mécanismes de soutien aux énergies renouvelables électriques et portant diverses dispositions relatives à ces énergies",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020182",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Publics concernés : acteurs du secteur des énergies renouvelables.\nObjet : le décret modifie plusieurs dispositions du code de l'énergie relatives à l'encadrement des dispositifs de soutien public aux énergies renouvelables. Il crée plusieurs dispositions visant à améliorer l'intégration des installations de production d'énergies renouvelables électriques dans le système électrique, réduire leur contribution aux épisodes de prix négatifs sur les marchés de l'électricité et encourager leur contribution à la flexibilité du système électrique. Il clarifie les cas dans lesquels le préfet peut engager des sanctions à l'égard des producteurs en cas de manquement aux obligations établies dans le cahier des charges des appels d'offres prévus à l'article L. 311-10 du code de l'énergie. Il modifie les modalités de calcul des indemnités en cas résiliation anticipée à l'initiative du producteur bénéficiant d'un contrat d'obligation d'achat ou de complément de rémunération en application des articles L. 311-12 et L. 314-1 du code de l'énergie, en prévoyant une indemnité de résiliation plancher et un nouveau mode de calcul des indemnités.\nEntrée en vigueur : le décret entre en vigueur le lendemain de sa publication au Journal officiel de la République française.\nApplication : le présent décret est pris en application des articles L. 311-10, L. 311-12 et L. 314-1 du code de l'énergie.\nLe Premier ministre,\nSur le rapport du ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique,\nVu le code de l'énergie, notamment ses articles L. 311-10 et suivants, L. 311-15, L. 314-1 et suivants, L. 314-18 et suivants, R. 311-27-3, R. 311-27-6, R. 311-29, R. 314-7, R. 314-9, R. 314-12, R. 314-14, R. 314-35, R. 314-38 et R. 314-45 ;\nVu l'avis du Conseil supérieur de l'énergie en date du 25 septembre 2025 ;\nVu l'avis de la Commission de régulation de l'énergie en date du 6 novembre 2025 ;\nLe Conseil d'Etat (section des travaux publics) entendu,\nDécrète :",
+          "official_text_sha256": "48506ba2f9774f39eaec9adb7456406601591849ac8e7d96afc0d059974e4908",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 7,
+          "triggers": [
+            {
+              "kind": "LEGAL_OBLIGATION",
+              "score": 3,
+              "terms": [
+                "obligation"
+              ]
+            },
+            {
+              "kind": "SANCTION_OR_CONTROL",
+              "score": 3,
+              "terms": [
+                "sanction",
+                "manquement"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "158f14e457cbd1b22ef646d7ffe425b168508c14b9b05e9441e5d5b1c063fcae",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020229",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020229",
+          "nature": "DECRET",
+          "nor": "ECOR2628328D",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Décret n° 2026-998 du 27 octobre 2026 modifiant les articles D. 1336-47 et D. 1336-49 du code de la défense relatif à l'obligation de stockage stratégique de produits pétroliers",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020229",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Publics concernés : opérateurs pétroliers soumis à obligation de constitution et de conservation de stocks stratégiques pétroliers, comité professionnel des stocks stratégiques pétroliers, Société anonyme de gestion des stocks de sécurité (SAGESS).\nObjet : adaptation des modalités de constitution et de conservation de stocks stratégiques pétroliers, dans les suites de la libération de 10 millions de barils de stocks stratégiques, initiée en réponse aux décisions de l'Agence internationale de l'énergie des 11 mars et 15 octobre 2026 (abaissement du seuil d'obligation de stockage stratégique fixé à l'article D. 1336-47 du code de la défense et adaptation du taux de part en propre des stocks stratégiques).\nEntrée en vigueur : les dispositions du présent décret entrent en vigueur le lendemain de sa publication.\nApplication : le présent décret est pris en application de l'article L. 1336-1 du code de la défense.\nLe Premier ministre,\nSur le rapport du ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique,\nVu la directive 2009/119/CE du Conseil du 14 septembre 2009 faisant obligation aux Etats membres de maintenir un niveau minimal de stocks de pétrole brut et/ou de produits pétroliers, notamment ses articles 4, 8 et 20 ;\nVu le code de l'énergie, notamment ses articles L. 642-2 et L. 642-4 ;\nVu le code de la défense, notamment ses articles D. 1336-47 à D. 1336-56 ;\nVu les décisions de l'Agence internationale de l'énergie des 11 mars 2026 et 15 octobre 2026,\nDécrète :",
+          "official_text_sha256": "49073be7cdaf1b483198f49e624be7350fb4a988a7b8717db8534144e7bd33f9",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 4,
+          "triggers": [
+            {
+              "kind": "LEGAL_OBLIGATION",
+              "score": 3,
+              "terms": [
+                "obligation",
+                "soumis a"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [
+            "professionnel",
+            "operateur"
+          ],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      }
+    },
+    {
+      "fingerprint": "b872754873b8fd24c078523cd136f8b9e52228b5eb8a98535d8d2a0c836c206f",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020242",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020242",
+          "nature": "ARRETE",
+          "nor": "ECOR2621263A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 26 octobre 2026 portant suppression de fiches d'opérations standardisées du dispositif des certificats d'économies d'énergie",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020242",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Publics concernés : bénéficiaires et demandeurs dans le cadre du dispositif des certificats d'économies d'énergie.\nObjet : suppression des fiches d'opérations standardisées portant les références AGRI-EQ-105, AGRI-EQ-106, BAR-EN-110, BAR-SE-105, BAR-TH-122, BAT-EN-111, BAT-SE-104, IND-BA-114, IND-BA-117, IND-UT-104, IND-UT-105, IND-UT-118, IND-UT-130, TRA-EQ-104, TRA-EQ-111, TRA-EQ-113, TRA-EQ-115, TRA-EQ-119, TRA-EQ-122, TRA-EQ-123, TRA-EQ-125, TRA-SE-101, TRA-SE-102, TRA-SE-107, TRA-SE-111, TRA-SE-112 et TRA-SE-113.\nEntrée en vigueur : le présent arrêté entre en vigueur le lendemain de sa publication.\nApplication : le présent arrêté modifie l'arrêté du 22 décembre 2014 définissant les opérations standardisées d'économies d'énergie.\nLe ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique,\nVu le code de l'énergie, notamment son article R. 221-14 ;\nVu l'arrêté du 22 décembre 2014 modifié définissant les opérations standardisées d'économies d'énergie ;\nVu l'avis du Conseil supérieur de l'énergie du 10 septembre 2026 ;\nVu les observations formulées lors de la consultation du public réalisée du 16 septembre 2026 au 14 octobre 2026, en application de l'article L. 123-19-1 du code de l'environnement,\nArrête :",
+          "official_text_sha256": "ba242bf29b8b959ae271a7acce34739f23a4abdd7edd29c4e255651db6eb213e",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "TECHNICAL_TRANSITION",
+              "score": 2,
+              "terms": [
+                "economies d'energie"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      }
+    },
+    {
+      "fingerprint": "1a0deab6db124832f3003c37ddc8c059e1a54ee72ab890dc05aedf7b34b05204",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020252",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020252",
+          "nature": "ARRETE",
+          "nor": "ECOR2626133A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 26 octobre 2026 portant révision de la fiche d'opération standardisée AGRI-TH-108 et du référentiel de contrôle associé",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020252",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Publics concernés : bénéficiaires et demandeurs dans le cadre du dispositif des certificats d'économies d'énergie.\nObjet : le présent arrêté révise la fiche d'opération standardisée AGRI-TH-108 « Pompe à chaleur de type air/eau pour serres maraîchères ou horticoles ».\nEntrée en vigueur : le présent arrêté entre en vigueur le lendemain de sa publication.\nApplication : le présent arrêté modifie l'arrêté du 22 décembre 2014 définissant les opérations standardisées d'économies d'énergie et l'arrêté du 28 septembre 2021 relatif aux contrôles dans le cadre du dispositif des certificats d'économies d'énergie.\nLe ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique,\nVu le code de l'énergie, notamment ses articles L. 221-9, R. 221-14 et R. 221-31 ;\nVu l'arrêté du 22 décembre 2014 modifié définissant les opérations standardisées d'économies d'énergie ;\nVu l'arrêté du 29 décembre 2014 relatif aux modalités d'application du dispositif des certificats d'économies d'énergie ;\nVu l'arrêté du 28 septembre 2021 modifié relatif aux contrôles dans le cadre du dispositif des certificats d'économies d'énergie ;\nVu l'avis du Conseil supérieur de l'énergie du 10 septembre 2026 ;\nVu les observations formulées lors de la consultation du public réalisée du 7 septembre 2026 au 28 septembre 2026 en application de l'article L. 123-19-1 du code de l'environnement,\nArrête :",
+          "official_text_sha256": "9ec69a4201cf6f1c6c67f81a31783fcc906d28b0a7b7cc07b77000502396702c",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 8,
+          "triggers": [
+            {
+              "kind": "SANCTION_OR_CONTROL",
+              "score": 3,
+              "terms": [
+                "controle"
+              ]
+            },
+            {
+              "kind": "ELIGIBILITY_OR_CERTIFICATION",
+              "score": 2,
+              "terms": [
+                "referentiel"
+              ]
+            },
+            {
+              "kind": "TECHNICAL_TRANSITION",
+              "score": 2,
+              "terms": [
+                "economies d'energie"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      }
+    },
+    {
+      "fingerprint": "e7bb8b30f32bf7f9e96566b5269a25b3c9732fd4db23d9eb402e73751e9b2675",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020281",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020281",
+          "nature": "ARRETE",
+          "nor": "ECOR2628456A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 27 octobre 2026 portant application du décret n° 2026-981 du 23 octobre 2026 et fixant les modalités de répartition des stocks stratégiques cédés sur injonction",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020281",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Publics concernés : personnes physiques ou morales qui mettent à la consommation du gazole ou du fioul domestique utilisé comme combustible et pétrole lampant.\nObjet : définition des modalités de libération répartition des stocks stratégiques cédés sur injonction.\nEntrée en vigueur : le présent arrêté entre en vigueur au lendemain de sa publication au Journal officiel de la République française. Il est applicable jusqu'au 15 avril 2027.\nApplication : l'arrêté est pris en application du décret n° 2026-981 du 23 octobre 2026 et détermine le champ d'application des produits visés ainsi que la répartition des stocks stratégiques entre metteurs à la consommation.\nLe ministre de l'économie, des finances et de la souveraineté industrielle, énergétique et numérique,\nVu la directive 2009/119/CE du Conseil du 14 septembre 2009 faisant obligation aux Etats membres de maintenir un niveau minimal de stocks de pétrole brut et/ou de produits pétroliers, notamment ses articles 3, 5 et 20 ;\nVu le code de l'énergie, notamment ses articles L. 143-1 et L. 642-1 à L. 642-10 ;\nVu le code de la défense, notamment ses articles D. 1336-47 à D. 1336-56 ;\nVu le décret n° 92-1466 du 31 décembre 1992 modifié soumettant à contrôle et répartition les produits énergétiques ;\nVu le décret n° 2026-981 du 23 octobre 2026 relatif aux conditions économiques de libération de stocks stratégiques de gazole ;\nVu l'arrêté du 17 septembre 2015 relatif au déstockage de produits pétroliers ;\nVu l'arrêté du 25 mars 2016 relatif à la constitution des stocks stratégiques pétroliers en France métropolitaine, en Martinique, en Guadeloupe, en Guyane, à La Réunion et à Mayotte ;\nVu les décisions de l'Agence internationale de l'énergie des 11 mars 2026 et 15 octobre 2026,\nArrête :",
+          "official_text_sha256": "45ef7db764f88946966d77911dc331c4b36141d67e12849f7df7339e71e2fb0c",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 7,
+          "triggers": [
+            {
+              "kind": "LEGAL_OBLIGATION",
+              "score": 3,
+              "terms": [
+                "obligation"
+              ]
+            },
+            {
+              "kind": "SANCTION_OR_CONTROL",
+              "score": 3,
+              "terms": [
+                "controle"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "d9080569bd3cd93ec27d4a2d05706b270a9c71c153d36716de8030867953f453",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020306",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020306",
+          "nature": "ARRETE",
+          "nor": "AGRT2626043A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 21 octobre 2026 portant retrait de la reconnaissance de l'union de coopératives agricoles (UCA) ALLICOP en qualité d'organisation de producteurs dans le secteur des fruits et légumes",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020306",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu le règlement (UE) n° 543/2011 de la Commission du 7 juin 2011 portant modalités d'application du règlement (UE) n° 1308/2013 en ce qui concerne le secteur des fruits et légumes et des fruits et légumes transformés ;\nVu le règlement (UE) n° 1308/2013 du Parlement européen et du Conseil du 17 décembre 2013 portant organisation commune des marchés des produits agricoles ;\nVu le règlement délégué (UE) 2017/891 de la Commission du 13 mars 2017 complétant le règlement (UE) n° 1308/2013 du Parlement européen et du Conseil en ce qui concerne les secteurs des fruits et légumes et des produits transformés à base de fruits et légumes ainsi que le règlement (UE) n° 1306/2013 du Parlement européen et du Conseil en ce qui concerne les sanctions à appliquer dans ces secteurs et modifiant le règlement d'exécution (UE) n° 543/2011 de la Commission ;\nVu le code rural et de la pêche maritime, notamment le titre V de son livre V et ses articles L. 553-1, D. 551-1 à D. 551-17 et D. 553-1 à D. 553-5 ;\nVu l'arrêté du 30 octobre 1997 portant reconnaissance d'une organisation de producteurs dans le secteur des fruits et légumes ;\nVu le procès-verbal du conseil d'administration d'ALLICOP en date du 26 juin 2026 par lequel est validé le retrait de reconnaissance de l'UCA ALLICOP en qualité d'organisation de producteurs dans le secteur des fruits et légumes ;\nVu l'avis de la commission nationale technique spécialisée du Conseil supérieur d'orientation et de coordination de l'économie agricole et alimentaire du 15 octobre 2026,\nArrête :",
+          "official_text_sha256": "ca7eaefbf9961f3724ea37a1d675a4050b7d0eb036ef4e000b55fab9d097feed",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "SANCTION_OR_CONTROL",
+              "score": 3,
+              "terms": [
+                "sanction"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "1b20e95114a0de7298d2f7248aad2a805fee456604a5d368bec07500781e5172",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020314",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020314",
+          "nature": "ARRETE",
+          "nor": "AGRT2626061A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 21 octobre 2026 portant retrait de la reconnaissance de la société coopérative agricole VIVADOUR en qualité d'organisation de producteurs dans le secteur de l'élevage pour la production de viande bovine",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020314",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu le règlement (UE) n° 1308/2013 du Parlement européen et du Conseil du 17 décembre 2013 portant organisation commune des marchés des produits agricoles ;\nVu le code rural et de la pêche maritime, notamment le titre V de son livre V et ses articles L. 553-1, D. 551-1 à D. 551-6, D. 551-18 à D. 551-30 et D. 553-1 à D. 553-5 ;\nVu l'arrêté du 11 juillet 2008 modifié portant reconnaissance en qualité d'organisation de producteurs dans le secteur bovin ;\nVu le procès-verbal des résolutions prises par l'assemblée générale mixte plénière ordinaire annuelle et extraordinaire du 19 décembre 2025 de la SCA VIVADOUR approuvant la fusion par absorption de la SCA VIVADOUR par la SCA TERRES DU SUD ;\nVu l'avis de la commission nationale technique spécialisée du Conseil supérieur d'orientation et de coordination de l'économie agricole et alimentaire du 15 octobre 2026,\nArrête :",
+          "official_text_sha256": "5d1c116868c6cf249796502ab0a4e58a0e273d295d8452e26581bc924266c2b4",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "aaf4c0cf5b01377e6380832442a8c896da03776f3a3bcaa459225856deb61b2a",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020324",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020324",
+          "nature": "ARRETE",
+          "nor": "AGRT2626075A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 21 octobre 2026 portant retrait de la reconnaissance de la société coopérative agricole VIVADOUR en qualité d'organisation de producteurs dans le secteur avicole pour les palmipèdes à foie gras",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020324",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu le règlement (UE) n° 1308/2013 du Parlement européen et du Conseil du 17 décembre 2013 portant organisation commune des marchés des produits agricoles ;\nVu le code rural et de la pêche maritime, notamment le titre V de son livre V et ses articles L. 553-1, D. 551-1 à D. 551-6, D. 551-18 à D. 551-30 et D. 553-1 à D. 553-5 ;\nVu l'arrêté du 26 octobre 2000 portant reconnaissance en qualité d'organisation de producteurs dans le secteur avicole pour les palmipèdes à foie gras ;\nVu le procès-verbal des résolutions prises par l'assemblée générale mixte plénière ordinaire annuelle et extraordinaire du 19 décembre 2025 de la SCA VIVADOUR approuvant la fusion par absorption de la SCA VIVADOUR par la SCA TERRES DU SUD ;\nVu l'avis de la commission nationale technique spécialisée du Conseil supérieur d'orientation et de coordination de l'économie agricole et alimentaire du 15 octobre 2026,\nArrête :",
+          "official_text_sha256": "59915d3ed6cd8626e7fd3d31dd61845fc297f020ecaa9e71349f5b0fcb6e60b3",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "cd9c2b9f5cf3a7a01aed9c9ac890c9c0aab4250c80d4550cd032a24e8448bf17",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020333",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020333",
+          "nature": "ARRETE",
+          "nor": "AGRT2626089A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 21 octobre 2026 portant retrait de la reconnaissance de la société d'intérêt collectif agricole « LAPI-EST » en qualité d'organisation de producteurs dans le secteur cunicole",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020333",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu le règlement (UE) n° 1308/2013 du Parlement européen et du Conseil du 17 décembre 2013 portant organisation commune des marchés des produits agricoles ;\nVu le code rural et de la pêche maritime, notamment le titre V de son livre V et ses articles L. 553-1, D. 551-1 à D. 551-6, D. 551-18 à D. 551-30 et D. 553-1 à D. 553-5 ;\nVu l'arrêté du 22 octobre 1993 modifié portant reconnaissance en qualité de groupement de producteurs ;\nVu les courriers d'avertissements de l'unité suites de contrôles de FranceAgriMer en dates du 5 juin 2024 et du 10 octobre 2024 ;\nVu l'avis de la commission nationale technique spécialisée du Conseil supérieur d'orientation et de coordination de l'économie agricole et alimentaire du 15 octobre 2026,\nArrête :",
+          "official_text_sha256": "513100f595c9a4f9253754438426233196720d8ef88c3ca40baa97532fa85d07",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "SANCTION_OR_CONTROL",
+              "score": 3,
+              "terms": [
+                "controle"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "9d62c9baaf2529204dee4c5ec90bdcb3111628dbbe8b44571bfb7eff364edb2a",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020342",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020342",
+          "nature": "ARRETE",
+          "nor": "AGRT2619414A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 22 octobre 2026 homologuant le cahier des charges de l'appellation d'origine protégée « Seyssel »",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020342",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Le ministre des petites et moyennes entreprises, du commerce, de l'artisanat, du tourisme et du pouvoir d'achat, la ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire et le ministre de l'action et des comptes publics,\nVu le règlement (UE) n° 1308/2013 du Parlement européen et du Conseil du 17 décembre 2013 portant organisation commune des marchés des produits agricoles ;\nVu le règlement (UE) 2024/1143 du Parlement européen et du Conseil du 11 avril 2024 concernant les indications géographiques relatives au vin, aux boissons spiritueuses et aux produits agricoles, ainsi que les spécialités traditionnelles garanties et les mentions de qualité facultatives pour les produits agricoles et en particulier son article 24 ;\nVu le code de la consommation ;\nVu le code des douanes ;\nVu le code rural et de la pêche maritime et en particulier son article L. 641-7 ;\nVu la proposition du comité national des appellations d'origine relatives aux vins et aux boissons alcoolisées et des eaux-de-vie de l'Institut national de l'origine et de la qualité en date du 27 novembre 2025,\nArrêtent :",
+          "official_text_sha256": "0568f64b75a5076c8fe8a4dc197e1e51bcd05b1d29fa1b5a0ccf5a1bc13df23b",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [
+            "entreprise"
+          ],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "dec0542447f55a1b6e06202be02b315bd60daaae31ea247e53bda0c03e927364",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020355",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020355",
+          "nature": "ARRETE",
+          "nor": "AGRT2624152A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 22 octobre 2026 portant dispositions exceptionnelles pour le vin revendiqué en appellation d'origine contrôlée « Champagne »",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020355",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Le ministre des petites et moyennes entreprises, du commerce, de l'artisanat, du tourisme et du pouvoir d'achat, la ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire et le ministre de l'action et des comptes publics,\nVu le règlement (UE) n° 1308/2013 du Parlement européen et du Conseil du 17 décembre 2013 portant organisation commune des marchés des produits agricoles ;\nVu le règlement (UE) n° 2024/1143 du Parlement européen et du Conseil du 11 avril 2024 concernant les indications géographiques relatives au vin, aux boissons spiritueuses et aux produits agricoles, ainsi que les spécialités traditionnelles garanties et les mentions de qualité facultatives pour les produits agricoles ;\nVu le code de la consommation ;\nVu le code des douanes ;\nVu le code rural et de la pêche maritime, notamment ses articles L. 642-4 et D. 641-20-2 ;\nVu l'arrêté du 31 juillet 2025 homologuant le cahier des charges de l'appellation d'origine contrôlée « Champagne » ;\nVu l'avis de la commission permanente du Comité national des appellations d'origine relatives aux vins et aux boissons alcoolisées, et des boissons spiritueuses de l'Institut national de l'origine et de la qualité du 8 septembre 2026,\nArrêtent :",
+          "official_text_sha256": "683de2c02b0cd6c6a19018d83116f1ad58a6d02cf919556161d8396c895b74cb",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "SANCTION_OR_CONTROL",
+              "score": 3,
+              "terms": [
+                "controle"
+              ]
+            }
+          ],
+          "scope_terms": [
+            "entreprise"
+          ],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      }
+    },
+    {
+      "fingerprint": "e0c1921e7928d176c9bd39b9bf899dcd0d9363f6f98cc5a9de497c1650f15f79",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020364",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020364",
+          "nature": "ARRETE",
+          "nor": "AGRG2626880A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 23 octobre 2026 relatif à la lutte contre Ralstonia solanacearum (Smith) Yabuuchi et al. 1996 emend. Safni et al. 2014",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020364",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Publics concernés : propriétaires et détenteurs de plantes de Solanum tuberosum L. (pomme de terre), à l'exception des semences, et les plantes, à l'exception des fruits et des semences, de Solanum lycopersicum (L.) Karsten ex Farw (tomate), de plantes sauvages et cultivées de la famille des solanacées, SOC France, SEMAE, préfets de région, directions régionales de l'alimentation, de l'agriculture et de la forêt.\nObjet : lutte nationale contre Ralstonia solanacearum.\nLe présent arrêté prescrit les mesures de prévention, de surveillance et de lutte vis-à-vis de l'organisme de quarantaine Ralstonia solanacearum.\nEntrée en vigueur : le texte entre en vigueur le lendemain de sa publication.\nApplication : le présent arrêté est pris en application de l'article D. 251-2-5 du code rural et de la pêche maritime.\nLa ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu le règlement (UE) 2016/2031 du Parlement européen et du Conseil du 26 octobre 2016 modifié relatif aux mesures de protection contre les organismes nuisibles aux végétaux, modifiant les règlements du Parlement européen et du Conseil (UE) n° 228/2013, (UE) n° 652/2014 et (UE) n° 1143/2014 et abrogeant les directives du Conseil 69/464/CEE, 74/647/CEE, 93/85/CEE, 98/57/CE, 2000/29/CE, 2006/91/CE et 2007/33/CE ;\nVu le règlement (UE) 2017/625 du Parlement européen et du Conseil du 15 mars 2017 modifié concernant les contrôles officiels et les autres activités officielles servant à assurer le respect de la législation alimentaire et de la législation relative aux aliments pour animaux ainsi que des règles relatives à la santé et au bien-être des animaux, à la santé des végétaux et aux produits phytopharmaceutiques, modifiant les règlements du Parlement européen et du Conseil (CE) n° 999/001, (CE) n° 396/2005, (CE) n° 1069/2009, (CE) n° 1107/2009, (UE) n° 1151/2012, (UE) n° 652/2014, (UE) 2016/429 et (UE) 2016/2031, les règlements du Conseil (CE) n° 1/2005 et (CE) n° 1099/2009 ainsi que les directives du Conseil 98/58/CE, 1999/74/CE, 2007/43/CE, 2008/119/CE et 2008/120/CE, et abrogeant les règlements du Parlement européen et du Conseil (CE) no 854/2004 et (CE) n° 882/2004, les directives du Conseil 89/608/CEE, 89/662/CEE, 90/425/CEE, 91/496/CEE, 96/23/CE, 96/93/CE et 97/78/CE ainsi que la décision 92/438/CEE du Conseil (règlement sur les contrôles officiels) ;\nVu le règlement d'exécution (UE) 2019/2072 de la Commission du 28 novembre 2019 modifié établissant des conditions uniformes pour la mise en œuvre du règlement (UE) 2016/2031 du Parlement européen et du Conseil, en ce qui concerne les mesures de protection contre les organismes nuisibles aux végétaux, abrogeant le règlement (CE) n° 690/2008 de la Commission et modifiant le règlement d'exécution (UE) 2018/2019 de la Commission ;\nVu le règlement d'exécution (UE) 2022/1193 de la commission du 11 juillet 2022 modifié établissant des mesures destinées à éradiquer Ralstonia solanacearum (Smith 1896) Yabuuchi et al. 1996 emend. Safni et al. 2014 et à prévenir sa propagation ;\nVu le code rural et de la pêche maritime, notamment ses articles L. 201-4, L. 201-8, D. 201-7 et D. 251-2-5,\nArrête :",
+          "official_text_sha256": "7b015df6293fe25b42edeec861d7cf66b75c50fa6b3fe1367d4f59ad02d49038",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 4,
+          "triggers": [
+            {
+              "kind": "SANCTION_OR_CONTROL",
+              "score": 3,
+              "terms": [
+                "controle"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "9d1a4d8abf3aa5b677d46854e3daa0f9f3ddddd59c621d1b3f737b36060a3e49",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020380",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020380",
+          "nature": "ARRETE",
+          "nor": "AGRG2626881A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 23 octobre 2026 relatif à la lutte contre Globodera pallida (Stone) et Globodera rostochiensis (Wollenweber), nématodes à kystes de la pomme de terre",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020380",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Publics concernés : propriétaires et détenteurs de plantes de Solanum tuberosum L. (pomme de terre), à l'exception des semences, et de végétaux mentionnés à l'annexe I du règlement d'exécution (UE) 2022/1192 de la commission du 11 juillet 2022, SOC France, SEMAE, préfets de région, directions régionales de l'alimentation, de l'agriculture et de la forêt.\nObjet : lutte nationale contre Globodera pallida (Stone) et Globodera rostochiensis (Wollenweber).\nLe présent arrêté prescrit les mesures de prévention, de surveillance et de lutte vis-à-vis de l'organisme de quarantaine Globodera pallida (Stone) et Globodera rostochiensis (Wollenweber).\nEntrée en vigueur : le texte entre en vigueur le lendemain de sa publication.\nApplication : le présent arrêté est pris en application de l'article D. 251-2-5 du code rural et de la pêche maritime.\nLa ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu le règlement (UE) 2016/2031 du Parlement Européen et du conseil du 26 octobre 2016 modifié relatif aux mesures de protection contre les organismes nuisibles aux végétaux, modifiant les règlements du Parlement européen et du Conseil (UE) n° 228/2013, (UE) n° 652/2014 et (UE) n° 1143/2014 et abrogeant les directives du Conseil 69/464/CEE, 74/647/CEE, 93/85/CEE, 98/57/CE, 2000/29/CE, 2006/91/CE et 2007/33/CE ;\nVu le règlement (UE) 2017/625 du Parlement européen et du Conseil du 15 mars 2017 concernant les contrôles officiels et les autres activités officielles servant à assurer le respect de la législation alimentaire et de la législation relative aux aliments pour animaux ainsi que des règles relatives à la santé et au bien-être des animaux, à la santé des végétaux et aux produits phytopharmaceutiques, modifiant les règlements du Parlement européen et du Conseil (CE) n° 999/2001, (CE) n° 396/2005, (CE) n° 1069/2009, (CE) n° 1107/2009, (UE) n° 1151/2012, (UE) n° 652/2014, (UE) 2016/429 et (UE) 2016/2031, les règlements du Conseil (CE) n° 1/2005 et (CE) n° 1099/2009 ainsi que les directives du Conseil 98/58/CE, 1999/74/CE, 2007/43/CE, 2008/119/CE et 2008/120/CE, et abrogeant les règlements du Parlement européen et du Conseil (CE) n° 854/2004 et (CE) n° 882/2004, les directives du Conseil 89/608/CEE, 89/662/CEE, 90/425/CEE, 91/496/CEE, 96/23/CE, 96/93/CE et 97/78/CE ainsi que la décision 92/438/CEE du Conseil (règlement sur les contrôles officiels) ;\nVu le règlement d'exécution (UE) 2019/2072 de la Commission du 28 novembre 2019 modifié établissant des conditions uniformes pour la mise en œuvre du règlement (UE) 2016/2031 du Parlement européen et du Conseil, en ce qui concerne les mesures de protection contre les organismes nuisibles aux végétaux, abrogeant le règlement (CE) n° 690/2008 de la Commission et modifiant le règlement d'exécution (UE) 2018/2019 de la Commission ;\nVu le règlement d'exécution (UE) 2022/1192 de la Commission du 11 juillet 2022 modifié établissant des mesures destinées à éradiquer Globodera pallida (Stone) Behrens et Globodera rostochiensis (Wollenweber) Behrens et à prévenir leur propagation ;\nVu le code rural et de la pêche maritime, notamment ses articles L. 201-4, L. 201-8, D. 201-7 et D. 251-2-5,\nArrête :",
+          "official_text_sha256": "2b3e08ce0cce54c4907b43521dd5a6f34c2834a31b328977e5dabb0c55d75ec8",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 4,
+          "triggers": [
+            {
+              "kind": "SANCTION_OR_CONTROL",
+              "score": 3,
+              "terms": [
+                "controle"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "0d21245925a6929f34a7a7dc530e07062e443830f7afee41cd8a3be81d09a2c8",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020422",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020422",
+          "nature": "ARRETE",
+          "nor": "AGRG2626883A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 23 octobre 2026 relatif à la lutte contre Clavibacter sepedonicus (Spieckermann & Kotthoff 1914) Nouioui et al. 2018",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020422",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Publics concernés : propriétaires et détenteurs de plantes de Solanum tuberosum L. (pomme de terre), à l'exception des semences, SOC France, SEMAE, préfets de région, directions régionales de l'alimentation, de l'agriculture et de la forêt.\nObjet : lutte nationale contre Clavibacter sepedonicus.\nLe présent arrêté prescrit les mesures de prévention, de surveillance et de lutte vis-à-vis de l'organisme de quarantaine Clavibacter sepedonicus.\nEntrée en vigueur : le texte entre en vigueur le lendemain de sa publication.\nApplication : le présent arrêté est pris en application de l'article D. 251-2-5 du code rural et de la pêche maritime.\nLa ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu le règlement (UE) 2016/2031 du Parlement Européen et du conseil du 26 octobre 2016 modifié relatif aux mesures de protection contre les organismes nuisibles aux végétaux, modifiant les règlements du Parlement européen et du Conseil (UE) n° 228/2013, (UE) n° 652/2014 et (UE) n° 1143/2014 et abrogeant les directives du Conseil 69/464/CEE, 74/647/CEE, 93/85/CEE, 98/57/CE, 2000/29/CE, 2006/91/CE et 2007/33/CE ;\nVu le règlement (UE) 2017/625 du Parlement européen et du Conseil du 15 mars 2017 modifié concernant les contrôles officiels et les autres activités officielles servant à assurer le respect de la législation alimentaire et de la législation relative aux aliments pour animaux ainsi que des règles relatives à la santé et au bien-être des animaux, à la santé des végétaux et aux produits phytopharmaceutiques, modifiant les règlements du Parlement européen et du Conseil (CE) n° 999/001, (CE) n° 396/2005, (CE) n° 1069/2009, (CE) n° 1107/2009, (UE) n° 1151/2012, (UE) n° 652/2014, (UE) 2016/429 et (UE) 2016/2031, les règlements du Conseil (CE) n° 1/2005 et (CE) n° 1099/2009 ainsi que les directives du Conseil 98/58/CE, 1999/74/CE, 2007/43/CE, 2008/119/CE et 2008/120/CE, et abrogeant les règlements du Parlement européen et du Conseil (CE) n° 854/2004 et (CE) n° 882/2004, les directives du Conseil 89/608/CEE, 89/662/CEE, 90/425/CEE, 91/496/CEE, 96/23/CE, 96/93/CE et 97/78/CE ainsi que la décision 92/438/CEE du Conseil (règlement sur les contrôles officiels) ;\nVu le règlement d'exécution (UE) 2019/2072 de la Commission du 28 novembre 2019 modifié établissant des conditions uniformes pour la mise en œuvre du règlement (UE) 2016/2031 du Parlement européen et du Conseil, en ce qui concerne les mesures de protection contre les organismes nuisibles aux végétaux, abrogeant le règlement (CE) n° 690/2008 de la Commission et modifiant le règlement d'exécution (UE) 2018/2019 de la Commission ;\nVu le règlement d'exécution (UE) 2022/1194 de la commission du 11 juillet 2022 modifié établissant des mesures destinées à éradiquer Clavibacter sepedonicus (Spieckermann & Kotthoff 1914) Nouioui et al. 2018 et à prévenir sa propagation ;\nVu le code rural et de la pêche maritime, notamment ses articles L. 201-4, L. 201-8, D. 201-7 et D. 251-2-5,\nArrête :",
+          "official_text_sha256": "22a088fa353669bb7505de6d709855f674075782721e3f7abdc1c6f27e5d8ea9",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 4,
+          "triggers": [
+            {
+              "kind": "SANCTION_OR_CONTROL",
+              "score": 3,
+              "terms": [
+                "controle"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "14aebddd7162763136f690a3c57776c872667b4119771f4748bc293933ee2f19",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020436",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020436",
+          "nature": "ARRETE",
+          "nor": "AGRS2628002A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 23 octobre 2026 fixant les taux de promotion pour la période 2027-2029 de certains corps de catégorie A du ministère de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire et pour 2027 du corps des ingénieurs de l'agriculture et de l'environnement",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020436",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire,\nVu le code général de la fonction publique ;\nVu le décret n° 95-370 du 6 avril 1995 modifié fixant les dispositions statutaires applicables aux ingénieurs et aux personnels techniques de formation et de recherche du ministère de l'agriculture et de la pêche ;\nVu le décret n° 2005-1090 du 1\ner\nseptembre 2005 relatif à l'avancement de grade dans les corps des administrations de l'Etat ;\nVu le décret n° 2006-8 du 4 janvier 2006 modifié relatif au statut particulier du corps des ingénieurs de l'agriculture et de l'environnement ;\nVu l'avis conforme du ministre de l'action et des comptes publics, en date du 23 octobre 2026,\nArrête :",
+          "official_text_sha256": "33eda384426bb546ba0840e502252d20306cc9f88ede07e73953cbf42cd3694d",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "2bc19ff3abda0e3bf97043b75a78267e16ef8fa025d3968ddb93d5d86ec28642",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020462",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020462",
+          "nature": "ARRETE",
+          "nor": "MENF2623944A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 16 octobre 2026 fixant le montant de la contribution de l'Etat aux dépenses de fonctionnement des classes des établissements du second degré privés placées sous contrat d'association",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020462",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Le ministre de l'éducation nationale et le ministre de l'action et des comptes publics,\nVu le code de l'éducation, notamment ses articles L. 442-9 et R. 442-14,\nArrêtent :",
+          "official_text_sha256": "472af4ad94bb4770e3b4e7fd58b3e78767a2aee1fb468b4d132426ab9ed350ba",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [
+            "association"
+          ],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "d78b2d5017f423dc0b88d23041e087f9014accb2ad76f4b898d9997f5866eac3",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020492",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020492",
+          "nature": "DECRET",
+          "nor": "SFHP2615232D",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Décret n° 2026-999 du 26 octobre 2026 relatif à l'évaluation et à la prise en charge de situations cliniques par les pharmaciens d'officine",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020492",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Publics concernés : pharmaciens d'officine, patients et malades.\nObjet : le décret précise les conditions de mise en œuvre de la nouvelle compétence d'évaluation et de prise en charge de certaines situations cliniques par les pharmaciens d'officine.\nEntrée en vigueur : le texte entre en vigueur le lendemain de sa publication.\nApplication : le présent décret est pris pour l'application de l'article L. 5125-1-1 A du code de la santé publique, dans sa rédaction résultant de l'article 63 de la loi n° 2025-1403 du 30 décembre 2025 de financement de la sécurité sociale pour 2026.\nLe Premier ministre,\nSur le rapport de la ministre de la santé, des familles, de l'autonomie et des personnes handicapées,\nVu le code de la santé publique, notamment son article L. 5125-1-1 A ;\nVu l'avis du conseil de l'Union nationale des organismes complémentaires d'assurance maladie en date du 7 juillet 2026 ;\nVu l'avis du conseil de la Caisse nationale de l'assurance maladie en date du 7 juillet 2026 ;\nVu l'avis du conseil central d'administration de la Mutualité sociale agricole en date du 8 juillet 2026 ;\nVu l'avis du conseil de l'Union nationale des caisses d'assurance maladie en date du 17 juillet 2026 ;\nLe Conseil d'Etat (section sociale) entendu,\nDécrète :",
+          "official_text_sha256": "e4becdf14b66e119a600f1447b8a25790e17d3252d0ceed28dc427edd774e868",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 4,
+          "triggers": [
+            {
+              "kind": "FUNDING_OR_INCENTIVE",
+              "score": 3,
+              "terms": [
+                "financement"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      }
+    },
+    {
+      "fingerprint": "7d0e99fb8a99f5ad1ea0c5f94ac63362fcf0a5a37aa0d4d7f8d36da47e602a9f",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020503",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020503",
+          "nature": "ARRETE",
+          "nor": "SFHP2628220A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 17 octobre 2026 modifiant l'arrêté du 5 mars 2024 pris en application de l'article R. 1311-3 du code de la santé publique et relatif à la formation des personnes qui mettent en œuvre les techniques de tatouage par effraction cutanée, y compris la technique du maquillage permanent, et de perçage corporel",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020503",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées,\nVu la directive 2005/36/CE du Parlement européen et du Conseil du 7 septembre 2005 relative à la reconnaissance des qualifications professionnelles ;\nVu le code de la santé publique, notamment ses articles R. 1311-3 et R. 1312-9 ;\nVu le code du travail, notamment ses articles L. 6113-6, R. 6351-1 et R. 6351-6 ;\nVu l'ordonnance n° 2019-861 du 21 août 2019 visant à assurer la cohérence de diverses dispositions législatives avec la loi n° 2018-771 du 5 septembre 2018 pour la liberté de choisir son avenir professionnel ;\nVu le décret n° 2008-149 du 19 février 2008 modifié fixant les conditions d'hygiène et de salubrité relatives aux pratiques du tatouage avec effraction cutanée et du perçage, notamment son article 2-V ;\nVu l'arrêté du 5 mars 2024 pris en application de l'article R. 1311-3 du code de la santé publique et relatif à la formation des personnes qui mettent en œuvre les techniques de tatouage par effraction cutanée, y compris la technique du maquillage permanent, et de perçage corporel,\nArrête :",
+          "official_text_sha256": "176f295e228293a5405cd59840cb79bc4f19219a1918ffaee6ad03834c4b8b23",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [
+            "professionnel"
+          ],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "d707c220cb6bdb00f739235626fbaad750890a6343c5219ca53d04cc821f6276",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020521",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020521",
+          "nature": "ARRETE",
+          "nor": "SFHS2625824A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 26 octobre 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020521",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique ;\nVu le code de la sécurité sociale, notamment ses articles L. 162-17 et R. 163-2 à R. 163-14 ;\nVu les avis de la commission de la transparence relatifs à la spécialité de référence ZYLORIC\n®\n, avis consultables sur le site de la Haute Autorité de santé et favorables à l'inscription au remboursement de cette spécialité ;\nVu les avis de la commission de la transparence relatifs aux spécialités de références FORTZAAR\n®\net HYZAAR\n®\n, avis consultables sur le site de la Haute Autorité de santé et favorables à l'inscription au remboursement de ces spécialités,\nArrêtent :",
+          "official_text_sha256": "0c8d6acf95e69ab789843640076a4d65698e3240a5d7c2f144face6fda4e9fd2",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "d45a8cb595a7146775464918942d18cb225080db6f4cc24cdeff6e09f6e79713",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020531",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020531",
+          "nature": "ARRETE",
+          "nor": "SFHS2625826A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 26 octobre 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020531",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code général des impôts, notamment son article 281 octies ;\nVu le code de la santé publique, notamment ses articles L. 5123-2, L. 5123-3 et D. 5123-4 ;\nVu le code de la sécurité sociale ;\nVu les avis de la commission de la transparence relatifs à la spécialité de référence ZYLORIC\n®\n, avis consultables sur le site de la Haute Autorité de santé et favorables à l'inscription au remboursement de cette spécialité ;\nVu les avis de la commission de la transparence relatifs aux spécialités de références FORTZAAR\n®\net HYZAAR\n®\navis consultables sur le site de la Haute Autorité de santé et favorables à l'inscription au remboursement de cette spécialité,\nArrêtent :",
+          "official_text_sha256": "362204b3584f2a2af349db5c383d1056712ff1f34711f29f74e264a5371e989e",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
+              "score": 3,
+              "terms": [
+                "collectivites"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      }
+    },
+    {
+      "fingerprint": "3dba1da831f1a5e8c5fb852405644f61757a5c99afea4afb5c7932573126fe2e",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020543",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020543",
+          "nature": "ARRETE",
+          "nor": "SFHS2625903A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 26 octobre 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020543",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique ;\nVu le code de la sécurité sociale, notamment ses articles L. 162-17 et R. 163-2 à R. 163-14 ;\nVu les avis de la commission de la transparence relatifs à la spécialité de référence ZOVIRAX\n®\n, avis consultables sur le site internet de la Haute Autorité de santé et favorables à l'inscription au remboursement de cette spécialité ;\nVu les avis de la commission de la transparence relatifs à la spécialité de référence REVOLADE\n®\n, avis consultables sur le site de la Haute Autorité de santé et favorables à l'inscription au remboursement de cette spécialité ;\nVu les avis de la commission de la transparence relatifs à la spécialité de référence SOLUPRED\n®\n, avis consultables sur le site de la Haute Autorité de santé et favorables à l'inscription au remboursement de cette spécialité ;\nVu les avis de la commission de la transparence relatifs à la spécialité de référence EPITOMAX\n®\n, avis consultables sur le site de la Haute Autorité de santé et favorables à l'inscription au remboursement de cette spécialité,\nArrêtent :",
+          "official_text_sha256": "1c006d5c6fc001304fb52565a2d0ff576e483ddf56d8197741360689baf5d06a",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "f78b493929b2e722aabe88702d08eecb20c58dfd6c6891cb72b07a4456f8fc08",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020553",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020553",
+          "nature": "ARRETE",
+          "nor": "SFHS2625905A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 26 octobre 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020553",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique, notamment ses articles L. 5123-2, L. 5123-3 et D. 5123-4 ;\nVu le code de la sécurité sociale ;\nVu le code général des impôts, notamment son article 281 octies ;\nVu les avis de la commission de la transparence relatifs à la spécialité de référence ZOVIRAX\n®\n, avis consultables sur le site internet de la Haute Autorité de santé et favorables à l'inscription au remboursement de cette spécialité ;\nVu les avis de la commission de la transparence relatifs à la spécialité de référence REVOLADE\n®\n, avis consultables sur le site de la Haute Autorité de santé et favorables à l'inscription au remboursement de cette spécialité ;\nVu les avis de la commission de la transparence relatifs à la spécialité de référence SOLUPRED\n®\n, avis consultables sur le site de la Haute Autorité de santé et favorables à l'inscription au remboursement de cette spécialité ;\nVu les avis de la commission de la transparence relatifs à la spécialité de référence EPITOMAX\n®\n, avis consultables sur le site de la Haute Autorité de santé et favorables à l'inscription au remboursement de cette spécialité,\nArrêtent :",
+          "official_text_sha256": "82241b2d51d2192083602a17315402776ee8ae0f545dbc06f1044eff4d22ee73",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
+              "score": 3,
+              "terms": [
+                "collectivites"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      }
+    },
+    {
+      "fingerprint": "dbe0451eb270517080a4b74cbc4b379bce932ffa909eb348cd8210ffa3bd7f1e",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020565",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020565",
+          "nature": "ARRETE",
+          "nor": "SFHS2626019A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 26 octobre 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020565",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique ;\nVu le code de la sécurité sociale, notamment ses articles L. 162-17 et R. 163-2 à R. 163-14 ;\nVu les avis de la commission de la transparence relatifs à la spécialité de référence ACUPAN\n®\n, avis consultables sur le site de la Haute Autorité de santé et favorables à l'inscription au remboursement de cette spécialité ;\nVu les avis de la commission de la transparence relatifs à la spécialité de référence OXYCONTIN LP\n®\n, avis consultables sur le site de la Haute Autorité de santé et favorables à l'inscription au remboursement de cette spécialité ;\nVu l'avis de la commission de la transparence de la Haute Autorité de santé du 23 septembre 2020 relatif à la spécialité de référence VYNDAQUEL\n®\n, avis consultable sur le site de la Haute Autorité de santé et favorable à l'inscription au remboursement de cette spécialité,\nArrêtent :",
+          "official_text_sha256": "a813d673ea4761a633ea79aa14cb7c79bedb752bf8392b2c09690123113988fb",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "072392eae5a12eb55d0558142cae2a9159b627743534ebdf4b575824414f06c4",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020575",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020575",
+          "nature": "ARRETE",
+          "nor": "SFHS2626021A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 26 octobre 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020575",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique, notamment ses articles L. 5123-2, L. 5123-3 et D. 5123-4 ;\nVu le code de la sécurité sociale ;\nVu le code général des impôts, notamment son article 281 octies ;\nVu les avis de la commission de la transparence relatifs à la spécialité de référence ACUPAN\n®\n, avis consultables sur le site de la Haute Autorité de santé et favorables à l'inscription au remboursement de cette spécialité ;\nVu les avis de la commission de la transparence relatifs à la spécialité de référence OXYCONTIN LP\n®\n, avis consultables sur le site de la Haute Autorité de santé et favorables à l'inscription au remboursement de cette spécialité ;\nVu l'avis de la commission de la transparence de la Haute Autorité de santé du 23 septembre 2020 relatif à la spécialité de référence VYNDAQUEL\n®\n, avis consultable sur le site de la Haute Autorité de santé et favorable à l'inscription au remboursement de cette spécialité,\nArrêtent :",
+          "official_text_sha256": "397ece1397be94ac7340d15fdeab91a10d9f88d69b24162fe8b4b2f83a718872",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
+              "score": 3,
+              "terms": [
+                "collectivites"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      }
+    },
+    {
+      "fingerprint": "2c806cf61b33baf7918ceaaab706fe7703770d25ed1df0c15e798fa51ff54c1f",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020587",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020587",
+          "nature": "ARRETE",
+          "nor": "SFHS2626238A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 26 octobre 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020587",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique ;\nVu le code de la sécurité sociale, notamment ses articles L. 162-17 et R. 163-2 à R. 163-14 ;\nVu les avis de la commission de la transparence de la Haute Autorité de santé relatifs aux spécialités de référence CLAMOXYL\n®\n, avis consultables sur le site de la Haute Autorité de santé et favorable à l'inscription au remboursement de ces spécialités,\nArrêtent :",
+          "official_text_sha256": "9bd68cd8b24e897455b9947ed642f8b6469201d6b19ad8e4fed3e7631a845f11",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "3b71bdb4e9f38a535fffb7a0b35f71376818276df8bfad5470ba831876787943",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020597",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020597",
+          "nature": "ARRETE",
+          "nor": "SFHS2626239A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 26 octobre 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020597",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique, notamment ses articles L. 5123-2, L. 5123-3 et D. 5123-4 ;\nVu le code de la sécurité sociale, notamment ses articles R. 163-3 et R. 163-4 ;\nVu le code général des impôts, notamment son article 281 octies ;\nVu les avis de la commission de la transparence de la Haute Autorité de santé relatifs aux spécialités de référence CLAMOXYL\n®\n, avis consultables sur le site de la Haute Autorité de santé et favorable à l'inscription au remboursement de ces spécialités,\nArrêtent :",
+          "official_text_sha256": "e5ee53a1fa7128920bcab029a27805940466a121ebdfe2998ad7e8a2299e596b",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
+              "score": 3,
+              "terms": [
+                "collectivites"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      }
+    },
+    {
+      "fingerprint": "b74676fec846aa1757589911b7263f4f9da7af53258121d7839e93fe39e32cdd",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020611",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020611",
+          "nature": "ARRETE",
+          "nor": "SFHS2626418A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 26 octobre 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020611",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique ;\nVu le code de la sécurité sociale, notamment ses articles L. 162-17 et R. 163-2 à R. 163-14 ;\nVu la demande des laboratoires,\nArrêtent :",
+          "official_text_sha256": "57613b3422155bacc1b9b6784f04ad6bcc4acd1968e4f63d355df998f4aacab3",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "e076f3ecd60da9b3ecc2026bc4c8c6c68d339101594d259b514cf03fdd658b2d",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020620",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020620",
+          "nature": "ARRETE",
+          "nor": "SFHS2626507A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 26 octobre 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020620",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code général des impôts, notamment son article 281 octies ;\nVu le code de la santé publique, notamment ses articles L. 5123-2, L. 5123-3 et D. 5123-4 ;\nVu le code de la sécurité sociale ;\nVu la demande des laboratoires,\nArrêtent :",
+          "official_text_sha256": "54fcd62d1071a62fab9913c690a2ac3500a6cfb559b2aedf9c81cac3f3e21005",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
+              "score": 3,
+              "terms": [
+                "collectivites"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      }
+    },
+    {
+      "fingerprint": "74504e66c51731e2605cb9a3d5ed25c255f3fdc6887d953a9c5c214d6ae1a44e",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020632",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020632",
+          "nature": "ARRETE",
+          "nor": "SFHS2626587A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 26 octobre 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020632",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique ;\nVu le code de la sécurité sociale, notamment ses articles L. 162-17 et R. 163-2 à R. 163-14 ;\nVu l'avis de la commission de la transparence du 4 février 2026 relatif à la spécialité VOQUILY\n®\n, avis communiqué au laboratoire concerné en application de l'article R. 163-16 du code de la sécurité sociale (CSS) et consultable sur le site de la Haute Autorité de santé,\nArrêtent :",
+          "official_text_sha256": "929c48ab5f280b9a3d7b51f4246ff6aaf17b3a3ff487d6537ac1b3104e8eab51",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "686ce7388078e26b1931555932781e5dc8d291172b80e8e57e9098e5300320ea",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020643",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020643",
+          "nature": "ARRETE",
+          "nor": "SFHS2626588A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 26 octobre 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020643",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code général des impôts, notamment son article 281 octies ;\nVu le code de la santé publique, notamment ses articles L. 5123-2, L. 5123-3 et D. 5123-4 ;\nVu le code de la sécurité sociale, notamment ses articles R. 163-3 et R. 163-4 ;\nVu l'avis de la commission de la transparence du 4 février 2026 relatif à la spécialité VOQUILY\n®\n, avis communiqué au laboratoire concerné en application de l'article R. 163-16 du code de la sécurité sociale (CSS) et consultable sur le site de la Haute Autorité de santé,\nArrêtent :",
+          "official_text_sha256": "c4bcdb7f9043d06a5a0c86603dc6a37fbd71fbcc7051521e310b52452859fa0d",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
+              "score": 3,
+              "terms": [
+                "collectivites"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      }
+    },
+    {
+      "fingerprint": "1d435ab91bcab9d2c0fff6eba3d5041b4e12d112976e1396344a4a85464e53b2",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020658",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020658",
+          "nature": "ARRETE",
+          "nor": "SFHS2626612A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 26 octobre 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020658",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique ;\nVu le code de la sécurité sociale, notamment ses articles L. 162-17 et R. 163-2 à R. 163-14 ;\nVu l'avis de la commission de la transparence du 22 juillet 2026 relatif à la spécialité IKPARA\n®\n, avis communiqué au laboratoire concerné en application de l'article R. 163-16 du code de la sécurité sociale (CSS) et consultable sur le site de la Haute Autorité de santé,\nArrêtent :",
+          "official_text_sha256": "a785896255a2c8e8c0fce0512516b11dd5be21848109cff993f9de05a97d5be1",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "46af1464623492674201ba037b6360bf244e0aceb77738d58fb18a76ca1ae424",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020669",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020669",
+          "nature": "ARRETE",
+          "nor": "SFHS2626613A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 26 octobre 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020669",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique, notamment ses articles L. 5123-2, L. 5123-3 et D. 5123-4 ;\nVu le code de la sécurité sociale, notamment ses articles R. 163-3 et R. 163-4 ;\nVu le code général des impôts, notamment son article 281 octies ;\nVu l'avis de la commission de la transparence du 22 juillet 2026 relatif à la spécialité IKPARA\n®\n, avis communiqué au laboratoire concerné en application de l'article R. 163-16 du code de la sécurité sociale (CSS) et consultable sur le site de la Haute Autorité de santé,\nArrêtent :",
+          "official_text_sha256": "46ddf38982073a2e77ec6c324549ef92f613a5eb863a338299a91e4eeb6b951f",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
+              "score": 3,
+              "terms": [
+                "collectivites"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      }
+    },
+    {
+      "fingerprint": "d1ec900e7d4ec8d7e440c297009930ed0b3c7eeee1579d5569efcf0fb22e4913",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020684",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020684",
+          "nature": "ARRETE",
+          "nor": "SFHS2626870A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 26 octobre 2026 modifiant la liste des spécialités pharmaceutiques remboursables aux assurés sociaux",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020684",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code de la santé publique ;\nVu le code de la sécurité sociale, notamment ses articles L. 162-17 et R. 163-2 à R. 163-14 ;\nVu l'arrêté du 26 juin 2006 pris pour l'application des articles R. 163-2 et R. 165-1 du code de la sécurité sociale (CSS) et relatif aux spécialités remboursables et aux produits et prestations mentionnés à l'article L. 165-1 dudit code ;\nVu les avis de la commission de la transparence relatifs à la spécialité de référence HUMIRA\n®\n, consultables sur le site de la Haute Autorité de santé et favorables à l'inscription au remboursement de cette spécialité ;\nConsidérant que les ministres compétents ont décidé de suivre les avis susvisés de la commission de la transparence et qu'en application des articles R. 163-3 (III) et R. 163-4 (3°) du CSS, ces avis - notamment le niveau de service médical rendu qu'ils retiennent et les conditions particulières de prise en charge qu'ils préconisent - sont également applicables à la spécialité YUFLYMA\n®\ndu laboratoire ABACUS MEDICINE ;\nConsidérant qu'aux termes de l'article R. 163-2 (troisième alinéa) du CSS, l'inscription sur la liste des spécialités remboursables aux assurés sociaux « peut être assortie, pour certains médicaments particulièrement coûteux, unitairement ou au regard des dépenses globales représentées, et d'indications précises, d'une clause prévoyant qu'ils ne sont remboursés ou pris en charge qu'après information du contrôle médical, selon une procédure fixée par un arrêté du ministre chargé de la sécurité sociale. » ;\nConsidérant que, conformément aux dispositions précitées dudit article R. 163-2 définissant le régime dit du « médicament d'exception », les ministres compétents, comme le recommande également la commission de la transparence dans ses avis susmentionnés, estiment qu'il convient de soumettre la spécialité YUFLYMA\n®\ndu laboratoire ABACUS MEDICINE à ce régime en raison du caractère particulièrement coûteux de ce médicament et de l'existence d'indications remboursables précises, étant rappelé à cet égard que son autorisation de mise sur le marché en réserve la prescription initiale et le renouvellement aux spécialistes en rhumatologie, en pédiatrie, en médecine interne, en gastroentérologie et hépatologie, en dermatologie ou en ophtalmologie,\nArrêtent :",
+          "official_text_sha256": "80a36202e751fbf5fe04e69e6dd4ed2b222a0e1024c631fb1b9d1c695d94f22f",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "SANCTION_OR_CONTROL",
+              "score": 3,
+              "terms": [
+                "controle"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "f5a0a72635a1e9c8ce6f9c48be8e2027b6cdfae8f0f156cc7a643439baddd33e",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020698",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020698",
+          "nature": "ARRETE",
+          "nor": "SFHS2626871A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 26 octobre 2026 modifiant la liste des spécialités pharmaceutiques agréées à l'usage des collectivités et divers services publics",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020698",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées et le ministre de l'action et des comptes publics,\nVu le code général des impôts, notamment son article 281 octies ;\nVu le code de la santé publique, notamment ses articles L. 5123-2, L. 5123-3 et D. 5123-4 ;\nVu le code de la sécurité sociale, notamment ses articles R. 163-3 et R. 163-4 ;\nVu les avis de la commission de la transparence relatifs à la spécialité de référence HUMIRA\n®\n, consultables sur le site de la Haute Autorité de santé et favorables à l'inscription au remboursement de cette spécialité,\nArrêtent :",
+          "official_text_sha256": "1639691e9f2da0750ad00e183d57e7967f3a504b78bbac170a37a7c8a1cd40cb",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 3,
+          "triggers": [
+            {
+              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
+              "score": 3,
+              "terms": [
+                "collectivites"
+              ]
+            }
+          ],
+          "scope_terms": [],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      }
+    },
+    {
+      "fingerprint": "5b174a204aeb7b5a659425c4aa8df829b4b2e40a372ad7b08b7976baf70c18d7",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020712",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020712",
+          "nature": "ARRETE",
+          "nor": "SFHP2628549A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 26 octobre 2026 relatif au consentement d'une personne à la réalisation d'un examen des caractéristiques génétiques à des fins médicales",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020712",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "La ministre de la santé, des familles, de l'autonomie et des personnes handicapées,\nVu le code civil, notamment son article 16-10 ;\nVu le code de la santé publique, notamment ses articles L. 1130-1, R. 1131-4 et R. 1131-4-1 ;\nVu l'avis de l'Agence de la biomédecine en date du 27 juillet 2026,\nArrête :",
+          "official_text_sha256": "f17fc688305420932019c75eb3fd75f9a2b6f28e3829033631a019e1ffc27519",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "5e46106b9414e4b0f65fcb72b74d3fea6707426fa027639392fc7b242b66d468",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020770",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020770",
+          "nature": "DECISION",
+          "nor": "SFHS2626932S",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Décision du 26 octobre 2026 fixant les prix d'une spécialité pharmaceutique remboursable aux assurés sociaux",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020770",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Le comité économique des produits de santé,\nVu le code de la sécurité sociale, notamment ses articles L. 162-16-4, R. 163-11 et R. 163-14 ;\nVu le code général des impôts, notamment son article 281 octies ;\nVu l'arrêté du 4 août 1987 modifié relatif aux prix et aux marges des médicaments remboursables ;\nVu l'accord-cadre du 5 mars 2021 conclu entre le comité économique des produits de santé et les entreprises du médicament prorogé le 3 mars 2026, notamment son article 28 ;\nVu les décisions du comité économique des produits de santé notamment celle du 17 septembre 2026 ;\nVu le projet d'avenant notifié à la société ETHYX PHARMACEUTICALS par courrier du 29 avril 2026, du 30 juin 2026 et du 10 août 2026 ;\nVu les échanges entre le comité économique des produits de santé et la société ETHYX PHARMACEUTICALS et notamment ses courriers des 23 avril 2026, 11 juin 2026 et 23 juillet 2026 et la décision du comité du 17 septembre 2026 ainsi que les courriels de la société ETHYX PHARMACEUTICALS en date du 18 mai 2026 et du 15 juillet 2026 ;\nConsidérant l'absence d'accord conventionnel avec la société ETHYX PHARMACEUTICALS sur les prix de la spécialité pharmaceutique visée ci-dessous ;\nConsidérant qu'en application de l'article L. 162-16-4 susvisé, le prix de vente au public des médicaments remboursables par l'assurance maladie est fixé par convention conclue entre la société et le comité économique des produits de santé ou, à défaut d'accord conventionnel, par décision du comité ;\nConsidérant qu'il y a lieu de modifier le prix de la spécialité eu égard aux critères prévus par l'article L. 162-16-4 du CSS, notamment du nombre restreint d'alternatives thérapeutiques dans l'indication considérée et de la sécurité d'approvisionnement du marché français que garantit l'implantation des sites de production ;\nConsidérant qu'il y a lieu de modifier le prix de la spécialité en application de l'article 28 de l'accord-cadre du 5 mars 2021 susvisé en raison du risque important pouvant impacter la commercialisation de la spécialité répondant à un besoin thérapeutique non couvert par d'autres alternatives,\nDécide :",
+          "official_text_sha256": "9097e37c49343ac9a74b0c6b808599e1cbeaa48c801c3ac84094f4416b7ca02e",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [
+            "entreprise"
+          ],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "4cb060622f90bf15d02a34e4159d6f406b833243838aa45c4184c1ae46dfb1d7",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020780",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020780",
+          "nature": "DECRET",
+          "nor": "CPPE2621556D",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Décret n° 2026-1000 du 26 octobre 2026 relatif à l'utilisation du traitement automatisé de données à caractère personnel dénommé Espace numérique sécurisé des agents publics (ENSAP) pour les élections professionnelles dans la fonction publique",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020780",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Publics concernés : agents des collectivités territoriales et leurs établissements publics, agents des établissements ou services mentionnés à l'article L. 5 du code général de la fonction publique.\nObjet : le décret permet l'utilisation de la plateforme dénommée Espace numérique sécurisé des agents publics (ENSAP) pour la participation aux élections professionnelles dans les fonctions publiques territoriale et hospitalière.\nEntrée en vigueur : le décret entre en vigueur le lendemain de sa publication.\nApplication : le présent décret est un texte autonome.\nLe Premier ministre,\nSur le rapport du ministre de l'action et des comptes publics,\nVu le règlement (UE) n° 2016/679 du Parlement européen et du Conseil du 27 avril 2016 relatif à la protection des personnes physiques à l'égard du traitement des données à caractère personnel et à la libre circulation de ces données (règlement général sur la protection des données, dit RGPD), et abrogeant la directive 95/46/CE ;\nVu le code général de la fonction publique ;\nVu la loi n° 78-17 du 6 janvier 1978 modifiée relative à l'informatique, aux fichiers et aux libertés ;\nVu le décret n° 2019-341 du 19 avril 2019 modifié relatif à la mise en œuvre de traitements comportant l'usage du numéro d'inscription au répertoire national d'identification des personnes physiques ou nécessitant la consultation de ce répertoire ;\nVu le décret n° 2022-1446 du 21 novembre 2022 modifié fixant les modalités d'utilisation du traitement automatisé de données à caractère personnel dénommé Espace numérique sécurisé des agents publics (ENSAP),\nDécrète :",
+          "official_text_sha256": "013bfd289026ae4d8e04177af6a4b34016bf3f74a4f25f2639a64654014b7039",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "WATCH_CANDIDATE",
+          "score": 4,
+          "triggers": [
+            {
+              "kind": "PUBLIC_PURCHASE_OR_COLLECTIVITY",
+              "score": 3,
+              "terms": [
+                "collectivites"
+              ]
+            },
+            {
+              "kind": "DEADLINE_OR_ENTRY_INTO_FORCE",
+              "score": 1,
+              "terms": [
+                "entree en vigueur"
+              ]
+            }
+          ],
+          "scope_terms": [
+            "professionnel",
+            "collectivites territoriales"
+          ],
+          "reason": "ECONOMIC_FRICTION_DETECTED",
+          "recommended_enrichment": [
+            "PRESS",
+            "DEMAND",
+            "MARKET"
+          ]
+        }
+      }
+    },
+    {
+      "fingerprint": "0d48846df258b11909a1d710aa552e6cc456939210cfba8b79add3448022442b",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020791",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020791",
+          "nature": "DECRET",
+          "nor": "PRMX2628721D",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Décret du 27 octobre 2026 chargeant un député d'une mission temporaire",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020791",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Le Premier ministre,\nVu la Constitution ;\nVu le code électoral, notamment son article LO 144,\nDécrète :",
+          "official_text_sha256": "ffbe48b1ab554c43033dd8477931ec619e864a0645ad120a136aacd75fbf42cb",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "601b0a6a98667d1acd8beee4f53ad64499ccb3bc41b8af757e59576409719fa7",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020874",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020874",
+          "nature": "ARRETE",
+          "nor": "JUSC2627861A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 19 octobre 2026 relatif à une société d'exercice libéral par actions simplifiée (officiers publics ou ministériels)",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020874",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Le garde des sceaux, ministre de la justice,\nVu le décret n° 88-814 du 12 juillet 1988 relatif à la nomination et à la cessation de fonctions des officiers publics et ministériels, notamment son article 1\ner\n,\nArrête :",
+          "official_text_sha256": "29780080b86a3de89d8f3613657d18a3714c8883564f1cbb6d67e6ca400b9894",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "bafd268ef2acc3dee3ed8e61d06b2328e37df5ea20c08b8c3a91416a7a9902aa",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020883",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020883",
+          "nature": "ARRETE",
+          "nor": "JUSC2627866A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 19 octobre 2026 relatif à une société d'exercice libéral par actions simplifiée (officiers publics ou ministériels)",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020883",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Le garde des sceaux, ministre de la justice,\nVu le décret n° 88-814 du 12 juillet 1988 relatif à la nomination et à la cessation de fonctions des officiers publics et ministériels, notamment son article 1\ner\n,\nArrête :",
+          "official_text_sha256": "29780080b86a3de89d8f3613657d18a3714c8883564f1cbb6d67e6ca400b9894",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "d650d02f9ee8f708a614707700d8d83c7f76607813db4813bc87c958a3797d63",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020888",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020888",
+          "nature": "ARRETE",
+          "nor": "JUSC2627868A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 19 octobre 2026 relatif à une société d'exercice libéral par actions simplifiée (officiers publics ou ministériels)",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020888",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Le garde des sceaux, ministre de la justice,\nVu le décret n° 88-814 du 12 juillet 1988 relatif à la nomination et à la cessation de fonctions des officiers publics et ministériels, notamment son article 1\ner\n,\nArrête :",
+          "official_text_sha256": "29780080b86a3de89d8f3613657d18a3714c8883564f1cbb6d67e6ca400b9894",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    },
+    {
+      "fingerprint": "1f7ff7e911359e7d63ec13cfd578bce7975a685c627a458f8a9fac15e1864be6",
+      "candidate": {
+        "source_id": "jorf:JORFTEXT000055020918",
+        "source_kind": "JORF",
+        "change": "NEW",
+        "evidence": {
+          "text_id": "JORFTEXT000055020918",
+          "nature": "ARRETE",
+          "nor": "JUSC2628453A",
+          "publication_date": "2026-10-28",
+          "journal_number": "0252",
+          "title": "Arrêté du 23 octobre 2026 relatif à une société d'exercice libéral à responsabilité limitée (officiers publics ou ministériels)",
+          "article_ids": [],
+          "article_titles": [],
+          "interpretation": null,
+          "official_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055020918",
+          "archive_url": "https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261028-010159.tar.gz",
+          "archive_sha256": "d7748fe24ebcb2a3f7ce166b397bcc334e77b8b4efb3da858fc603bc21017c02",
+          "official_text_excerpt": "Le garde des sceaux, ministre de la justice,\nVu le décret n° 88-814 du 12 juillet 1988 relatif à la nomination et à la cessation de fonctions des officiers publics et ministériels, notamment son article 1\ner\n,\nArrête :",
+          "official_text_sha256": "29780080b86a3de89d8f3613657d18a3714c8883564f1cbb6d67e6ca400b9894",
+          "excerpt_truncated": false,
+          "content_status": "AVAILABLE"
+        },
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "CONTEXT_REVIEW",
+          "score": 0,
+          "triggers": [],
+          "scope_terms": [],
+          "reason": "NO_ECONOMIC_FRICTION_EVIDENCE"
+        }
+      }
+    }
+  ],
   "processed": [
     {
       "fingerprint": "a296cf4cc3111abe31b2e81b4f607e60736105a42cd2cd6596df0a0a961cc193",
@@ -11786,6 +13744,272 @@
       "fingerprint": "7f9d8bdf559f6d85aeb0c3e82e093aaaf06a6a9d9bd09bf4d03777bd7781e7e0",
       "source_id": "consultdd:https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-relatif-au-nombre-maximum-d-a3449.html",
       "processed_at_utc": "2026-10-27T13:13:03.698860+00:00"
+    },
+    {
+      "fingerprint": "8c3295c0b5901f6ad06205130a8f8a58a2f3261864447d990cc6a985e7068e41",
+      "source_id": "jorf:JORFTEXT000055020803",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "9b606d85fe6dc62c5c86e568947b34df1563a24efb5a29c53e17c7b29fbe1fc7",
+      "source_id": "jorf:JORFTEXT000055020812",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "e9b54c7790efbb9908e7ba52ba64a7b1d8d3f73edc98556d82d713e77ce3e0c1",
+      "source_id": "jorf:JORFTEXT000055020837",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "763755a4509033b12071a59983b2794b23f818654d292a152045b6b7ddc008ee",
+      "source_id": "jorf:JORFTEXT000055020989",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "2f8070389cf3b6680a612bcdd56ca6a15144e0866fefb48d9100ca3d9272ceeb",
+      "source_id": "jorf:JORFTEXT000055021057",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "4c0506183fbf75e825fff16345ec19d883418daf81a524918e7a039a4f3c0102",
+      "source_id": "jorf:JORFTEXT000055021064",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "729a44533cc8a4393c882ebbe7dd75a1fe8f7e02a3b0ccf9ee55b0eb749e9b10",
+      "source_id": "jorf:JORFTEXT000055021072",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "f019e4963e3a75d2844eced37dd201983cf8eb1d4e1b6c4e018f84bfef5dc4db",
+      "source_id": "jorf:JORFTEXT000055021075",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "9d9080958386929e2284f599aa762f403478bb9df45329a9e19f49bbe23834ae",
+      "source_id": "jorf:JORFTEXT000055021080",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "3af34f803bf0c61072c060a7c99c0485d374398f58efa826c3a16b0f67fcc15d",
+      "source_id": "jorf:JORFTEXT000055021083",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "af06f41aed179f6b3a8c72e8f279a0810a92ffb883bb874d95a43ba50a00ffa4",
+      "source_id": "jorf:JORFTEXT000055021120",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "6d953835ea71a3345b672db059ec64a13afd1bfec11e86d18cbf8147f5eb1338",
+      "source_id": "jorf:JORFTEXT000055021122",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "9c6a914e9a5acd6936c5248158ba0ff24b057b09bcb93c8a810a2b06d34206a0",
+      "source_id": "jorf:JORFTEXT000055021124",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "6224a3c07893b80278fb96aabfaadf02c5b6e75984336ade5804824238c0f3b6",
+      "source_id": "jorf:JORFTEXT000055021128",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "60140d56e3d54cebef0705656f59ca664f61f362485cd4c00efac396f18cf54a",
+      "source_id": "jorf:JORFTEXT000055021130",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "fe78423d4b477cc5fb975892694a05226cc9746e3c32074b6f9915e17c6a0b95",
+      "source_id": "jorf:JORFTEXT000055021133",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "ca60c3912f3022fab92f219c45ad9d59a631e7d6383d11725e718fcbb8c80819",
+      "source_id": "jorf:JORFTEXT000055021139",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "4b331479ed5f66d2795dd9dbfbfe67beb849e71b04b60be26a79510daced3328",
+      "source_id": "jorf:JORFTEXT000055021141",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "ff2601ef79fbf47bcf98e7dee97e4a85a8b40cc2a8479cf8b962231fbc652770",
+      "source_id": "jorf:JORFTEXT000055021180",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "cf95addd56bc3c829de12284b8b997e0a8eb372a4a96c89b4791a834db9bb6e5",
+      "source_id": "jorf:JORFTEXT000055021185",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "550e181a3c15545616315d9173c6ba809794c930088b45de888023da0ebc410b",
+      "source_id": "jorf:JORFTEXT000055021189",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "5879662d08a728c04d4ab5c85695fc7e5fa547be3170557cafa5057ca4b9d3f2",
+      "source_id": "jorf:JORFTEXT000055021193",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "be27c12889d9dc8c7f3e5b55bc04f0fe85bb475eba98719b8cb268094dc4ab41",
+      "source_id": "jorf:JORFTEXT000055021198",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "8c3c6a608ba01e1719a4bb9cf840eb33f26151ad571c1849cb8837197ea9ecf0",
+      "source_id": "jorf:JORFTEXT000055021200",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "9994597df92ea1b448031cd2319a6648fe65e11908d4c8a61383208c14a499d4",
+      "source_id": "jorf:JORFTEXT000055021202",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "80f8329ca68a1d2f7022982087dcdfd7db65abc536cd38eeb196e4d630a1ed81",
+      "source_id": "jorf:JORFTEXT000055021204",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "f5fec1bcb7ec91e21241050eea3a033525699c7caefffe6286e0635f9e9e95e9",
+      "source_id": "jorf:JORFTEXT000055021206",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "835fdfcb38f498cf56ce1c5655f246839d32190ad4a0aab7dc10c3e176472096",
+      "source_id": "jorf:JORFTEXT000055021208",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "0eae59cfda949b1785692061ec8701202948e7e7b8ed6e3828f21e227e116266",
+      "source_id": "jorf:JORFTEXT000055021210",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "aeafd537ae00832971e47ec10f69639e96354edced1c2173607e54e9d9638485",
+      "source_id": "jorf:JORFTEXT000055021212",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "86c93a438f15f8baf71ebb58aaa18efeafbbe96e504d5afdc1a035e4f3784fd6",
+      "source_id": "jorf:JORFTEXT000055021214",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "7737fc182305ed9d95bc9abf69e1a73c54692dde804f0ddefc6db0bff4fcbf63",
+      "source_id": "jorf:JORFTEXT000055021216",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "c0694bf733e13aa4146e6ec8fe414260da5c8a2ec1cfc7d121f53797eddf6d7e",
+      "source_id": "jorf:JORFTEXT000055021218",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "f84d9a7e4133bb6beae23433f3df19359dd75dd411a504a85152ac198f426e52",
+      "source_id": "jorf:JORFTEXT000055021220",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "f6b416e024886c426016271e7ea7773571d681a79c3781dff0041f21c2442e5c",
+      "source_id": "jorf:JORFTEXT000055021222",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "f07b13dadf91617d8a0237ad834c342ccc8458393407f8feed7564facfa72048",
+      "source_id": "jorf:JORFTEXT000055021224",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "c17e5f1fb3c59357fe86ee3444a2c1b09d4b0bd491a1963ce6c679200a8e2309",
+      "source_id": "jorf:JORFTEXT000055021226",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
+    },
+    {
+      "fingerprint": "9c83c4f652c31a2e09e369c200b6bedfb21762f0e1e47e13e64b7d862a07c7c3",
+      "source_id": "jorf:JORFTEXT000055021230",
+      "processed_at_utc": "2026-10-28T10:34:27.436688+00:00",
+      "deterministic_status": "UNRESOLVED",
+      "reason": "PRIMARY_TEXT_EMPTY"
     }
   ]
 }
