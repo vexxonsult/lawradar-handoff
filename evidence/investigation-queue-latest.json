@@ -1,10 +1,10 @@
 {
   "schema": "lawradar-investigation-queue-v1",
-  "generated_at_utc": "2026-10-28T21:06:10.419392+00:00",
+  "generated_at_utc": "2026-10-28T21:43:32.537885+00:00",
   "source_run": {
     "id": "investigation-replay:848dcc24c6792809",
     "kind": "ARCHIVED_FACTS_REPLAY",
-    "generated_at_utc": "2026-10-28T21:01:43.582376+00:00",
+    "generated_at_utc": "2026-10-28T21:39:40.708259+00:00",
     "purpose": "TECHNICAL_ENRICHMENT_RETRY",
     "archive_provenance": {
       "signal:57f3525c45fcc9e0": "evidence/universal-signals/v2/2026/10/run-40701892424-attempt-1.json",
@@ -22,12 +22,12 @@
       "signal_id": "signal:57f3525c45fcc9e0",
       "source_id": "jorf:JORFTEXT000055020252",
       "title": "Arrêté du 26 octobre 2026 portant révision de la fiche d'opération standardisée AGRI-TH-108 et du référentiel de contrôle associé",
-      "status": "AUTONOMOUS_RESEARCH_PENDING",
+      "status": "AUTO_RESEARCH_EXHAUSTED",
       "opened_at_utc": "2026-10-28T14:09:11.436983+00:00",
-      "updated_at_utc": "2026-10-28T21:06:10.419392+00:00",
+      "updated_at_utc": "2026-10-28T21:43:32.537885+00:00",
       "automatic_attempts": 2,
       "max_automatic_attempts": 2,
-      "autonomous_research_attempts": 0,
+      "autonomous_research_attempts": 1,
       "max_autonomous_research_attempts": 1,
       "qualification_contract_version": "tool-envelope-v3-structured-tool",
       "next_retry_not_before_utc": null,
@@ -74,12 +74,12 @@
       "signal_id": "signal:5987ad13a9f5d469",
       "source_id": "jorf:JORFTEXT000055020242",
       "title": "Suppression de fiches d'opérations standardisées CEE (AGRI, BAR, BAT, IND, TRA)",
-      "status": "AUTONOMOUS_RESEARCH_PENDING",
+      "status": "AUTO_RESEARCH_EXHAUSTED",
       "opened_at_utc": "2026-10-28T14:09:11.436983+00:00",
-      "updated_at_utc": "2026-10-28T21:06:10.419392+00:00",
+      "updated_at_utc": "2026-10-28T21:43:32.537885+00:00",
       "automatic_attempts": 2,
       "max_automatic_attempts": 2,
-      "autonomous_research_attempts": 0,
+      "autonomous_research_attempts": 1,
       "max_autonomous_research_attempts": 1,
       "qualification_contract_version": "tool-envelope-v3-structured-tool",
       "next_retry_not_before_utc": null,
@@ -125,12 +125,12 @@
       "signal_id": "signal:69da1d0f73790437",
       "source_id": "jorf:JORFTEXT000055020072",
       "title": "Décret n°2026-995 créant une aide exceptionnelle pour les entreprises victimes des troubles urbains d'octobre 2026",
-      "status": "AUTONOMOUS_RESEARCH_PENDING",
+      "status": "AUTO_RESEARCH_EXHAUSTED",
       "opened_at_utc": "2026-10-28T14:09:11.436983+00:00",
-      "updated_at_utc": "2026-10-28T21:06:10.419392+00:00",
+      "updated_at_utc": "2026-10-28T21:43:32.537885+00:00",
       "automatic_attempts": 2,
       "max_automatic_attempts": 2,
-      "autonomous_research_attempts": 0,
+      "autonomous_research_attempts": 1,
       "max_autonomous_research_attempts": 1,
       "qualification_contract_version": "tool-envelope-v3-structured-tool",
       "next_retry_not_before_utc": null,
@@ -166,7 +166,7 @@
           "status": "OPEN",
           "question": "Déterminer si un avis BOAMP cite le texte, son obligation ou un besoin directement lié ; un simple mot-sectoriel ne démontre pas une demande causée par le texte.",
           "evidence": [
-            "Réponse Claude non exploitable : Contrat spécialisé invalide : Le nombre d'observations Marché ne correspond pas à l'entrée."
+            "Réponse Claude non exploitable : Contrat spécialisé invalide : NO_EVIDENCE exige une collecte aboutie sans observation."
           ],
           "automatic_retry": true
         }
@@ -177,8 +177,8 @@
   ],
   "summary": {
     "open_count": 0,
-    "autonomous_research_pending_count": 3,
-    "auto_research_exhausted_count": 0,
+    "autonomous_research_pending_count": 0,
+    "auto_research_exhausted_count": 3,
     "automatic_retry_count": 0
   }
 }
