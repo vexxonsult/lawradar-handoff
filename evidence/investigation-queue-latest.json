@@ -1,184 +1,23 @@
 {
   "schema": "lawradar-investigation-queue-v1",
-  "generated_at_utc": "2026-10-28T21:43:32.537885+00:00",
+  "generated_at_utc": "2026-10-29T14:22:44.427756+00:00",
   "source_run": {
-    "id": "investigation-replay:848dcc24c6792809",
-    "kind": "ARCHIVED_FACTS_REPLAY",
-    "generated_at_utc": "2026-10-28T21:39:40.708259+00:00",
-    "purpose": "TECHNICAL_ENRICHMENT_RETRY",
-    "archive_provenance": {
-      "signal:57f3525c45fcc9e0": "evidence/universal-signals/v2/2026/10/run-40701892424-attempt-1.json",
-      "signal:5987ad13a9f5d469": "evidence/universal-signals/v2/2026/10/run-40701892424-attempt-1.json",
-      "signal:69da1d0f73790437": "evidence/universal-signals/v2/2026/10/run-40701892424-attempt-1.json"
-    }
+    "id": "40890463315",
+    "attempt": "1",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/40890463315",
+    "commit": "8ff312d46e9e5c7087d56d4d3704f91c8f18766e",
+    "report_date": "2026-10-29"
   },
   "policy": {
     "max_automatic_attempts": 2,
     "max_autonomous_research_attempts": 1,
     "retry_delay_hours": 6
   },
-  "items": [
-    {
-      "signal_id": "signal:57f3525c45fcc9e0",
-      "source_id": "jorf:JORFTEXT000055020252",
-      "title": "Arrêté du 26 octobre 2026 portant révision de la fiche d'opération standardisée AGRI-TH-108 et du référentiel de contrôle associé",
-      "status": "AUTO_RESEARCH_EXHAUSTED",
-      "opened_at_utc": "2026-10-28T14:09:11.436983+00:00",
-      "updated_at_utc": "2026-10-28T21:43:32.537885+00:00",
-      "automatic_attempts": 2,
-      "max_automatic_attempts": 2,
-      "autonomous_research_attempts": 1,
-      "max_autonomous_research_attempts": 1,
-      "qualification_contract_version": "tool-envelope-v3-structured-tool",
-      "next_retry_not_before_utc": null,
-      "questions": [
-        {
-          "id": "OPERATIONAL_FEASIBILITY",
-          "kind": "NEW_OFFICIAL_OR_PARTNER_EVIDENCE",
-          "status": "OPEN",
-          "question": "Recherche autonome à mener sur l'autorisation, l'agrément ou la voie de sous-traitance applicable, les dépendances opérationnelles nécessaires, le capital de démarrage nécessaire, le délai réaliste de mise sur le marché avant toute décision commerciale.",
-          "evidence": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : CEE_FICHE_AGRI-TH-108.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ],
-          "automatic_retry": false
-        },
-        {
-          "id": "PRESS_QUALIFICATION",
-          "kind": "TECHNICAL_RETRY",
-          "status": "OPEN",
-          "question": "Requalifier exclusivement les candidats Presse déjà collectés ; aucune nouvelle conclusion médiatique n'est admise sans URL tracée.",
-          "evidence": [
-            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement.",
-            "Collecte Presse partiellement limitée par un rate-limit temporaire (HTTP 429) ; retry différé requis."
-          ],
-          "automatic_retry": true
-        },
-        {
-          "id": "MARKET_RELEVANCE",
-          "kind": "TECHNICAL_RETRY",
-          "status": "OPEN",
-          "question": "Déterminer si un avis BOAMP cite le texte, son obligation ou un besoin directement lié ; un simple mot-sectoriel ne démontre pas une demande causée par le texte.",
-          "evidence": [
-            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement."
-          ],
-          "automatic_retry": true
-        }
-      ],
-      "readiness_status": "READY_FOR_PILOTS",
-      "final_constraint": "INVESTIGATE"
-    },
-    {
-      "signal_id": "signal:5987ad13a9f5d469",
-      "source_id": "jorf:JORFTEXT000055020242",
-      "title": "Suppression de fiches d'opérations standardisées CEE (AGRI, BAR, BAT, IND, TRA)",
-      "status": "AUTO_RESEARCH_EXHAUSTED",
-      "opened_at_utc": "2026-10-28T14:09:11.436983+00:00",
-      "updated_at_utc": "2026-10-28T21:43:32.537885+00:00",
-      "automatic_attempts": 2,
-      "max_automatic_attempts": 2,
-      "autonomous_research_attempts": 1,
-      "max_autonomous_research_attempts": 1,
-      "qualification_contract_version": "tool-envelope-v3-structured-tool",
-      "next_retry_not_before_utc": null,
-      "questions": [
-        {
-          "id": "OPERATIONAL_FEASIBILITY",
-          "kind": "NEW_OFFICIAL_OR_PARTNER_EVIDENCE",
-          "status": "OPEN",
-          "question": "Recherche autonome à mener sur le capital de démarrage nécessaire, le délai réaliste de mise sur le marché avant toute décision commerciale.",
-          "evidence": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ],
-          "automatic_retry": false
-        },
-        {
-          "id": "PRESS_QUALIFICATION",
-          "kind": "TECHNICAL_RETRY",
-          "status": "OPEN",
-          "question": "Requalifier exclusivement les candidats Presse déjà collectés ; aucune nouvelle conclusion médiatique n'est admise sans URL tracée.",
-          "evidence": [
-            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement.",
-            "Collecte Presse partiellement limitée par un rate-limit temporaire (HTTP 429) ; retry différé requis."
-          ],
-          "automatic_retry": true
-        },
-        {
-          "id": "MARKET_RELEVANCE",
-          "kind": "TECHNICAL_RETRY",
-          "status": "OPEN",
-          "question": "Déterminer si un avis BOAMP cite le texte, son obligation ou un besoin directement lié ; un simple mot-sectoriel ne démontre pas une demande causée par le texte.",
-          "evidence": [
-            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement."
-          ],
-          "automatic_retry": true
-        }
-      ],
-      "readiness_status": "READY_FOR_PILOTS",
-      "final_constraint": "INVESTIGATE"
-    },
-    {
-      "signal_id": "signal:69da1d0f73790437",
-      "source_id": "jorf:JORFTEXT000055020072",
-      "title": "Décret n°2026-995 créant une aide exceptionnelle pour les entreprises victimes des troubles urbains d'octobre 2026",
-      "status": "AUTO_RESEARCH_EXHAUSTED",
-      "opened_at_utc": "2026-10-28T14:09:11.436983+00:00",
-      "updated_at_utc": "2026-10-28T21:43:32.537885+00:00",
-      "automatic_attempts": 2,
-      "max_automatic_attempts": 2,
-      "autonomous_research_attempts": 1,
-      "max_autonomous_research_attempts": 1,
-      "qualification_contract_version": "tool-envelope-v3-structured-tool",
-      "next_retry_not_before_utc": null,
-      "questions": [
-        {
-          "id": "OPERATIONAL_FEASIBILITY",
-          "kind": "NEW_OFFICIAL_OR_PARTNER_EVIDENCE",
-          "status": "OPEN",
-          "question": "Recherche autonome à mener sur l'autorisation, l'agrément ou la voie de sous-traitance applicable, les dépendances opérationnelles nécessaires, le capital de démarrage nécessaire, le délai réaliste de mise sur le marché avant toute décision commerciale.",
-          "evidence": [
-            "Preuve opérationnelle incomplète ou absente.",
-            "Statut de l'autorisation inconnu : Éligibilité aux conditions du décret (dommages subis, effectif <250).",
-            "Dépendance non vérifiée : Agence de services et de paiement.",
-            "Capital de départ inconnu.",
-            "Délai de mise sur le marché inconnu."
-          ],
-          "automatic_retry": false
-        },
-        {
-          "id": "PRESS_QUALIFICATION",
-          "kind": "TECHNICAL_RETRY",
-          "status": "OPEN",
-          "question": "Requalifier exclusivement les candidats Presse déjà collectés ; aucune nouvelle conclusion médiatique n'est admise sans URL tracée.",
-          "evidence": [
-            "Réponse Claude non exploitable : Le JSON Claude ne respecte pas le contrat d'enrichissement.",
-            "Collecte Presse partiellement limitée par un rate-limit temporaire (HTTP 429) ; retry différé requis."
-          ],
-          "automatic_retry": true
-        },
-        {
-          "id": "MARKET_RELEVANCE",
-          "kind": "TECHNICAL_RETRY",
-          "status": "OPEN",
-          "question": "Déterminer si un avis BOAMP cite le texte, son obligation ou un besoin directement lié ; un simple mot-sectoriel ne démontre pas une demande causée par le texte.",
-          "evidence": [
-            "Réponse Claude non exploitable : Contrat spécialisé invalide : NO_EVIDENCE exige une collecte aboutie sans observation."
-          ],
-          "automatic_retry": true
-        }
-      ],
-      "readiness_status": "READY_FOR_PILOTS",
-      "final_constraint": "INVESTIGATE"
-    }
-  ],
+  "items": [],
   "summary": {
     "open_count": 0,
     "autonomous_research_pending_count": 0,
-    "auto_research_exhausted_count": 3,
+    "auto_research_exhausted_count": 0,
     "automatic_retry_count": 0
   }
 }
