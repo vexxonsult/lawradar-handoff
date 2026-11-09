@@ -12,7 +12,7 @@
     },
     {
       "file": "jorf-summaries-latest.json",
-      "status": "CHANGED",
+      "status": "UNCHANGED",
       "item_count": 109,
       "sha256": "7a51a96326f3a843aeb170a67370436695374f773bd33d017f0a8fe1142121f7",
       "documents_sha256": "e23c4d8742adbd60c5e19a0552d19df2e5370b4a44d5497ac1b10df437bb8093",
@@ -20,15 +20,15 @@
     },
     {
       "file": "eurlex-oj-latest.json",
-      "status": "METADATA_CHANGED",
-      "item_count": 0,
-      "sha256": "80b40714a1c74cec749ffd0fdb4aa0f8ad8f45485d939163fc18775ff90c61c3",
-      "documents_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "status": "CHANGED",
+      "item_count": 190,
+      "sha256": "f7f47079b9c2a809819943696cd86fe788764d72eaabcfecd9809e1669070cb8",
+      "documents_sha256": "e44a20bb84d3b6d6de8783093041612a87dfe22b34925592bae7f592f066a744",
       "interpretation": null
     },
     {
       "file": "consultdd-latest.json",
-      "status": "CHANGED",
+      "status": "UNCHANGED",
       "item_count": 0,
       "sha256": "a181b35a881d0b1368a17b1190eacb88946e05d1a7accce137f159326fdf13f3",
       "documents_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
@@ -36,7 +36,7 @@
     },
     {
       "file": "status-latest.json",
-      "status": "METADATA_CHANGED",
+      "status": "UNCHANGED",
       "item_count": 0,
       "sha256": "4f7dbc0610197e04ef79b152e315b3dd9acf6f1e45e5f87f19a41b038accd252",
       "documents_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
@@ -44,15 +44,11 @@
     }
   ],
   "changed_sources": [
-    "jorf-summaries-latest.json",
-    "consultdd-latest.json"
+    "eurlex-oj-latest.json"
   ],
   "evidence_change_detected": true,
-  "supported_model_change_detected": true,
-  "supported_changed_sources": [
-    "jorf-summaries-latest.json",
-    "consultdd-latest.json"
-  ],
-  "model_input_required": true,
+  "supported_model_change_detected": false,
+  "supported_changed_sources": [],
+  "model_input_required": false,
   "interpretation": null
 }
