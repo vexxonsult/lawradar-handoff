@@ -1,55 +1,31 @@
 {
   "schema": "lawradar-run-manifest-v1",
   "run": {
-    "id": "42736977438",
+    "id": "42889841925",
     "attempt": "1",
     "kind": "motor",
     "status": "skipped",
     "workflow": "Moteur LawRadar — livraison structurée",
-    "commit": "db9bbb1b9fff83c42e53530c480c4609a2293e74",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/42736977438",
-    "created_at_utc": "2026-11-10T01:36:43.840404+00:00",
-    "duration_seconds": 0,
-    "reason": "Variation EUR-Lex détectée ; hors périmètre du moteur actuel (JORF et ConsultDD)."
+    "commit": "8f149c94bca491056475dbd2b18c6ffa74c7ec68",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/42889841925",
+    "created_at_utc": "2026-11-10T19:54:18.653157+00:00",
+    "duration_seconds": 8,
+    "reason": "Anthropic n'a accepté aucun batch : solde de crédits insuffisant. File conservée ; reprise automatique espacée ou lancement manuel après rechargement."
   },
   "inputs": [
     {
-      "path": "evidence/delta-latest.json",
+      "path": "out/motor-input-resolved.json",
       "exists": true,
-      "bytes": 1962,
-      "sha256": "cf73edcbac9c8f345fe74affbc52f911cf26b30af7a087df9d61c80c5b097b1d"
-    },
-    {
-      "path": "evidence/jorf-summaries-latest.json",
-      "exists": true,
-      "bytes": 56179,
-      "sha256": "f5988a0ba79ec534c5a31fbd82a81c57765d7c407952e78a39ddfb275011a7c9"
-    },
-    {
-      "path": "evidence/consultdd-latest.json",
-      "exists": true,
-      "bytes": 690,
-      "sha256": "bbb05323b4dbc4f172ffb3ca09e3fd8126fab897f18643dcf8ab4d9ce9e497e9"
-    },
-    {
-      "path": "out/motor-input-skipped.json",
-      "exists": true,
-      "bytes": 751,
-      "sha256": "cc1972aea60e61e0cd2dd91cfa630a322215f7d0ceeb246b72fa0143ced75ae5"
+      "bytes": 89680,
+      "sha256": "86a9f41749c2f28c3d9d2dadad7e2726f09a4635cd942184c5d782838e335f43"
     }
   ],
   "outputs": [
     {
-      "path": "out/universal-signal-skipped.json",
+      "path": "evidence/motor-batch-latest.json",
       "exists": true,
-      "bytes": 1430,
-      "sha256": "a4a04fc560af586e1b6bf44fcb5e1382057dc9717a573b3e1912d449f976db90"
-    },
-    {
-      "path": "out/universal-signal-archive-skipped.json",
-      "exists": true,
-      "bytes": 745,
-      "sha256": "040b8288110b0f18e8477678090e9d6846baf441545bd06746c1599a6bb51af5"
+      "bytes": 94253,
+      "sha256": "5da5d2cb6f9a6e19e69a1295d2422c49b94f11a63905ec886ff5082703202350"
     }
   ],
   "cost_estimate": {
