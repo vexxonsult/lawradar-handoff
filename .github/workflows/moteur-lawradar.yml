@@ -57,19 +57,45 @@ jobs:
         name: Préparer le diff et éviter tout appel inutile au modèle
         env:
           TRIGGER_SCHEDULE: ${{ github.event.schedule }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: |
           mkdir -p out
           python scripts/manage_motor_queue.py stage --queue evidence/motor-queue-latest.json --queue-output out/motor-queue-proposed.json --batch-output out/motor-input-gate.json --batch-size 250 --active-batch-state evidence/motor-batch-latest.json
           python - <<'PY'
           import json
           import os
+          from datetime import UTC, datetime
           from pathlib import Path
           prepared = json.loads(Path("out/motor-input-gate.json").read_text(encoding="utf-8"))
           required = bool(prepared.get("candidates"))
+          billing_blocked = False
+          # Après un refus de solde, les réveils planifiés se taisent pendant
+          # six heures : la file reste intacte et l'utilisateur ne reçoit pas
+          # une succession de mails d'échec. Un workflow_dispatch contourne
+          # volontairement ce délai dès que le solde a été rechargé.
+          state_path = Path("evidence/motor-batch-latest.json")
+          if required and os.environ.get("GITHUB_EVENT_NAME") != "workflow_dispatch" and state_path.exists():
+              try:
+                  state = json.loads(state_path.read_text(encoding="utf-8"))
+                  updated = datetime.fromisoformat(
+                      str(state.get("updated_at_utc", "")).replace("Z", "+00:00")
+                  )
+                  age_seconds = (datetime.now(UTC) - updated.astimezone(UTC)).total_seconds()
+                  billing_blocked = (
+                      state.get("billing_blocked") is True
+                      and state.get("error_code") == "ANTHROPIC_CREDIT_BALANCE_TOO_LOW"
+                      and 0 <= age_seconds < 6 * 60 * 60
+                  )
+              except (OSError, TypeError, ValueError, json.JSONDecodeError):
+                  billing_blocked = False
+          if billing_blocked:
+              required = False
           changed = set(prepared.get("delta_changed_sources", []))
           handled = set(prepared.get("handled_source_files", []))
           unsupported = sorted(changed - handled)
-          if required:
+          if billing_blocked:
+              reason = "Moteur temporairement bloqué par le solde Anthropic ; file conservée, prochain essai planifié dans six heures ou immédiat par lancement manuel après rechargement."
+          elif required:
               reason = "CANDIDATES_READY"
           elif prepared.get("excluded_historical_candidates"):
               reason = f"{len(prepared['excluded_historical_candidates'])} réapparition(s) historique(s) hors fenêtre quotidienne, non envoyée(s) au moteur."
@@ -86,7 +112,7 @@ jobs:
           queue_path = Path("evidence/motor-queue-latest.json")
           proposed_path = Path("out/motor-queue-proposed.json")
           queue_changed = not queue_path.exists() or queue_path.read_bytes() != proposed_path.read_bytes()
-          quiet_idle = not required and os.environ.get("TRIGGER_SCHEDULE") == "9,29,49 5-16 * * *"
+          quiet_idle = billing_blocked or (not required and os.environ.get("TRIGGER_SCHEDULE") == "9,29,49 5-16 * * *")
           Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8").write(
               f"should_run={'true' if required else 'false'}\n"
               f"skip_reason={reason}\n"
@@ -279,7 +305,7 @@ jobs:
           git pull --rebase origin main
           git push
       - name: Enregistrer le batch asynchrone en cours
-        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status != 'ended'
+        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.billing_blocked != 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status != 'ended'
         run: |
           # L'état fournisseur et la file préparée sont conservés ensemble :
           # le prochain réveil reprend exactement le même lot, même si de
@@ -289,7 +315,7 @@ jobs:
           python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
           python scripts/render_control_dashboard.py --input evidence/run-index-latest.json --backlog evidence/motor-backlog-latest.json --out out/control-dashboard.html
       - name: Téléverser l'état du batch encore en cours
-        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status != 'ended'
+        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.billing_blocked != 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status != 'ended'
         uses: actions/upload-artifact@v4
         with:
           name: lawradar-motor-batch-${{ github.run_id }}
@@ -301,7 +327,7 @@ jobs:
             out/motor-input-resolved.json
           retention-days: 90
       - name: Mémoriser le batch encore en cours sans le soumettre à nouveau
-        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status != 'ended'
+        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.billing_blocked != 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status != 'ended'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -313,13 +339,13 @@ jobs:
           git pull --rebase origin main
           git push
       - name: Enregistrer un batch Anthropic refusé sans le rejouer
-        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status == 'ended'
+        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.billing_blocked != 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status == 'ended'
         run: |
           cp out/motor-queue-proposed.json evidence/motor-queue-latest.json
           python scripts/build_run_manifest.py --output evidence/run-manifest-motor-latest.json --kind motor --status failed --reason "Message Batch Anthropic achevé sans livraison valide ; consulter evidence/motor-batch-latest.json avant tout rejeu." --inputs out/motor-input-resolved.json --outputs evidence/motor-batch-latest.json
           python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
       - name: Mémoriser le diagnostic du batch refusé
-        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status == 'ended'
+        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.billing_blocked != 'true' && steps.batch.outputs.ready != 'true' && steps.batch.outputs.processing_status == 'ended'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -328,6 +354,38 @@ jobs:
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git add evidence/motor-batch-latest.json evidence/motor-queue-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json
           git diff --cached --quiet || git commit -m "Diagnostic batch moteur LawRadar $(date -u +%F)"
+          git pull --rebase origin main
+          git push
+      - name: Enregistrer le blocage de facturation sans mettre le run en échec
+        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.billing_blocked == 'true'
+        run: |
+          cp out/motor-queue-proposed.json evidence/motor-queue-latest.json
+          python scripts/build_run_manifest.py --output evidence/run-manifest-motor-latest.json --kind motor --status skipped --reason "Anthropic n'a accepté aucun batch : solde de crédits insuffisant. File conservée ; reprise automatique espacée ou lancement manuel après rechargement." --inputs out/motor-input-resolved.json --outputs evidence/motor-batch-latest.json
+          python scripts/build_run_index.py --output evidence/run-index-latest.json --manifests evidence/run-manifest-latest.json evidence/run-manifest-motor-latest.json
+          python scripts/render_control_dashboard.py --input evidence/run-index-latest.json --backlog evidence/motor-backlog-latest.json --out out/control-dashboard.html
+      - name: Téléverser le diagnostic de facturation
+        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.billing_blocked == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: lawradar-motor-billing-block-${{ github.run_id }}
+          path: |
+            evidence/motor-batch-latest.json
+            evidence/motor-queue-latest.json
+            evidence/run-manifest-motor-latest.json
+            evidence/run-index-latest.json
+            out/control-dashboard.html
+            out/motor-input-resolved.json
+          retention-days: 90
+      - name: Mémoriser le blocage de facturation sans envoyer de notification d'échec
+        if: steps.batch_auth.outputs.configured == 'true' && steps.batch.outputs.billing_blocked == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "lawradar-motor[bot]"
+          git config user.email "lawradar-motor[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git add evidence/motor-batch-latest.json evidence/motor-queue-latest.json evidence/run-manifest-motor-latest.json evidence/run-index-latest.json
+          git diff --cached --quiet || git commit -m "Moteur LawRadar en attente de crédit Anthropic $(date -u +%F)"
           git pull --rebase origin main
           git push
       - name: Valider et rendre le dashboard

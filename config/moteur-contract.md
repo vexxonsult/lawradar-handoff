@@ -23,6 +23,12 @@ secret GitHub `ANTHROPIC_API_KEY`, distinct du jeton d'abonnement Claude Code.
 En son absence, le run est enregistré comme ignoré, sans appel fournisseur et
 sans faire avancer la file.
 
+Un refus explicite du fournisseur pour solde Anthropic insuffisant est un état
+opérationnel `blocked_by_billing`, pas un échec de collecte ni une livraison
+invalide. Il conserve le snapshot et la file, produit un manifeste `skipped`
+et impose un délai de six heures aux réveils planifiés. Un lancement manuel
+reste immédiatement disponible après rechargement du solde.
+
 Un batch asynchrone peut survivre à un run GitHub. Son identifiant, l'empreinte
 du lot, le modèle et les compteurs techniques sont conservés dans
 `evidence/motor-batch-latest.json`, avec l'entrée candidate figée qui garantit

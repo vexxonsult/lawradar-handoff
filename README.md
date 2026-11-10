@@ -46,6 +46,13 @@ obligatoire ; le jeton `CLAUDE_CODE_OAUTH_TOKEN` ne donne pas accès à cette AP
 Sans clé API, le centre de contrôle enregistre un run ignoré et aucun coût n'est
 engagé.
 
+Si Anthropic refuse une soumission parce que le solde de crédits est insuffisant,
+le run est enregistré comme `skipped` avec le statut technique
+`blocked_by_billing`, jamais comme une erreur GitHub Actions. La file et son
+entrée figée sont conservées. Les réveils planifiés attendent six heures avant
+un nouvel essai sans coût de modèle ; un lancement manuel du workflow reprend
+immédiatement après rechargement du solde.
+
 ## Rendu de restitution
 
 Le dépôt contient aussi un moteur GitHub Actions, filtré par le delta. Lorsqu'il

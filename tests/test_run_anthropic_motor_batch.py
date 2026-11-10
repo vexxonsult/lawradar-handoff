@@ -80,9 +80,10 @@ def result_value(source_id):
 
 
 class FakeBatches:
-    def __init__(self, responses, *, starts_ended=True):
+    def __init__(self, responses, *, starts_ended=True, create_error=None):
         self.responses = responses
         self.starts_ended = starts_ended
+        self.create_error = create_error
         self.created = []
         self.retrieved = []
 
@@ -101,6 +102,8 @@ class FakeBatches:
 
     def create(self, **kwargs):
         self.created.append(kwargs)
+        if self.create_error is not None:
+            raise self.create_error
         return self.batch("ended" if self.starts_ended else "in_progress")
 
     def retrieve(self, batch_id):
@@ -112,9 +115,11 @@ class FakeBatches:
 
 
 class FakeClient:
-    def __init__(self, responses, *, starts_ended=True):
+    def __init__(self, responses, *, starts_ended=True, create_error=None):
         self.messages = type("Messages", (), {})()
-        self.messages.batches = FakeBatches(responses, starts_ended=starts_ended)
+        self.messages.batches = FakeBatches(
+            responses, starts_ended=starts_ended, create_error=create_error
+        )
 
 
 def response(custom_id, source_id):
@@ -138,6 +143,9 @@ class AnthropicMotorBatchTests(unittest.TestCase):
         self.assertEqual(workflow.count(f"--batch-size {MAX_CANDIDATES}"), 3)
         self.assertEqual(workflow.count("--active-batch-state evidence/motor-batch-latest.json"), 3)
         self.assertIn("scripts/run_anthropic_motor_batch.py", workflow)
+        self.assertIn("ANTHROPIC_CREDIT_BALANCE_TOO_LOW", workflow)
+        self.assertIn("GITHUB_EVENT_NAME", workflow)
+        self.assertIn("steps.batch.outputs.billing_blocked == 'true'", workflow)
         self.assertNotIn("anthropics/claude-code-action", workflow)
         self.assertNotIn("--max-turns", workflow)
         batch_command = workflow.split("name: Soumettre ou reprendre le Message Batch Anthropic", 1)[1].split("- name: Enregistrer la migration", 1)[0]
@@ -308,6 +316,49 @@ class AnthropicMotorBatchTests(unittest.TestCase):
             saved_state = json.loads(state_path.read_text())
             self.assertEqual(saved_state["batch_id"], "msgbatch_test")
             self.assertIn("request_version", saved_state)
+
+    def test_low_credit_is_a_persisted_non_failing_operational_state(self):
+        value = motor_input(candidate("jorf:A"))
+        client = FakeClient(
+            [], create_error=RuntimeError(
+                "Error 400: Your credit balance is too low to access the Anthropic API."
+            ),
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            state_path = Path(directory) / "state.json"
+            output_path = Path(directory) / "delivery.json"
+            resolved_input_path = Path(directory) / "resolved-input.json"
+            state = run_batch(
+                value,
+                client=client,
+                state_path=state_path,
+                output_path=output_path,
+                resolved_input_output=resolved_input_path,
+                wait_seconds=0,
+            )
+            self.assertFalse(state["ready"])
+            self.assertEqual(state["processing_status"], "ended")
+            self.assertTrue(state["billing_blocked"])
+            self.assertEqual(state["operational_status"], "blocked_by_billing")
+            self.assertEqual(state["error_code"], "ANTHROPIC_CREDIT_BALANCE_TOO_LOW")
+            self.assertIsNone(state["batch_id"])
+            self.assertEqual(len(client.messages.batches.created), 1)
+            self.assertFalse(output_path.exists())
+            self.assertEqual(json.loads(state_path.read_text(encoding="utf-8")), state)
+            self.assertEqual(json.loads(resolved_input_path.read_text(encoding="utf-8")), value)
+
+    def test_other_provider_errors_remain_visible_failures(self):
+        value = motor_input(candidate("jorf:A"))
+        client = FakeClient([], create_error=RuntimeError("network unavailable"))
+        with tempfile.TemporaryDirectory() as directory:
+            with self.assertRaisesRegex(RuntimeError, "network unavailable"):
+                run_batch(
+                    value,
+                    client=client,
+                    state_path=Path(directory) / "state.json",
+                    output_path=Path(directory) / "delivery.json",
+                    wait_seconds=0,
+                )
 
     def test_pending_batch_is_resumed_without_duplicate_submission(self):
         value = motor_input(candidate("jorf:A"))

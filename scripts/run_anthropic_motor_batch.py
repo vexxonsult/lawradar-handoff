@@ -35,6 +35,8 @@ MAX_CANDIDATES = 250
 # Toute modification de la requête fournisseur doit produire un nouveau batch
 # une fois le batch précédent achevé, sans jamais doubler un batch en cours.
 BATCH_REQUEST_VERSION = "2026-09-12-explicit-json-contract-v8"
+BILLING_BLOCKED_STATUS = "blocked_by_billing"
+BILLING_ERROR_CODE = "ANTHROPIC_CREDIT_BALANCE_TOO_LOW"
 _UNSUPPORTED_ANTHROPIC_SCHEMA_KEYWORDS = {
     "maxItems", "maxLength", "minLength", "minimum", "maximum",
     "exclusiveMinimum", "exclusiveMaximum", "multipleOf", "pattern", "uniqueItems",
@@ -540,6 +542,53 @@ def _state_from_batch(
     }
 
 
+def _is_billing_block(error: BaseException) -> bool:
+    """Reconnaît uniquement le refus fournisseur dû au solde Anthropic.
+
+    Ce cas n'est pas une erreur de données LawRadar ni une livraison Anthropic
+    invalide : aucune requête de modèle n'a été acceptée. Le distinguer permet
+    au workflow de conserver la file sans envoyer une notification d'échec à
+    chaque réveil planifié.
+    """
+    message = str(error).casefold()
+    return any(marker in message for marker in (
+        "credit balance is too low",
+        "insufficient credit balance",
+        "insufficient credits",
+    ))
+
+
+def _billing_blocked_state(
+    request_hash: str, model: str, request_count: int, motor_input: dict[str, Any]
+) -> dict[str, Any]:
+    now = datetime.now(UTC).isoformat()
+    return {
+        "schema": STATE_SCHEMA,
+        "input_sha256": request_hash,
+        "request_sha256": request_hash,
+        "model": model,
+        "request_version": BATCH_REQUEST_VERSION,
+        "batch_id": None,
+        # ``ended`` indique qu'aucun batch distant n'est à moissonner. La
+        # porte du workflow lit ``billing_blocked`` séparément pour ménager un
+        # délai de reprise sans immobiliser définitivement la file.
+        "processing_status": "ended",
+        "request_count": request_count,
+        "request_counts": {
+            "processing": 0, "succeeded": 0, "errored": 0,
+            "canceled": 0, "expired": 0,
+        },
+        "motor_input": copy.deepcopy(motor_input),
+        "ready": False,
+        "billing_blocked": True,
+        "operational_status": BILLING_BLOCKED_STATUS,
+        "error_code": BILLING_ERROR_CODE,
+        "error": "Anthropic API unavailable: insufficient credit balance.",
+        "created_at_utc": now,
+        "updated_at_utc": now,
+    }
+
+
 def _load_reusable_state(
     path: Path, request_hash: str, model: str, request_count: int
 ) -> dict[str, Any] | None:
@@ -614,7 +663,21 @@ def run_batch(
         model = pinned_model
         batch = client.messages.batches.retrieve(previous["batch_id"])
     else:
-        batch = client.messages.batches.create(requests=requests)
+        try:
+            batch = client.messages.batches.create(requests=requests)
+        except Exception as error:
+            if not _is_billing_block(error):
+                raise
+            # Conserver l'entrée exacte et un diagnostic sans secret. Le
+            # workflow traite ensuite ce statut comme une pause propre, et non
+            # comme un échec GitHub Actions.
+            if resolved_input_output is not None:
+                _write_json_atomic(resolved_input_output, motor_input)
+            state = _billing_blocked_state(
+                request_hash, model, len(requests), motor_input
+            )
+            _write_json(state_path, state)
+            return state
     # Ce fichier est le contrat d'entrée de la livraison et des étapes aval.
     # Il reflète le snapshot effectivement soumis au fournisseur, même si la
     # file a été restagée pendant que le batch distant était encore actif.
@@ -664,6 +727,9 @@ def _write_github_output(state: dict[str, Any]) -> None:
         handle.write(f"ready={'true' if state.get('ready') else 'false'}\n")
         handle.write(f"batch_id={state.get('batch_id', '')}\n")
         handle.write(f"processing_status={state.get('processing_status', '')}\n")
+        handle.write(
+            f"billing_blocked={'true' if state.get('billing_blocked') else 'false'}\n"
+        )
 
 
 def main() -> int:
