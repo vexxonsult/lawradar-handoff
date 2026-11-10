@@ -1,15 +1,15 @@
 {
   "schema": "lawradar-run-manifest-v1",
   "run": {
-    "id": "42730200671",
+    "id": "42736977438",
     "attempt": "1",
     "kind": "motor",
     "status": "skipped",
     "workflow": "Moteur LawRadar — livraison structurée",
-    "commit": "b8573bb89f49e8eeb63aa75ae72be4f7585837b8",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/42730200671",
-    "created_at_utc": "2026-11-10T00:41:37.151012+00:00",
-    "duration_seconds": 1,
+    "commit": "db9bbb1b9fff83c42e53530c480c4609a2293e74",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/42736977438",
+    "created_at_utc": "2026-11-10T01:36:43.840404+00:00",
+    "duration_seconds": 0,
     "reason": "Variation EUR-Lex détectée ; hors périmètre du moteur actuel (JORF et ConsultDD)."
   },
   "inputs": [
@@ -43,13 +43,13 @@
       "path": "out/universal-signal-skipped.json",
       "exists": true,
       "bytes": 1430,
-      "sha256": "4d19bf53722a591f0d08fc9606a05db2aaa28dfaa382c831b32bab4c3a48cad3"
+      "sha256": "a4a04fc560af586e1b6bf44fcb5e1382057dc9717a573b3e1912d449f976db90"
     },
     {
       "path": "out/universal-signal-archive-skipped.json",
       "exists": true,
       "bytes": 745,
-      "sha256": "e48e4ce09189af6d6cd279156fbb38c7f32f7d2f25a1e897bcd0d8eb7ada69a2"
+      "sha256": "040b8288110b0f18e8477678090e9d6846baf441545bd06746c1599a6bb51af5"
     }
   ],
   "cost_estimate": {
