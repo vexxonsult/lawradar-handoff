@@ -16,17 +16,503 @@
   },
   "motor_input": {
     "schema": "lawradar-motor-input-v1",
-    "report_date": "2026-11-11",
+    "report_date": "2026-11-13",
     "delta_changed_sources": [
+      "jorf-summaries-latest.json",
       "consultdd-latest.json"
     ],
     "handled_source_files": [
       "jorf-summaries-latest.json",
       "consultdd-latest.json"
     ],
-    "excluded_historical_candidates": [],
-    "excluded_routine_candidates": [],
-    "excluded_no_economic_friction_candidates": [],
+    "excluded_historical_candidates": [
+      {
+        "source_id": "jorf:JORFTEXT000000517521",
+        "publication_date": "1945-02-04",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000031733810",
+        "publication_date": "2015-12-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000051270130",
+        "publication_date": "2025-02-28",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000051304299",
+        "publication_date": "2025-03-08",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000053227052",
+        "publication_date": "2025-12-31",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054125097",
+        "publication_date": "2026-05-23",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054280827",
+        "publication_date": "2026-06-20",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054470584",
+        "publication_date": "2026-07-24",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054470684",
+        "publication_date": "2026-07-24",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054666249",
+        "publication_date": "2026-08-12",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054826826",
+        "publication_date": "2026-09-11",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      }
+    ],
+    "excluded_routine_candidates": [
+      {
+        "source_id": "jorf:JORFTEXT000055081131",
+        "title": "Décision du 9 novembre 2026 portant délégation de signature (direction des affaires financières)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081141",
+        "title": "Décision du 10 novembre 2026 portant délégation de signature (direction du service national et de la jeunesse)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081192",
+        "title": "Arrêté du 6 novembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un concours externe sur titres et par spécialité et fixant la date des épreuves orales pour le recrutement d'ingénieurs des travaux publics de l'Etat",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081212",
+        "title": "Arrêté du 6 novembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un concours externe sur titres pour le recrutement d'éducateurs de la protection judiciaire de la jeunesse",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081299",
+        "title": "Arrêté du 10 novembre 2026 modifiant l'arrêté du 24 novembre 2015 relatif au concours commun d'admission d'élèves ingénieurs dans certaines écoles des mines et des télécommunications",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081477",
+        "title": "Arrêté du 5 novembre 2026 portant délégation de signature (direction de l'immobilier de l'Etat)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081503",
+        "title": "Arrêté du 9 novembre 2026 fixant le nombre de places offertes aux concours ouverts pour le recrutement d'inspecteurs des douanes et droits indirects dans la spécialité « traitement automatisé de l'information − programmeur de système d'exploitation » au titre de l'année 2027",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081513",
+        "title": "Arrêté du 10 novembre 2026 fixant le nombre de places offertes aux concours pour le recrutement de techniciens-géomètres du corps des géomètres-cadastreurs des finances publiques au titre de l'année 2027",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081532",
+        "title": "Arrêté du 10 novembre 2026 fixant le nombre de places offertes à l'examen professionnel pour l'accès au grade de technicien-géomètre du corps des géomètres-cadastreurs des finances publiques au titre de l'année 2027",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081542",
+        "title": "Décision du 2 novembre 2026 portant délégation de signature (secrétariat général)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081552",
+        "title": "Décision du 2 novembre 2026 portant délégation de signature (secrétariat général)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081562",
+        "title": "Arrêté du 5 novembre 2026 portant délégation de signature en matière financière (direction des services de la navigation aérienne)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081700",
+        "title": "Arrêté du 9 novembre 2026 portant admission à la retraite (administrateurs de l'Etat)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081705",
+        "title": "Arrêté du 9 novembre 2026 portant admission à la retraite (administrateurs de l'Etat)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081711",
+        "title": "Décret 10 novembre 2026 portant naturalisation, réintégration, mention d'enfants mineurs bénéficiant de l'effet collectif attaché à l'acquisition de la nationalité française par leurs parents et francisation de noms et de prénoms (Accès protégé)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081714",
+        "title": "Arrêté du 9 novembre 2026 portant nomination d'un contrôleur général des services actifs de la police nationale",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081717",
+        "title": "Arrêté du 9 novembre 2026 portant admission à la retraite (ingénieurs civils de la défense)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081721",
+        "title": "Arrêté du 1er octobre 2026 portant admission à la retraite (inspection du travail)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081723",
+        "title": "Arrêté du 5 octobre 2026 portant admission à la retraite (inspection du travail)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081725",
+        "title": "Arrêté du 6 octobre 2026 portant admission à la retraite (inspection du travail)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081727",
+        "title": "Arrêté du 6 octobre 2026 portant admission à la retraite (inspection du travail)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081729",
+        "title": "Arrêté du 6 octobre 2026 portant admission à la retraite (inspection du travail)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081731",
+        "title": "Arrêté du 6 octobre 2026 portant admission à la retraite (inspection du travail)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081733",
+        "title": "Arrêté du 6 octobre 2026 portant admission à la retraite (inspection du travail)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081735",
+        "title": "Arrêté du 6 octobre 2026 portant admission à la retraite (inspection du travail)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081737",
+        "title": "Arrêté du 6 octobre 2026 portant admission à la retraite (inspection du travail)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081739",
+        "title": "Arrêté du 7 octobre 2026 portant admission à la retraite (inspection du travail)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081741",
+        "title": "Arrêté du 13 octobre 2026 portant admission à la retraite (inspection du travail)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081743",
+        "title": "Arrêté du 15 octobre 2026 portant admission à la retraite (inspection du travail)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081745",
+        "title": "Arrêté du 22 octobre 2026 portant admission à la retraite (inspection du travail)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081747",
+        "title": "Arrêté du 28 octobre 2026 portant admission à la retraite (inspection du travail)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081749",
+        "title": "Arrêté du 6 novembre 2026 portant admission à la retraite (inspection du travail)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081752",
+        "title": "Décret du 11 novembre 2026 portant nomination de la directrice des victimes et des usagers au sein du ministère de la justice - Mme GROSSET (Marie)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081763",
+        "title": "Arrêté du 4 novembre 2026 portant nomination d'un notaire salarié (officiers publics ou ministériels)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081767",
+        "title": "Arrêté du 4 novembre 2026 portant nomination d'une société d'exercice libéral par actions simplifiée (officiers publics ou ministériels)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081776",
+        "title": "Arrêté du 4 novembre 2026 portant nomination d'une société d'exercice libéral à responsabilité limitée (officiers publics ou ministériels)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081786",
+        "title": "Arrêté du 4 novembre 2026 portant dissolution d'une société civile professionnelle et nomination d'une société d'exercice libéral à responsabilité limitée (officiers publics ou ministériels)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081796",
+        "title": "Arrêté du 4 novembre 2026 modifiant l'arrêté du 18 septembre 2026 portant admission à la retraite (magistrature)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081798",
+        "title": "Arrêté du 5 novembre 2026 portant nomination d'une notaire salariée (officiers publics ou ministériels)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081802",
+        "title": "Arrêté du 5 novembre 2026 portant nomination d'une société d'exercice libéral à responsabilité limitée (officiers publics ou ministériels)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081812",
+        "title": "Arrêté du 6 novembre 2026 portant nomination d'une notaire salariée (officiers publics ou ministériels)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081816",
+        "title": "Arrêté du 6 novembre 2026 portant nomination d'une notaire salariée (officiers publics ou ministériels)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081826",
+        "title": "Arrêté du 6 novembre 2026 portant nomination d'une société civile professionnelle (officiers publics ou ministériels)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081841",
+        "title": "Arrêté du 10 novembre 2026 portant détachement (Conseil d'Etat) - M. CYTERMANN (Laurent)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081849",
+        "title": "Arrêté du 9 novembre 2026 portant admission à la retraite sur demande (attachés d'administration de l'Etat)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081852",
+        "title": "Arrêté du 6 novembre 2026 portant nomination du directeur de l'Agence nationale du médicament vétérinaire",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081854",
+        "title": "Arrêté du 6 novembre 2026 portant admission à la retraite (ingénieurs des ponts, des eaux et des forêts)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081856",
+        "title": "Arrêté du 9 novembre 2026 portant nomination au Comité national de gestion des risques en agriculture",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081880",
+        "title": "Arrêté du 9 novembre 2026 portant nomination des auditeurs de la promotion 2026-2027 du cycle des hautes études « travail social et société » de l'Institut national du travail social",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081885",
+        "title": "Arrêté du 9 novembre 2026 portant nomination (agents comptables)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081887",
+        "title": "Arrêté du 10 novembre 2026 portant nomination (administration centrale)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081895",
+        "title": "Arrêté du 22 octobre 2026 portant nomination au comité d'orientation du Musée national du sport et désignation de son président",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081897",
+        "title": "Arrêté du 28 octobre 2026 portant nomination au conseil d'administration du Musée national du sport",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082595",
+        "title": "Décision du 12 novembre 2026 portant délégation de signature",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082609",
+        "title": "Arrêté du 10 novembre 2026 portant ouverture de l'examen professionnel pour l'accès au cadre d'emplois des ingénieurs en chef territoriaux (session 2027)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082642",
+        "title": "Commissions et organes de contrôle",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082651",
+        "title": "Documents déposés",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082653",
+        "title": "Documents publiés",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082661",
+        "title": "Avis de vacance d'un emploi de sous-directeur",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082678",
+        "title": "Avis de vacance d'un emploi de directeur départemental interministériel adjoint (direction départementale de l'emploi, du travail, des solidarités et de la protection des populations de l'Aude)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082708",
+        "title": "Avis de vacance d'un emploi de directeur départemental interministériel adjoint (direction départementale de la protection des populations du Rhône)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082738",
+        "title": "Avis de vacance d'un emploi de directeur départemental interministériel adjoint (direction départementale des territoires de l'Oise)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082768",
+        "title": "Avis de vacance d'un emploi de directeur départemental interministériel adjoint (direction départementale de l'emploi, du travail, des solidarités et de la protection des populations de la Haute-Vienne)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082800",
+        "title": "Avis de vacance d'un emploi de sous-directeur",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082810",
+        "title": "Avis de vacance d'un emploi de sous-directeur de groupe B",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082823",
+        "title": "Avis de vacance d'un emploi de sous-directeur de groupe B",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082836",
+        "title": "Avis de vacance d'un emploi de sous-directeur de groupe B",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082850",
+        "title": "Avis de vacance d'un emploi d'inspecteur général des affaires culturelles",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082868",
+        "title": "Avis fixant le nombre de places offertes aux concours pour le recrutement de techniciens-géomètres du corps des géomètres-cadastreurs des finances publiques au titre de l'année 2027",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082873",
+        "title": "Avis fixant le nombre de places offertes à l'examen professionnel pour l'accès au grade de technicien-géomètre du corps des géomètres-cadastreurs des finances publiques au titre de l'année 2027",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082887",
+        "title": "Demandes de changement de nom (Accès protégé textes 144 à 180)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      }
+    ],
+    "excluded_no_economic_friction_candidates": [
+      {
+        "source_id": "jorf:JORFTEXT000055081901",
+        "title": "Avis relatif à l'extension d'avenants et d'un accord paritaire national conclus dans le cadre de la convention collective nationale des services de l'automobile",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081906",
+        "title": "Avis relatif à l'extension d'avenants à la convention collective nationale de la production de films d'animation",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081911",
+        "title": "Avis relatif à l'extension d'un avenant à la convention collective nationale unifiée « ports et manutention »",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081916",
+        "title": "Avis relatif à l'extension d'un avenant à la convention collective nationale de l'habitat et logement accompagnés",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081921",
+        "title": "Avis relatif à l'extension d'un avenant à la convention collective nationale du golf",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081926",
+        "title": "Avis relatif à l'extension d'un accord conclu dans le cadre de la convention collective nationale unifiée « ports et manutention »",
+        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
+        "discovery": {
+          "schema": "lawradar-opportunity-discovery-v1",
+          "status": "NOT_A_WATCH_CANDIDATE",
+          "score": 0,
+          "triggers": [],
+          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
+        }
+      }
+    ],
     "rules": "Preuves locales diffées uniquement ; réapparition historique et routine administrative explicite = filtrées avec trace ; les autres textes primaires disponibles reçoivent une lecture factuelle. Une friction détectée ouvre seulement une enquête, jamais une opportunité confirmée ; inconnu = UNRESOLVED.",
     "candidates": [
       {
@@ -1029,13 +1515,66 @@
         }
       }
     ],
-    "deterministically_unresolved_candidates": []
+    "deterministically_unresolved_candidates": [
+      {
+        "source_id": "jorf:JORFTEXT000055081883",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081892",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055081931",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082607",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082638",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082640",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082644",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082647",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082649",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082656",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082877",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082879",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055082882",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      }
+    ]
   },
   "ready": false,
   "billing_blocked": true,
   "operational_status": "blocked_by_billing",
   "error_code": "ANTHROPIC_CREDIT_BALANCE_TOO_LOW",
   "error": "Anthropic API unavailable: insufficient credit balance.",
-  "created_at_utc": "2026-11-13T12:03:57.670759+00:00",
-  "updated_at_utc": "2026-11-13T12:03:57.670759+00:00"
+  "created_at_utc": "2026-11-13T19:32:26.010488+00:00",
+  "updated_at_utc": "2026-11-13T19:32:26.010488+00:00"
 }
