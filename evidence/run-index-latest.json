@@ -1,8 +1,34 @@
 {
   "schema": "lawradar-run-index-v1",
-  "generated_at_utc": "2026-11-23T14:35:49.214334+00:00",
+  "generated_at_utc": "2026-11-24T01:44:59.537115+00:00",
   "purpose": "Registre technique des derniers runs, sans interprétation des preuves.",
   "runs": [
+    {
+      "kind": "motor",
+      "status": "skipped",
+      "reason": "Anthropic n'a accepté aucun batch : solde de crédits insuffisant. File conservée ; reprise automatique espacée ou lancement manuel après rechargement.",
+      "run_id": "45307288659",
+      "run_url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/45307288659",
+      "workflow": "Moteur LawRadar — livraison structurée",
+      "commit": "963ae9c4cd032406c9010f2843eb847b4ed6570d",
+      "created_at_utc": "2026-11-24T01:44:59.504784+00:00",
+      "duration_seconds": 7,
+      "inputs": {
+        "count": 1,
+        "missing": 0
+      },
+      "outputs": {
+        "count": 1,
+        "missing": 0
+      },
+      "cost": {
+        "status": "not_called",
+        "model": null,
+        "note": "Le fournisseur ne publie pas le détail des tokens dans ce run ; la durée et le nombre d'appels restent mesurés."
+      },
+      "errors": [],
+      "retries": 0
+    },
     {
       "kind": "collector",
       "status": "success",
@@ -23,32 +49,6 @@
       },
       "cost": {
         "status": "not_reported_by_provider",
-        "model": null,
-        "note": "Le fournisseur ne publie pas le détail des tokens dans ce run ; la durée et le nombre d'appels restent mesurés."
-      },
-      "errors": [],
-      "retries": 0
-    },
-    {
-      "kind": "motor",
-      "status": "skipped",
-      "reason": "Anthropic n'a accepté aucun batch : solde de crédits insuffisant. File conservée ; reprise automatique espacée ou lancement manuel après rechargement.",
-      "run_id": "45193589921",
-      "run_url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/45193589921",
-      "workflow": "Moteur LawRadar — livraison structurée",
-      "commit": "c1cb39c6ec93aba373fc8aa7125145591bdddbbb",
-      "created_at_utc": "2026-11-23T14:23:21.035950+00:00",
-      "duration_seconds": 9,
-      "inputs": {
-        "count": 1,
-        "missing": 0
-      },
-      "outputs": {
-        "count": 1,
-        "missing": 0
-      },
-      "cost": {
-        "status": "not_called",
         "model": null,
         "note": "Le fournisseur ne publie pas le détail des tokens dans ce run ; la durée et le nombre d'appels restent mesurés."
       },
