@@ -1,14 +1,14 @@
 {
   "schema": "lawradar-run-manifest-v1",
   "run": {
-    "id": "45630737179",
+    "id": "45718236534",
     "attempt": "1",
     "kind": "motor",
     "status": "skipped",
     "workflow": "Moteur LawRadar — livraison structurée",
-    "commit": "5bec717bfc622452d02cb128936391472709dc45",
-    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/45630737179",
-    "created_at_utc": "2026-11-25T14:08:29.403112+00:00",
+    "commit": "7d416d55524412ba17f9b246fd459e6520c9a67d",
+    "url": "https://github.com/vexxonsult/lawradar-handoff/actions/runs/45718236534",
+    "created_at_utc": "2026-11-25T23:03:16.424529+00:00",
     "duration_seconds": 8,
     "reason": "Anthropic n'a accepté aucun batch : solde de crédits insuffisant. File conservée ; reprise automatique espacée ou lancement manuel après rechargement."
   },
@@ -16,16 +16,16 @@
     {
       "path": "out/motor-input-resolved.json",
       "exists": true,
-      "bytes": 87518,
-      "sha256": "4375306173b223dfecbcb26daa7253bc04ea9091f97cf6884a6a1bed346e82e6"
+      "bytes": 107042,
+      "sha256": "95cd168c53c7b350aa9bac48c66831a7edf989521a4cfd2059eace47ba512053"
     }
   ],
   "outputs": [
     {
       "path": "evidence/motor-batch-latest.json",
       "exists": true,
-      "bytes": 91503,
-      "sha256": "26f02ff52a2d1b09a2e290f2f57106386201cea0ce87c03be95c76f3cdb01b66"
+      "bytes": 112483,
+      "sha256": "2189e5bba5e68ac2c40795b1973c4338dd67f657692c133d28464328f2d383fc"
     }
   ],
   "cost_estimate": {

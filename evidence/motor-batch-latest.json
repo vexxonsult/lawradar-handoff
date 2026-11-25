@@ -16,9 +16,10 @@
   },
   "motor_input": {
     "schema": "lawradar-motor-input-v1",
-    "report_date": "2026-11-24",
+    "report_date": "2026-11-25",
     "delta_changed_sources": [
       "jorf-summaries-latest.json",
+      "eurlex-oj-latest.json",
       "consultdd-latest.json"
     ],
     "handled_source_files": [
@@ -27,544 +28,1182 @@
     ],
     "excluded_historical_candidates": [
       {
-        "source_id": "jorf:JORFTEXT000000336340",
-        "publication_date": "1985-09-25",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000350253",
-        "publication_date": "1990-09-01",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000392023",
-        "publication_date": "1998-12-03",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000000399226",
-        "publication_date": "2000-03-10",
-        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
-      },
-      {
         "source_id": "jorf:JORFTEXT000000442349",
         "publication_date": "1965-05-08",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000472839",
-        "publication_date": "1956-08-09",
+        "source_id": "jorf:JORFTEXT000000168467",
+        "publication_date": "1995-05-10",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000509310",
-        "publication_date": "1989-07-08",
+        "source_id": "jorf:JORFTEXT000000203241",
+        "publication_date": "2000-01-30",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000693913",
-        "publication_date": "1986-11-28",
+        "source_id": "jorf:JORFTEXT000000223691",
+        "publication_date": "2001-07-11",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000761931",
-        "publication_date": "1999-09-25",
+        "source_id": "jorf:JORFTEXT000000239771",
+        "publication_date": "2005-02-15",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000781627",
-        "publication_date": "2003-08-22",
+        "source_id": "jorf:JORFTEXT000000250175",
+        "publication_date": "2004-07-16",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000874247",
-        "publication_date": "1986-12-24",
+        "source_id": "jorf:JORFTEXT000000272471",
+        "publication_date": "2007-02-14",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000000879802",
-        "publication_date": "1948-09-02",
+        "source_id": "jorf:JORFTEXT000000274444",
+        "publication_date": "2007-08-02",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000019347122",
-        "publication_date": "2008-08-21",
+        "source_id": "jorf:JORFTEXT000000277539",
+        "publication_date": "2007-08-31",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000024355005",
-        "publication_date": "2011-07-09",
+        "source_id": "jorf:JORFTEXT000000290489",
+        "publication_date": "1986-03-14",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000028664510",
-        "publication_date": "2014-03-01",
+        "source_id": "jorf:JORFTEXT000000299367",
+        "publication_date": "1962-12-30",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000033306194",
-        "publication_date": "2016-10-26",
+        "source_id": "jorf:JORFTEXT000000306772",
+        "publication_date": "1972-07-07",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000045667825",
-        "publication_date": "2022-04-27",
+        "source_id": "jorf:JORFTEXT000000313972",
+        "publication_date": "1962-08-10",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000046514572",
-        "publication_date": "2022-11-03",
+        "source_id": "jorf:JORFTEXT000000315096",
+        "publication_date": "1946-10-29",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000046846074",
-        "publication_date": "2022-12-31",
+        "source_id": "jorf:JORFTEXT000000317293",
+        "publication_date": "1985-01-10",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000047087086",
-        "publication_date": "2023-02-03",
+        "source_id": "jorf:JORFTEXT000000336170",
+        "publication_date": "1973-10-20",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000047445077",
-        "publication_date": "2023-04-15",
+        "source_id": "jorf:JORFTEXT000000336758",
+        "publication_date": "1982-07-22",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000049453263",
-        "publication_date": "2024-04-23",
+        "source_id": "jorf:JORFTEXT000000339242",
+        "publication_date": "1978-07-20",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000049486478",
-        "publication_date": "2024-04-30",
+        "source_id": "jorf:JORFTEXT000000350637",
+        "publication_date": "1990-08-03",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000050729596",
-        "publication_date": "2024-12-05",
+        "source_id": "jorf:JORFTEXT000000360213",
+        "publication_date": "1993-01-01",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000050957667",
-        "publication_date": "2025-01-08",
+        "source_id": "jorf:JORFTEXT000000360453",
+        "publication_date": "1992-10-01",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000051871545",
-        "publication_date": "2025-07-10",
+        "source_id": "jorf:JORFTEXT000000369046",
+        "publication_date": "1995-01-24",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000053613164",
-        "publication_date": "2026-03-04",
+        "source_id": "jorf:JORFTEXT000000379386",
+        "publication_date": "1996-09-13",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       },
       {
-        "source_id": "jorf:JORFTEXT000054126589",
-        "publication_date": "2026-05-24",
+        "source_id": "jorf:JORFTEXT000000396397",
+        "publication_date": "1999-07-13",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000398402",
+        "publication_date": "2002-01-05",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000409466",
+        "publication_date": "2002-01-23",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000420355",
+        "publication_date": "2005-02-12",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000425699",
+        "publication_date": "2006-06-29",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000497692",
+        "publication_date": "1941-08-16",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000500138",
+        "publication_date": "1972-07-07",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000504443",
+        "publication_date": "1956-06-19",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000509065",
+        "publication_date": "1988-12-31",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000512446",
+        "publication_date": "1970-07-12",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000519353",
+        "publication_date": "1981-08-21",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000519656",
+        "publication_date": "1981-10-28",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000522430",
+        "publication_date": "1945-04-11",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000522711",
+        "publication_date": "1945-04-22",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000525219",
+        "publication_date": "1990-01-25",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000526716",
+        "publication_date": "1990-11-01",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000527475",
+        "publication_date": "1991-11-28",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000528079",
+        "publication_date": "1992-11-07",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000533674",
+        "publication_date": "1990-08-02",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000539406",
+        "publication_date": "1992-01-12",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000587727",
+        "publication_date": "2001-12-12",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000652771",
+        "publication_date": "2007-10-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000684265",
+        "publication_date": "1954-04-16",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000686929",
+        "publication_date": "1949-10-02",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000689011",
+        "publication_date": "1985-07-17",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000692243",
+        "publication_date": "1966-07-13",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000692492",
+        "publication_date": "1983-07-14",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000693095",
+        "publication_date": "1988-06-08",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000694524",
+        "publication_date": "1969-04-02",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000721523",
+        "publication_date": "1992-01-12",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000756455",
+        "publication_date": "2001-06-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000794852",
+        "publication_date": "2003-12-28",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000801039",
+        "publication_date": "2004-03-26",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000813276",
+        "publication_date": "2005-08-06",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000829916",
+        "publication_date": "1968-03-07",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000850274",
+        "publication_date": "1955-01-07",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000861758",
+        "publication_date": "1980-08-07",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000867359",
+        "publication_date": "1985-07-17",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000869965",
+        "publication_date": "1956-03-28",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000872103",
+        "publication_date": "1989-03-11",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000874749",
+        "publication_date": "1970-08-15",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000875191",
+        "publication_date": "1988-12-31",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000875387",
+        "publication_date": "1962-08-03",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000878050",
+        "publication_date": "1984-07-13",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000878230",
+        "publication_date": "1985-12-31",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000886458",
+        "publication_date": "1978-12-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000886559",
+        "publication_date": "1978-06-23",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000000888671",
+        "publication_date": "1952-03-25",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000019122891",
+        "publication_date": "2008-07-05",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000019147649",
+        "publication_date": "2008-07-10",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000020796240",
+        "publication_date": "2009-06-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000021557902",
+        "publication_date": "2009-12-31",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000021625792",
+        "publication_date": "2010-01-06",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000022242408",
+        "publication_date": "2010-05-21",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000022408104",
+        "publication_date": "2010-06-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000023314376",
+        "publication_date": "2010-12-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000023405640",
+        "publication_date": "2011-01-12",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000023557345",
+        "publication_date": "2011-02-08",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000024580517",
+        "publication_date": "2011-09-23",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000024961630",
+        "publication_date": "2011-12-14",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000025413964",
+        "publication_date": "2012-02-29",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000025413990",
+        "publication_date": "2012-02-29",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000025917531",
+        "publication_date": "2999-01-01",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000026021193",
+        "publication_date": "2012-06-14",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000026856853",
+        "publication_date": "2012-12-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000027755194",
+        "publication_date": "2013-07-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000028017465",
+        "publication_date": "2013-10-01",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000029374905",
+        "publication_date": "2014-08-20",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000029953752",
+        "publication_date": "2014-12-24",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000029988857",
+        "publication_date": "2014-12-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000030481539",
+        "publication_date": "2015-04-15",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000031732865",
+        "publication_date": "2015-12-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000033027633",
+        "publication_date": "2016-08-14",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000033421298",
+        "publication_date": "2016-11-19",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000033553233",
+        "publication_date": "2016-12-09",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000033734169",
+        "publication_date": "2016-12-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000033968083",
+        "publication_date": "2017-02-02",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000033981981",
+        "publication_date": "2017-02-05",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000034411018",
+        "publication_date": "2017-04-12",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000034502851",
+        "publication_date": "2017-04-28",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000034679669",
+        "publication_date": "2017-05-11",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000036336024",
+        "publication_date": "2017-12-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000036732440",
+        "publication_date": "2018-03-22",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000038052212",
+        "publication_date": "2019-01-25",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000038403843",
+        "publication_date": "2019-04-24",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000038827727",
+        "publication_date": "2019-07-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000039079443",
+        "publication_date": "2019-09-12",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000041990481",
+        "publication_date": "2020-06-13",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000042153254",
+        "publication_date": "2020-07-26",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000043075486",
+        "publication_date": "2021-01-29",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000043075536",
+        "publication_date": "2021-01-29",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000043075584",
+        "publication_date": "2021-01-29",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000043075622",
+        "publication_date": "2021-01-29",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000043075664",
+        "publication_date": "2021-01-29",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000043075701",
+        "publication_date": "2021-01-29",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000043134127",
+        "publication_date": "2021-02-16",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000043884384",
+        "publication_date": "2021-08-03",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000043927068",
+        "publication_date": "2021-08-11",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000043985407",
+        "publication_date": "2021-08-29",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000044183914",
+        "publication_date": "2021-10-12",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000044367862",
+        "publication_date": "2021-11-26",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000047358681",
+        "publication_date": "2023-03-29",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000048727345",
+        "publication_date": "2023-12-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000049775705",
+        "publication_date": "2024-06-25",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000051490773",
+        "publication_date": "2025-04-19",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000051491066",
+        "publication_date": "2025-04-19",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000051491095",
+        "publication_date": "2025-04-19",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000051491123",
+        "publication_date": "2025-04-19",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000051491155",
+        "publication_date": "2025-04-19",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000051491201",
+        "publication_date": "2025-04-19",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000051491230",
+        "publication_date": "2025-04-19",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000052142624",
+        "publication_date": "2025-08-28",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000052153067",
+        "publication_date": "2025-08-29",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000052372340",
+        "publication_date": "2025-10-08",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054063209",
+        "publication_date": "2026-05-12",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054706983",
+        "publication_date": "2026-08-19",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054750198",
+        "publication_date": "2026-08-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054811348",
+        "publication_date": "2026-09-09",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054903059",
+        "publication_date": "2026-09-26",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054903076",
+        "publication_date": "2026-09-26",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054903095",
+        "publication_date": "2026-09-26",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054903120",
+        "publication_date": "2026-09-26",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054903142",
+        "publication_date": "2026-09-26",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054903917",
+        "publication_date": "2026-09-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054903936",
+        "publication_date": "2026-09-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054903959",
+        "publication_date": "2026-09-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054903983",
+        "publication_date": "2026-09-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054904007",
+        "publication_date": "2026-09-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054904028",
+        "publication_date": "2026-09-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054904045",
+        "publication_date": "2026-09-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054904062",
+        "publication_date": "2026-09-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054904084",
+        "publication_date": "2026-09-27",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054912992",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913011",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913034",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913057",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913076",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913099",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913113",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913173",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913197",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913220",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913245",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913275",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913295",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913338",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913359",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913389",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913428",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913463",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913485",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913505",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913529",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913552",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913566",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913584",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913742",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913761",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913781",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913800",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913820",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913840",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913860",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913880",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054913898",
+        "publication_date": "2026-09-30",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054953548",
+        "publication_date": "2026-10-06",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054956465",
+        "publication_date": "2026-10-07",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000054993585",
+        "publication_date": "2026-10-18",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055006651",
+        "publication_date": "2026-10-22",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055006661",
+        "publication_date": "2026-10-22",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055006672",
+        "publication_date": "2026-10-22",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055037873",
+        "publication_date": "2026-10-31",
+        "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055037883",
+        "publication_date": "2026-10-31",
         "reason": "HISTORICAL_REAPPEARANCE_OUTSIDE_CURRENT_COVERAGE"
       }
     ],
     "excluded_routine_candidates": [
       {
-        "source_id": "jorf:JORFTEXT000055129355",
-        "title": "Arrêté du 17 novembre 2026 portant délégation de signature du ministre de l'intérieur - autorités de la gendarmerie nationale habilitées à signer les décisions d'habilitation en matière de protection du secret de la défense nationale",
+        "source_id": "jorf:JORFTEXT000055137051",
+        "title": "Décision du 23 novembre 2026 portant délégation de signature (direction générale de la police nationale, service national de police scientifique)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129444",
-        "title": "Arrêté du 13 novembre 2026 modifiant le calendrier des inscriptions des concours ouverts par les arrêtés du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de certains concours de recrutement des professeurs des écoles",
+        "source_id": "jorf:JORFTEXT000055137079",
+        "title": "Arrêté du 20 novembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un concours sur titres pour le recrutement d'aides-soignants civils du ministère de la défense",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129479",
-        "title": "Arrêté du 13 novembre 2026 modifiant le calendrier des inscriptions des concours ouverts par les arrêtés du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de certains concours d'accès à l'échelle de rémunération des professeurs des écoles des établissements d'enseignement privés sous contrat, ainsi que de concours de recrutement de maîtres des établissements d'enseignement privés sous contrat du premier degré",
+        "source_id": "jorf:JORFTEXT000055137205",
+        "title": "Arrêté du 23 novembre 2026 fixant le nombre de places offertes aux concours externe et interne pour le recrutement des directeurs des services de greffe judiciaires au titre de l'année 2027",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129505",
-        "title": "Arrêté du 13 novembre 2026 modifiant le calendrier des inscriptions des concours ouverts par les arrêtés du 22 septembre 2026 et de l'arrêté du 2 octobre 2026 autorisant au titre de l'année 2027 l'ouverture de concours de recrutement de personnels enseignants du second degré, de personnels d'éducation et de psychologues de l'éducation nationale",
+        "source_id": "jorf:JORFTEXT000055137257",
+        "title": "Arrêté du 19 novembre 2026 autorisant l'ouverture d'un concours professionnel pour l'accès au grade de contrôleur de première classe du corps des contrôleurs de l'Institut national de la statistique et des études économiques au titre de l'année 2027",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129558",
-        "title": "Arrêté du 13 novembre 2026 modifiant le calendrier des inscriptions des concours ouverts par les arrêtés du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de concours pour le recrutement des inspecteurs d'académie - inspecteurs pédagogiques régionaux, des inspecteurs de l'éducation nationale et des personnels de direction d'établissement d'enseignement ou de formation relevant du ministre de l'éducation nationale",
+        "source_id": "jorf:JORFTEXT000055137274",
+        "title": "Arrêté du 19 novembre 2026 autorisant l'ouverture d'un concours interne pour le recrutement d'attachés statisticiens stagiaires de l'Institut national de la statistique et des études économiques au titre de l'année 2027",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129570",
-        "title": "Arrêté du 13 novembre 2026 modifiant le calendrier des inscriptions des concours ouverts par arrêtés du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture des concours internes pour le recrutement d'attachés d'administration de l'Etat et de conseillers techniques de service social des administrations de l'Etat pour les services et établissements publics relevant des ministres chargés de l'éducation nationale et de l'enseignement supérieur et de la recherche, du concours de recrutement de médecins de l'éducation nationale et des examens professionnels pour l'avancement au grade d'attaché principal d'administration, dans les services et établissements publics relevant des ministres chargés de l'éducation nationale, de l'enseignement supérieur, de la recherche et de l'espace, des sports, de la jeunesse et de la vie associative, et pour l'avancement aux grades de secrétaire administratif de classe exceptionnelle et de secrétaire administratif de classe supérieure de l'éducation nationale et de l'enseignement supérieur",
+        "source_id": "jorf:JORFTEXT000055137290",
+        "title": "Arrêté du 19 novembre 2026 autorisant l'ouverture d'un concours externe pour le recrutement d'attachés statisticiens stagiaires de l'Institut national de la statistique et des études économiques au titre de l'année 2027",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129593",
-        "title": "Arrêté du 13 novembre 2026 modifiant le calendrier des inscriptions des concours ouverts par les arrêtés du 22 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de concours externes d'accès à des listes d'aptitude aux fonctions de maître dans les établissements d'enseignement privés sous contrat du second degré (CAFEP), de concours internes d'accès aux échelles de rémunération de professeurs du second degré (CAER), du concours externe et du troisième concours d'accès à des listes d'aptitude aux fonctions de maître dans les établissements d'enseignement privés sous contrat du second degré (CAFEP-CAPES, CAFEP-CAPEPS, CAFEP-CAPET, CAFEP-CAPLP, troisième CAFEP-CAPES)",
+        "source_id": "jorf:JORFTEXT000055137302",
+        "title": "Arrêté du 19 novembre 2026 autorisant l'ouverture d'un concours externe réservé aux titulaires d'un diplôme de doctorat pour le recrutement des ingénieurs de la statistique, de l'économie et de la donnée stagiaires au titre de l'année 2027",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129763",
-        "title": "Arrêté du 13 novembre 2026 modifiant le calendrier des inscriptions des concours ouverts par arrêtés du 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de concours de recrutement et d'examens professionnels des personnels de la filière des bibliothèques",
+        "source_id": "jorf:JORFTEXT000055137316",
+        "title": "Arrêté du 19 novembre 2026 autorisant l'ouverture d'un concours externe réservé aux élèves des écoles normales supérieures (ENS) pour le recrutement d'ingénieurs de la statistique, de l'économie et de la donnée stagiaires au titre de l'année 2027",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129792",
-        "title": "Arrêté du 13 novembre 2026 modifiant le calendrier des inscriptions des concours ouverts par arrêtés des 18 septembre 2026 autorisant au titre de l'année 2027 l'ouverture de concours pour le recrutement de personnels de la jeunesse et des sports",
+        "source_id": "jorf:JORFTEXT000055137390",
+        "title": "Décision du 20 novembre 2026 modifiant la décision du 1er septembre 2026 portant délégation de signature (direction générale de l'administration et de la modernisation)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129816",
-        "title": "Arrêté du 16 octobre 2026 portant admission à la retraite (administrateurs de l'Etat)",
+        "source_id": "jorf:JORFTEXT000055137813",
+        "title": "Arrêté du 23 novembre 2026 portant ouverture de crédits de fonds de concours",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129822",
-        "title": "Arrêté du 23 novembre 2026 portant admission à la retraite (administrateurs de l'Etat)",
+        "source_id": "jorf:JORFTEXT000055137821",
+        "title": "Arrêté du 20 novembre 2026 modifiant divers arrêtés fixant les modalités d'organisation et la composition des jurys des concours de recrutement ou d'avancement de grade des personnels des bibliothèques",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129829",
-        "title": "Décret du 20 novembre 2026 portant intégration dans le corps de conception et de direction de la police nationale - M. KRAFT (Jérôme)",
+        "source_id": "jorf:JORFTEXT000055137881",
+        "title": "Décision du 23 novembre 2026 autorisant au titre de l'année 2027 l'ouverture d'un examen professionnel pour le recrutement d'ingénieurs stagiaires des travaux de la météorologie",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129838",
-        "title": "Arrêté du 13 novembre 2026 portant nomination sur l'emploi de directeur adjoint de l'unité départementale de Paris à la direction régionale et interdépartementale de l'économie, de l'emploi, du travail et des solidarités d'Ile-de-France (prolongation de mandat)",
+        "source_id": "jorf:JORFTEXT000055137914",
+        "title": "Arrêté du 19 novembre 2026 portant admission à la retraite (administrateurs de l'Etat)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129840",
-        "title": "Arrêté du 13 novembre 2026 portant nomination sur l'emploi de directeur de l'unité départementale de Seine-Saint-Denis à la direction régionale et interdépartementale de l'économie, de l'emploi, du travail et des solidarités d'Ile-de-France (prolongation de mandat)",
+        "source_id": "jorf:JORFTEXT000055137920",
+        "title": "Arrêté du 19 novembre 2026 portant admission à la retraite (administrateurs de l'Etat)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129842",
-        "title": "Arrêté du 13 novembre 2026 portant nomination sur l'emploi de directeur régional adjoint de l'économie, de l'emploi, du travail et des solidarités de Bretagne (prolongation de mandat)",
+        "source_id": "jorf:JORFTEXT000055137926",
+        "title": "Arrêté du 19 novembre 2026 portant admission à la retraite (administrateurs de l'Etat)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129844",
-        "title": "Arrêté du 18 novembre 2026 portant nomination au conseil d'administration de l'association gestionnaire du fonds d'expérimentation territoriale contre le chômage de longue durée",
+        "source_id": "jorf:JORFTEXT000055137932",
+        "title": "Arrêté du 24 novembre 2026 portant nomination de la présidente et des membres du jury chargé du recrutement de maîtres des requêtes en service extraordinaire et de conseillers référendaires en service extraordinaire par la voie « action publique » au titre de l'année 2027",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129847",
-        "title": "Arrêté du 16 novembre 2026 modifiant l'arrêté du 4 novembre 2026 portant nomination d'une société d'exercice libéral à responsabilité limitée (officiers publics ou ministériels)",
+        "source_id": "jorf:JORFTEXT000055137946",
+        "title": "Arrêté du 20 novembre 2026 portant nomination d'un inspecteur général des services actifs de la police nationale",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129852",
-        "title": "Arrêté du 17 novembre 2026 portant nomination d'un notaire salarié (officiers publics ou ministériels)",
+        "source_id": "jorf:JORFTEXT000055137954",
+        "title": "Arrêté du 10 novembre 2026 portant nomination au conseil de surveillance du grand port maritime de la Guyane",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129863",
-        "title": "Arrêté du 17 novembre 2026 portant nomination d'une notaire salariée (officiers publics ou ministériels)",
+        "source_id": "jorf:JORFTEXT000055137957",
+        "title": "Décret du 23 novembre 2026 portant changements de noms (Accès protégé)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129867",
-        "title": "Arrêté du 17 novembre 2026 portant nomination d'un commissaire de justice salarié (officiers publics ou ministériels)",
+        "source_id": "jorf:JORFTEXT000055137960",
+        "title": "Décret du 24 novembre 2026 portant nomination à la commission d'intégration prévue à l'article L. 133-12-3 du code de justice administrative - Mme MEAUX (Florence)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129879",
-        "title": "Arrêté du 17 novembre 2026 portant nomination d'une commissaire de justice salariée (officiers publics ou ministériels)",
+        "source_id": "jorf:JORFTEXT000055137966",
+        "title": "Arrêté du 19 novembre 2026 portant nomination d'une notaire salariée (officiers publics ou ministériels)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129889",
-        "title": "Arrêté du 18 novembre 2026 portant nomination d'un notaire salarié (officiers publics ou ministériels)",
+        "source_id": "jorf:JORFTEXT000055137970",
+        "title": "Arrêté du 19 novembre 2026 portant nomination d'une notaire salariée (officiers publics ou ministériels)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129893",
-        "title": "Arrêté du 18 novembre 2026 portant nomination d'un notaire salarié (officiers publics ou ministériels)",
+        "source_id": "jorf:JORFTEXT000055137974",
+        "title": "Arrêté du 19 novembre 2026 portant nomination d'une notaire salariée (officiers publics ou ministériels)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129897",
-        "title": "Arrêté du 18 novembre 2026 portant nomination d'une société d'exercice libéral à responsabilité limitée (officiers publics ou ministériels)",
+        "source_id": "jorf:JORFTEXT000055137978",
+        "title": "Arrêté du 19 novembre 2026 portant nomination d'une notaire salariée (officiers publics ou ministériels)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129910",
-        "title": "Arrêté du 17 novembre 2026 portant admission à la retraite (attachés d'administration de l'Etat)",
+        "source_id": "jorf:JORFTEXT000055137985",
+        "title": "Arrêté du 21 novembre 2026 portant nomination au conseil d'administration du Fonds de garantie des victimes des actes de terrorisme et d'autres infractions",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129912",
-        "title": "Arrêté du 18 novembre 2026 portant admission à la retraite (attachés d'administration de l'Etat)",
+        "source_id": "jorf:JORFTEXT000055137987",
+        "title": "Arrêté du 24 novembre 2026 portant nomination au Conseil national de la médiation",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129915",
-        "title": "Arrêté du 18 novembre 2026 modifiant l'arrêté du 10 novembre 2026 portant titularisation dans le corps des secrétaires des affaires étrangères (agents diplomatiques et consulaires)",
+        "source_id": "jorf:JORFTEXT000055137990",
+        "title": "Arrêté du 19 novembre 2026 portant nomination au conseil d'administration d'IFP Energies nouvelles",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129919",
-        "title": "Arrêté du 20 novembre 2026 portant nomination au conseil d'administration de l'Agence nationale de sécurité du médicament et des produits de santé",
+        "source_id": "jorf:JORFTEXT000055137993",
+        "title": "Arrêté du 17 novembre 2026 portant nomination au conseil spécialisé de FranceAgriMer « fruits et légumes »",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055129923",
-        "title": "Arrêté du 5 novembre 2026 portant nomination de représentants de l'Etat au sein de la commission consultative sur l'évaluation des charges",
+        "source_id": "jorf:JORFTEXT000055137996",
+        "title": "Arrêté du 19 novembre 2026 portant nomination au conseil d'administration de Campus France",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055130373",
+        "source_id": "jorf:JORFTEXT000055138003",
+        "title": "Décret du 24 novembre 2026 portant nomination de la présidente du conseil d'administration de l'agence pour la mise en valeur des espaces urbains de la zone dite « des cinquante pas géométriques » de la Martinique - Mme BELLAY-RAVION (Léa)",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138018",
+        "title": "Arrêté du 16 novembre 2026 fixant la composition de la Commission nationale de recensement et de dépouillement des votes pour l'élection des représentants des communes et des établissements publics de coopération intercommunale à fiscalité propre au Conseil supérieur de la fonction publique territoriale",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138023",
+        "title": "Décret du 23 novembre 2026 portant renouvellement de détachement dans le statut d'emploi de direction de la direction générale des finances publiques",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138032",
+        "title": "Arrêté du 20 novembre 2026 portant nomination dans un emploi de direction de la direction générale des finances publiques",
+        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138086",
         "title": "Commissions et organes de contrôle",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055130383",
+        "source_id": "jorf:JORFTEXT000055138096",
         "title": "Documents déposés",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055130385",
+        "source_id": "jorf:JORFTEXT000055138098",
         "title": "Documents publiés",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055130393",
+        "source_id": "jorf:JORFTEXT000055138110",
         "title": "Avis de vacance d'un emploi de chef de service",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       },
       {
-        "source_id": "jorf:JORFTEXT000055130411",
-        "title": "Avis de vacance d'un emploi de chef de service",
-        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055130429",
-        "title": "Avis de vacance d'un emploi de sous-directeur",
-        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055130445",
-        "title": "Avis de vacance d'un emploi de sous-directeur",
-        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055130461",
-        "title": "Avis de vacance d'un emploi de sous-directeur",
-        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055130477",
-        "title": "Avis de vacance d'un emploi de sous-directeur",
-        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055130493",
-        "title": "Avis de vacance d'un emploi de sous-directeur",
-        "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055130531",
-        "title": "Demandes de changement de nom (Accès protégé textes 100 à 122)",
+        "source_id": "jorf:JORFTEXT000055138148",
+        "title": "Demandes de changement de nom (Accès protégé textes 84 à 96)",
         "reason": "ROUTINE_PUBLIC_ADMINISTRATION_TITLE"
       }
     ],
     "excluded_no_economic_friction_candidates": [
       {
-        "source_id": "jorf:JORFTEXT000055129927",
-        "title": "Arrêté du 6 novembre 2026 portant extension d'un accord territorial (Ille-et-Vilaine et Morbihan) conclu dans le cadre de la convention collective nationale de la métallurgie (n° 3248)",
-        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "NOT_A_WATCH_CANDIDATE",
-          "score": 0,
-          "triggers": [],
-          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055129936",
-        "title": "Arrêté du 6 novembre 2026 portant extension d'un avenant à la convention collective nationale du personnel des prestataires de services dans le domaine du secteur tertiaire (n° 2098)",
-        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "NOT_A_WATCH_CANDIDATE",
-          "score": 0,
-          "triggers": [],
-          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055129945",
-        "title": "Arrêté du 23 novembre 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale des journalistes (n° 1480)",
-        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "NOT_A_WATCH_CANDIDATE",
-          "score": 0,
-          "triggers": [],
-          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055129955",
-        "title": "Arrêté du 23 novembre 2026 portant extension d'un accord conclu dans le cadre de la convention collective nationale de la radiodiffusion (n° 1922)",
-        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "NOT_A_WATCH_CANDIDATE",
-          "score": 0,
-          "triggers": [],
-          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055129965",
-        "title": "Arrêté du 23 novembre 2026 portant extension d'un avenant à la convention collective nationale des entreprises du secteur privé du spectacle vivant (n° 3090)",
-        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "NOT_A_WATCH_CANDIDATE",
-          "score": 0,
-          "triggers": [],
-          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055129975",
-        "title": "Arrêté du 23 novembre 2026 portant extension d'accords régionaux (Bretagne) conclus dans le cadre des conventions collectives nationales des ouvriers employés par les entreprises du bâtiment visées et non visées par le décret du 1er mars 1962 (entreprises occupant jusqu'à 10 salariés et entreprises occupant plus de 10 salariés) (nos 1596 et 1597) et de la convention collective nationale des employés, techniciens et agents de maîtrise du bâtiment (n° 2609)",
-        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "NOT_A_WATCH_CANDIDATE",
-          "score": 0,
-          "triggers": [],
-          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055129987",
-        "title": "Arrêté du 23 novembre 2026 portant extension d'un avenant à la convention collective nationale de l'esthétique-cosmétique et de l'enseignement technique et professionnel lié aux métiers de l'esthétique et de la parfumerie (n° 3032)",
-        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "NOT_A_WATCH_CANDIDATE",
-          "score": 0,
-          "triggers": [],
-          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055129999",
-        "title": "Arrêté du 23 novembre 2026 portant extension d'avenants à la convention collective nationale des activités du déchet (n° 2149)",
-        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "NOT_A_WATCH_CANDIDATE",
-          "score": 0,
-          "triggers": [],
-          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055130009",
-        "title": "Avis relatif à l'extension d'un avenant à la convention collective nationale du personnel des industries du cartonnage",
-        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "NOT_A_WATCH_CANDIDATE",
-          "score": 0,
-          "triggers": [],
-          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055130014",
-        "title": "Avis relatif à l'extension d'un avenant et d'un accord conclus dans le cadre de la convention collective nationale des établissements de soins vétérinaires",
-        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "NOT_A_WATCH_CANDIDATE",
-          "score": 0,
-          "triggers": [],
-          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055130019",
-        "title": "Avis relatif à l'extension d'avenants à la convention collective nationale dans la branche de l'aide, de l'accompagnement, des soins et des services à domicile",
-        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "NOT_A_WATCH_CANDIDATE",
-          "score": 0,
-          "triggers": [],
-          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055130024",
-        "title": "Avis relatif à l'extension d'un accord territorial (Occitanie) conclu dans le cadre de la convention collective nationale relative aux conditions de travail dans les industries de carrières et de matériaux (ouvriers - employés, techniciens et agents de maîtrise)",
-        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "NOT_A_WATCH_CANDIDATE",
-          "score": 0,
-          "triggers": [],
-          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055130029",
-        "title": "Avis relatif à l'extension d'un avenant à la convention collective nationale des entreprises de services à la personne",
-        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "NOT_A_WATCH_CANDIDATE",
-          "score": 0,
-          "triggers": [],
-          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055130034",
-        "title": "Avis relatif à l'extension d'un accord collectif conclu dans le cadre de la convention collective nationale de travail des journalistes - presse quotidienne régionale (PQR)",
-        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "NOT_A_WATCH_CANDIDATE",
-          "score": 0,
-          "triggers": [],
-          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055130039",
-        "title": "Avis relatif à l'extension d'un accord collectif conclu dans le cadre de la convention collective nationale de la presse quotidienne et hebdomadaire",
-        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "NOT_A_WATCH_CANDIDATE",
-          "score": 0,
-          "triggers": [],
-          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055130044",
-        "title": "Avis relatif à l'extension d'un accord conclu dans le cadre de la convention collective nationale des professions regroupées du cristal, du verre et du vitrail",
-        "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
-        "discovery": {
-          "schema": "lawradar-opportunity-discovery-v1",
-          "status": "NOT_A_WATCH_CANDIDATE",
-          "score": 0,
-          "triggers": [],
-          "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE"
-        }
-      },
-      {
-        "source_id": "jorf:JORFTEXT000055130049",
-        "title": "Avis relatif à l'extension d'un accord conclu dans le cadre de la convention collective nationale unifiée « ports et manutention »",
+        "source_id": "jorf:JORFTEXT000055138036",
+        "title": "Arrêté du 24 novembre 2026 portant extension d'un avenant à la convention collective nationale des activités de production des eaux embouteillées, des boissons rafraîchissantes sans alcool et de bière (n° 1513)",
         "reason": "INDIVIDUAL_OR_INTERNAL_ACT_TITLE",
         "discovery": {
           "schema": "lawradar-opportunity-discovery-v1",
@@ -1577,13 +2216,102 @@
         }
       }
     ],
-    "deterministically_unresolved_candidates": []
+    "deterministically_unresolved_candidates": [
+      {
+        "source_id": "jorf:JORFTEXT000055137470",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055137943",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055137948",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055137951",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055137982",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055137999",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138080",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138082",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138084",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138089",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138091",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138094",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138100",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138102",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138105",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138126",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138130",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138133",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138135",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138137",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138140",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      },
+      {
+        "source_id": "jorf:JORFTEXT000055138143",
+        "reason": "PRIMARY_TEXT_EMPTY"
+      }
+    ]
   },
   "ready": false,
   "billing_blocked": true,
   "operational_status": "blocked_by_billing",
   "error_code": "ANTHROPIC_CREDIT_BALANCE_TOO_LOW",
   "error": "Anthropic API unavailable: insufficient credit balance.",
-  "created_at_utc": "2026-11-25T14:08:29.210916+00:00",
-  "updated_at_utc": "2026-11-25T14:08:29.210916+00:00"
+  "created_at_utc": "2026-11-25T23:03:16.169327+00:00",
+  "updated_at_utc": "2026-11-25T23:03:16.169327+00:00"
 }
